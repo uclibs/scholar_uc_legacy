@@ -1,4 +1,12 @@
 CurateApp::Application.routes.draw do
+  root 'catalog#index'
+  Blacklight.add_routes(self)
+  HydraHead.add_routes(self)
+    devise_for :users, controllers: { sessions: :sessions, registrations: :registrations}
+
+
+  curate_for
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

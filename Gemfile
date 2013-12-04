@@ -48,3 +48,11 @@ gem "curate", "~> 0.6.1"
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
 gem "quiet_assets", group: :development
+
+gem "bootstrap-sass"
+gem "devise"
+gem "devise-guests", "~> 0.3"
+group :development, :test do
+  gem "rspec-rails"
+  gem "jettywrapper"
+end
