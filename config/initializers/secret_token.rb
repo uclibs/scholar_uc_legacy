@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-CurateApp::Application.config.secret_key_base = '3f80e5f1b9486a2c41e147ecba4180d50bcb70abed7082cbaceee577b984cd85c6eca4b97f192f20221efde2d673fa887eba56c28d94f8ed0c143a0199692c25'
+CurateApp::Application.config.secret_key_base = 'c0f7cd072224710f56006eb5ba7a9b9f87ad0f985fca49e36345acc0bcaf0550531c1e78a400c5fb14eaf9e94e1837021a4f1ae6a9dbd288ec0ab3eb693395ff'
