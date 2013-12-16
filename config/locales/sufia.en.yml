@@ -1,0 +1,12 @@
+en:
+  sufia:
+    product_name:       "CurateUC"
+    institution_name:   "University of Cincinnati"
+    institution_homepage_url:   "#"
+    division_name:      "Digital Collections"
+    division_homepage_url:   "#"
+    search:
+      form:
+        q:
+          label:        "Search Curate"
+          placeholder:  "Type keywords in here"
