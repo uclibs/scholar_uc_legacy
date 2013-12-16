@@ -2,9 +2,9 @@ en:
   sufia:
     product_name:       "CurateUC"
     institution_name:   "University of Cincinnati"
-    institution_homepage_url:   "#"
+    institution_homepage_url:   "http://www.uc.edu"
     division_name:      "Digital Collections"
-    division_homepage_url:   "#"
+    division_homepage_url:   "http://digitalprojects.libraries.uc.edu"
     search:
       form:
         q:
