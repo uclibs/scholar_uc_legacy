@@ -5,9 +5,11 @@
 * WEBrick port: 3001 
 * jetty port: 4001
 
-## Starting Curate
+## Starting the Redis server and rescue workers
+1. redis-server /etc/conf/redis.conf
+1. count=4 QUEUE=* rake environment resque:work
 
-**Note: Redis and rescue must also be started if not already running (see above)**
+## Starting Curate
 
 1. cd /opt/rails-apps/curate_app
 1. sudo -u webapp -s
@@ -26,3 +28,6 @@
 1. ps aux | grep curate
 1. kill <pid>
 1. exit
+
+## Stopping the Redis server
+* redis-cli shutdown
