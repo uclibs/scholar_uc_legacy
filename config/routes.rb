@@ -4,6 +4,11 @@ CurateApp::Application.routes.draw do
   HydraHead.add_routes(self)
     devise_for :users, controllers: { sessions: :sessions, registrations: :registrations}
 
+  namespace :admin do
+  #constraints Sufia::ResqueAdmin do
+     mount Resque::Server, :at => 'queues'
+  #end
+  end
 
   curate_for
 
