@@ -55,10 +55,8 @@ gem "devise"
 gem "devise-guests", "~> 0.3"
 group :development, :test do
   gem "rspec-rails"
-  gem "jettywrapper"
+#  gem "jettywrapper"
 end
-
-gem "jettywrapper", group: [:development, :test]
 
 group :test do
   gem 'factory_girl_rails'
@@ -69,3 +67,4 @@ group :test do
 #  gem 'database_cleaner', '< 1.1.0'
 end
 
+# gem "jettywrapper", group: [:development, :test]
