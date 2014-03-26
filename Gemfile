@@ -54,7 +54,7 @@ gem "devise"
 gem "devise-guests", "~> 0.3"
 group :development, :test do
   gem "rspec-rails"
-  gem "jettywrapper"
+#  gem "jettywrapper"
 end
 
-gem "jettywrapper", group: [:development, :test]
+# gem "jettywrapper", group: [:development, :test]
