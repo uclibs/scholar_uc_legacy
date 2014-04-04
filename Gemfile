@@ -44,7 +44,8 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "curate", "~> 0.6.1"
+#gem "curate", "~> 0.6.1"
+gem "curate", git: "https://github.com/projecthydra/curate.git", branch: "develop"
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
 gem "quiet_assets", group: :development
@@ -58,3 +59,13 @@ group :development, :test do
 end
 
 gem "jettywrapper", group: [:development, :test]
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'poltergeist'
+#  gem 'rspec-html-matchers'
+#  gem 'vcr'
+#  gem 'webmock'
+#  gem 'database_cleaner', '< 1.1.0'
+end
+
