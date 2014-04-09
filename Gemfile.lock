@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:projecthydra/curate.git
+  remote: https://github.com/projecthydra/curate.git
   revision: e3c957f80febe68a1e3861865d75aeb9ef800448
   branch: develop
   specs:
