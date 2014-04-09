@@ -1,0 +1,9 @@
+development:
+  manager_usernames:
+  - manager@example.com
+test:
+  manager_usernames:
+  - manager@example.com
+production:
+  manager_usernames:
+  - manager@example.com
