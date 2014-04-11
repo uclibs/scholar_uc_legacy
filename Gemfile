@@ -59,3 +59,13 @@ group :development, :test do
 end
 
 gem "jettywrapper", group: [:development, :test]
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'poltergeist'
+#  gem 'rspec-html-matchers'
+#  gem 'vcr'
+#  gem 'webmock'
+#  gem 'database_cleaner', '< 1.1.0'
+end
+
