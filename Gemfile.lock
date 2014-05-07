@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/projecthydra/curate.git
-  revision: 36c4ccb3fa8c314d259d8bc89fdfaee8863769ca
+  remote: https://github.com/uclibs/curate_fork.git
+  revision: d108c2f1fc0a455398ac7b1423cca77beb0d4733
   branch: develop
   specs:
     curate (0.6.6)
@@ -110,9 +110,11 @@ GEM
       railties (>= 3.0)
     bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
-    breach-mitigation-rails (0.0.4)
+    breach-mitigation-rails (0.2.2)
+      activesupport
+      rack
     breadcrumbs_on_rails (2.3.0)
-    browse-everything (0.4.2)
+    browse-everything (0.4.3)
       bootstrap-sass
       dropbox-sdk (>= 1.6.2)
       font-awesome-rails
@@ -216,8 +218,8 @@ GEM
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    hydra-access-controls (6.4.1)
-      active-fedora (~> 6.6)
+    hydra-access-controls (6.4.2)
+      active-fedora (~> 6.7)
       activesupport
       blacklight (~> 4.0)
       cancan
@@ -229,12 +231,12 @@ GEM
       active-fedora (>= 6.7.0)
       blacklight
       hydra-head (~> 6.4.0)
-    hydra-core (6.4.1)
+    hydra-core (6.4.2)
       active-fedora
       blacklight (~> 4.0)
       block_helpers
       deprecation (>= 0.0.5)
-      hydra-access-controls (= 6.4.1)
+      hydra-access-controls (= 6.4.2)
       jettywrapper (>= 1.4.1)
       rails (>= 3.2.3, < 5)
     hydra-derivatives (0.0.8)
@@ -244,9 +246,9 @@ GEM
       mini_magick
     hydra-file_characterization (0.3.1)
       activesupport (>= 3.0.0)
-    hydra-head (6.4.1)
-      hydra-access-controls (= 6.4.1)
-      hydra-core (= 6.4.1)
+    hydra-head (6.4.2)
+      hydra-access-controls (= 6.4.2)
+      hydra-core (= 6.4.2)
       rails (>= 3.2.6)
     hydra-remote_identifier (0.6.3)
       activesupport (>= 3.2.13, < 5.0)
