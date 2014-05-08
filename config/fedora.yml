@@ -1,7 +1,7 @@
 development:
   user: fedoraAdmin
   password: fedoraAdmin
-  url: http://data.local:8080/fedora
+  url: http://curate-dev.uc.edu/fedora
 test: &TEST  
   user: fedoraAdmin
   password: fedoraAdmin
