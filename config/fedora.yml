@@ -1,7 +1,7 @@
 development:
   user: fedoraAdmin
   password: fedoraAdmin
-  url: http://curate-devdb/fedora
+  url: http://curate-devdb.uc.edu/fedora
 test: &TEST  
   user: fedoraAdmin
   password: fedoraAdmin
