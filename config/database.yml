@@ -5,12 +5,12 @@
   "/tmp/mysql.sock"
   ].detect { |f| f && File.exist?(f) }
 
-  port = ENV["BOXEN_MYSQL_PORT"] || "3306"
+  port = ENV["BOXEN_MYSQL_PORT"] || "3601"
 %>
 
 mysql_connection: &mysql_connection
 <% if socket %>
-  host: localhost
+  host: ucdbdil7.private
   socket: <%= socket %>
 <% else %>
   host: 127.0.0.1
@@ -26,13 +26,13 @@ mysql_settings: &mysql_settings
 local_user: &local_user
   <<: *mysql_settings
   <<: *mysql_connection
-  username: root
-  password:
+  username: curate
+  password: CuR@t3-YouSee?
 
 development: &development
   <<: *local_user
   database: curate
-  host:     localhost
+  host:     ucdbdil7.private
   timeout: 5000
 
 test: &test
