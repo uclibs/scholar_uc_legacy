@@ -15,7 +15,11 @@
 /log/*.log
 /tmp
 
+# Ignore browse_everything API keys
 /config/browse_everything_providers.yml
+
+# Ignore .idea folder from Rubymine
+/.idea
 
 jetty/
 
