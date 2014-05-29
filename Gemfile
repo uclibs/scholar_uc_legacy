@@ -49,6 +49,7 @@ gem "curate", git: "https://github.com/uclibs/curate_fork.git", branch: "develop
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
 gem "quiet_assets", group: :development
+gem "clamav"
 
 gem "bootstrap-sass"
 gem "devise"

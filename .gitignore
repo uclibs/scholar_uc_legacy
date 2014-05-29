@@ -15,6 +15,9 @@
 /log/*.log
 /tmp
 
+# Ignore all files associated with RubyMine
+.idea/
+
 /config/browse_everything_providers.yml
 
 jetty/
