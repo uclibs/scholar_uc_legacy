@@ -1,8 +1,5 @@
 language: ruby
 
-before_install:
-  - sudo apt-get install libclamav-dev clamav-data
-
 rvm:
   - "2.0.0"
 
@@ -16,6 +13,8 @@ bundler_args: --without headless
 
 before_install:
   - gem install bundler
+  - sudo apt-get install libclamav-dev libclamav6
+  - gem install clamav
 
 branches:
   only:
