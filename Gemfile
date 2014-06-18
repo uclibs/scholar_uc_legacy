@@ -54,19 +54,16 @@ gem "clamav"
 gem "bootstrap-sass"
 gem "devise"
 gem "devise-guests", "~> 0.3"
-group :development, :test do
-  gem "rspec-rails"
-  gem "jettywrapper"
-end
 
 gem "jettywrapper", group: [:development, :test]
 
 group :test do
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~>4.2.0'
   gem 'poltergeist'
-#  gem 'rspec-html-matchers'
+  gem 'rspec-html-matchers', '~>0.4'
+  gem 'rspec-rails', '~>2.14.0'
+  gem 'capybara', "~> 2.1"
 #  gem 'vcr'
 #  gem 'webmock'
 #  gem 'database_cleaner', '< 1.1.0'
 end
-
