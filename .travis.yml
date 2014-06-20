@@ -3,7 +3,17 @@ language: ruby
 rvm:
   - "2.0.0"
 
-script: "rake ci"
+notifications:
+  email:
+    recipients:
+      - hortongn@ucmail.uc.edu
+      - newmanld@ucmail.uc.edu
+      - scherztc@ucmail.uc.edu
+      - vanmiljf@ucmail.uc.edu
+      - wamsleai@ucmail.uc.edu
+      - burkepk@ucmail.uc.edu
+    on_success: "change"
+    on_failure: "always"
 
 bundler_args: --without headless debug
 
@@ -11,3 +21,6 @@ before_install:
   - gem install bundler
   - sudo apt-get install libclamav-dev libclamav6 clamav clamav-base clamav-daemon clamav-freshclam clamav-unofficial-sigs
   - gem install clamav
+
+script: "bundle exec rake ci"
+
