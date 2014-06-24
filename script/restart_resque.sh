@@ -3,9 +3,10 @@
 # Stops and then starts resque-pool in either production or development environment
 # script/restart_resque.sh [production|development]
 
-RESQUE_POOL_PIDFILE="$(pwd)/tmp/resque-pool.pid"
-HOSTNAME=$(hostname -s)
 ENVIRONMENT=$1
+APP_DIRECTORY="/srv/apps/curate_uc"
+RESQUE_POOL_PIDFILE="$APP_DIRECTORY/tmp/pids/resque-pool.pid"
+HOSTNAME=$(hostname -s)
 function anywait {
     for pid in "$@"; do
         while kill -0 "$pid"; do
@@ -34,4 +35,4 @@ banner "killing resque-pool"
     kill -2 $PID && anywait $PID
 }
 banner "starting resque-pool"
-bundle exec resque-pool --daemon --environment $ENVIRONMENT --pidfile $RESQUE_POOL_PIDFILE start
+bundle exec resque-pool --daemon --environment $ENVIRONMENT --config $APP_DIRECTORY/config/resque-pool.yml --pidfile $RESQUE_POOL_PIDFILE --stdout $APP_DIRECTORY/log/resque-pool.stdout.log --stderr $APP_DIRECTORY/log/resque-pool.stderr.log start
