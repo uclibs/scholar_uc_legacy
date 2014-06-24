@@ -17,7 +17,7 @@ CurateApp::Application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options = { :host => 'larry.libraries.uc.edu:3001' }
+  config.action_mailer.default_url_options = { :host => 'curate-dev.uc.edu' }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
