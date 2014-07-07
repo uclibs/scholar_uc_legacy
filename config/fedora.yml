@@ -12,3 +12,5 @@ production:
   url: http://data.local:8080/fedora
 cucumber:
   <<: *TEST
+ci:
+  <<: *TEST

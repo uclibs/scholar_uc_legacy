@@ -15,7 +15,13 @@
 /log/*.log
 /tmp
 
+<<<<<<< HEAD
 # Ignore browse_everything API keys
+=======
+# Ignore all files associated with RubyMine
+.idea/
+
+>>>>>>> sandbox
 /config/browse_everything_providers.yml
 
 # Ignore .idea folder from Rubymine

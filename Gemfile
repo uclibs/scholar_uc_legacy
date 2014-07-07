@@ -52,6 +52,7 @@ gem "curate", git: "https://github.com/uclibs/curate_fork.git", branch: "develop
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
 gem "quiet_assets", group: :development
+gem "clamav"
 
 gem "bootstrap-sass"
 gem "devise"
@@ -62,9 +63,11 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~>4.2.0'
   gem 'poltergeist'
-#  gem 'rspec-html-matchers'
+  gem 'rspec-html-matchers', '~>0.4'
+  gem 'rspec-rails', '~>2.14.0'
+  gem 'capybara', "~> 2.1"
 #  gem 'vcr'
 #  gem 'webmock'
 #  gem 'database_cleaner', '< 1.1.0'
