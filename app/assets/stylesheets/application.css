@@ -12,3 +12,142 @@
  *= require curate
  *= require_tree .
  */
+
+/* gloabl nav styles 
+copied from UC main page, 23 June 2014 */
+.btn-danger {
+  background: #e00122;
+}
+.GlobalNavResponsive .navbar-toggle {
+	background: #e00122;
+	border: 0;
+}
+#header .GlobalNavResponsive .navbar-brand {
+	padding-left: 48px;
+	margin-left: 5px;
+	background: url(../images/uc_symbol.png) no-repeat left center
+}
+.GlobalNavResponsive .navbar-nav > li > a {
+	color: #fff;
+}
+.GlobalNavResponsive .navbar-toggle:hover, .GlobalNavResponsive .navbar-toggle:focus {
+	background: #B6001B !important;
+}
+.globalnav .search-toggle {
+	padding: 6px 13px;
+}
+.globalnav .navbar-toggle {
+	border-color: #ddd;
+}
+.globalnav .search-toggle span {
+	color: #fff;
+}
+.globalnav .glyphicon-play {
+	color: #e00122;
+}
+.globalnav .navbar-brand {
+	color: #ddd;
+}
+.navbar-inverse .nav>li>a {
+}
+.navbar-inverse .nav>li>a:hover {
+	text-decoration: underline;
+}
+.searchChoice a {
+	display: block;
+}
+#GlobalNavSupportLink {
+	font-weight: bold;
+}
+.GlobalNavResponsive .navbar {
+	margin-bottom: 0;
+}
+.GlobalNavResponsive {
+	background: #000;
+	z-index: 2;
+	font-weight: light;
+        margin-left: -1em;
+        margin-right: -1em;
+}
+input[type="submit"].btn {
+	margin-top: 3px;
+	margin-bottom: 0;
+	padding: 4px 12px;
+}
+ @media (min-width: 768px) {
+.globalnav {
+	min-height: 36px;
+	max-height: 36px;
+}.globalnav .navbar-form {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+.globalnav .navbar-nav > li > a {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-right: 10px;
+	padding-lefT: 10px;
+}
+.globalnav .form-control {
+	padding: 3px 3px 3px 12px;
+	height: 30px;
+	margin-top: 3px;
+}
+.globalnav .form-control,  .globalnav form .btn {
+	border-radius: 1px;
+}
+}
+ @media (max-width: 767px) {
+/*#header .GlobalNavResponsive button.nav-toggle,  #header .GlobalNavResponsive .navbar-nav {
+	display: none !important;
+}*/
+.GlobalNavResponsive .navbar-nav,  .GlobalNavResponsive .navbar-form {
+	margin-left: 0;
+	margin-right: 0;
+}
+#header .GlobalNavResponsive .form-group {
+	width: 82%;
+	float: left;
+}
+#header .GlobalNavResponsive form input.btn {
+	width: 15%;
+	float: right;
+}
+.GlobalNavResponsive .DropdownNav .navbar, .DropdownNav .navbar-collapse {
+	min-height: 0;
+}
+.GlobalNavResponsive .navbar-brand {
+	float: left;
+	padding: 15px 15px;
+	font-size: 18px;
+	line-height: 20px;
+}
+}
+.GlobalNavResponsive .navbar-brand {
+	font-size: 16px;
+}
+.GlobalNavResponsive .toggle-topnav {
+	display: none;
+}
+.GlobalNavResponsive .nav-pills li a {
+	border-radius: 2px;
+}
+.GlobalNavResponsive .nav-home {
+	font-size: 16px;
+}
+.GlobalNavResponsive .nav-home a, .nav-home span {
+	color: #fff;
+	background: #e00122;
+}
+.GlobalNavResponsive .nav-home a:hover, .nav-home span:hover {
+	background: #ce0020 !important;
+}
+.GlobalNavResponsive .nav-home > ul > li {
+	border-bottom: none;
+}
+}
+ @media (max-width: 350px) {
+#header .GlobalNavResponsive .navbar-brand {
+	font-size: .9em;
+}
+}
