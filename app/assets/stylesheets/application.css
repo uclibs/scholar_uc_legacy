@@ -42,9 +42,12 @@ copied from UC main page, 23 June 2014 */
 .globalnav .search-toggle span {
 	color: #fff;
 }
-.globalnav .glyphicon-play {
+.globalnav .fa-play {
 	color: #e00122;
+        position: relative;
+        font-family: FontAwesome;
 }
+
 .globalnav .navbar-brand {
 	color: #ddd;
 }
