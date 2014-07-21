@@ -9,4 +9,4 @@ cucumber:
 ci:
   <<: *TEST
 production:
-  url: http://data.local:8080/bl_solr/core0 
+  url: https://curate-qadb.uc.edu/solr

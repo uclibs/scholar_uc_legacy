@@ -9,7 +9,7 @@ test: &TEST
 production:
   user: fedoraAdmin
   password: fedoraAdmin
-  url: http://data.local:8080/fedora
+  url: https://curate-qadb.uc.edu/fedora
 cucumber:
   <<: *TEST
 ci:
