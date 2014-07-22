@@ -21,6 +21,7 @@ before_install:
   - gem install bundler
   - sudo apt-get install libclamav-dev libclamav6 clamav clamav-base clamav-daemon clamav-freshclam clamav-unofficial-sigs
   - gem install clamav
+  - sudo freshclam  
 
 script: "bundle exec rake ci"
 
