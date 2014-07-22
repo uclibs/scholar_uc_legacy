@@ -22,6 +22,9 @@ before_install:
   - sudo apt-get install libclamav-dev libclamav6 clamav clamav-base clamav-daemon clamav-freshclam clamav-unofficial-sigs
   - gem install clamav
   - sudo freshclam  
+  
+before_script:
+  - "cp config/doi.yml.travis config/doi.yml"  
 
 script: "bundle exec rake ci"
 
