@@ -7,6 +7,9 @@ CurateApp::Application.routes.draw do
 
   curate_for
 
+  get 'terms_request' => 'page_requests#view_terms'
+  get 'about_request' => 'page_requests#view_about'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
