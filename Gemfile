@@ -58,6 +58,8 @@ gem "bootstrap-sass"
 gem "devise"
 gem "devise-guests", "~> 0.3"
 
+gem "jettywrapper", group: [:development, :test]
+
 group :test do
   gem 'factory_girl_rails', '~>4.2.0'
   gem 'poltergeist'
