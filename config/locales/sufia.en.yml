@@ -1,6 +1,6 @@
 en:
   sufia:
-    product_name:       "CurateUC"
+    product_name:       "UCore"
     institution_name:   "University of Cincinnati"
     institution_homepage_url:   "http://www.uc.edu"
     division_name:      "Digital Collections"
@@ -8,5 +8,5 @@ en:
     search:
       form:
         q:
-          label:        "Search Curate"
+          label:        "Search UCore"
           placeholder:  "Type keywords in here"
