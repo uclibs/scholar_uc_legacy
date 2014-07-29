@@ -8,7 +8,7 @@ test: &TEST
   url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 4001}/fedora-test" %>
 production:
   user: fedoraAdmin
-  password: fedoraAdmin
+  password: bamboo_fedora_password
   url: https://curate-qadb.uc.edu/fedora
 cucumber:
   <<: *TEST
