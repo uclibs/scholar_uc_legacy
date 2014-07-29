@@ -8,4 +8,8 @@ class PageRequestsController < ApplicationController
     render 'about'
   end
 
+  def view_presentation
+    render 'presentation'
+  end
+
 end
