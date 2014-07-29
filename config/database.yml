@@ -27,7 +27,7 @@ local_user: &local_user
   <<: *mysql_settings
   <<: *mysql_connection
   username: curate
-  password: bamboo.inject.releasemysqlpassword
+  password: ${bamboo.inject.releasemysqlpassword}
 
 development: &development
   <<: *local_user
