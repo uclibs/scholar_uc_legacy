@@ -5,7 +5,7 @@
   "/tmp/mysql.sock"
   ].detect { |f| f && File.exist?(f) }
 
-  port = ENV["BOXEN_MYSQL_PORT"] || "3601"
+  port = ENV["BOXEN_MYSQL_PORT"] || "3306"
 %>
 
 mysql_connection: &mysql_connection
