@@ -1,0 +1,17 @@
+<footer id="footer" class="container">
+  <div class="row">
+    <div class="footer-text span12">
+      <p>
+        Powered by <a href="https://github.com/ndlib/curate">Curate</a> and <a href="https://github.com/projecthydra/sufia">Sufia</a>.<br />
+        Made possible by the <a href="http://projecthydra.org">Hydra</a> project.
+      </p>
+
+       <p>
+        <%= link_to 'Terms and Conditions', terms_request_path, class: 'a' %>                                    
+      </p>
+      <p>
+        Build: <%= Curate.configuration.build_identifier %>
+      </p>
+    </div>
+  </div>
+</footer>
