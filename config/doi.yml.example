@@ -1,0 +1,6 @@
+---
+:username: apitest
+:password: password
+:shoulder: doi:10.5072/FK2
+:url: https://ezid.cdlib.org
+:resolver_url: http://dx.doi.org/
