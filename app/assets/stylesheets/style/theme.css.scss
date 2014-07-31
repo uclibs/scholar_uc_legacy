@@ -118,6 +118,7 @@
     background-color:#DFDFDF
   }
 }
+
 .rssRow {
   color: #000000;
 
@@ -137,6 +138,17 @@
     color:#E00122;
   }
 }
+.carousel-caption {
+    color: #FFFFFF;
+ 
+   .btn, .btn-large, .btn-primary, .btn-primary:hover  {
+   color:#FFF;
+   background-color:#E00122;
+   background-image: linear-gradient(#E00122,#E00122 85%,#E00122)
+  }
+}
+
+.carousel { max-height: 450px; overflow: hidden;}
 
 #footer {
   color:#999;
