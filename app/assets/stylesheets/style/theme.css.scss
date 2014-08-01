@@ -146,9 +146,14 @@
    background-color:#E00122;
    background-image: linear-gradient(#E00122,#E00122 85%,#E00122)
   }
+
+  top: 0;
+  bottom: auto;  
+
 }
 
 .carousel { max-height: 450px; overflow: hidden;}
+
 
 #footer {
   color:#999;
