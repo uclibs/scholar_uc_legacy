@@ -10,7 +10,7 @@ Curate.configure do |config|
   # config.default_antivirus_instance = lambda {|filename| … }
 
   # # Used for constructing permanent URLs
-config.application_root_url = 'http://larry.libraries.uc.edu:3001/'
+config.application_root_url = 'http://curate-qa.uc.edu/'
 
   # # Override the file characterization runner that is used
   # config.characterization_runner = lambda {|filename| … }
