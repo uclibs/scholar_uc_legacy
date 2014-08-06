@@ -1,10 +1,8 @@
- 
  .alert, .alert-info, .alert-warning, .alert-success {
     color:#000;
     border-color:#DFDFDF;
     background-color:#DFDFDF
   }
-
 
 #brand-bar-wrapper {
   background-color:#000;
@@ -16,7 +14,6 @@
   }
 
   .division {
-    float:right;
   }
 }
 
@@ -36,10 +33,6 @@
 
 #site-title {
   
-  float: left;
-  width: 800px;
-  padding-top:15px;  
-
   h1 {
     text-shadow: #000 0 0 0px;
     color: #777;
@@ -47,15 +40,13 @@
   }
   
   h1#name {
-    padding-left: 180px;
-    padding-top: 15px;
+    padding-left: .25em;
+    padding-top: .25em;
   }
        
   h1#logo {
-    float: left;
   }
 
- 
   a,
   a:hover,
   a:visited {
@@ -82,16 +73,9 @@
 }
 
 #site-actions {
-   padding-top: 0em;
-   text-align: left;
-   float: right;
-   width: 47%;
 }
 
 #site-search {
-   float:right;
-   clear:right;
-   width:47%;
 }
 
 
