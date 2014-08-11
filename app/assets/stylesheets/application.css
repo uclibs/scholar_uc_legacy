@@ -8,12 +8,14 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
+
  *= require curate
- *= require_tree .
+ *= require font-awesome
+ *= require_tree
+ *= require_self
  */
 
-/* gloabl nav styles 
+/* gloabl nav styles
 copied from UC main page, 23 June 2014 */
 .btn-danger {
   background: #e00122;
@@ -170,4 +172,3 @@ input[type="submit"].btn {
     width:30%;
     padding:10px;
 }
-
