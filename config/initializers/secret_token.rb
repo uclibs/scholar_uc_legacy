@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-CurateApp::Application.config.secret_key_base = 'c0f7cd072224710f56006eb5ba7a9b9f87ad0f985fca49e36345acc0bcaf0550531c1e78a400c5fb14eaf9e94e1837021a4f1ae6a9dbd288ec0ab3eb693395ff'
+CurateApp::Application.config.secret_key_base = 'bamboo_initializers_secret_key'
