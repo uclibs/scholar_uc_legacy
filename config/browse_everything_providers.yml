@@ -1,0 +1,10 @@
+---
+box:
+  :client_id: bamboo_browse_everything_box_id
+  :client_secret: bamboo_browse_everything_box_secret
+drop_box:
+  :app_key: bamboo_browse_everything_dropbox_id
+  :app_secret: bamboo_browse_everything_dropbox_secret
+google_drive:
+  :client_id: bamboo_browse_everything_gdrive_id
+  :client_secret: bamboo_browse_everything_gdrive_secret
