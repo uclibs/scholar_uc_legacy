@@ -1,9 +1,6 @@
 
           <div id="title-bar" class="row">
-            <div id="logo" class="span2">
-              <%= link_to image_tag("uc/UC_logo.png"), "http://www.uc.edu/", :alt => "uc image", :width => 125, :height => 55  %>
-            </div>
-
+            
             <div id="site-title" class="span3">
               <h1><%= link_to 'Scholar@UC', root_path, id: 'home-link' %></h1>
             </div>
@@ -11,6 +8,11 @@
             <div id="site-title" class="span7" style="padding: 1em 0em 0em .5em; text-align: left;">
  	      <h6>The UC digital repository, part of the <%= link_to 'UC Research Hub', "http://research.uc.edu" %>.</h6>
             </div>
+            
+            <div id="logo" class="span2">
+              <%= link_to image_tag("uc/UC_logo.png"), "http://www.uc.edu/", :alt => "uc image", :width => 125, :height => 55 %>
+            </div>
+
           </div>  
           <div class="row">
             <nav id="site-actions" class="span12" role="menu">
