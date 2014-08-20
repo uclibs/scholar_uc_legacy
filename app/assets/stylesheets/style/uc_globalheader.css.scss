@@ -1,49 +1,17 @@
 /* gloabl nav styles */
 
 html, body{
-  padding:0 !important;
-  margin:0 !important;
+  padding:0;
+  margin:0;
 }
 
-// @media (min-width: 768px)
-// {
-//   .uc_brandbar{
-//     background-color: #000;
-//   }
-//   .globalnav
-//   {
-//     min-height: 36px;
-//     max-height: 36px;
-//
-//     .navbar-form {
-//       margin-top: 0px !important;
-//       margin-bottom: 0px !important;
-//     }
-//
-//     .navbar-nav > li > a
-//     {
-//       padding-top: 7px;
-//       padding-bottom: 7px;
-//       padding-right: 10px;
-//       padding-lefT: 10px;
-//     }
-//
-//     .form-control
-//     {
-//       padding: 3px 3px 3px 12px;
-//       height: 30px;
-//       margin-top: 3px;
-//     }
-//
-//     .form-control,
-//     form .btn
-//     {
-//       border-radius: 1px;
-//     }
-//   }
-//
-// }
-
+@media (max-width: 767px)
+{
+  body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 .globalnav .search-toggle
 {
@@ -59,7 +27,6 @@ html, body{
 {
   color: #fff;
 }
-
 
 .globalnav .fa-play
 {
@@ -80,6 +47,15 @@ html, body{
   a:hover {
   text-decoration:underline;
   }
+
+  .nav > li > a {
+    padding: 10px 15px 10px 0;
+  }
+}
+
+#brand-bar-wrapper, #title-bar-wrapper {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .searchChoice a
@@ -97,70 +73,6 @@ html, body{
   margin-bottom: 0;
 }
 
-// .GlobalNavResponsive
-// {
-//   background: #000;
-//   z-index: 2;
-//   font-weight: lighter;
-// }
-
-
-// input[type="submit"].btn
-// {
-//     margin-top: 3px;
-//     margin-bottom: 0;
-//     padding: 4px 12px;
-// }
-//
-// #footer .GlobalNavResponsive button.search-toggle,
-// #footer .GlobalNavResponsive form,
-// #footer .GlobalNavResponsive
-// {
-// 	display: none;
-//
-// }
-
-
-// @media (max-width: 767px)
-// {
-//   #uc_header .GlobalNavResponsive button.nav-toggle,
-//   #uc_header .GlobalNavResponsive .navbar-nav
-//   {
-//     display: none !important;
-//   }
-//   .GlobalNavResponsive .navbar-nav,
-//   .GlobalNavResponsive .navbar-form
-//   {
-//     margin-left: 0;
-//     margin-right: 0;
-//   }
-//
-//   // #footer .GlobalNavResponsive
-//   // {
-//   // 	display: block;
-//   // }
-//   #uc_header .GlobalNavResponsive .form-group
-//   {
-//     width: 82%;
-//     float: left;
-//   }
-//   #uc_header .GlobalNavResponsive form input.btn
-//   {
-//     width: 15%;
-//     float: right;
-//   }
-//
-//
-// }
-// #uc_header .GlobalNavResponsive .navbar-brand
-// {
-//   padding-left: 48px;
-//   margin-left: 5px;
-//   background: url(/etc/designs/uc/resources/navigation/GlobalNavResponsive/uc_symbol.png) no-repeat left center
-// }
-//
-//
-//
 .GlobalNavResponsive .nav > li > a
 {
   color: #fff !important;
@@ -174,17 +86,3 @@ html, body{
     font-weight: normal;
   }
 }
-//
-// .GlobalNavResponsive .navbar-toggle:hover,
-// .GlobalNavResponsive .navbar-toggle:focus
-// {
-//   background: #B6001B !important;
-// }
-//
-// @media (max-width: 350px)
-// {
-//   #uc_header .GlobalNavResponsive .navbar-brand
-//   {
-//     font-size: .9em;
-//   }
-// }

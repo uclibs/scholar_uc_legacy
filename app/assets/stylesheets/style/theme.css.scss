@@ -152,7 +152,7 @@
 
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+.btn [class^="icon-"],
+.btn [class*=" icon-"] {
   background-image: url("/assets/glyphicons-halflings-white.png");
 }
