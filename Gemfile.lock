@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/uclibs/curate_fork.git
-  revision: 58a9d21fe01559c148a58dc0578e12b6949923e8
+  revision: 57ba9708aa362a55444d0c796e72a081b3836bd8
   branch: develop
   specs:
     curate (0.6.6)
@@ -12,7 +12,7 @@ GIT
       browse-everything
       browser
       chronic (>= 0.10.2)
-      devise
+      devise (~> 3.2.0)
       devise-guests (~> 0.3)
       httparty
       hydra-batch-edit (~> 1.1.1)
@@ -91,9 +91,10 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     backports (3.6.0)
     bcrypt (3.1.7)
-    better_errors (1.1.0)
+    better_errors (2.0.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     blacklight (4.5.0)
@@ -163,7 +164,7 @@ GEM
       activesupport
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (3.3.0)
+    devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -494,7 +495,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     trollop (1.16.2)
-    turbolinks (2.2.2)
+    turbolinks (2.2.3)
       coffee-rails
     tzinfo (0.3.41)
     uber (0.0.8)
