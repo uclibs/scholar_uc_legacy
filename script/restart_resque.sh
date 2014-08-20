@@ -5,15 +5,8 @@
 
 ENVIRONMENT=$1
 APP_DIRECTORY="/srv/apps/curate_uc"
-RESQUE_POOL_PIDFILE="$APP_DIRECTORY/tmp/pids/resque-pool.pid"
+RESQUE_POOL_PIDFILE="/tmp/scholar-resque-pool.pid"
 HOSTNAME=$(hostname -s)
-function anywait {
-    for pid in "$@"; do
-        while kill -0 "$pid"; do
-            sleep 0.5
-        done
-    done
-}
 
 function banner {
     echo -e "$0 ↠ $1"
@@ -32,7 +25,9 @@ fi
 banner "killing resque-pool"
 [ -f $RESQUE_POOL_PIDFILE ] && {
     PID=$(cat $RESQUE_POOL_PIDFILE)
-    kill -2 $PID && anywait $PID
+    kill -9 $PID
 }
+sleep 10
+
 banner "starting resque-pool"
 bundle exec resque-pool --daemon --environment $ENVIRONMENT --config $APP_DIRECTORY/config/resque-pool.yml --pidfile $RESQUE_POOL_PIDFILE --stdout $APP_DIRECTORY/log/resque-pool.stdout.log --stderr $APP_DIRECTORY/log/resque-pool.stderr.log start
