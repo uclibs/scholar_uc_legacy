@@ -45,7 +45,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 #gem "curate", "~> 0.6.1"
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", branch: "develop"
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", branch: "sandbox"
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
 gem "quiet_assets", group: :development
