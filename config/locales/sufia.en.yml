@@ -1,12 +1,12 @@
 en:
   sufia:
-    product_name:       "CurateUC"
+    product_name:       "Scholar@UC"
     institution_name:   "University of Cincinnati"
-    institution_homepage_url:   "http://www.uc.edu"
-    division_name:      "Digital Collections"
-    division_homepage_url:   "http://digitalprojects.libraries.uc.edu"
+    institution_homepage_url:   "http://scholar.uc.edu"
+    division_name:      "Digital Collections and Repositories"
+    division_homepage_url:   "http://digital.libraries.uc.edu"
     search:
       form:
         q:
-          label:        "Search Curate"
+          label:        "Search Scholar@UC"
           placeholder:  "Type keywords in here"
