@@ -5,7 +5,7 @@
               <h1><%= link_to 'Scholar@UC', root_path, id: 'home-link' %></h1>
             </div>
 
-            <div id="site-title" class="span7" style="text-align: left;">
+            <div id="site-subtitle" class="span7">
  	      <h6>The UC digital repository, part of the <%= link_to 'UC Research Hub', "http://research.uc.edu" %>.</h6>
             </div>
 
@@ -14,16 +14,12 @@
             </div>
 
           </div>
+          
           <div class="row">
-            <nav id="site-actions" class="span12" role="menu">
-              <%= render 'shared/site_actions' if show_site_actions? %>
-            </nav>
-          </div>
-          <div class="row">
-            <div class="span6">
-              &nbsp;
-            </div>
             <div id="site-search" class="span6">
               <%= render 'shared/site_search' if show_site_search? %>
             </div>
+            <nav id="site-actions" class="span6" role="menu">
+              <%= render 'shared/site_actions' if show_site_actions? %>
+            </nav>
           </div>
