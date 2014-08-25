@@ -18,4 +18,3 @@
 //= require blacklight/blacklight
 //= require curate
 //= require_tree .
-

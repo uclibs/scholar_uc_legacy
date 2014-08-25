@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/uclibs/curate_fork.git
-  revision: 57ba9708aa362a55444d0c796e72a081b3836bd8
+  revision: 8e33775e2fe1b4a4676cadb6828421752baaf000
   branch: develop
   specs:
     curate (0.6.6)
@@ -495,7 +495,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     trollop (1.16.2)
-    turbolinks (2.2.3)
+    turbolinks (2.3.0)
       coffee-rails
     tzinfo (0.3.41)
     uber (0.0.8)

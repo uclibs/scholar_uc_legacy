@@ -13,20 +13,3 @@
  *= require font-awesome
  *= require_tree .
  */
-
-
-.content-1 {
-  float:left;
-  width:30%;
-  padding:10px;
-}
-.content-2 {
-  float:left;
-  width:30%;
-  padding:10px;
-}
-.content-3 {
-  float:right;
-  width:30%;
-  padding:10px;
-}

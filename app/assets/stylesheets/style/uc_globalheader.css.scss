@@ -13,27 +13,27 @@ html, body{
   }
 }
 
-.globalnav .search-toggle
+.uc_globalnav .search-toggle
 {
   padding: 6px 13px;
 }
 
-.globalnav .navbar-toggle
+.uc_globalnav .navbar-toggle
 {
   border-color: #ddd;
 }
 
-.globalnav .search-toggle span
+.uc_globalnav .search-toggle span
 {
   color: #fff;
 }
 
-.globalnav .fa-play
+.uc_globalnav .fa-play
 {
   color: #e00122;
 }
 
-.globalnav .navbar-brand
+.uc_globalnav .navbar-brand
 {
   color: #ddd;
 }
@@ -63,17 +63,17 @@ html, body{
   display: block;
 }
 
-#GlobalNavSupportLink
+#uc_globalnavSupportLink
 {
   font-weight: bold;
 }
 
-.GlobalNavResponsive .navbar
+.uc_globalnavResponsive .navbar
 {
   margin-bottom: 0;
 }
 
-.GlobalNavResponsive .nav > li > a
+.uc_globalnavResponsive .nav > li > a
 {
   color: #fff !important;
   font-weight: lighter;
@@ -81,7 +81,7 @@ html, body{
 
 @media (max-width: 979px)
 {
-  .dropdown-menu .ToolDropItem a.ToolDropLink{
+  .dropdown-menu .uc_ToolDropItem a.uc_ToolDropLink{
     color: #aaa;
     font-weight: normal;
   }
