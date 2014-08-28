@@ -1,11 +1,14 @@
 CurateApp::Application.routes.draw do
-#  root 'catalog#index'
+  #root 'catalog#index'
   root 'page_requests#view_presentation'
   Blacklight.add_routes(self)
   HydraHead.add_routes(self)
     devise_for :users, controllers: { sessions: :sessions, registrations: :registrations}
 
-
+  devise_scope :users do
+    get "user_root", to: "catalog#index"
+  end  
+  
   curate_for
 
   get 'terms_request' => 'page_requests#view_terms'
