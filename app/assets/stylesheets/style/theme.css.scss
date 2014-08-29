@@ -37,6 +37,9 @@
   }
 }
 
+#logo {
+}
+
 #site-title {
 
   h1 {
@@ -48,9 +51,6 @@
   h1#name {
     padding-left: .25em;
     padding-top: .25em;
-  }
-
-  h1#logo {
   }
 
   a,
@@ -84,7 +84,11 @@
   a:visited {
     color:#E00122;
   }
-  padding-top:.75em;
+  padding-top:0em;
+  color: #666666;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-weight: normal;
 }
 
 #site-actions {
@@ -221,3 +225,4 @@
 .btn [class*=" icon-"] {
   background-image: url("/assets/glyphicons-halflings-white.png");
 }
+
