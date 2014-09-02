@@ -1,63 +1,273 @@
+<% content_for :page_title, "#{application_name} Preservation" %>
 <%= render 'shared/header' %>
 
 <div class="container">
-  <div class="row"
-    <div class="span9"
-</br>
-</br>
-Preservation
-Preservation is a core, mission-critical, service of Scholar@UC. All content submitted to Scholar@UC will receive bit-level preservation with regular fixity checks. However, the future usability of content will heavily depend on the file format used. Files that open today may not open tomorrow.
-Levels of Preservation
-Level 1 – Highest level, preferred format, committed to preserve usability. When applicable, content should be uncompressed (e.g. TIFF, WAV, AVI).
-Level 2 – Medium level, acceptable format, limited effort will be made to preserve usability.
-Level 3 – Lowest level, unsupported format, content will receive bit-level preservation as is – no effort will be made to preserve usability. Level 3 includes any format or encoding not listed in Level 1 or 2.
-Text 
-Level 1
-•	Open Document (ODT, ODS, ODP, ODB, ODG, ODF)
-•	XML, SGML
-•	PDF/A-1, PDF/A-2
-•	CSV
-•	TSV
-•	Plain text (UNT-8, ANSI)	Level 2
-•	Microsoft Office (DOC/DOCX,XSL/XSLX, PPT/PPTX, ADB/ADBX)
-•	PDF
-•	HTML/CSS without external dependencies	Level 3
-•	Plain text (other encoding)
+  <div class="row">
+    <div class="span12">
 
-Still Image
-Level 1
-•	TIFF
-•	SVG	Level 2
-•	JP2
-•	JPG
-•	PNG	Level 3
-•	BMP
-•	GIF
-•	PSD (Photoshop)
+<h2>
+	Preservation
+</h2>
+<p>
+	Preservation is a core, mission-critical, service of Scholar@UC. All content submitted to Scholar@UC will receive bit-level preservation with regular fixity checks. However, the future usability of content will heavily depend on the file format used. Files that open today may not open tomorrow.
+</p>
+<h4>
+	Levels of Preservation
+</h4>
+<p>
+	Level 1 - Highest level, preferred format, committed to preserve usability. When applicable, content should be uncompressed (e.g. TIFF, WAV, AVI).
+</p>
+<p>
+	Level 2 - Medium level, acceptable format, limited effort will be made to preserve usability.
+</p>
+<p>
+	Level 3 - Lowest level, unsupported format, content will receive bit-level preservation as is - no effort will be made to preserve usability. Level 3 includes any format or encoding not listed in Level 1 or 2.
+</p>
 
-Sound
-Level 1
-•	WAV
-•	AIFF	Level 2
-•	MP3
-•	MP4/M4A	Level 3
-•	RA/RM
-•	WMA
+<br/>
+<h4>
+	Text
+</h4>
+<table class="table-bordered table-pres-policy">
+	<thead>
+		<tr>
+			<th>
+				Level 1
+			</th>
+			<th>
+				Level 2
+			</th>
+			<th>
+				Level 3
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<ul>
+					<li>
+						Open Document (ODT, ODS, ODP, ODB, ODG, ODF)
+					</li>
+					<li>
+						XML, SGML
+					</li>
+					<li>
+						PDF/A-1, PDF/A-2
+					</li>
+					<li>
+						CSV
+					</li>
+					<li>
+						TSV
+					</li>
+					<li>
+						Plain text (UNT-8, ANSI)
+					</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>
+						Microsoft Office (DOC/DOCX,XSL/XSLX, PPT/PPTX, ADB/ADBX)
+					</li>
+					<li>
+						PDF
+					</li>
+					<li>
+						HTML/CSS without external dependencies
+					</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>
+						Plain text (other encoding)
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
-Moving Image (preferred)
-Level 1
-•	AVI
-•	QT	Level 2
-•	MP1
-•	MP2
-•	MP4/M4V
-•	QT (compressed)
-•	AVI (compressed)	Level 3
-•	SWF
-•	WMV
+<br/>
+<h4>
+	Still Image
+</h4>
+<table class="table-bordered table-pres-policy">
+	<thead>
+		<tr>
+			<th>
+				Level 1
+			</th>
+			<th>
+				Level 2
+			</th>
+			<th>
+				Level 3
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<ul>
+					<li>
+						TIFF
+					</li>
+					<li>
+						SVG
+					</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>
+						JP2
+					</li>
+					<li>
+						JPG
+					</li>
+					<li>
+						PNG
+					</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>
+						BMP
+					</li>
+					<li>
+						GIF
+					</li>
+					<li>
+						PSD (Photoshop)
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
+<br/>
+<h4>
+	Sound
+</h4>
 
-
+<table class="table-bordered table-pres-policy">
+	<thead>
+		<tr>
+			<th>
+				Level 1
+			</th>
+			<th>
+				Level 2
+			</th>
+			<th>
+				Level 3
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<ul>
+					<li>
+						WAV
+					</li>
+					<li>
+						AIFF
+					</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>
+						MP3
+					</li>
+					<li>
+						MP4/M4A
+					</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>
+						RA/RM
+					</li>
+					<li>
+						WMA
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+ 
+<br/>
+<h4>
+	Moving Image (preferred)
+</h4>
+<table class="table-bordered table-pres-policy">
+	<thead>
+		<tr>
+			<th>
+				Level 1
+			</th>
+			<th>
+				Level 2
+			</th>
+			<th>
+				Level 3
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<ul>
+					<li>
+						AVI
+					</li>
+					<li>
+						QT
+					</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>
+						MP1
+					</li>
+					<li>
+						MP2
+					</li>
+					<li>
+						MP4/M4V
+					</li>
+					<li>
+						QT (compressed)
+					</li>
+					<li>
+						AVI (compressed)
+					</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>
+						SWF
+					</li>
+					<li>
+						WMV
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+ 
     </div>
   </div>
 </div>

@@ -221,6 +221,19 @@
 
 }
 
+.table-pres-policy {
+    width: 100%;
+  td {
+    vertical-align: top;
+    width: 33%;
+  }
+  th {
+    width: 33%;
+    text-align: left;
+    padding-left: .5em;
+  }
+}
+
 .btn [class^="icon-"],
 .btn [class*=" icon-"] {
   background-image: url("/assets/glyphicons-halflings-white.png");
