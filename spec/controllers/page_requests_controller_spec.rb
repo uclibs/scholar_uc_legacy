@@ -25,5 +25,28 @@ describe PageRequestsController do
     end
   end
 
+  describe '#view_coll_pol' do
+    it 'renders the collection policy page' do
+        get :view_coll_pol
+        response.status.should == 200
+        expect(response).to render_template('coll_policy')
+    end
+  end
+
+  describe '#view_pres_policy' do
+    it 'renders the presentation policy page' do
+        get :view_pres_pol
+        response.status.should == 200
+        expect(response).to render_template('pres_policy')
+    end
+  end
+
+  describe '#view_FAQ' do
+    it 'renders the FAQ page' do
+        get :view_faq
+        response.status.should == 200
+        expect(response).to render_template('faq')
+    end
+  end
 end
 

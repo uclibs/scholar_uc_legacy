@@ -16,7 +16,6 @@ CurateApp::Application.routes.draw do
   get 'presentation_request' => 'page_requests#view_presentation'
   get 'coll_pol_request' => 'page_requests#view_coll_pol'
   get 'pres_pol_request' => 'page_requests#view_pres_pol'
-  get 'fair_use_request' => 'page_requests#view_fair_use'
   get 'faq_request' => 'page_requests#view_faq'
 
 

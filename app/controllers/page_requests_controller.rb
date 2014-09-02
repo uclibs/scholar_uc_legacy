@@ -20,10 +20,6 @@ class PageRequestsController < ApplicationController
     render 'pres_policy'
   end
 
-  def view_fair_use
-    render 'fair_use'
-  end
-
   def view_faq
     render 'faq'
   end
