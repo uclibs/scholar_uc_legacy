@@ -1,11 +1,23 @@
 CurateApp::Application.routes.draw do
-  root 'catalog#index'
+  #root 'catalog#index'
+  root 'page_requests#view_presentation'
   Blacklight.add_routes(self)
   HydraHead.add_routes(self)
     devise_for :users, controllers: { sessions: :sessions, registrations: :registrations}
 
-
+  devise_scope :users do
+    get "user_root", to: "catalog#index"
+  end  
+  
   curate_for
+
+  get 'terms_request' => 'page_requests#view_terms'
+  get 'about_request' => 'page_requests#view_about'
+  get 'presentation_request' => 'page_requests#view_presentation'
+  get 'coll_pol_request' => 'page_requests#view_coll_pol'
+  get 'pres_pol_request' => 'page_requests#view_pres_pol'
+  get 'faq_request' => 'page_requests#view_faq'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

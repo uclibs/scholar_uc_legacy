@@ -1,0 +1,18 @@
+<footer id="footer" class="container">
+  <div class="row">
+    <div class="footer-text span12">
+      <p>
+        Brought to you by the <a href="http://libraries.uc.edu/">University of Cincinnati Libraries</a> and <a href="http://ucit.uc.edu/">UC Information Technologies</a>.<br />
+        Made possible by the <a href="http://projecthydra.org">Hydra</a> project.
+        <%= link_to image_tag("hydra/powered_by_hydra.png", :alt=>"Powered by Hydra", :title=>"Powered by Hydra"), "http://projecthydra.org/" %>
+      </p>
+
+       <p>
+        <%= link_to 'Terms of Use', terms_request_path, class: 'a' %>                                    
+      </p>
+      <p>
+        Build: <%= Curate.configuration.build_identifier %>
+      </p>
+    </div>
+  </div>
+</footer>

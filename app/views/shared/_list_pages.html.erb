@@ -1,0 +1,14 @@
+<div class="btn-group list_pages">
+  <a class="btn btn-primary dropdown-toggle list_pages" data-toggle="dropdown" href="#">
+    About
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li><%= link_to 'About', about_request_path, class: 'about', role: 'menuitem' %></li>
+    <li><%= link_to 'Terms of Use', terms_request_path, class: 'terms', role: 'menuitem' %></li>
+    <li><%= link_to 'Collection Policy', coll_pol_request_path, class: 'coll_policy', role: 'menuitem' %></li>
+    <li><%= link_to 'Preservation Policy', pres_pol_request_path, class: 'pres_policy', role: 'menuitem' %></li>
+    <li><%= link_to 'Fair Use', "http://librarycopyright.net/resources/fairuse/", class: 'fair_use', role: 'menuitem' %></li>
+    <li><%= link_to 'FAQ', faq_request_path, class: 'faq', role: 'menuitem' %></li>
+  </ul>
+</div>

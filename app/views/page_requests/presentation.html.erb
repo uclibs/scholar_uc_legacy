@@ -1,0 +1,9 @@
+<% content_for :page_title, "#{application_name}" %>
+<%= render 'shared/header' %>
+
+<%= render 'shared/flash_message' %>
+<%= render :partial => 'page_requests/slideshow' %>
+<%= render :partial => 'page_requests/blog' %>
+<%= render :partial => 'page_requests/exhibits' %>
+
+<%= render 'footer' %>
