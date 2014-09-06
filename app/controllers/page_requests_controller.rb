@@ -1,5 +1,9 @@
 class PageRequestsController < ApplicationController
 
+  def view_distribution_license
+    render 'distribution_license'
+  end
+
   def view_terms
     render 'terms'
   end
