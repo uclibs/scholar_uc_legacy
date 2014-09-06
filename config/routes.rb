@@ -23,7 +23,7 @@ CurateApp::Application.routes.draw do
   get 'coll_pol_request' => 'page_requests#view_coll_pol'
   get 'pres_pol_request' => 'page_requests#view_pres_pol'
   get 'faq_request' => 'page_requests#view_faq'
-
+  get 'distribution_license_request' => 'page_requests#view_distribution_license'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

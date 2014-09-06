@@ -1,5 +1,6 @@
 <% content_for :page_title, "#{application_name} Collection Policy" %>
 <%= render 'shared/header' %>
+<%= render 'shared/flash_message' %>
  
 <div class="container">
   <div class="row">
@@ -22,7 +23,7 @@
 </p>
 <p>
 	<b>Intellectual Property, Copyright, and Access</b>
-	<br/>In order to submit content to Scholar@UC, creators must agree to a non-exclusive distribution license that authorized UC to preserve, to transform, to enhance metadata, and to make available their content. Creators may choose, though are not required, to issue their content with a Creative Commons license that clearly indicates how their content may be reused. Creators may choose to issue content as public domain or all rights reserved.
+	<br/>In order to submit content to Scholar@UC, creators must agree to a non-exclusive <%= link_to 'distribution license', distribution_license_request_path, class: 'a' %> that authorizes UC to preserve, to transform, to enhance metadata, and to make available their content. Creators may choose, though are not required, to issue their content with a <a href="https://creativecommons.org/about">Creative Commons</a> license that clearly indicates how their content may be reused. Creators may choose to issue content as public domain or all rights reserved.
 </p>
 <p>
 	Creators are able to control access to their content. Creators may choose to make content visible to themselves only, to a group of predetermined individuals, to embargo content for a defined time period, or to make their content open access.
