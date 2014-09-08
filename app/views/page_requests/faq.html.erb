@@ -1,5 +1,6 @@
 <% content_for :page_title, "#{application_name} FAQ" %>
 <%= render 'shared/header' %>
+<%= render 'shared/flash_message' %>
 
 <div class="container">
   <div class="row">
@@ -12,7 +13,7 @@
 	May I publish, contribute, or otherwise distribute my content elsewhere?
 </p>
 <blockquote>
-	Yes. When you submit content to Scholar@UC you agree to a non-exclusive distribution license that grants UC the right to enhance metadata, to replicate the content for preservation, and to make the content available through computer interfaces. This license in no way prevents you from distributing your content through other channels.
+	Yes. When you submit content to Scholar@UC you agree to a non-exclusive <%= link_to 'distribution license', distribution_license_request_path, class: 'a' %> that grants UC the right to enhance metadata, to replicate the content for preservation, and to make the content available through computer interfaces. This license in no way prevents you from distributing your content through other channels.
 </blockquote>
 <p>
 	If I have a problem with the system, where do I go for assistance?

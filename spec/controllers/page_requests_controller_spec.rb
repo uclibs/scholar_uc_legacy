@@ -8,6 +8,14 @@ describe PageRequestsController do
         expect(response).to render_template('terms')
     end
   end
+  
+   describe '#view_distribution_license' do
+    it 'renders a distribution license page' do
+        get :view_distribution_license
+        response.status.should == 200
+        expect(response).to render_template('distribution_license')
+    end
+  end
 
   describe '#view_about' do
     it 'renders an about this application page' do
