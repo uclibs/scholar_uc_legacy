@@ -1,5 +1,5 @@
 ---
-:username: apitest
+:username: ucinlibs
 :password: bamboo_doi_password
-:shoulder: doi:10.5072/FK2
-:url: https://n2t.net/ezid/
+:shoulder: doi:10.7945/C2
+:url: https://ezid.cdlib.org
