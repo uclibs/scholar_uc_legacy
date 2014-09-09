@@ -49,7 +49,7 @@ end
 
 #gem "curate", "~> 0.6.1"
 #gem "curate", git: "https://github.com/uclibs/curate_fork.git", branch: "master"
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "a64db4d"
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "4f7f6ee"
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
 gem "quiet_assets", group: :development
