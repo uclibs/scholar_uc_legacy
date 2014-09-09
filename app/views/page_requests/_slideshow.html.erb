@@ -1,83 +1,81 @@
 
 <div class="container">
   <div class="row-fluid">
-    <div class="span10 offset1">
-      <center>
+    <div class="span12">
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-          </ol>
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
 
-          <div class="carousel-inner">
+        <div class="carousel-inner">
 
-            <div class="item active">
-              <%= image_tag("slider-images/articles.jpg", :alt => "Articles") %>
-              <div class="container">
-                <div class="carousel-caption">
-                  <h1>Scholarly Articles</h1>
-                  <p>Scholar@UC supports published and unpublished scholarly articles and more.</p>
-                  <%= link_to 'View Collection Policy', coll_pol_request_path, class: 'btn btn-lg btn-primary', role: 'button' %>
-                </div>
+          <div class="item active">
+            <%= image_tag("slider-images/articles.jpg", :alt => "Articles") %>
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h1>Scholarly Articles</h1>
+                <p>Scholar@UC supports published and unpublished scholarly articles and more.</p>
+                <%= link_to 'Begin!', catalog_index_path, class: 'btn btn-lg btn-primary', role: 'button' %>
               </div>
             </div>
-            
-            <div class="item"> 
-              <%= image_tag("slider-images/datasets.jpg", :alt => "Datasets") %>
-              <div class="container">
-                <div class="carousel-caption">
-                  <h1>Data and Datasets</h1>
-                  <p>Mine Datasets Created by UC Faculty or submit your own.</p>
-                  <%= link_to 'View Collection Policy', coll_pol_request_path, class: 'btn btn-lg btn-primary', role: 'button' %>
-                </div>
-              </div>
-            </div>
-          
-            <div class="item">
-              <%= image_tag("slider-images/etd.jpg", :alt => "ETDs") %>
-              <div class="container">
-                <div class="carousel-caption">
-                  <h1>UC Electronic Theses and Dissertations</h1>
-                  <p>Scholar@UC supports ETDs, capstone projects and more from UC’s Student Scholars.</p>
-                  <%= link_to 'View Collection Policy', coll_pol_request_path, class: 'btn btn-lg btn-primary', role: 'button' %>
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <%= image_tag("slider-images/images.jpg", :alt => "Images") %>
-              <div class="container">
-                <div class="carousel-caption">
-                  <h1>Photos, Artwork, Images</h1>
-                  <p>Scholar@UC supports Images and Visual Media.</p>
-                  <%= link_to 'View Collection Policy', coll_pol_request_path, class: 'btn btn-lg btn-primary', role: 'button' %>
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <%= image_tag("slider-images/other2.jpg", :alt => "Other") %>
-              <div class="container">
-                <div class="carousel-caption">
-                  <h1>Monographs, Maps, Media, and More</h1>
-                  <p>Scholar@UC can hold Unique Content of All Types.</p>
-                  <%= link_to 'View Collection Policy', coll_pol_request_path, class: 'btn btn-lg btn-primary', role: 'button' %>
-                </div>
-              </div>
-            </div>
-          
           </div>
-  
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span style="font-size:60%;" class="fa fa-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" data-slide="next"><span style="font-size:60%;"class="fa fa-chevron-right"></span></a>
-      
-        </div>
+            
+          <div class="item"> 
+            <%= image_tag("slider-images/datasets.jpg", :alt => "Datasets") %>
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h1>Data and Datasets</h1>
+                <p>Mine Datasets Created by UC Faculty or submit your own.</p>
+                <%= link_to 'Begin!', catalog_index_path, class: 'btn btn-lg btn-primary', role: 'button' %>
+              </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <%= image_tag("slider-images/etd.jpg", :alt => "ETDs") %>
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h1>UC Electronic Theses and Dissertations</h1>
+                <p>Scholar@UC supports ETDs, capstone projects and more from UC’s Student Scholars.</p>
+                <%= link_to 'Begin!', catalog_index_path, class: 'btn btn-lg btn-primary', role: 'button' %>
+              </div>
+            </div>
+          </div>
 
-      </center>
+          <div class="item">
+            <%= image_tag("slider-images/images.jpg", :alt => "Images") %>
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h1>Photos, Artwork, Images</h1>
+                <p>Scholar@UC supports Images and Visual Media.</p>
+                <%= link_to 'Begin!', catalog_index_path, class: 'btn btn-lg btn-primary', role: 'button' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <%= image_tag("slider-images/other2.jpg", :alt => "Other") %>
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h1>Monographs, Maps, Media, and More</h1>
+                <p>Scholar@UC can hold Unique Content of Many Types.</p>
+                <%= link_to 'Begin!', catalog_index_path, class: 'btn btn-lg btn-primary', role: 'button' %>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+  
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span style="font-size:60%;" class="fa fa-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" data-slide="next"><span style="font-size:60%;"class="fa fa-chevron-right"></span></a>
+      
+      </div>
+
     </div>
   </div>
 </div>
