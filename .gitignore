@@ -30,6 +30,3 @@
 jetty/
 
 dump.rdb
-
-# Ingore doi set-up yaml, which contains passwords; see config/doi.yml.example for template
-/config/doi.yml
