@@ -1,0 +1,34 @@
+<% content_for :page_title, "#{application_name} FAQ" %>
+<%= render 'shared/header' %>
+
+<div class="container">
+  <div class="row">
+    <div class="span12">
+ 
+<h2>
+	FAQ
+</h2>
+<p>
+	May I publish, contribute, or otherwise distribute my content elsewhere?
+</p>
+<blockquote>
+	Yes. When you submit content to Scholar@UC you agree to a non-exclusive distribution license that grants UC the right to enhance metadata, to replicate the content for preservation, and to make the content available through computer interfaces. This license in no way prevents you from distributing your content through other channels.
+</blockquote>
+<p>
+	If I have a problem with the system, where do I go for assistance?
+</p>
+<blockquote>
+	Use the <%= link_to 'contact form', new_help_request_path, class: 'a' %> to submit any inquiry about Scholar@UC, including technical issues.
+</blockquote>
+<p>
+	Where do I go if I want to consult with subject area specialists on content?
+</p>
+<blockquote>
+	Access the <a href="http://www.libraries.uc.edu/help/subject-librarians.html">Subject Librarians directory</a> to find contact info for subject area specialists.
+</blockquote>
+ 
+    </div>
+  </div>
+</div>
+
+<%= render 'footer' %>

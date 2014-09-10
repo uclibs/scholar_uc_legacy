@@ -56,6 +56,8 @@ gem "quiet_assets", group: :development
 gem "clamav"
 
 gem "bootstrap-sass"
+gem "font-awesome-sass"
+
 gem "devise"
 gem "devise-guests", "~> 0.3"
 

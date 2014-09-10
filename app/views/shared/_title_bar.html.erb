@@ -1,20 +1,22 @@
-        <div class="container">
+
           <div id="title-bar" class="row">
-            <div id="site-search" class="span4">
 
-<%= render 'shared/site_search' if show_site_search? %>
-
+            <div id="site-title" class="span10">
+              <%= link_to image_tag("uc/scholar@uc.png", :alt => "scholar.uc.edu"), root_path, id: 'home-link' %>
+    	      <h6 id="site-subtitle">The UC digital repository, part of the <%= link_to 'UC Research Hub', "http://research.uc.edu" %>.</h6>
             </div>
 
-            <div id="site-title" class="span4">
-              <h1><%= link_to image_tag("uc/UC_logo.png"), root_path, id: 'home-link' %></h1>
+            <div id="logo" class="span2">
+              <%= link_to image_tag("uc/UC_logo.png", :alt => "uc.edu"), "http://www.uc.edu/" %>
             </div>
 
-            <nav id="site-actions" class="span4" role="menu">
-
-<%= render 'shared/site_actions' if show_site_actions? %>
-
+          </div>
+          
+          <div class="row">
+            <div id="site-search" class="span6">
+              <%= render 'shared/site_search' if show_site_search? %>
+            </div>
+            <nav id="site-actions" class="span6" role="menu">
+              <%= render 'shared/site_actions' if show_site_actions? %>
             </nav>
           </div>
-        </div>
-

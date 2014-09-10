@@ -1,0 +1,88 @@
+/* gloabl nav styles */
+
+html, body{
+  padding:0;
+  margin:0;
+}
+
+@media (max-width: 767px)
+{
+  body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.uc_globalnav .search-toggle
+{
+  padding: 6px 13px;
+}
+
+.uc_globalnav .navbar-toggle
+{
+  border-color: #ddd;
+}
+
+.uc_globalnav .search-toggle span
+{
+  color: #fff;
+}
+
+.uc_globalnav .fa-play
+{
+  color: #e00122;
+}
+
+.uc_globalnav .navbar-brand
+{
+  color: #ddd;
+}
+
+#ucNav {
+  a {
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration:none;
+  }
+
+  a:hover {
+  text-decoration:underline;
+  }
+
+  .nav > li > a {
+    padding: 10px 15px 10px 0;
+  }
+}
+
+#brand-bar-wrapper, #title-bar-wrapper {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.searchChoice a
+{
+  display: block;
+}
+
+#uc_globalnavSupportLink
+{
+  font-weight: bold;
+}
+
+.uc_globalnavResponsive .navbar
+{
+  margin-bottom: 0;
+}
+
+.uc_globalnavResponsive .nav > li > a
+{
+  color: #fff !important;
+  font-weight: lighter;
+}
+
+@media (max-width: 979px)
+{
+  .dropdown-menu .uc_ToolDropItem a.uc_ToolDropLink{
+    color: #aaa;
+    font-weight: normal;
+  }
+}

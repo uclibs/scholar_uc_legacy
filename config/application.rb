@@ -8,7 +8,7 @@ Bundler.require(:default, Rails.env)
 
 module CurateApp
   class Application < Rails::Application
-    
+
     config.generators do |g|
       g.test_framework :rspec, :spec => true
     end
