@@ -1,18 +1,14 @@
-<p>
-
-
-<script src="jquery.zrssfeed.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-  $('#news').rssfeed('http://libapps.libraries.uc.edu/liblog/category/digital-collections/feed/', {
+<div id="news" class="container" style="padding-bottom: 20px;"> 
+  <div class="container marketing">
+  	<script src="jquery.zrssfeed.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+      $('#news').rssfeed('http://libapps.libraries.uc.edu/liblog/category/digital-collections/feed/', {
     limit: 3,
-	sort: "date",
-	sortasc: false
-  });
-});
-</script>
-
-<div id="news" class="container" style="padding-bottom: 20px;"> </div>
-<div class="container marketing">
-
-</p>
+	  sort: "date",
+	  sortasc: false
+        });
+      });
+    </script>
+  </div>
+</div>
