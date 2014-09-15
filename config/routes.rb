@@ -15,7 +15,7 @@ CurateApp::Application.routes.draw do
   get 'about_request' => 'page_requests#view_about'
   get 'presentation_request' => 'page_requests#view_presentation'
   get 'coll_pol_request' => 'page_requests#view_coll_pol'
-  get 'pres_pol_request' => 'page_requests#view_pres_pol'
+  get 'format_advice_request' => 'page_requests#view_format_advice'
   get 'faq_request' => 'page_requests#view_faq'
   get 'distribution_license_request' => 'page_requests#view_distribution_license'
 
