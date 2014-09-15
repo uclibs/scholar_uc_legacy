@@ -20,8 +20,8 @@ class PageRequestsController < ApplicationController
     render 'coll_policy'
   end
 
-  def view_pres_pol
-    render 'pres_policy'
+  def view_format_advice
+    render 'format_advice'
   end
 
   def view_faq
