@@ -1,272 +1,172 @@
 <% content_for :page_title, "#{application_name} Preservation" %>
 <%= render 'shared/header' %>
+<%= render 'shared/flash_message' %>
 
 <div class="container">
   <div class="row">
     <div class="span12">
 
-<h2>
-	Preservation
-</h2>
-<p>
-	Preservation is a core, mission-critical, service of Scholar@UC. All content submitted to Scholar@UC will receive bit-level preservation with regular fixity checks. However, the future usability of content will heavily depend on the file format used. Files that open today may not open tomorrow.
-</p>
-<h4>
-	Levels of Preservation
-</h4>
-<p>
-	Level 1 - Highest level, preferred format, committed to preserve usability. When applicable, content should be uncompressed (e.g. TIFF, WAV, AVI).
-</p>
-<p>
-	Level 2 - Medium level, acceptable format, limited effort will be made to preserve usability.
-</p>
-<p>
-	Level 3 - Lowest level, unsupported format, content will receive bit-level preservation as is - no effort will be made to preserve usability. Level 3 includes any format or encoding not listed in Level 1 or 2.
-</p>
+      <h2>
+	    File Format Advice
+      </h2>
 
-<br/>
-<h4>
-	Text
-</h4>
-<table class="table-bordered table-pres-policy">
-	<thead>
-		<tr>
-			<th>
-				Level 1
-			</th>
-			<th>
-				Level 2
-			</th>
-			<th>
-				Level 3
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<ul>
-					<li>
-						Open Document (ODT, ODS, ODP, ODB, ODG, ODF)
-					</li>
-					<li>
-						XML, SGML
-					</li>
-					<li>
-						PDF/A-1, PDF/A-2
-					</li>
-					<li>
-						CSV
-					</li>
-					<li>
-						TSV
-					</li>
-					<li>
-						Plain text (UNT-8, ANSI)
-					</li>
-				</ul>
-			</td>
-			<td>
-				<ul>
-					<li>
-						Microsoft Office (DOC/DOCX,XSL/XSLX, PPT/PPTX, ADB/ADBX)
-					</li>
-					<li>
-						PDF
-					</li>
-					<li>
-						HTML/CSS without external dependencies
-					</li>
-				</ul>
-			</td>
-			<td>
-				<ul>
-					<li>
-						Plain text (other encoding)
-					</li>
-				</ul>
-			</td>
-		</tr>
-	</tbody>
-</table>
+      <p>
+        Choosing the right file format for your content is an important consideration when contributing your work to <%=t('sufia.product_name') %>. The future usability of your content will depend on the file format you use. Because of this, we recommend uploading two files for each work: an access file and a preservation file.
+      </p>
 
-<br/>
-<h4>
-	Still Image
-</h4>
-<table class="table-bordered table-pres-policy">
-	<thead>
-		<tr>
-			<th>
-				Level 1
-			</th>
-			<th>
-				Level 2
-			</th>
-			<th>
-				Level 3
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<ul>
-					<li>
-						TIFF
-					</li>
-					<li>
-						SVG
-					</li>
-				</ul>
-			</td>
-			<td>
-				<ul>
-					<li>
-						JP2
-					</li>
-					<li>
-						JPG
-					</li>
-					<li>
-						PNG
-					</li>
-				</ul>
-			</td>
-			<td>
-				<ul>
-					<li>
-						BMP
-					</li>
-					<li>
-						GIF
-					</li>
-					<li>
-						PSD (Photoshop)
-					</li>
-				</ul>
-			</td>
-		</tr>
-	</tbody>
-</table>
+      <h4>
+        Access Files
+      </h4>
 
-<br/>
-<h4>
-	Sound
-</h4>
+      <p>
+        Access files use common formats, ones that we typically use every day. They often use compression, for easy delivery over the web. Access files are what most people will download when viewing you work. Below are some typical access formats.
+      </p>
 
-<table class="table-bordered table-pres-policy">
-	<thead>
-		<tr>
-			<th>
-				Level 1
-			</th>
-			<th>
-				Level 2
-			</th>
-			<th>
-				Level 3
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<ul>
-					<li>
-						WAV
-					</li>
-					<li>
-						AIFF
-					</li>
-				</ul>
-			</td>
-			<td>
-				<ul>
-					<li>
-						MP3
-					</li>
-					<li>
-						MP4/M4A
-					</li>
-				</ul>
-			</td>
-			<td>
-				<ul>
-					<li>
-						RA/RM
-					</li>
-					<li>
-						WMA
-					</li>
-				</ul>
-			</td>
-		</tr>
-	</tbody>
-</table>
- 
-<br/>
-<h4>
-	Moving Image (preferred)
-</h4>
-<table class="table-bordered table-pres-policy">
-	<thead>
-		<tr>
-			<th>
-				Level 1
-			</th>
-			<th>
-				Level 2
-			</th>
-			<th>
-				Level 3
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<ul>
-					<li>
-						AVI
-					</li>
-					<li>
-						QT
-					</li>
-				</ul>
-			</td>
-			<td>
-				<ul>
-					<li>
-						MP1
-					</li>
-					<li>
-						MP2
-					</li>
-					<li>
-						MP4/M4V
-					</li>
-					<li>
-						QT (compressed)
-					</li>
-					<li>
-						AVI (compressed)
-					</li>
-				</ul>
-			</td>
-			<td>
-				<ul>
-					<li>
-						SWF
-					</li>
-					<li>
-						WMV
-					</li>
-				</ul>
-			</td>
-		</tr>
-	</tbody>
-</table>
+
+      <table class="table-bordered table-format-advice">
+        <thead>
+          <tr>
+            <th>
+              Text
+            </th>
+            <th>
+              Still Image
+            </th>
+            <th>
+              Audio
+            </th>
+            <th>
+              Video
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <ul>
+                <li>
+                  MS Office (DOCX, XSLSX, etc.)
+                </li>
+                <li>
+                  PDF
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>
+                  JPG
+                </li>
+                <li>
+                  PNG
+                </li>
+                <li>
+                  GIF
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>
+                  MP3
+                </li>
+                <li>
+                  MP4
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>
+                  MP4
+                </li>
+                <li>
+                  MPEG
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        It is recommended that you upload an access file at the time you complete your submission.
+      </p>
+
+      <h4>
+        Preservation Files
+      </h4>
+
+      <p>
+        Preservation files use more stable formats that access files, whose formats are more likely to change with technology. They often uncompressed and very large. Preservation formats can be used to create new access files, when new formats emerge. Below are some typical preservation formats.
+      </p>
+
+      <table class="table-bordered table-format-advice">
+        <thead>
+          <tr>
+            <th>
+              Text
+            </th>
+            <th>
+              Still Image
+            </th>
+            <th>
+              Audio
+            </th>
+            <th>
+              Video
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <ul>
+                <li>
+                  Open Office (ODT, ODS)
+                </li>
+                <li>
+                  CSV
+                </li>
+                <li>
+                  PDF/A-1
+                </li>
+                <li>
+                  PDF/A-2
+                </li>			
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>
+                  TIFF
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>
+                  WAV
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>
+                  AVI
+                </li>
+              </ul>
+            </td>    
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        It is recommended that you upload a preservation file after the work submission has been completed. When logged in and viewing the work, near the bottom of your screen you will see a row of buttons that includes:  <span id='main'><span class='btn btn-primary'>Attach a File</span></span>
+      </p>
+      <p>
+        It is also recommended that preservation files be set to private access rights, so users will not be confused about which they should download.
+      </p>
  
     </div>
   </div>
