@@ -1,18 +1,18 @@
 
-          <div id="title-bar" class="row">
-
-            <div id="site-title" class="span10">
+          <div id="title-bar" class="row-fluid">
+            <div class="span12">
+            <div id="site-title" class="pull-left">
               <%= link_to image_tag("uc/scholar@uc.png", :alt => "scholar.uc.edu"), root_path, id: 'home-link' %>
-    	      <h6 id="site-subtitle">The UC digital repository, part of the <%= link_to 'UC Research Hub', "http://research.uc.edu" %>.</h6>
+    	         <h6 id="site-subtitle">The UC digital repository, part of the <%= link_to 'UC Research Hub', "http://research.uc.edu" %>.</h6>
             </div>
 
-            <div id="logo" class="span2">
+            <div id="logo" class="pull-right visible-desktop">
               <%= link_to image_tag("uc/UC_logo.png", :alt => "uc.edu"), "http://www.uc.edu/" %>
             </div>
-
           </div>
-          
-          <div class="row">
+          </div>
+
+          <div class="row-fluid">
             <div id="site-search" class="span6">
               <%= render 'shared/site_search' if show_site_search? %>
             </div>
