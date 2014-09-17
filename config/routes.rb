@@ -13,8 +13,8 @@ CurateApp::Application.routes.draw do
 
   devise_scope :users do
     get "user_root", to: "catalog#index"
-  end  
-  
+  end
+
   curate_for
 
   get 'terms_request' => 'page_requests#view_terms'
@@ -24,6 +24,8 @@ CurateApp::Application.routes.draw do
   get 'format_advice_request' => 'page_requests#view_format_advice'
   get 'faq_request' => 'page_requests#view_faq'
   get 'distribution_license_request' => 'page_requests#view_distribution_license'
+
+  resources :contact_requests
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
