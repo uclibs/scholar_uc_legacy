@@ -41,11 +41,11 @@ describe PageRequestsController do
     end
   end
 
-  describe '#view_pres_policy' do
+  describe '#view_format_advice' do
     it 'renders the presentation policy page' do
-        get :view_pres_pol
+        get :view_format_advice
         response.status.should == 200
-        expect(response).to render_template('pres_policy')
+        expect(response).to render_template('format_advice')
     end
   end
 
