@@ -24,7 +24,7 @@ describe 'shared/_site_actions.html.erb' do
   end
 
   def have_help_section(&block)
-    have_tag('.request-help', &block)
+    have_tag('.request-contact', &block)
   end
 
   def have_browse_section(&block)
