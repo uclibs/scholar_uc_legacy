@@ -11,6 +11,10 @@ Scholar@UC is a digital repository that enables the University of Cincinnati com
 1. Run the database migrations: `bundle exec rake db:migrate`
 1. Start the rails server: `rails server`
 1. Visit the site at [http://localhost:3000] (http://localhost:3000)
+ 
+## Application Status
+
+[![Build Status](https://travis-ci.org/uclibs/curate_uc.svg?branch=sandbox)](https://travis-ci.org/uclibs/curate_uc)
 
 # Project Hydra
 This software has been developed by and is brought to you by the Hydra community.  Learn more at the
