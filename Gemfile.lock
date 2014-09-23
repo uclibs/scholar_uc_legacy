@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/uclibs/curate_fork.git
-  revision: 8e33775e2fe1b4a4676cadb6828421752baaf000
-  branch: develop
+  revision: f61179d3135b8552fc82e8e6a6f96ba0adfb82ca
+  ref: f61179d
   specs:
     curate (0.6.6)
       active_attr
@@ -191,7 +191,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     fastercsv (1.5.5)
     ffi (1.9.3)
-    font-awesome-rails (4.1.0.0)
+    font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     font-awesome-sass (4.1.0)
       sass (~> 3.2)
@@ -286,13 +286,14 @@ GEM
       carrierwave (>= 0.5.8)
       foreigner (>= 0.9.1)
       rails (> 3.0.0)
-    marc (0.8.1)
+    marc (0.8.2)
       ensure_valid_encoding
+      scrub_rb (>= 1.0.1, < 2)
       unf
     mediashelf-loggable (0.4.10)
     mime-types (1.25.1)
     mimemagic (0.2.1)
-    mini_magick (3.8.0)
+    mini_magick (3.8.1)
       subexec (~> 0.2.1)
     mini_portile (0.6.0)
     minitest (4.7.5)
@@ -430,6 +431,7 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
+    scrub_rb (1.0.1)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
