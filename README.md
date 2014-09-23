@@ -1,5 +1,7 @@
 # Scholar@UC
 
+Scholar@UC is a digital repository that enables the University of Cincinnati community to share its research and scholarly work with a worldwide audience. Faculty and staff can use Scholar@UC to collect their work in one location and create a durable and citeable record of their papers, presentations, publications, datasets, or other scholarly creations.
+
 ## Installing and starting the Scholar@UC application
 1. Clone this repository: `git clone https://github.com/uclibs/curate_uc.git ./path/to/local`
 1. Change to the application's directory: e.g. `cd ./path/to/local`
