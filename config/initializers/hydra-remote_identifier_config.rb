@@ -2,7 +2,7 @@
 Hydra::RemoteIdentifier.configure do |config|
   doi_credentials = Psych.load_file(Rails.root.join("config/doi.yml"))
   config.remote_service(:doi, doi_credentials) do |doi|
-    doi.register(GenericWork, Dataset, Article, Etd, Image, Document) do |map|
+    doi.register(GenericWork, Dataset, Article, Image, Document) do |map|
       map.target {|obj| Curate.permanent_url_for(obj) }
       map.creator :creator
       map.title :title
