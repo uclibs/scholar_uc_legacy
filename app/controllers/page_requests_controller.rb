@@ -15,7 +15,7 @@ class PageRequestsController < ApplicationController
   def view_presentation
     render 'presentation'
   end
- 
+
   def view_coll_pol
     render 'coll_policy'
   end
@@ -28,5 +28,8 @@ class PageRequestsController < ApplicationController
     render 'faq'
   end
 
+  def view_contact
+    render 'contact'
+  end
 
 end

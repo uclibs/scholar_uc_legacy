@@ -1,0 +1,89 @@
+<% content_for :page_title, "#{application_name} Contact the Scholar@UC Team" %>
+<%= render 'shared/header' %>
+<%= render 'shared/flash_message' %>
+
+<div class="container">
+  <div class="row">
+    <div class="span12">
+
+      <h2>Contact the Scholar@UC Team</h2>
+
+      <form method="post" action="/contact_requests" name="contactForm" id="contactForm">
+
+        <%= token_tag %>
+
+        <p>
+          <label for="name" class="col-sm-2 control-label">Your Name:</label>
+          <input style="width:40%;min-width:200px;" type="text" class="form-control" id="name" name="name" required autofocus autocomplete="on">
+        </p>
+
+        <% defined?(current_user.user_key) ? useremail = current_user.user_key : useremail = '' %>
+
+        <p>
+          <label for="email_addr" class="col-sm-2 control-label">Your Email:</label>
+          <input style="width:40%;min-width:200px;" type="email" class="form-control" id="email" name="email" value="<%= useremail %>" required  autocomplete="on">
+        </p>
+
+        <p>
+          <label for="comments" class="col-sm-2 control-label">Comments, Questions, Help Requests, etc.:</label>
+          <textarea style="width:40%;min-width:200px;" type="textarea" class="form-control" name="comments" id="comments" required autocomplete="on" rows="6"></textarea>
+        </p>
+
+<!-- Temporarily disable additional information
+        <p>The following information will be sent with your feedback:</p>
+        <fieldset class="with-side-padding">
+          <dl class="stacked">
+            <dt>Screen Size</dt>
+            <dd id="screen-size">
+              <script type="text/javascript">
+                document.write (screen.width);
+              </script> x
+              <script type="text/javascript">
+                document.write (screen.height);
+              </script>
+            </dd>
+            <dt>Browser Size</dt>
+            <dd id="browser-size">
+              <script type="text/javascript">
+                document.write (screen.availWidth);
+              </script> x
+              <script type="text/javascript">
+                document.write (screen.availHeight);
+              </script>
+            </dd>
+            <dt>Cookies Enabled?</dt>
+            <dd id="cookies-enabled">
+              <script type="text/javascript">document.write (navigator.cookieEnabled);</script>
+            </dd>
+            <dt>Browser</dt>
+            <dd id="browser">
+              <script type="text/javascript">document.write (navigator.userAgent);</script>
+            </dd>
+            <dt>Platform</dt>
+            <dd id="platform">
+              <script type="text/javascript">document.write (navigator.platform);</script>
+            </dd>
+            <dt><%= t('sufia.product_name') %> Version</dt>
+            <dd id="help-platfrom">
+              <%= Curate.configuration.build_identifier %>
+            </dd>
+            <dt>Referring URL</dt>
+            <dd id="referring-url">
+              <script type="text/javascript">document.write (document.referrer);</script>
+            </dd>
+          </dl>
+        </fieldset>
+
+        <input type="hidden" id="userAgent" name="userAgent" value="">
+
+        <p style="margin:2em 0;">(ADD RECAPTCHA HERE)</p>
+-->
+        <button class="btn btn-lg btn-primary" type="submit">Send</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<%= render 'footer' %>
