@@ -79,6 +79,16 @@ html, body{
   font-weight: lighter;
 }
 
+#uc_homelink{
+  width: 300px;
+  color: #fff;
+  padding: 5px 0px 5px 0px;
+  
+  img {
+    padding-right: 10px;
+  }
+}
+
 @media (max-width: 979px)
 {
   .dropdown-menu .uc_ToolDropItem a.uc_ToolDropLink{
