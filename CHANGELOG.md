@@ -1,5 +1,6 @@
-### 0.2.0
+### 0.2.0 - 10/13/14
 
+* Change home page to link to new ScholarBlog
 * Add Google Analytics tracking code
 * Change format of buttons on home page carousel
 * Add CHANGELOG
@@ -11,6 +12,6 @@
   * Fix deavtivate account button
   
 
-### 0.1.0
+### 0.1.0 - 9/30/14
 
 * Initial release
