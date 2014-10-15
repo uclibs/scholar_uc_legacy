@@ -1,4 +1,4 @@
-development:
+development: &development
   username: apitest
   password: bamboo_doi_password
   shoulder: doi:10.5072/FK2
