@@ -2,7 +2,7 @@ en:
   sufia:
     product_name:       "Scholar@UC"
     institution_name:   "University of Cincinnati"
-    institution_homepage_url:   "http://scholar.uc.edu"
+    institution_homepage_url:   "bamboo_homepage_url"
     division_name:      "Digital Collections and Repositories"
     division_homepage_url:   "http://digital.libraries.uc.edu"
     search:
