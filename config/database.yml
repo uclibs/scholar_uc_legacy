@@ -5,7 +5,7 @@
   "/tmp/mysql.sock"
   ].detect { |f| f && File.exist?(f) }
 
-  port = ENV["BOXEN_MYSQL_PORT"] || "3306"
+  port = ENV["BOXEN_MYSQL_PORT"] || "bamboo_mysql_port"
 %>
 
 mysql_connection: &mysql_connection
@@ -34,3 +34,9 @@ production: &production
   database: curate
   host:     bamboo_mysql_host
   timeout: 5000
+  
+development: &development
+  <<: *local_user
+  database: curate
+  host:     bamboo_mysql_host
+  timeout: 5000  
