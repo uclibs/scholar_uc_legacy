@@ -1,4 +1,4 @@
-production:
+development:
   host: localhost
   port: 6379
 test: &TEST
@@ -6,3 +6,6 @@ test: &TEST
   port: 6379
 ci:
   <<: *TEST
+production:
+  host: localhost
+  port: 6379
