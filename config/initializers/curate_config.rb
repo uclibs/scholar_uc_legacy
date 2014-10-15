@@ -9,7 +9,7 @@ Curate.configure do |config|
   # config.default_antivirus_instance = lambda {|filename| … }
 
   # # Used for constructing permanent URLs
-config.application_root_url = 'https://scholar.uc.edu/'
+config.application_root_url = 'bamboo_application_url'
 
   # # Override the file characterization runner that is used
   # config.characterization_runner = lambda {|filename| … }
