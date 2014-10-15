@@ -8,8 +8,6 @@ test: &TEST
   password: apitest
   shoulder: doi:10.5072/FK2
   url: https://ezid.cdlib.org
-ci:
-  <<: *test  
 production:
   username: ucinlibs
   password: bamboo_doi_password
