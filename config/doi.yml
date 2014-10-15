@@ -1,5 +1,17 @@
----
-:username: ucinlibs
-:password: xpoo7fdpm2ZT
-:shoulder: doi:10.7945/C2
-:url: https://ezid.cdlib.org
+development:
+  username: apitest
+  password: bamboo_doi_password
+  shoulder: doi:10.5072/FK2
+  url: https://ezid.cdlib.org
+test: &TEST  
+  username: apitest
+  password: apitest
+  shoulder: doi:10.5072/FK2
+  url: https://ezid.cdlib.org
+ci:
+  <<: *test  
+production:
+  username: ucinlibs
+  password: bamboo_doi_password
+  shoulder: bamboo_doi_shoulder
+  url: https://ezid.cdlib.org
