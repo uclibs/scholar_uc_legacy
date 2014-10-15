@@ -47,7 +47,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "957a6db"
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "1d132f7"
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
 gem "quiet_assets", group: :development
