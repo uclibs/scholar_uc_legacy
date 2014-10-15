@@ -1,7 +1,7 @@
 development:
   user: fedoraAdmin
-  password: fedoraAdmin
-  url: http://curate-devdb.uc.edu/fedora
+  password: bamboo_fedora_password
+  url: bamboo_fedora_url
 test: &TEST  
   user: fedoraAdmin
   password: fedoraAdmin
@@ -9,7 +9,7 @@ test: &TEST
 production:
   user: fedoraAdmin
   password: bamboo_fedora_password
-  url: https://curate-db.uc.edu/fedora
+  url: bamboo_fedora_url
 cucumber:
   <<: *TEST
 ci:
