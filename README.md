@@ -6,7 +6,19 @@ Scholar@UC uses Project Hydra's [Curate gem](https://github.com/projecthydra-lab
 
 The Univeristy of Cincinnati's implementation of Scholar@UC can be found at https://scholar.uc.edu.
 
-## Testing the Scholar@UC application
+## Installing the Scholar@UC application
+
+Install system dependencies
+* libmysqlclient-dev (if running MySQL as RDBMS)
+* libsqlite3-dev (if running SQLite as RDBMS)
+* libclamav-dev 
+* libclamav6 
+* clamav 
+* clamav-base 
+* clamav-daemon
+* clamav-unofficial-sigs
+* clamav-freshclam
+
 1. Clone this repository: `git clone https://github.com/uclibs/scholar_uc.git ./path/to/local`
 1. Change to the application's directory: e.g. `cd ./path/to/local`
 1. Copy the config sample files: `script/copy_config_local.sh`
