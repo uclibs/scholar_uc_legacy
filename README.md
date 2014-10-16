@@ -7,7 +7,7 @@ Scholar@UC uses Project Hydra's [Curate gem](https://github.com/projecthydra-lab
 The Univeristy of Cincinnati's implementation of Scholar@UC can be found at https://scholar.uc.edu.
 
 ## Testing the Scholar@UC application
-1. Clone this repository: `git clone https://github.com/uclibs/curate_uc.git ./path/to/local`
+1. Clone this repository: `git clone https://github.com/uclibs/scholar_uc.git ./path/to/local`
 1. Change to the application's directory: e.g. `cd ./path/to/local`
 1. Run bundler: `bundle install`
 1. Install hydra-jetty: `rails g hydra:jetty`
@@ -25,7 +25,7 @@ Have a question or comment about Scholar@UC?  Contact scholar@uc.edu.
 
 ## Application Status
 
-[![Build Status](https://travis-ci.org/uclibs/curate_uc.svg?branch=sandbox)](https://travis-ci.org/uclibs/curate_uc)
+[![Build Status](https://travis-ci.org/uclibs/scholar_uc.svg?branch=sandbox)](https://travis-ci.org/uclibs/scholar_uc)
 
 # Project Hydra
 This software has been developed by and is brought to you by the Hydra community.  Learn more at the
