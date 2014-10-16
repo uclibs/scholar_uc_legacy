@@ -24,7 +24,6 @@ before_install:
   - sudo freshclam  
   
 before_script:
-  - "cp config/doi.yml.travis config/doi.yml"  
   - "cp config/database.yml.travis config/database.yml"  
 
 script: "bundle exec rake ci"
