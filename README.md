@@ -15,9 +15,9 @@ Install system dependencies
 * libclamav6 
 * clamav 
 * clamav-base 
-* clamav-daemon 
-* clamav-freshclam 
+* clamav-daemon
 * clamav-unofficial-sigs
+* clamav-freshclam
 
 1. Clone this repository: `git clone https://github.com/uclibs/scholar_uc.git ./path/to/local`
 1. Change to the application's directory: e.g. `cd ./path/to/local`
