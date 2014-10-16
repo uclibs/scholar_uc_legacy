@@ -2,7 +2,7 @@
 
 # Copy bamboo config files to proper locations
 
-cp config/database.yml.bamboo config/database.yml
-cp config/doi.yml.bamboo config/doi.yml
-cp config/fedora.yml.bamboo config/fedora.yml
-cp config/solr.yml.bamboo config/solr.yml
+cp /srv/apps/curate_uc/config/database.yml.bamboo /srv/apps/curate_uc/config/database.yml
+cp /srv/apps/curate_uc/config/doi.yml.bamboo /srv/apps/curate_uc/config/doi.yml
+cp /srv/apps/curate_uc/config/fedora.yml.bamboo /srv/apps/curate_uc/config/fedora.yml
+cp /srv/apps/curate_uc/config/solr.yml.bamboo /srv/apps/curate_uc/config/solr.yml
