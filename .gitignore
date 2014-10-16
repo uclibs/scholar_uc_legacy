@@ -30,3 +30,9 @@
 jetty/
 
 dump.rdb
+
+config/doi.yml
+config/database.yml
+config/fedora.yml
+config/solr.yml
+

@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
+# Use mysql2 as the database for Active Record
 gem 'mysql2'
 
 # Use SCSS for stylesheets
@@ -42,15 +42,10 @@ end
 # gem 'passenger'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
 
 gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "1d132f7"
-gem "better_errors", group: :development
-gem "binding_of_caller", group: :development
-gem "quiet_assets", group: :development
 gem "clamav"
 
 gem "bootstrap-sass"
@@ -59,10 +54,21 @@ gem "font-awesome-sass"
 gem "devise"
 gem "devise-guests", "~> 0.3"
 
-gem "jettywrapper", group: [:development, :test]
+
+group :development, :test do
+  gem 'sqlite3'
+  gem "jettywrapper"
+  # gem 'debugger'
+end
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "quiet_assets"
+  # gem 'capistrano'
+end
 
 group :test do
-  gem 'sqlite3'
   gem 'factory_girl_rails', '~>4.2.0'
   gem 'poltergeist'
   gem 'rspec-html-matchers', '~>0.4'
