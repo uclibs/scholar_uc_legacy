@@ -45,7 +45,7 @@ end
 
 # Use debugger
 
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "1d132f7"
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "a453fa8"
 gem "clamav"
 
 gem "bootstrap-sass"
