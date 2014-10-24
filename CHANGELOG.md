@@ -1,3 +1,12 @@
+### 0.2.1 - 10/24/14
+
+* Bug fixes
+  * Only show "Add to Collection" button when user is logged in.
+  * The "Clear Limits" button in the facets display now returns the user to the catalog instead of the home page.
+  * Removed "A PDF is preferred" from Datasets and Generic Works forms.
+  * Collection display page now correctly displays the creator next to the title.
+
+
 ### 0.2.0 - 10/13/14
 
 * Change home page to link to new ScholarBlog
@@ -10,7 +19,7 @@
   * Fix path to jquery0zrssfeed.min.js
   * Remove unneeded holder.js
   * Fix deavtivate account button
-  
+
 
 ### 0.1.0 - 9/30/14
 
