@@ -5,7 +5,7 @@
   * The "Clear Limits" button in the facets display now returns the user to the catalog instead of the home page.
   * Removed "A PDF is preferred" from Datasets and Generic Works forms.
   * Collection display page now correctly displays the creator next to the title.
-
+  * The "more" link when using facets now works properly
 
 ### 0.2.0 - 10/13/14
 
