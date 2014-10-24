@@ -22,6 +22,7 @@ Install system dependencies
 1. Clone this repository: `git clone https://github.com/uclibs/scholar_uc.git ./path/to/local`
 1. Change to the application's directory: e.g. `cd ./path/to/local`
 1. Copy the config sample files: `script/copy_config_local.sh`
+1. If you are not using MySQL, comment out the `gem 'mysql2'` line in the Gemfile
 1. Run bundler: `bundle install`
 1. Install hydra-jetty: `rails g hydra:jetty`
 1. Start hydra-jetty: `bundle exec rake jetty:start`
