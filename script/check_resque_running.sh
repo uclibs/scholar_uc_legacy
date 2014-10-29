@@ -12,6 +12,7 @@ if ps aux | grep -v grep | grep resque | grep 'Waiting for' > /dev/null 2>&1
     sleep 1
     mail -s "Scholar resque workers restarted on $1" scholar@uc.edu < /tmp/resquealert
     cd /srv/apps/curate_uc/script
+    export PATH=$PATH:/srv/apps/.gem/ruby/2.1.0/bin:/opt/fits/fits-0.6.2/    
     /srv/apps/curate_uc/script/restart_resque.sh $2
 fi
 

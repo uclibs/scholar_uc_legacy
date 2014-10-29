@@ -45,7 +45,9 @@ end
 
 # Use debugger
 
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "957a6db"
+gem "kaminari", "0.15.1"
+
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "a453fa8"
 gem "clamav"
 
 gem "bootstrap-sass"

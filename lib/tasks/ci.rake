@@ -1,5 +1,7 @@
 
 task :spec do
+  ENV['RAILS_ENV'] = 'test'
+  Rails.env = 'test'
   Rake::Task["db:migrate"].invoke
   Rake::Task['rspec'].invoke
 end
