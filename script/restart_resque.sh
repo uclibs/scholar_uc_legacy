@@ -25,7 +25,10 @@ fi
 banner "killing resque-pool"
 [ -f $RESQUE_POOL_PIDFILE ] && {
     PID=$(cat $RESQUE_POOL_PIDFILE)
-    kill -9 $PID
+    CPIDS=$(pgrep -P $PID)
+    kill -2 $PID
+    sleep 5
+    (kill -2 $CPIDS &)
 }
 sleep 10
 
