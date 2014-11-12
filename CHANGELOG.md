@@ -1,3 +1,14 @@
+### 0.3.0 - 11/14/14
+
+* Updated app to use Rails 4.0.11
+* Updated the app's gem dependencies
+* Added scripts to monitor and kill the resque pool
+* Added a robots.txt file for production server
+* Added a sitemap.xml file for production server
+* Bug fixes
+  * Fixed the restart_resque.sh script to properly kill workers
+  * Fixed a bug where thumnail images were bleeding into text
+
 ### 0.2.1 - 10/24/14
 
 * Bug fixes
