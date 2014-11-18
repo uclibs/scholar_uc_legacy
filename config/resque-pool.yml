@@ -1,8 +1,8 @@
-characterize: 1
-batch_update: 2
-resolrize: 1
-audit: 3
-event: 5
-proxy_deposit: 2
-import_url: 2
-"*": 1
+characterize: 0
+batch_update: 0
+resolrize: 0
+audit: 0
+event: 0
+proxy_deposit: 0
+import_url: 0
+"*": 8
