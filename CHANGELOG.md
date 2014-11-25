@@ -1,3 +1,11 @@
+### 0.4.0 - 12/1/14
+
+* Added "beta" tag to site header
+* Customized the 404, 422, and 500 error pages
+* Bug fixes
+  * Fixed various HTML validation errors
+  * Rights for editors and groups are now confered correctly to files
+
 ### 0.3.0 - 11/14/14
 
 * Updated app to use Rails 4.0.11
