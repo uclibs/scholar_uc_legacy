@@ -1,12 +1,12 @@
 <% content_for :page_title, "#{person_name_or_stub(@person)} // #{application_name}" %>
 
 <% content_for :page_header do %>
-  <hgroup>
+  <div>
     <h1><%= @person.name %></h1>
     <% unless @person.title.blank? %>
       <h3><%= @person.title %></h3>
     <% end %>
-  </hgroup>
+  </div>
 <% end %>
 
 <div class="row">

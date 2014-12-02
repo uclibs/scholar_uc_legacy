@@ -20,13 +20,13 @@
         <% defined?(current_user.user_key) ? useremail = current_user.user_key : useremail = '' %>
 
         <p>
-          <label for="email_addr" class="col-sm-2 control-label">Your Email:</label>
+          <label for="email" class="col-sm-2 control-label">Your Email:</label>
           <input style="width:40%;min-width:200px;" type="email" class="form-control" id="email" name="email" value="<%= useremail %>" required  autocomplete="on">
         </p>
 
         <p>
           <label for="comments" class="col-sm-2 control-label">Comments, Questions, Help Requests, etc.:</label>
-          <textarea style="width:40%;min-width:200px;" type="textarea" class="form-control" name="comments" id="comments" required autocomplete="on" rows="6"></textarea>
+          <textarea style="width:40%;min-width:200px;" class="form-control" name="comments" id="comments" required rows="6"></textarea>
         </p>
 
 <!-- Temporarily disable additional information
