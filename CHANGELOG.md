@@ -1,3 +1,13 @@
+### 0.4.1 - 12/12/14
+
+* Bug fixes
+  * Fixed a problem causing the site's tagline to wrap to second line in some browsers
+  * Fixed a problem where works with very long names could not be removed from related works
+  * Fixed a bug that made the publisher field mandatory even after the "Do not create DOI" option was selected
+  * Removed duplicate and incorrect declaration of Document description
+* Security fixes
+  * Added a parameter check that filters out unknown parameters passed in the URL
+
 ### 0.4.0 - 12/1/14
 
 * Added "beta" tag to site header
