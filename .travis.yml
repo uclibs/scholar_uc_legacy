@@ -1,7 +1,7 @@
 language: ruby
 
 rvm:
-  - "2.0.0"
+  - "2.1.2"
 
 notifications:
   email:
@@ -19,6 +19,7 @@ bundler_args: --without headless debug
 
 before_install:
   - gem install bundler
+  - sudo apt-get update
   - sudo apt-get install libclamav-dev libclamav6 clamav clamav-base clamav-daemon clamav-freshclam clamav-unofficial-sigs
   - gem install clamav
   - sudo freshclam  
