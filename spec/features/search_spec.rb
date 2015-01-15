@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe 'Keyword search' do
+  after(:each) do
+    @object.destroy
+  end
+
   it 'returns results for abstracts' do
     @object = create(:article, abstract: "abc123")
 
