@@ -1,3 +1,6 @@
+### 0.5.0 - 1/16/2015
+* Exteneded keyword searching to fields other than title
+
 ### 0.4.1 - 12/12/14
 
 * Bug fixes
