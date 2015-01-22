@@ -1,0 +1,80 @@
+development:
+  catalog:
+    qf: 
+      - desc_metadata__abstract_tesim
+      - desc_metadata__alternate_title_tesim
+      - desc_metadata__contributor_tesim
+      - desc_metadata__coverage_spatial_tesim
+      - desc_metadata__coverage_temporal_tesim
+      - desc_metadata__creator_tesim
+      - desc_metadata__description_tesim
+      - desc_metadata__genre_tesim
+      - desc_metadata__journal_title_tesim
+      - desc_metadata__language_teim
+      - desc_metadata__language_tesim
+      - desc_metadata__publisher_tesim
+      - desc_metadata__publisher_digital_tesim
+      - desc_metadata__rights_tesim
+      - desc_metadata__subject_tesim
+      - desc_metadata__type_tesim
+      - desc_metadata__title_tesim
+      - desc_metadata__alternate_phone_number_tesim
+      - desc_metadata__blog_tesim
+      - desc_metadata__campus_phone_number_tesim
+      - desc_metadata__personal_webpage_tesim
+      - desc_metadata__name_tesim
+  people:
+test:
+  catalog:
+    qf: 
+      - desc_metadata__abstract_tesim
+      - desc_metadata__alternate_title_tesim
+      - desc_metadata__bibliographic_citation_tesim
+      - desc_metadata__contributor_tesim
+      - desc_metadata__coverage_spatial_tesim
+      - desc_metadata__coverage_temporal_tesim
+      - desc_metadata__creator_tesim
+      - desc_metadata__description_tesim
+      - desc_metadata__genre_tesim
+      - desc_metadata__journal_title_tesim
+      - desc_metadata__language_teim
+      - desc_metadata__language_tesim
+      - desc_metadata__publisher_tesim
+      - desc_metadata__publisher_digital_tesim
+      - desc_metadata__rights_tesim
+      - desc_metadata__subject_tesim
+      - desc_metadata__type_tesim
+      - desc_metadata__title_tesim
+      - desc_metadata__alternate_phone_number_tesim
+      - desc_metadata__blog_tesim
+      - desc_metadata__campus_phone_number_tesim
+      - desc_metadata__personal_webpage_tesim
+      - desc_metadata__name_tesim
+  people:
+production:
+  catalog:
+    qf: 
+      - desc_metadata__abstract_tesim
+      - desc_metadata__alternate_title_tesim
+      - desc_metadata__bibliographic_citation_tesim
+      - desc_metadata__contributor_tesim
+      - desc_metadata__coverage_spatial_tesim
+      - desc_metadata__coverage_temporal_tesim
+      - desc_metadata__creator_tesim
+      - desc_metadata__description_tesim
+      - desc_metadata__genre_tesim
+      - desc_metadata__journal_title_tesim
+      - desc_metadata__language_teim
+      - desc_metadata__language_tesim
+      - desc_metadata__publisher_tesim
+      - desc_metadata__publisher_digital_tesim
+      - desc_metadata__rights_tesim
+      - desc_metadata__subject_tesim
+      - desc_metadata__type_tesim
+      - desc_metadata__title_tesim
+      - desc_metadata__alternate_phone_number_tesim
+      - desc_metadata__blog_tesim
+      - desc_metadata__campus_phone_number_tesim
+      - desc_metadata__personal_webpage_tesim
+      - desc_metadata__name_tesim
+  people:
