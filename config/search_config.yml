@@ -1,5 +1,7 @@
 development:
   catalog:
+    rows: 10
+    qt: search
     qf: 
       - desc_metadata__abstract_tesim
       - desc_metadata__alternate_title_tesim
@@ -26,6 +28,8 @@ development:
   people:
 test:
   catalog:
+    rows: 10
+    qt: search
     qf: 
       - desc_metadata__abstract_tesim
       - desc_metadata__alternate_title_tesim
@@ -53,6 +57,8 @@ test:
   people:
 production:
   catalog:
+    rows: 10
+    qt: search
     qf: 
       - desc_metadata__abstract_tesim
       - desc_metadata__alternate_title_tesim
