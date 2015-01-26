@@ -52,6 +52,7 @@ gem "clamav"
 
 gem "bootstrap-sass"
 gem "font-awesome-sass"
+gem "font-awesome-rails", "4.2.0.0"
 
 gem "devise"
 gem "devise-guests", "~> 0.3"
