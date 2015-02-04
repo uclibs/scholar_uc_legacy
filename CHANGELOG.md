@@ -1,3 +1,9 @@
+### 0.6.0 - 1/30/2015
+* The works show page now displays additional metadata fields
+* Bug fixes
+  * Fixed a bug with pagination introduced in v0.5.0
+  * Fixed a bug with a symbol not displaying correctly in the UC menu bar
+
 ### 0.5.0 - 1/16/2015
 * Exteneded keyword searching to fields other than title
 

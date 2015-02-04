@@ -47,11 +47,12 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "ff2d00f"
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "4396c08"
 gem "clamav"
 
 gem "bootstrap-sass"
 gem "font-awesome-sass"
+gem "font-awesome-rails", "4.2.0.0"
 
 gem "devise"
 gem "devise-guests", "~> 0.3"
