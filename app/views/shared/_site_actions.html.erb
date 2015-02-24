@@ -3,10 +3,12 @@
   <%= render 'shared/my_actions' %>
   <%= link_to 'Browse', catalog_index_path, class: 'btn btn-primary browse', role: 'menuitem' %>
   <%= render 'shared/list_pages' %>
-  <%= link_to 'Help!', new_contact_request_path, class: 'btn btn-primary request-contact', role: 'menuitem' %>
+  <%= link_to 'Contact', new_contact_request_path, class: 'btn btn-primary request-contact', role: 'menuitem' %>
+  <%= render 'shared/help_list' %>
  <% else %>
   <%= link_to 'Log In', new_user_session_path, class: 'btn btn-primary login', role: 'menuitem' %>
   <%= link_to 'Browse', catalog_index_path, class: 'btn btn-primary browse', role: 'menuitem' %>
   <%= render 'shared/list_pages' %>
-  <%= link_to 'Help!', new_contact_request_path, class: 'btn btn-primary request-contact', role: 'menuitem' %>
+  <%= link_to 'Contact', new_contact_request_path, class: 'btn btn-primary request-contact', role: 'menuitem' %>
+  <%= render 'shared/help_list' %>
  <% end %>
