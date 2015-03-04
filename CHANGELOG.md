@@ -1,3 +1,8 @@
+### 0.7.0 2/27/2015
+* Updated the UC menu bar
+* Bug fixes
+   * When an owner removes a delegate the background worker will scan the repository for any objects and attached files submitted on behalf of the owner and then remove edit access and assign the owner as primary editor.
+
 ### 0.6.0 - 1/30/2015
 * The works show page now displays additional metadata fields
 * Bug fixes
