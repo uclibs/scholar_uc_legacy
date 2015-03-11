@@ -1,0 +1,35 @@
+<% unless curation_concern.persisted? %>
+  <div class="row with-headroom">
+    <div class="span12">
+      <legend>
+        <%= t('sufia.product_name') %> Non-Exclusive Distribution License
+      </legend>
+      <fieldset class="row contributor_agreement" id="contributor-agreement">
+
+        <a href="#" class="span12 div-show">Show Distribution License</a>
+
+        <div class="hidden span12 hidden-form-element">
+
+            <article class="lawyer_readable contributor_agreement wide-text">
+              <legend>Non-Exclusive Distribution License</legend>
+              <%= render partial: 'legally_binding_text' %>
+            </article>
+        </div>
+
+        <div class="span12 accept-contributor-agreement">
+          <%= label_tag contributor_agreement.param_key, class: 'checkbox', for:  'accept_contributor_agreement' do %>
+            <%= check_box_tag(
+                contributor_agreement.param_key,
+                contributor_agreement.acceptance_value,
+                contributor_agreement.param_value,
+                required: :required,
+                id: 'accept_contributor_agreement'
+              )
+            %>
+            I have read and accept the distribution license agreement
+          <% end %>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+<%- end -%>
