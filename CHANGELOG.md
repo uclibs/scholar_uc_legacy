@@ -1,3 +1,7 @@
+### 0.8.0 - 3/16/2015
+* Redesign work input form
+* Hide user profiles until the user has created content
+
 ### 0.7.0 2/27/2015
 * Updated the UC menu bar
 * Bug fixes
