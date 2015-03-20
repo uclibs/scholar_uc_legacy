@@ -17,4 +17,5 @@
 // Required by Blacklight
 //= require blacklight/blacklight
 //= require curate
+//= require openseadragon/rails
 //= require_tree .
