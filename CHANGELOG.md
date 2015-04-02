@@ -1,3 +1,7 @@
+### 0.9.0 - 4/2/2015
+* Update Distribution License
+* Update Terms of Use
+
 ### 0.8.0 - 3/16/2015
 * Redesign work input form
 * Hide user profiles until the user has created content

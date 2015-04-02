@@ -174,8 +174,9 @@ describe 'Keyword search' do
   end
 
   it 'returns results for alternate phone number' do
-    @object = create(:person, alternate_phone_number: '513-555-1234')
-
+    @object = create(:person, alternate_phone_number: '513-555-1234', email: "dave@example.com")
+    @work = create(:article)
+    @object.add_work(@work)
     visit('/')
     within('.search-form') do
       fill_in 'q', with: '513-555-1234'
@@ -187,7 +188,8 @@ describe 'Keyword search' do
 
   it 'returns results for blog' do
     @object = create(:person, blog: 'http://foo.wordpress.com')
-
+    @work = create(:article)
+    @object.add_work(@work)
     visit('/')
     within('.search-form') do
       fill_in 'q', with: 'http://foo.wordpress.com'
@@ -199,7 +201,8 @@ describe 'Keyword search' do
 
   it 'returns results for campus phone number' do
     @object = create(:person, campus_phone_number: '513-555-5678')
-
+    @work = create(:article)
+    @object.add_work(@work)
     visit('/')
     within('.search-form') do
       fill_in 'q', with: '513-555-5678'
@@ -211,7 +214,8 @@ describe 'Keyword search' do
 
   it 'returns results for personal web page' do
     @object = create(:person, personal_webpage: 'http://foo.geocities.com')
-
+    @work = create(:article)
+    @object.add_work(@work)
     visit('/')
     within('.search-form') do
       fill_in 'q', with: 'http://foo.geocities.com'
@@ -223,7 +227,8 @@ describe 'Keyword search' do
 
   it 'returns results for name' do
     @object = create(:person, name: 'James Foo Bar')
-
+    @work = create(:article)
+    @object.add_work(@work)
     visit('/')
     within('.search-form') do
       fill_in 'q', with: 'James Foo Bar'
