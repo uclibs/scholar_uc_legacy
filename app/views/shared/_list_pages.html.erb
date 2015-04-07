@@ -7,7 +7,8 @@
     <li><%= link_to 'About', about_request_path, class: 'about', role: 'menuitem' %></li>
     <li><%= link_to 'Terms of Use', terms_request_path, class: 'terms', role: 'menuitem' %></li>
     <li><%= link_to 'Collection Policy', coll_pol_request_path, class: 'coll_policy', role: 'menuitem' %></li>
-    <li class="disabled"><a tabindex="-1" href="#">Policies</a></li>
-    <li class="disabled"><a tabindex="-1" href="#">Project Info</a></li>
+    <li><%= link_to 'File Format Advice', format_advice_request_path, class: 'format_advice', role: 'menuitem' %></li>
+    <li><%= link_to 'Fair Use', "http://librarycopyright.net/resources/fairuse/", class: 'fair_use', role: 'menuitem' %></li>
+    <li><%= link_to 'FAQ', faq_request_path, class: 'faq', role: 'menuitem' %></li>
   </ul>
 </div>
