@@ -1,9 +1,34 @@
 
- .alert, .alert-info, .alert-warning, .alert-success {
-    color:#000;
-    border-color:#DFDFDF;
-    background-color:#DFDFDF
+
+#ucNav #login-button {
+  margin: 0;
+
+  .caret{
+    border-bottom-color: #ffffff;
+    border-top-color: #ffffff;
   }
+
+  .btn, .btn-large, .btn-primary {
+    color:#FFF;
+    background-color:#E00122;
+    background-image: none;
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+
+    &:hover{
+      background-color: darken( #E00122, 5% );
+      color:#FFF;
+      text-decoration: none;
+    }
+  }
+}
+
+.alert, .alert-info, .alert-warning, .alert-success {
+  color:#000;
+  border-color:#DFDFDF;
+  background-color:#DFDFDF
+}
 
 #brand-bar-wrapper {
   background-color:#000;
@@ -16,6 +41,10 @@
 
   .division {
   }
+}
+
+.btn{
+  margin-bottom: 5px;
 }
 
 #title-bar-wrapper {
@@ -340,4 +369,18 @@
 }
 .ribbon-red:after {
     right: 0;
+}
+
+@media (max-width: 979px)
+{
+  .navbar-inner{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #ucNav #login-button {
+    .btn, .btn-large, .btn-primary {
+      margin-bottom: 10px;
+    }
+  }
 }
