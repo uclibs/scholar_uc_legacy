@@ -14,6 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+*.swp
 
 <<<<<<< HEAD
 # Ignore browse_everything API keys
@@ -35,4 +36,5 @@ config/doi.yml
 config/database.yml
 config/fedora.yml
 config/solr.yml
+config/authentication.yml
 

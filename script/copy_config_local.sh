@@ -7,3 +7,4 @@ cp config/doi.yml.sample config/doi.yml
 cp config/fedora.yml.sample config/fedora.yml
 cp config/solr.yml.sample config/solr.yml
 cp config/initializers/curate_config.rb.sample config/initializers/curate_config.rb
+cp config/authentication.yml.sample config/authentication.yml

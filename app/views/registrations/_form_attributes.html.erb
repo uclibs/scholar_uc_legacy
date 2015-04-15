@@ -1,0 +1,48 @@
+<div class="row">
+
+  <fieldset class="span6">
+    <legend>Personal Information</legend>
+
+    <%= f.input :first_name, hint: '(include any middle names or initials here, if desired)', required: true  %>
+    <%= f.input :last_name, required: true %>
+    <%= f.input :title, label: 'Job Title' %>
+    <% if current_user.provider == 'shibboleth' %>
+      <%= f.input :ucdepartment, label: 'Department', readonly: true %>
+      <%= f.input :ucstatus, label: 'UC Affiliation', readonly: true %>
+    <% end %>
+
+  </fieldset>
+
+  <fieldset class="span6">
+    <legend>Contact Information</legend>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p><em>Currently waiting confirmation for: <%= resource.unconfirmed_email %></em></p>
+    <% end %>
+
+    <% if current_user.manager? %>
+      <%= f.input :email, as: :email, required: true %>
+    <% else %>
+      <%= f.input :email, as: :email, readonly: true %>
+    <% end %>
+
+    <%= f.input :alternate_email, as: :email %>
+    <%= f.input :campus_phone_number,    as: :tel %>
+    <%= f.input :alternate_phone_number, as: :tel %>
+    <%= f.input :personal_webpage %>
+    <%= f.input :blog %>
+
+  </fieldset>
+
+</div>
+
+<div class="row with-headroom">
+  <div class="span12">
+    <fieldset class="required">
+      <legend>
+        Attach <%= current_user.manager? ? "#{f.object.name}'s" : 'your' %> profile image
+      </legend>
+      <%= f.input :files, as: :file, label: 'Upload the file' %>
+    </fieldset>
+  </div>
+</div>

@@ -3,7 +3,7 @@ CurateApp::Application.routes.draw do
   root 'page_requests#view_presentation'
   Blacklight.add_routes(self)
   HydraHead.add_routes(self)
-    devise_for :users, controllers: { sessions: :sessions, registrations: :registrations}
+    devise_for :users, controllers: { sessions: :sessions, registrations: :registrations, omniauth_callbacks: "callbacks" }
 
   namespace :admin do
   #constraints Sufia::ResqueAdmin do
@@ -26,6 +26,7 @@ CurateApp::Application.routes.draw do
   get 'distribution_license_request' => 'page_requests#view_distribution_license'
   get 'creators_rights_request' => 'page_requests#view_creators_rights'
   get 'contact_requests' => 'contact_requests#new'
+  get 'login' => 'page_requests#login'
 
   resources :contact_requests
 

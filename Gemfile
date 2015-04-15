@@ -47,7 +47,7 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "30f9618a07109a57368485e45dfddbe78a229dd2"
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "4b70cdacd7a812a9e17006473d167262f9450110"
 gem "clamav"
 
 gem "bootstrap-sass"
@@ -81,3 +81,6 @@ group :test do
 #  gem 'webmock'
 #  gem 'database_cleaner', '< 1.1.0'
 end
+
+gem 'omniauth-openid'
+gem 'omniauth-shibboleth'
