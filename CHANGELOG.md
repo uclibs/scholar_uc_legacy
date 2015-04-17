@@ -1,3 +1,12 @@
+### 0.10.0 4/17/2015
+* Users can now limit their searches by subject facet.
+* Help text on the My Delegates pages has been enhanced.
+* Several enhancements were made to the menu structure and layout.
+* Bug fixes
+  * Hyperlinks in the Distribution License have been fixed. 
+  * When a work's embargo expires, the access restriction is now correctly set to "Open Access"
+  * Several bugs involving delegates were resolved.
+
 ### 0.9.0 - 4/2/2015
 * Update Distribution License
 * Update Terms of Use
