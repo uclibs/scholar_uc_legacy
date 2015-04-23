@@ -32,6 +32,18 @@
               </ul>
             </li>
           </ul>
+          <ul id="login-button" class="nav pull-right">
+              <% if current_user %>
+                <li class="dropdown">
+                  <%= render 'shared/my_actions' %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to 'Log In', new_user_session_path, class: 'btn btn-primary login', role: 'menuitem' %>
+                </li>
+              <% end %>
+
+          </ul>
         </div>
       </div>
       <!-- /.navbar-inner -->
