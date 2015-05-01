@@ -32,4 +32,7 @@ class PageRequestsController < ApplicationController
     render 'contact'
   end
 
+  def view_creators_rights
+    render 'creators_rights'
+  end
 end

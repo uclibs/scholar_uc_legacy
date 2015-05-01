@@ -45,4 +45,9 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+  <loc>https://scholar.uc.edu/creators_rights_request</loc>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
 </urlset>

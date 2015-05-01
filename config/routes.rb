@@ -24,6 +24,7 @@ CurateApp::Application.routes.draw do
   get 'format_advice_request' => 'page_requests#view_format_advice'
   get 'faq_request' => 'page_requests#view_faq'
   get 'distribution_license_request' => 'page_requests#view_distribution_license'
+  get 'creators_rights_request' => 'page_requests#view_creators_rights'
 
   resources :contact_requests
 
