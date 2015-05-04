@@ -1,3 +1,7 @@
+### 0.11.0 5/1/2015
+* Users will now receive email notifications when an item's embaro expires.
+* Added a Creator's Rights page (under the Help menu).
+
 ### 0.10.0 4/17/2015
 * Users can now limit their searches by subject facet.
 * Help text on the My Delegates pages has been enhanced.
