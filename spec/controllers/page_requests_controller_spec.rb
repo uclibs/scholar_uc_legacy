@@ -56,5 +56,13 @@ describe PageRequestsController do
         expect(response).to render_template('faq')
     end
   end
+
+  describe '#view_creators_rights' do
+    it 'renders the Creators Rights page' do
+      get :view_creators_rights
+      response.status.should == 200
+      expect(response).to render_template('creators_rights')
+    end
+  end
 end
 
