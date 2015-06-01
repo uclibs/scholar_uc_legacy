@@ -1,3 +1,9 @@
+### 0.12.0 5/22/2015
+* Work input forms now have a link to the Creator Rights page
+* A non-discrimination notice has been added to the site's footer
+* Bug fixes
+  * Several security issues have been resolved
+
 ### 0.11.0 5/1/2015
 * Users will now receive email notifications when an item's embaro expires.
 * Added a Creator's Rights page (under the Help menu).
