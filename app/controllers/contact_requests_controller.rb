@@ -5,7 +5,7 @@ class ContactRequestsController < ApplicationController
   def new
   end
 
-  def verify_google_recptcha(key,response)
+  def verify_google_recaptcha(key,response)
     status = `curl "https://www.google.com/recaptcha/api/siteverify?secret=#{CAPTCHA_SERVER['secret_key']}&response=#{response}"`
     hash = JSON.parse(status)
     hash["success"] == true ? true : false
@@ -15,7 +15,7 @@ class ContactRequestsController < ApplicationController
     name = params[:name]
     email = params[:email]
     comments = params[:comments]
-    status = verify_google_recptcha(CAPTCHA_SERVER['secret_key'],params["g-recaptcha-response"])
+    status = verify_google_recaptcha(CAPTCHA_SERVER['secret_key'],params["g-recaptcha-response"])
 
     if (status)
       NotificationMailer.notify(name,email,comments).deliver
