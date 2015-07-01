@@ -81,4 +81,13 @@ CurateApp::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Enable Exception Notifications
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[ERROR] ",
+    :sender_address => %{"notifier" <scholar_error@uc.edu>},
+    :exception_recipients => %w{scholar@uc.edu}
+  }
+
 end
