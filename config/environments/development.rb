@@ -15,7 +15,16 @@ CurateApp::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  #config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.delivery_method = :sendmail
+  # Defaults to: 
+  # config.action_mailer.sendmail_settings = {
+  #   :location => '/usr/sbin/sendmail',
+  #   :arguments => '-i -t'
+  # }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.default_url_options = { :host => 'scholar-dev.uc.edu' }
 
@@ -29,4 +38,13 @@ CurateApp::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+ 
+  # Enable Exception Notifications
+  config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[ERROR] ",
+    :sender_address => %{"notifier" <scholar_error@uc.edu>},
+    :exception_recipients => %w{scholar@uc.edu}
+  }
+
 end

@@ -49,6 +49,7 @@ gem "kaminari", "0.15.1"
 
 gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "98e0eda8ba58aa4dcd8a237e2b0a6667f650780d"
 gem "clamav"
+gem 'exception_notification'
 
 gem "bootstrap-sass"
 gem "font-awesome-sass"
