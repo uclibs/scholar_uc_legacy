@@ -6,7 +6,7 @@
   <div class="row">
     <div class="span12">
 
-      <h2>Contact the Scholar@UC Team</h2>
+      <h2>Contact the Scholar@UC Team <script src='https://www.google.com/recaptcha/api.js'></script> </h2>
 
       <form method="post" action="/contact_requests" name="contactForm" id="contactForm">
 
@@ -14,7 +14,7 @@
 
         <p>
           <label for="name" class="col-sm-2 control-label">Your Name:</label>
-          <input style="width:40%;min-width:200px;" type="text" class="form-control" id="name" name="name" required autofocus autocomplete="on">
+          <input style="width:40%;min-width:200px;" type="text" class="form-control" id="name" name="name" value = "<%=@name%>" required autofocus autocomplete="on">
         </p>
 
         <% defined?(current_user.user_key) ? useremail = current_user.user_key : useremail = '' %>
@@ -26,7 +26,7 @@
 
         <p>
           <label for="comments" class="col-sm-2 control-label">Comments, Questions, Help Requests, etc.:</label>
-          <textarea style="width:40%;min-width:200px;" class="form-control" name="comments" id="comments" required rows="6"></textarea>
+          <textarea style="width:40%;min-width:200px;" class="form-control" name="comments" id="comments" required rows="6"><%="#{@comments}"%></textarea>
         </p>
 
 <!-- Temporarily disable additional information
@@ -76,9 +76,11 @@
 
         <input type="hidden" id="userAgent" name="userAgent" value="">
 
-        <p style="margin:2em 0;">(ADD RECAPTCHA HERE)</p>
+        <p style="margin:2em 0;">(ADD RECAPTCHA HERE)</p>         
 -->
-        <button class="btn btn-lg btn-primary" type="submit">Send</button>
+        <div class="g-recaptcha" data-sitekey= "<%=CAPTCHA_SERVER['site_key']%>"></div>
+
+        <button  style="margin-top: 15px; width: 60px; border: 1px solid black;" class="btn btn-lg btn-primary" type="submit">Send</button>
 
       </form>
 
