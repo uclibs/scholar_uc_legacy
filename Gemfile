@@ -47,7 +47,7 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "6daa8c73d7eb618f3094877e6ffd854f53d8a0b2"
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "f78e6c53ca108b4fbfa4af17de0725600080f990"
 gem "clamav"
 
 gem "bootstrap-sass"

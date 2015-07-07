@@ -1,3 +1,17 @@
+### 0.13.0 6/22/2015
+* Edits robots.txt on QA to allow accessibility scans.
+* Repository Managers should see all users in People tab.
+* Sends additional emails for embargo.
+* Bug fixes
+  * Solves problems with file titles and file upload.
+  * Solves routing problem when editing user profile.
+
+### 0.12.0 5/22/2015
+* Work input forms now have a link to the Creator Rights page
+* A non-discrimination notice has been added to the site's footer
+* Bug fixes
+  * Several security issues have been resolved
+
 ### 0.11.0 5/1/2015
 * Users will now receive email notifications when an item's embaro expires.
 * Added a Creator's Rights page (under the Help menu).
