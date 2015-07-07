@@ -1,3 +1,12 @@
+### 0.14.0 7/2/2015
+* The contact form now requires users to complete a CAPTCHA before sending.
+* Repository manager accounts are no longer visible to other users.
+* Error pages have been edited and refined.
+* Users no longer have the ability to deactivate their own account.
+* If a DOI has been minted for work, it is displayed as an alternative link.
+* Bug fixes
+  * The add-to-collection dialog box no longer requires the user to scroll their browser window.
+
 ### 0.13.0 6/22/2015
 * Edits robots.txt on QA to allow accessibility scans.
 * Repository Managers should see all users in People tab.
