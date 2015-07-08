@@ -1,4 +1,4 @@
-<% page = config.application_root_url + common_object_path(curation_concern.noid) %>
+<% page = Curate.permanent_url_for(curation_concern) %>
 <p>
   Alternative link to this page: <%= link_to page, page %>
 </p>
