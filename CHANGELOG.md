@@ -3,7 +3,7 @@
 * Repository manager accounts are no longer visible to other users.
 * Error pages have been edited and refined.
 * Users no longer have the ability to deactivate their own account.
-* If a DOI has been minted for work, it is displayed as an alternative link.
+* An alternative, shorter URL is displayed at the bottom of each work, and on the show page for each file.
 * Bug fixes
   * The add-to-collection dialog box no longer requires the user to scroll their browser window.
 
