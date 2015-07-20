@@ -1,3 +1,7 @@
+### 0.15.0 TBA
+* Works, files, collections, and profile pages now display a link that can be used to return to that page later.
+* The URLs now better describe what type of content is being displayed (work, file, etc.)
+
 ### 0.14.0 7/2/2015
 * The contact form now requires users to complete a CAPTCHA before sending.
 * Repository manager accounts are no longer visible to other users.
