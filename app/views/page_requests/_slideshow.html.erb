@@ -16,15 +16,26 @@
         <div class="carousel-inner">
 
           <div class="item active">
-            <%= image_tag("slider-images/articles.jpg", :alt => "Articles") %>
+            <%= image_tag("slider-images/scholarstories.jpg", :alt => "ScholarStories") %>
             <div class="container">
               <div class="carousel-caption text-center">
-                <h2>Scholarly Articles</h2>
+                <h2>Scholar Stories</h2>
                 <p>Scholar@UC supports published and unpublished scholarly articles and more.</p>
-                <%= link_to 'Begin!', catalog_index_path, class: 'btn btn-lg btn-primary', role: 'button' %>
+                <%= link_to 'Begin!', "http://libapps.libraries.uc.edu/scholarblog/category/scholar-stories/", class: 'btn btn-lg btn-primary', role: 'button' %>
               </div>
             </div>
           </div>
+
+          <div class="item">
+          <%= image_tag("slider-images/articles.jpg", :alt => "Articles") %>
+          <div class="container">
+            <div class="carousel-caption text-center">
+              <h2>Scholarly Articles</h2>
+              <p>Scholar@UC supports published and unpublished scholarly articles and more.</p>
+              <%= link_to 'Begin!', catalog_index_path, class: 'btn btn-lg btn-primary', role: 'button' %>
+            </div>
+          </div>
+        </div>
 
           <div class="item">
             <%= image_tag("slider-images/datasets.jpg", :alt => "Datasets") %>
@@ -37,16 +48,16 @@
             </div>
           </div>
 
-          <div class="item">
-            <%= image_tag("slider-images/etd.jpg", :alt => "ETDs") %>
-            <div class="container">
-              <div class="carousel-caption text-center">
-                <h2>UC Electronic Theses and Dissertations</h2>
-                <p>Scholar@UC supports ETDs, capstone projects and more from UC’s Student Scholars.</p>
-                <%= link_to 'Begin!', catalog_index_path, class: 'btn btn-lg btn-primary', role: 'button' %>
-              </div>
-            </div>
-          </div>
+          <!--<div class="item">-->
+            <%#= image_tag("slider-images/etd.jpg", :alt => "ETDs") %>
+            <!--<div class="container">-->
+              <!--<div class="carousel-caption text-center">-->
+                <!--<h2>UC Electronic Theses and Dissertations</h2>-->
+                <!--<p>Scholar@UC supports ETDs, capstone projects and more from UC’s Student Scholars.</p>-->
+                <%#= link_to 'Begin!', catalog_index_path, class: 'btn btn-lg btn-primary', role: 'button' %>
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
 
           <div class="item">
             <%= image_tag("slider-images/images.jpg", :alt => "Images") %>
