@@ -16,12 +16,17 @@
         <div class="carousel-inner">
 
           <div class="item active">
-            <%= image_tag("slider-images/scholarstories.jpg", :alt => "ScholarStories") %>
+            <%= image_tag("slider-images/scholarstories.jpg", { :alt => "ScholarStories", :name => "scholarstories", :width => 1170, :height => 684, :id => "scholarstories",
+                :usemap => "#m_scholarstories" }) %>
+            <map name="m_scholarstories" id="m_scholarstories">
+                <area shape="rect" coords="55,401,130,439" href="http://libapps.libraries.uc.edu/scholarblog/category/scholar-stories/" target="_blank" title="ScholarStories" alt="ScholarStories" />
+                <area shape="rect" coords="37,198,401,388" href="http://libapps.libraries.uc.edu/scholarblog/category/scholar-stories/" target="_blank" title="ScholarStories" alt="ScholarStories" />
+            </map>
             <div class="container">
               <div class="carousel-caption text-center">
-                <h2>Scholar Stories</h2>
-                <p>Scholar@UC supports published and unpublished scholarly articles and more.</p>
-                <%= link_to 'Begin!', "http://libapps.libraries.uc.edu/scholarblog/category/scholar-stories/", class: 'btn btn-lg btn-primary', role: 'button' %>
+                <h2>Scholarly Works</h2>
+                <p>Scholar@UC supports preservation and access for digital scholarly works.</p>
+                <%= link_to 'Begin!', catalog_index_path, class: 'btn btn-lg btn-primary', role: 'button' %>
               </div>
             </div>
           </div>
@@ -92,3 +97,8 @@
     </div>
   </div>
 </div>
+<script>
+    $(document).ready(function(e) {
+        $('img[usemap]').rwdImageMaps();
+    });
+</script>

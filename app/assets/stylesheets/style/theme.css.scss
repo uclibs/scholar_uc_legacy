@@ -205,6 +205,10 @@
   border: #333333 solid 2px;
 }
 
+img[usemap], map area{
+  outline: none;
+}
+
 .center-block {
   display: block;
   margin-left: auto;
