@@ -1,6 +1,10 @@
-### 0.15.0 TBA
+### 0.15.0 7/31/2015
 * Works, files, collections, and profile pages now display a link that can be used to return to that page later.
 * The URLs now better describe what type of content is being displayed (work, file, etc.)
+* Made changes to menu structure
+* The ETD option was removed from the New Works page (ETD's will be batch loaded)
+* Bug fixes
+  * Resolve password autocomplete vulnerability
 
 ### 0.14.0 7/2/2015
 * The contact form now requires users to complete a CAPTCHA before sending.
