@@ -199,7 +199,15 @@
 
 }
 
-.carousel { max-height: 500px; overflow: hidden;}
+.carousel {
+  max-height: 500px;
+  overflow: hidden;
+  border: #333333 solid 2px;
+}
+
+img[usemap], map area{
+  outline: none;
+}
 
 .center-block {
   display: block;
