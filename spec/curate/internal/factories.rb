@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :user do
     sequence(:email) {|n| "email-#{srand}@test.com" }
     sequence(:name) {|n| "User Named #{n}" }
-    agreed_to_terms_of_service true
+    waived_welcome_page true
     user_does_not_require_profile_update true
     password 'a password'
     password_confirmation 'a password'
