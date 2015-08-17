@@ -30,8 +30,7 @@ describe 'shared/_site_actions.html.erb' do
     it 'renders the add content and menu buttons' do
       expect(rendered).to have_add_content_section do
         with_tag '.quick-create' do
-          with_tag 'a.link-to-full-list', with: { href: new_classify_concern_path }
-          with_tag 'a.contextual-quick-classify', minimum: 3
+          with_tag 'a.new-work', with: { href: new_classify_concern_path }, text: 'Add a Work'
           with_tag 'a.new-collection', with: { href: new_collection_path }, text: 'Add a Collection'
         end
       end
