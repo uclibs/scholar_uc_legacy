@@ -1,4 +1,13 @@
+.btn.make-me-not-blue {
+  background-color: #222;
+  background-image: none;
 
+  &:hover{
+    background-color: darken( #222, 5% );
+    color:#FFF;
+    text-decoration: none;
+  }
+}
 
 #ucNav #login-button {
   margin: 0;
