@@ -212,6 +212,12 @@ ActiveRecord::Schema.define(version: 20150727174036) do
     t.boolean  "user_does_not_require_profile_update", default: false
     t.string   "repository_id"
     t.boolean  "waived_welcome_page"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "ucstatus"
+    t.string   "ucdepartment"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

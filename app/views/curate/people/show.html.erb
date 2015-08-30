@@ -49,7 +49,7 @@
 
     <dl class="person-attribtues <%= dom_class(@person) %>">
 
-      <% @person.terms_for_display.reject{|attribute| (attribute == :name) || (attribute == :title)}.each do |attribute_name| %>
+      <% @person.terms_for_display.reject{|attribute| (attribute == :last_name) || (attribute == :first_name) || (attribute == :name) || (attribute == :title)}.each do |attribute_name| %>
         <% if @person.send(attribute_name).present? %>
           <dt class="attribute"><%= derived_label_for( @person, attribute_name) %>:</dt>
           <% [@person.send(attribute_name)].flatten.compact.each do |value| %>
