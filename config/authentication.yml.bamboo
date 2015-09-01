@@ -7,5 +7,5 @@ test:
   signups_enabled:    false
 
 production:
-  shibboleth_enabled: true
+  shibboleth_enabled: false
   signups_enabled:    false
