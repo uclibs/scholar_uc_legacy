@@ -1,9 +1,9 @@
 development:
   manager_usernames:
-  - manager@example.com
+  - bamboo_manager_emails
 test:
   manager_usernames:
-  - manager@example.com
+  - bamboo_manager_emails
 production:
   manager_usernames:
-  - manager@example.com
+  - bamboo_manager_emails

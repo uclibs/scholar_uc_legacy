@@ -1,3 +1,19 @@
+### 1.0.0.rc1 8/28/2015
+* Created a new user welcome page.
+* Implemented UC Shibboleth authentication.
+* Removed the “beta” tag.
+* Removed specific work types from add new menu. The menu now takes users to a page listing all of the work types.
+* Revised work type descriptions.
+* Added helper text to the My Groups interface.
+* Added content to the FAQ page.
+* Updated the Collection policy.
+* Added a new image to the home page sliders.
+* Resolved several vulnerabilities/warnings reported by internal security scans.
+* Bug Fixes
+  * Fixed broken profile and collection avatars.
+  * Fixed multiple-file upload document work type.
+  * Fixed embargo bug that only released the first 10 works.
+
 ### 0.15.0 7/31/2015
 * Works, files, collections, and profile pages now display a link that can be used to return to that page later.
 * The URLs now better describe what type of content is being displayed (work, file, etc.)

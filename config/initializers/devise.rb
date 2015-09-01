@@ -5,7 +5,7 @@ Devise.setup do |config|
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   config.secret_key = 'bamboo_initializers_devise_key'
-  
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -251,4 +251,33 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+config.omniauth :shibboleth, {
+    :shib_session_id_field => "Shib-Session-ID",
+    :shib_application_id_field => "Shib-Application-ID",
+    :uid_field => "eppn",
+    :name_field=> "displayName",
+    :debug => false,
+    :extra_fields => [
+      :cn,
+      :eppn,
+      :givenName,
+      :ou,
+      :'persistent-id',
+      :sn,
+      :street,
+      :title,
+      :uceduAffiliation,
+      :uceduPrimaryAffiliation,
+      :uceduUCID,
+      :mail,
+      :affiliation,
+      :remoteuser,
+      :telephoneNumber,
+      :uceduAcademicProgram,
+      :uceduFERPACode,
+      :uceduPrimaryCollege,
+      :uceduSISPersonID,
+    ]
+  }
 end

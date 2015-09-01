@@ -39,7 +39,11 @@
                 </li>
               <% else %>
                 <li>
+                <% if AUTH_CONFIG['shibboleth_enabled'] %>
+                  <%= link_to 'Log In', login_path, class: 'btn btn-primary login', role: 'menuitem' %>
+                <% else %>
                   <%= link_to 'Log In', new_user_session_path, class: 'btn btn-primary login', role: 'menuitem' %>
+                <% end %>
                 </li>
               <% end %>
 
