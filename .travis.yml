@@ -6,11 +6,8 @@ rvm:
 notifications:
   email:
     recipients:
-      - hortongn@ucmail.uc.edu
-      - newmanld@ucmail.uc.edu
-      - scherztc@ucmail.uc.edu
-      - vanmiljf@ucmail.uc.edu
-      - wamsleai@ucmail.uc.edu
+      - scholar@uc.edu
+      - miciunla@mail.uc.edu
       - burkepk@ucmail.uc.edu
     on_success: "change"
     on_failure: "always"
