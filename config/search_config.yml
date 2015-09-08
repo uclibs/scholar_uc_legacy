@@ -24,7 +24,8 @@ development:
       - desc_metadata__blog_tesim
       - desc_metadata__campus_phone_number_tesim
       - desc_metadata__personal_webpage_tesim
-      - desc_metadata__name_tesim
+      - desc_metadata__first_name_tesim
+      - desc_metadata__last_name_tesim
   people:
 test:
   catalog:
@@ -53,7 +54,8 @@ test:
       - desc_metadata__blog_tesim
       - desc_metadata__campus_phone_number_tesim
       - desc_metadata__personal_webpage_tesim
-      - desc_metadata__name_tesim
+      - desc_metadata__first_name_tesim
+      - desc_metadata__last_name_tesim
   people:
 production:
   catalog:
@@ -82,5 +84,6 @@ production:
       - desc_metadata__blog_tesim
       - desc_metadata__campus_phone_number_tesim
       - desc_metadata__personal_webpage_tesim
-      - desc_metadata__name_tesim
+      - desc_metadata__first_name_tesim
+      - desc_metadata__last_name_tesim
   people:

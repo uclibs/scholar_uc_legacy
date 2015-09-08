@@ -225,13 +225,26 @@ describe 'Keyword search' do
     expect(page).to have_selector("#document_#{@object.noid}")
   end
 
-  it 'returns results for name' do
-    @object = create(:person, name: 'James Foo Bar')
+  it 'returns results for first name' do
+    @object = create(:person, first_name: 'sdkeoe', last_name: 'Foo')
     @work = create(:article)
     @object.add_work(@work)
     visit('/')
     within('.search-form') do
-      fill_in 'q', with: 'James Foo Bar'
+      fill_in 'q', with: 'sdkeoe'
+      click_button("keyword-search-submit")
+    end
+
+    expect(page).to have_selector("#document_#{@object.noid}")
+  end
+
+  it 'returns results for last name' do
+    @object = create(:person, first_name: 'James', last_name: 'rpotidn')
+    @work = create(:article)
+    @object.add_work(@work)
+    visit('/')
+    within('.search-form') do
+      fill_in 'q', with: 'rpotidn'
       click_button("keyword-search-submit")
     end
 
