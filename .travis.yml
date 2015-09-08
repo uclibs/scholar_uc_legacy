@@ -29,6 +29,6 @@ before_script:
   - "cp config/doi.yml.sample config/doi.yml"  
   - "cp config/fedora.yml.sample config/fedora.yml"  
   - "cp config/solr.yml.sample config/solr.yml"  
-
+  - "cp config/authentication.yml.sample config/authentication.yml
 script: "bundle exec rake ci"
 

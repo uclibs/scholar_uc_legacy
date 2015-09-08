@@ -8,7 +8,7 @@ describe 'shared/_brand_bar.html.erb' do
   end
 
   def have_login_section
-    have_tag('.login', with: { href: login_path } )
+    have_tag('.login', with: { href: new_user_session_path } )
   end
 
   def have_user_menu_section(&block)
