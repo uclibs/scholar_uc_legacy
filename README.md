@@ -20,6 +20,7 @@ Install system dependencies
 * clamav-freshclam
 
 1. Clone this repository: `git clone https://github.com/uclibs/scholar_uc.git ./path/to/local`
+    * **Note:** Solr will not run properly if there are spaces in any of the directory names above it <br />(e.g. /user/my apps/scholar_uc/) 
 1. Change to the application's directory: e.g. `cd ./path/to/local`
 1. Copy the config sample files: `script/copy_config_local.sh`
 1. If you are not using MySQL, comment out the `gem 'mysql2'` line in the Gemfile
