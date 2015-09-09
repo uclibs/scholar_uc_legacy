@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :person do
-    sequence(:name) {|n| "Person #{n}" }
+    sequence(:first_name) {|n| "Person #{n}" }
+    sequence(:last_name) {|n| "Person #{n}" }
     before(:create) {|obj|
       user = FactoryGirl.create(:user)
       obj.apply_depositor_metadata(user.user_key)
