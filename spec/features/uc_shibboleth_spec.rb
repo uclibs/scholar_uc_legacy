@@ -21,7 +21,11 @@ describe 'UC account workflow', FeatureSupport.options do
   describe 'overridden devise password reset page' do
     it 'shows a Central Login option' do
       visit new_user_password_path
-      page.should have_content('Central Login form')
+      if yaml['test']['shibboleth_enabled'] == true
+        page.should have_content('Central Login form')
+      else
+        page.should_not have_content('Central Login form')
+      end
     end
 
     it 'does not display the Shared links at the bottom' do

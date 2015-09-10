@@ -3,9 +3,9 @@ class Devise::PasswordsController
 
   # POST /resource/password
   def create
-    if resource_params['email'].end_with? '@uc.edu'
-      redirect_to login_path
-      flash[:notice] = "You cannot reset passwords for @uc.edu accounts.  Use your UC Central Login instead"
+    if AUTH_CONFIG['shibboleth_enabled'] && (resource_params['email'].end_with? '@uc.edu')
+        redirect_to login_path
+        flash[:notice] = "You cannot reset passwords for @uc.edu accounts.  Use your UC Central Login instead"
     else
       self.resource = resource_class.send_reset_password_instructions(resource_params)
       yield resource if block_given?

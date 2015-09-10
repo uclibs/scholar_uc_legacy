@@ -3,8 +3,8 @@ development:
   signups_enabled:    true
 
 test:
-  shibboleth_enabled: false
-  signups_enabled:    true
+  shibboleth_enabled: true
+  signups_enabled:    false
 
 production:
   shibboleth_enabled: false
