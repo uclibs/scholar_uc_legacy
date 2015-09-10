@@ -9,7 +9,7 @@ Curate.configure do |config|
   # config.default_antivirus_instance = lambda {|filename| … }
 
   # # Used for constructing permanent URLs
-  config.application_root_url = 'bamboo_application_url'
+  config.application_root_url = 'http://localhost:3000/'
 
   # # Override the file characterization runner that is used
   # config.characterization_runner = lambda {|filename| … }
