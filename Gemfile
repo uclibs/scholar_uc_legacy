@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.13'
+gem 'rails', '4.0.11'
 
 # Use mysql2 as the database for Active Record
 gem 'mysql2'
@@ -60,7 +60,7 @@ gem "devise-guests", "~> 0.3"
 
 group :development, :test do
   gem 'sqlite3'
-  gem "jettywrapper", '~> 1.8.3'
+  gem "jettywrapper"
   # gem 'debugger'
 end
 
