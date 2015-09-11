@@ -1,3 +1,13 @@
+### 1.0.0.rc2 9/11/2015
+* Replaces ScholarStories image. 
+* Fixes typo on FAQ page.
+* Bug Fixes
+  * Allows password resets for uc.edu when shibboleth is turned off. 
+  * Fixes images on error pages. 
+  * Allows new user profiles to be found on search.  
+  * Resolves embargo date bug fix and blank vulnerability.  
+  * Resolves shibboleth SAML2 vulnerability warning. 
+
 ### 1.0.0.rc1 8/28/2015
 * Created a new user welcome page.
 * Implemented UC Shibboleth authentication.
