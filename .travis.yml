@@ -1,16 +1,13 @@
 language: ruby
 
 rvm:
-  - "2.1.2"
+  - "2.1.6"
 
 notifications:
   email:
     recipients:
-      - hortongn@ucmail.uc.edu
-      - newmanld@ucmail.uc.edu
-      - scherztc@ucmail.uc.edu
-      - vanmiljf@ucmail.uc.edu
-      - wamsleai@ucmail.uc.edu
+      - scholar@uc.edu
+      - miciunla@mail.uc.edu
       - burkepk@ucmail.uc.edu
     on_success: "change"
     on_failure: "always"
@@ -29,6 +26,6 @@ before_script:
   - "cp config/doi.yml.sample config/doi.yml"  
   - "cp config/fedora.yml.sample config/fedora.yml"  
   - "cp config/solr.yml.sample config/solr.yml"  
-
+  - "cp config/authentication.yml.sample config/authentication.yml"
 script: "bundle exec rake ci"
 

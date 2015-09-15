@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.11'
 
 # Use mysql2 as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', '0.3.20'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -47,7 +47,7 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "3f9b408ef23fd6440c0d92058cd40baa210aa1ee"
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "98e0eda8ba58aa4dcd8a237e2b0a6667f650780d"
 gem "clamav"
 
 gem "bootstrap-sass"

@@ -8,7 +8,14 @@ describe 'shared/_brand_bar.html.erb' do
   end
 
   def have_login_section
-    have_tag('.login', with: { href: login_path } )
+    filepath = "config/authentication.yml"
+    yaml = YAML.load_file(filepath)
+
+    if yaml['test']['shibboleth_enabled'] == true
+      have_tag('.login', with: { href: login_path } )
+    else
+      have_tag('.login', with: { href: new_user_session_path } )
+    end
   end
 
   def have_user_menu_section(&block)
