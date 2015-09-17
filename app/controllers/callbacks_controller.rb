@@ -27,10 +27,10 @@ class CallbacksController < Devise::OmniauthCallbacksController
                   ucstatus: omni.extra.raw_info.uceduPrimaryAffiliation,
               ucdepartment: omni.extra.raw_info.ou
 
-      @profile = Profile.create depositor: @user.uid,
+      @profile = Profile.create depositor: @user.email,
                                     title: @user.title
 
-      @person = Person.create depositor: @user.uid,
+      @person = Person.create depositor: @user.email,
                              first_name: @user.first_name,
                               last_name: @user.last_name,
                                   email: @user.email
