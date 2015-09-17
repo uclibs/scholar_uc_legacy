@@ -1,3 +1,10 @@
+### 1.0.1 9/17/2015
+* Bug fixes
+  * Fixed problem where UIDs were being used instead of emails for users
+  * Reset the application url config to a Bamboo variable
+
+### 1.0.0 9/16/2015
+
 ### 1.0.0.rc2 9/11/2015
 * Replaces ScholarStories image. 
 * Fixes typo on FAQ page.
