@@ -1,3 +1,9 @@
+### 1.1.0 10/16/2015
+* Adds dc.identifier meta tag to Work show page so that altmetric bookmarklet and other tools will find a DOI.
+* Creates administrative rake task for user/work/file manifest.
+* Bug fixes
+  * Adjusts modal css for creator, subject, and other facets so that next / previous buttons displays.
+
 ### 1.0.1 9/17/2015
 * Bug fixes
   * Fixed problem where UIDs were being used instead of emails for users
