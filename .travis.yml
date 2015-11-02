@@ -29,3 +29,6 @@ before_script:
   - "cp config/authentication.yml.sample config/authentication.yml"
 script: "bundle exec rake ci"
 
+notifications:
+  slack: uc-libraries-digital:7gc9gvfCKedkWXORxCo5Hndx
+
