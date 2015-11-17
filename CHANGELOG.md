@@ -1,3 +1,21 @@
+### 1.2.0 10/30/2015
+* Styles upload button and help text.
+* Adds slack integration to travis.
+* Indexes owner field in solr.
+* Adds legend tags to all fieldset tags.
+* Adds image alt text to thumbnails.
+* Adds name to gravatar profile pictures on profile pages.
+* Adds ‘Can edit group’ label to all checkboxes.
+* Creates meta tags in header for works.
+* Updates Gemfile to latest Curate reference.
+* Adds global lang attribute to html tag.
+* Bug fixes
+  * Fixes legend tags that should not be displaying.
+  * Fixes Markup Errors.
+  * Fixes unordered lists in Sufia locales.
+  * Delegate cleanup abolishes cascading delegate relations.
+  * Fixes padding on btn class.
+
 ### 1.1.0 10/16/2015
 * Adds dc.identifier meta tag to Work show page so that altmetric bookmarklet and other tools will find a DOI.
 * Creates administrative rake task for user/work/file manifest.

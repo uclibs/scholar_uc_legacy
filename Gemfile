@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.11'
+gem 'rails', '4.0.13'
 
 # Use mysql2 as the database for Active Record
 gem 'mysql2', '0.3.20'
@@ -47,8 +47,9 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "2c6618e04c67b873127a5a0b841ce2ad15c785b2"
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "0bb1b747903aaea559aabf38b558f8354000efb5"
 gem "clamav"
+gem 'exception_notification'
 
 gem "bootstrap-sass"
 gem "font-awesome-sass"
@@ -60,7 +61,7 @@ gem "devise-guests", "~> 0.3"
 
 group :development, :test do
   gem 'sqlite3'
-  gem "jettywrapper"
+  gem "jettywrapper", '~> 1.8.3'
   # gem 'debugger'
 end
 
