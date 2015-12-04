@@ -47,7 +47,7 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "0bb1b747903aaea559aabf38b558f8354000efb5"
+gem "curate", git: "https://github.com/uclibs/curate_fork.git", ref: "42544e43230e54dd2aaddce1463167deb316d85b"
 gem "clamav"
 gem 'exception_notification'
 
