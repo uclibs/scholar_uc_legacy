@@ -42,7 +42,7 @@
       <legend>
         Attach <%= current_user.manager? ? "#{f.object.name}'s" : 'your' %> profile image
       </legend>
-      <%= f.input :files, as: :file, label: 'Upload the file' %>
+      <%= render "shared/styled_file_input", model: "files", f: f %>
     </fieldset>
   </div>
 </div>
