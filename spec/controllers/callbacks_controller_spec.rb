@@ -21,5 +21,17 @@ describe CallbacksController do
       expect(response).to be_redirect
     end
   end
+
+  context 'with a user who is already logged in' do
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      controller.stub(:current_user).and_return(user)
+    end
+    it 'redirects to catalog index path' do
+      get :shibboleth
+      response.should redirect_to(catalog_index_path)
+    end
+  end
+
 end
 

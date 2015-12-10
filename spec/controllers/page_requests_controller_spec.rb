@@ -8,7 +8,7 @@ describe PageRequestsController do
         expect(response).to render_template('terms')
     end
   end
-  
+
    describe '#view_distribution_license' do
     it 'renders a distribution license page' do
         get :view_distribution_license
@@ -64,5 +64,17 @@ describe PageRequestsController do
       expect(response).to render_template('creators_rights')
     end
   end
+
+  describe '#login' do
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      controller.stub(:current_user).and_return(user)
+    end
+    it 'redirects to catalog index path when already logged in' do
+      get :login
+      response.should redirect_to(catalog_index_path)
+    end
+  end
+
 end
 
