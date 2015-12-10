@@ -38,7 +38,7 @@ class PageRequestsController < ApplicationController
 
   def login
     if current_user
-      redirect_to catalog_index_path
+      redirect_to landing_page
     elsif AUTH_CONFIG['shibboleth_enabled']
       render 'login'
     else

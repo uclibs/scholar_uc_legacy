@@ -13,7 +13,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
       flash[:notice] = "You are now signed in as #{@user.name} (#{@user.email})"
     else
-      redirect_to catalog_index_path
+      redirect_to landing_page
     end
   end
 
