@@ -1,3 +1,15 @@
+### 1.3.0 12/04/2015
+* Updated text on the Welcome page and Collection Policy page
+* Added new styling to the upload buttons for works, files, collection images, and profile images
+* The My Works screen now only lists content that is owned by the user
+* Bug fixes
+  * Fixed a bug that caused search terms to be lost when selecting a facet
+  * Fixed a bug that caused sort options to be lost when moving to the next page of search results
+  * Fixed a bug that required users to edit and save their profile page before adding sections to their profile
+  * Fixed a bug that allowed a user's delegate's delegates to edit the user's works
+  * Fixed a bug that prevented the depositor of a work from being removed as an editor of the work
+  * Fixed a bug that generated an error when certain types of files with Additional Status Messages were displayed
+
 ### 1.2.0 10/30/2015
 * Styles upload button and help text.
 * Adds slack integration to travis.

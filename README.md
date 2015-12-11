@@ -38,6 +38,10 @@ Install system dependencies
 
 Have a question or comment about Scholar@UC?  Contact scholar@uc.edu.
 
+## Known issues
+
+* If a restricted/private file is added to a public work, the thumbnails associated with that file will are broken. This only impacts the development environment (testing and production are okay), and is believed to be related to exception raising/handling in the development environment. Because this does not impact production or testing, we've decided not to address this issue.
+
 ## Application Status
 
 [![Build Status](https://travis-ci.org/uclibs/scholar_uc.svg?branch=sandbox)](https://travis-ci.org/uclibs/scholar_uc)
