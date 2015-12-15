@@ -85,3 +85,4 @@ end
 
 gem 'omniauth-openid'
 gem 'omniauth-shibboleth'
+gem 'feedjira'

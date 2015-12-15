@@ -1,14 +1,18 @@
-<div id="news" class="container" style="padding-bottom: 20px;">
+<div id="news" class="container rssFeed" style="padding-bottom: 20px;">
   <div class="container marketing">
-  	<script src="/assets/jquery.zrssfeed.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-      $('#news').rssfeed('http://libapps.libraries.uc.edu/scholarblog/feed/', {
-    limit: 3,
-	  sort: "date",
-	  sortasc: false
-        });
-      });
-    </script>
+    <div class="rssHeader">
+      <%= link_to FeedEntry::SCHOLAR_BLOG[:title], FeedEntry::SCHOLAR_BLOG[:url]  %>
+    </div>
+    <div class="rssBody">
+      <ul>
+        <% FeedEntry.all(limit: 3, order: "published_at desc").each do |entry| %>
+           <li class="rssRow">
+             <h4><%= link_to entry.name, entry.url, title: "View this feed at Scholarblog" %></h4>
+             <div><%= entry.published_at %></div> 
+             <p><%= truncate entry.summary, length: 130, escape: false, separator: ' ' %></p> 
+           </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
