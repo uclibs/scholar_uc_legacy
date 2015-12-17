@@ -1,3 +1,7 @@
+### 1.3.1 12/16/2015
+* Bug fixes
+  * Reverted the 1.3.0 change to the My Works menu due to a software bug.
+
 ### 1.3.0 12/04/2015
 * Updated text on the Welcome page and Collection Policy page
 * Added new styling to the upload buttons for works, files, collection images, and profile images
