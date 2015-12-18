@@ -1,15 +1,15 @@
 development:
   manager_usernames:
-  bamboo_manager_email1
-  bamboo_manager_email2
-  bamboo_manager_email3
+  - bamboo_manager_email1
+  - bamboo_manager_email2
+  - bamboo_manager_email3
 test:
   manager_usernames:
-  bamboo_manager_email1
-  bamboo_manager_email2
-  bamboo_manager_email3
+  - bamboo_manager_email1
+  - bamboo_manager_email2
+  - bamboo_manager_email3
 production:
   manager_usernames:
-  bamboo_manager_email1
-  bamboo_manager_email2
-  bamboo_manager_email3
+  - bamboo_manager_email1
+  - bamboo_manager_email2
+  - bamboo_manager_email3
