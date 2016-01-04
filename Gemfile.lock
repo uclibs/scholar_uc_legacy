@@ -126,7 +126,7 @@ GEM
       ruby-box
       sass-rails
       skydrive
-    browser (1.0.1)
+    browser (1.1.0)
     builder (3.1.4)
     cancan (1.6.10)
     capybara (2.5.0)
@@ -180,7 +180,7 @@ GEM
     equivalent-xml (0.6.0)
       nokogiri (>= 1.4.3)
     erubis (2.7.0)
-    exception_notification (4.1.2)
+    exception_notification (4.1.3)
       actionmailer (~> 4.0)
       activesupport (~> 4.0)
     execjs (2.6.0)
@@ -211,7 +211,7 @@ GEM
       multi_json (~> 1.10)
       retriable (~> 1.4)
       signet (~> 0.6)
-    google_drive (1.0.4)
+    google_drive (1.0.5)
       google-api-client (>= 0.7.0, < 0.9)
       nokogiri (>= 1.4.4, != 1.5.2, != 1.5.1)
       oauth (>= 0.3.6)
@@ -321,7 +321,7 @@ GEM
       redis
     noid (0.6.6)
       backports
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     nom-xml (0.5.4)
       activesupport (>= 3.2.18)
@@ -341,9 +341,9 @@ GEM
       mediashelf-loggable
       nokogiri (>= 1.4.2)
       solrizer (~> 3.1.0)
-    omniauth (1.2.2)
+    omniauth (1.3.1)
       hashie (>= 1.2, < 4)
-      rack (~> 1.0)
+      rack (>= 1.0, < 3)
     omniauth-openid (1.0.1)
       omniauth (~> 1.0)
       rack-openid (~> 1.3.1)
@@ -395,7 +395,7 @@ GEM
       rdf-xsd (>= 1.0)
     rdf-xsd (1.1.2)
       rdf (~> 1.1)
-    rdoc (4.2.0)
+    rdoc (4.2.1)
       json (~> 1.4)
     redis (3.2.2)
     redis-namespace (1.5.2)
@@ -460,7 +460,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    signet (0.7.0)
+    signet (0.7.2)
       addressable (~> 2.3)
       faraday (~> 0.9)
       jwt (~> 1.5)
