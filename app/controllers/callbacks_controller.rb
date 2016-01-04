@@ -1,16 +1,20 @@
 class CallbacksController < Devise::OmniauthCallbacksController
   def shibboleth
-    @omni = request.env["omniauth.auth"]
-    @email = use_uid_if_email_is_blank
+    unless current_user
+      @omni = request.env["omniauth.auth"]
+      @email = use_uid_if_email_is_blank
 
-    unless user_exists?
-      create_user
-      create_profile
-      create_person
+      unless user_exists?
+        create_user
+        create_profile
+        create_person
+      end
+
+      sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
+      flash[:notice] = "You are now signed in as #{@user.name} (#{@user.email})"
+    else
+      redirect_to landing_page
     end
-
-    sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
-    flash[:notice] = "You are now signed in as #{@user.name} (#{@user.email})"
   end
 
   private
