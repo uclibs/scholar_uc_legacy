@@ -78,6 +78,7 @@ group :test do
   gem 'rspec-html-matchers', '~>0.4'
   gem 'rspec-rails', '~>2.14.0'
   gem 'capybara', "~> 2.1"
+  gem 'show_me_the_cookies'
 #  gem 'vcr'
 #  gem 'webmock'
 #  gem 'database_cleaner', '< 1.1.0'
@@ -86,3 +87,4 @@ end
 gem 'omniauth-openid'
 gem 'omniauth-shibboleth'
 gem 'feedjira'
+
