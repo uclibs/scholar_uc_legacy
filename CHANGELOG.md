@@ -1,3 +1,10 @@
+### 1.4.1 1/4/2016
+* Created a welcome page customized for student users
+* Help information is now displayed for file rollbacks
+* Bug fixes
+  * Users can no longer access the /login page while they are currently logged in
+  * Cleaned up cascaded delegate rights for some users
+
 ### 1.3.1 12/16/2015
 * Bug fixes
   * Reverted the 1.3.0 change to the My Works menu due to a software bug.
