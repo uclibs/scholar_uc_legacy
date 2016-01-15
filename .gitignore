@@ -38,3 +38,4 @@ config/fedora.yml
 config/solr.yml
 config/authentication.yml
 
+.vagrant/
