@@ -23,4 +23,14 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+
+  private
+
+  def after_sign_out_path_for(resource_or_scope)
+    if cookies[:login_type] == "shibboleth"
+      "/Shibboleth.sso/Logout?return=https%3A%2F%2Fbamboo_shibboleth_logout%2Fidp%2Fprofile%2FLogout"
+    else
+      root_path
+    end
+  end
 end
