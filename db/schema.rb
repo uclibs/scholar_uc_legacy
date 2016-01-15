@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727174036) do
+ActiveRecord::Schema.define(version: 20151211162319) do
 
   create_table "bookmarks", force: true do |t|
     t.integer  "user_id",     null: false
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 20150727174036) do
 
   add_index "domain_terms_local_authorities", ["domain_term_id", "local_authority_id"], name: "dtla_by_ids2"
   add_index "domain_terms_local_authorities", ["local_authority_id", "domain_term_id"], name: "dtla_by_ids1"
+
+  create_table "feed_entries", force: true do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "follows", force: true do |t|
     t.integer  "followable_id",                   null: false
@@ -211,13 +221,13 @@ ActiveRecord::Schema.define(version: 20150727174036) do
     t.datetime "groups_last_update"
     t.boolean  "user_does_not_require_profile_update", default: false
     t.string   "repository_id"
-    t.boolean  "waived_welcome_page"
     t.string   "provider"
     t.string   "uid"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "ucstatus"
     t.string   "ucdepartment"
+    t.boolean  "waived_welcome_page"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

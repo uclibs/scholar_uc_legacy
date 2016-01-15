@@ -47,7 +47,7 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "3a222ed6774a2a14ea4f074d38abe2d0e9a4705c"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "1b7f3ca4eae69964d1e3630ed31529a950038803"
 gem "clamav"
 gem 'exception_notification'
 
@@ -85,3 +85,4 @@ end
 
 gem 'omniauth-openid'
 gem 'omniauth-shibboleth'
+gem 'feedjira'
