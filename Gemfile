@@ -47,7 +47,7 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "1b7f3ca4eae69964d1e3630ed31529a950038803"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "5f01804c42e37140563755c3d9d401720134d514"
 gem "clamav"
 
 group :production do
