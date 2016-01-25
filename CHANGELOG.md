@@ -1,3 +1,10 @@
+### 1.5 1/22/2016
+* When users view a list of their collections, the list is now sorted alphabetically.
+* Pages that list PDF files now also include a link to download Adobe Reader.
+* Security fixes
+  * When user log out of the application, their browser is also logged out of UC's central authentication.
+  * HTML script tags are no longer allowed in Collection titles.
+ 
 ### 1.4.1 1/4/2016
 * Created a welcome page customized for student users
 * Help information is now displayed for file rollbacks
