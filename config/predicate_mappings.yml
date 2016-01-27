@@ -62,3 +62,7 @@
     :has_editor: hasEditor
     :is_editor_group_of: isiEditorGroupOf
     :has_editor_group: hasEditorGroup
+    :has_reader: hasReader
+    :is_reader_group_of: isReaderGroupOf
+    :has_reader_group: hasReaderGroup
+    :is_reader_of: isReaderOf
