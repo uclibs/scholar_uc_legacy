@@ -1,3 +1,8 @@
+### 1.5.1 2/1/2016
+* Bugs fixes
+  * Fixed a bug where nested collections would not display
+  * Fixed an incorrect URL for production Shibboleth logout
+
 ### 1.5 1/22/2016
 * When users view a list of their collections, the list is now sorted alphabetically.
 * Pages that list PDF files now also include a link to download Adobe Reader.
