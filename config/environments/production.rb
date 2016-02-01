@@ -93,11 +93,20 @@ CurateApp::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Enable Exception Notifications
-  config.middleware.use ExceptionNotification::Rack,
-  :email => {
-    :email_prefix => "[ERROR] ",
-    :sender_address => %{"notifier" <scholar_error@uc.edu>},
-    :exception_recipients => %w{scholar@uc.edu}
-  }
+  if 'bamboo_production_mailer_url' == 'scholar.uc.edu'
+    config.action_mailer.delivery_method = :sendmail
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+
+    config.middleware.use ExceptionNotification::Rack,
+    :email => {
+      :email_prefix => "[ERROR] ",
+      :sender_address => %{"notifier" <scholar_error@uc.edu>},
+      :exception_recipients => %w{scholar@uc.edu}
+    }
+
+  else 
+    config.action_mailer.raise_delivery_errors = false
+  end
 
 end

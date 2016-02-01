@@ -47,9 +47,12 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "1b7f3ca4eae69964d1e3630ed31529a950038803"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "5f01804c42e37140563755c3d9d401720134d514"
 gem "clamav"
-gem 'exception_notification'
+
+group :production do
+  gem 'exception_notification'
+end
 
 gem "bootstrap-sass"
 gem "font-awesome-sass"
@@ -78,6 +81,7 @@ group :test do
   gem 'rspec-html-matchers', '~>0.4'
   gem 'rspec-rails', '~>2.14.0'
   gem 'capybara', "~> 2.1"
+  gem 'show_me_the_cookies'
 #  gem 'vcr'
 #  gem 'webmock'
 #  gem 'database_cleaner', '< 1.1.0'
@@ -86,3 +90,4 @@ end
 gem 'omniauth-openid'
 gem 'omniauth-shibboleth'
 gem 'feedjira'
+

@@ -131,4 +131,20 @@ describe 'UC account workflow', FeatureSupport.options do
       expect(page).to have_content 'You updated your account successfully'
     end
   end
+
+  describe 'a user using a UC Shibboleth login' do
+    it "redirects to the UC Shibboleth logout page after logout" do
+      create_cookie('login_type', 'shibboleth')
+      visit('/users/sign_out')
+      page.should have_content("You have been logged out of the University of Cincinnati's Login Service")
+    end
+  end
+
+  describe 'a user using a local login' do
+    it "redirects to the home page after logout" do
+      create_cookie('login_type', 'local')
+      visit('/users/sign_out')
+      page.should have_title("Scholar@UC")
+    end
+  end
 end
