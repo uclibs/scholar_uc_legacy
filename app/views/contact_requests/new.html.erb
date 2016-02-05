@@ -77,8 +77,10 @@
         <input type="hidden" id="userAgent" name="userAgent" value="">
 
         <p style="margin:2em 0;">(ADD RECAPTCHA HERE)</p>         
--->
-        <div class="g-recaptcha" data-sitekey= "<%=CAPTCHA_SERVER['site_key']%>"></div>
+-->     
+        <% if current_user.blank? %>
+          <div class="g-recaptcha" data-sitekey= "<%=CAPTCHA_SERVER['site_key']%>"></div>
+        <% end %>
 
         <button  style="margin-top: 15px; width: 60px; border: 1px solid black;" class="btn btn-lg btn-primary make-me-not-blue" type="submit">Send</button>
 

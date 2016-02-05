@@ -15,9 +15,8 @@ class ContactRequestsController < ApplicationController
     @name = params[:name]
     @email = params[:email]
     @comments = params[:comments]
-    status = verify_google_recaptcha(CAPTCHA_SERVER['secret_key'],params["g-recaptcha-response"])
 
-    if (status)
+    if passes_catcha_or_is_logged_in?
       NotificationMailer.notify(@name,@email,@comments).deliver
       redirect_to catalog_index_path, notice: SUCCESS_NOTICE
     else
@@ -25,4 +24,15 @@ class ContactRequestsController < ApplicationController
       render :action => 'new'
     end
   end
+
+  private
+
+  def passes_catcha_or_is_logged_in?
+    if current_user.present?
+      return true
+    else
+      return verify_google_recaptcha(CAPTCHA_SERVER['secret_key'],params["g-recaptcha-response"])
+    end
+  end
+
 end
