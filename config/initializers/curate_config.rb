@@ -4,6 +4,7 @@ Curate.configure do |config|
   config.register_curation_concern :article
   config.register_curation_concern :image
   config.register_curation_concern :document
+  config.register_curation_concern :video
   # # You can override curate's antivirus runner by configuring a lambda (or
   # # object that responds to call)
   # config.default_antivirus_instance = lambda {|filename| … }
