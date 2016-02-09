@@ -8,6 +8,23 @@ The Univeristy of Cincinnati's implementation of Scholar@UC can be found at http
 
 ## Installing the Scholar@UC application
 
+### Option #1: Run Scholar@UC in a Vagrant virtual environment
+1. Install [Vagrant](https://www.vagrantup.com/downloads.html)
+1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+1. Clone this repository: `git clone https://github.com/uclibs/scholar_uc.git ./path/to/local`
+1. Change to the application's directory: e.g. `cd ./path/to/local`
+1. Provision and start the Vagrant machine: `vagrant up` (this will take a while)
+1. Ssh to the virtual machine: `vagrant ssh`
+1. Start the Redis server: `sudo service redis start`
+1. Add FITS to the path: `export PATH=$PATH:/home/vagrant/fits-0.6.2/`
+1. Change to the application directory: `cd /home/vagrant/sync`
+1. Start Jetty: `bundle exec rake jetty:start`
+1. Start the background workers: `count=4 QUEUE=* rake environment resque:work &`
+1. Start the application: `bundle exec rails server`
+1. On your host machine, open a browser and visit `http://localhost:3000`
+
+### Option #2: Run Scholar@UC in your local Rails environment
+
 Install system dependencies
 * libmysqlclient-dev (if running MySQL as RDBMS)
 * libsqlite3-dev (if running SQLite as RDBMS)
@@ -32,7 +49,7 @@ Install system dependencies
 1. Visit the site at [http://localhost:3000] (http://localhost:3000)
  
 ## Running the Tests
-`bundle exec rake rspec`
+`bundle exec rake spec`
 
 ## Need Help?
 
