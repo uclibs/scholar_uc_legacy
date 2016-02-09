@@ -61,6 +61,7 @@ gem "font-awesome-rails", "4.2.0.0"
 gem "devise"
 gem "devise-guests", "~> 0.3"
 
+gem 'openseadragon', '0.1.0'
 
 group :development, :test do
   gem 'sqlite3'
