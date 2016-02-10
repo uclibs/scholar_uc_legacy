@@ -1,3 +1,14 @@
+### 1.6.0 2/5/2016
+* Removed the contact form captcha requirement for logged in users.
+* Added the ability to assign read-only permissions to individuals or to a group.
+* Added a new work type for video content.
+* Added an embedded image viewer.
+* Bug fixes
+  * Editor rights from additional editors are now also granted to linked resources.
+  * Required form fields no longer accept only space characters as valid content.
+  * Users are now properly hidden until they own a work.
+  * All form fields now reject content that includes HTML script tags.
+
 ### 1.5.1 2/1/2016
 * Bugs fixes
   * Fixed a bug where nested collections would not display
