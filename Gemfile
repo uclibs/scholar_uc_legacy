@@ -47,7 +47,7 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "999b7b514517eaef63c379095c3d30fa1cf55583"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "5081228b23db80a8503e1b4e6336f9908d19f01b"
 gem "clamav"
 
 group :production do
@@ -61,6 +61,7 @@ gem "font-awesome-rails", "4.2.0.0"
 gem "devise"
 gem "devise-guests", "~> 0.3"
 
+gem 'openseadragon', '0.1.0'
 
 group :development, :test do
   gem 'sqlite3'

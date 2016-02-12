@@ -1,0 +1,10 @@
+# stores IIIF image server url
+
+development:
+  url: 'https://bamboo_production_mailer_url/loris/'
+
+test:
+  url: 'https://localhost/loris/'
+
+production:
+  url: 'https://bamboo_production_mailer_url/loris/'

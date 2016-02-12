@@ -5,6 +5,7 @@ CurateApp::Application.routes.draw do
   HydraHead.add_routes(self)
     devise_for :users, controllers: { sessions: :sessions, registrations: :registrations, omniauth_callbacks: "callbacks" }
 
+
   namespace :admin do
   #constraints Sufia::ResqueAdmin do
      mount Resque::Server, :at => 'queues'

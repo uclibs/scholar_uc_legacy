@@ -12,6 +12,18 @@ describe ContactRequestsController do
 
   describe 'POST #create' do
 
+    context 'logged in' do
+
+      let(:user) { FactoryGirl.create(:user) }
+      before { sign_in user }
+
+      it 'Always passes with registered user' do
+        NotificationMailer.any_instance.stub(:notify).and_return(true)
+        post(:create)
+        response.should redirect_to(catalog_index_path)
+      end
+    end
+
     it 'successfully allows reCaptcha' do
       ContactRequestsController.any_instance.stub(:verify_google_recaptcha).and_return(true)
       NotificationMailer.any_instance.stub(:notify).and_return(true)
