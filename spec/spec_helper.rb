@@ -47,4 +47,6 @@ RSpec.configure do |config|
 
   # Allow cookies to be set in feature tests (for UC Shibboleth testing)
   config.include ShowMeTheCookies, :type => :feature
+
+  config.include Rails.application.routes.url_helpers
 end

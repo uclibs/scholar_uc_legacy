@@ -49,7 +49,7 @@ gem "kaminari", "0.15.1"
 
 gem "curate", git: "https://github.com/uclibs/curate.git", ref: "5081228b23db80a8503e1b4e6336f9908d19f01b"
 gem "clamav"
-
+gem "sitemap_generator"
 group :production do
   gem 'exception_notification'
 end

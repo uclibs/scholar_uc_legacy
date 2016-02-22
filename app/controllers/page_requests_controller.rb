@@ -1,5 +1,10 @@
 class PageRequestsController < ApplicationController
 
+########
+# if you're adding a new static page you must add it to both the 
+# config/sitemap.rb file as well as the spec/sitemap/generator_spec.rb spec.
+########
+
   def view_distribution_license
     render 'distribution_license'
   end
