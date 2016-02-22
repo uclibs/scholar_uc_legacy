@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/uclibs/curate.git
-  revision: 999b7b514517eaef63c379095c3d30fa1cf55583
-  ref: 999b7b514517eaef63c379095c3d30fa1cf55583
+  revision: 5081228b23db80a8503e1b4e6336f9908d19f01b
+  ref: 5081228b23db80a8503e1b4e6336f9908d19f01b
   specs:
     curate (0.6.6)
       active_attr
@@ -89,7 +89,7 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
-    backports (3.6.7)
+    backports (3.6.8)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -347,6 +347,8 @@ GEM
       rack-openid (~> 1.3.1)
     omniauth-shibboleth (1.2.1)
       omniauth (>= 1.0.0)
+    openseadragon (0.1.0)
+      rails (> 3.2.0)
     orm_adapter (0.5.0)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
@@ -393,7 +395,7 @@ GEM
       rdf-xsd (>= 1.0)
     rdf-xsd (1.1.2)
       rdf (~> 1.1)
-    rdoc (4.2.1)
+    rdoc (4.2.2)
       json (~> 1.4)
     redis (3.2.2)
     redis-namespace (1.5.2)
@@ -570,6 +572,7 @@ DEPENDENCIES
   mysql2 (= 0.3.20)
   omniauth-openid
   omniauth-shibboleth
+  openseadragon (= 0.1.0)
   poltergeist
   quiet_assets
   rails (= 4.0.13)
