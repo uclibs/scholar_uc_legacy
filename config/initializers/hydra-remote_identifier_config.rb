@@ -4,12 +4,18 @@ Hydra::RemoteIdentifier.configure do |config|
   config.remote_service(:doi, doi_credentials) do |doi|
     doi.register(GenericWork, Dataset, Article, Image, Document) do |map|
       map.target {|obj| Curate.permanent_url_for(obj) }
+      map.status :doi_status
       map.creator :creator
       map.title :title
       map.publisher {|o| Array(o.publisher).join("; ")}
       map.publicationyear {|o| o.date_uploaded.year }
+      map.identifier_url :identifier_url
       # Make sure that this method both sets the identifier and persists the change!
-      map.set_identifier {|o,value| o.identifier = value; o.save }
+      map.set_identifier do |o,value| 
+        o.identifier = value.fetch(:identifier)
+        o.identifier_url = value.fetch(:identifier_url)
+        o.save
+      end
     end
   end
 

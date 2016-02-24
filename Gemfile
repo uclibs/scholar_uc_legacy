@@ -47,8 +47,9 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "5081228b23db80a8503e1b4e6336f9908d19f01b"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "715b3392aa0f224493d35067830dc28c416f947f"
 gem "clamav"
+gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", branch: "setting-status"
 
 group :production do
   gem 'exception_notification'
