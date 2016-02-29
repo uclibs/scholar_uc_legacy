@@ -1,7 +1,23 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'seed_methods' 
+
+class AddInitialObjects < ActiveRecord::Migration
+  rando_pass = Devise.friendly_token.first(8)
+  accounts = {'manydeposits@example.com' => 'Many Deposits', 'nodeposits@example.com' => 'No Deposits', 'manager@example.com' => 'Repository Manager', 'delegate@example.com' => 'Student Delegate'} 
+
+  accounts.each do | email, name |
+    unless User.where(email: email).exists?
+      SeedMethods.new_account(email, name, rando_pass)
+      system("echo #{email}, #{rando_pass} | mail -s 'Test account on scholar QA' scholar@ucmail.uc.edu")
+    end
+  end
+
+  accounts.reject{ | email, name | email == 'nodeposits@example.com' }.each do | email, name |
+    10.times { |i| SeedMethods.new_image(email, name) }
+    10.times { |i| SeedMethods.new_document(email, name) }
+    10.times { |i| SeedMethods.new_article(email, name) }
+    10.times { |i| SeedMethods.new_dataset(email, name) }
+    10.times { |i| SeedMethods.new_genericwork(email, name) }
+    10.times { |i| SeedMethods.new_video(email, name) }
+  end
+end
+
