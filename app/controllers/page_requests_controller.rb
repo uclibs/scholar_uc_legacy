@@ -36,6 +36,10 @@ class PageRequestsController < ApplicationController
     render 'creators_rights'
   end
 
+  def view_data_help
+    render 'documenting_data_help'
+  end
+
   def login
     if current_user
       redirect_to landing_page
