@@ -19,4 +19,5 @@ mkdir -p /srv/apps/curate_uc/tmp
 touch /srv/apps/curate_uc/tmp/restart.txt
 /usr/bin/crontab /srv/apps/curate_uc/script/crontab_production1
 /srv/apps/curate_uc/script/restart_resque.sh production
+/bin/date +"%m-%d-%Y %r" > /srv/apps/curate_uc/config/deploy_timestamp
 echo "The deploy to https://scholar.uc.edu is finished" | mail -s 'Scholar@UC deploy finished (scholar.uc.edu)' scholar@uc.edu
