@@ -34,12 +34,16 @@ SitemapGenerator::Sitemap.create(:compress => false) do
 ### curation concerns ###
   Curate.configuration.registered_curation_concern_types.each do |curation_concern_type|
     curation_concern_type.constantize.find_each do |curation_concern|
-      add polymorphic_path([:curation_concern, curation_concern]), :priority => 0.8
+      if curation_concern.read_groups == ["public"]
+        add polymorphic_path([:curation_concern, curation_concern]), :priority => 0.8
+      end
     end
   end
 
   Collection.find_each do |collection|
-    add collection_path(collection)
+    if collection.read_groups == ["public"]
+      add collection_path(collection)
+    end
   end
 
   Person.find_each do |person|
@@ -47,5 +51,4 @@ SitemapGenerator::Sitemap.create(:compress => false) do
       add person_path(person), :priority => 0.8
     end
   end
-
 end
