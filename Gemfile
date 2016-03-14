@@ -47,8 +47,10 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "5081228b23db80a8503e1b4e6336f9908d19f01b"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "2beb854541f843f4470e8fc24d58f7fed72524f8"
 gem "clamav"
+gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", branch: "setting-status"
+gem "sitemap_generator"
 
 group :production do
   gem 'exception_notification'
@@ -92,3 +94,4 @@ gem 'omniauth-openid'
 gem 'omniauth-shibboleth'
 gem 'feedjira'
 
+gem 'rake', '10.5'

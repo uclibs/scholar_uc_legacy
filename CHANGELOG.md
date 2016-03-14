@@ -1,3 +1,28 @@
+### 1.7.0 3/4/2016
+* Improved the display of file metadata for mobile users
+* Prevent the use of script tags in all form fields
+* The page footer now diplays the date and time of the last code deploy
+* Added a link to the File Format Advice page at the top of the new work form
+* Users can now reserve Document Object Indentifiers (DOIs) for embargoed/private works
+* When viewing a work, the name of that work's submitter is now listed
+* The sitemap.xml file is now generated nightly and includes works, collections, and profiles
+* Bug fixes
+  * Only show the Adobe Reader link once when there are multiple PDfs listed on a page
+  * Fixed the display of very long file names when viewing a work
+  * Various display fixes for the mobile responsive layout
+  * Fixed bugs related to the video work type introduced in v1.6
+
+### 1.6.0 2/5/2016
+* Removed the contact form captcha requirement for logged in users.
+* Added the ability to assign read-only permissions to individuals or to a group.
+* Added a new work type for video content.
+* Added an embedded image viewer.
+* Bug fixes
+  * Editor rights from additional editors are now also granted to linked resources.
+  * Required form fields no longer accept only space characters as valid content.
+  * Users are now properly hidden until they own a work.
+  * All form fields now reject content that includes HTML script tags.
+
 ### 1.5.1 2/1/2016
 * Bugs fixes
   * Fixed a bug where nested collections would not display

@@ -22,6 +22,7 @@
         <li><a href="#faq_159">Where do I go if I want to consult with subject area specialists on content?</a></li>
         <li><a href="#faq_3456">What's restricted data?</a></li>
         <li><a href="#faq_6543">What’s the difference between delegates, editors, and groups?</a></li>
+        <li><a href="#faq_1010">How do work access rights impact my DOIs?</a></li>
         <li><a href="#faq_6789">What happens to my content when I delete a work?</a></li>
 
       </ul>
@@ -138,6 +139,19 @@
         Editors (and groups) are like delegates, but whereas delegates have all the powers of the person they represent, editors (and groups) can only view and make changes to specific works.
       </blockquote>
 
+      <p><a name="faq_1010" id="faq_1010"></a>
+        How do work access rights impact my DOIs?
+      </p>
+      <blockquote>
+        If you use Scholar@UC to request a DOI, it will be either <i>public</i>, <i>reserved</i>, or <i>unavailable</i>.
+        <br><br>
+        <i>Public</i> DOIs are available for all <span class="label label-success">Open Access</span> works, and work normally.
+        <br><br>
+        <i>Reserved</i> DOIs are granted to any <span class="label label-warning">Open Access with Embargo</span>, <span class="label label-info"><%=t('sufia.institution_name') %></span>, or <span class="label label-important">Private</span> works for which you request a DOI. A <i>reserved</i> DOI will not yet redirect to your work, but it will be availble on the display page for your work for your reference. A <i>reserved</i> DOI will become <i>public</i> if you make your work <span class="label label-success">Open Access</span> or if your <span class="label label-warning">Embargo</span> expires.
+        <br><br>
+        <i>Unavailable</i> DOIs are maintained for works for which you have requested a DOI where you have deleted the work or where you have changed the access rights from <span class="label label-success">Open Access</span> to <span class="label label-warning">Open Access with Embargo</span>, <span class="label label-info"><%=t('sufia.institution_name') %></span>, or <span class="label label-important">Private</span>. A tombstone page will indicate that the work is not available because it was withdrawn from the author. If you change your work back to <span class="label label-success">Open Access</span>, the DOI will change back to <i>public</i> status.
+        <br><br>
+      </blockquote>
 
       <p><a name="faq_6789" id="faq_6789"></a>
         What happens to my content when I delete a work?
