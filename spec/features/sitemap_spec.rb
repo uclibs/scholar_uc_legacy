@@ -19,9 +19,10 @@ describe SitemapGenerator::Interpreter do
       let!(:public_person) {FactoryGirl.create(:person_with_user)}
       let!(:user) {public_person.user}
       let!(:private_person) {FactoryGirl.create(:person)}
-      let!(:collection) {FactoryGirl.create(:collection)}
-      let!(:generic_work) {FactoryGirl.create(:generic_work)}
-
+      let!(:collection) {FactoryGirl.create(:collection, read_groups: ["public"])}
+      let!(:private_collection) { FactoryGirl.create(:collection, read_groups: [])}
+      let!(:generic_work) {FactoryGirl.create(:generic_work, read_groups: ["public"])}
+      let!(:private_generic_work) {FactoryGirl.create(:generic_work, read_groups: [])}
     before(:each) do
       #static links
       Curate.configuration.application_root_url = 'http://localhost:3000/'
@@ -43,8 +44,9 @@ describe SitemapGenerator::Interpreter do
       @collection_facet_url = 'http://localhost:3000/catalog?f[human_readable_type_sim][]=Collection'
       @generic_work_facet_url = 'http://localhost:3000/catalog?f[human_readable_type_sim][]=Generic+Work'
       @person_facet_url = 'http://localhost:3000/catalog?f[human_readable_type_sim][]=Person'
+      
     end
-    it 'generates only users with works submitted and new works or collections' do
+    it 'generates only public users with works submitted and public new works or public collections' do
       login_as(user)
       visit new_curation_concern_generic_work_path
       within '#new_generic_work' do
@@ -60,7 +62,10 @@ describe SitemapGenerator::Interpreter do
       File.read('public/sitemap.xml').should include(person_path(public_person))
       File.read('public/sitemap.xml').should_not include(person_path(private_person))
       File.read('public/sitemap.xml').should include(curation_concern_generic_work_path(generic_work))
+      File.read('public/sitemap.xml').should_not include(curation_concern_generic_work_path(private_generic_work))
       File.read('public/sitemap.xml').should include(collection_path(collection))
+      File.read('public/sitemap.xml').should_not include(collection_path(private_collection))
+
     end
     it 'contains the correct static urls' do
       #check for all static links
