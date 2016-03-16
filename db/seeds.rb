@@ -7,7 +7,7 @@ class AddInitialObjects < ActiveRecord::Migration
   accounts.each do | email, name |
     unless User.where(email: email).exists?
       SeedMethods.new_account(email, name, rando_pass)
-      system("echo #{email}, #{rando_pass} | mail -s 'Test account on scholar QA' scholar@ucmail.uc.edu")
+      puts "-- Test account created: #{email}, #{rando_pass}"
     end
   end
 

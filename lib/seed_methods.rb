@@ -43,7 +43,7 @@ module SeedMethods
     profile.apply_depositor_metadata(user.user_key)
     profile.read_groups = [Hydra::AccessControls::AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
     profile.save!
-    person = Person.new depositor: email, email: email, profile: profile
+    person = Person.new depositor: email, email: email, profile: profile, first_name: first_name(name), last_name: last_name(name)
     person.apply_depositor_metadata(user.user_key)
     person.read_groups = [Hydra::AccessControls::AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
     person.save!
