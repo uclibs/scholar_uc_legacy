@@ -1,3 +1,8 @@
+### 1.7.1 3/18/2016
+* Bug fixes
+  * Fix bug that causes some user profiles to to not display
+  * Fix bug that includes private works or collections in the sitemap.xml
+
 ### 1.7.0 3/4/2016
 * Improved the display of file metadata for mobile users
 * Prevent the use of script tags in all form fields
