@@ -6,7 +6,7 @@ require 'rake'
 # if the test breaks because of a BadUri (both uri relative), run script/copy_config_local.sh
 #####
 
-describe SitemapGenerator::Interpreter do  
+describe SitemapGenerator::Interpreter do
   describe '.run' do
     it 'does not raise an error' do
       allow(SitemapGenerator::Sitemap).to receive(:ping_search_engines).and_return true
@@ -16,7 +16,7 @@ describe SitemapGenerator::Interpreter do
     end
   end
   describe 'sitemap file' do
-      let!(:public_person) {FactoryGirl.create(:person_with_user)}
+      let!(:public_person) {FactoryGirl.create(:person_with_user, read_groups: ["", "public"])}
       let!(:user) {public_person.user}
       let!(:private_person) {FactoryGirl.create(:person)}
       let!(:collection) {FactoryGirl.create(:collection, read_groups: ["public"])}
@@ -44,7 +44,7 @@ describe SitemapGenerator::Interpreter do
       @collection_facet_url = 'http://localhost:3000/catalog?f[human_readable_type_sim][]=Collection'
       @generic_work_facet_url = 'http://localhost:3000/catalog?f[human_readable_type_sim][]=Generic+Work'
       @person_facet_url = 'http://localhost:3000/catalog?f[human_readable_type_sim][]=Person'
-      
+
     end
     it 'generates only public users with works submitted and public new works or public collections' do
       login_as(user)
