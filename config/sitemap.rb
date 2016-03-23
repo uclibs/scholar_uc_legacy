@@ -4,7 +4,7 @@ SitemapGenerator::Sitemap.create(:compress => false) do
 
 # config file for sitemap_generator. Generates public/sitemap.xml.gz
 # run the rake tasks to generate updated versions
-#       `rake sitemap:refresh` on production, 
+#       `rake sitemap:refresh` on production,
 #       `rake sitemap:refresh:no_ping` on development
 #
 # https://github.com/kjvarga/sitemap_generator
@@ -47,7 +47,7 @@ SitemapGenerator::Sitemap.create(:compress => false) do
   end
 
   Person.find_each do |person|
-    if person.read_groups == ["public"]
+    if person.read_groups == ["", "public"]
       add person_path(person), :priority => 0.8
     end
   end
