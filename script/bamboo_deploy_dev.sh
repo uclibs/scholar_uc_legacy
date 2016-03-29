@@ -18,4 +18,5 @@ touch /srv/apps/curate_uc/tmp/restart.txt
 export PATH=$PATH:/opt/fits/fits-0.6.2/
 /usr/bin/crontab /srv/apps/curate_uc/script/crontab_dev
 /srv/apps/curate_uc/script/restart_resque.sh development
+/bin/date +"%m-%d-%Y %r" > /srv/apps/curate_uc/config/deploy_timestamp
 echo "The deploy to https://scholar-dev.uc.edu is finished" | mail -s 'Scholar@UC deploy finished (scholar-dev)' scholar@uc.edu
