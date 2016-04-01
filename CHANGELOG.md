@@ -1,3 +1,12 @@
+### 1.8.0 4/1/2016
+* Email notification on user registration
+* Enhanced user lookup fields to include email address
+* Bug fixes
+  * Fix bug that causes some collection avatars to to not display
+  * Fix seed data and rake build tasks for engine
+  * Fix bug to handle trailing white space in metadata fields
+  * Fix last name, first name display when depositing on behalf of user
+
 ### 1.7.1 3/18/2016
 * Bug fixes
   * Fix bug that causes some user profiles to to not display
