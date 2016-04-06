@@ -8,6 +8,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
         create_user
         create_profile
         create_person
+        WelcomeMailer.welcome_email(@email).deliver
       end
 
       sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
