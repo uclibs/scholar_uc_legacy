@@ -28,6 +28,7 @@ CurateApp::Application.routes.draw do
   get 'creators_rights_request' => 'page_requests#view_creators_rights'
   get 'contact_requests' => 'contact_requests#new'
   get 'login' => 'page_requests#login'
+  get 'data_help_request' => 'page_requests#view_data_help'
 
   resources :contact_requests
 
