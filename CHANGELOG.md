@@ -1,6 +1,15 @@
+### 1.8.1 4/22/2016
+* Improves Dataset documentation.
+* Bug fixes
+  * Improves user lookup field for delegate to include email address
+  * Improves mobile display
+  * Links to profile collections should link to people
+  * Owner is set properly on files ingested at the same time work is created
+  * Unpin rake from 10.5
+
 ### 1.8.0 4/1/2016
 * Email notification on user registration
-* Enhanced user lookup fields to include email address
+* Enhances user lookup fields to include email address
 * Bug fixes
   * Fix bug that causes some collection avatars to to not display
   * Fix seed data and rake build tasks for engine
