@@ -2,7 +2,7 @@
 
 # This is a copy of the tasks performed by Bamboo to deploy to scholar-qa.uc.edu
 
-echo "The deploy to Scholar@UC QA server #2 has started" | mail -s 'Scholar@UC deploy started (scholar-qa #2)' scholar@uc.edu
+echo "The deploy to Scholar@UC QA server #1 has started" | mail -s 'Scholar@UC deploy started (scholar-qa #1)' scholar@uc.edu
 
 export PATH=$PATH:/srv/apps/.gem/ruby/2.1.0/bin
 export PATH=$PATH:/opt/fits/fits-0.6.2/
@@ -47,5 +47,5 @@ touch /srv/apps/curate_uc/tmp/restart.txt
 # Update the cron jobs from the git repo
 /usr/bin/crontab /srv/apps/curate_uc/script/crontab_dev
 
-echo "The deploy to Scholar@UC QA server #2 is finished" | mail -s 'Scholar@UC deploy finished (scholar-qa #2)' scholar@uc.edu
+echo "The deploy to Scholar@UC QA server #1 is finished" | mail -s 'Scholar@UC deploy finished (scholar-qa #1)' scholar@uc.edu
 

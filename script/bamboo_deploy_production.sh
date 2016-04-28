@@ -47,5 +47,9 @@ touch /srv/apps/curate_uc/tmp/restart.txt
 # Update the cron jobs from the git repo
 /usr/bin/crontab /srv/apps/curate_uc/script/crontab_dev
 
+# Update the sitemap.xml
+cd /srv/apps/curate_uc
+bundle exec rake sitemap:refresh
+
 echo "The deploy to Scholar@UC PRODUCTION server #1 is finished" | mail -s 'Scholar@UC deploy finished (scholar #1)' scholar@uc.edu
 
