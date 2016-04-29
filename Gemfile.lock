@@ -9,8 +9,8 @@ GIT
 
 GIT
   remote: https://github.com/uclibs/curate.git
-  revision: 6c8c3f83ff94a7b624b800b9664df3ac6aa14129
-  ref: 6c8c3f83ff94a7b624b800b9664df3ac6aa14129
+  revision: d51696fc18576efa13e8bbcb75553525d2082129
+  ref: d51696fc18576efa13e8bbcb75553525d2082129
   specs:
     curate (0.6.6)
       active_attr
@@ -252,7 +252,7 @@ GEM
     httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    httpclient (2.7.1)
+    httpclient (2.8.0)
     hurley (0.2)
     hydra-access-controls (6.4.2)
       active-fedora (~> 6.7)
@@ -332,7 +332,7 @@ GEM
     minitest (4.7.5)
     mono_logger (1.1.0)
     morphine (0.1.1)
-    multi_json (1.11.2)
+    multi_json (1.11.3)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     mysql2 (0.3.20)
@@ -420,7 +420,7 @@ GEM
       rdf (~> 1.1)
     rdoc (4.2.2)
       json (~> 1.4)
-    redis (3.2.2)
+    redis (3.3.0)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
     representable (2.3.0)
@@ -549,7 +549,7 @@ GEM
     trollop (1.16.2)
     turbolinks (2.5.3)
       coffee-rails
-    tzinfo (0.3.48)
+    tzinfo (0.3.49)
     uber (0.0.15)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
