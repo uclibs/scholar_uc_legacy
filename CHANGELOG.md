@@ -1,3 +1,18 @@
+### 1.9.0 5/10/2016
+* Creates new Student Work work type.
+* Removes turbolinks.
+* Gem Updates
+  * httpclient 2.8.0 (was 2.7.1)
+  * multi_json 1.11.3 (was 1.11.2)
+  * redis 3.3.0 (was 3.2.2)
+  * tzinfo 0.3.49 (was 0.3.48)
+* Bug fixes
+  * On Video work type:  Sets default value of date_created to blank.
+  * Makes deposited file owner the same as parent work.
+  * Resolves double slash on profile permalinks.
+  * Moves data help alert to data view override.
+  * Fixes bug with bad registrations.
+
 ### 1.8.1 4/22/2016
 * Improves Dataset documentation.
 * Bug fixes
