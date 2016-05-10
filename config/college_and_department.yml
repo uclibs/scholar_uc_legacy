@@ -1,0 +1,21 @@
+colleges:
+  ahs:
+    label: 'Allied Health Sciences'
+  com:
+    label: 'Medicine'
+  a&s:
+    label: 'Arts and Sciences'
+  cob:
+    label: 'Business'
+  ccm:
+    label: 'College-Conservatory of Music'
+  daap:
+    label: 'Design, Architecture, Art and Planning'
+  cech:
+    label: 'Education, Criminal Justice, and Human Services'
+  ceas:
+    label: 'Engineering and Applied Science'
+  nursing:
+    label: 'Nursing'
+  pharm:
+    label: 'Pharmacy'
