@@ -54,7 +54,7 @@ describe SitemapGenerator::Interpreter do
         fill_in "Description", with: "test description"
         fill_in "generic_work_creator", with: "Test generic work creator"
         check("I have read and accept the distribution license agreement")
-        click_button("Create Generic work")
+        click_button("Create Generic Work")
       end
       load File.expand_path("../../../Rakefile", __FILE__)
       Rake::Task.define_task(:environment)

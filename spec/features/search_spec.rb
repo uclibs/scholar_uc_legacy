@@ -6,6 +6,18 @@ describe 'Keyword search' do
       @object.destroy
     end
 
+    it 'returns results for advisor' do
+      @object = create(:etd, advisor: "feomv048dj")
+
+      visit('/')
+      within('.search-form') do
+        fill_in 'q', with: 'feomv048dj'
+        click_button("keyword-search-submit")
+      end
+
+      expect(page).to have_selector("#document_#{@object.noid}")
+    end
+
     it 'returns results for abstracts' do
       @object = create(:article, abstract: "abc123")
 
@@ -24,6 +36,18 @@ describe 'Keyword search' do
       visit('/')
       within('.search-form') do
         fill_in 'q', with: 'bcd234'
+        click_button("keyword-search-submit")
+      end
+
+      expect(page).to have_selector("#document_#{@object.noid}")
+    end
+
+    it 'returns results for committee_members' do
+      @object = create(:etd, committee_member: "deofh49585")
+
+      visit('/')
+      within('.search-form') do
+        fill_in 'q', with: 'deofh49585'
         click_button("keyword-search-submit")
       end
 
@@ -256,7 +280,7 @@ describe 'Keyword search' do
       fill_in "* Title", with: "test work"
       fill_in "* Description", with: "this is a description"
       check("I have read and accept the distribution license agreement")
-      click_button("Create Generic work")
+      click_button("Create Generic Work")
     end
   end
 

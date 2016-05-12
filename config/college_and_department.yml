@@ -1,4 +1,4 @@
-colleges:
+current_colleges:
   ahs:
     label: 'Allied Health Sciences'
   com:
@@ -19,3 +19,8 @@ colleges:
     label: 'Nursing'
   pharm:
     label: 'Pharmacy'
+legacy_colleges:
+  - "Business Administration"
+  - "Education"
+  - "Engineering"
+  - "Interdisciplinary"
