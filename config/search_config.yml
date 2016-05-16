@@ -4,11 +4,15 @@ development:
     qt: search
     qf: 
       - desc_metadata__abstract_tesim
+      - desc_metadata__advisor_tesim
       - desc_metadata__alternate_title_tesim
+      - desc_metadata__college_tesim
       - desc_metadata__contributor_tesim
       - desc_metadata__coverage_spatial_tesim
       - desc_metadata__coverage_temporal_tesim
       - desc_metadata__creator_tesim
+      - desc_metadata__degree_tesim
+      - desc_metadata__department_tesim
       - desc_metadata__description_tesim
       - desc_metadata__genre_tesim
       - desc_metadata__journal_title_tesim
@@ -33,12 +37,16 @@ test:
     qt: search
     qf: 
       - desc_metadata__abstract_tesim
+      - desc_metadata__advisor_tesim
       - desc_metadata__alternate_title_tesim
       - desc_metadata__bibliographic_citation_tesim
+      - desc_metadata__college_tesim
       - desc_metadata__contributor_tesim
       - desc_metadata__coverage_spatial_tesim
       - desc_metadata__coverage_temporal_tesim
       - desc_metadata__creator_tesim
+      - desc_metadata__degree_tesim
+      - desc_metadata__department_tesim
       - desc_metadata__description_tesim
       - desc_metadata__genre_tesim
       - desc_metadata__journal_title_tesim
@@ -63,12 +71,16 @@ production:
     qt: search
     qf: 
       - desc_metadata__abstract_tesim
+      - desc_metadata__advisor_tesim
       - desc_metadata__alternate_title_tesim
       - desc_metadata__bibliographic_citation_tesim
+      - desc_metadata__college_tesim
       - desc_metadata__contributor_tesim
       - desc_metadata__coverage_spatial_tesim
       - desc_metadata__coverage_temporal_tesim
       - desc_metadata__creator_tesim
+      - desc_metadata__degree_tesim
+      - desc_metadata__department_tesim
       - desc_metadata__description_tesim
       - desc_metadata__genre_tesim
       - desc_metadata__journal_title_tesim
