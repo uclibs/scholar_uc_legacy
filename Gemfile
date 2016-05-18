@@ -53,6 +53,11 @@ group :production do
   gem 'exception_notification'
 end
 
+#change manager gem for automatic notification management, requires resque and resque-scheduler
+gem 'resque'
+gem 'resque-scheduler'
+gem 'change_manager'
+
 gem "bootstrap-sass"
 gem "font-awesome-sass"
 gem "font-awesome-rails", "4.2.0.0"
