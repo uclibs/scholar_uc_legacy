@@ -74,6 +74,6 @@
 </div>
 
 <div class="page-link">
-  <% this_page = Curate.configuration.application_root_url + polymorphic_path(@person) %>
+  <% this_page = Curate.configuration.application_root_url.chomp("/") + polymorphic_path(@person) %>
   <p>Link to this page: <%= link_to(this_page, this_page) %></p>
 </div>
