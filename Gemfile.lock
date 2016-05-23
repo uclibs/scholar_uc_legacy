@@ -9,8 +9,8 @@ GIT
 
 GIT
   remote: https://github.com/uclibs/curate.git
-  revision: d51696fc18576efa13e8bbcb75553525d2082129
-  ref: d51696fc18576efa13e8bbcb75553525d2082129
+  revision: cb53af90488e12139754c2254bc5cec0a48a4f70
+  ref: cb53af90488e12139754c2254bc5cec0a48a4f70
   specs:
     curate (0.6.6)
       active_attr
@@ -116,7 +116,7 @@ GEM
       sass-rails
     block_helpers (0.3.3)
       activesupport (>= 2.0)
-    bootstrap-datepicker-rails (1.6.0.1)
+    bootstrap-datepicker-rails (1.6.1.1)
       railties (>= 3.0)
     bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
@@ -135,21 +135,22 @@ GEM
       ruby-box
       sass-rails
       skydrive
-    browser (2.0.3)
+    browser (2.1.0)
     builder (3.1.4)
     cancan (1.6.10)
-    capybara (2.7.0)
+    capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (0.11.0)
+    carrierwave (0.11.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
@@ -213,21 +214,21 @@ GEM
     ffi (1.9.10)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
-    font-awesome-sass (4.5.0)
+    font-awesome-sass (4.6.2)
       sass (>= 3.2)
     foreigner (1.7.4)
       activerecord (>= 3.0.0)
-    google-api-client (0.7.1)
-      addressable (>= 2.3.2)
-      autoparse (>= 0.3.3)
-      extlib (>= 0.9.15)
-      faraday (>= 0.9.0)
-      jwt (>= 0.1.5)
-      launchy (>= 2.1.1)
-      multi_json (>= 1.0.0)
-      retriable (>= 1.4)
-      signet (>= 0.5.0)
-      uuidtools (>= 2.1.0)
+    google-api-client (0.8.6)
+      activesupport (>= 3.2)
+      addressable (~> 2.3)
+      autoparse (~> 0.3)
+      extlib (~> 0.9)
+      faraday (~> 0.9)
+      googleauth (~> 0.3)
+      launchy (~> 2.4)
+      multi_json (~> 1.10)
+      retriable (~> 1.4)
+      signet (~> 0.6)
     google_drive (1.0.6)
       google-api-client (>= 0.7.0, < 0.9)
       nokogiri (>= 1.4.4, != 1.5.2, != 1.5.1)
@@ -241,7 +242,7 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
-    hashie (3.4.3)
+    hashie (3.4.4)
     hike (1.2.3)
     hooks (0.3.6)
       uber (~> 0.0.4)
@@ -252,8 +253,6 @@ GEM
     httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    httpclient (2.8.0)
-    hurley (0.2)
     hydra-access-controls (6.4.2)
       active-fedora (~> 6.7)
       activesupport
@@ -332,7 +331,7 @@ GEM
     minitest (4.7.5)
     mono_logger (1.1.0)
     morphine (0.1.1)
-    multi_json (1.11.3)
+    multi_json (1.12.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     mysql2 (0.3.20)
@@ -423,8 +422,6 @@ GEM
     redis (3.3.0)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
-    representable (2.3.0)
-      uber (~> 0.0.7)
     resque (1.26.0)
       mono_logger (~> 1.0)
       multi_json (~> 1.0)
@@ -438,7 +435,7 @@ GEM
     rest-client (1.7.3)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    retriable (2.1.0)
+    retriable (1.4.1)
     rsolr (1.0.13)
       builder (>= 2.1.2)
     rspec (2.14.1)
@@ -547,8 +544,6 @@ GEM
     thread_safe (0.3.5)
     tilt (1.4.1)
     trollop (1.16.2)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (0.3.49)
     uber (0.0.15)
     uglifier (3.0.0)
@@ -556,7 +551,6 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
-    uuidtools (2.1.5)
     vegas (0.1.11)
       rack (>= 1.0.0)
     virtus (1.0.5)
@@ -612,7 +606,6 @@ DEPENDENCIES
   show_me_the_cookies
   sitemap_generator
   sqlite3
-  turbolinks
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
