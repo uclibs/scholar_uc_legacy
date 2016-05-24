@@ -1,3 +1,14 @@
+### 1.10.0 5/24/2016
+* Allows Repository Manager to change owner on works.
+* Creates worker for ownership clean up.
+* Displays parent-child relationship on collection page.
+* Bug fixes
+  * Attributes with line breaks rendering without line breaks.
+  * Removes additional information on catalog view.
+  * Removes double slash on profile page link.
+  * Fixes thumbnail display on collection show page.
+  * Replaces email with name for collections in catalog browse view.
+
 ### 1.9.0 5/10/2016
 * Creates new Student Work work type.
 * Removes turbolinks.
