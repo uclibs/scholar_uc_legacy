@@ -8,6 +8,7 @@ module CurationConcerns
     # Adds Sufia behaviors to the controller.
     include Sufia::WorksControllerBehavior
     include Scholar::WorksControllerBehavior
+    include Sufia::IIIFManifest
 
     self.curation_concern_type = Dataset
   end

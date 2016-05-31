@@ -103,7 +103,7 @@ Rails:
 
 Rails/OutputSafety:
   Exclude:
-  #everything here was sufia-specific
+    - app/values/universal_viewer.rb
 
 RSpec/AnyInstance:
   Exclude:
@@ -113,6 +113,8 @@ RSpec/DescribeClass:
   Exclude:
     - 'spec/views/**/*'
     - 'spec/features/*'
+    - 'spec/controllers/curation_concerns/generic_works_controller_spec.rb'
+    - 'spec/routing/curation_concerns_spec.rb'   
 
 RSpec/ExpectActual:
   Enabled: false
