@@ -10,6 +10,9 @@ module CurationConcerns
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = StudentWork
+
+    include Sufia::IIIFManifest
+
     self.show_presenter = StudentWorkPresenter
   end
 end
