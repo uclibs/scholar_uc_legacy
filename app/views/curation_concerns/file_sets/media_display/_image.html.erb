@@ -1,0 +1,22 @@
+<% if CurationConcerns.config.display_media_download_link %>
+    <div>
+      <h2 class="sr-only"><%= t('curation_concerns.show.downloadable_content.heading') %></h2>
+      
+
+      <%= UniversalViewer.script_tag %>
+      <div class="uv viewer" data-uri="<%= main_app.polymorphic_path [main_app, :manifest, @presenter] %>"></div>
+      </br>
+      <%= link_to main_app.download_path(file_set),
+                  target: "_new",
+                  class: "btn btn-default" do %>
+          <%= t('curation_concerns.show.downloadable_content.image_link') %>
+      <% end %>
+    </div>
+<% else %>
+    <div>
+
+    <%= UniversalViewer.script_tag %>
+    <div class="uv viewer" data-uri="<%= main_app.polymorphic_path [main_app, :manifest, @presenter] %>"></div>
+
+    </div>
+<% end %>
