@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # Copy bamboo config files to proper locations
 
