@@ -1,0 +1,10 @@
+development:
+  etd_manager_usernames:
+  - bamboo_etd_manager_email_1
+  - bamboo_etd_manager_email_2
+test:
+  etd_manager_usernames:
+  - bamboo_etd_manager_email_3
+production:
+  etd_manager_usernames:
+  - bamboo_etd_manager_email_3

@@ -70,6 +70,13 @@ FactoryGirl.define do
     visibility Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
   end
 
+  factory :etd do
+    title "ETD title"
+    creator "Author, ETD"
+    advisor "Advisor, ETD "
+    visibility Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
+  end
+
   factory :generic_work do
     alternate_title "Queso Primo"
     bibliographic_citation "Cheese. Foo Bar. 2014"
