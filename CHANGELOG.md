@@ -1,3 +1,16 @@
+### 1.11.0 6/7/2016
+* Added a new license selector when creating a new work
+* Added a new work type for electronic theses and dissertations
+* Added a new user role for electronic theses and dissertations
+* Collection show pages now list the collection owner's name
+* Thumnails are now treated as clickable links
+* Bug fixes
+  * Pinned google_drive and google-api-client gems (browse-everything fix)
+  * Added a missing </div> table to the work change owner form
+  * Added a "Your Profile" label to collection assignment dialog
+  * Fixed line breaks in collection and group descriptions
+  * Users can now remove another user's featured work from their profile page
+
 ### 1.10.0 5/24/2016
 * Allows Repository Manager to change owner on works.
 * Creates worker for ownership clean up.
