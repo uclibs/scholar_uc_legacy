@@ -1,3 +1,20 @@
+### 2.0.0 7/13/2016
+* Add more slots for manager accounts.	
+* Search within a collection.
+* Enable date_created as a sort option in catalog.
+* E-mail Notifications on adding and removing memberships.  (Delegate, Editor, or Group)
+* Enable alpha-numeric title sort in Catalog
+* Bug fixes
+  * Profiles with selected works break for non-logged in.
+  * New facet display label- Frequency Sort.
+  * Enable creator display for document work yype in catalog.
+  * Switches GET to POST to solve large membership problem.
+  * Style and Label updates to ETD’s.
+* Security 
+  * Resolve Imagemagick vulnerability.
+  * Upgrade Fedora to 3.8.1.
+  * Prevent links to repo manager on work show page.
+  
 ### 1.11.0 6/7/2016
 * Added a new license selector when creating a new work
 * Added a new work type for electronic theses and dissertations
