@@ -12,10 +12,6 @@ cd /srv/apps/curate/curate_uc-STAGE
 chmod +x /srv/apps/curate/curate_uc-STAGE/script/*.sh
 /srv/apps/curate/curate_uc-STAGE/script/copy_config_bamboo.sh
 
-# Set up temp directory
-rm -rf /srv/apps/curate/curate_uc-STAGE/tmp
-ln -s /mnt/temp /srv/apps/curate/curate_uc-STAGE/tmp
-
 # Bundle and run migrations
 gem install --user-install bundler
 bundle install --path vendor/bundle
