@@ -44,7 +44,7 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "729b36dc31e6581e630eaab6939632c034e7845e"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "3cb80bfbbd65f780b1bb5a5fd07ade661ab3e0a3"
 gem "clamav"
 gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", branch: "setting-status"
 gem "sitemap_generator"
@@ -52,6 +52,11 @@ gem "sitemap_generator"
 group :production do
   gem 'exception_notification'
 end
+
+#change manager gem for automatic notification management, requires resque and resque-scheduler
+gem 'resque'
+gem 'resque-scheduler'
+gem 'change_manager'
 
 gem "bootstrap-sass"
 gem "font-awesome-sass"

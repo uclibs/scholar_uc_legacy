@@ -206,7 +206,7 @@ describe 'Keyword search' do
     before {login_as(user)}
 
     it 'returns results for alternate phone number' do
-      create_work
+      @object = create(:generic_work, title: "This is the title.", description: "This is the description.")
       visit('/')
       within('.search-form') do
         fill_in 'q', with: '513-555-1234'
@@ -217,7 +217,7 @@ describe 'Keyword search' do
     end
 
     it 'returns results for blog' do
-      create_work
+      @object = create(:generic_work, title: "This is the title.", description: "This is the description.")
       visit('/')
       within('.search-form') do
         fill_in 'q', with: 'http://foo.wordpress.com'
@@ -228,7 +228,7 @@ describe 'Keyword search' do
     end
 
     it 'returns results for campus phone number' do
-      create_work
+      @object = create(:generic_work, title: "This is the title.", description: "This is the description.")
       visit('/')
       within('.search-form') do
         fill_in 'q', with: '513-555-5678'
@@ -239,7 +239,7 @@ describe 'Keyword search' do
     end
 
     it 'returns results for personal web page' do
-      create_work
+      @object = create(:generic_work, title: "This is the title.", description: "This is the description.")
       visit('/')
       within('.search-form') do
         fill_in 'q', with: 'http://foo.geocities.com'
@@ -250,7 +250,7 @@ describe 'Keyword search' do
     end
 
     it 'returns results for first name' do
-      create_work
+      @object = create(:generic_work, title: "This is the title.", description: "This is the description.")
       visit('/')
       within('.search-form') do
         fill_in 'q', with: 'Bruce'
@@ -261,7 +261,7 @@ describe 'Keyword search' do
     end
 
     it 'returns results for last name' do
-      create_work
+      @object = create(:generic_work, title: "This is the title.", description: "This is the description.")
       visit('/')
       within('.search-form') do
         fill_in 'q', with: 'Banner'
@@ -271,17 +271,4 @@ describe 'Keyword search' do
       expect(page).to have_link("Bruce Banner")
     end
   end
-
-  protected
-
-  def create_work
-    visit('/works/generic_works/new')
-    within '#new_generic_work' do
-      fill_in "* Title", with: "test work"
-      fill_in "* Description", with: "this is a description"
-      check("I have read and accept the distribution license agreement")
-      click_button("Create Generic Work")
-    end
-  end
-
 end
