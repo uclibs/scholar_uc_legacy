@@ -11,4 +11,4 @@ cd $APP_DIRECTORY
 script/kill_resque_scheduler.sh
 sleep 60
 
-bundle exec resque-scheduler --environment $ENVIRONMENT --pidfile $RESQUE_SCHEDULER_PIDFILE &
+BACKGROUND=yes PIDFILE=$RESQUE_SCHEDULER_PIDFILE RAILS_ENV=$ENVIRONMENT LOGFILE=$APP_DIRECTORY/log/resque-scheduler.log bundle exec rake resque:scheduler
