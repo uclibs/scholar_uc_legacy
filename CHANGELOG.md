@@ -7,7 +7,7 @@
 * Enable alpha-numeric title sort in Catalog Browse. 
 * Bug fixes
   * Profiles with selected works break for non-logged in.
-  * Enable creator display for document work yype in catalog.
+  * Enable creator display for document work type in catalog.
   * Switches GET to POST to solve large membership problem.
   * Style and Label updates to ETD’s.
 * Security 
