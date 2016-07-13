@@ -1,13 +1,13 @@
 ### 2.0.0 7/13/2016
 * Add more slots for manager accounts.	
 * Search within a collection.
-* Enable date_created as a sort option in catalog.
+* Enable date_created as a facet option in catalog.
+* The label Numeric Sort is changed to Frequency Sort when displaying all facets.
 * E-mail Notifications on adding and removing memberships.  (Delegate, Editor, or Group)
-* Enable alpha-numeric title sort in Catalog
+* Enable alpha-numeric title sort in Catalog Browse. 
 * Bug fixes
   * Profiles with selected works break for non-logged in.
-  * New facet display label- Frequency Sort.
-  * Enable creator display for document work yype in catalog.
+  * Enable creator display for document work type in catalog.
   * Switches GET to POST to solve large membership problem.
   * Style and Label updates to ETD’s.
 * Security 
