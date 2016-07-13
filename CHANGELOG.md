@@ -1,13 +1,13 @@
 ### 2.0.0 7/13/2016
 * Add more slots for manager accounts.	
 * Search within a collection.
-* Enable date_created as a sort option in catalog.
+* Enable date_created as a facet option in catalog.
+* The label Numeric Sort is changed to Frequency Sort when displaying all facets.
 * E-mail Notifications on adding and removing memberships.  (Delegate, Editor, or Group)
-* Enable alpha-numeric title sort in Catalog
+* Enable alpha-numeric title sort in Catalog Browse. 
 * Bug fixes
   * Profiles with selected works break for non-logged in.
-  * New facet display label- Frequency Sort.
-  * Enable creator display for document work yype in catalog.
+  * Enable creator display for document work type in catalog.
   * Switches GET to POST to solve large membership problem.
   * Style and Label updates to ETD’s.
 * Security 
@@ -26,7 +26,7 @@
   * Added a missing </div> table to the work change owner form
   * Added a "Your Profile" label to collection assignment dialog
   * Fixed line breaks in collection and group descriptions
-  * Users can now remove another user's featured work from their profile page
+  * Submitters can no longer add someone else’s work to be featured on their main profile page.  Submitters can still add someone else’s work to a profile section.   Submitters who previously added another user’s work to their main profile page, should now be able to remove this work from that page. 
 
 ### 1.10.0 5/24/2016
 * Allows Repository Manager to change owner on works.
