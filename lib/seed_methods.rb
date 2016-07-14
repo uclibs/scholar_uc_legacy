@@ -3,36 +3,42 @@ module SeedMethods
   def self.new_article(email, name)
     a = Article.create(title: "This is the title", abstract: "This is the abstract", depositor: email, owner: email, creator: name)
     a.read_groups = [Hydra::AccessControls::AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
+    a.edit_users = [email]
     a.save
   end
 
   def self.new_image(email, name)
     a = Image.create(title: "This is the title", depositor: email, owner: email, creator: name)
     a.read_groups = [Hydra::AccessControls::AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
+    a.edit_users = [email]
     a.save
   end
 
   def self.new_document(email, name)
     a = Document.create(title: "This is the title", depositor: email, owner: email, creator: name)
     a.read_groups = [Hydra::AccessControls::AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
+    a.edit_users = [email]
     a.save
   end
 
   def self.new_dataset(email, name)
     a = Dataset.create(title: "This is the title", depositor: email, owner: email, creator: name)
     a.read_groups = [Hydra::AccessControls::AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
+    a.edit_users = [email]
     a.save
   end
 
   def self.new_genericwork(email, name)
     a = GenericWork.create(title: "This is the title", depositor: email, owner: email, creator: name)
     a.read_groups = [Hydra::AccessControls::AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
+    a.edit_users = [email]
     a.save
   end
 
   def self.new_video(email, name)
     a = Video.create(title: "This is the title", depositor: email, owner: email, creator: name)
     a.read_groups = [Hydra::AccessControls::AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
+    a.edit_users = [email]
     a.save
   end
 
