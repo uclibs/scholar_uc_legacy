@@ -21,6 +21,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks', '2.5.3'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -45,7 +48,8 @@ end
 gem "kaminari", "0.15.1"
 
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "c81b93eb98e4f4c4c7af04a72cff32f44d089eac"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "23e6931b27d1593b488456c4466b9cce7367264b"
+
 gem "clamav"
 gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", branch: "setting-status"
 gem "sitemap_generator"
