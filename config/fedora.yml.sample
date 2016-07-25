@@ -2,14 +2,17 @@ development:
   user: fedoraAdmin
   password: fedoraAdmin
   url: http://127.0.0.1:4001/fedora
+  timeout: 1200
 test: &TEST  
   user: fedoraAdmin
   password: fedoraAdmin
   url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 4001}/fedora-test" %>
+  timeout: 1200
 production:
   user: fedoraAdmin
   password: fedoraAdmin
   url: http://127.0.0.1:4001/fedora
+  timeout: 1200
 cucumber:
   <<: *TEST
 ci:
