@@ -12,6 +12,7 @@ development:
       - desc_metadata__coverage_spatial_tesim
       - desc_metadata__coverage_temporal_tesim
       - desc_metadata__creator_tesim
+      - desc_metadata__date_created_tesim
       - desc_metadata__degree_tesim
       - desc_metadata__department_tesim
       - desc_metadata__description_tesim
@@ -19,6 +20,8 @@ development:
       - desc_metadata__journal_title_tesim
       - desc_metadata__language_teim
       - desc_metadata__language_tesim
+      - desc_metadata__note_tesim
+      - desc_metadata__note_teim
       - desc_metadata__publisher_tesim
       - desc_metadata__publisher_digital_tesim
       - desc_metadata__rights_tesim
@@ -47,6 +50,7 @@ test:
       - desc_metadata__coverage_spatial_tesim
       - desc_metadata__coverage_temporal_tesim
       - desc_metadata__creator_tesim
+      - desc_metadata__date_created_tesim
       - desc_metadata__degree_tesim
       - desc_metadata__department_tesim
       - desc_metadata__description_tesim
@@ -54,6 +58,8 @@ test:
       - desc_metadata__journal_title_tesim
       - desc_metadata__language_teim
       - desc_metadata__language_tesim
+      - desc_metadata__note_tesim
+      - desc_metadata__note_teim
       - desc_metadata__publisher_tesim
       - desc_metadata__publisher_digital_tesim
       - desc_metadata__rights_tesim
@@ -82,6 +88,7 @@ production:
       - desc_metadata__coverage_spatial_tesim
       - desc_metadata__coverage_temporal_tesim
       - desc_metadata__creator_tesim
+      - desc_metadata__date_created_tesim
       - desc_metadata__degree_tesim
       - desc_metadata__department_tesim
       - desc_metadata__description_tesim
@@ -89,6 +96,8 @@ production:
       - desc_metadata__journal_title_tesim
       - desc_metadata__language_teim
       - desc_metadata__language_tesim
+      - desc_metadata__note_tesim
+      - desc_metadata__note_teim
       - desc_metadata__publisher_tesim
       - desc_metadata__publisher_digital_tesim
       - desc_metadata__rights_tesim
