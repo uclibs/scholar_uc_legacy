@@ -45,7 +45,7 @@ end
 gem "kaminari", "0.15.1"
 
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "456fbe1a5bd5eae8b108ec071c2d9ea799e58fb5"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "c81b93eb98e4f4c4c7af04a72cff32f44d089eac"
 gem "clamav"
 gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", branch: "setting-status"
 gem "sitemap_generator"
