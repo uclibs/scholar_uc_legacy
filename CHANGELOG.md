@@ -1,3 +1,16 @@
+### 2.1.0 8/11/2016
+* Allows uploading and downloading of files up to 3 GB in the web interface. Special requests can be made for files over 3 GB.
+* Adds College and Department facets based on UC ID information.
+* Adds Date Created and Notes to keyword search.
+* Improves load times for collections containing a large number of works.
+* Bug fixes
+  * Prevents email addresses for manager accounts from displaying on file show pages.
+  * A private super collection can no longer be viewed from its sub collections.
+  * The 'Search within collection' button now works for Collections that contain sub-collections.
+  * When attaching files to existing works, if a file title is not provided, the file title is set as the file name.
+  * When adding a work, if files are attached using the Cloud File option, the file count is restored.
+  * The Date Created facet now displays properly when combined with other facets
+  
 ### 2.0.0 7/13/2016
 * Add more slots for manager accounts.	
 * Search within a collection.
