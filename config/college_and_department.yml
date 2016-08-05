@@ -1,5 +1,5 @@
-current_colleges:
-  ahs:
+current_colleges_for_degrees:
+  cahs:
     label: 'Allied Health Sciences'
   com:
     label: 'Medicine'
@@ -19,6 +19,15 @@ current_colleges:
     label: 'Nursing'
   pharm:
     label: 'Pharmacy'
+additional_current_colleges:
+  clermont:
+    label: 'Clermont College'
+  law:
+    label: 'Law'
+  ucba:
+    label: 'Blue Ash College'
+  ucl:
+    label: 'Libraries'
 legacy_colleges:
   - "Business Administration"
   - "Education"
