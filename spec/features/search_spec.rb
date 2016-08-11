@@ -174,6 +174,30 @@ describe 'Keyword search' do
       expect(page).to have_selector("#document_#{@object.noid}")
     end
 
+    it 'returns results for date created' do
+      @object = create(:generic_work, date_created: '1990-01-02')
+
+      visit('/')
+      within('.search-form') do
+        fill_in 'q', with: '1990-01-02'
+        click_button("keyword-search-submit")
+      end
+
+      expect(page).to have_selector("#document_#{@object.noid}")
+    end
+
+    it 'returns results for notes' do
+      @object = create(:generic_work, note: 'hfas123645')
+
+      visit('/')
+      within('.search-form') do
+        fill_in 'q', with: 'hfas123645'
+        click_button("keyword-search-submit")
+      end
+
+      expect(page).to have_selector("#document_#{@object.noid}")
+    end
+
     it 'returns results for type' do
       @object = create(:article, type: "lmn234")
 
