@@ -38,12 +38,14 @@
   line-height: 8em;
 }
 
+
 .img-center {
   display: block;
   margin: 0 auto;
 }
 
 .vertical-center {
+  padding-top: 50px;
   vertical-align: middle;
   display: inline-block;
   float: none;
@@ -66,4 +68,52 @@ hr:after {
   font-size: 2em;
   padding: 0 0.25em;
   background: white;
+}
+
+#footer {
+    text-align: center;
+}
+
+#masthead {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+}
+
+
+.btn-primary, .add
+{
+color: #ffffff;
+background-color: #e00122;
+border-top-color: #D90000;
+border-right-color: #D90000;
+border-bottom-color: #D90000;
+border-left-color: #D90000;
+border-color: #e00122;
+ &:hover {
+     background-color: lighten( #e00122, 5% );
+  }
+ &:focus {
+     background-color: lighten( #e00122, 5% );
+  }
+}
+
+a
+{
+color: #e00122;
+}
+
+div.home_share_work a.btn-primary:active {
+     background-color: #e00122;
+  }
+
+div.home_share_work a.contribute.text-center {
+     color: #ffffff;
+     background-color: #e00122;
+}
+
+div.input-group-btn button.btn-primary:active {
+  background-color: #e00122;
 }
