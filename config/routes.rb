@@ -1,9 +1,10 @@
 CurateApp::Application.routes.draw do
+  mount Orcid::Engine => "/orcid"
   #root 'catalog#index'
   root 'page_requests#view_presentation'
   Blacklight.add_routes(self)
   HydraHead.add_routes(self)
-    devise_for :users, controllers: { sessions: :sessions, registrations: :registrations, omniauth_callbacks: "callbacks" }
+    devise_for :users, controllers: { sessions: :sessions, registrations: :registrations, omniauth_callbacks: 'callbacks' }
 
 
   namespace :admin do
@@ -18,6 +19,7 @@ CurateApp::Application.routes.draw do
 
   curate_for
 
+  get 'orcid_about' => 'page_requests#view_orcid_about'
   get 'terms_request' => 'page_requests#view_terms'
   get 'about_request' => 'page_requests#view_about'
   get 'presentation_request' => 'page_requests#view_presentation'

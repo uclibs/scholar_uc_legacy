@@ -9,6 +9,20 @@ class CallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  def orcid
+    omni = request.env["omniauth.auth"]
+    Devise::MultiAuth.capture_successful_external_authentication(current_user, omni)
+    redirect_to landing_page
+
+    defined?(status_processor) || status_processor = Orcid::ProfileStatus.method(:for)
+    status_processor.call(current_user) do |on|
+      on.authenticated_connection do |profile|
+        flash[:notice] = "You have successfully connected with your ORCID record <img alt='ORCID logo' src='http://orcid.org/sites/default/files/images/orcid_16x16.png' width='16' height='16' > #{view_context.link_to profile.orcid_profile_id, Orcid.url_for_orcid_id(profile.orcid_profile_id), { target: '_blank' }}".html_safe
+      end
+    end
+
+  end
+
   private
 
   def get_shibboleth_attributes

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420192850) do
+ActiveRecord::Schema.define(version: 20160816182939) do
 
   create_table "bookmarks", force: true do |t|
     t.integer  "user_id",     null: false
@@ -51,6 +51,19 @@ ActiveRecord::Schema.define(version: 20160420192850) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
+
+  create_table "devise_multi_auth_authentications", force: true do |t|
+    t.integer  "user_id",       null: false
+    t.string   "provider",      null: false
+    t.string   "uid",           null: false
+    t.string   "access_token"
+    t.string   "refresh_token"
+    t.datetime "expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "devise_multi_auth_authentications", ["provider", "uid"], name: "index_devise_multi_auth_authentications_on_provider_and_uid", unique: true
 
   create_table "domain_terms", force: true do |t|
     t.string "model"
@@ -138,6 +151,18 @@ ActiveRecord::Schema.define(version: 20160420192850) do
   end
 
   add_index "notifications", ["conversation_id"], name: "index_notifications_on_conversation_id"
+
+  create_table "orcid_profile_requests", force: true do |t|
+    t.integer  "user_id",          null: false
+    t.string   "given_names",      null: false
+    t.string   "family_name",      null: false
+    t.string   "primary_email",    null: false
+    t.string   "orcid_profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "response_text"
+    t.string   "response_status"
+  end
 
   create_table "proxy_deposit_rights", force: true do |t|
     t.integer  "grantor_id"
