@@ -19,6 +19,7 @@ SitemapGenerator::Sitemap.create(:compress => false) do
   add '/format_advice_requests', :priority => 0.8, :changefreq => 'monthly'
   add '/faq_request', :priority => 0.8, :changefreq => 'monthly'
   add '/creators_rights_request', :priority => 0.8, :changefreq => 'monthly'
+  add '/orcid_about', :priority => 0.8, :changefreq => 'monthly'
 
 ### major facets ###
   add '/catalog?f[human_readable_type_sim][]=Article', :priority => 0.8, :changefreq => 'monthly'

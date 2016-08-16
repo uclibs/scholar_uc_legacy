@@ -9,6 +9,13 @@ class CallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  SUCCESS_NOTICE = "You have successfully connected with your Orcid account"
+  def orcid
+    omni = request.env["omniauth.auth"]
+    Devise::MultiAuth.capture_successful_external_authentication(current_user, omni)
+    redirect_to landing_page, notice: SUCCESS_NOTICE
+  end
+
   private
 
   def get_shibboleth_attributes

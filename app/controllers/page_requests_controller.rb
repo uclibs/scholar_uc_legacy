@@ -5,6 +5,10 @@ class PageRequestsController < ApplicationController
 # config/sitemap.rb file as well as the spec/sitemap/generator_spec.rb spec.
 ########
 
+  def view_orcid_about
+    render 'orcid_about'
+  end
+
   def view_distribution_license
     render 'distribution_license'
   end

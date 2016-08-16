@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.13'
 
+gem 'byebug'
+
 # Use mysql2 as the database for Active Record
 gem 'mysql2', '0.3.20'
 
@@ -14,6 +16,10 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+
+gem 'orcid', :github => 'uclibs/orcid'
+
+gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -51,6 +57,7 @@ gem "curate", git: "https://github.com/uclibs/curate.git", ref: "82447c79ce82036
 gem 'browse-everything', git: 'https://github.com/uclibs/browse-everything.git', ref: "8c0db2a476cce08210da2a67a2c3bddf284271c7"
 gem 'kaltura'
 
+
 #gem "clamav"
 gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", branch: "setting-status"
 gem "sitemap_generator"
@@ -62,7 +69,7 @@ end
 #change manager gem for automatic notification management, requires resque and resque-scheduler
 gem 'resque'
 gem 'resque-scheduler'
-gem 'change_manager', '1.0.0'
+gem 'change_manager'
 
 gem "bootstrap-sass"
 gem "font-awesome-sass"
