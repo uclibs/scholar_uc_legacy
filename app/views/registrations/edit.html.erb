@@ -1,0 +1,40 @@
+<% content_for :page_header do %>
+  <h1>Account Details</h1>
+<% end %>
+
+<legend>Orcid</legend>
+<div class="orcid-section">
+  <% defined?(status_processor) || status_processor = Orcid::ProfileStatus.method(:for) %>
+    <% status_processor.call(current_user) do |on| %>
+        <% on.authenticated_connection do |profile| %>
+        <% end %>
+  <% end %>
+  
+  <% if defined?(Orcid) %>
+      <%= render partial: 'orcid/profile_connections/orcid_connector', locals: {default_search_text: current_user.name } %>
+  <% end %>
+</div>
+
+<%= simple_form_for(resource, :as => resource_name, :url => user_registration_path, :html => { :method => :put }) do |f| %>
+
+  <%= f.hidden_field :id %>
+
+  <% if f.error_notification -%>
+    <div class="alert alert-error fade in">
+      <strong>Wait don't go!</strong> There was a problem with your submission. Please review the errors below:
+      <a class="close" data-dismiss="alert" href="#">&times;</a>
+    </div>
+  <% end -%>
+
+  <%= render partial: 'registrations/form_attributes', locals: {f: f} %>
+
+  <%= render partial: 'registrations/form_password_management', locals: {f: f} %>
+
+  <div class="row">
+    <div class="span12 form-actions">
+      <%= f.submit class: 'btn btn-primary', value: 'Update Account' %>
+      <%= link_to 'Cancel', person_path(current_user.person), class: 'btn btn-link' %>
+    </div>
+  </div>
+
+<% end %>

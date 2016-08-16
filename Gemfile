@@ -15,6 +15,10 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+gem 'orcid', :github => 'uclibs/orcid'
+
+gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -50,6 +54,7 @@ gem "kaminari", "0.15.1"
 gem "curate", git: "https://github.com/uclibs/curate.git", ref: "74be155482366cf3bab11f86a83320abe6c7856c"
 gem 'browse-everything', git: 'https://github.com/uclibs/browse-everything.git', ref: "8c0db2a476cce08210da2a67a2c3bddf284271c7"
 gem 'kaltura'
+
 
 gem "clamav"
 gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", branch: "setting-status"

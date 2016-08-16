@@ -1,0 +1,4 @@
+<div class="authenticated-connection">
+  <%= t('orcid.views.authenticated_connection', orcid_profile_url: Orcid.url_for_orcid_id(authenticated_connection.orcid_profile_id), orcid_profile_id: authenticated_connection.orcid_profile_id).html_safe %>
+  <%= link_to "Disconnect from Orcid", disconnect_orcid_path, class: 'btn btn-primary', data: { confirm: "Are you sure you want to disconnect your orcid? (You can re-connect later)"} %>
+</div>
