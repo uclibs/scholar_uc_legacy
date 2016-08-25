@@ -6,6 +6,7 @@ development:
       - desc_metadata__abstract_tesim
       - desc_metadata__advisor_tesim
       - desc_metadata__alternate_title_tesim
+      - desc_metadata__bibliographic_citation_tesim
       - desc_metadata__college_tesim
       - desc_metadata__committee_member_tesim
       - desc_metadata__contributor_tesim
@@ -33,7 +34,18 @@ development:
       - desc_metadata__campus_phone_number_tesim
       - desc_metadata__personal_webpage_tesim
       - desc_metadata__first_name_tesim
-      - desc_metadata__last_name_tesim
+      - desc_metadata__last_name_tesim  
+      - desc_metadata__identifier_tesim
+      - desc_metadata__issn_tesim
+      - desc_metadata__requires_tesim
+      - desc_metadata__cultural_context_tesim
+      - desc_metadata__date_photographed_tesim
+      - desc_metadata__inscription_tesim
+      - desc_metadata__location_tesim
+      - desc_metadata__measurements_tesim
+      - desc_metadata__material_tesim
+      - desc_metadata__source_tesim
+
   people:
 test:
   catalog:
@@ -72,6 +84,16 @@ test:
       - desc_metadata__personal_webpage_tesim
       - desc_metadata__first_name_tesim
       - desc_metadata__last_name_tesim
+      - desc_metadata__identifier_tesim
+      - desc_metadata__issn_tesim
+      - desc_metadata__requires_tesim
+      - desc_metadata__cultural_context_tesim
+      - desc_metadata__date_photographed_tesim
+      - desc_metadata__inscription_tesim
+      - desc_metadata__location_tesim
+      - desc_metadata__measurements_tesim
+      - desc_metadata__material_tesim
+      - desc_metadata__source_tesim
   people:
 production:
   catalog:
@@ -110,4 +132,14 @@ production:
       - desc_metadata__personal_webpage_tesim
       - desc_metadata__first_name_tesim
       - desc_metadata__last_name_tesim
+      - desc_metadata__identifier_tesim
+      - desc_metadata__issn_tesim
+      - desc_metadata__requires_tesim
+      - desc_metadata__cultural_context_tesim
+      - desc_metadata__date_photographed_tesim
+      - desc_metadata__inscription_tesim
+      - desc_metadata__location_tesim
+      - desc_metadata__measurements_tesim
+      - desc_metadata__material_tesim
+      - desc_metadata__source_tesim
   people:
