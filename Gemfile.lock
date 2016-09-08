@@ -142,6 +142,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    brakeman (3.4.0)
     breadcrumbs_on_rails (2.3.1)
     browse-everything (0.10.4)
       bootstrap-sass
@@ -637,6 +638,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  brakeman
   byebug
   coffee-rails (~> 4.1.0)
   devise
@@ -658,4 +660,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
