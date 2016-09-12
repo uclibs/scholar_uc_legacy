@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class User < ActiveRecord::Base
   # Connects this user object to Hydra behaviors.
   include Hydra::User
@@ -6,9 +7,6 @@ class User < ActiveRecord::Base
   # Connects this user object to Sufia behaviors.
   include Sufia::User
   include Sufia::UserUsageStats
-
-
-
 
   if Blacklight::Utils.needs_attr_accessible?
     attr_accessible :email, :password, :password_confirmation

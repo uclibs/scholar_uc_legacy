@@ -64,4 +64,7 @@ end
 
 group :development, :test do
   gem 'coveralls', require: false
+  gem 'rubocop', '~> 0.42.0'
+  # version has to be exactly 1.7, no variation.
+  gem 'rubocop-rspec', '1.7'
 end
