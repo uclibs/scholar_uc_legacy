@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   curation_concerns_embargo_management
   concern :exportable, Blacklight::Routes::Exportable.new
 
+  #route for splash page
+  get 'splash' => 'page_requests#splash_page'
+
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
     concerns :exportable
   end
