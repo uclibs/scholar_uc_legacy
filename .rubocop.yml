@@ -40,6 +40,10 @@ Style/BlockEndNewline:
   Exclude:
     - 'spec/**/*'
 
+Style/GuardClause:
+  Exclude:
+    - 'app/models/ability.rb'
+
 Style/SymbolProc: # https://github.com/bbatsov/rubocop/issues/3071
   Exclude:
   #everything here was sufia-specific

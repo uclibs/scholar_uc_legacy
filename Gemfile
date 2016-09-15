@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.2.0'
 gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
-
+#repository manager
+gem 'hydra-role-management'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
 # Use sqlite3 as the database for Active Record
