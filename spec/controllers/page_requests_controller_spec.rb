@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require 'spec_helper'
+
+require 'rails_helper'
 
 describe PageRequestsController do
   describe '#splash_page' do

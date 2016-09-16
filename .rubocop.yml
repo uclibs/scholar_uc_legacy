@@ -99,6 +99,7 @@ Rails/OutputSafety:
 RSpec/DescribeClass:
   Exclude:
     - 'spec/views/**/*'
+    - 'spec/features/*'
 
 RSpec/ExpectActual:
   Enabled: false
@@ -117,3 +118,7 @@ RSpec/NestedGroups:
 
 RSpec/LeadingSubject:
   Enabled: false
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/features/*'
