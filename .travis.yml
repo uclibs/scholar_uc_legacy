@@ -24,14 +24,15 @@ env:
   matrix:
     - "RAILS_VERSION=4.2.7.1"
 notifications:
-  irc:
-    channels:
-      - "irc.freenode.org#scholarsphere"
-      - "irc.freenode.org#projecthydra"
-    template:
-      - "%{repository}//%{branch}@%{commit} by %{author}: %{message} - %{build_url}"
+  email:
+    recipients:
+      - crowesn@ucmail.uc.edu
+      - scherztc@ucmail.uc.edu
+      - haitzlm@ucmail.uc.edu
 services:
   - redis-server
 before_script:
   - jdk_switcher use oraclejdk8
   - brakeman
+notifications:
+  slack: uc-libraries-digital:7gc9gvfCKedkWXORxCo5Hndx
