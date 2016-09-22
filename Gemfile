@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'orcid', github: 'uclibs/orcid'
 gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'

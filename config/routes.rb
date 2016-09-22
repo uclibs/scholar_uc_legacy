@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Orcid::Engine => "/orcid"
   Hydra::BatchEdit.add_routes(self)
   mount Qa::Engine => '/authorities'
 
@@ -11,7 +12,8 @@ Rails.application.routes.draw do
     concerns :searchable
   end
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'devise/multi_auth/omniauth_callbacks' }
+
   mount CurationConcerns::Engine, at: '/'
   resources :welcome, only: 'index'
   root 'sufia/homepage#index'
