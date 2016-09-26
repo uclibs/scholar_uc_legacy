@@ -1,11 +1,11 @@
+# frozen_string_literal: true
 Rails.application.routes.draw do
   Hydra::BatchEdit.add_routes(self)
   mount Qa::Engine => '/authorities'
 
-  
   mount Blacklight::Engine => '/'
-  
-    concern :searchable, Blacklight::Routes::Searchable.new
+
+  concern :searchable, Blacklight::Routes::Searchable.new
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   curation_concerns_embargo_management
   concern :exportable, Blacklight::Routes::Exportable.new
 
-  #route for splash page
+  # route for splash page
   get 'splash' => 'page_requests#splash_page'
 
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do

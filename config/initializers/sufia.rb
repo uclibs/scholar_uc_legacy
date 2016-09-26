@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Sufia.config do |config|
   # Injected via `rails g sufia:work Work`
   config.register_curation_concern :work
