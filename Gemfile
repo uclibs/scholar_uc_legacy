@@ -62,6 +62,13 @@ gem 'devise-guests', '~> 0.5'
 group :development, :test do
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'
+  gem 'rspec-activemodel-mocks'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
+  gem 'poltergeist'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development, :test do
