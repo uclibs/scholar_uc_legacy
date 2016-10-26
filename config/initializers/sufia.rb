@@ -3,7 +3,7 @@ Sufia.config do |config|
   # Injected via `rails g sufia:work Work`
   config.register_curation_concern :work
   # Email recipient of messages sent via the contact form
-  # config.contact_email = "repo-admin@example.org"
+  config.contact_email = "scholar@ucmail.uc.edu"
 
   # Text prefacing the subject entered in the contact form
   # config.subject_prefix = "Contact form:"
