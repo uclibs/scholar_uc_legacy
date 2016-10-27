@@ -64,6 +64,7 @@ group :development, :test do
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'
   gem 'rspec-activemodel-mocks'
+  gem 'rspec-its', '~> 1.1'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
