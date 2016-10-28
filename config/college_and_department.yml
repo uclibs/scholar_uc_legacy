@@ -25,7 +25,14 @@ additional_current_colleges:
   law:
     label: 'Law'
   ucba:
-    label: 'Blue Ash College'
+    label: 'Blue Ash College' 
+additional_current_colleges_library:
+  clermont:
+    label: 'Clermont College'
+  law:
+    label: 'Law'
+  ucba:
+    label: 'Blue Ash College' 
   ucl:
     label: 'Libraries'
 legacy_colleges:
