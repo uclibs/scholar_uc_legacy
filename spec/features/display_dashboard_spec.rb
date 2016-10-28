@@ -21,7 +21,7 @@ describe "The Dashboard", type: :feature do
     end
 
     it "lets the user view works" do
-      click_link "View Works"
+      click_link "View My Works"
       expect(page).to have_content "My Works"
       expect(page).to have_content "My Collections"
       expect(page).to have_content "My Highlights"
