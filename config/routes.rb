@@ -24,6 +24,13 @@ Rails.application.routes.draw do
 
   # route for splash page
   get 'splash' => 'page_requests#splash_page'
+  get 'about' => 'static#about'
+  get 'coll_policy' => 'static#coll_policy'
+  get 'format_advice' => 'static#format_advice'
+  get 'faq' => 'static#faq'
+  get 'distribution_license' => 'static#distribution_license'
+  get 'documenting_data' => 'static#documenting_data'
+  get 'creators_rights' => 'static#creators_rights'
 
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
     concerns :exportable
