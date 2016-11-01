@@ -82,26 +82,39 @@ hr:after {
     text-align: center;
 }
 
-.btn-primary, .add
-{
-color: #ffffff;
-background-color: #e00122;
-border-top-color: #D90000;
-border-right-color: #D90000;
-border-bottom-color: #D90000;
-border-left-color: #D90000;
-border-color: #e00122;
- &:hover {
-     background-color: lighten( #e00122, 5% );
+/* Change primary button color to red */
+.btn-primary {
+  color: #ffffff;
+  background-color: #e00122;
+  border-top-color: #D90000;
+  border-right-color: #D90000;
+  border-bottom-color: #D90000;
+  border-left-color: #D90000;
+  border-color: #e00122;
+  &:hover {
+    background-color: lighten( #e00122, 5% );
   }
- &:focus {
-     background-color: lighten( #e00122, 5% );
+  &:focus {
+    background-color: lighten( #e00122, 5% );
   }
 }
 
-a
-{
-color: #e00122;
+/* override #add_form_field control styling */
+
+button.btn.btn-link.add {
+  color: #e00122;
+  background-color: transparent;
+  border-color: transparent;
+  &:hover {
+    color: lighten( #e00122, 5% );
+  }
+  &:focus {
+    color: lighten( #e00122, 5% );
+  }
+}
+
+a {
+  color: #e00122;
 }
 
 div.home_share_work a.btn-primary:active {
@@ -119,4 +132,8 @@ div.input-group-btn button.btn-primary:active {
 
 .form-control.select.rights {
   max-width: 40em;
+}
+
+.header-uc-logo {
+  height: 100%;
 }
