@@ -49,6 +49,11 @@ describe 'end to end behavior:' do
       expect(page).to have_content('Add New Work')
     end
 
+    it 'can see the license wizard on the new work form', js: true do
+      visit new_curation_concerns_work_path
+      expect(page).to have_content('License Wizard')
+    end
+
     it 'can submit a new work' do
       visit new_curation_concerns_work_path
       within '.tab-content' do
