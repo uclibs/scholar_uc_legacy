@@ -9,3 +9,8 @@ en:
       suffix:           "@uc.edu"
     footer:
       copyright_html: "<strong>Copyright &copy; University of Cincinnati</strong> Licensed under the Apache License, Version 2.0"
+    dashboard:
+      view_collections:         "View My Collections"
+      create_collection:        "Create Collection"
+      view_files:               "View My Files"
+      view_works:               "View My Works"
