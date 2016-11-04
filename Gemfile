@@ -1,11 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.2.0'
+#gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.2.0'
+gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', branch: 'mediated_deposit_epic'
 gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
+gem 'curation_concerns', git: 'https://github.com/projecthydra/curation_concerns.git', branch: 'workflow'
+
+
 #repository manager
 gem 'hydra-role-management'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
