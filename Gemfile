@@ -48,7 +48,7 @@ end
 gem "kaminari", "0.15.1"
 
 gem "curate", git: "https://github.com/uclibs/curate.git", ref: "74be155482366cf3bab11f86a83320abe6c7856c"
-gem 'browse-everything', git: 'https://github.com/uclibs/browse-everything.git', :branch => 'base/kaltura'
+gem 'browse-everything', git: 'https://github.com/uclibs/browse-everything.git', ref: "8c0db2a476cce08210da2a67a2c3bddf284271c7"
 gem 'kaltura'
 
 gem "clamav"
