@@ -1,6 +1,6 @@
 0 * * * * /srv/apps/curate_uc/script/check_resque_running.sh libhydpwl1 production
 0 * * * * /srv/apps/curate_uc/script/check_resque_scheduler_running.sh libhydpwl1 production
-30 * * * * /srv/apps/curate_uc/script/resque_alert.sh libhydpwl1
+30 8,10,12,14,16,18 * * * /srv/apps/curate_uc/script/resque_alert.sh libhydpwl1
 30 9 * * 5 df -h
 0 0 1 * * /srv/apps/curate_uc/script/rotate_log.sh
 0 1 * * * /srv/apps/curate_uc/script/release_embargo.sh 2> /dev/null

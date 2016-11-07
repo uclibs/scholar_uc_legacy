@@ -1,3 +1,20 @@
+### 2.2.0 10/28/2016
+* Extend keyword search to all descriptive metadata fields.
+* To facilitate batch loads and import of works from other repositories, repository managers can now change work ownership to users who have never logged in. Credentials are not affected, and if/when users do login for the first time they will be perceived as new users with the welcome message.
+* Added Clermont, Blue Ash, and Law Library to college option on student works.
+* On a Collection show page, the "Search within this collection" button has been renamed "Browse this collection."
+* UC users can now upload videos directly from Kaltura. (using the "cloud file" tab)
+* Bug fixes
+  * College and department are now set properly when submitting as a delegate.
+  * Fixed a problem with quotes displaying in search results.
+  * Owners of works created by a delegate are now listed as an editor.
+  * Fixed a grammatical error on the new ETDs page.
+  * Added a missing "ds" for the department attribute for images.
+  * Collection icons no long appear if a user doesn't have permission to collect an object.
+  * Removed the degree attribute for documents.
+  * Fixed a bug with sorting numerals in titles.
+  * Fixed the error with file uploads from Dropbox.
+
 ### 2.1.0 8/11/2016
 * Allows uploading and downloading of files up to 3 GB in the web interface. Special requests can be made for files over 3 GB.
 * Adds College and Department facets based on UC ID information.

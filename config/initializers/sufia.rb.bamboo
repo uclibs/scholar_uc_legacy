@@ -1,7 +1,7 @@
 # Returns an array containing the vhost 'CoSign service' value and URL
 Sufia.config do |config|
 
-  config.minter_statefile = '/tmp/scholar-minter-state'
+  config.minter_statefile = 'bamboo_minter_state_file'
 
   config.fits_to_desc_mapping= {
     :file_title => :title,

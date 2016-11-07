@@ -47,7 +47,9 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "ebdb9ed915e32b28ed87d3b9e638522b166f190e"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "74be155482366cf3bab11f86a83320abe6c7856c"
+gem 'browse-everything', git: 'https://github.com/uclibs/browse-everything.git', :branch => 'base/kaltura'
+gem 'kaltura'
 
 gem "clamav"
 gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", branch: "setting-status"

@@ -23,6 +23,9 @@ bundle exec rake db:migrate
 # Stop background workers
 /srv/apps/curate_uc/script/kill_resque_pool.sh
 
+# Stop resque-scheduler
+/srv/apps/curate_uc/script/kill_resque_scheduler.sh
+
 # Move current app directory to "previous"
 rm -rf /srv/apps/curate_uc_previous
 mv /srv/apps/curate_uc /srv/apps/curate_uc_previous
@@ -40,8 +43,14 @@ touch /srv/apps/curate_uc/tmp/restart.txt
 # Restart the background workers
 /srv/apps/curate_uc/script/restart_resque.sh development
 
+# Restart the resque scheduler
+/srv/apps/curate_uc/script/restart_resque_scheduler.sh development
+
 # Update the cron jobs from the git repo
 /usr/bin/crontab /srv/apps/curate_uc/script/crontab_dev
+
+# Reindex Solr
+bundle exec rake solr:reindexnow
 
 echo "The deploy to Scholar@UC DEV is finished" | mail -s 'Scholar@UC deploy finished (scholar-dev)' scholar@uc.edu
 

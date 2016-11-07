@@ -20,6 +20,9 @@ bundle exec rake db:migrate RAILS_ENV=production
 # Stop background workers
 /srv/apps/curate_uc/script/kill_resque_pool.sh
 
+# Stop resque-scheduler
+/srv/apps/curate_uc/script/kill_resque_scheduler.sh
+
 # Archive and empty the application log
 /srv/apps/curate_uc/script/rotate_log.sh
 
@@ -40,12 +43,18 @@ touch /srv/apps/curate_uc/tmp/restart.txt
 # Restart the background workers
 /srv/apps/curate_uc/script/restart_resque.sh production
 
+# Restart the resque scheduler
+/srv/apps/curate_uc/script/restart_resque_scheduler.sh production
+
 # Update the cron jobs from the git repo
-/usr/bin/crontab /srv/apps/curate_uc/script/crontab_dev
+/usr/bin/crontab /srv/apps/curate_uc/script/crontab_production1
 
 # Update the sitemap.xml
 cd /srv/apps/curate_uc
 bundle exec rake sitemap:refresh
+
+# Reindex Solr
+bundle exec rake solr:reindexnow
 
 echo "The deploy to Scholar@UC PRODUCTION server #1 is finished" | mail -s 'Scholar@UC deploy finished (scholar #1)' scholar@uc.edu
 
