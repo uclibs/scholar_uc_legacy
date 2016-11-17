@@ -1,8 +1,20 @@
 <% license_service = CurationConcerns::LicenseService.new %>
-<%= f.input :rights, as: :select,
-    collection: license_service.select_active_options,
-    include_blank: true,
-    item_helper: license_service.method(:include_current_value),
-    input_html: { class: 'rights', multiple: false } %>
-
+<label class="control-label select required" for="work_rights">
+  Rights  
+  <span class="label label-info required-tag">required</span>
+</label>
+<div class="license-wrapper">
+  <div class="row">
+    <div id="license-wizard" class="col-sm-1"></div>
+      <div class="col-sm-9 col-sm-offset-2">
+        <%= f.input :rights, as: :select,
+          collection: license_service.select_active_options,
+          include_blank: 'Use License Wizard or choose directly from the dropdown.',
+          item_helper: license_service.method(:include_current_value),
+          input_html: { class: 'rights rights-selector', multiple: false },
+          label: false
+        %>
+    </div>
+  </div>
+</div>
 <%= render "curation_concerns/file_sets/rights_modal" %>
