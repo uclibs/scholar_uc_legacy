@@ -60,7 +60,19 @@ describe 'end to end behavior:' do
       click_on 'Files'
       attach_file("files[]", Rails.root + "spec/fixtures/test_file.txt", visible: false)
       click_on 'Save'
-      expect(page).to have_content 'Your files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
+      expect(page).to have_content 'Any uploaded files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
+    end
+
+    it 'can submit a new work without files' do
+      visit new_curation_concerns_work_path
+      within '.tab-content' do
+        fill_in('Title', with: 'My new work')
+        fill_in('Creator', with: 'Leeroy Jenkins')
+        fill_in('Keyword', with: 'Financials')
+        select('All rights reserved', from: 'Rights')
+      end
+      click_on 'Save'
+      expect(page).to have_content 'Any uploaded files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
     end
 
     it 'can delete a work it owns' do

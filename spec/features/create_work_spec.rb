@@ -33,7 +33,7 @@ feature 'Creating a new work', js: true do
       check('agreement')
       click_on('Save')
       expect(page).to have_content('My Test Work')
-      expect(page).to have_content "Your files are being processed by Scholar@UC in the background."
+      expect(page).to have_content "Any uploaded files are being processed by Scholar@UC in the background."
     end
   end
 
@@ -66,7 +66,7 @@ feature 'Creating a new work', js: true do
       click_on('Save')
 
       expect(page).to have_content('My Test Work')
-      expect(page).to have_content "Your files are being processed by Sufia in the background."
+      expect(page).to have_content "Any uploaded files are being processed by Sufia in the background."
 
       click_link('Dashboard')
       click_link('Shares')
