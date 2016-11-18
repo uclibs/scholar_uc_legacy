@@ -10,6 +10,8 @@ require 'capybara/poltergeist'
 require 'support/features'
 include Warden::Test::Helpers
 
+Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, timeout: 180)
 end
@@ -126,4 +128,11 @@ RSpec.configure do |config|
       page.driver.resize_window_to(handle, 2000, 2000)
     end
   end
+end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+  c.allow_http_connections_when_no_cassette = true
 end

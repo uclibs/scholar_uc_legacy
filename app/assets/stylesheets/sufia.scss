@@ -150,3 +150,7 @@ div.profile a.btn-primary {
 .orcid-section {
   padding-top: 20px;
 }
+
+.icon-doi {
+  @extend .fa-link;
+}

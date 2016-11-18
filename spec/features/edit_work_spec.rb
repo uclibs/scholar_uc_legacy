@@ -2,6 +2,7 @@
 require 'rails_helper'
 
 shared_examples 'edit work' do |work_class|
+  let(:user) { FactoryGirl.create(:user) }
   let(:work) { FactoryGirl.build(:work, user: user) }
   let(:work_type) { work_class.name.underscore }
   let(:edit_path) { "concern/#{work_type}s/#{work.id}/edit" }
@@ -25,6 +26,5 @@ shared_examples 'edit work' do |work_class|
 end
 
 feature 'Editing a work', type: :feature do
-  let(:user) { FactoryGirl.create(:user) }
   it_behaves_like 'edit work', GenericWork
 end

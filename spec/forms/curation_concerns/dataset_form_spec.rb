@@ -14,7 +14,7 @@ describe CurationConcerns::DatasetForm do
 
   describe "#primary_terms" do
     subject { form.primary_terms }
-    it { is_expected.to eq [:title, :creator, :description, :required_software, :rights] }
+    it { is_expected.to eq [:title, :creator, :description, :required_software, :rights, :publisher] }
   end
 
   describe "#secondary_terms" do

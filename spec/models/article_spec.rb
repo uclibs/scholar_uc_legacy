@@ -104,4 +104,6 @@ describe Article do
     it { should respond_to(:rights) }
     it { should respond_to(:identifier) }
   end
+
+  it_behaves_like 'is remotely identifiable by doi'
 end

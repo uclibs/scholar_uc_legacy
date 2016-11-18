@@ -6,6 +6,8 @@ gem 'flipflop', '2.3.0'
 gem 'hydra-role-management'
 gem 'orcid', github: 'uclibs/orcid'
 
+gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
 # Use sqlite3 as the database for Active Record
@@ -67,6 +69,8 @@ gem 'devise'
 gem 'devise-guests', '~> 0.5'
 gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth'
 group :development, :test do
+  gem 'vcr'
+  gem 'webmock'
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'
   gem 'rspec-activemodel-mocks'

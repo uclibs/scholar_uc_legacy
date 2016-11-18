@@ -70,10 +70,11 @@ class SolrDocument
   end
 
   # Added for Document and Image work types
-
   def genre
     self[Solrizer.solr_name('genre')]
   end
 
-  # Added for Image work type
+  def doi
+    self[Solrizer.solr_name('doi')]
+  end
 end

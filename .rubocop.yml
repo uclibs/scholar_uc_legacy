@@ -140,3 +140,7 @@ RSpec/LeadingSubject:
 RSpec/ExampleLength:
   Exclude:
     - 'spec/features/*'
+    - 'spec/support/shared/*'
+
+RSpec/SubjectStub:
+  Enabled: false

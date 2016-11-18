@@ -29,5 +29,8 @@ module ScholarUc
     config.active_record.raise_in_transactional_callbacks = true
 
     config.exceptions_app = self.routes
+
+    config.application_root_url = 'http://localhost:3000'
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
