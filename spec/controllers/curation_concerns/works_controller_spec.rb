@@ -4,7 +4,20 @@
 require 'rails_helper'
 
 describe CurationConcerns::WorksController do
-  it "has tests" do
-    skip "Add your tests here"
+  let(:user) { create(:user) }
+
+  before { sign_in user }
+
+  describe "#new" do
+    before { get :new }
+    it "is successful" do
+      expect(response).to be_successful
+      expect(response).to render_template("layouts/curation_concerns/1_column")
+      expect(assigns[:curation_concern]).to be_kind_of Work
+    end
+
+    it "defaults to public visibility" do
+      expect(assigns[:curation_concern].read_groups).to eq ['public']
+    end
   end
 end

@@ -9,5 +9,11 @@ module CurationConcerns
     include Sufia::WorksControllerBehavior
 
     self.curation_concern_type = Work
+
+    # set default work visibility to public
+    def new
+      super
+      curation_concern.read_groups = ["public"]
+    end
   end
 end
