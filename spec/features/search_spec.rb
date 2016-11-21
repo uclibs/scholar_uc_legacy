@@ -63,5 +63,10 @@ describe 'searching' do
         expect(page).not_to have_content("My Shares")
       end
     end
+
+    it "displays browse button" do
+      visit '/'
+      expect(page).to have_link("Browse", href: main_app.search_catalog_path)
+    end
   end
 end
