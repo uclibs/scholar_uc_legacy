@@ -35,6 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#gem 'clamav'
+
 group :development, :test do
   gem 'brakeman', :require => false
 end
