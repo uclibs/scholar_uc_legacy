@@ -40,6 +40,11 @@ Style/BlockEndNewline:
   Exclude:
     - 'spec/**/*'
 
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'app/controllers/contact_form_controller.rb'
+    - 'app/controllers/concerns/sufia/contact_form_controller_behavior.rb'
+
 Style/GuardClause:
   Exclude:
     - 'app/models/ability.rb'
