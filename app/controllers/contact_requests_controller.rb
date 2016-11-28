@@ -14,10 +14,11 @@ class ContactRequestsController < ApplicationController
   def create
     @name = params[:name]
     @email = params[:email]
-    @comments = params[:comments]
+    @comments = "Message: #{ params[:comments] }"
+    @subject = "#{t('sufia.product_name')}: Contact Form Submission"
 
     if passes_catcha_or_is_logged_in?
-      NotificationMailer.notify(@name,@email,@comments).deliver
+      NotificationMailer.notify(@name,@email,@subject,@comments).deliver
       redirect_to catalog_index_path, notice: SUCCESS_NOTICE
     else
       flash.now[:notice] = FAIL_NOTICE

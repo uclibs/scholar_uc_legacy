@@ -8,13 +8,33 @@ class ApplicationController < ActionController::Base
   # these methods in order to perform user specific actions.
 
   unless Rails.application.config.consider_all_requests_local
-    rescue_from Exception, with: :render_404
-    rescue_from ActionController::RoutingError, with: :render_404
-    rescue_from ActionController::UnknownController, with: :render_404
-    rescue_from ActiveRecord::RecordNotFound, with: :render_404
+    rescue_from Exception do |exception|
+      @exception = exception
+      log_exception
+      notify_exception
+      render_404
+    end
   end
 
   protected
+
+  def exception_message
+    message = @exception.to_s.gsub("\n", " ")
+    user = current_user.present? ? current_user.email : 'unauthenticated'
+    parameters = params.present? ? params.to_s.gsub("\n", " ") : ''
+    current_path = request.fullpath
+    "Rescued exception: #{ message } -- path: #{ current_path } -- params: #{ parameters } -- user: #{ user }"
+  end
+
+  def log_exception
+    logger.error(exception_message)
+  end
+
+  def notify_exception
+    formatted_message = exception_message.gsub('--', "\n\n")
+    subject = "#{t('sufia.product_name')}: Exception Alert"
+    NotificationMailer.notify('', '', subject, formatted_message).deliver
+  end
 
   def render_404
     render(:file => 'public/404.html', :layout => false, :status => 404)
