@@ -26,6 +26,8 @@ feature 'Creating a new work', js: true do
       attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
       click_link "Description" # switch tab
       fill_in('Title', with: 'My Test Work')
+      # checking for work_creator autofill, and also filling it in
+      expect(page).to have_css(".work_creator", text: user.name_for_works)
       fill_in('Creator', with: 'Test User')
       fill_in('Keyword', with: 'tests')
       select 'Attribution-ShareAlike 3.0 United States', from: 'work_rights'
@@ -56,13 +58,15 @@ feature 'Creating a new work', js: true do
 
       click_link "Description" # switch tab
       fill_in('Title', with: 'My Test Work')
-      fill_in('Creator', with: 'Test User')
+      # fill_in('Creator', with: 'Test User') // now autofilling this
+      expect(page).to have_css(".work_creator", text: user.name_for_works)
       fill_in('Keyword', with: 'tests')
       select 'Attribution-ShareAlike 3.0 United States', from: 'work_rights'
 
       choose('work_visibility_open')
       expect(page).to have_content('Please note, making something visible to the world (i.e. marking this as Public) may be viewed as publishing which could impact your ability to')
       select(second_user.user_key, from: 'On behalf of')
+      expect(page).to have_css(".work_creator", value: second_user.name_for_works)
       check('agreement')
       click_on('Save')
 
