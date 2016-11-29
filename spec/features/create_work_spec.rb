@@ -20,6 +20,7 @@ feature 'Creating a new work', js: true do
     it 'create a new work' do
       click_link "Files" # switch tab
       expect(page).to have_content "Add files"
+      expect(page).to have_content "Browse cloud files" # with browse-everything enabled
       # expect(page).to have_content "Add folder"  -- only works in Chrome
       attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
       attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)

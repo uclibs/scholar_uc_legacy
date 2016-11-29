@@ -1,0 +1,14 @@
+#
+# To make browse-everything aware of a provider, uncomment the info for that provider and add your API key information.
+# The file_system provider can be a path to any directory on the server where your application is running.
+#
+---
+ dropbox:
+   :app_key: bamboo_browse_everything_dropbox_id
+   :app_secret: bamboo_browse_everything_dropbox_secret
+ box:
+   :client_id: bamboo_browse_everything_box_id
+   :client_secret: bamboo_browse_everything_box_secret
+ google_drive:
+   :client_id: bamboo_browse_everything_gdrive_id
+   :client_secret: bamboo_browse_everything_gdrive_secret
