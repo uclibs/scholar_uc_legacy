@@ -5,6 +5,11 @@ Sufia.config do |config|
   # Email recipient of messages sent via the contact form
   config.contact_email = "scholar@ucmail.uc.edu"
 
+  # Should work creation require file upload, or can a work be created first
+  # and a file added at a later time?
+  # The default is true.
+  config.work_requires_files = false
+
   # Text prefacing the subject entered in the contact form
   # config.subject_prefix = "Contact form:"
 
