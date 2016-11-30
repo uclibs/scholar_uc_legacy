@@ -1,8 +1,7 @@
-# frozen_string_literal: true
 module Sufia
   module ContactFormControllerBehavior
     extend ActiveSupport::Concern
-    FAIL_NOTICE = "You must complete the Captcha to confirm the form."
+    FAIL_NOTICE = "You must complete the Captcha to confirm the form.".freeze
 
     included do
       before_action :build_contact_form
