@@ -61,29 +61,29 @@ describe 'Batch management of works', type: :feature do
         click_on 'batch-edit'
         expect(page).to have_content('Batch Edit Descriptions')
         expand("creator")
-        expect(page).to have_css "input#work_creator[value*='NEW creator']"
+        expect(page).to have_css "input#generic_work_creator[value*='NEW creator']"
         expand("contributor")
-        expect(page).to have_css "input#work_contributor[value*='NEW contributor']"
+        expect(page).to have_css "input#generic_work_contributor[value*='NEW contributor']"
         expand("description")
-        expect(page).to have_css "textarea#work_description", text: 'NEW description'
+        expect(page).to have_css "textarea#generic_work_description", text: 'NEW description'
         expand("keyword")
-        expect(page).to have_css "input#work_keyword[value*='NEW keyword']"
+        expect(page).to have_css "input#generic_work_keyword[value*='NEW keyword']"
         expand("publisher")
-        expect(page).to have_css "input#work_publisher[value*='NEW publisher']"
+        expect(page).to have_css "input#generic_work_publisher[value*='NEW publisher']"
         expand("date_created")
-        expect(page).to have_css "input#work_date_created[value*='NEW date_created']"
+        expect(page).to have_css "input#generic_work_date_created[value*='NEW date_created']"
         expand("subject")
-        expect(page).to have_css "input#work_subject[value*='NEW subject']"
+        expect(page).to have_css "input#generic_work_subject[value*='NEW subject']"
         expand("language")
-        expect(page).to have_css "input#work_language[value*='NEW language']"
+        expect(page).to have_css "input#generic_work_language[value*='NEW language']"
         expand("identifier")
-        expect(page).to have_css "input#work_identifier[value*='NEW identifier']"
+        expect(page).to have_css "input#generic_work_identifier[value*='NEW identifier']"
         expand("based_near")
-        expect(page).to have_css "input#work_based_near[value*='NEW based_near']"
+        expect(page).to have_css "input#generic_work_based_near[value*='NEW based_near']"
         expand("related_url")
-        expect(page).to have_css "input#work_related_url[value*='NEW related_url']"
+        expect(page).to have_css "input#generic_work_related_url[value*='NEW related_url']"
         expand("resource_type")
-        expect(page).to have_select "work_resource_type", selected: 'Book'
+        expect(page).to have_select "generic_work_resource_type", selected: 'Book'
       end
     end # skip block
   end
@@ -96,7 +96,7 @@ describe 'Batch management of works', type: :feature do
         click_button 'Delete Selected'
       end
       it 'Removes the works from the system' do
-        expect(Work.count).to be_zero
+        expect(GenericWork.count).to be_zero
       end
     end
   end
@@ -111,7 +111,7 @@ describe 'Batch management of works', type: :feature do
   def fill_in_field_fill(id)
     expand(id)
     within "#form_#{id}" do
-      fill_in "work_#{id}", with: "NEW #{id}"
+      fill_in "generic_work_#{id}", with: "NEW #{id}"
     end
   end
 
@@ -139,6 +139,6 @@ describe 'Batch management of works', type: :feature do
 
   def select_field(id, option)
     expand(id)
-    select(option, from: "work_#{id}")
+    select(option, from: "generic_work_#{id}")
   end
 end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Work`
+#  `rails generate curation_concerns:work GenericWork`
 module CurationConcerns
-  class WorkForm < Sufia::Forms::WorkForm
-    self.model_class = ::Work
+  class GenericWorkForm < Sufia::Forms::WorkForm
+    self.model_class = ::GenericWork
     self.terms += [:resource_type]
 
     def self.multiple?(field)

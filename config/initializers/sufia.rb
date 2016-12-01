@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 Sufia.config do |config|
-  # Injected via `rails g sufia:work Work`
-  config.register_curation_concern :work
+  # Injected via `rails g sufia:work GenericWork`
+  config.register_curation_concern :generic_work
   # Email recipient of messages sent via the contact form
   config.contact_email = "scholar@ucmail.uc.edu"
 

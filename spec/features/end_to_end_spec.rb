@@ -1,6 +1,49 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
+shared_examples 'work crud' do |work|
+  let(:work_type) { work.name.underscore }
+
+  it 'can see the license wizard on the new work form', js: true do
+    visit send("new_curation_concerns_#{work_type}_path")
+    expect(page).to have_content('License Wizard')
+  end
+
+  it 'can submit a new work' do
+    visit send("new_curation_concerns_#{work_type}_path")
+    within '.tab-content' do
+      fill_in('Title', with: 'My new work')
+      fill_in('Creator', with: 'Leeroy Jenkins')
+      fill_in('Keyword', with: 'Financials')
+      select('All rights reserved', from: "#{work_type}_rights")
+    end
+    click_on 'Files'
+    attach_file("files[]", Rails.root + "spec/fixtures/test_file.txt", visible: false)
+    click_on 'Save'
+    expect(page).to have_content 'Any uploaded files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
+  end
+
+  it 'can submit a new work without files' do
+    visit send("new_curation_concerns_#{work_type}_path")
+    within '.tab-content' do
+      fill_in('Title', with: 'My new work')
+      fill_in('Creator', with: 'Leeroy Jenkins')
+      fill_in('Keyword', with: 'Financials')
+      select('All rights reserved', from: "#{work_type}_rights")
+    end
+    click_on 'Save'
+    expect(page).to have_content 'Any uploaded files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
+  end
+
+  it 'can delete a work it owns' do
+    visit sufia.dashboard_works_path
+    within '#document_' + deleted_work.id.to_s do
+      click_on 'Delete Work'
+    end
+    expect(page).to have_content 'Deleted'
+  end
+end
+
 describe 'end to end behavior:' do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:persisted_work) { FactoryGirl.create(:work, user: user) }
@@ -45,48 +88,11 @@ describe 'end to end behavior:' do
 
     it 'can view the new work form' do
       visit sufia.root_path
-      click_on 'New Work'
+      click_on 'New Generic Work'
       expect(page).to have_content('Add New Work')
     end
 
-    it 'can see the license wizard on the new work form', js: true do
-      visit new_curation_concerns_work_path
-      expect(page).to have_content('License Wizard')
-    end
-
-    it 'can submit a new work' do
-      visit new_curation_concerns_work_path
-      within '.tab-content' do
-        fill_in('Title', with: 'My new work')
-        fill_in('Creator', with: 'Leeroy Jenkins')
-        fill_in('Keyword', with: 'Financials')
-        select('All rights reserved', from: 'Rights')
-      end
-      click_on 'Files'
-      attach_file("files[]", Rails.root + "spec/fixtures/test_file.txt", visible: false)
-      click_on 'Save'
-      expect(page).to have_content 'Any uploaded files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
-    end
-
-    it 'can submit a new work without files' do
-      visit new_curation_concerns_work_path
-      within '.tab-content' do
-        fill_in('Title', with: 'My new work')
-        fill_in('Creator', with: 'Leeroy Jenkins')
-        fill_in('Keyword', with: 'Financials')
-        select('All rights reserved', from: 'Rights')
-      end
-      click_on 'Save'
-      expect(page).to have_content 'Any uploaded files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
-    end
-
-    it 'can delete a work it owns' do
-      visit sufia.dashboard_works_path
-      within '#document_' + deleted_work.id.to_s do
-        click_on 'Delete Work'
-      end
-      expect(page).to have_content 'Deleted'
-    end
+    it_behaves_like 'work crud', GenericWork
 
     # TODO: update this spec once we get the fix for scholar_uc#907 from sufia.
     # needs to verify specific collection is being updated, for now

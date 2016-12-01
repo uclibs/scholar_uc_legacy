@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe "Browse catalog:", type: :feature do
   let!(:jills_work) do
-    Work.new do |work|
+    GenericWork.new do |work|
       work.title = ["Jill's Research"]
       (1..25).each do |i|
         work.keyword << ["keyword#{format('%02d', i)}"]
@@ -15,7 +15,7 @@ describe "Browse catalog:", type: :feature do
   end
 
   let!(:jacks_work) do
-    Work.new do |work|
+    GenericWork.new do |work|
       work.title = ["Jack's Research"]
       work.keyword = ['jacks_keyword']
       work.apply_depositor_metadata('jackuser')
