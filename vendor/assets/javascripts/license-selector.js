@@ -1429,7 +1429,7 @@
 	    });
 	  },
 	  CommercialUse: function() {
-	    this.question('Do you allow others to make commercial use of you work?');
+	    this.question('Do you allow others to make commercial use of your work?');
 	    this.yes(function() {
 	      this.exclude('nc');
 	      if (this.only('by')) {
