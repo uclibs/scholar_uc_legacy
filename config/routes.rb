@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  mount BrowseEverything::Engine => '/browse'
   Hydra::BatchEdit.add_routes(self)
   mount Qa::Engine => '/authorities'
 
