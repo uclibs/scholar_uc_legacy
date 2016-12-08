@@ -118,4 +118,12 @@ RSpec.configure do |config|
   end
 
   config.include Devise::Test::ControllerHelpers, type: :controller
+
+  # Resize the browser window large enough that Capybara can see all elements
+  config.before(:each, js: true) do
+    if Capybara.current_driver == :poltergeist
+      handle = page.driver.current_window_handle
+      page.driver.resize_window_to(handle, 2000, 2000)
+    end
+  end
 end

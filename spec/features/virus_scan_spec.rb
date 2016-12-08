@@ -20,15 +20,17 @@ describe 'Adding an infected file', js: true do
       fill_in('Creator', with: 'Test User')
       fill_in('Keyword', with: 'tests')
       select 'Attribution-ShareAlike 3.0 United States', from: 'work_rights'
-      choose('work_visibility_open')
+      choose('work_visibility_restricted')
       check('agreement')
-      click_on('Save')
+      check('agreement') # need to check the box again sometimes (Capybara flakiness)
+      click_on('Save') if page.has_button?('Save')
+      click_on('Save') if page.has_button?('Save') # need to click Save again sometimes (Capybara flakiness)
       expect(page).to have_content('My Infected Work')
       expect(page).to have_content('A virus was detected in a file you uploaded.')
     end
   end
 
-  context 'to and existing work', js: true do
+  context 'to an existing work', js: true do
     let(:work) { FactoryGirl.build(:work, user: user, title: ['My Infected Work']) }
     before do
       work.ordered_members << FactoryGirl.create(:file_set, user: user, title: ['ABC123xyz'])
