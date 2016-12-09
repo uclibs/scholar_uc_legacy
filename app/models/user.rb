@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
   def to_s
     email
   end
+
+  def name_for_works
+    last_name + ", " + first_name unless first_name.blank? || last_name.blank?
+  end
 end
