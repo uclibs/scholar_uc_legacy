@@ -27,13 +27,12 @@ Install system dependencies
 1. Clone this repository: `git clone https://github.com/uclibs/scholar_uc.git ./path/to/local`
     * **Note:** Solr will not run properly if there are spaces in any of the directory names above it <br />(e.g. /user/my apps/scholar_uc/) 
 1. Change to the application's directory: e.g. `cd ./path/to/local`  
-1. ~~Copy the config sample files: `script/copy_config_local.sh`~~  
-1. If you are not using MySQL, comment out the `gem 'mysql2'` line in the Gemfile
+1. Make sure you are on the develop branch: `git checkout develop`
+1. Install bundler (if needed): `gem install bundler`
 1. Run bundler: `bundle install`
-1. Switch to the release-3 branch `git checkout release-3/initial_commit`
-1. Start fedora ```fcrepo_wrapper -p 8984```
-1. Start solr ```solr_wrapper -d solr/config/ --collection_name hydra-development```
-1. Start redis ```redis-server```
+1. Start fedora: ```fcrepo_wrapper -p 8984```
+1. Start solr: ```solr_wrapper -d solr/config/ --collection_name hydra-development```
+1. Start redis: ```redis-server```
 1. Run the database migrations: `bundle exec rake db:migrate`
 1. Start the rails server: `rails server`
 1. Visit the site at [http://localhost:3000] (http://localhost:3000)
