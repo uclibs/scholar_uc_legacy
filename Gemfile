@@ -62,7 +62,7 @@ end
 #change manager gem for automatic notification management, requires resque and resque-scheduler
 gem 'resque'
 gem 'resque-scheduler'
-gem 'change_manager'
+gem 'change_manager', '1.0.0'
 
 gem "bootstrap-sass"
 gem "font-awesome-sass"
