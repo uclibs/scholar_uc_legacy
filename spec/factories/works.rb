@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # taken from sufia 7.1
 FactoryGirl.define do
-  factory :work, aliases: [:generic_work, :private_generic_work], class: 'Work' do
+  factory :work, aliases: [:generic_work, :private_generic_work], class: 'GenericWork' do
     transient do
       user { FactoryGirl.create(:user) }
     end

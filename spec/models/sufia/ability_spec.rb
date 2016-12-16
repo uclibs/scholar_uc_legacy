@@ -13,9 +13,9 @@ describe Sufia::Ability, type: :model do
     it { is_expected.not_to be_able_to(:update, ContentBlock) }
     it { is_expected.not_to be_able_to(:create, AdminSet) }
     it { is_expected.to be_able_to(:read, ContentBlock) }
-    it { is_expected.to be_able_to(:read, Work) }
-    it { is_expected.to be_able_to(:stats, Work) }
-    it { is_expected.to be_able_to(:citation, Work) }
+    it { is_expected.to be_able_to(:read, GenericWork) }
+    it { is_expected.to be_able_to(:stats, GenericWork) }
+    it { is_expected.to be_able_to(:citation, GenericWork) }
   end
 
   describe "a registered user" do
@@ -41,10 +41,10 @@ describe Sufia::Ability, type: :model do
     it { is_expected.to be_able_to(:read, Sufia::Statistics) }
     it { is_expected.to be_able_to(:read, :admin_dashboard) }
     it { is_expected.to be_able_to(:manage, AdminSet) }
-    it { is_expected.to be_able_to(:create, Work) }
-    it { is_expected.to be_able_to(:read, Work) }
-    it { is_expected.to be_able_to(:update, Work) }
-    it { is_expected.to be_able_to(:delete, Work) }
+    it { is_expected.to be_able_to(:create, GenericWork) }
+    it { is_expected.to be_able_to(:read, GenericWork) }
+    it { is_expected.to be_able_to(:update, GenericWork) }
+    it { is_expected.to be_able_to(:delete, GenericWork) }
     skip 'Need to test :add_user and :remove_user from admin role' do
       it { is_expected.to be_able_to(:add_user, Role, User) }
     end

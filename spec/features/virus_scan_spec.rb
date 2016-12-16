@@ -19,8 +19,8 @@ describe 'Adding an infected file', js: true do
       fill_in('Title', with: 'My Infected Work')
       fill_in('Creator', with: 'Test User')
       fill_in('Keyword', with: 'tests')
-      select 'Attribution-ShareAlike 3.0 United States', from: 'work_rights'
-      choose('work_visibility_restricted')
+      select 'Attribution-ShareAlike 3.0 United States', from: 'generic_work_rights'
+      choose('generic_work_visibility_open')
       check('agreement')
       check('agreement') # need to check the box again sometimes (Capybara flakiness)
       click_on('Save') if page.has_button?('Save')
@@ -36,14 +36,14 @@ describe 'Adding an infected file', js: true do
       work.ordered_members << FactoryGirl.create(:file_set, user: user, title: ['ABC123xyz'])
       work.read_groups = []
       work.save!
-      visit edit_curation_concerns_work_path(work)
+      visit edit_curation_concerns_generic_work_path(work)
     end
     it_behaves_like 'infected submission'
   end
 
   context 'to a new work', js: true do
     before do
-      visit new_curation_concerns_work_path
+      visit new_curation_concerns_generic_work_path
     end
     it_behaves_like 'infected submission'
   end

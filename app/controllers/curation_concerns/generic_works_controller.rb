@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Work`
+#  `rails generate curation_concerns:work GenericWork`
 
 module CurationConcerns
-  class WorksController < ApplicationController
+  class GenericWorksController < ApplicationController
     include CurationConcerns::CurationConcernController
     # Adds Sufia behaviors to the controller.
     include Sufia::WorksControllerBehavior
 
-    self.curation_concern_type = Work
+    self.curation_concern_type = GenericWork
 
     # set default work visibility to public
     def new
@@ -21,7 +21,7 @@ module CurationConcerns
     rescue ActiveFedora::RecordInvalid # virus detected
       remove_infected_file_sets
       report_virus_found
-      redirect_to main_app.curation_concerns_work_path(id: curation_concern.id)
+      redirect_to main_app.curation_concerns_generic_work_path(id: curation_concern.id)
     end
 
     def update
@@ -29,7 +29,7 @@ module CurationConcerns
     rescue ActiveFedora::RecordInvalid # virus detected
       remove_infected_file_sets
       report_virus_found
-      redirect_to main_app.curation_concerns_work_path(id: curation_concern.id)
+      redirect_to main_app.curation_concerns_generic_work_path(id: curation_concern.id)
     end
 
     private
