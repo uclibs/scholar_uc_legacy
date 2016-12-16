@@ -1,10 +1,15 @@
 # frozen_string_literal: true
+
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   mount BrowseEverything::Engine => '/browse'
   Hydra::BatchEdit.add_routes(self)
   mount Qa::Engine => '/authorities'
 
   mount Blacklight::Engine => '/'
+
+  mount Sidekiq::Web => '/sidekiq'
 
   concern :searchable, Blacklight::Routes::Searchable.new
 
