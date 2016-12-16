@@ -1,15 +1,20 @@
 CurateApp::Application.routes.draw do
+  mount Orcid::Engine => "/orcid"
   #root 'catalog#index'
   root 'page_requests#view_presentation'
   Blacklight.add_routes(self)
   HydraHead.add_routes(self)
-    devise_for :users, controllers: { sessions: :sessions, registrations: :registrations, omniauth_callbacks: "callbacks" }
+    devise_for :users, controllers: { sessions: :sessions, registrations: :registrations, omniauth_callbacks: 'callbacks' }
 
 
   namespace :admin do
   #constraints Sufia::ResqueAdmin do
      mount Resque::Server, :at => 'queues'
   #end
+  end
+
+  devise_scope :user do
+    match "disconnect_orcid" => "registrations#disconnect_orcid", via: :get, as: "disconnect_orcid"
   end
 
   devise_scope :users do
