@@ -16,6 +16,9 @@ chmod +x /srv/apps/curate/curate_uc-STAGE/script/*.sh
 rm -rf /srv/apps/curate/curate_uc-STAGE/tmp
 ln -s /mnt/temp /srv/apps/curate/curate_uc-STAGE/tmp
 
+# Enable ClamAV gem
+sed -i 's/#gem "clamav"/gem "clamav"/' /srv/apps/curate/curate_uc-STAGE/Gemfile
+
 # Bundle and run migrations
 gem install --user-install bundler
 bundle install --path vendor/bundle
