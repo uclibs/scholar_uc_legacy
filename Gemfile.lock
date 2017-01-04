@@ -660,6 +660,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  blacklight_advanced_search
   brakeman
   byebug
   capybara
@@ -696,4 +697,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.13.6
+   1.13.7
