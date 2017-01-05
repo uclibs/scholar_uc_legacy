@@ -1,3 +1,14 @@
+### 2.3.0 1/5/2017
+* Turned of soft delete of content
+* Virus scanning can now be toggled on/off (default is on for production, off otherwise)
+* In production environments, application exceptions will now log details to the log file and generate a notification email
+* Pinned the change_manager gem to version 1.0.0
+* Pinned the rake gem to version 11.2.2
+* Set the default ruby version to 2.1.6
+* Bug fixes
+  * Work and collection input fields now properly handle vertical tabs
+  * Fixed a typo in the license selector dialog for new works
+
 ### 2.2.0 10/28/2016
 * Extend keyword search to all descriptive metadata fields.
 * To facilitate batch loads and import of works from other repositories, repository managers can now change work ownership to users who have never logged in. Credentials are not affected, and if/when users do login for the first time they will be perceived as new users with the welcome message.
