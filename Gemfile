@@ -1,12 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.2.0'
+gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', branch: 'master'
 gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
 #repository manager
 gem 'hydra-role-management'
-
-gem 'curation_concerns', '1.6.3'
-gem 'blacklight_advanced_search'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'

@@ -1,5 +1,17 @@
 # frozen_string_literal: true
 Sufia.config do |config|
+  # Injected via `rails g sufia:work StudentWork`
+  config.register_curation_concern :student_work
+  # Injected via `rails g sufia:work Media`
+  config.register_curation_concern :media
+  # Injected via `rails g sufia:work Image`
+  config.register_curation_concern :image
+  # Injected via `rails g sufia:work Dataset`
+  config.register_curation_concern :dataset
+  # Injected via `rails g sufia:work Document`
+  config.register_curation_concern :document
+  # Injected via `rails g sufia:work Article`
+  config.register_curation_concern :article
   # Injected via `rails g sufia:work GenericWork`
   config.register_curation_concern :generic_work
   # Email recipient of messages sent via the contact form
