@@ -1,14 +1,14 @@
 en:
   sufia:
     icons:
-      media:     'fa fa-file-text-o'
+      video:     'fa fa-file-text-o'
     select_type:
-      media:
-        name:               "Media"
-        description:        "Media works"
+      video:
+        name:               "Video"
+        description:        "Video works"
   simple_form:
     labels:
-      media:
+      video:
         based_near:       "Location"
         description:      "Abstract or Summary"
         keyword:          "Keyword"
@@ -19,7 +19,7 @@ en:
         admin_set_id:     "Add as member of administrative set"
 
     hints:
-      media:
+      video:
         resource: "Pre-defined categories to describe the type of content being uploaded, such as &quot;article&quot; or &quot;dataset.&quot;  More than one type may be selected."
         title: "A name to aid in identifying a work."
         keyword: "Words or phrases you select to describe what the work is about. These are used to search for content."

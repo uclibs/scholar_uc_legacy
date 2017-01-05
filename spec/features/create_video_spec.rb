@@ -1,9 +1,9 @@
 # Generated via
-#  `rails generate curation_concerns:work Media`
+#  `rails generate curation_concerns:work Video`
 require 'rails_helper'
 include Warden::Test::Helpers
 
-RSpec.feature 'Create a Media' do
+RSpec.feature 'Create a Video' do
   context 'a logged in user' do
     let(:user_attributes) do
       { email: 'test@example.com' }
@@ -17,10 +17,10 @@ RSpec.feature 'Create a Media' do
     end
 
     scenario do
-      visit new_curation_concerns_media_path
-      fill_in 'Title', with: 'Test Media'
-      click_button 'Create Media'
-      expect(page).to have_content 'Test Media'
+      visit new_curation_concerns_video_path
+      fill_in 'Title', with: 'Test Video'
+      click_button 'Create Video'
+      expect(page).to have_content 'Test Video'
     end
   end
 end
