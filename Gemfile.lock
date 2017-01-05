@@ -666,6 +666,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   coveralls
+  curation_concerns (= 1.6.3)
   database_cleaner
   devise
   devise-guests (~> 0.5)
