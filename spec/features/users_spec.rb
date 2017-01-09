@@ -13,15 +13,54 @@ describe "User Profile", type: :feature do
       visit profile_path
       expect(page).to have_content(user.email)
       expect(page).to have_content('Edit Your Profile')
+      expect(page).to have_content('View Contributors')
     end
   end
 
-  context 'when clicking all users' do
+  context 'when clicking view contributors' do
     # TODO: Move this to a view test
-    it 'displays all users' do
+
+    before do
       visit profile_path
-      click_link 'View Users'
-      expect(page).to have_xpath("//td/a[@href='#{profile_path}']")
+      click_link 'View Contributors'
+    end
+
+    it "has a Search Contributors field label" do
+      expect(page).to have_css("label", text: "Search Contributors")
+    end
+
+    it "has Contributors in the heading" do
+      expect(page).to have_css("h1", text: "Contributors")
+    end
+
+    context "when the user doesn't own works" do
+      it 'does not include the user in the display' do
+        visit profile_path
+        click_link 'View Contributors'
+        expect(page).not_to have_xpath("//td/a[@href='#{profile_path}']")
+      end
+    end
+
+    context "when the user owns works" do
+      let!(:work) { FactoryGirl.create(:work, user: user) }
+      it 'includes the user in the display' do
+        visit profile_path
+        click_link 'View Contributors'
+        expect(page).to have_xpath("//td/a[@href='#{profile_path}']")
+      end
+    end
+
+    context "when the user is an admin" do
+      before do
+        admin = Role.create(name: "admin")
+        admin.users << user
+        admin.save
+      end
+      it 'includes the user without works in the display' do
+        visit profile_path
+        click_link 'View Contributors'
+        expect(page).to have_xpath("//td/a[@href='#{profile_path}']")
+      end
     end
   end
 
@@ -39,10 +78,12 @@ describe "User Profile", type: :feature do
   context 'user profile' do
     let!(:dewey) { create(:user, display_name: 'Melvil Dewey') }
     let(:dewey_path) { Sufia::Engine.routes.url_helpers.profile_path(dewey) }
+    let!(:work) { FactoryGirl.create(:work, user: user) }
+    let!(:work2) { FactoryGirl.create(:work, user: dewey) }
 
     it 'is searchable' do
       visit profile_path
-      click_link 'View Users'
+      click_link 'View Contributors'
       expect(page).to have_xpath("//td/a[@href='#{profile_path}']")
       expect(page).to have_xpath("//td/a[@href='#{dewey_path}']")
       fill_in 'user_search', with: 'Dewey'
