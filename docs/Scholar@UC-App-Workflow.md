@@ -4,7 +4,7 @@
 
 1. Run the script to update the local config files.<br />`script/copy_config_local.sh`
 
-1. Create a new feature branch based on the **develop** branch<br />`git checkout develop`<br />`git pull`<br />`git checkout -b feature/#issuenum-branch-name`
+1. Create a new feature branch based on the **2.x-stable** branch<br />`git checkout 2.x-stable`<br />`git pull`<br />`git checkout -b feature/#issuenum-branch-name`
 
 1. Run bundler. (if bundler fails with mysql errors, comment out `gem 'mysql2'` in the Gemfile and run bundler again)<br />`bundle install`
 
@@ -40,7 +40,7 @@
 
 1. [Deploy to dev server] (Scholar@UC-App-Deployment-Procedures)
 
-1. Create a **release** branch based on the **develop** branch.<br />`git checkout -b release`
+1. Create a **release** branch based on the **2.x-stable** branch.<br />`git checkout -b release`
 
 1. Make any changes and commits needed.
 
@@ -54,11 +54,11 @@
 
 1. Complete the Change Management Form.
 
-1. Merge the **release** branch into the **master** branch AND the **develop** branch.<br />`git checkout release`<br />`git pull`<br />`git checkout master`<br />`git pull`<br />`git merge release`<br />`git checkout develop`<br />`git pull`<br />`git merge release`
+1. Merge the **release** branch into the **master** branch AND the **2.x-stable** branch.<br />`git checkout release`<br />`git pull`<br />`git checkout master`<br />`git pull`<br />`git merge release`<br />`git checkout 2.x-stable`<br />`git pull`<br />`git merge release`
 
 1. If changes were made to the curate gem, update the Gemfile to point to the most recent commit in the curate master branch.
 
-1. Push the master and develop branches to GitHub<br />`git checkout develop`<br />`git push origin develop`<br />`git checkout master`<br />`git push origin master`
+1. Push the master and 2.x-stable branches to GitHub<br />`git checkout 2.x-stable`<br />`git push origin 2.x-stable`<br />`git checkout master`<br />`git push origin master`
 
 1. In the master branch, tag a new release in Git and push it to the remote<br />`git checkout master`<br />ex. `git tag -a v1.4.0 -m '10-01-2014'`<br />`git push --tags`
 
