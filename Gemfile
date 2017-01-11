@@ -47,11 +47,11 @@ end
 
 gem "kaminari", "0.15.1"
 
-gem "curate", git: "https://github.com/uclibs/curate.git", ref: "74be155482366cf3bab11f86a83320abe6c7856c"
+gem "curate", git: "https://github.com/uclibs/curate.git", ref: "82447c79ce82036316dcba55af6343b906626c01"
 gem 'browse-everything', git: 'https://github.com/uclibs/browse-everything.git', ref: "8c0db2a476cce08210da2a67a2c3bddf284271c7"
 gem 'kaltura'
 
-gem "clamav"
+#gem "clamav"
 gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", branch: "setting-status"
 gem "sitemap_generator"
 
@@ -62,7 +62,7 @@ end
 #change manager gem for automatic notification management, requires resque and resque-scheduler
 gem 'resque'
 gem 'resque-scheduler'
-gem 'change_manager'
+gem 'change_manager', '1.0.0'
 
 gem "bootstrap-sass"
 gem "font-awesome-sass"
@@ -102,4 +102,4 @@ gem 'omniauth-openid'
 gem 'omniauth-shibboleth'
 gem 'feedjira'
 
-gem 'rake', '10.5'
+gem 'rake', '11.2.2'

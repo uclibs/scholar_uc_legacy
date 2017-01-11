@@ -12,6 +12,9 @@ cd /srv/apps/curate/curate_uc-STAGE
 chmod +x /srv/apps/curate/curate_uc-STAGE/script/*.sh
 /srv/apps/curate/curate_uc-STAGE/script/copy_config_bamboo.sh
 
+# Enable ClamAV gem
+sed -i 's/#gem "clamav"/gem "clamav"/' /srv/apps/curate/curate_uc-STAGE/Gemfile
+
 # Bundle and run migrations
 gem install --user-install bundler
 bundle install --path vendor/bundle
