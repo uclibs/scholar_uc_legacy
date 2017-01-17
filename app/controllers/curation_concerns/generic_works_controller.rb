@@ -32,6 +32,12 @@ module CurationConcerns
       redirect_to main_app.curation_concerns_generic_work_path(id: curation_concern.id)
     end
 
+    def show
+      super
+      permalink_message = "Permanent link to this page"
+      @permalinks_presenter = PermalinksPresenter.new(main_app.common_object_path, permalink_message)
+    end
+
     private
 
       def remove_infected_file_sets
