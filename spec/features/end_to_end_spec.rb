@@ -88,8 +88,8 @@ describe 'end to end behavior:' do
 
     it 'can view the new work form' do
       visit sufia.root_path
-      click_on 'New Generic Work'
-      expect(page).to have_content('Add New Work')
+      click_on 'New Work'
+      expect(page).to have_content('Add New Generic Work')
     end
 
     it_behaves_like 'work crud', GenericWork
