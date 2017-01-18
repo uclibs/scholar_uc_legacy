@@ -59,6 +59,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'sidekiq'
 
 group :development, :test do
   gem 'solr_wrapper', '>= 0.13'
