@@ -15,6 +15,12 @@ describe "User Profile", type: :feature do
       expect(page).to have_content('Edit Your Profile')
       expect(page).to have_content('View Contributors')
     end
+
+    it 'renders ORCID connector' do
+      visit profile_path
+      click_link('Edit Profile', match: :first)
+      expect(page).to have_content('Create or Connect your ORCID iD')
+    end
   end
 
   context 'when clicking view contributors' do

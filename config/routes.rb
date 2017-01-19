@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  mount Orcid::Engine => "/orcid"
   mount BrowseEverything::Engine => '/browse'
   Hydra::BatchEdit.add_routes(self)
   mount Qa::Engine => '/authorities'
@@ -12,7 +13,8 @@ Rails.application.routes.draw do
     concerns :searchable
   end
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
+
   mount Hydra::RoleManagement::Engine => '/'
 
   mount CurationConcerns::Engine, at: '/'

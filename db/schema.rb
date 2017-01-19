@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113200252) do
+ActiveRecord::Schema.define(version: 20170118174508) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -68,6 +68,21 @@ ActiveRecord::Schema.define(version: 20170113200252) do
   add_index "curation_concerns_operations", ["parent_id"], name: "index_curation_concerns_operations_on_parent_id"
   add_index "curation_concerns_operations", ["rgt"], name: "index_curation_concerns_operations_on_rgt"
   add_index "curation_concerns_operations", ["user_id"], name: "index_curation_concerns_operations_on_user_id"
+
+  create_table "devise_multi_auth_authentications", force: :cascade do |t|
+    t.integer  "user_id",       null: false
+    t.string   "provider",      null: false
+    t.string   "uid",           null: false
+    t.string   "access_token"
+    t.string   "refresh_token"
+    t.datetime "expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "devise_multi_auth_authentications", ["expires_at"], name: "index_devise_multi_auth_authentications_on_expires_at"
+  add_index "devise_multi_auth_authentications", ["provider", "uid"], name: "index_devise_multi_auth_authentications_on_provider_and_uid", unique: true
+  add_index "devise_multi_auth_authentications", ["user_id"], name: "index_devise_multi_auth_authentications_on_user_id"
 
   create_table "domain_terms", force: :cascade do |t|
     t.string "model"
@@ -196,6 +211,21 @@ ActiveRecord::Schema.define(version: 20170113200252) do
 
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+
+  create_table "orcid_profile_requests", force: :cascade do |t|
+    t.integer  "user_id",          null: false
+    t.string   "given_names",      null: false
+    t.string   "family_name",      null: false
+    t.string   "primary_email",    null: false
+    t.string   "orcid_profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "response_text"
+    t.string   "response_status"
+  end
+
+  add_index "orcid_profile_requests", ["orcid_profile_id"], name: "index_orcid_profile_requests_on_orcid_profile_id"
+  add_index "orcid_profile_requests", ["user_id"], name: "index_orcid_profile_requests_on_user_id"
 
   create_table "permission_template_accesses", force: :cascade do |t|
     t.integer  "permission_template_id"
