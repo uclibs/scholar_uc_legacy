@@ -45,6 +45,8 @@ Rails.application.routes.draw do
     end
   end
 
+  match 'show/:id' => 'common_objects#show', via: :get, as: 'common_object'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
