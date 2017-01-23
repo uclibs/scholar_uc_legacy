@@ -2,6 +2,20 @@
 Sufia.config do |config|
   # Injected via `rails g sufia:work GenericWork`
   config.register_curation_concern :generic_work
+  # Injected via `rails g sufia:work Article`
+  config.register_curation_concern :article
+  # Injected via `rails g sufia:work Image`
+  config.register_curation_concern :image
+  # Injected via `rails g sufia:work Document`
+  config.register_curation_concern :document
+  # Injected via `rails g sufia:work Dataset`
+  config.register_curation_concern :dataset
+  # Injected via `rails g sufia:work Video`
+  config.register_curation_concern :video
+  # Injected via `rails g sufia:work Etd`
+  config.register_curation_concern :etd
+  # Injected via `rails g sufia:work StudentWork`
+  config.register_curation_concern :student_work
   # Email recipient of messages sent via the contact form
   config.contact_email = "scholar@ucmail.uc.edu"
 
