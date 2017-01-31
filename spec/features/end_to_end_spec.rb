@@ -4,6 +4,12 @@ require 'rails_helper'
 shared_examples 'work crud' do |work|
   let(:work_type) { work.name.underscore }
 
+  it 'can view the new work form' do
+    visit sufia.root_path
+    click_on 'New Work'
+    expect(page).to have_content(work.human_readable_type)
+  end
+
   it 'can see the license wizard on the new work form', js: true do
     visit send("new_curation_concerns_#{work_type}_path")
     expect(page).to have_content('License Wizard')
@@ -86,13 +92,14 @@ describe 'end to end behavior:' do
       expect(page).to have_content 'Works listing'
     end
 
-    it 'can view the new work form' do
-      visit sufia.root_path
-      click_on 'New Work'
-      expect(page).to have_content('Add New Generic Work')
-    end
-
     it_behaves_like 'work crud', GenericWork
+    it_behaves_like 'work crud', Article
+    it_behaves_like 'work crud', Document
+    it_behaves_like 'work crud', Dataset
+    it_behaves_like 'work crud', Image
+    it_behaves_like 'work crud', Video
+    it_behaves_like 'work crud', StudentWork
+    it_behaves_like 'work crud', Etd
 
     # TODO: update this spec once we get the fix for scholar_uc#907 from sufia.
     # needs to verify specific collection is being updated, for now

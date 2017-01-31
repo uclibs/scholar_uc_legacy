@@ -5,6 +5,7 @@ shared_examples 'work creation' do |work_class| # snake-case work type for strin
   let(:work_type) { work_class.name.underscore }
 
   it 'fills out the form as user' do
+    visit new_polymorphic_path(work_class)
     click_link "Files" # switch tab
     expect(page).to have_content "Add files"
     expect(page).to have_content "Browse cloud files" # with browse-everything enabled
@@ -28,7 +29,8 @@ end
 shared_examples 'proxy work creation' do |work_class|
   let(:work_type) { work_class.name.underscore }
 
-  it 'fills out the form as proxy', :js do
+  it "fills out the #{work_class} form as proxy", :js do
+    visit new_polymorphic_path(work_class)
     click_link "Files" # switch tab
     expect(page).to have_content "Add files"
     # Capybara/poltergeist don't dependably upload files, so we'll stub out the results of the uploader:
@@ -66,12 +68,19 @@ feature 'Creating a new work', :js do
     page.current_window.resize_to(2000, 2000)
   end
 
-  context "when the user is not a proxy" do
+  context "when the user is not a proxy", :js do
     before do
       sign_in user
-      click_link "Create Work"
     end
+
     it_behaves_like "work creation", GenericWork
+    it_behaves_like "work creation", Article
+    it_behaves_like "work creation", Document
+    it_behaves_like "work creation", Image
+    it_behaves_like "work creation", Dataset
+    it_behaves_like "work creation", Video
+    it_behaves_like "work creation", Etd
+    it_behaves_like "work creation", StudentWork
   end
 
   context 'when the user is a proxy' do
@@ -82,5 +91,12 @@ feature 'Creating a new work', :js do
       click_link "Create Work"
     end
     it_behaves_like "proxy work creation", GenericWork
+    it_behaves_like "proxy work creation", Video
+    it_behaves_like "proxy work creation", Image
+    it_behaves_like "proxy work creation", Document
+    it_behaves_like "proxy work creation", Article
+    it_behaves_like "proxy work creation", StudentWork
+    it_behaves_like "proxy work creation", Etd
+    it_behaves_like "proxy work creation", Dataset
   end
 end

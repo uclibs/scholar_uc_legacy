@@ -21,3 +21,7 @@ en:
     made_possible_by_html: "Made possible by the <a href=\"http://projecthydra.org\">Hydra</a> project."
     terms_of_use_html: "<a class=\"a\" href=\"/terms\">Terms of Use</a>"
     non_discrimination_notice_html: "<a href=\"http://uc.edu/about/policies/non-discrimination.html\">Notice of Non-Discrimination</a>"
+    select_type:
+      name: "Generic Work"
+      description: "General purpose worktype"
+      icon_class : 'fa fa-file-text-o'
