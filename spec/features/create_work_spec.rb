@@ -4,7 +4,7 @@ require 'rails_helper'
 shared_examples 'work creation' do |work_class| # snake-case work type for string interpolation
   let(:work_type) { work_class.name.underscore }
 
-  it 'fills out the form as user' do
+  it 'fills out the form as user with required fields' do
     visit new_polymorphic_path(work_class)
     click_link "Files" # switch tab
     expect(page).to have_content "Add files"
@@ -13,11 +13,31 @@ shared_examples 'work creation' do |work_class| # snake-case work type for strin
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
     click_link "Metadata" # switch tab
-    fill_in('Title', with: 'My Test Work')
     # checking for work creator auto-fill and also filling it in
     expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
-    fill_in('Creator', with: 'Test User')
-    fill_in('Keyword', with: 'tests')
+
+    fill_in('Title', with: 'My Test Work')
+
+    if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Video
+      fill_in('Description', with: 'This is a description.')
+      fill_in('Creator', with: 'Test User')
+    elsif work_class == Etd
+      fill_in('Abstract', with: 'This is an abstract.')
+      fill_in('Creator', with: 'Test User')
+      fill_in('Advisor', with: 'Ima Advisor.')
+    elsif work_class == StudentWork
+      fill_in('Description', with: 'This is an abstract.')
+      fill_in('Creator', with: 'Test User')
+      fill_in('Advisor', with: 'Ima Advisor.')
+    elsif work_class == Article
+      fill_in('Abstract', with: 'This is an abstract.')
+      fill_in('Author', with: 'Test User')
+    else
+      fill_in('Description', with: 'This is a description.')
+      fill_in('Required Software', with: 'This is Required Software.')
+      fill_in('Creator', with: 'Test User')
+    end
+
     select 'Attribution-ShareAlike 4.0 International', from: "#{work_type}_rights"
     choose("#{work_type}_visibility_open")
     expect(page).to have_content('Please note, making something visible to the world (i.e. marking this as Public) may be viewed as publishing which could impact your ability to')
@@ -39,10 +59,29 @@ shared_examples 'proxy work creation' do |work_class|
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
     click_link "Metadata" # switch tab
-    fill_in('Title', with: 'My Test Work')
-    # fill_in('Creator', with: 'Test User') // Now autofilling this
     expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
-    fill_in('Keyword', with: 'tests')
+    fill_in('Title', with: 'My Test Work')
+
+    if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Video
+      fill_in('Description', with: 'This is a description.')
+      fill_in('Creator', with: 'Test User')
+    elsif work_class == Etd
+      fill_in('Abstract', with: 'This is an abstract.')
+      fill_in('Creator', with: 'Test User')
+      fill_in('Advisor', with: 'Ima Advisor')
+    elsif work_class == StudentWork
+      fill_in('Description', with: 'This is an abstract.')
+      fill_in('Creator', with: 'Test User')
+      fill_in('Advisor', with: 'Ima Advisor')
+    elsif work_class == Article
+      fill_in('Abstract', with: 'This is an abstract.')
+      fill_in('Author', with: 'Test User')
+    else
+      fill_in('Description', with: 'This is a description.')
+      fill_in('Required Software', with: 'This is Required Software.')
+      fill_in('Creator', with: 'Test User')
+    end
+
     select 'Attribution-ShareAlike 4.0 International', from: "#{work_type}_rights"
     choose("#{work_type}_visibility_open")
     expect(page).to have_content('Please note, making something visible to the world (i.e. marking this as Public) may be viewed as publishing which could impact your ability to')

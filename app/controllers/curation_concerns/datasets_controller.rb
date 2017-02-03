@@ -15,5 +15,6 @@ module CurationConcerns
       super
       flash[:notice] = "If you would like guidance on submitting a dataset, please read the #{view_context.link_to 'Documenting Data', '/documenting_data', target: '_blank'} help page."
     end
+    self.show_presenter = DatasetPresenter
   end
 end

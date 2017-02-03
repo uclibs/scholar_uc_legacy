@@ -10,5 +10,6 @@ module CurationConcerns
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = Image
+    self.show_presenter = ImagePresenter
   end
 end

@@ -18,10 +18,27 @@ shared_examples 'work crud' do |work|
   it 'can submit a new work' do
     visit send("new_curation_concerns_#{work_type}_path")
     within '.tab-content' do
-      fill_in('Title', with: 'My new work')
-      fill_in('Creator', with: 'Leeroy Jenkins')
-      fill_in('Keyword', with: 'Financials')
-      select('All rights reserved', from: "#{work_type}_rights")
+      fill_in('Title', with: 'My Test Work', match: :first)
+
+      if work == Document || work == GenericWork || work == Image || work == Video
+        fill_in('Description', with: 'This is a description.')
+        fill_in('Creator', with: 'Test User')
+      elsif work == Etd
+        fill_in('Abstract', with: 'This is an abstract.')
+        fill_in('Creator', with: 'Test User')
+        fill_in('Advisor', with: 'Ima Advisor')
+      elsif work == StudentWork
+        fill_in('Description', with: 'This is an abstract.')
+        fill_in('Creator', with: 'Test User')
+        fill_in('Advisor', with: 'Ima Advisor')
+      elsif work == Article
+        fill_in('Abstract', with: 'This is an abstract.')
+        fill_in('Author', with: 'Test User')
+      else
+        fill_in('Description', with: 'This is a description.')
+        fill_in('Required Software', with: 'This is Required Software.')
+        fill_in('Creator', with: 'Test User')
+      end
     end
     click_on 'Files'
     attach_file("files[]", Rails.root + "spec/fixtures/test_file.txt", visible: false)
@@ -32,9 +49,28 @@ shared_examples 'work crud' do |work|
   it 'can submit a new work without files' do
     visit send("new_curation_concerns_#{work_type}_path")
     within '.tab-content' do
-      fill_in('Title', with: 'My new work')
-      fill_in('Creator', with: 'Leeroy Jenkins')
-      fill_in('Keyword', with: 'Financials')
+      fill_in('Title', with: 'My new work', match: :first)
+
+      if work == Document || work == GenericWork || work == Image || work == Video
+        fill_in('Description', with: 'This is a description.')
+        fill_in('Creator', with: 'Test User')
+      elsif work == Etd
+        fill_in('Abstract', with: 'This is an abstract.')
+        fill_in('Creator', with: 'Test User')
+        fill_in('Advisor', with: 'Ima Advisor')
+      elsif work == StudentWork
+        fill_in('Description', with: 'This is an abstract.')
+        fill_in('Creator', with: 'Test User')
+        fill_in('Advisor', with: 'Ima Advisor')
+      elsif work == Article
+        fill_in('Abstract', with: 'This is an abstract.')
+        fill_in('Author', with: 'Test User')
+      else
+        fill_in('Description', with: 'This is a description.')
+        fill_in('Required Software', with: 'This is Required Software.')
+        fill_in('Creator', with: 'Test User')
+      end
+
       select('All rights reserved', from: "#{work_type}_rights")
     end
     click_on 'Save'

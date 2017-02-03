@@ -10,5 +10,6 @@ module CurationConcerns
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = Etd
+    self.show_presenter = EtdPresenter
   end
 end

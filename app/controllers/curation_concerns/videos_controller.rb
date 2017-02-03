@@ -10,5 +10,6 @@ module CurationConcerns
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = Video
+    self.show_presenter = VideoPresenter
   end
 end
