@@ -14,6 +14,8 @@ shared_examples 'work creation' do |work_class| # snake-case work type for strin
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
     click_link "Description" # switch tab
     fill_in('Title', with: 'My Test Work')
+    # checking for work creator auto-fill and also filling it in
+    expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
     fill_in('Creator', with: 'Test User')
     fill_in('Keyword', with: 'tests')
     select 'Attribution-ShareAlike 3.0 United States', from: "#{work_type}_rights"
@@ -38,7 +40,8 @@ shared_examples 'proxy work creation' do |work_class|
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
     click_link "Description" # switch tab
     fill_in('Title', with: 'My Test Work')
-    fill_in('Creator', with: 'Test User')
+    # fill_in('Creator', with: 'Test User') // Now autofilling this
+    expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
     fill_in('Keyword', with: 'tests')
     select 'Attribution-ShareAlike 3.0 United States', from: "#{work_type}_rights"
     choose("#{work_type}_visibility_open")
