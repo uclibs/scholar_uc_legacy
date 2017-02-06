@@ -34,8 +34,8 @@ GIT
 
 GIT
   remote: https://github.com/projecthydra/sufia.git
-  revision: 9fd48694695fbbf7a31c0eb252bdb6f54c3bc384
-  ref: 9fd48694695fbbf7a31c0eb252bdb6f54c3bc384
+  revision: bc9184ae965b8d7db0986aaaa7ecc8d6b7670343
+  ref: bc9184ae965b8d7db0986aaaa7ecc8d6b7670343
   specs:
     sufia (7.2.0)
       almond-rails (~> 0.0.1)
@@ -449,6 +449,10 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-actionview (1.0.1)
+      actionview
+      kaminari-core (= 1.0.1)
+    kaminari-core (1.0.1)
     kaminari_route_prefix (0.0.2)
       kaminari (~> 0.16)
     ldp (0.6.3)
@@ -800,4 +804,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.13.6
+   1.14.3
