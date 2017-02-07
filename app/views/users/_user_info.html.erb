@@ -40,12 +40,12 @@
     <dd><%= user.chat_id %></dd>
   <% end %>
 
-  <% if user.website %>
+  <% if user.website.present? %>
     <dt><i class="glyphicon glyphicon-globe"></i> Website(s)</dt>
     <dd><%= iconify_auto_link(user.website) %></dd>
   <% end %>
 
-  <% if user.title %>
+  <% if user.title.present? %>
     <dt>Title</dt>
     <dd><%= user.title %></dd>
   <% end %>
@@ -55,7 +55,7 @@
     <dd><%= user.admin_area %></dd>
   <% end %>
 
-  <% if user.department %>
+  <% if user.department.present? %>
     <dt>Department</dt>
     <dd><%= user.department %></dd>
   <% end %>
@@ -75,7 +75,7 @@
     <dd><%= user.affiliation %></dd>
   <% end %>
 
-  <% if user.telephone %>
+  <% if user.telephone.present? %>
     <dt><i class="glyphicon glyphicon-earphone"></i> Telephone</dt>
     <dd><%= link_to_telephone(user) %></dd>
   <% end %>

@@ -31,4 +31,13 @@ class User < ActiveRecord::Base
   def name_for_works
     last_name + ", " + first_name unless first_name.blank? || last_name.blank?
   end
+
+  def name
+    return "#{first_name} #{last_name}" unless first_name.blank? || last_name.blank?
+    user_key
+  end
+
+  def display_name
+    name
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118174508) do
+ActiveRecord::Schema.define(version: 20170207170926) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -583,6 +583,10 @@ ActiveRecord::Schema.define(version: 20170118174508) do
     t.string   "zotero_userid"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "alternate_phone_number"
+    t.string   "blog"
+    t.string   "uc_affiliation"
+    t.string   "alternate_email"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
