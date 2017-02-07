@@ -4,6 +4,7 @@ gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', ref: '9fd48694695
 gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
 #repository manager
 gem 'hydra-role-management'
+gem 'orcid', github: 'uclibs/orcid'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
@@ -64,6 +65,7 @@ end
 gem 'rsolr', '~> 1.0'
 gem 'devise'
 gem 'devise-guests', '~> 0.5'
+gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth'
 group :development, :test do
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'

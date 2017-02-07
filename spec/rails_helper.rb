@@ -117,7 +117,7 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
-  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::TestHelpers, type: :controller
 
   # Resize the browser window large enough that Capybara can see all elements
   config.before(:each, js: true) do
