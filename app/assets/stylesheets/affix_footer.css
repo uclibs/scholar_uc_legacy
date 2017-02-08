@@ -19,3 +19,7 @@ html, body {
 .footer-wrapper {
 	background-color: #222;
 }
+
+.navbar-center {
+	padding-left: 36%;
+}
