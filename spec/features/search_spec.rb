@@ -42,7 +42,7 @@ describe 'searching' do
       expect(page).not_to have_css("a[data-search-label*='My Shares']", visible: false)
 
       click_button("All")
-      expect(page).to have_content("All of Sufia")
+      expect(page).to have_content("All of Scholar")
       fill_in "search-field-header", with: subject_value
       click_button("Go")
 
@@ -64,8 +64,15 @@ describe 'searching' do
       end
     end
 
-    it "displays browse button" do
+    it "displays browse button on home page" do
       visit '/'
+      skip 'waiting for rebranding of home page' do
+        expect(page).to have_link("Browse", href: main_app.search_catalog_path)
+      end
+    end
+
+    it "displays browse button on ancillary pages" do
+      visit help_path
       expect(page).to have_link("Browse", href: main_app.search_catalog_path)
     end
   end

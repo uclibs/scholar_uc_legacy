@@ -135,7 +135,7 @@ div.input-group-btn button.btn-primary:active {
   max-width: 40em;
 }
 
-#nav-uc-logo {
+#uc-nav-logo {
   height: 30px;
 }
 
@@ -154,12 +154,6 @@ div.profile a.btn-primary {
 .orcid-section {
   padding-top: 20px;
 }
-
-
-
-
-
-
 
 /* navbar */
 .navbar-default {
@@ -194,4 +188,16 @@ div.profile a.btn-primary {
 .navbar-default .navbar-nav > .open > a:focus {
     color: #555;
     background-color: #D5D5D5;
+}
+
+#scholar-tool-logo {
+  padding-top: 12px;
+  vertical-align: middle;
+  display: inline-block;
+  float: none;
+}
+
+#scholar-nav-logo {
+  padding-left: 20px;
+  height: 30px;
 }
