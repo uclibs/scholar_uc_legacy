@@ -1,13 +1,22 @@
 <footer class="navbar navbar-inverse site-footer">
   <div class="container-fluid">
-    <div class="navbar-text text-left">
-      <p><%= t('sufia.brought_to_you_by_html') %></p>
-      <p><%= t('sufia.made_possible_by_html') %></p>
-    </div>
-    <div class="navbar-right">
-      <div class="navbar-text text-right">
-        <p><%= t('sufia.terms_of_use_html') %> &nbsp;/&nbsp; <%= t('sufia.non_discrimination_notice_html') %></p>
+    <div class="row vertical-align">
+      <div class="col-sm-3">
+        <p><%= t('sufia.terms_of_use_html') %></p>
         <p>Deployed on <%= "#{Sufia::BUILD_IDENTIFIER}" %></p>
+        <a class="grey_link" href="http://uc.edu" target="_blank">&copy; 2017 University of Cincinnati</a></br>
+      </div>
+      <div class="col-sm-3">
+        <img src="/assets/UC_footer_logo.png" alt="University of Cincinnati" title="UC logo" class="center-block">
+      </div>
+      <div class="col-sm-3">
+        Powered by<img src="/assets/powered_by_hydra.png" alt="Powered by Hydra" title="Powered by Hydra">
+        <p><%= t('sufia.made_possible_by_html') %></p>
+      </div>
+      <div class="col-sm-3 text-right">
+        <%= t('sufia.clery_heoa_notice_html') %></br>
+        <%= t('sufia.non_discrimination_notice_html') %></br>
+        <%= t('sufia.copyright_information_html') %>
       </div>
     </div>
   </div>
