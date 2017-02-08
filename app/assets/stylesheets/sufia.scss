@@ -135,8 +135,12 @@ div.input-group-btn button.btn-primary:active {
   max-width: 40em;
 }
 
-.header-uc-logo {
-  height: 100%;
+#nav-uc-logo {
+  height: 30px;
+}
+
+.navbar {
+  min-height: 57px;
 }
 
 .g-recaptcha {
