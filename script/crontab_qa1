@@ -3,5 +3,5 @@
 30 * * * * /srv/apps/curate_uc/script/resque_alert.sh libhydqwl1
 30 9 * * 5 df -h
 0 0 1 * * /srv/apps/curate_uc/script/rotate_log.sh
-1 0 * * * /srv/apps/curate_uc/script/release_embargo.sh
-0 * * * * export PATH=$PATH:/srv/apps/.gem/ruby/2.1.0/bin; cd /srv/apps/curate_uc; /srv/apps/.gem/ruby/2.1.0/bin/bundle exec rake rss_feed:update_feed
+1 0 * * * /srv/apps/curate_uc/script/release_embargo.sh 2> /dev/null
+0 * * * * export PATH=$PATH:/srv/apps/.gem/ruby/2.1.0/bin; cd /srv/apps/curate_uc; /srv/apps/.gem/ruby/2.1.0/bin/bundle exec rake rss_feed:update_feed 2> /dev/null
