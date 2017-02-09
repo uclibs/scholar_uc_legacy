@@ -12,7 +12,7 @@ shared_examples 'work creation' do |work_class| # snake-case work type for strin
     # expect(page).to have_content "Add folder"  -- only works in Chrome
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
-    click_link "Description" # switch tab
+    click_link "Metadata" # switch tab
     fill_in('Title', with: 'My Test Work')
     # checking for work creator auto-fill and also filling it in
     expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
@@ -24,7 +24,7 @@ shared_examples 'work creation' do |work_class| # snake-case work type for strin
     check('agreement')
     click_on('Save')
     expect(page).to have_content('My Test Work')
-    expect(page).to have_content "Any uploaded files are being processed by Scholar@UC in the background."
+    expect(page).to have_content "Your files are being processed by Scholar@UC in the background."
   end
 end
 
@@ -38,7 +38,7 @@ shared_examples 'proxy work creation' do |work_class|
     # Capybara/poltergeist don't dependably upload files, so we'll stub out the results of the uploader:
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
-    click_link "Description" # switch tab
+    click_link "Metadata" # switch tab
     fill_in('Title', with: 'My Test Work')
     # fill_in('Creator', with: 'Test User') // Now autofilling this
     expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
@@ -50,7 +50,7 @@ shared_examples 'proxy work creation' do |work_class|
     check('agreement')
     click_on('Save')
     expect(page).to have_content('My Test Work')
-    expect(page).to have_content "Any uploaded files are being processed by Scholar@UC in the background."
+    expect(page).to have_content "Your files are being processed by Scholar@UC in the background."
     click_link('Dashboard')
     click_link('Shares')
     click_link('Works Shared with Me')
