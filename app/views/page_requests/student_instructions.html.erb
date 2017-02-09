@@ -1,0 +1,15 @@
+<% content_for :page_title, "#{application_name} Student Instructions" %>
+<%= render 'shared/header' %>
+<%= render 'shared/flash_message' %>
+
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <h2 align="center">Student Self Submissions to Scholar@UC</h2>
+      <h2 align="center">Instructions for Students</h2>
+      <%= render :partial => 'student_instructions_text' %>
+    </div>
+  </div>
+</div>
+
+<%= render 'footer' %>

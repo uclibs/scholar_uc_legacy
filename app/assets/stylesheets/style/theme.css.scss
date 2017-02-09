@@ -18,6 +18,18 @@
   }
 }
 
+.btn.make-me-red {
+  color:#FFF;
+  background-color: #E00122;
+  background-image: none;
+
+  &:hover{
+    background-color: darken( #E00122, 5% );
+    color:#FFF;
+    text-decoration: none;
+  }
+}
+
 #ucNav #login-button {
   margin: 0;
 

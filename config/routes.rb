@@ -19,6 +19,9 @@ CurateApp::Application.routes.draw do
 
   curate_for
 
+  get 'student_instructions' => 'page_requests#view_student_instructions'
+  get 'advisor_guidelines' => 'page_requests#view_advisor_guidelines'
+  get 'student_works_help' => 'page_requests#view_student_works_help'
   get 'orcid_about' => 'page_requests#view_orcid_about'
   get 'terms_request' => 'page_requests#view_terms'
   get 'about_request' => 'page_requests#view_about'

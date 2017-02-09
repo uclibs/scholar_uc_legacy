@@ -1,0 +1,15 @@
+<% content_for :page_title, "#{application_name} Advisor Guidelines" %>
+<%= render 'shared/header' %>
+<%= render 'shared/flash_message' %>
+
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <h2 align="center">Student Self Submissions to Scholar@UC</h2>
+      <h2 align="center">Guidlelines for Faculty Advisors</h2>
+      <%= render :partial => 'advisor_guidelines_text' %>
+    </div>
+  </div>
+</div>
+
+<%= render 'footer' %>
