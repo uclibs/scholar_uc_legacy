@@ -1112,7 +1112,7 @@
 	    url: 'http://opendatacommons.org/licenses/pddl/summary/',
 	    description: 'This license is meant to be an international, database-specific equivalent of the public domain. You cannot relicense or sublicense any database under this license because, like the public domain, after dedication you no longer own any rights to the database.',
 	    categories: ['public', 'data', 'public-domain'],
-	    labels: ['public']
+	    labels: ['public', 'opendata']
 	  },
 	  'cc-by': {
 	    name: 'Creative Commons Attribution (CC-BY)',
@@ -1366,16 +1366,25 @@
 	QuestionDefinitions = {
 	  KindOfContent: function() {
 	    this.question('What do you want to deposit?');
-	    this.answer('Software', function() {
-	      this.exclude('data');
-	      return this.goto('YourSoftware');
-	    });
-	    return this.answer('Data', function() {
-	      this.exclude('software');
+	    this.answer('Data', function() {
+	      this.include('dataset');
 	      return this.goto('DataCopyrightable');
 	    });
+	    return this.answer('Document / Other', function() {
+	      this.exclude('dataset');
+	      return this.goto('DocumentCopyrightable');
+	    });
 	  },
-	  DataCopyrightable: function() {
+    DataCopyrightable: function() {
+      this.question('Is your dataset within the scope of copyright and related rights?');
+	    this.yes(function() {
+	      return this.goto('OwnIPRData');
+	    });
+	    return this.no(function() {
+	      return this.license('pddl');
+	    });
+    },
+	  DocumentCopyrightable: function() {
 	    this.question('Is your work within the scope of copyright and related rights?');
 	    this.yes(function() {
 	      return this.goto('OwnIPR');
@@ -1391,6 +1400,15 @@
 	    });
 	    return this.no(function() {
 	      return this.goto('EnsureLicensing');
+	    });
+	  },
+	  OwnIPRData: function() {
+	    this.question('Do you either own copyright and similar rights in your dataset and all its constitutive parts or have written permission from the copyright owner to use their content in your dataset?');
+	    this.yes(function() {
+	      return this.goto('ShareAlikeData');
+	    });
+	    return this.no(function() {
+	      return this.cantlicense('You need additional permission before you can deposit the work!');
 	    });
 	  },
 	  AllowDerivativeWorks: function() {
@@ -1428,6 +1446,16 @@
 	      }
 	    });
 	  },
+	  ShareAlikeData: function() {
+	    this.question('Do you require that those who use your dataset to create new datasets to issue their new work under a compatible license?');
+	    this.yes(function() {
+        return this.license('odbl');
+	      });
+	    return this.no(function() {
+	      this.exclude('data_sa');
+	      return this.goto('DecideAttributeData');
+	    });
+	  },
 	  CommercialUse: function() {
 	    this.question('Do you allow others to make commercial use of your work?');
 	    this.yes(function() {
@@ -1444,6 +1472,20 @@
 	      return this.license();
 	    });
 	  },
+
+	  DecideAttributeData: function() {
+	    this.question('Do you want others to attribute your work to you?');
+	    this.yes(function() {
+	      this.include('data_by');
+	      return this.license();
+	    });
+	    return this.no(function() {
+	      this.include('data_public-domain');
+	      return this.license();
+	    });
+	  },
+
+
 	  DecideAttribute: function() {
 	    this.question('Do you want others to attribute your work to you?');
 	    this.yes(function() {
