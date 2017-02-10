@@ -38,4 +38,10 @@ module Sufia::UsersControllerBehavior
     def user_work_count(user)
       CurationConcerns::WorkRelation.new.where(DepositSearchBuilder.depositor_field => user.user_key).count
     end
+
+    def user_params
+      params.require(:user).permit(:first_name, :last_name, :avatar, :facebook_handle, :twitter_handle, :title,
+                                   :googleplus_handle, :linkedin_handle, :remove_avatar, :orcid, :department,
+                                   :blog, :alternate_phone_number, :alternate_email, :uc_affiliation, :website, :telephone)
+    end
 end

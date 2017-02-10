@@ -13,7 +13,7 @@ describe 'proxy', type: :feature do
       click_link "Edit Your Profile"
       expect(first("td.depositor-name")).to be_nil
       create_proxy_using_partial(second_user)
-      expect(page).to have_css('td.depositor-name', text: second_user.user_key)
+      expect(page).to have_css('td.depositor-name', text: second_user.name)
     end
   end
 end

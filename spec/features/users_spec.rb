@@ -15,6 +15,24 @@ describe "User Profile", type: :feature do
       expect(page).to have_content('Edit Your Profile')
       expect(page).to have_content('View Contributors')
     end
+  end
+
+  context 'when editing user' do
+    it 'renders identity and contact fields' do
+      visit profile_path
+      click_link('Edit Your Profile', match: :first)
+      expect(page).to have_field('First name', with: user.first_name)
+      expect(page).to have_field('Last name', with: user.last_name)
+      expect(page).to have_field('Job title')
+      expect(page).to have_field('Department')
+      expect(page).to have_field('UC affiliation')
+      expect(page).to have_field('Email', with: user.email)
+      expect(page).to have_field('Alternate email')
+      expect(page).to have_field('Campus phone number')
+      expect(page).to have_field('Alternate phone number')
+      expect(page).to have_field('Personal webpage')
+      expect(page).to have_field('Blog')
+    end
 
     it 'renders ORCID connector' do
       visit profile_path
@@ -74,10 +92,10 @@ describe "User Profile", type: :feature do
     it 'page should be editable' do
       visit profile_path
       click_link 'Edit Your Profile'
-      fill_in 'user_twitter_handle', with: 'curatorOfData'
+      fill_in 'Campus phone number', with: '513-867-5309'
       click_button 'Save Profile'
       expect(page).to have_content 'Your profile has been updated'
-      expect(page).to have_link('curatorOfData', href: 'http://twitter.com/curatorOfData')
+      expect(page).to have_link('513-867-5309', href: 'wtai://wp/mc;513-867-5309')
     end
   end
 
