@@ -7,6 +7,8 @@ cache:
     - "travis_phantomjs"
 
 before_install:
+  - gem update --system 2.6.10
+  - gem --version
   - gem install brakeman
   - gem install bundler
   - gem install rubocop -v '0.42.0'
