@@ -19,7 +19,7 @@ describe 'Adding an infected file', js: true do
       fill_in('Title', with: 'My Infected Work')
       fill_in('Creator', with: 'Test User')
       fill_in('Keyword', with: 'tests')
-      select 'Attribution-ShareAlike 3.0 United States', from: 'generic_work_rights'
+      select 'Attribution-ShareAlike 4.0 International', from: 'generic_work_rights'
       choose('generic_work_visibility_open')
       check('agreement')
       check('agreement') # need to check the box again sometimes (Capybara flakiness)
