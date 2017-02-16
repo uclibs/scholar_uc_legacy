@@ -98,6 +98,11 @@ Style/BlockComments:
   Exclude:
     - 'spec/spec_helper.rb'
 
+Style/RedundantSelf:
+  Exclude:
+    - 'config/application.rb'
+    - 'config/environments/test.rb'
+
 Rails:
   Enabled: true
 
