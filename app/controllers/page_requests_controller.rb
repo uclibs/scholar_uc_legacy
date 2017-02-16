@@ -5,6 +5,18 @@ class PageRequestsController < ApplicationController
 # config/sitemap.rb file as well as the spec/sitemap/generator_spec.rb spec.
 ########
 
+  def view_student_instructions
+    render 'student_instructions'
+  end
+
+  def view_advisor_guidelines
+    render 'advisor_guidelines'
+  end
+
+  def view_student_works_help
+    render 'student_work_help'
+  end
+
   def view_orcid_about
     render 'orcid_about'
   end
