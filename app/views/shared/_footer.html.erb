@@ -2,13 +2,23 @@
 <footer class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-text text-left">
-      <p><%= t('sufia.brought_to_you_by_html') %></p>
-      <p><%= t('sufia.made_possible_by_html') %></p>
+      <a href="http://uc.edu" target="_blank">&copy; 2017 University of Cincinnati</a></br>
+      <%= t('sufia.clery_heoa_notice_html') %></br>
+      <%= t('sufia.non_discrimination_notice_html') %></br>
+      <%= t('sufia.copyright_information_html') %>
     </div>
-    <div class="navbar-right">
-      <div class="navbar-text text-right">
-      <p><%= t('sufia.terms_of_use_html') %> &nbsp;/&nbsp; <%= t('sufia.non_discrimination_notice_html') %></p>
+    <div class="navbar-center">
+      <div class="navbar-text text-center">
+      <p><%= t('sufia.terms_of_use_html') %></p>
         <p>Deployed on <%= "#{Sufia::BUILD_IDENTIFIER}" %></p>
+      </div>
+    </div>
+    <div>
+      <div class="navbar-right">
+        <div class="navbar-text text-right">
+          <p><%= t('sufia.made_possible_by_html') %></p>
+          <p>Powered by<img src="/assets/powered_by_hydra.png" alt="Powered by Hydra" title="Powered by Hydra"></p>
+        </div>
       </div>
     </div>
   </div>

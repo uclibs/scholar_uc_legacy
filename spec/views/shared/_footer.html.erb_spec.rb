@@ -10,8 +10,8 @@ RSpec.describe 'shared/_footer.html.erb', type: :view do
     expect(rendered).to have_content("Deployed on")
   end
 
-  it 'displays a brought to you by statement' do
-    expect(rendered).to have_content("Brought to you by")
+  it 'displays a powered by statement' do
+    expect(rendered).to have_content("Powered by")
   end
 
   it 'displays a made possible by statement' do
