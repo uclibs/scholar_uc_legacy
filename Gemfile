@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', ref: 'bc9184ae965b8d7db0986aaaa7ecc8d6b7670343'
+gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.3.0.rc1'
 gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
 #repository manager
 gem 'hydra-role-management'

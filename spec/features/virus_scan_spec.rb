@@ -15,7 +15,7 @@ describe 'Adding an infected file', js: true do
       click_link "Files" # switch tab
       expect(page).to have_content "Add files"
       attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
-      click_link "Description" # switch tab
+      click_link "Metadata" # switch tab
       fill_in('Title', with: 'My Infected Work')
       fill_in('Creator', with: 'Test User')
       fill_in('Keyword', with: 'tests')

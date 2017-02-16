@@ -26,7 +26,7 @@ shared_examples 'work crud' do |work|
     click_on 'Files'
     attach_file("files[]", Rails.root + "spec/fixtures/test_file.txt", visible: false)
     click_on 'Save'
-    expect(page).to have_content 'Any uploaded files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
+    expect(page).to have_content 'Your files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
   end
 
   it 'can submit a new work without files' do
@@ -38,7 +38,7 @@ shared_examples 'work crud' do |work|
       select('All rights reserved', from: "#{work_type}_rights")
     end
     click_on 'Save'
-    expect(page).to have_content 'Any uploaded files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
+    expect(page).to have_content 'Your files are being processed by Scholar@UC in the background. The metadata and access controls you specified are being applied.'
   end
 
   it 'can delete a work it owns' do
