@@ -31,9 +31,26 @@ class ApplicationController < ActionController::Base
   end
 
   def notify_exception
-    formatted_message = exception_message.gsub('--', "\n\n")
-    subject = "#{t('sufia.product_name')}: Exception Alert"
-    NotificationMailer.notify('', '', subject, formatted_message).deliver
+    return unless production_server?
+    @formatted_message = exception_message.gsub('--', "\n\n")
+    if !(trivial_exception? && unauthenticated_user?)
+      subject = "#{t('sufia.product_name')}: Exception Alert"
+      NotificationMailer.notify('', '', subject, @formatted_message).deliver
+    end
+  end
+
+  def production_server?
+    return true if Curate.configuration.application_root_url == "https://scholar.uc.edu/"
+  end
+
+  def trivial_exception?
+    ['in fedora',
+     'not found in solr',
+     '401 unauthorized'].any? { |word| @formatted_message.include?(word) }
+  end
+
+  def unauthenticated_user?
+      @formatted_message.include? "user: unauthenticated"
   end
 
   def render_404
