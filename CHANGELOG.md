@@ -1,3 +1,13 @@
+### 2.4.0 2/23/2017
+* ORCID support: Users can now link their existing or new ORCID ID with their Scholar@UC profile.
+* Menu changes: Added guidelines for faculty advisors; added instructions for students and a new help page for student works; added accessibility information to the File Format Advice page; items in the Help menu are now sorted alphabetically.
+* Added batch ingest functionality.
+* The site header now uses the updated UC logo.
+* Prevent some trivial errors from generating notifications.
+* Bug fixes
+    * DOIs can now contain square brackets without generating errors.
+    * Fixed a problem preventing Google Analytics reporting.
+
 ### 2.3.0 1/5/2017
 * Turned of soft delete of content
 * Virus scanning can now be toggled on/off (default is on for production, off otherwise)
