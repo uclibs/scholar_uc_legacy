@@ -24,6 +24,7 @@ shared_examples 'work creation' do |work_class| # snake-case work type for strin
     check('agreement')
     click_on('Save')
     expect(page).to have_content('My Test Work')
+    expect(page).to have_content('Attribution-ShareAlike 4.0 International')
     expect(page).to have_content "Your files are being processed by Scholar@UC in the background."
   end
 end
@@ -51,6 +52,7 @@ shared_examples 'proxy work creation' do |work_class|
     click_on('Save')
     expect(page).to have_content('My Test Work')
     expect(page).to have_content "Your files are being processed by Scholar@UC in the background."
+    expect(page).to have_content('Attribution-ShareAlike 4.0 International')
     click_link('Dashboard')
     click_link('Shares')
     click_link('Works Shared with Me')

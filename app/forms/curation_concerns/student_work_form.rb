@@ -5,5 +5,13 @@ module CurationConcerns
   class StudentWorkForm < Sufia::Forms::WorkForm
     self.model_class = ::StudentWork
     self.terms += [:resource_type]
+
+    def self.multiple?(field)
+      if field.to_sym == :rights
+        false
+      else
+        super
+      end
+    end
   end
 end
