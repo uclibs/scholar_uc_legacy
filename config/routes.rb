@@ -35,6 +35,11 @@ Rails.application.routes.draw do
   get 'documenting_data' => 'static#documenting_data'
   get 'creators_rights' => 'static#creators_rights'
 
+  # route for custom error pages issue #1056
+  match '/404', to: 'errors#not_found', via: :all
+  match '/422', to: 'errors#unprocessable', via: :all
+  match '/500', to: 'errors#server_error', via: :all
+
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
     concerns :exportable
   end
