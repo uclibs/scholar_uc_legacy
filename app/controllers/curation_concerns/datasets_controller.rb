@@ -10,5 +10,10 @@ module CurationConcerns
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = Dataset
+
+    def new
+      super
+      flash[:notice] = "If you would like guidance on submitting a dataset, please read the #{view_context.link_to 'Documenting Data', '/documenting_data', target: '_blank'} help page."
+    end
   end
 end
