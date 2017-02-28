@@ -40,6 +40,8 @@ Rails.application.configure do
 
   config.exceptions_app = self.routes
 
+  config.active_job.queue_adapter = :inline
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
