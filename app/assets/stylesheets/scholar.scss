@@ -1,0 +1,234 @@
+.jumbotron {
+  background-image: url('banner_image.jpg') !important;
+  color: #fff !important;
+  position: relative;
+}
+
+.jumbo-text {
+  text-shadow: 2px 2px 2px #000;
+}
+
+.powered_by {
+  max-width: 20% !important;
+  height: auto;
+}
+
+.partner-branding {
+  position: relative;
+  left: 30px;
+}
+
+#masthead a {
+  color: #fff;
+}
+
+#top-navbar-collapse > div > ul > li.dropdown.open > ul > li > a {
+  color: #333;
+}
+
+.home-nav {
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  font-size: 25px !important;
+}
+
+.navbar-right {
+  margin-right: 0 !important;
+}
+
+#content-wrapper {
+  padding-bottom: 30px !important;
+}
+
+.scholar-home-tag-line .line-thru {
+    background:#fff;
+    padding: 0 10px;
+}
+
+.partners-text, .ext-links {
+  margin-top: 20px;
+}
+
+.home-content {
+  margin-top: 20px;
+}
+
+.scholar-footer {
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #222;
+  border-color: #090909;
+  color: #fff;
+  font-size:12px;
+}
+
+.scholar-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.scholar-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.jumbo-controls {
+  background-color: rgba(0, 0, 0, 0.2);;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.clear-button {
+  border: 2px solid #fff;
+  border-radius: 3px;
+  outline-offset: 10px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.clear-button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.beta-tag {
+  color: #e00122;
+  font-size: 12px;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .jumbotron {
+    background-size: 100%;
+    min-height: 400px;
+    background-position: right bottom;
+  }
+
+  .jumbo-controls .jumbo-nav a {
+    font-size: 12px !important;
+  }
+
+  .jumbo-controls ul li:not(:first-child) {
+    border-left: 1px solid #fff;
+    padding-left: 15px;
+  }
+  .jumbo-controls ul li {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 15px;
+    position: relative;
+    top: 5px;
+  }
+  .cc-text {
+    font-size: 10px !important;
+    position: relative;
+    top: 5px;
+  }
+  .jumbo-controls li {
+    list-style: none;
+    display: inline;
+  }
+
+  .jumbo-controls li a {
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .scholar-home-tag-line {
+     width: 100%;
+     border-bottom: 1px solid #000;
+     line-height: 0.1em;
+     margin: 10px 0 20px;
+     font-size: 40px;
+  }
+
+  .jumbo-text, .desktop-right {
+    text-align: right;
+  }
+
+  .desktop-center {
+    text-align: center;
+  }
+
+  .desktop-left {
+    text-align: left;
+  }
+
+  .clear-button {
+    padding: 15px;
+    box-shadow: 2px 2px 2px #000;
+  }
+
+}
+
+/* media devices: tablets, ipads, high res phones, etc */
+@media (max-width: 767px) {
+
+  .jumbotron {
+    background-position: center;
+    background-size: 150%
+  }
+  .cc-text {
+    position: relative;
+    bottom: 5px;
+  }
+
+  .scholar-home-tag-line {
+     width: 100%;
+     border-bottom: 1px solid #000;
+     line-height: 0.1em;
+     margin: 10px 0 20px;
+     font-size: 30px;
+  }
+
+  .mobile-controls ul {
+    margin-top: 20px;
+  }
+
+  .mobile-controls li {
+    list-style: none;
+  }
+
+  .mobile-controls li a {
+    color: #fff;
+    font-size: 20px;
+    text-shadow: 2px 2px 2px #000;
+  }
+
+  .mobile-controls li:first-child {
+    background-color: rgba(255, 255, 255, 0.4)
+  }
+
+  .scholar-footer {
+    text-align: center !important;
+  }
+
+  .clear-button-wrapper {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .clear-button {
+    padding: 10px 20px 10px 20px;
+    box-shadow: 2px 2px 2px #000;
+    width: 100%;
+  }
+
+  .jumbo-nav {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .jumbo-nav li a{
+    position: relative;
+    left: 15px;
+  }
+
+  .jumbo-text h1 {
+    margin-bottom: 20px;
+  }
+}

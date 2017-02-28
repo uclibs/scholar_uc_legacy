@@ -1,0 +1,9 @@
+<% content_for(:navbar) do %>
+  <%= render 'layouts/scholar/jumbotron' %>
+<% end %>
+
+<% content_for(:precontainer_content) do %>
+  <%= render 'sufia/homepage/announcement' if controller_name == 'homepage' %>
+<% end %>
+
+<%= render template: 'layouts/sufia' %>

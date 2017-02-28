@@ -4,7 +4,8 @@ describe 'catalog searching', type: :feature do
   before do
     allow(User).to receive(:find_by_user_key).and_return(stub_model(User, twitter_handle: 'bob'))
     sign_in :user
-    visit '/'
+    visit '/dashboard'
+    find('#search-form-header').native.attributes['action'].value = '/catalog'
   end
 
   context 'with works and collections' do
@@ -23,8 +24,6 @@ describe 'catalog searching', type: :feature do
         fill_in('search-field-header', with: 'shared_keyword')
         click_button('Go')
       end
-
-      expect(page).to have_content('Search Results')
       expect(page).to have_content(jills_work.title.first)
       expect(page).to have_content(jacks_work.title.first)
       expect(page).to have_content(collection.title.first)

@@ -5,7 +5,9 @@ describe "Sending an email via the contact form", type: :feature do
   describe "with unauthenticated user" do
     it "shows recaptcha dialog" do
       visit '/'
-      click_link "Contact"
+      within '.spec-flag' do
+        click_link "Contact"
+      end
       expect(page).to have_css('div.g-recaptcha')
     end
   end
@@ -15,13 +17,17 @@ describe "Sending an email via the contact form", type: :feature do
 
     it "does not show recaptcha dialog" do
       visit '/'
-      click_link "Contact"
+      within '.spec-flag' do
+        click_link "Contact"
+      end
       expect(page).not_to have_css('div.g-recaptcha')
     end
 
     it "sends mail" do
       visit '/'
-      click_link "Contact"
+      within '.spec-flag' do
+        click_link "Contact"
+      end
       expect(page).to have_content "Contact the Scholar@UC Team"
       fill_in "Your Name", with: "Test McPherson"
       fill_in "Your Email", with: "archivist1@example.com"

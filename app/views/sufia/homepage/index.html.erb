@@ -1,25 +1,15 @@
 <% provide :page_title, application_name %>
 
-<% if @presenter.display_share_button? %>
-  <div class="home_share_work row">
-    <div class="col-sm-12 text-center">
-      <% if signed_in? %>
-        <%= link_to CurationConcerns::Engine.routes.url_helpers.new_classify_concern_path,
-          class: "btn btn-primary btn-lg" do %>
-          <i class="glyphicon glyphicon-upload"></i> <%= t('sufia.share_button') %>
-        <% end %>
-      <% else %>
-        <%= link_to sufia.dashboard_index_path,
-          class: "btn btn-primary btn-lg" do %>
-          <i class="glyphicon glyphicon-upload"></i> <%= t('sufia.share_button') %>
-        <% end %>
-      <% end %>
-      <p><a href="/terms/">Terms of Use</a></p>
-    </div>
-  </div>
-<% end %>
+<%= render '/flash_msg' %>
+
+<%= render 'layouts/scholar/scholar_headline' %>
 
 <div class="row home-content">
-  <%= render 'home_content' %>
+  <%= render 'layouts/scholar/home_content' %>
 </div>
 <%= tiny_mce_stuff if can? :update, ContentBlock%>
+
+<%= render 'layouts/scholar/links' %>
+
+<%= render 'layouts/scholar/partner_headline' %>
+<%= render 'layouts/scholar/partner_branding' %>

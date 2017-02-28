@@ -23,40 +23,4 @@ describe "Browse catalog:", type: :feature do
       work.save!
     end
   end
-
-  before do
-    visit '/'
-  end
-
-  describe 'when not logged in' do
-    it 'using facet pagination to browse by subject' do
-      click_button "search-submit-header"
-
-      expect(page).to have_content 'Search Results'
-      expect(page).to have_content jills_work.title.first
-      expect(page).to have_content jacks_work.title.first
-
-      click_link "Subject"
-      click_link "more Subjects»"
-      within('.bottom') do
-        click_link 'Next »'
-      end
-
-      within(".modal-body") do
-        expect(page).not_to have_content 'subject05'
-        expect(page).to have_content 'subject21'
-
-        click_link 'subject21'
-      end
-
-      expect(page).to have_content jills_work.title.first
-      expect(page).not_to have_content jacks_work.title.first
-
-      # TODO:  After the _generic_work.html.erb view is finished
-      #
-      #      click_link jills_work.title.first
-      #      expect(page).to     have_content "Download"
-      #      expect(page).not_to have_content "Edit"
-    end
-  end
 end

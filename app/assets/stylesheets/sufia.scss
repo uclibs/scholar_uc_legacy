@@ -4,6 +4,9 @@
  *= require_self
 */
 
+// change default bootstrap navbar breaking point
+
+@import "bootstrap-sass-variables";
 @import "bootstrap-sprockets";
 @import 'bootstrap';
 @import 'blacklight/blacklight';
