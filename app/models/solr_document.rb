@@ -26,4 +26,54 @@ class SolrDocument
   # Do content negotiation for AF models.
 
   use_extension(Hydra::ContentNegotiation)
+
+  # Added for All Work Types
+  def alternate_title
+    self[Solrizer.solr_name('alternate_title')]
+  end
+
+  def geo_subject
+    self[Solrizer.solr_name('geo_subject')]
+  end
+
+  def advisor
+    self[Solrizer.solr_name('advisor')]
+  end
+
+  def degree
+    self[Solrizer.solr_name('degree')]
+  end
+
+  def committee_member
+    self[Solrizer.solr_name('committee_member')]
+  end
+
+  def required_software
+    self[Solrizer.solr_name('required_software')]
+  end
+
+  def time_period
+    self[Solrizer.solr_name('time_period')]
+  end
+
+  def note
+    self[Solrizer.solr_name('note')]
+  end
+
+  # Added for Article Work Type
+  def journal_title
+    self[Solrizer.solr_name('alternate_title')]
+  end
+
+  def issn
+    self[Solrizer.solr_name('issn')]
+  end
+
+  # Added for Document and Image work types
+
+  def genre
+    self[Solrizer.solr_name('genre')]
+  end
+
+  # Added for Image work type
 end

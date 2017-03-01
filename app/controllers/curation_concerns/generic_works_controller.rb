@@ -10,5 +10,6 @@ module CurationConcerns
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = GenericWork
+    self.show_presenter = GenericWorkPresenter
   end
 end

@@ -6,8 +6,8 @@ describe 'searching' do
   let(:subject_value) { 'mustache' }
   let!(:work) do
     FactoryGirl.create(:public_work,
+                       description: [subject_value],
                        title: ["Toothbrush"],
-                       keyword: [subject_value, 'taco'],
                        user: user)
   end
 
@@ -47,12 +47,9 @@ describe 'searching' do
       click_button("Go")
 
       expect(page).to have_content('Search Results')
-      expect(page).to have_content "Toothbrush"
+      expect(page).to have_content('Toothbrush')
       expect(page).to have_content('collection title abc')
       expect(page).to have_css("span.collection-icon-search")
-
-      expect(page.body).to include "<span itemprop=\"keywords\"><a href=\"/catalog?f%5Bkeyword_sim%5D%5B%5D=taco\">taco</a></span>"
-      expect(page.body).to include "<span itemprop=\"keywords\"><a href=\"/catalog?f%5Bkeyword_sim%5D%5B%5D=mustache\">mustache</a></span>"
     end
 
     it "does not display search options for dashboard files" do

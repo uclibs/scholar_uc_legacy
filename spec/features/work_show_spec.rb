@@ -3,7 +3,7 @@ require 'rails_helper'
 
 shared_examples 'submission form with form#fileupload' do |work_class|
   let(:work_type) { work_class.name.underscore }
-  let(:work) { create(:work_with_one_file, title: ["Magnificent splendor"], source: ["The Internet"], based_near: ["USA"], user: user) }
+  let(:work) { create(:work_with_one_file, title: ["Magnificent splendor"], source: ["The Internet"], user: user) }
   let(:user) { create(:user) }
   let(:work_path) { "/concern/#{work_type}s/#{work.id}" }
 
@@ -15,8 +15,7 @@ shared_examples 'submission form with form#fileupload' do |work_class|
   it "has metadata" do
     expect(page).to have_selector 'h1', text: 'Magnificent splendor'
     expect(page).to have_selector 'li', text: 'The Internet'
-    expect(page).to have_selector 'th', text: 'Location'
-    expect(page).not_to have_selector 'th', text: 'Based near'
+    expect(page).to have_selector 'th', text: 'Source'
 
     # Displays FileSets already attached to this work
     within '.related-files' do
@@ -26,7 +25,7 @@ shared_examples 'submission form with form#fileupload' do |work_class|
 end
 
 shared_examples 'submission form without form#fileupload' do |work_class|
-  let(:work) { create(:public_generic_work, title: ["Magnificent splendor"], source: ["The Internet"], based_near: ["USA"]) }
+  let(:work) { create(:public_generic_work, title: ["Magnificent splendor"], source: ["The Internet"]) }
   let(:work_type) { work_class.name.underscore }
   let(:work_path) { "/concern/#{work_type}s/#{work.id}" }
   before do
@@ -36,8 +35,7 @@ shared_examples 'submission form without form#fileupload' do |work_class|
   it "has metadata" do
     expect(page).to have_selector 'h1', text: 'Magnificent splendor'
     expect(page).to have_selector 'li', text: 'The Internet'
-    expect(page).to have_selector 'th', text: 'Location'
-    expect(page).not_to have_selector 'th', text: 'Based near'
+    expect(page).to have_selector 'th', text: 'Source'
 
     # Doesn't have the upload form for uploading more files
     expect(page).not_to have_selector "form#fileupload"
