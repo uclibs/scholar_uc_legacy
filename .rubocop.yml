@@ -31,6 +31,12 @@ Metrics/AbcSize:
 
 Metrics/MethodLength:
   Max: 15
+  Exclude:
+    - 'lib/seed_methods.rb'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'lib/seed_methods.rb'
 
 Style/BlockDelimiters:
   Exclude:
