@@ -135,8 +135,12 @@ div.input-group-btn button.btn-primary:active {
   max-width: 40em;
 }
 
-.header-uc-logo {
-  height: 100%;
+#uc-nav-logo {
+  height: 30px;
+}
+
+.navbar {
+  min-height: 57px;
 }
 
 .g-recaptcha {
@@ -149,4 +153,51 @@ div.profile a.btn-primary {
 
 .orcid-section {
   padding-top: 20px;
+}
+
+/* navbar */
+.navbar-default {
+    background-color: #E00122;
+    border-color: #E7E7E7;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #777;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ecf0f1;
+    background-color: #b8001b;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #ecf0f1;
+    background-color: #b8001b;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+
+#scholar-tool-logo {
+  padding-top: 12px;
+  vertical-align: middle;
+  display: inline-block;
+  float: none;
+}
+
+#scholar-nav-logo {
+  padding-left: 20px;
+  height: 30px;
 }
