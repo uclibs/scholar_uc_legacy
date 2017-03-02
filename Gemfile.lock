@@ -25,27 +25,19 @@ GIT
       virtus
 
 GIT
-  remote: https://github.com/jcoyne/flipflop.git
-  revision: 0eecddade9890548c92b1e8aa681512f1db01469
-  branch: hydra
-  specs:
-    flipflop (2.2.1)
-      activesupport (>= 4.0)
-
-GIT
   remote: https://github.com/projecthydra/sufia.git
-  revision: e79f0fb8a347a95f821f30f8b271d2eefa9f2a76
-  tag: v7.3.0.rc1
+  revision: d5f4d883cc24d9165ca434bb0a02a79a07810900
+  tag: v7.3.0.rc2
   specs:
-    sufia (7.3.0.rc1)
+    sufia (7.3.0.rc2)
       almond-rails (~> 0.0.1)
       blacklight (~> 6.6)
       blacklight-gallery (~> 0.7)
       browse-everything (>= 0.10.3)
       carrierwave (~> 0.9)
-      curation_concerns (~> 1.7.4)
+      curation_concerns (~> 1.7.5)
       daemons (~> 1.1)
-      flipflop (~> 2.2)
+      flipflop (~> 2.3)
       flot-rails (~> 0.0.6)
       font-awesome-rails (~> 4.2)
       hydra-batch-edit (~> 2.0)
@@ -106,7 +98,7 @@ GEM
     active_attr (0.10.0)
       activemodel (>= 3.0.2, < 5.1)
       activesupport (>= 3.0.2, < 5.1)
-    active_fedora-noid (2.0.1)
+    active_fedora-noid (2.0.2)
       active-fedora (>= 9.7, < 12)
       noid (~> 0.9)
       rails (>= 4.2.7.1, < 6)
@@ -134,17 +126,17 @@ GEM
       rails (>= 4.2, < 6)
     arel (6.0.4)
     ast (2.3.0)
-    autoprefixer-rails (6.7.2)
+    autoprefixer-rails (6.7.6)
       execjs
     awesome_nested_set (3.1.1)
       activerecord (>= 4.0.0, < 5.1)
-    aws-sdk (2.7.5)
-      aws-sdk-resources (= 2.7.5)
-    aws-sdk-core (2.7.5)
+    aws-sdk (2.8.0)
+      aws-sdk-resources (= 2.8.0)
+    aws-sdk-core (2.8.0)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.7.5)
-      aws-sdk-core (= 2.7.5)
+    aws-sdk-resources (2.8.0)
+      aws-sdk-core (= 2.8.0)
     aws-sigv4 (1.0.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -181,7 +173,7 @@ GEM
     bootstrap_form (2.6.0)
     brakeman (3.5.0)
     breadcrumbs_on_rails (3.0.1)
-    browse-everything (0.11.1)
+    browse-everything (0.12.0)
       addressable (~> 2.5)
       aws-sdk
       bootstrap-sass
@@ -198,7 +190,7 @@ GEM
     builder (3.2.3)
     byebug (9.0.6)
     cancancan (1.16.0)
-    capybara (2.12.0)
+    capybara (2.12.1)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -211,7 +203,7 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
-    childprocess (0.6.1)
+    childprocess (0.6.2)
       ffi (~> 1.0, >= 1.0.11)
     clipboard-rails (1.6.0)
     cliver (0.3.2)
@@ -224,14 +216,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.0.4)
+    concurrent-ruby (1.0.5)
     coveralls (0.8.19)
       json (>= 1.8, < 3)
       simplecov (~> 0.12.0)
       term-ansicolor (~> 1.3)
       thor (~> 0.19.1)
       tins (~> 1.6)
-    curation_concerns (1.7.4)
+    curation_concerns (1.7.5)
       active-fedora (>= 10.3.0.rc1)
       active_attr
       active_fedora-noid (~> 2.0.0.beta5)
@@ -262,6 +254,8 @@ GEM
     daemons (1.2.4)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
+    declarative (0.0.9)
+    declarative-option (0.1.0)
     deprecation (1.0.0)
       activesupport
     descendants_tracker (0.0.4)
@@ -279,7 +273,7 @@ GEM
     docile (1.1.5)
     dropbox-sdk (1.6.5)
       json
-    dry-configurable (0.5.0)
+    dry-configurable (0.6.2)
       concurrent-ruby (~> 1.0)
     dry-container (0.6.0)
       concurrent-ruby (~> 1.0)
@@ -291,7 +285,7 @@ GEM
       dry-container (~> 0.2, >= 0.2.6)
       dry-core (~> 0.2)
       dry-equalizer (~> 0.2)
-    dry-struct (0.1.1)
+    dry-struct (0.2.1)
       dry-configurable (~> 0.1)
       dry-equalizer (~> 0.2)
       dry-types (~> 0.9, >= 0.9.0)
@@ -331,21 +325,23 @@ GEM
     ffi (1.9.17)
     figaro (1.1.1)
       thor (~> 0.14)
+    flipflop (2.3.0)
+      activesupport (>= 4.0)
     flot-rails (0.0.7)
       jquery-rails
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    google-api-client (0.9.28)
+    google-api-client (0.10.0)
       addressable (~> 2.3)
       googleauth (~> 0.5)
       httpclient (~> 2.7)
       hurley (~> 0.1)
       memoist (~> 0.11)
       mime-types (>= 1.6)
-      representable (~> 2.3.0)
-      retriable (~> 2.0)
+      representable (~> 3.0)
+      retriable (>= 2.0, < 4.0)
     google_drive (2.1.2)
       google-api-client (>= 0.9.0, < 1.0.0)
       googleauth (>= 0.5.0, < 1.0.0)
@@ -421,11 +417,11 @@ GEM
       hydra-file_characterization (~> 0.3, >= 0.3.3)
       hydra-pcdm (>= 0.9)
       om (~> 3.1)
-    i18n (0.8.0)
+    i18n (0.8.1)
     ice_nine (0.11.2)
     inflecto (0.0.2)
-    jbuilder (2.6.1)
-      activesupport (>= 3.0.0, < 5.1)
+    jbuilder (2.6.3)
+      activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
     jmespath (1.3.1)
     jquery-datatables-rails (3.4.0)
@@ -451,7 +447,7 @@ GEM
       activesupport (>= 3.0.0)
     kaminari_route_prefix (0.0.2)
       kaminari (~> 0.16)
-    ldp (0.6.3)
+    ldp (0.6.4)
       deprecation
       faraday
       http_logger
@@ -482,7 +478,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
-    mini_magick (4.6.0)
+    mini_magick (4.6.1)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
@@ -506,9 +502,9 @@ GEM
       activesupport
       nokogiri (>= 1.4.2)
       solrizer (~> 3.3)
-    omniauth (1.4.1)
-      hashie (>= 1.2, < 4)
-      rack (>= 1.0, < 3)
+    omniauth (1.6.1)
+      hashie (>= 3.4.6, < 3.6.0)
+      rack (>= 1.6.2, < 3)
     omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
@@ -530,7 +526,7 @@ GEM
     power_converter (0.1.2)
     powerpack (0.1.1)
     public_suffix (2.0.5)
-    qa (0.11.0)
+    qa (0.11.1)
       activerecord-import
       deprecation
       faraday
@@ -597,15 +593,17 @@ GEM
     redic (1.5.0)
       hiredis
     redis (3.3.3)
-    redis-namespace (1.5.2)
+    redis-namespace (1.5.3)
       redis (~> 3.0, >= 3.0.4)
     redlock (0.1.8)
       redis (~> 3, >= 3.0.0)
-    representable (2.3.0)
-      uber (~> 0.0.7)
+    representable (3.0.3)
+      declarative (< 0.1.0)
+      declarative-option (< 0.2.0)
+      uber (< 0.2.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
-    retriable (2.1.0)
+    retriable (3.0.1)
     rsolr (1.1.2)
       builder (>= 2.1.2)
     rspec-activemodel-mocks (1.0.3)
@@ -659,7 +657,7 @@ GEM
       rdoc (~> 4.0)
     select2-rails (3.5.10)
       thor (~> 0.14)
-    selenium-webdriver (3.0.8)
+    selenium-webdriver (3.2.2)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
@@ -714,7 +712,7 @@ GEM
     term-ansicolor (1.4.0)
       tins (~> 1.0)
     thor (0.19.4)
-    thread_safe (0.3.5)
+    thread_safe (0.3.6)
     tilt (2.0.6)
     tins (1.13.2)
     tinymce-rails (4.5.3)
@@ -731,8 +729,8 @@ GEM
       railties (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uber (0.0.15)
-    uglifier (3.0.4)
+    uber (0.1.0)
+    uglifier (3.1.2)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.1.3)
     virtus (1.0.5)
@@ -773,7 +771,7 @@ DEPENDENCIES
   devise-multi_auth!
   factory_girl_rails
   fcrepo_wrapper
-  flipflop!
+  flipflop (= 2.3.0)
   hydra-role-management
   jbuilder (~> 2.0)
   jquery-rails
@@ -800,4 +798,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.14.3
+   1.14.5

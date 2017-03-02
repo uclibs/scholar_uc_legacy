@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.3.0.rc1'
-gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
+gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.3.0.rc2'
+gem 'flipflop', '2.3.0'
 #repository manager
 gem 'hydra-role-management'
 gem 'orcid', github: 'uclibs/orcid'
