@@ -1,6 +1,6 @@
 var ls = function() {
-      $('<a href="#" class="btn btn-success selector">License Wizard</a>')
-      .prependTo('#license-wizard')
+      $('<a href="#" id="license-wizard" class="pull-right btn btn-success selector">License Wizard</a>')
+      .insertBefore('.rights-selector')
       .licenseSelector({
         // Options
 

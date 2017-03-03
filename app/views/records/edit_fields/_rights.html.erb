@@ -5,8 +5,7 @@
 </label>
 <div class="license-wrapper">
   <div class="row">
-    <div id="license-wizard" class="col-sm-1"></div>
-      <div class="col-sm-9 col-sm-offset-2">
+      <div class="col-sm-9">
         <%= f.input :rights, as: :select,
           collection: license_service.select_active_options,
           include_blank: false,
