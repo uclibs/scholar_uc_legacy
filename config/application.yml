@@ -1,3 +1,8 @@
+# Replace below with bamboo variables for production
 
 ORCID_APP_ID: APP-DUCNNE8KZ3DGLI66
 ORCID_APP_SECRET: 9826e131-91eb-414c-814f-7b414e65e1e4
+ORCID_SITE_URL: http://api.sandbox.orcid.org
+ORCID_TOKEN_URL: https://api.sandbox.orcid.org/oauth/token
+ORCID_REMOTE_SIGNIN_URL: https://sandbox.orcid.org/signin/auth.json
+ORCID_AUTHORIZE_URL: https://sandbox.orcid.org/oauth/authorize
