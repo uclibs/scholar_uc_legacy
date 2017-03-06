@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # taken from sufia 7.1
 FactoryGirl.define do
-  factory :work, aliases: [:generic_work, :private_generic_work], class: 'GenericWork' do
+  factory :generic_work, aliases: [:work, :private_generic_work], class: 'GenericWork' do
     transient do
       user { FactoryGirl.create(:user) }
     end
@@ -21,7 +21,7 @@ FactoryGirl.define do
       read_groups ["registered"]
     end
 
-    factory :work_with_one_file do
+    factory :generic_work_with_one_file do
       before(:create) do |work, evaluator|
         work.ordered_members << FactoryGirl.create(:file_set, user: evaluator.user, title: ['A Contained FileSet'], label: 'filename.pdf')
       end

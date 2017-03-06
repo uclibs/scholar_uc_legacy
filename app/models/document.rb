@@ -5,6 +5,8 @@ class Document < ActiveFedora::Base
   include ::CurationConcerns::WorkBehavior
   include ::CurationConcerns::BasicMetadata
   include Sufia::WorkBehavior
+  include RemotelyIdentifiedByDoi::Attributes
+
   self.human_readable_type = 'Document'
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
