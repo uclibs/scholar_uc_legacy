@@ -8,6 +8,7 @@ module CurationConcerns
     self.terms -= [:keyword, :source, :contributor]
     self.required_fields = [:title, :creator, :description, :rights]
 
+
     def secondary_terms
       [:date_created, :alternate_title, :genre, :subject, :geo_subject,
        :time_period, :language, :bibliographic_citation,
@@ -26,6 +27,7 @@ module CurationConcerns
       attrs = super
       attrs[:title] = Array(attrs[:title]) if attrs[:title]
       attrs[:description] = Array(attrs[:description]) if attrs[:description]
+      attrs[:date_created] = Array(attrs[:date_created]) if attrs[:date_created]
       attrs
     end
 
@@ -36,5 +38,10 @@ module CurationConcerns
     def description
       super.first || ""
     end
+
+    def date_created
+      super.first || ""
+    end
+
   end
 end
