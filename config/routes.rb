@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'sidekiq/web'
 Rails.application.routes.draw do
   mount Orcid::Engine => "/orcid"
   mount BrowseEverything::Engine => '/browse'
@@ -6,6 +7,10 @@ Rails.application.routes.draw do
   mount Qa::Engine => '/authorities'
 
   mount Blacklight::Engine => '/'
+
+  authenticate :user, ->(u) { u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   concern :searchable, Blacklight::Routes::Searchable.new
 

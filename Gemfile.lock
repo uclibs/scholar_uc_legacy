@@ -225,7 +225,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.0.4)
+    connection_pool (2.2.1)
     coveralls (0.8.19)
       json (>= 1.8, < 3)
       simplecov (~> 0.12.0)
@@ -548,6 +549,8 @@ GEM
       nokogiri (~> 1.6)
       rails (>= 4.2.0, < 6.0)
     rack (1.6.5)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.7.1)
@@ -682,6 +685,11 @@ GEM
       websocket (~> 1.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    sidekiq (4.2.9)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      rack-protection (>= 1.5.0)
+      redis (~> 3.2, >= 3.2.1)
     signet (0.7.3)
       addressable (~> 2.3)
       faraday (~> 0.9)
@@ -814,6 +822,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   selenium-webdriver
   shoulda-matchers (~> 3.1)
+  sidekiq
   solr_wrapper (>= 0.13)
   spring
   sqlite3

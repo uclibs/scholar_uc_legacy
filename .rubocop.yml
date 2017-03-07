@@ -109,6 +109,10 @@ Style/RedundantSelf:
     - 'config/application.rb'
     - 'config/environments/test.rb'
 
+Style/DoubleNegation:
+  Exclude:
+    - 'config/environments/development.rb'
+
 Rails:
   Enabled: true
 
