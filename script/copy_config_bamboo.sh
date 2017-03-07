@@ -8,3 +8,4 @@ cp /srv/apps/curate/curate_uc-STAGE/config/fedora.yml.bamboo /srv/apps/curate/cu
 cp /srv/apps/curate/curate_uc-STAGE/config/solr.yml.bamboo /srv/apps/curate/curate_uc-STAGE/config/solr.yml
 cp /srv/apps/curate/curate_uc-STAGE/config/authentication.yml.bamboo /srv/apps/curate/curate_uc-STAGE/config/authentication.yml
 cp /srv/apps/curate/curate_uc-STAGE/config/initializers/sufia.rb.bamboo /srv/apps/curate/curate_uc-STAGE/config/initializers/sufia.rb
+cp /srv/apps/curate/curate_uc-STAGE/config/initializers/devise.rb.bamboo /srv/apps/curate/curate_uc-STAGE/config/initializers/devise.rb
