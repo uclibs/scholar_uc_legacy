@@ -2,6 +2,26 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
+
+def coverage_needed?
+  (!ENV['RAILS_VERSION'] || ENV['RAILS_VERSION'].start_with?('5.0')) &&
+    (ENV['COVERAGE'] || ENV['TRAVIS'])
+end
+
+if coverage_needed?
+  require 'simplecov'
+  require 'coveralls'
+  SimpleCov.root(File.expand_path('../..', __FILE__))
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+  SimpleCov.start('rails') do
+    add_filter '/spec'
+    add_filter '/tasks'
+    add_filter '/lib/seed_methods.rb'
+    add_filter '/db/seeds.rb'
+  end
+  SimpleCov.command_name 'spec'
+end
+
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
