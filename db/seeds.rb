@@ -5,7 +5,7 @@ require 'seed_methods'
 class AddInitialObjects < ActiveRecord::Migration
 
   rando_pass = Devise.friendly_token.first(8)
-  accounts = {'manydeposits@example.com' => 'Many Deposits', 'nodeposits@example.com' => 'No Deposits', 'manager@example.com' => 'Repository Manager', 'delegate@example.com' => 'Student Delegate'} 
+  accounts = {'manydeposits@example.com' => 'Many Deposits', 'nodeposits@example.com' => 'No Deposits', 'delegate@example.com' => 'Student Delegate'} 
 
   accounts.each do | email, name |
     unless User.where(email: email).exists?
