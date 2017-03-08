@@ -118,8 +118,11 @@
   <%= f.button '<i class="glyphicon glyphicon-save"></i> Save Profile'.html_safe, type: 'submit', class: "btn btn-primary" %>
 <% end %>
 <div class='row'>
-  <div class='pull-left'>
+  <div id="user-edit-proxy" class='pull-left panel panel-default'>
+    <div class="panel-heading">Manage Proxies</div>
+    <div class="panel-body">
     <%= render 'dashboard/_index_partials/proxy_rights', user: @user %>
+    </div>
   </div>
 </div>
 <div class="row orcid-section">
