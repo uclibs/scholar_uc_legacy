@@ -8,7 +8,7 @@ class Image < ActiveFedora::Base
   include RemotelyIdentifiedByDoi::Attributes
 
   self.human_readable_type = 'Image'
-
+  self.human_readable_short_description = 'Visual content: art, photographs, posters, graphics.'
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
   validates :title, presence: { message: 'Your work must have a title.' }

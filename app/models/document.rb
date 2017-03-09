@@ -8,6 +8,7 @@ class Document < ActiveFedora::Base
   include RemotelyIdentifiedByDoi::Attributes
 
   self.human_readable_type = 'Document'
+  self.human_readable_short_description = 'Text-based works other than articles: books, manuscripts, etc.'
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
   validates :title, presence: { message: 'Your work must have a title.' }

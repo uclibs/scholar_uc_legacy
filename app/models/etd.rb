@@ -8,6 +8,7 @@ class Etd < ActiveFedora::Base
   include RemotelyIdentifiedByDoi::Attributes
 
   self.human_readable_type = 'Etd'
+  self.human_readable_short_description = 'Must be submitted by the UC Graduate School'
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
   validates :title, presence: { message: 'Your work must have a title.' }
