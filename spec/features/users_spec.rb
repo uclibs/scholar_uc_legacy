@@ -34,6 +34,13 @@ describe "User Profile", type: :feature do
       expect(page).to have_field('Blog')
     end
 
+    it 'renders manage proxies partial' do
+      visit profile_path
+      click_link('Edit Profile', match: :first)
+      expect(page).to have_content('Manage Proxies')
+      expect(page).to have_content("Please Note: Your proxies can do anything on your behalf in Scholar@UC.")
+    end
+
     it 'renders ORCID connector' do
       visit profile_path
       click_link('Edit Profile', match: :first)

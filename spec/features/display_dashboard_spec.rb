@@ -27,5 +27,10 @@ describe "The Dashboard", type: :feature do
       expect(page).to have_content "My Highlights"
       expect(page).to have_content "Works Shared with Me"
     end
+
+    it "shows proxy information" do
+      expect(page).to have_content "Manage Proxies"
+      expect(page).to have_content "Please Note: Your proxies can do anything on your behalf in Scholar@UC."
+    end
   end
 end

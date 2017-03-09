@@ -10,6 +10,7 @@ en:
     footer:
       copyright_html: "<strong>Copyright &copy; University of Cincinnati</strong> Licensed under the Apache License, Version 2.0"
     dashboard:
+      help_statement_html:      "<strong>Please Note:</strong> Your proxies can do anything on your behalf in Scholar@UC. Be selective in who you give proxy access. Proxy accounts in Scholar@UC work very similar to <a href=\"https://support.google.com/mail/answer/138350?hl=en\">delegate accounts in Gmail</a>. If you authorize a proxy they can view, edit, or delete all of your existing works and files. Proxies can also create new works and upload files on your behalf. The proxy relationship can be revoked by the owner at any time. Use work-specific editors for more fine-grained access control."
       view_collections:         "View My Collections"
       create_collection:        "Create Collection"
       view_files:               "View My Files"
