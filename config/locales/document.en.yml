@@ -22,7 +22,6 @@ en:
         required_software: "Required Software"
         note:             "Note"
         publisher:        "Publisher (Required for DOI registration)"
-        bibliographic_citation: "Citation"
 
     hints:
       document:
@@ -44,5 +43,4 @@ en:
         time_period: "Enter the period or date associated with the subject of your Document.</br>Examples:</br><ul><li>19th century</li><li>Middle Ages</li><li>Jurassic Period</li></ul>"
         required_software: "Special software needed to open the Document."
         note: "Enter any additional information about your Document."
-        bibliographic_citation: "Enter the preferred citation for your Document. Suggested citation styles: APA, MLA, Chicago, AMA, Turabian."
 

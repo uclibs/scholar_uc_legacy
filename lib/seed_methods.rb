@@ -13,7 +13,6 @@ module SeedMethods
       language: ['English'],
       based_near: ['The world'],
       time_period: ['Now'],
-      bibliographic_citation: ['This is the bibliographic citation'],
       required_software: 'This requires software',
       note: 'This is the note',
       date_created: [populate_date_created]
@@ -34,7 +33,6 @@ module SeedMethods
       publisher: ['Penguin Publishing'],
       geo_subject: ['The world'],
       time_period: ['Now'],
-      bibliographic_citation: ['This is the bibliographic citation'],
       source: ['This is the source'],
       required_software: 'This requires software',
       date_created: [populate_date_created]
@@ -55,7 +53,6 @@ module SeedMethods
       publisher: ['Penguin Publishing'],
       language: ['English'],
       required_software: 'This requires software',
-      bibliographic_citation: ['This is the bibliographic citation'],
       date_created: [populate_date_created]
     )
     a.read_groups = [Hydra::AccessControls::AccessRight::PERMISSION_TEXT_VALUE_PUBLIC]
@@ -76,7 +73,6 @@ module SeedMethods
       language: ['English'],
       based_near: ['The world'],
       time_period: ['Now'],
-      bibliographic_citation: ['This is the bibliographic citation'],
       required_software: 'This requires software',
       note: 'This is the note',
       date_created: [populate_date_created]
@@ -99,7 +95,6 @@ module SeedMethods
       language: ['English'],
       based_near: ['The world'],
       time_period: ['Now'],
-      bibliographic_citation: ['This is the bibliographic citation'],
       required_software: 'This requires software',
       note: 'This is the note',
       date_created: [populate_date_created]
@@ -122,7 +117,6 @@ module SeedMethods
       language: ['English'],
       based_near: ['The world'],
       time_period: ['Now'],
-      bibliographic_citation: ['This is the bibliographic citation'],
       required_software: 'This requires software',
       note: 'This is the note',
       date_created: [populate_date_created]

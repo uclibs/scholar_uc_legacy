@@ -28,7 +28,7 @@ module CurationConcerns
     def secondary_terms
       %i(degree date_created alternate_title
          genre subject geo_subject time_period
-         language bibliographic_citation required_software
+         language required_software
          note)
     end
 

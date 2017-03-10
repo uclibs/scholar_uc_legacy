@@ -27,8 +27,7 @@ module CurationConcerns
     def secondary_terms
       %i(date_created alternate_title subject
          geo_subject time_period language
-         bibliographic_citation required_software
-         note)
+         required_software note)
     end
 
     ## Gymnastics to allow repeatble fields to behave as non-repeatable

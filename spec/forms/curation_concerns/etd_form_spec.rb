@@ -22,7 +22,7 @@ describe CurationConcerns::EtdForm do
     it do
       is_expected.to include(:date_created, :alternate_title,
                              :degree, :subject, :geo_subject,
-                             :time_period, :language, :bibliographic_citation,
+                             :time_period, :language,
                              :required_software, :note)
     end
   end
