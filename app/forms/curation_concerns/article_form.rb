@@ -6,7 +6,7 @@ module CurationConcerns
     self.model_class = ::Article
 
     ## Adding custom descriptive metadata terms
-    self.terms += %i(resource_type alternate_title journal_title issn time_period required_software note geo_subject)
+    self.terms += %i(resource_type bibliographic_citation alternate_title journal_title issn time_period required_software note geo_subject)
 
     ## Adding terms needed for the special DOI form tab
     self.terms += %i(doi doi_assignment_strategy existing_identifier)
@@ -32,7 +32,7 @@ module CurationConcerns
 
     ## Gymnastics to allow repeatble fields to behave as non-repeatable
     def self.multiple?(field)
-      if %i(title description rights date_created).include? field.to_sym
+      if %i(title description rights date_created bibliographic_citation).include? field.to_sym
         false
       else
         super
