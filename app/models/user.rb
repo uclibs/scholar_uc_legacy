@@ -40,4 +40,12 @@ class User < ActiveRecord::Base
   def display_name
     name
   end
+
+  def waive_welcome_page!
+    update_column(:waived_welcome_page, true)
+  end
+
+  def student?
+    uc_affiliation == 'student'
+  end
 end

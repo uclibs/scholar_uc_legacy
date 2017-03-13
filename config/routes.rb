@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   mount CurationConcerns::Engine, at: '/'
   resources :welcome, only: 'index'
+  resources :welcome_page, only: [:index, :create]
   root 'sufia/homepage#index'
   curation_concerns_collections
   curation_concerns_basic_routes

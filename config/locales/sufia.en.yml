@@ -21,6 +21,8 @@ en:
       edit:
         tab:
           doi: "DOI"
+    welcome:
+      waive_page: "Click here to hide this welcome page from displaying when you log in"
     brought_to_you_by_html:  "Brought to you by the <a href=\"http://libraries.uc.edu/\">University of Cincinnati Libraries</a> and <a href=\"http://ucit.uc.edu/\">UC Information Technologies</a>."
     made_possible_by_html: "Made possible by the <a href=\"http://projecthydra.org\">Hydra</a> project."
     terms_of_use_html: "<a class=\"a\" href=\"/terms\">Terms of Use</a>"

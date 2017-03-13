@@ -90,4 +90,30 @@ describe User do
 
   it_behaves_like "user with name:", :display_name
   it_behaves_like "user with name:", :name
+
+  subject { described_class.new(email: 'test@example.com', password: 'test1234') }
+
+  context 'when a user is not a student' do
+    before do
+      subject.uc_affiliation = ''
+    end
+    it "returns false for .student?" do
+      expect(subject.student?).to be false
+    end
+  end
+
+  context 'when a user is a student' do
+    before do
+      subject.uc_affiliation = 'student'
+    end
+    it "returns true for .student?" do
+      expect(subject.student?).to be true
+    end
+  end
+
+  it "sets waived_welcome_page to true" do
+    subject.save!
+    subject.waive_welcome_page!
+    expect(subject.waived_welcome_page).to be true
+  end
 end
