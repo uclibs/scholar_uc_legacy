@@ -21,8 +21,7 @@ describe CurationConcerns::DatasetForm do
     subject { form.secondary_terms }
     it do
       is_expected.to include(:date_created, :alternate_title, :subject, :geo_subject,
-                             :time_period, :language, :bibliographic_citation,
-                             :note)
+                             :time_period, :language, :note)
     end
   end
 

@@ -20,7 +20,6 @@ en:
         required_software: "Required Software"
         note:             "Note"
         publisher:        "Publisher (Required for DOI registration)"   
-        bibliographic_citation:  "Citation"
 
     hints:
       dataset:
@@ -42,5 +41,4 @@ en:
         alternate_title: "Enter an alternate title for your Dataset. An alternate title could include acronyms, abbreviations, or a series title."
         time_period: "Enter the period or date associated with the subject of your Dataset.</br>Examples:</br><ul><li>19th century</li><li>Middle Ages</li><li>Jurassic Period</li></ul>"
         note: "Enter any additional information about your Dataset."
-        bibliographic_citation: "Enter the preferred citation for your Dataset. Suggested citation styles: APA, MLA, Chicago, AMA, Turabian."
 

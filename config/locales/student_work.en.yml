@@ -24,7 +24,6 @@ en:
         publisher:        "Publisher (Required for DOI registration)"
         degree:           "Degree"
         advisor:          "Advisor"
-        bibliographic_citation: "Citation"
 
     hints:
       student_work:
@@ -49,5 +48,4 @@ en:
         degree: "The degree associated with this work, if the work was completed as part of a thesis or capstone. Please enter the abbreviation for the degree, e.g., BA or MS."
         advisor: "The faculty advisor or sponsor for this work, in<i> LastName, FirstName</i> format."
         alternate_title: "Enter an alternate title for your work. An alternate title could include acronyms, abbreviations, or a series title."
-        bibliographic_citation: "Enter the preferred citation for your work. Suggested citation styles: APA, MLA, Chicago, AMA, Turabian."
 

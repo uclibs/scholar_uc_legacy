@@ -21,9 +21,8 @@ describe CurationConcerns::ArticleForm do
     subject { form.secondary_terms }
     it do
       is_expected.to include(:date_created, :alternate_title, :journal_title,
-                             :issn, :subject, :geo_subject,
-                             :time_period, :language, :bibliographic_citation,
-                             :required_software, :note)
+                             :issn, :subject, :geo_subject, :time_period,
+                             :language, :required_software, :note)
     end
   end
 

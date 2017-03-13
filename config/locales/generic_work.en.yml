@@ -21,7 +21,6 @@ en:
         required_software: "Required Software"
         note:             "Enter any additional information about your Generic Work."
         publisher:        "Publisher (Required for DOI registration)"
-        bibliographic_citation:  "Citation"
 
     hints:
       generic_work:
@@ -41,6 +40,5 @@ en:
         time_period: "Enter the period or date associated with the subject of your Generic Work.</br>Examples:</br><ul><li>19th century</li><li>Middle Ages</li><li>Jurassic Period</li></ul>"
         required_software: "Special software needed to open the Generic Work."
         note: "Enter any additional information about your Generic Work."
-        bibliographic_citation: "Enter the preferred citation for your Generic Work. Suggested citation styles: APA, MLA, Chicago, AMA, Turabian."
 
 

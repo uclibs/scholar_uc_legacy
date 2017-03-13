@@ -21,7 +21,6 @@ en:
         required_software: "Required Software"
         note:              "Note"
         publisher:         "Publisher (Required for DOI registration)"
-        bibliographic_citation: "Citation"
 
     hints:
       video:
@@ -43,4 +42,3 @@ en:
         time_period: "Enter the period or date associated with the subject of your Video.</br>Examples:</br><ul><li>19th century</li><li>Middle Ages</li><li>Jurassic Period</li></ul"
         required_software: "Special software needed to open the Video"
         note: "Enter any additional information about your Video."
-        bibliographic_citation: "Enter the preferred citation for your Video. Suggested citation styles: APA, MLA, Chicago, AMA, Turabian."

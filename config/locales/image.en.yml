@@ -23,7 +23,6 @@ en:
         genre:            "Genre"
         time_period:      "Time Period"
         note:             "Note"
-        bibliographic_citation: "Citation"
         required_software: "Required Software" 
 
 
@@ -48,5 +47,4 @@ en:
         genre: "Select a genre matching your Image."
         time_period: "Enter the period or date associated with the subject of your Image.</br>Examples:</br><ul><li>19th century</li><li>Middle Ages</li><li>Jurassic Period</li></ul>"
         note: "Enter any additional information about your Image."
-        bibliographic_citation: "Enter the preferred citation for your Image. Suggested citation styles: APA, MLA, Chicago, AMA, Turabian."
         required_software: "Special software needed to open the Image."

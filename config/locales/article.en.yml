@@ -24,7 +24,6 @@ en:
         required_software: "Required Software"
         note:             "Note"
         publisher:        "Publisher (Required for DOI registration)"
-        bibliographic_citation:    "Citation"
 
     hints:
       article:
@@ -48,5 +47,4 @@ en:
         note: "Enter any additional information about your Article."
         publisher: "Enter the publisher of your Article. If this has not been previously published,<i> University of Cincinnati</i> is an appropriate publisher."
         rights: "Who should be able to view or download this content?"
-        bibliographic_citation: "Enter the preferred citation for your Article. Suggested citation styles: APA, MLA, Chicago, AMA, Turabian."
 
