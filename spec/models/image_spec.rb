@@ -4,6 +4,13 @@
 require 'rails_helper'
 
 describe Image do
+  describe ".human_readable_short_description" do
+    let(:work) { described_class.new(title: ['demoname']) { |gw| gw.apply_depositor_metadata("user") } }
+    it "has a human_readable_short_description" do
+      expect(work.human_readable_short_description).to eq('Visual content: art, photographs, posters, graphics.')
+    end
+  end
+
   describe ".properties" do
     subject { described_class.properties.keys }
     it { is_expected.to include("has_model", "create_date", "modified_date") }

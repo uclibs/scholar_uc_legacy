@@ -6,6 +6,7 @@ class StudentWork < ActiveFedora::Base
   include ::CurationConcerns::BasicMetadata
   include Sufia::WorkBehavior
   self.human_readable_type = 'Student Work'
+  self.human_readable_short_description = 'Deposit any kind of student work (excluding Theses and Dissertations).'
   include RemotelyIdentifiedByDoi::Attributes
 
   # Change this to restrict which works can be added as a child.
