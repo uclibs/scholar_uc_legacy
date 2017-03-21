@@ -53,6 +53,8 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name("creator", :facetable), label: "Creator", limit: 5
     config.add_facet_field solr_name("contributor", :facetable), label: "Contributor", limit: 5
     config.add_facet_field solr_name("subject", :facetable), label: "Subject", limit: 5
+    config.add_facet_field solr_name("college", :facetable), label: "College", limit: 5
+    config.add_facet_field solr_name("department", :facetable), label: "Program or Dept.", limit: 5
     config.add_facet_field solr_name("language", :facetable), label: "Language", limit: 5
     config.add_facet_field solr_name("geo_subject", :facetable), label: "Geographic Subject", limit: 5
     config.add_facet_field solr_name("publisher", :facetable), label: "Publisher", limit: 5
@@ -98,6 +100,8 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("description", :stored_searchable), label: "Description"
     config.add_show_field solr_name("subject", :stored_searchable), label: "Subject"
     config.add_show_field solr_name("creator", :stored_searchable), label: "Creator"
+    config.add_show_field solr_name("college", :stored_searchable), label: "College"
+    config.add_show_field solr_name("department", :stored_searchable), label: "Program or Department"
     config.add_show_field solr_name("contributor", :stored_searchable), label: "Contributor"
     config.add_show_field solr_name("publisher", :stored_searchable), label: "Publisher"
     config.add_show_field solr_name("geo_subject", :stored_searchable), label: "Geographic Subject"

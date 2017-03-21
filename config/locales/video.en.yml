@@ -21,7 +21,8 @@ en:
         required_software: "Required Software"
         note:              "Note"
         publisher:         "Publisher (Required for DOI registration)"
-
+        college:          "College"
+        department:       "Program or Department"
     hints:
       video:
         resource: "Pre-defined categories to describe the type of content being uploaded, such as &quot;article&quot; or &quot;dataset.&quot;  More than one type may be selected."
@@ -42,3 +43,5 @@ en:
         time_period: "Enter the period or date associated with the subject of your Video.</br>Examples:</br><ul><li>19th century</li><li>Middle Ages</li><li>Jurassic Period</li></ul"
         required_software: "Special software needed to open the Video"
         note: "Enter any additional information about your Video."
+        college: "Select the college associated with the submitter of this work."
+        department: "Enter the department associated with the submitter of this work."

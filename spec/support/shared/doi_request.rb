@@ -54,6 +54,11 @@ shared_examples 'doi request' do |work_class|
       description_element = find_by_id("#{work_label}_description")
       description_element.set("Test description")
       fill_in('Required Software', with: "database thingy") if work_class == Dataset
+      if work_class == Etd
+        fill_in('Degree Program', with: 'Test Department')
+      else
+        fill_in('Program or Department', with: 'Test Department')
+      end
       fill_in('Adviso', with: "Advisor Name") if [Etd, StudentWork].include?(work_class)
       select 'Attribution-ShareAlike 4.0 International', from: "#{work_label}_rights"
       fill_in('Publisher', with: 'tests')

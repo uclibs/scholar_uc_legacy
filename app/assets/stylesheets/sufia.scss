@@ -131,7 +131,9 @@ div.input-group-btn button.btn-primary:active {
   background-color: #e00122;
 }
 
-.form-control.select.rights {
+.form-control.select.rights,
+.form-control.select.college,
+.form-control.string.department {
   max-width: 40em;
 }
 

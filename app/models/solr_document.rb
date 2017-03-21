@@ -77,4 +77,12 @@ class SolrDocument
   def doi
     self[Solrizer.solr_name('doi')]
   end
+
+  def college
+    self[Solrizer.solr_name('college')]
+  end
+
+  def department
+    self[Solrizer.solr_name('department')]
+  end
 end

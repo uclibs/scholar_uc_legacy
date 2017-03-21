@@ -24,7 +24,8 @@ en:
         publisher:        "Publisher (Required for DOI registration)"
         degree:           "Degree"
         advisor:          "Advisor"
-
+        college:          "College"
+        department:       "Program or Department"
     hints:
       student_work:
         resource: "Pre-defined categories to describe the type of content being uploaded, such as &quot;article&quot; or &quot;dataset.&quot;  More than one type may be selected."
@@ -48,4 +49,5 @@ en:
         degree: "The degree associated with this work, if the work was completed as part of a thesis or capstone. Please enter the abbreviation for the degree, e.g., BA or MS."
         advisor: "The faculty advisor or sponsor for this work, in<i> LastName, FirstName</i> format."
         alternate_title: "Enter an alternate title for your work. An alternate title could include acronyms, abbreviations, or a series title."
-
+        college: "Select the college associated with the submitter of this work."
+        department: "Enter the department associated with the submitter of this work."

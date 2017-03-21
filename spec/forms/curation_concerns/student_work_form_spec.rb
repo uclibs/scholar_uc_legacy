@@ -9,12 +9,12 @@ RSpec.describe CurationConcerns::StudentWorkForm do
 
   describe "#required_fields" do
     subject { form.required_fields }
-    it { is_expected.to eq [:title, :creator, :description, :advisor, :rights] }
+    it { is_expected.to eq [:title, :creator, :college, :department, :description, :advisor, :rights] }
   end
 
   describe "#primary_terms" do
     subject { form.primary_terms }
-    it { is_expected.to eq [:title, :creator, :description, :advisor, :rights, :degree, :publisher] }
+    it { is_expected.to eq [:title, :creator, :college, :department, :description, :advisor, :rights, :degree, :publisher] }
   end
 
   describe "#secondary_terms" do

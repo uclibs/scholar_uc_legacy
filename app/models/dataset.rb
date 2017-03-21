@@ -36,4 +36,12 @@ class Dataset < ActiveFedora::Base
   property :note, predicate: ::RDF::URI.new('http://purl.org/dc/terms/description#note'), multiple: false do |index|
     index.as :stored_searchable
   end
+
+  property :college, predicate: ::RDF::URI.new('http://purl.org/dc/terms/subject#college'), multiple: false do |index|
+    index.as :stored_searchable, :facetable
+  end
+
+  property :department, predicate: ::RDF::URI.new('http://purl.org/dc/terms/subject#department'), multiple: false do |index|
+    index.as :stored_searchable, :facetable
+  end
 end
