@@ -12,3 +12,7 @@
  google_drive:
    :client_id: bamboo_browse_everything_gdrive_id
    :client_secret: bamboo_browse_everything_gdrive_secret
+ kaltura:
+   :partner_id: bamboo_browse_everything_kaltura_id
+   :administrator_secret: bamboo_browse_everything_kaltura_secret
+   :service_url: 'https://www.kaltura.com'

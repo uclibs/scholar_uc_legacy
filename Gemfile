@@ -2,11 +2,13 @@ source 'https://rubygems.org'
 
 gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.3.0.rc2'
 gem 'flipflop', '2.3.0'
+
 #repository manager
 gem 'hydra-role-management'
 gem 'orcid', github: 'uclibs/orcid'
-
 gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
+gem 'browse-everything', git: 'https://github.com/uclibs/browse-everything.git', ref: 'be25819f14d485768698d27a3a35deaa7f60d5c7'
+gem 'kaltura', '0.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'

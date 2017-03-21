@@ -69,6 +69,27 @@ GIT
       tinymce-rails-imageupload (~> 4.0.16.beta)
       yaml_db (~> 0.2)
 
+GIT
+  remote: https://github.com/uclibs/browse-everything.git
+  revision: be25819f14d485768698d27a3a35deaa7f60d5c7
+  ref: be25819f14d485768698d27a3a35deaa7f60d5c7
+  specs:
+    browse-everything (0.12.0)
+      addressable (~> 2.5)
+      aws-sdk
+      bootstrap-sass
+      dropbox-sdk (>= 1.6.2)
+      font-awesome-rails
+      google-api-client (~> 0.9)
+      google_drive
+      httparty
+      kaltura (= 0.1.1)
+      rails (>= 3.1)
+      ruby-box
+      sass-rails
+      signet
+      skydrive
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -139,13 +160,13 @@ GEM
       execjs
     awesome_nested_set (3.1.1)
       activerecord (>= 4.0.0, < 5.1)
-    aws-sdk (2.8.0)
-      aws-sdk-resources (= 2.8.0)
-    aws-sdk-core (2.8.0)
+    aws-sdk (2.8.7)
+      aws-sdk-resources (= 2.8.7)
+    aws-sdk-core (2.8.7)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.8.0)
-      aws-sdk-core (= 2.8.0)
+    aws-sdk-resources (2.8.7)
+      aws-sdk-core (= 2.8.7)
     aws-sigv4 (1.0.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -182,20 +203,6 @@ GEM
     bootstrap_form (2.6.0)
     brakeman (3.5.0)
     breadcrumbs_on_rails (3.0.1)
-    browse-everything (0.12.0)
-      addressable (~> 2.5)
-      aws-sdk
-      bootstrap-sass
-      dropbox-sdk (>= 1.6.2)
-      font-awesome-rails
-      google-api-client (~> 0.9)
-      google_drive
-      httparty
-      rails (>= 3.1)
-      ruby-box
-      sass-rails
-      signet
-      skydrive
     builder (3.2.3)
     byebug (9.0.6)
     cancancan (1.16.0)
@@ -345,7 +352,7 @@ GEM
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    google-api-client (0.10.0)
+    google-api-client (0.10.1)
       addressable (~> 2.3)
       googleauth (~> 0.5)
       httpclient (~> 2.7)
@@ -455,6 +462,9 @@ GEM
     json-schema (2.8.0)
       addressable (>= 2.4)
     jwt (1.5.6)
+    kaltura (0.1.1)
+      hashie (>= 1.0.0)
+      httparty (>= 0.7.8)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -474,7 +484,7 @@ GEM
       multi_json
     link_header (0.0.8)
     little-plugger (1.1.4)
-    logging (2.1.0)
+    logging (2.2.0)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
     loofah (2.0.3)
@@ -789,6 +799,7 @@ PLATFORMS
 
 DEPENDENCIES
   brakeman
+  browse-everything!
   byebug
   capybara
   coffee-rails (~> 4.1.0)
@@ -804,6 +815,7 @@ DEPENDENCIES
   hydra-role-management
   jbuilder (~> 2.0)
   jquery-rails
+  kaltura (= 0.1.1)
   orcid!
   poltergeist
   rails (= 4.2.7.1)
