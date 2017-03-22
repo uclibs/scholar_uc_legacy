@@ -106,6 +106,8 @@ feature 'Creating a new work', :js do
   # let!(:uploaded_file2) { UploadedFile.create(file: file2, user: user) }
 
   before do
+    CurationConcerns::Workflow::WorkflowImporter.load_workflows
+    Sufia::AdminSetCreateService.create_default!
     allow(CharacterizeJob).to receive(:perform_later)
     page.current_window.resize_to(2000, 2000)
   end

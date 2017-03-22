@@ -5,6 +5,8 @@ describe 'Adding an infected file', js: true do
   let(:user) { FactoryGirl.create(:user) }
 
   before do
+    CurationConcerns::Workflow::WorkflowImporter.load_workflows
+    Sufia::AdminSetCreateService.create_default!
     allow(CharacterizeJob).to receive(:perform_later)
     allow(Hydra::Works::VirusCheckerService).to receive(:file_has_virus?).and_return(true)
     login_as user

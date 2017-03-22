@@ -3,7 +3,7 @@
 #  `rails generate curation_concerns:work Article`
 require 'rails_helper'
 
-describe CurationConcerns::ArticleForm do
+RSpec.describe CurationConcerns::ArticleForm do
   let(:work) { Article.new }
   let(:form) { described_class.new(work, nil) }
 
@@ -27,12 +27,15 @@ describe CurationConcerns::ArticleForm do
   end
 
   describe '.model_attributes' do
+    before { create(:permission_template, admin_set_id: admin_set_id, workflow_name: workflow.name) }
+    let(:workflow) { create(:workflow) }
+    let(:admin_set_id) { '123' }
     let(:params) do
       ActionController::Parameters.new(
         title: 'foo',
         description: '',
         visibility: 'open',
-        admin_set_id: '123',
+        admin_set_id: admin_set_id,
         representative_id: '456',
         thumbnail_id: '789',
         rights: 'http://creativecommons.org/licenses/by/3.0/us/',
