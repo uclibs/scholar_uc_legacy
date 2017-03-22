@@ -4,6 +4,8 @@ require 'rails_helper'
 describe "The Dashboard", type: :feature do
   before do
     sign_in :user_with_fixtures
+    click_link "Dashboard"
+    click_link "My Dashboard"
   end
 
   context "upon sign-in" do

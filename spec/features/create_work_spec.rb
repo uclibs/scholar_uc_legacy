@@ -130,6 +130,8 @@ feature 'Creating a new work', :js do
     before do
       ProxyDepositRights.create!(grantor: second_user, grantee: user)
       sign_in user
+      click_link "Dashboard"
+      click_link "My Dashboard"
       click_link "Create Work"
     end
     it_behaves_like "proxy work creation", GenericWork
