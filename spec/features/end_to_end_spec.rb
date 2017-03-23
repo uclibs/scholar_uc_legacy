@@ -92,6 +92,8 @@ describe 'end to end behavior:' do
   let!(:deleted_work) { FactoryGirl.create(:work, user: user) }
   let!(:collection) { FactoryGirl.create(:collection, user: user) }
   before do
+    CurationConcerns::Workflow::WorkflowImporter.load_workflows
+    Sufia::AdminSetCreateService.create_default!
     login_as user
   end
   context 'the user' do

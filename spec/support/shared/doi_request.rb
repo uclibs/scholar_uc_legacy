@@ -25,6 +25,8 @@ shared_examples 'doi request' do |work_class|
   let(:work_text) { work_class.name.titlecase }
 
   before do
+    CurationConcerns::Workflow::WorkflowImporter.load_workflows
+    Sufia::AdminSetCreateService.create_default!
     allow(CharacterizeJob).to receive(:perform_later)
   end
 

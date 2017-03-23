@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.3.0.rc2'
-gem 'flipflop', '2.3.0'
+gem 'sufia', '7.3.0'
+gem 'curation_concerns', '1.7.6'
+gem 'active-fedora', '11.1.5'
 
 #repository manager
 gem 'hydra-role-management'
