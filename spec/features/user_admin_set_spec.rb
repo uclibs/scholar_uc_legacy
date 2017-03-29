@@ -34,8 +34,7 @@ RSpec.describe "The public view of admin sets" do
   end
 
   scenario do
-    visit root_path
-    click_link "View all administrative collections"
+    visit '/admin_sets'
 
     # The list of AdminSets
     expect(page).to have_selector "img[src='/assets/admin-set-thumb.png']"

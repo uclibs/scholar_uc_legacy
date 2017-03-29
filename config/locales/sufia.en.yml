@@ -8,7 +8,9 @@ en:
     directory:
       suffix:           "@uc.edu"
     footer:
-      copyright_html: "<strong>Copyright &copy; University of Cincinnati</strong> Licensed under the Apache License, Version 2.0"
+      copyright_info_html: "<a href=\"http://commercialization.uc.edu/copyright-infringement\">Copyright Information</a>"
+      copyright_html: "&copy; 2017 <a href=\"http://www.uc.edu/\"><u>University of Cincinnati</u></a>"
+      clery_heoa_notice_html: "<a href=\"http://www.uc.edu/publicsafety/clery/annual-security-report.html\">Clery and HEOA Notice</a>"
     dashboard:
       help_statement_html:      "<strong>Please Note:</strong> Your proxies can do anything on your behalf in Scholar@UC. Be selective in who you give proxy access. If you authorize a proxy they can create and upload files on your behalf as well as edit, or delete those corresponding works and files. The proxy relationship can be revoked by the owner at any time. Use work-specific editors for more fine-grained access control."
       view_collections:         "View My Collections"
@@ -25,5 +27,6 @@ en:
       waive_page: "Click here to hide this welcome page from displaying when you log in"
     brought_to_you_by_html:  "Brought to you by the <a href=\"http://libraries.uc.edu/\">University of Cincinnati Libraries</a> and <a href=\"http://ucit.uc.edu/\">UC Information Technologies</a>."
     made_possible_by_html: "Made possible by the <a href=\"http://projecthydra.org\">Hydra</a> project."
-    terms_of_use_html: "<a class=\"a\" href=\"/terms\">Terms of Use</a>"
+    terms_of_use_html: "<a class=\"a\" href=\"/terms\">Scholar@UC Terms of Use</a>"
     non_discrimination_notice_html: "<a href=\"http://uc.edu/about/policies/non-discrimination.html\">Notice of Non-Discrimination</a>"
+    share_button: "Contribute"

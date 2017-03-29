@@ -154,3 +154,7 @@ RSpec/ExampleLength:
 
 RSpec/SubjectStub:
   Enabled: false
+
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - 'spec/features/browse_catalog_spec.rb'

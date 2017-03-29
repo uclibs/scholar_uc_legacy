@@ -10,10 +10,6 @@ RSpec.describe 'shared/_footer.html.erb', type: :view do
     expect(rendered).to have_content("Deployed on")
   end
 
-  it 'displays a brought to you by statement' do
-    expect(rendered).to have_content("Brought to you by")
-  end
-
   it 'displays a made possible by statement' do
     expect(rendered).to have_content("Made possible by")
   end
@@ -21,5 +17,17 @@ RSpec.describe 'shared/_footer.html.erb', type: :view do
   it 'displays a terms and discrimination statement' do
     expect(rendered).to have_content("Terms of Use")
     expect(rendered).to have_content("Non-Discrimination")
+  end
+
+  it 'displays the copyright text' do
+    expect(rendered).to have_content '© 2017 University of Cincinnati'
+  end
+
+  it 'displays the copyright information link' do
+    expect(rendered).to have_content 'Copyright Information'
+  end
+
+  it 'displays the hydra logo' do
+    expect(rendered).to have_css('img', class: 'powered_by')
   end
 end

@@ -17,7 +17,7 @@ describe 'searching' do
 
   context "as a public user" do
     it "using the gallery view" do
-      visit '/'
+      visit about_path
       fill_in "search-field-header", with: "Toothbrush"
       click_button "search-submit-header"
       expect(page).to have_content "1 entry found"
@@ -33,7 +33,7 @@ describe 'searching' do
     end
 
     it "only searches all" do
-      visit '/'
+      visit about_path
       expect(page).to have_content("All")
       expect(page).to have_css("a[data-search-label*=All]", visible: false)
       expect(page).not_to have_css("a[data-search-label*='My Works']", visible: false)
@@ -53,7 +53,7 @@ describe 'searching' do
     end
 
     it "does not display search options for dashboard files" do
-      visit "/"
+      visit about_path
       within(".input-group-btn") do
         expect(page).not_to have_content("My Works")
         expect(page).not_to have_content("My Collections")
@@ -62,7 +62,7 @@ describe 'searching' do
     end
 
     it "displays browse button" do
-      visit '/'
+      visit about_path
       expect(page).to have_link("Browse", href: main_app.search_catalog_path)
     end
   end
