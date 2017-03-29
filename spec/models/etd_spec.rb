@@ -99,6 +99,7 @@ describe Etd do
     it { should respond_to(:publisher) }
     it { should respond_to(:degree) }
     it { should respond_to(:advisor) }
+    it { should respond_to(:committee_member) }
     it { should respond_to(:time_period) }
     it { should respond_to(:date_created) }
     it { should respond_to(:date_uploaded) }

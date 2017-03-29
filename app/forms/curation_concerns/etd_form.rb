@@ -8,7 +8,7 @@ module CurationConcerns
     ## Adding custom descriptive metadata terms
     self.terms += %i(resource_type alternate_title genre
                      time_period required_software note
-                     degree advisor geo_subject)
+                     degree degree_date advisor committee_member geo_subject)
 
     ## Adding terms needed for the special DOI form tab
     self.terms += %i(doi doi_assignment_strategy existing_identifier)
@@ -24,12 +24,12 @@ module CurationConcerns
 
     ## Adding above the fold on the form without making this required
     def primary_terms
-      required_fields + [:publisher]
+      required_fields + [:committee_member, :degree, :date_created, :publisher]
     end
 
     ## Overriding secondary terms to establish custom field order
     def secondary_terms
-      %i(degree date_created alternate_title
+      %i(alternate_title
          genre subject geo_subject time_period
          language required_software
          note)

@@ -14,16 +14,14 @@ RSpec.describe CurationConcerns::EtdForm do
 
   describe "#primary_terms" do
     subject { form.primary_terms }
-    it { is_expected.to eq [:title, :creator, :college, :department, :description, :advisor, :rights, :publisher] }
+    it { is_expected.to eq [:title, :creator, :college, :department, :description, :advisor, :rights, :committee_member, :degree, :date_created, :publisher] }
   end
 
   describe "#secondary_terms" do
     subject { form.secondary_terms }
     it do
-      is_expected.to include(:date_created, :alternate_title,
-                             :degree, :subject, :geo_subject,
-                             :time_period, :language,
-                             :required_software, :note)
+      is_expected.to include(:alternate_title, :subject, :geo_subject,
+                             :time_period, :language, :required_software, :note)
     end
   end
 
