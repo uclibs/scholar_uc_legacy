@@ -6,7 +6,6 @@
 
 // change default bootstrap navbar breaking point
 
-@import "bootstrap-sass-variables";
 @import "bootstrap-sprockets";
 @import 'bootstrap';
 @import 'blacklight/blacklight';
@@ -82,6 +81,26 @@ hr:after {
   background: white;
 }
 
+.navbar-header {
+    min-height: 70px;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  padding: 0 15px;
+  height: 70px;
+  line-height: 70px;
+}
+
+#top-navbar-toggle {
+  margin-top: 20px;
+}
+
+.nav-sufia-controls {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 #footer {
     text-align: center;
 }
@@ -139,7 +158,7 @@ div.input-group-btn button.btn-primary:active {
 }
 
 .header-uc-logo {
-  height: 100%;
+  height: 40px;
 }
 
 .g-recaptcha {

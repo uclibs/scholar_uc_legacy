@@ -1,7 +1,6 @@
 <% presenter = featured.presenter %>
 <li class="featured-item" data-id="<%= presenter.id %>">
-  <div class="main row">
-    <%= render_thumbnail_tag presenter, { width: 200 } %>
-
+  <div class="center-block main row featured-thumb">
+    <%= render_thumbnail_tag presenter %>
   </div>
 </li>
