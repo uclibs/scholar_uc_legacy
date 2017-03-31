@@ -41,4 +41,8 @@ class Article < ActiveFedora::Base
   property :note, predicate: ::RDF::URI.new('http://purl.org/dc/terms/description#note'), multiple: false do |index|
     index.as :stored_searchable
   end
+
+  property :bibliographic_citation, predicate: ::RDF::Vocab::DC.bibliographicCitation, multiple: false do |index|
+    index.as :bibliographic_citation
+  end
 end
