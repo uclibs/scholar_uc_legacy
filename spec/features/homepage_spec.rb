@@ -15,7 +15,7 @@ RSpec.describe 'the homepage', type: :feature do
   end
 
   it 'renders the discover button' do
-    expect(page).to have_css('a', text: 'Discover')
+    expect(page).to have_css('a', text: 'Browse')
   end
 
   it 'renders the splash controls' do

@@ -1,3 +1,7 @@
+.site-title h1 {
+  color: #fff !important;
+}
+
 .jumbotron {
   background-image: url('banner_image.jpg') !important;
   color: #fff !important;
@@ -13,11 +17,6 @@
   height: auto;
 }
 
-.partner-branding {
-  position: relative;
-  left: 30px;
-}
-
 #masthead a {
   color: #fff;
 }
@@ -30,10 +29,6 @@
   margin-bottom: 0;
 }
 
-.navbar-brand {
-  font-size: 25px !important;
-}
-
 .navbar-right {
   margin-right: 0 !important;
 }
@@ -42,17 +37,49 @@
   padding-bottom: 30px !important;
 }
 
+.home-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.scholar-home-tag-desc {
+  padding-top: 20px;
+}
+
 .scholar-home-tag-line .line-thru {
     background:#fff;
     padding: 0 10px;
 }
 
-.partners-text, .ext-links {
-  margin-top: 20px;
+.scholar-home-tag, .home-content {
+  margin-top: 30px;
 }
 
-.home-content {
-  margin-top: 20px;
+.ext-links {
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.featured-thumb {
+  width: 270px;
+  height: 270px;
+}
+
+.featured-thumb img {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.partners-text {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.partner-branding img {
+  max-height: 80px;
 }
 
 .scholar-footer {
@@ -84,22 +111,36 @@
 }
 
 .clear-button {
-  border: 2px solid #fff;
-  border-radius: 3px;
+  border: 4px solid #fff;
+  border-radius: 5px;
   outline-offset: 10px;
   color: #fff;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .clear-button:hover {
-  color: #fff;
+  background-color: #FFF;
+  color: #000;
   text-decoration: none;
+  box-shadow: none;
+  text-shadow: none;
 }
 
 .beta-tag {
   color: #e00122;
   font-size: 12px;
 }
+
+/* Medium devices */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .featured-thumb {
+    width: 210px;
+    height: 210px;
+  }
+
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .jumbotron {
@@ -109,7 +150,7 @@
   }
 
   .jumbo-controls .jumbo-nav a {
-    font-size: 12px !important;
+    font-size: 20px !important;
   }
 
   .jumbo-controls ul li:not(:first-child) {
@@ -150,6 +191,10 @@
     text-align: right;
   }
 
+  .header-title h1 {
+    font-size: 200px;
+  }
+
   .desktop-center {
     text-align: center;
   }
@@ -158,16 +203,29 @@
     text-align: left;
   }
 
-  .clear-button {
-    padding: 15px;
-    box-shadow: 2px 2px 2px #000;
+  .clear-button-wrapper {
+    margin-top: 20px;
   }
+
+  .clear-button {
+    display: inline-block;
+    width: 175px !important;
+    padding: 5px 30px; 
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,1.5);
+  }
+
+  #contribute {
+    margin-right: 10px;
+  }
+
+
 
 }
 
 /* media devices: tablets, ipads, high res phones, etc */
 @media (max-width: 767px) {
 
+  
   .jumbotron {
     background-position: center;
     background-size: 150%
