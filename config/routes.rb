@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     concerns :searchable
   end
 
-  devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
+  devise_for :users, controllers: { omniauth_callbacks: 'callbacks', registrations: "registrations" }
 
   mount Hydra::RoleManagement::Engine => '/'
 
