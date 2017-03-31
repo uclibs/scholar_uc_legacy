@@ -21,21 +21,26 @@ shared_examples 'work creation' do |work_class| # snake-case work type for strin
     if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Video
       fill_in('Description', with: 'This is a description.')
       fill_in('Creator', with: 'Test User')
+      fill_in('Program or Department', with: 'Test Department')
     elsif work_class == Etd
       fill_in('Abstract', with: 'This is an abstract.')
       fill_in('Creator', with: 'Test User')
       fill_in('Advisor', with: 'Ima Advisor.')
+      fill_in('Degree Program', with: 'Test Department')
     elsif work_class == StudentWork
       fill_in('Description', with: 'This is an abstract.')
       fill_in('Creator', with: 'Test User')
       fill_in('Advisor', with: 'Ima Advisor.')
+      fill_in('Program or Department', with: 'Test Department')
     elsif work_class == Article
       fill_in('Abstract', with: 'This is an abstract.')
       fill_in('Author', with: 'Test User')
+      fill_in('Program or Department', with: 'Test Department')
     else
       fill_in('Description', with: 'This is a description.')
       fill_in('Required Software', with: 'This is Required Software.')
       fill_in('Creator', with: 'Test User')
+      fill_in('Program or Department', with: 'Test Department')
     end
 
     select 'Attribution-ShareAlike 4.0 International', from: "#{work_type}_rights"
@@ -65,21 +70,26 @@ shared_examples 'proxy work creation' do |work_class|
     if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Video
       fill_in('Description', with: 'This is a description.')
       fill_in('Creator', with: 'Test User')
+      fill_in('Program or Department', with: 'Test Department')
     elsif work_class == Etd
       fill_in('Abstract', with: 'This is an abstract.')
       fill_in('Creator', with: 'Test User')
       fill_in('Advisor', with: 'Ima Advisor')
+      fill_in('Degree Program', with: 'Test Department')
     elsif work_class == StudentWork
       fill_in('Description', with: 'This is an abstract.')
       fill_in('Creator', with: 'Test User')
       fill_in('Advisor', with: 'Ima Advisor')
+      fill_in('Program or Department', with: 'Test Department')
     elsif work_class == Article
       fill_in('Abstract', with: 'This is an abstract.')
       fill_in('Author', with: 'Test User')
+      fill_in('Program or Department', with: 'Test Department')
     else
       fill_in('Description', with: 'This is a description.')
       fill_in('Required Software', with: 'This is Required Software.')
       fill_in('Creator', with: 'Test User')
+      fill_in('Program or Department', with: 'Test Department')
     end
 
     select 'Attribution-ShareAlike 4.0 International', from: "#{work_type}_rights"

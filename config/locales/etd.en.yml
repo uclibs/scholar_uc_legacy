@@ -26,7 +26,8 @@ en:
         degree:           "Degree" 
         genre:            "Type" 
         publisher:        "Publisher (Required for DOI registration)" 
-
+        college:          "College"
+        department:       "Degree Program"
     hints:
       etd:
         resource: "Pre-defined categories to describe the type of content being uploaded, such as &quot;article&quot; or &quot;dataset.&quot;  More than one type may be selected."
@@ -52,4 +53,5 @@ en:
         genre: "Select the type of your work. If you are unsure about the type, please select 'Other'."
         publisher: "Enter the publisher of your work. If this has not been previously published, University of Cincinnati is an appropriate publisher."
         required_software: "Special software needed to open the work"
-
+        college: "Select the college associated with the ETD."
+        department: "Enter the department associated with the ETD."

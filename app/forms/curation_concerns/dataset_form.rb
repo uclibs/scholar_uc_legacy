@@ -12,11 +12,14 @@ module CurationConcerns
     ## Adding terms needed for the special DOI form tab
     self.terms += %i(doi doi_assignment_strategy existing_identifier)
 
+    ## Adding terms college and department
+    self.terms += %i(college department)
+
     ## Removing terms that we don't use
     self.terms -= %i(keyword source contributor)
 
     ## Setting custom required fields
-    self.required_fields = %i(title creator description required_software rights)
+    self.required_fields = %i(title creator college department description required_software rights)
 
     ## Adding above the fold on the form without making this required
     def primary_terms

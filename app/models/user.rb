@@ -48,4 +48,30 @@ class User < ActiveRecord::Base
   def student?
     uc_affiliation == 'student'
   end
+
+  def college
+    return "Other" if ucdepartment.blank?
+    user_colleges.keys.each do |key|
+      if ucdepartment.downcase.start_with?(key + " ")
+        return user_colleges[key]["label"]
+      end
+    end
+    "Other"
+  end
+
+  def department
+    return "Unknown" if ucdepartment.blank?
+    user_colleges.keys.each do |key|
+      if ucdepartment.downcase.start_with?(key + " ")
+        return ucdepartment[/(?<=\s).*/]
+      end
+    end
+    ucdepartment
+  end
+
+  private
+
+    def user_colleges
+      COLLEGE_AND_DEPARTMENT["current_colleges_for_degrees"].merge(COLLEGE_AND_DEPARTMENT["additional_current_colleges_library"])
+    end
 end

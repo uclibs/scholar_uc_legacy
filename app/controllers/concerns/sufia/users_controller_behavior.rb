@@ -41,7 +41,7 @@ module Sufia::UsersControllerBehavior
 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :avatar, :facebook_handle, :twitter_handle, :title,
-                                   :googleplus_handle, :linkedin_handle, :remove_avatar, :orcid, :department,
+                                   :googleplus_handle, :linkedin_handle, :remove_avatar, :orcid, :ucdepartment,
                                    :blog, :alternate_phone_number, :alternate_email, :uc_affiliation, :website, :telephone)
     end
 end

@@ -590,6 +590,7 @@ ActiveRecord::Schema.define(version: 20170321160926) do
     t.string   "alternate_email"
     t.boolean  "waived_welcome_page"
     t.boolean  "profile_update_not_required"
+    t.string   "ucdepartment"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

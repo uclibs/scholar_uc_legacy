@@ -116,4 +116,54 @@ describe User do
     subject.waive_welcome_page!
     expect(subject.waived_welcome_page).to be true
   end
+
+  describe "college" do
+    subject { described_class.new }
+
+    context "when the user doesn't have a department" do
+      it "returns Other" do
+        subject.ucdepartment = nil
+        expect(subject.college).to eq "Other"
+      end
+    end
+
+    context "when the user has a department that starts with a college abbreviation" do
+      it "returns the college abbreviation" do
+        subject.ucdepartment = "UCL Test Department"
+        expect(subject.college).to eq "Libraries"
+      end
+    end
+
+    context "when the user has a department that doesn't start with a college abbreviation" do
+      it "returns Other" do
+        subject.ucdepartment = "Test Department"
+        expect(subject.college).to eq "Other"
+      end
+    end
+  end
+
+  describe "department" do
+    subject { described_class.new }
+
+    context "when the user doesn't have a department" do
+      it "returns Unknown" do
+        subject.ucdepartment = nil
+        expect(subject.department).to eq "Unknown"
+      end
+    end
+
+    context "when the user has a department that starts with a college abbreviation" do
+      it "returns the department without the abreviation" do
+        subject.ucdepartment = "UCL Test Department"
+        expect(subject.department).to eq "Test Department"
+      end
+    end
+
+    context "when the user has a department that doesn't start with a college abbreviation" do
+      it "returns the department without the abreviation" do
+        subject.ucdepartment = "Test Department"
+        expect(subject.department).to eq "Test Department"
+      end
+    end
+  end
 end
