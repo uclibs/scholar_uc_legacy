@@ -37,7 +37,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'sidekiq'
 
-gem 'change_manager', path: '../change_manager'#git: "https://github.com/lawhorkl/change_manager.git", branch: 'develop'
+gem 'change_manager', git: "https://github.com/lawhorkl/change_manager.git", branch: 'develop'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

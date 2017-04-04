@@ -3,12 +3,17 @@ module ChangeManager
     extend ChangeManager::Manager
 
     def self.queue_change(owner, change_type, context, target)
+<<<<<<< HEAD
       change_id = Change.new_change(owner, change_type, context, target)
       ChangeManager::ProcessChangeJob.set(wait: 15.minutes).perform_later(change_id)
     end
 
     def self.skip_sidekiq_for_emails(owner, change_type, context, target)
       change_id = Change.new_change(owner, change_type, context, target)
+=======
+      change_id = Change.new_change(owner, change_type, context, target)
+      ChangeManager::ProcessChangeJob.set(wait: 15.minutes).perform_later(change_id)
+>>>>>>> modify change manager integrations, add embargo manager
       process_change change_id
     end
 
