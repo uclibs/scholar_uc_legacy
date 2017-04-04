@@ -6,7 +6,7 @@ describe "Editing a file:", type: :feature do
   let(:file_title) { 'Some kind of title' }
   let(:work) { FactoryGirl.build(:work, user: user) }
   let(:file_set) { FactoryGirl.create(:file_set, user: user, title: [file_title]) }
-  let(:file) { File.open(fixture_path + '/world.png') }
+  let(:file) { File.open(fixture_path + '/test_file.txt') }
 
   before do
     sign_in user

@@ -10,6 +10,9 @@ module CurationConcerns
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = Image
+
+    include Sufia::IIIFManifest
+
     self.show_presenter = ImagePresenter
   end
 end

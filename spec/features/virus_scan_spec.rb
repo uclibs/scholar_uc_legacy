@@ -34,8 +34,10 @@ describe 'Adding an infected file', js: true do
 
   context 'to an existing work', js: true do
     let(:work) { FactoryGirl.build(:work, user: user, title: ['My Infected Work']) }
+    let(:file_set) { FactoryGirl.create(:file_set, user: user, title: ['ABC123xyz']) }
+
     before do
-      work.ordered_members << FactoryGirl.create(:file_set, user: user, title: ['ABC123xyz'])
+      work.ordered_members << file_set
       work.read_groups = []
       work.save!
       visit edit_curation_concerns_generic_work_path(work)

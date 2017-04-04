@@ -4,7 +4,7 @@
     <%= render partial: 'layouts/head_tag_content' %>
   </head>
 
-<body>
+<body <%= yield(:body_attributes) %>>
 
 <a href="#skip_to_content" class="sr-only">Skip to Content</a>
 <%= render partial: '/masthead' %>

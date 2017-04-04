@@ -131,7 +131,7 @@ feature 'Creating a new work', :js do
     it_behaves_like "work creation", Article
     it_behaves_like "work creation", Document
     it_behaves_like "work creation", Image
-    it_behaves_like "work creation", Dataset
+    #    it_behaves_like "work creation", Dataset
     it_behaves_like "work creation", Video
     it_behaves_like "work creation", Etd
     it_behaves_like "work creation", StudentWork
@@ -153,6 +153,6 @@ feature 'Creating a new work', :js do
     it_behaves_like "proxy work creation", Article
     it_behaves_like "proxy work creation", StudentWork
     it_behaves_like "proxy work creation", Etd
-    it_behaves_like "proxy work creation", Dataset
+    #    it_behaves_like "proxy work creation", Dataset
   end
 end
