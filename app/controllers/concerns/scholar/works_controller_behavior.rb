@@ -14,10 +14,8 @@ module Scholar
     def create
       super
       # the to_s_u method must be implemented for every model
-      # byebug
       editors = params[curation_concern.class.to_s_u][:permissions_attributes]
       queue_notifications_for_editors(editors) if editors
-      queue_notifications_for_embargos if curation_concern.embargo_id
     rescue ActiveFedora::RecordInvalid # virus detected
       remove_infected_file_sets
       report_virus_found

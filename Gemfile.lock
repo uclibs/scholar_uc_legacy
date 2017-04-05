@@ -34,6 +34,14 @@ GIT
       virtus
 
 GIT
+  remote: https://github.com/lawhorkl/change_manager.git
+  revision: dfc4a18f7243385ae4639ab25adbaaa6eef71152
+  branch: develop
+  specs:
+    change_manager (1.0.0)
+      rails
+
+GIT
   remote: https://github.com/uclibs/browse-everything.git
   revision: be25819f14d485768698d27a3a35deaa7f60d5c7
   ref: be25819f14d485768698d27a3a35deaa7f60d5c7
@@ -53,12 +61,6 @@ GIT
       sass-rails
       signet
       skydrive
-
-PATH
-  remote: ../change_manager
-  specs:
-    change_manager (1.0.0)
-      rails
 
 GEM
   remote: https://rubygems.org/

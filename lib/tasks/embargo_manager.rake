@@ -13,8 +13,8 @@ namespace :embargo_manager do
 
       days_until_release = (Date.parse(work['embargo_release_date_dtsi']) - Date.today).to_i
 
-      receiver = work['depositor_tesim']
-      mail_contents = work['title_tesim']
+      receiver = work['depositor_tesim']      
+      mail_contents = work['title_tesim'].first
 
       case days_until_release
       when ZERO_DAYS

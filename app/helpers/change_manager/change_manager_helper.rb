@@ -4,7 +4,6 @@ module ChangeManager
   module ChangeManagerHelper
 
     def queue_notifications_for_editors(editors)
-
       editors.each do |editor_wrapper|
         editor = editor_wrapper[1]
         if is_new_editor? editor
