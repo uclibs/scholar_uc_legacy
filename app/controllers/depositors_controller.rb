@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class DepositorsController < ApplicationController
   include Sufia::DepositorsControllerBehavior
 

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 require 'yaml'
 module ChangeManager
   class ProcessChangeJob < ActiveJob::Base
-  queue_as :change
+    queue_as :change
 
     def perform(change_id)
       config ||= YAML.load_file(File.join(Rails.root, 'config/change_manager_config.yml'))

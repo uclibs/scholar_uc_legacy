@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ###
 # This mailer makes many assumptions as to the content contained in changes. Take care to ensure these assumptions are met
 # or create your own mailer that extends ChangeManager::NotificationMailer
@@ -12,7 +13,7 @@ module ChangeManager
       subject = 'Changes to your ' + @change_types[changes.first.change_type]['print'] + ' status in Scholar@UC.'
       mail(to: changes.first.target,
            from: 'scholar@uc.edu',
-           subject: subject,).deliver
+           subject: subject).deliver
     end
   end
 end

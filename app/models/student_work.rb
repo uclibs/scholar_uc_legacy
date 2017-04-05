@@ -51,6 +51,7 @@ class StudentWork < ActiveFedora::Base
 
   property :department, predicate: ::RDF::URI.new('http://purl.org/dc/terms/subject#department'), multiple: false do |index|
     index.as :stored_searchable, :facetable
+  end
 
   def self.to_s_u
     'student_work'

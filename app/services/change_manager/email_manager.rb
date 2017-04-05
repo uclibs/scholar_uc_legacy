@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ChangeManager
   class EmailManager
     extend ChangeManager::Manager
@@ -25,31 +26,31 @@ module ChangeManager
       grouped_changes = group_changes(changes)
       if grouped_changes['proxies']
         if ChangeManager::ScholarNotificationMailer.notify_changes(grouped_changes['proxies']).deliver
-          grouped_changes['proxies'].each { |change| change.notify }
+          grouped_changes['proxies'].each(&:notify)
         end
       end
 
       if grouped_changes['editors']
         if ChangeManager::ScholarNotificationMailer.notify_changes(grouped_changes['editors']).deliver
-          grouped_changes['editors'].each { |change| change.notify }
+          grouped_changes['editors'].each(&:notify)
         end
       end
     end
 
     def self.group_changes(changes)
-      proxy_changes = Array.new
-      editor_changes = Array.new
+      proxy_changes = []
+      editor_changes = []
       changes.each do |change|
-        if change.is_proxy_change?
+        if change.proxy_change?
           proxy_changes << change
-        elsif change.is_editor_change?
+        elsif change.editor_change?
           editor_changes << change
         end
       end
 
-      grouped_changes = Hash.new
-      grouped_changes['proxies'] = proxy_changes if !proxy_changes.empty?
-      grouped_changes['editors'] = editor_changes if !editor_changes.empty?
+      grouped_changes = {}
+      grouped_changes['proxies'] = proxy_changes unless proxy_changes.empty?
+      grouped_changes['editors'] = editor_changes unless editor_changes.empty?
       grouped_changes
     end
   end
