@@ -30,3 +30,8 @@ en:
     terms_of_use_html: "<a class=\"a\" href=\"/terms\">Scholar@UC Terms of Use</a>"
     non_discrimination_notice_html: "<a href=\"http://uc.edu/about/policies/non-discrimination.html\">Notice of Non-Discrimination</a>"
     share_button: "Contribute"
+
+  curation_concerns:
+    base:
+      metadata:
+        header: Attributes
