@@ -33,6 +33,12 @@
   margin-right: 0 !important;
 }
 
+#scholar-nav-logo {
+  height: 30px;
+  margin-top: 4px;
+  margin-left: 5px;
+}
+
 #content-wrapper {
   padding-bottom: 30px !important;
 }
@@ -157,6 +163,7 @@
     border-left: 1px solid #fff;
     padding-left: 15px;
   }
+
   .jumbo-controls ul li {
     padding-top: 7px;
     padding-bottom: 7px;
@@ -191,8 +198,10 @@
     text-align: right;
   }
 
-  .header-title h1 {
-    font-size: 200px;
+
+  #jumbo-scholar-logo {
+    height: 70px;
+    margin-top: 50px;
   }
 
   .desktop-center {
@@ -230,6 +239,13 @@
     background-position: center;
     background-size: 150%
   }
+
+  #jumbo-scholar-logo {
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
   .cc-text {
     position: relative;
     bottom: 5px;
