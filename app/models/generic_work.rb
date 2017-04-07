@@ -6,6 +6,7 @@ class GenericWork < ActiveFedora::Base
   include ::CurationConcerns::BasicMetadata
   include Sufia::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
+  include RemoveProxyEditors::RemoveUser
 
   self.human_readable_type = 'Generic Work'
   self.human_readable_short_description = 'Deposit any non-text-based document.'

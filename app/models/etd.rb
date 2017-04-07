@@ -6,6 +6,7 @@ class Etd < ActiveFedora::Base
   include ::CurationConcerns::BasicMetadata
   include Sufia::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
+  include RemoveProxyEditors::RemoveUser
 
   self.human_readable_type = 'Etd'
   self.human_readable_short_description = 'Must be submitted by the UC Graduate School'

@@ -8,6 +8,7 @@ class StudentWork < ActiveFedora::Base
   self.human_readable_type = 'Student Work'
   self.human_readable_short_description = 'Deposit any kind of student work (excluding Theses and Dissertations).'
   include RemotelyIdentifiedByDoi::Attributes
+  include RemoveProxyEditors::RemoveUser
 
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
