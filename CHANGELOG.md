@@ -1,3 +1,11 @@
+### 2.4.1 4/5/2017
+* Bug fixes
+  * Pinned the hydra-remote_identifier gem to a specific Git ref
+  * Added required ORCID variables to application.yml
+  * Fixed a display bug with ORCID details on the user profile page
+  * Fixed incorrectly formatted accessibility hyperlinks
+  * Fixed oudated links to UC's Data Protection Policy
+
 ### 2.4.0 2/23/2017
 * ORCID support: Users can now link their existing or new ORCID ID with their Scholar@UC profile.
 * Menu changes: Added guidelines for faculty advisors; added instructions for students and a new help page for student works; added accessibility information to the File Format Advice page; items in the Help menu are now sorted alphabetically.
