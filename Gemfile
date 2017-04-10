@@ -59,7 +59,7 @@ gem 'kaltura', '0.1.1'
 
 
 #gem "clamav"
-gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", branch: "setting-status"
+gem "hydra-remote_identifier", github: "uclibs/hydra-remote_identifier", ref: "bbc060d2d054fd31225321d385cfcfd8d6e5b253"
 gem "sitemap_generator", '5.2.0'
 
 group :production do
