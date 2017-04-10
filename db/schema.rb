@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20170321160926) do
   add_index "bookmarks", ["document_id"], name: "index_bookmarks_on_document_id"
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id"
 
+  create_table "change_manager_changes", force: :cascade do |t|
+    t.string   "change_type"
+    t.boolean  "cancelled"
+    t.datetime "notified"
+    t.string   "owner"
+    t.string   "target"
+    t.string   "context"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "checksum_audit_logs", force: :cascade do |t|
     t.string   "file_set_id"
     t.string   "file_id"

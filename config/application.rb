@@ -34,5 +34,7 @@ module ScholarUc
 
     config.application_root_url = 'http://localhost:3000'
     config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('services')
+    config.autoload_paths << Rails.root.join('jobs')
   end
 end
