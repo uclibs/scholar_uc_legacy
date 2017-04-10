@@ -11,7 +11,7 @@
       </button>
       <%= render '/logo' %>
       <% unless controller_name == 'homepage' %>
-        <a id="nav-scholar-logo" class="navbar-brand" href ="/"><b> | scholar@uc <span class="beta-tag">BETA</span></b></a>
+        <a class="navbar-brand" href ="/"><b> | <%= image_tag 'scholar-logo.png', id: 'scholar-nav-logo', alt: 'scholar@uc' %> <span class="beta-tag">BETA</span></b></a>
       <% end %>
     </div>
 

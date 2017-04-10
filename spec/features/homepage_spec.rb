@@ -7,7 +7,7 @@ RSpec.describe 'the homepage', type: :feature do
   end
 
   it 'renders the site title' do
-    expect(page).to have_css('h1', text: 'scholar@uc')
+    expect(page).to have_css('img[alt="scholar@uc"]')
   end
 
   it 'renders the contribute button' do
