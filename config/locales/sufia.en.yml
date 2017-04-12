@@ -30,8 +30,27 @@ en:
     terms_of_use_html: "<a class=\"a\" href=\"/terms\">Scholar@UC Terms of Use</a>"
     non_discrimination_notice_html: "<a href=\"http://uc.edu/about/policies/non-discrimination.html\">Notice of Non-Discrimination</a>"
     share_button: "Contribute"
-
   curation_concerns:
     base:
       metadata:
         header: Attributes
+    upload:
+      cloud_timeout_message_html: "If you have files on cloud storage sites such as Box, Dropbox, Google Drive, or Kaltura, you can click the \"Browse cloud files\" button to select and upload those files directly to Scholar@UC.<br /><br />Please note that if you upload a large number of files within a short period of time, the cloud provider may not be able to accommodate your request. If you experience any errors uploading from the cloud, let us know via the %{contact_href}."
+
+  curation_concerns:
+    base:
+      form_files:
+        external_upload: "Add Files from Cloud Providers"
+    show:
+      downloadable_content:
+        audio_link: 'Download audio file'
+        video_link: 'Download video'
+      requestable_content:
+        action_link: 'Request this file'
+        default_link: 'Request a copy of this file'
+        image_link: 'Request a copy of this image'
+        office_link: 'Request a copy of this file'
+        pdf_link: 'Request a copy of this PDF'
+        audio_link: 'Request a copy of this audio file'
+        video_link: 'Request a copy of this video'
+
