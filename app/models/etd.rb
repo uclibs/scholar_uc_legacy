@@ -29,6 +29,10 @@ class Etd < ActiveFedora::Base
     index.as :stored_searchable
   end
 
+  property :committee_member, predicate: ::RDF::URI.new('http://purl.org/dc/terms/contributor#committee_member') do |index|
+    index.as :stored_searchable
+  end
+
   property :genre, predicate: ::RDF::URI.new('http://purl.org/dc/terms/type#genre') do |index|
     index.as :stored_searchable, :facetable
   end
