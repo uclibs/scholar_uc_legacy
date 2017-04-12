@@ -110,11 +110,12 @@
   width: 100%;
 }
 
-.clear-button {
+.clear-button, .clear-button:active, .clear-button:visited, .clear-button:focus {
   border: 4px solid #fff;
   border-radius: 5px;
   outline-offset: 10px;
   color: #fff;
+  text-decoration: none;
   font-size: 22px;
 }
 
@@ -129,6 +130,11 @@
 .beta-tag {
   color: #e00122;
   font-size: 12px;
+}
+
+.catalog-collection-thumb, .catalog-collection-thumb:focus, catalog-collection-thumb:active, .catalog-collection-thumb:hover, .catalog-collection-thumb:visited {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Medium devices */

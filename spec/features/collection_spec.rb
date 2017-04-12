@@ -6,6 +6,8 @@ describe 'collection', type: :feature do
 
   let(:work1) { FactoryGirl.create(:work, title: ["King Louie"], user: user) }
   let(:work2) { FactoryGirl.create(:work, title: ["King Kong"], user: user) }
+  let(:work3) { FactoryGirl.create(:generic_work_with_one_file, title: ["King work with files"], user: user) }
+
   let(:collection1) { FactoryGirl.create(:public_collection, user: user) }
   let(:collection2) { FactoryGirl.create(:public_collection, user: user) }
 
@@ -21,7 +23,7 @@ describe 'collection', type: :feature do
       visit '/dashboard'
       first('#hydra-collection-add').click
       expect(page).to have_content 'Create New Collection'
-      click_link('Additional fields')
+      click_link('Additional Fields')
 
       expect(page).to have_selector "input.collection_creator.multi_value"
       expect(page).to have_selector "input.collection_title.multi_value"
@@ -194,7 +196,7 @@ describe 'collection', type: :feature do
   end
 
   describe 'edit collection' do
-    let!(:collection) { FactoryGirl.create(:named_collection, members: [work1, work2], user: user) }
+    let!(:collection) { FactoryGirl.create(:named_collection, members: [work1, work2, work3], user: user) }
 
     before do
       sign_in user
@@ -213,6 +215,7 @@ describe 'collection', type: :feature do
       expect(page).to have_field('collection_description', with: collection.description.first)
       expect(page).to have_content(work1.title.first)
       expect(page).to have_content(work2.title.first)
+      expect(page).to have_content(work3.title.first)
 
       new_title = "Altered Title"
       new_description = "Completely new Description text."
@@ -220,6 +223,7 @@ describe 'collection', type: :feature do
       fill_in('Title', with: new_title)
       fill_in('Abstract or Summary', with: new_description)
       fill_in('Creator', with: creators.first)
+      select('A Contained FileSet', from: 'collection_thumbnail_id')
       within('.primary-actions') do
         click_button('Update Collection')
       end

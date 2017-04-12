@@ -1,0 +1,7 @@
+<% if @presenter.nil? or @presenter.thumbnail_id.blank? %>
+  <span class="fa fa-cubes collection-icon-search"></span>
+<% else %>
+  <div class="document-thumbnail">
+    <%= render_thumbnail_tag @presenter.solr_document, {}, suppress_link: true %>
+  </div>
+<% end %>

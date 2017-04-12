@@ -1,0 +1,9 @@
+    <div class="col-sm-3">
+      <%= link_to document, class: 'catalog-collection-thumb' do %>
+        <% if document.thumbnail_id != nil %>
+          <%= render_thumbnail_tag document, {}, suppress_link: true %>
+        <% else %>
+          <span class="<%= Sufia::ModelIcon.css_class_for(Collection) %> collection-icon-search"></span>
+        <% end %>
+      <% end %>
+    </div>
