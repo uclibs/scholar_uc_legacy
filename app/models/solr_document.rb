@@ -69,7 +69,7 @@ class SolrDocument
     self[Solrizer.solr_name('issn')]
   end
 
-  # Added for Document and Image work types
+  # Added for StudentWork, Document, and Image work types
   def genre
     self[Solrizer.solr_name('genre')]
   end

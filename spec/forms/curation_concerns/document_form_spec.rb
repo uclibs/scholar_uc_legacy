@@ -20,7 +20,7 @@ RSpec.describe CurationConcerns::DocumentForm do
   describe "#secondary_terms" do
     subject { form.secondary_terms }
     it do
-      is_expected.to include(:date_created, :alternate_title,
+      is_expected.to include(:date_created, :alternate_title, :genre,
                              :subject, :geo_subject,
                              :time_period, :language,
                              :required_software, :note)

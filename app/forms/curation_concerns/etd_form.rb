@@ -6,7 +6,7 @@ module CurationConcerns
     self.model_class = ::Etd
 
     ## Adding custom descriptive metadata terms
-    self.terms += %i(resource_type alternate_title genre
+    self.terms += %i(alternate_title genre
                      time_period required_software note
                      degree degree_date advisor committee_member geo_subject)
 

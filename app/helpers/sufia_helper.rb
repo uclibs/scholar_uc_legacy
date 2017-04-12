@@ -69,4 +69,40 @@ module SufiaHelper
     end
     cache
   end
+
+  def sorted_genre_list_for_works
+    if curation_concern.is_a? Document
+      sorted_genre_list_for_documents
+    elsif curation_concern.is_a? StudentWork
+      sorted_genre_list_for_student_works
+    elsif curation_concern.is_a? Image
+      sorted_genre_list_for_images
+    else
+      sorted_genre_list_for_other_works
+    end
+  end
+
+  def sorted_genre_list_for_documents
+    GENRE_TYPES_DOCUMENT["terms"].keys.collect do |k|
+      GENRE_TYPES_DOCUMENT["terms"][k]["label"]
+    end.sort
+  end
+
+  def sorted_genre_list_for_student_works
+    GENRE_TYPES_STUDENTWORK["terms"].keys.collect do |k|
+      GENRE_TYPES_STUDENTWORK["terms"][k]["label"]
+    end.sort
+  end
+
+  def sorted_genre_list_for_images
+    GENRE_TYPES_IMAGE["terms"].keys.collect do |k|
+      GENRE_TYPES_IMAGE["terms"][k]["label"]
+    end.sort
+  end
+
+  def sorted_genre_list_for_other_works
+    GENRE_TYPES_STUDENTWORK["terms"].keys.collect do |k|
+      GENRE_TYPES_STUDENTWORK["terms"][k]["label"]
+    end.sort
+  end
 end
