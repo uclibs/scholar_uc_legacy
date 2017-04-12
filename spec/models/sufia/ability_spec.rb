@@ -28,6 +28,9 @@ describe Sufia::Ability, type: :model do
     it { is_expected.not_to be_able_to(:read, Sufia::Statistics) }
     it { is_expected.not_to be_able_to(:read, :admin_dashboard) }
     it { is_expected.not_to be_able_to(:create, AdminSet) }
+    it { is_expected.not_to be_able_to(:create, Etd) }
+    it { is_expected.not_to be_able_to(:update, Etd) }
+    it { is_expected.not_to be_able_to(:delete, Etd) }
   end
 
   describe "a user in the admin group" do
@@ -48,6 +51,16 @@ describe Sufia::Ability, type: :model do
     skip 'Need to test :add_user and :remove_user from admin role' do
       it { is_expected.to be_able_to(:add_user, Role, User) }
     end
+  end
+
+  describe "a user in the ETD manager group" do
+    let(:user) { create(:user) }
+    before { allow(user).to receive_messages(groups: ['etd_manager', 'registered']) }
+    it { is_expected.to be_able_to(:create, Etd) }
+    it { is_expected.to be_able_to(:edit, Etd) }
+    it { is_expected.to be_able_to(:delete, Etd) }
+    it { is_expected.to be_able_to(:read, Etd) }
+    it { is_expected.to be_able_to(:manage, Etd) }
   end
 
   describe "proxies and transfers" do

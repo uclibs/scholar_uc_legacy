@@ -21,8 +21,25 @@ class Ability
     #   can [:create], ActiveFedora::Base
     # end
 
+    cannot [:edit, :update, :delete], Etd
+    can [:manage], Etd if user_is_etd_manager
+
     if current_user.admin?
       can [:create, :show, :add_user, :remove_user, :index, :edit, :update, :destroy], Role
+      can [:manage], Etd
     end
   end
+
+  private
+
+    # remove create ability for Etd's from all users
+    def curation_concerns_models
+      default_curation_concerns = Sufia.config.curation_concerns
+      default_curation_concerns.delete(Etd)
+      [::FileSet, ::Collection] + default_curation_concerns
+    end
+
+    def user_is_etd_manager
+      user_groups.include? 'etd_manager'
+    end
 end
