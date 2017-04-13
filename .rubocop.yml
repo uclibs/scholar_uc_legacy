@@ -38,6 +38,7 @@ Metrics/MethodLength:
     - 'app/indexers/curation_concerns/file_set_indexer.rb'
     - 'spec/support/curation_concerns/factory_helpers.rb'
     - 'app/helpers/change_manager/change_manager_helper.rb'
+    - 'app/forms/sufia/forms/batch_upload_form.rb'
 
 Metrics/ModuleLength:
   Exclude:
@@ -46,6 +47,10 @@ Metrics/ModuleLength:
 Metrics/PerceivedComplexity:
   Exclude:
     - 'app/helpers/change_manager/change_manager_helper.rb'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+  - 'app/forms/sufia/forms/batch_upload_form.rb'
 
 Style/BlockDelimiters:
   Exclude:

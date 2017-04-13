@@ -1,4 +1,4 @@
 <%= f.input :college,
       collection: sorted_college_list_for_works,
-      selected: (curation_concern.college || user_college),
+      selected: ((curation_concern.college if curation_concern.respond_to?(:college)) || user_college),
       input_html: { class: 'college' } %>
