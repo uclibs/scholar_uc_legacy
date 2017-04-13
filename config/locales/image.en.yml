@@ -13,7 +13,7 @@ en:
         description:      "Description"
         keyword:          "Keyword"
         date_created:     "Date Created"
-        related_url:      "External Resource"
+        related_url:      "External Link"
         files:            "Upload a new version of this file from your computer"
         collection_ids:   "Add as member of collection"
         admin_set_id:     "Add as member of administrative set"
