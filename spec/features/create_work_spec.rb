@@ -124,6 +124,7 @@ feature 'Creating a new work', :js do
 
   context "when the user is not a proxy", :js do
     before do
+      allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true)
       sign_in user
     end
 
@@ -141,6 +142,7 @@ feature 'Creating a new work', :js do
     let(:second_user) { create(:user) }
     before do
       ProxyDepositRights.create!(grantor: second_user, grantee: user)
+      allow_any_instance_of(Ability).to receive(:user_is_proxy_of_etd_manager).and_return(true)
       sign_in user
       click_link "Dashboard"
       click_link "My Dashboard"

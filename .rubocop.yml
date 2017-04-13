@@ -124,13 +124,18 @@ RSpec/AnyInstance:
   Exclude:
     - 'spec/controllers/contact_form_controller_spec.rb'
     - 'spec/features/admin_admin_set_spec.rb'
+    - 'spec/controllers/curation_concerns/etds_controller_spec.rb'
+    - 'spec/features/create_work_spec.rb'
+    - 'spec/features/end_to_end_spec.rb'
+    - 'spec/support/shared/doi_request.rb'
+    - 'spec/models/sufia/ability_spec.rb'
 
 RSpec/DescribeClass:
   Exclude:
     - 'spec/views/**/*'
     - 'spec/features/*'
     - 'spec/controllers/curation_concerns/generic_works_controller_spec.rb'
-    - 'spec/routing/curation_concerns_spec.rb'   
+    - 'spec/routing/curation_concerns_spec.rb'
 
 RSpec/DescribedClass:
   Exclude:

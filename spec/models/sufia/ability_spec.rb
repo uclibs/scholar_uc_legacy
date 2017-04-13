@@ -1,3 +1,4 @@
+
 # frozen_string_literal: true
 require 'rails_helper'
 require 'cancan/matchers'
@@ -73,6 +74,17 @@ describe Sufia::Ability, type: :model do
     describe "user_is_depositor?" do
       subject { ability.send(:user_is_depositor?, work.id) }
       it { is_expected.to be false }
+    end
+
+    describe 'user_is_proxy_of_etd_manager' do
+      let(:user) { create(:user) }
+      let(:etd_manager) { create(:user) }
+      before { allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true) }
+      it { is_expected.to be_able_to(:create, Etd) }
+      it { is_expected.to be_able_to(:edit, Etd) }
+      it { is_expected.to be_able_to(:delete, Etd) }
+      it { is_expected.to be_able_to(:read, Etd) }
+      it { is_expected.to be_able_to(:manage, Etd) }
     end
 
     context "with a ProxyDepositRequest for a work they have deposited" do
