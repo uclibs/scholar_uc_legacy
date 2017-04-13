@@ -34,12 +34,20 @@ Metrics/MethodLength:
   Max: 15
   Exclude:
     - 'lib/seed_methods.rb'
+<<<<<<< HEAD
     - 'app/indexers/curation_concerns/file_set_indexer.rb'
     - 'spec/support/curation_concerns/factory_helpers.rb'
+=======
+>>>>>>> 5c5e30e... set fields on batch upload form
+    - 'app/forms/sufia/forms/batch_upload_form.rb'
 
 Metrics/ModuleLength:
   Exclude:
     - 'lib/seed_methods.rb'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+  - 'app/forms/sufia/forms/batch_upload_form.rb'
 
 Style/BlockDelimiters:
   Exclude:
