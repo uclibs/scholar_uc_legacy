@@ -19,7 +19,7 @@ RSpec.describe 'the homepage', type: :feature do
   end
 
   it 'renders the splash controls' do
-    expect(page).to have_content 'Home'
+    expect(page).to have_content 'People'
     expect(page).to have_content 'About'
     expect(page).to have_content 'Contact'
     expect(page).to have_content 'Help'
