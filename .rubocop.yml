@@ -28,15 +28,21 @@ Metrics/AbcSize:
   Max: 30
   Exclude:
   #everything here was sufia-specific
+    - 'app/helpers/change_manager/change_manager_helper.rb'
 
 Metrics/MethodLength:
   Max: 15
   Exclude:
     - 'lib/seed_methods.rb'
+    - 'app/helpers/change_manager/change_manager_helper.rb'
 
 Metrics/ModuleLength:
   Exclude:
     - 'lib/seed_methods.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'app/helpers/change_manager/change_manager_helper.rb'
 
 Style/BlockDelimiters:
   Exclude:
