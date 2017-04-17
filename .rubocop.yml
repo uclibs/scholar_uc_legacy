@@ -158,6 +158,7 @@ RSpec/ExampleLength:
   Exclude:
     - 'spec/features/*'
     - 'spec/support/shared/*'
+    - 'spec/forms/sufia/forms/batch_edit_form_spec.rb'
 
 RSpec/SubjectStub:
   Enabled: false
