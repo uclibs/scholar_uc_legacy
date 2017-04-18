@@ -28,11 +28,14 @@ Metrics/AbcSize:
   Max: 30
   Exclude:
   #everything here was sufia-specific
+    - 'app/indexers/curation_concerns/file_set_indexer.rb'
 
 Metrics/MethodLength:
   Max: 15
   Exclude:
     - 'lib/seed_methods.rb'
+    - 'app/indexers/curation_concerns/file_set_indexer.rb'
+    - 'spec/support/curation_concerns/factory_helpers.rb'
 
 Metrics/ModuleLength:
   Exclude:
