@@ -41,7 +41,7 @@ en:
         date_created: "The year the degree was granted."
         description: "Enter the abstract of the ETD. There is no character limit for this field.</p>"
         identifier: "A unique handle identifying the work. An example would be a DOI for a journal article, or an ISBN or OCLC number for a book."
-        language: "Enter the language of your work.</br>Example:</br><ul><li>English</li><li>Spanish</li><li>Arabic</li></ul>"
+        language: "Enter the language of your work.</br>Examples:</br><ul><li>English</li><li>Spanish</li><li>Arabic</li></ul>"
         publisher: "The person or group making the work available. Generally this is the institution."
         rights: "Licensing and distribution information governing access to the work. Select from the provided drop-down list."
         alternate_title: "<p>Enter an alternate title for ETD. An alternate title could include acronyms, abbreviations, or a series title.</p>"
