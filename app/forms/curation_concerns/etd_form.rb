@@ -32,7 +32,7 @@ module CurationConcerns
       %i(alternate_title
          genre subject geo_subject time_period
          language required_software
-         note)
+         note related_url)
     end
 
     ## Gymnastics to allow repeatble fields to behave as non-repeatable
