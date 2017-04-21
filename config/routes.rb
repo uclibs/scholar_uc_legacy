@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require 'sidekiq/web'
 Rails.application.routes.draw do
+  resources :collection_avatars
   mount Orcid::Engine => "/orcid"
   mount BrowseEverything::Engine => '/browse'
   Hydra::BatchEdit.add_routes(self)
