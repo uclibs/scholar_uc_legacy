@@ -4,6 +4,8 @@ require 'rails_helper'
 shared_examples 'work crud' do |work|
   let(:work_type) { work.name.underscore }
 
+  before { allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true) }
+
   it 'can view the new work form' do
     visit sufia.root_path
     click_on 'New Work'

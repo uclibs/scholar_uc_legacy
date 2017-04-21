@@ -5,8 +5,10 @@ require 'rails_helper'
 
 describe CurationConcerns::EtdsController do
   let(:user) { create(:user) }
-
-  before { sign_in user }
+  before do
+    allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true)
+    sign_in user
+  end
 
   describe "#new" do
     before { get :new }

@@ -5,7 +5,7 @@ require 'seed_methods'
 class AddInitialObjects < ActiveRecord::Migration
 
   rando_pass = Devise.friendly_token.first(8)
-  accounts = {'manydeposits@example.com' => 'Many Deposits', 'nodeposits@example.com' => 'No Deposits', 'delegate@example.com' => 'Student Delegate'} 
+  accounts = {'manydeposits@example.com' => 'Many Deposits', 'nodeposits@example.com' => 'No Deposits', 'delegate@example.com' => 'Student Delegate'}
 
   accounts.each do | email, name |
     unless User.where(email: email).exists?
@@ -24,7 +24,7 @@ class AddInitialObjects < ActiveRecord::Migration
   end
 
   def self.create_admin_role(id)
-    admin = Role.create(name: "admin")
+    admin = Role.create(name: 'admin')
     admin.users << User.find(id)
     admin.save
   end
@@ -37,6 +37,20 @@ class AddInitialObjects < ActiveRecord::Migration
     user.id
   end
 
-  create_admin_role(create_admin_account)
+  def self.create_etd_manager_role(id)
+    etd_manager = Role.create(name: 'etd_manager')
+    etd_manager.users << User.find(id)
+    etd_manager.save
+  end
 
+  def self.create_etd_manager_account
+    rando_pass = Devise.friendly_token.first(8)
+    user = User.create email: 'etd_manager@example.com', password: rando_pass
+    puts "\n\n\t\t*** ETD MANAGER (etd_manager@example.com) PASS: #{rando_pass} ***\n\n"
+    user.save
+    user.id
+  end
+
+  create_admin_role(create_admin_account)
+  create_etd_manager_role(create_etd_manager_account)
 end
