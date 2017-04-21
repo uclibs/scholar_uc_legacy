@@ -13,7 +13,7 @@ describe "User Profile", type: :feature do
       visit profile_path
       expect(page).to have_content(user.email)
       expect(page).to have_content('Edit Your Profile')
-      expect(page).to have_content('View Contributors')
+      expect(page).to have_content('View People')
     end
   end
 
@@ -48,26 +48,26 @@ describe "User Profile", type: :feature do
     end
   end
 
-  context 'when clicking view contributors' do
+  context 'when clicking view people' do
     # TODO: Move this to a view test
 
     before do
       visit profile_path
-      click_link 'View Contributors'
+      click_link 'View People'
     end
 
-    it "has a Search Contributors field label" do
-      expect(page).to have_css("label", text: "Search Contributors")
+    it "has a Search People field label" do
+      expect(page).to have_css("label", text: "Search People")
     end
 
-    it "has Contributors in the heading" do
-      expect(page).to have_css("h1", text: "Contributors")
+    it "has People in the heading" do
+      expect(page).to have_css("h1", text: "People")
     end
 
     context "when the user doesn't own works" do
       it 'does not include the user in the display' do
         visit profile_path
-        click_link 'View Contributors'
+        click_link 'View People'
         expect(page).not_to have_xpath("//td/a[@href='#{profile_path}']")
       end
     end
@@ -76,7 +76,7 @@ describe "User Profile", type: :feature do
       let!(:work) { FactoryGirl.create(:work, user: user) }
       it 'includes the user in the display' do
         visit profile_path
-        click_link 'View Contributors'
+        click_link 'View People'
         expect(page).to have_xpath("//td/a[@href='#{profile_path}']")
       end
     end
@@ -89,7 +89,7 @@ describe "User Profile", type: :feature do
       end
       it 'includes the user without works in the display' do
         visit profile_path
-        click_link 'View Contributors'
+        click_link 'View People'
         expect(page).to have_xpath("//td/a[@href='#{profile_path}']")
       end
     end
@@ -114,7 +114,7 @@ describe "User Profile", type: :feature do
 
     it 'is searchable' do
       visit profile_path
-      click_link 'View Contributors'
+      click_link 'View People'
       expect(page).to have_xpath("//td/a[@href='#{profile_path}']")
       expect(page).to have_xpath("//td/a[@href='#{dewey_path}']")
       fill_in 'user_search', with: 'Dewey'

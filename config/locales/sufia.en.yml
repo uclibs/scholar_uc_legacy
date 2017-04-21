@@ -7,6 +7,8 @@ en:
     account_name:       "My Institution Account Id"
     directory:
       suffix:           "@uc.edu"
+    controls:
+      users: "People"
     footer:
       copyright_info_html: "<a href=\"http://commercialization.uc.edu/copyright-infringement\">Copyright Information</a>"
       copyright_html: "&copy; 2017 <a href=\"http://www.uc.edu/\"><u>University of Cincinnati</u></a>"
