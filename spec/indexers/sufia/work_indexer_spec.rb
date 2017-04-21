@@ -10,6 +10,11 @@ describe Sufia::WorkIndexer do
     let(:work) { FactoryGirl.build(:generic_work) }
     subject(:document) { indexer.generate_solr_document }
 
+    it "makes date_created facetable" do
+      work.stub(:date_created).and_return("1950-01-01")
+      expect(work.to_solr["date_created_tesim"]).to eq(["1950-01-01"])
+    end
+
     it "removes leading spaces" do
       work.stub(:title).and_return(["  I start with a space"])
       expect(work.to_solr["sort_title_ssi"]).to eq("I START WITH A SPACE")
