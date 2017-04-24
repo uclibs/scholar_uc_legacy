@@ -6,6 +6,23 @@ module Sufia::UsersControllerBehavior
     @permalinks_presenter = PermalinksPresenter.new(sufia.profile_path)
   end
 
+  def search(query)
+    clause = query.blank? ? nil : "%" + query.downcase + "%"
+    base = User.where(*base_query)
+    unless clause.blank?
+      base = base.where("#{Devise.authentication_keys.first} like lower(?)
+                           OR display_name like lower(?)
+                           OR first_name like lower(?)
+                           OR last_name like lower(?)", clause, clause, clause, clause)
+    end
+    base.where("#{Devise.authentication_keys.first} not in (?)",
+               [User.batch_user_key, User.audit_user_key])
+        .where(guest: false)
+        .references(:trophies)
+        .order(sort_value)
+        .page(params[:page]).per(10)
+  end
+
   protected
 
     def base_query
