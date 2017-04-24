@@ -29,6 +29,7 @@ Metrics/AbcSize:
   Exclude:
   #everything here was sufia-specific
     - 'app/indexers/curation_concerns/file_set_indexer.rb'
+    - 'app/helpers/change_manager/change_manager_helper.rb'
 
 Metrics/MethodLength:
   Max: 15
@@ -36,10 +37,15 @@ Metrics/MethodLength:
     - 'lib/seed_methods.rb'
     - 'app/indexers/curation_concerns/file_set_indexer.rb'
     - 'spec/support/curation_concerns/factory_helpers.rb'
+    - 'app/helpers/change_manager/change_manager_helper.rb'
 
 Metrics/ModuleLength:
   Exclude:
     - 'lib/seed_methods.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'app/helpers/change_manager/change_manager_helper.rb'
 
 Style/BlockDelimiters:
   Exclude:

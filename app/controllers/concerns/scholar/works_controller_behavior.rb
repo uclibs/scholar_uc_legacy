@@ -4,6 +4,8 @@
 
 module Scholar
   module WorksControllerBehavior
+    include ChangeManager::ChangeManagerHelper
+
     def new
       super
       curation_concern.read_groups = ["public"]
@@ -11,6 +13,9 @@ module Scholar
 
     def create
       super
+      # the to_s_u method must be implemented for every model
+      editors = params[curation_concern.class.to_s_u][:permissions_attributes]
+      queue_notifications_for_editors(editors) if editors
     rescue ActiveFedora::RecordInvalid # virus detected
       remove_infected_file_sets
       report_virus_found
@@ -19,6 +24,9 @@ module Scholar
 
     def update
       super
+      # the to_s_u method must be implemented for every model
+      editors = params[curation_concern.class.to_s_u][:permissions_attributes]
+      queue_notifications_for_editors(editors) if editors
     rescue ActiveFedora::RecordInvalid # virus detected
       remove_infected_file_sets
       report_virus_found
