@@ -27,6 +27,18 @@ en:
         time_period: "Enter the period or date associated with the subject of your work.</br>Examples:</br><ul><li>19th century</li><li>Middle Ages</li><li>Jurassic Period</li></ul>"
         title: "Enter the title of your work. If the work doesn't have a title, please enter a brief descriptive label."
   sufia:
+    homepage:
+      featured_works:
+        tab_label:          'Featured Works'
+        title:              'FEATURED WORK'
+        no_works:           'No works have been featured'
+        drag:               'Drag'
+      featured_researcher:
+        tab_label:          'Featured Researcher'
+        title:              'FEATURED COLLECTION'
+      featured_collections:
+        title:              'FEATURED COLLECTION'
+        no_collections:     'No collections have been featured'
     product_name:       "Scholar@UC"
     product_twitter_handle: "@Scholar@UC"
     institution_name:   "University of Cincinnati"
@@ -82,7 +94,6 @@ en:
         header: Attributes
     upload:
       cloud_timeout_message_html: "If you have files on cloud storage sites such as Box, Dropbox, Google Drive, or Kaltura, you can click the \"Browse cloud files\" button to select and upload those files directly to Scholar@UC.<br /><br />Please note that if you upload a large number of files within a short period of time, the cloud provider may not be able to accommodate your request. If you experience any errors uploading from the cloud, let us know via the %{contact_href}."
-
   curation_concerns:
     base:
       form_files:
