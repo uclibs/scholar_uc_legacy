@@ -1,2 +1,2 @@
 <%= f.input :department,
-      input_html: { class: 'department', value: curation_concern.department || user_department } %>
+      input_html: { class: 'department', value: (curation_concern.department if curation_concern.respond_to?(:department)) || user_department } %>

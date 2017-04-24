@@ -91,9 +91,9 @@ describe Sufia::BatchUploadsController do
     end
     let(:expected_shared_params) do
       if Rails.version < '5.0.0'
-        { 'keyword' => [], 'visibility' => 'open' }
+        { 'visibility' => 'open' }
       else
-        ActionController::Parameters.new(keyword: [], visibility: 'open').permit!
+        ActionController::Parameters.new(visibility: 'open').permit!
       end
     end
     it "excludes uploaded_files and title" do
