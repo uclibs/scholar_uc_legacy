@@ -71,16 +71,10 @@ div[class*="_admin_set_id"] {
   margin-bottom: 20px;
 }
 
-.featured-thumb {
-  width: 270px;
-  height: 270px;
-}
-
 .featured-thumb img {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
 }
 
 .partners-text {
