@@ -19,11 +19,11 @@ module CurationConcerns
     self.terms -= %i(keyword source contributor)
 
     ## Setting custom required fields
-    self.required_fields = %i(title creator college department description required_software rights)
+    self.required_fields = %i(title creator college department description rights)
 
     ## Adding above the fold on the form without making this required
     def primary_terms
-      required_fields + [:publisher]
+      required_fields + [:publisher, :required_software]
     end
 
     ## Overriding secondary terms to establish custom field order

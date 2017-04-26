@@ -9,7 +9,7 @@ RSpec.describe CurationConcerns::DatasetForm do
 
   describe "#required_fields" do
     subject { form.required_fields }
-    it { is_expected.to eq [:title, :creator, :college, :department, :description, :required_software, :rights] }
+    it { is_expected.to eq [:title, :creator, :college, :department, :description, :rights] }
   end
 
   describe "#primary_terms" do
