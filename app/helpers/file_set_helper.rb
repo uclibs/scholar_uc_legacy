@@ -28,4 +28,8 @@ module FileSetHelper
     max_file_size = 3_221_225_472 # 3 GB
     file.respond_to?(:solr_document) && file.solr_document._source[:file_size_is].to_i > max_file_size
   end
+
+  def this_is_a_file?(presenter)
+    presenter.human_readable_type == 'File'
+  end
 end
