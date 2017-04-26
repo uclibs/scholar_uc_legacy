@@ -9,7 +9,7 @@ en:
   simple_form:
     labels:
       generic_work:
-        geo_subject:       "Geographic Location"
+        geo_subject:      "Geographic Subject"
         description:      "Description"
         date_created:     "Date Created"
         related_url:      "External Link"
@@ -19,7 +19,7 @@ en:
         alternate_title:  "Alternate Title"
         time_period:      "Time Period"
         required_software: "Required Software"
-        note:             "Enter any additional information about your Generic Work."
+        note:             "Note"
         publisher:        "Publisher (Required for DOI registration)"
         college:          "College"
         department:       "Program or Department"
