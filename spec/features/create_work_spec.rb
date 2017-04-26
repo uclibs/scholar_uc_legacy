@@ -6,6 +6,10 @@ shared_examples 'work creation' do |work_class| # snake-case work type for strin
 
   it 'fills out the form as user with required fields' do
     visit new_polymorphic_path(work_class)
+    # check for form tabs
+    expect(page).to have_link('DOI')
+    expect(page).to have_link('Relationships')
+    expect(page).to have_link('Share')
     click_link "Files" # switch tab
     expect(page).to have_content "Add files"
     expect(page).to have_content "Browse cloud files" # with browse-everything enabled
