@@ -23,7 +23,7 @@ module CurationConcerns
 
     ## Adding above the fold on the form without making this required
     def primary_terms
-      required_fields + [:publisher, :required_software]
+      required_fields + [:required_software, :publisher]
     end
 
     ## Overriding secondary terms to establish custom field order
