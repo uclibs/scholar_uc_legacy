@@ -13,6 +13,10 @@ class Etd < ActiveFedora::Base
   # self.valid_child_concerns = []
   validates :title, presence: { message: 'Your work must have a title.' }
 
+  property :etd_publisher, predicate: ::RDF::URI.new('http://purl.org/dc/terms/publisher'), multiple: false do |index|
+    index.as :stored_searchable
+  end
+
   property :alternate_title, predicate: ::RDF::URI.new('http://purl.org/dc/terms/title#alternative') do |index|
     index.as :stored_searchable
   end
@@ -59,5 +63,9 @@ class Etd < ActiveFedora::Base
 
   def self.to_s_u
     'etd'
+  end
+
+  def publisher
+    etd_publisher
   end
 end

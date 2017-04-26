@@ -10,7 +10,7 @@ var setCurrentUserAsCreator = function() {
   // if the creator field is present...
   if( $('input[id$=_creator]').length ) {
     // and it's not collection_creator
-    if( $('input[id$=collection_creator]').length == 0) {
+    if( $('input[id$=collection_creator]').length == 0 && $('input[id$=etd_creator]').length == 0) {
       // read the current user's name from the data attribute
       var creator = document.querySelector('#current_user').dataset.name;
 

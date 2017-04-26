@@ -14,7 +14,7 @@ RSpec.describe CurationConcerns::EtdForm do
 
   describe "#primary_terms" do
     subject { form.primary_terms }
-    it { is_expected.to eq [:title, :creator, :college, :department, :description, :advisor, :rights, :committee_member, :degree, :date_created, :publisher] }
+    it { is_expected.to eq [:title, :creator, :college, :department, :description, :advisor, :rights, :committee_member, :degree, :date_created, :etd_publisher] }
   end
 
   describe "#secondary_terms" do
