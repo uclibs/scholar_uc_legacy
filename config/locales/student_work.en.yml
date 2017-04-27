@@ -42,7 +42,7 @@ en:
         publisher: "The person or group making the work available. Generally this is the institution."
         rights: "Licensing and distribution information governing access to the work. Select from the provided drop-down list."
         alterante_title: "Enter an alternate title for your work. An alternate title could include acronyms, abbreviations, or a series title."
-        genre: "Select the type of your work. If you are unsure about the type, please select 'Other'."
+        genre: "Select the type of your work."
         time_period: "Enter the period or date associated with the subject of your work.</br>Examples:</br><ul><li>19th century</li><li>Middle Ages</li><li>Jurassic Period</li></ul>"
         required_software: "Special software needed to open the work"
         note: "Enter any additional information about your work."

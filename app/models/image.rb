@@ -21,7 +21,7 @@ class Image < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  property :genre, predicate: ::RDF::URI.new('http://purl.org/dc/terms/type#genre') do |index|
+  property :genre, predicate: ::RDF::URI.new('http://purl.org/dc/terms/type#genre'), multiple: false do |index|
     index.as :stored_searchable, :facetable
   end
 
