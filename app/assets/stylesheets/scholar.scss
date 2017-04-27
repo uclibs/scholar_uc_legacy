@@ -156,6 +156,30 @@ label[for=user_password] {
   padding-top: 20px;
 }
 
+.table-format-advice {
+    width: 100%;
+  td {
+    vertical-align: top;
+    width: 25%;
+  }
+  th {
+    width: 25%;
+    text-align: left;
+    padding-left: .5em;
+  }
+}
+
+.help-description {
+  dt {
+    margin-top: 1em;
+    font-weight: normal;
+  }
+  dd {
+    padding-left: 1em;
+    font-style: italic;
+  }
+}
+
 /* Medium devices */
 @media (min-width: 768px) and (max-width: 991px) {
 

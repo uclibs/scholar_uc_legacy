@@ -102,3 +102,8 @@ en:
     visibility:
       open:
         text: "Public"
+      authenticated:
+        label_html: 'University of Cincinnati'
+    institution:
+      name: 'University of Cincinnati'
+    institution_name: 'University of Cincinnati'
