@@ -24,7 +24,7 @@ module CurationConcerns
 
     ## Adding above the fold on the form without making this required
     def primary_terms
-      required_fields + [:committee_member, :degree, :date_created, :publisher]
+      required_fields + %i(committee_member degree date_created publisher)
     end
 
     ## Overriding secondary terms to establish custom field order
