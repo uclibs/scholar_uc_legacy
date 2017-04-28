@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'sufia', '7.3.0'
-gem 'curation_concerns', '1.7.6'
+gem 'curation_concerns', '1.7.7'
 gem 'active-fedora', '11.1.5'
 
 #repository manager
