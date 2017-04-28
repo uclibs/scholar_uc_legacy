@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-shared_examples 'work creation' do |work_class| # snake-case work type for string interpolation
+shared_examples 'work creation' do |work_class| # apply underscore for snake case work type
   let(:work_type) { work_class.name.underscore }
 
   it 'fills out the form as user with required fields' do
     visit new_polymorphic_path(work_class)
+    click_link "Relationships"
+    expect(page).to have_css("div.#{work_class.name.underscore}_admin_set_id", visible: false) # Make sure admin set selector is not visible
     click_link "Files" # switch tab
     expect(page).to have_content "Add files"
     expect(page).to have_content "Browse cloud files" # with browse-everything enabled
