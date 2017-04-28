@@ -6,8 +6,8 @@ module CurationConcerns
     self.model_class = ::Document
 
     ## Adding custom descriptive metadata terms
-    self.terms += %i(resource_type alternate_title genre
-                     time_period required_software note geo_subject)
+    self.terms += %i(alternate_title genre time_period
+                     required_software note geo_subject)
 
     ## Adding terms needed for the special DOI form tab
     self.terms += %i(doi doi_assignment_strategy existing_identifier)
@@ -28,7 +28,7 @@ module CurationConcerns
 
     ## Overriding secondary terms to establish custom field order
     def secondary_terms
-      %i(date_created alternate_title subject
+      %i(date_created alternate_title genre subject
          geo_subject time_period language
          required_software note related_url)
     end

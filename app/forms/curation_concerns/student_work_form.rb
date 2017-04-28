@@ -36,7 +36,7 @@ module CurationConcerns
 
     ## Gymnastics to allow repeatble fields to behave as non-repeatable
     def self.multiple?(field)
-      if %i(title description rights date_created).include? field.to_sym
+      if %i(title description rights date_created degree).include? field.to_sym
         false
       else
         super

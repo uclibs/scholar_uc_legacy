@@ -1,3 +1,7 @@
+div[class*="_admin_set_id"] {
+  display: none;
+}
+
 .site-title h1 {
   color: #fff !important;
 }
@@ -136,7 +140,7 @@
 .catalog-collection-thumb, .catalog-collection-thumb:focus, catalog-collection-thumb:active, .catalog-collection-thumb:hover, .catalog-collection-thumb:visited {
    color: inherit;
    text-decoration: none;
- }
+}
  
 .beta-tag {
   color: #e00122;
@@ -145,6 +149,11 @@
 
 .people {
   margin-top: 2em;
+}
+
+/* add padding between login form fields */
+label[for=user_password] { 
+  padding-top: 20px;
 }
 
 /* Medium devices */
