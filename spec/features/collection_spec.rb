@@ -21,20 +21,16 @@ describe 'collection', type: :feature do
       visit '/dashboard'
       first('#hydra-collection-add').click
       expect(page).to have_content 'Create New Collection'
-      click_link('Additional fields')
-
-      expect(page).to have_selector "input.collection_creator.multi_value"
-      expect(page).to have_selector "input.collection_title.multi_value"
 
       fill_in('Title', with: title)
-      fill_in('Abstract or Summary', with: description)
-      fill_in('Location', with: 'Over there')
-      fill_in('Related URL', with: 'http://example.com/')
+      fill_in('Description', with: description)
+      fill_in('Creator', with: 'User, New')
 
       click_button("Create Collection")
       expect(page).to have_content 'Items in this Collection'
       expect(page).to have_content title
       expect(page).to have_content description
+      expect(page).to have_content 'User, New'
     end
   end
 
@@ -218,7 +214,7 @@ describe 'collection', type: :feature do
       new_description = "Completely new Description text."
       creators = ["Dorje Trollo", "Vajrayogini"]
       fill_in('Title', with: new_title)
-      fill_in('Abstract or Summary', with: new_description)
+      fill_in('Description', with: new_description)
       fill_in('Creator', with: creators.first)
       within('.primary-actions') do
         click_button('Update Collection')

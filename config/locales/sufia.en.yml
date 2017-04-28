@@ -32,6 +32,23 @@ en:
     terms_of_use_html: "<a class=\"a\" href=\"/terms\">Scholar@UC Terms of Use</a>"
     non_discrimination_notice_html: "<a href=\"http://uc.edu/about/policies/non-discrimination.html\">Notice of Non-Discrimination</a>"
     share_button: "Contribute"
+
+  simple_form:
+    labels:
+      collection:
+        total_items:      "Total Items"
+        size:             "Size"
+        description:      "Description"
+        files:            "Upload a new version of this file from your computer"
+        collection_ids:   "Add as member of collection"
+        admin_set_id:     "Add as member of administrative set"
+    hints:
+      collection:
+        title: "A name to aid in identifying a collection."
+        creator: "The person or group responsible for the collection. Usually this is the author of the content. Personal names should be entered with the last name first, e.g. &quot;Smith, John.&quot;."
+        description: "Free-text notes about the collection. Examples include abstracts of a paper or citation information for a journal article."
+        rights: "Licensing and distribution information governing access to the collection. Select from the provided drop-down list."
+
   curation_concerns:
     base:
       metadata:
