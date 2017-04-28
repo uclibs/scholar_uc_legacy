@@ -20,6 +20,14 @@ class CatalogController < ApplicationController
     solr_name('system_modified', :stored_sortable, type: :date)
   end
 
+  def self.search_terms
+    "title_tesim description_tesim keyword_tesim creator_tesim rights_tesim " \
+    "publisher_tesim date_created_tesim subject_tesim language_tesim alternate_title_tesim " \
+    "geo_subject_tesim degree_tesim advisor_tesim committee_member_tesim genre_tesim " \
+    "time_period_tesim required_software_tesim note_tesim college_tesim department_tesim " \
+    "advisor_tesim related_url_tesim source_tesim journal_title_tesim issn_tesim "
+  end
+
   configure_blacklight do |config|
     config.view.gallery.partials = [:index_header, :index]
     config.view.masonry.partials = [:index]
@@ -38,7 +46,7 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
       qt: "search",
       rows: 10,
-      qf: "title_tesim description_tesim keyword_tesim"
+      qf: search_terms
     }
 
     # solr field configuration for document/show views
