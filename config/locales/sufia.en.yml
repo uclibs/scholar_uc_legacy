@@ -72,4 +72,6 @@ en:
         pdf_link: 'Request a copy of this PDF'
         audio_link: 'Request a copy of this audio file'
         video_link: 'Request a copy of this video'
-
+    visibility:
+      open:
+        text: "Public"
