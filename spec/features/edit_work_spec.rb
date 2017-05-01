@@ -3,7 +3,10 @@ require 'rails_helper'
 
 shared_examples 'edit work' do |work_class|
   let(:user) { FactoryGirl.create(:user, first_name: 'John', last_name: 'Doe') }
-  let(:work) { FactoryGirl.build(:work, user: user, creator: ['User, Different'], description: ['test']) }
+  let(:work) { FactoryGirl.build(
+    :work, user: user, creator: ['User, Different'],
+           alt_description: 'test', college: "Business", department: "Marketing"
+  ) }
   let(:work_type) { work_class.name.underscore }
   let(:edit_path) { "concern/#{work_type}s/#{work.id}/edit" }
   before do

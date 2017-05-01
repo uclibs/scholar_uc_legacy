@@ -20,6 +20,10 @@ describe 'Adding an infected file', js: true do
       click_link "Metadata" # switch tab
       fill_in('Title', with: 'My Infected Work')
       fill_in('Creator', with: 'Test User')
+      college_element = find_by_id("generic_work_college")
+      college_element.select("Business")
+      department_element = find_by_id("generic_work_department")
+      department_element.set("Marketing")
       fill_in('Description', with: 'This is the Description.')
       select 'Attribution-ShareAlike 4.0 International', from: 'generic_work_rights'
       choose('generic_work_visibility_open')

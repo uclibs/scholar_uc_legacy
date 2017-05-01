@@ -6,7 +6,7 @@ module CurationConcerns
     self.model_class = ::Article
 
     ## Adding custom descriptive metadata terms
-    self.terms += %i(resource_type alternate_title journal_title issn time_period required_software note geo_subject)
+    self.terms += %i(resource_type alternate_title journal_title issn time_period required_software note geo_subject alt_description alt_date_created)
 
     ## Adding terms needed for the special DOI form tab
     self.terms += %i(doi doi_assignment_strategy existing_identifier)
@@ -18,7 +18,7 @@ module CurationConcerns
     self.terms -= %i(keyword source contributor)
 
     ## Setting custom required fields
-    self.required_fields = %i(title creator college department description rights)
+    self.required_fields = %i(title creator college department alt_description rights)
 
     ## Adding above the fold on the form without making this required
     def primary_terms
@@ -27,14 +27,14 @@ module CurationConcerns
 
     ## Overriding secondary terms to establish custom field order
     def secondary_terms
-      %i(date_created alternate_title journal_title
+      %i(alt_date_created alternate_title journal_title
          issn subject geo_subject time_period
          language required_software note related_url)
     end
 
     ## Gymnastics to allow repeatble fields to behave as non-repeatable
     def self.multiple?(field)
-      if %i(title description rights date_created).include? field.to_sym
+      if %i(title rights).include? field.to_sym
         false
       else
         super
@@ -44,20 +44,10 @@ module CurationConcerns
     def self.model_attributes(_)
       attrs = super
       attrs[:title] = Array(attrs[:title]) if attrs[:title]
-      attrs[:description] = Array(attrs[:description]) if attrs[:description]
-      attrs[:date_created] = Array(attrs[:date_created]) if attrs[:date_created]
       attrs
     end
 
     def title
-      super.first || ""
-    end
-
-    def description
-      super.first || ""
-    end
-
-    def date_created
       super.first || ""
     end
   end

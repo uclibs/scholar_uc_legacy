@@ -5,14 +5,15 @@ en:
     select_type:
       etd:
         name:               "Etd"
-        description:        "Must be submitted by the UC Graduate School"
+        alt_description:        "Must be submitted by the UC Graduate School"
   simple_form:
     labels:
       etd:
         geo_subject:      "Geographic Subject"
         description:      "Abstract"
+        alt_description:      "Abstract"
         keyword:          "Keyword"
-        date_created:     "Degree Date"
+        alt_date_created:     "Degree Date"
         related_url:      "External Link"
         files:            "Upload a new version of this file from your computer"
         collection_ids:   "Add as member of collection"
@@ -38,8 +39,8 @@ en:
         related_url: "A link to a website or other specific content (audio, video, PDF document) related to the work. An example is the URL of a research project from which the work was derived."
         geo_subject: "Enter the geographic subject of the ETD.</br>Examples:</br><ul><li>Cincinnati, Ohio</li><li>Vancouver, British Columbia</li><li>Sahara Desert</li></ul>"
         contributor: "A person or group you want to recognize for playing a role in the creation of the work, but not the primary role."
-        date_created: "The year the degree was granted."
-        description: "Enter the abstract of the ETD. There is no character limit for this field.</p>"
+        alt_date_created: "The year the degree was granted."
+        alt_description: "Enter the abstract of the ETD. There is no character limit for this field.</p>"
         identifier: "A unique handle identifying the work. An example would be a DOI for a journal article, or an ISBN or OCLC number for a book."
         language: "Enter the language of your work.</br>Examples:</br><ul><li>English</li><li>Spanish</li><li>Arabic</li></ul>"
         etd_publisher: "Enter the publisher associated with the ETD, typically the University of Cincinnati."

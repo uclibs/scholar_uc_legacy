@@ -3,8 +3,8 @@ require 'rails_helper'
 
 RSpec.describe Sufia::Forms::BatchEditForm do
   let(:model) { GenericWork.new }
-  let(:work1) { create :generic_work, title: ["title 1"], keyword: ["abc"], creator: ["Wilma"], language: ['en'], contributor: ['contributor1'], description: ['description1'], rights: ['rights1'], subject: ['subject1'], identifier: ['id1'], based_near: ['based_near1'], related_url: ['related_url1'] }
-  let(:work2) { create :generic_work, title: ["title 2"], keyword: ["123"], creator: ["Fred"], publisher: ['Rand McNally'], language: ['en'], resource_type: ['bar'], contributor: ['contributor2'], description: ['description2'], rights: ['rights2'], subject: ['subject2'], identifier: ['id2'], based_near: ['based_near2'], related_url: ['related_url2'] }
+  let(:work1) { create :generic_work, title: ["title 1"], keyword: ["abc"], creator: ["Wilma"], language: ['en'], alt_description: 'description1', rights: ['rights1'], subject: ['subject1'], identifier: ['id1'], based_near: ['based_near1'], related_url: ['related_url1'] }
+  let(:work2) { create :generic_work, title: ["title 2"], keyword: ["123"], creator: ["Fred"], publisher: ['Rand McNally'], language: ['en'], resource_type: ['bar'], alt_description: 'description2', rights: ['rights2'], subject: ['subject2'], identifier: ['id2'], based_near: ['based_near2'], related_url: ['related_url2'] }
   let(:batch) { [work1.id, work2.id] }
   let(:form) { described_class.new(model, ability, batch) }
   let(:ability) { Ability.new(user) }
@@ -13,35 +13,19 @@ RSpec.describe Sufia::Forms::BatchEditForm do
   describe "#terms" do
     subject { form.terms }
     it do
-      is_expected.to eq [:creator,
-                         :contributor,
-                         :description,
-                         :keyword,
-                         :resource_type,
-                         :rights,
-                         :publisher,
-                         :date_created,
-                         :subject,
-                         :language,
-                         :identifier,
-                         :based_near,
-                         :related_url]
+      is_expected.to eq %i(creator college department alt_description rights alt_date_created
+                           alternate_title subject geo_subject time_period language
+                           required_software note related_url)
     end
   end
 
   describe "#model" do
     it "combines the models in the batch" do
       expect(form.model.creator).to match_array ["Wilma", "Fred"]
-      expect(form.model.contributor).to match_array ["contributor1", "contributor2"]
-      expect(form.model.description).to match_array ["description1", "description2"]
-      expect(form.model.keyword).to match_array ["abc", "123"]
-      expect(form.model.resource_type).to match_array ["bar"]
+      expect(form.model.alt_description).to eq "description1"
       expect(form.model.rights).to match_array ["rights1", "rights2"]
-      expect(form.model.publisher).to match_array ["Rand McNally"]
       expect(form.model.subject).to match_array ["subject1", "subject2"]
       expect(form.model.language).to match_array ["en"]
-      expect(form.model.identifier).to match_array ["id1", "id2"]
-      expect(form.model.based_near).to match_array ["based_near1", "based_near2"]
       expect(form.model.related_url).to match_array ["related_url1", "related_url2"]
     end
   end
@@ -50,17 +34,18 @@ RSpec.describe Sufia::Forms::BatchEditForm do
     subject { described_class.build_permitted_params }
     it do
       is_expected.to eq [{ creator: [] },
-                         { contributor: [] },
-                         { description: [] },
-                         { keyword: [] },
-                         { resource_type: [] },
+                         :college,
+                         :department,
+                         :alt_description,
                          { rights: [] },
-                         { publisher: [] },
-                         { date_created: [] },
+                         :alt_date_created,
+                         { alternate_title: [] },
                          { subject: [] },
+                         { geo_subject: [] },
+                         { time_period: [] },
                          { language: [] },
-                         { identifier: [] },
-                         { based_near: [] },
+                         :required_software,
+                         :note,
                          { related_url: [] },
                          :version,
                          { permissions_attributes: [:type, :name, :access, :id, :_destroy] },

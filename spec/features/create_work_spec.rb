@@ -19,6 +19,9 @@ shared_examples 'work creation' do |work_class| # apply underscore for snake cas
 
     fill_in('Title', with: 'My Test Work')
 
+    college_element = find_by_id("#{work_type}_college")
+    college_element.select("Business")
+
     if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Video
       expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
       fill_in('Description', with: 'This is a description.')
@@ -72,6 +75,9 @@ shared_examples 'proxy work creation' do |work_class|
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
     click_link "Metadata" # switch tab
     fill_in('Title', with: 'My Test Work')
+
+    college_element = find_by_id("#{work_type}_college")
+    college_element.select("Business")
 
     if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Video
       expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)

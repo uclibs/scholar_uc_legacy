@@ -10,11 +10,11 @@ describe 'catalog searching', type: :feature do
 
   context 'with works and collections' do
     let!(:jills_work) do
-      FactoryGirl.create(:public_work, title: ["Jill's Research"], description: ["Jill's abstract"], keyword: ['jills_keyword', 'shared_keyword'])
+      FactoryGirl.create(:public_work, title: ["Jill's Research"], alt_description: "Jill's abstract", keyword: ['jills_keyword', 'shared_keyword'])
     end
 
     let!(:jacks_work) do
-      FactoryGirl.create(:public_work, title: ["Jack's Research"], description: ["Jack's abstract"], keyword: ['jacks_keyword', 'shared_keyword'])
+      FactoryGirl.create(:public_work, title: ["Jack's Research"], alt_description: "Jack's abstract", keyword: ['jacks_keyword', 'shared_keyword'])
     end
 
     let!(:collection) { FactoryGirl.create(:public_collection, title: ["Jack and Jill's collection"], description: ["This is a collection"], keyword: ['collection_keyword', 'shared_keyword']) }
@@ -26,11 +26,11 @@ describe 'catalog searching', type: :feature do
       end
       expect(page).to have_content(jills_work.class)
       expect(page).to have_content(jills_work.title.first)
-      expect(page).to have_content(jills_work.description.first)
+      expect(page).to have_content(jills_work.alt_description.first)
       expect(page).to have_content(jills_work.creator.first)
       expect(page).to have_content(jacks_work.class)
       expect(page).to have_content(jacks_work.title.first)
-      expect(page).to have_content(jacks_work.description.first)
+      expect(page).to have_content(jacks_work.alt_description.first)
       expect(page).to have_content(jacks_work.creator.first)
       expect(page).to have_content(collection.class)
       expect(page).to have_content(collection.title.first)

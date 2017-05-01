@@ -448,10 +448,6 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kaminari-activerecord (1.0.1)
-      activerecord
-      kaminari-core (= 1.0.1)
-    kaminari-core (1.0.1)
     kaminari_route_prefix (0.0.2)
       kaminari (~> 0.16)
     ldp (0.6.4)
@@ -864,4 +860,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.14.5
+   1.14.6

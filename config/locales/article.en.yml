@@ -5,14 +5,14 @@ en:
     select_type:
       article:
         name:               "Article"
-        description:        "Published or unpublished articles"
+        alt_description:        "Published or unpublished articles"
   simple_form:
     labels:
       article:
         geo_subject:      "Geographic Subject"
         creator:          "Author"
-        description:      "Abstract"
-        date_created:     "Date Created"
+        alt_description:      "Abstract"
+        alt_date_created:     "Date Created"
         related_url:      "External Link"
         files:            "Upload a new version of this file from your computer"
         collection_ids:   "Add as member of collection"
@@ -35,8 +35,8 @@ en:
         related_url: "A link to a website or other specific content (audio, video, PDF document) related to the work. An example is the URL of a research project from which the work was derived."
         geo_subject: "Enter the geographic subject of your Article.</br>Examples:</br><ul><li>Cincinnati, Ohio</li><li>Vancouver, British Columbia</li><li>Sahara Desert</li></ul>"
         contributor: "A person or group you want to recognize for playing a role in the creation of the work, but not the primary role."
-        date_created: "Date when the contents of the Article were created. Enter date formatted as: YYYY or YYYY-MM or YYYY-MM-DD.  Example:</br>January 30, 1950 should be entered 1950-01-30"
-        description: "Enter the abstract of your Article. There is no character limit for this field."
+        alt_date_created: "Date when the contents of the Article were created. Enter date formatted as: YYYY or YYYY-MM or YYYY-MM-DD.  Example:</br>January 30, 1950 should be entered 1950-01-30"
+        alt_description: "Enter the abstract of your Article. There is no character limit for this field."
         identifier: "A unique handle identifying the work. An example would be a DOI for a journal article, or an ISBN or OCLC number for a book."
         language: "The language of the work's content."
         alternate_title: "Enter an alternate title for your Article. An alternate title could include acronyms, abbreviations, or a series title."
