@@ -47,6 +47,9 @@ Rails.application.routes.draw do
   get 'distribution_license' => 'static#distribution_license'
   get 'documenting_data' => 'static#documenting_data'
   get 'creators_rights' => 'static#creators_rights'
+  get 'student_work_help' => 'static#student_work_help'
+  get 'advisor_guidelines' => 'static#advisor_guidelines'
+  get 'student_instructions' => 'static#student_instructions'
 
   # route for custom error pages issue #1056
   match '/404', to: 'errors#not_found', via: :all

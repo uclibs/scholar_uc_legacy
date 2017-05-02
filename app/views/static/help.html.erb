@@ -1,19 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="span12">
+<h2>Help Resources</h2>
 
-      <h2>Help Pages</h2>
-      <ul>
-        <li><a href="/coll_policy">Collection Policy</a></li>
-        <li><a href="/terms">Terms of Use</a></li>
-        <li><a href="/format_advice">File Format Advice</a></li>
-        <li><a href="http://librarycopyright.net/resources/fairuse/" target="_blank">Fair Use</a></li>
-        <li><a href="/faq">FAQ</a></li>
-        <li><a href="/documenting_data">Documenting Data</a></li>
-        <li><a href="/creators_rights">Creator's Rights</a></li>
-        <li><%= link_to 'Welcome Page', welcome_page_index_path %></li>
-      </ul>
+<dl class="help-description">
+  <dt><%= link_to "Accessibility at UC", "http://uc.edu/ucit/community/accessibility.html", target: '_blank' %></dt>
+  <dd>Information about the University of Cincinnati's Accessibility Network</dd>
 
-    </div>
-  </div>
-</div>
+  <dt><%= link_to "Creator's Rights", creators_rights_path %></dt>
+  <dd>An explanation of what rights you may hold as the creator of a work</dd>
+
+  <dt><%= link_to 'Documenting Data', documenting_data_path %></dt>
+  <dd>Suggestions for providing context for your data</dd>
+
+  <dt><%= link_to 'Fair Use', "http://librarycopyright.net/resources/fairuse/", target: '_blank' %></dt>
+  <dd>A resource for evaluating fair use</dd>
+
+  <dt><%= link_to 'FAQ', faq_path %></dt>
+  <dd>Answers to frequently asked questions about Scholar@UC</dd>
+
+  <dt><%= link_to 'File Format Advice', format_advice_path %></dt>
+  <dd>How to choose the best file formats for your content</dd>
+
+  <dt><%= link_to "Student Works", student_work_help_path %></dt>
+  <dd>Help for students wanting to add content to Scholar@UC</dd>
+
+  <dt><%= link_to 'Welcome Page', welcome_page_index_path %></dt>
+  <dd>The welcome page all Scholar@UC users see after their first log in</dd>
+</dl>

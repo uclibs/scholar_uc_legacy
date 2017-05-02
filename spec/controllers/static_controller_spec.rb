@@ -51,4 +51,25 @@ describe StaticController do
       expect(response).to render_template('static/creators_rights')
     end
   end
+  describe '#student_work_help' do
+    it 'renders the student_work_help page' do
+      get :student_work_help
+      expect(response.status).to be == 200
+      expect(response).to render_template('static/student_work_help')
+    end
+  end
+  describe '#advisor_guidelines' do
+    it 'renders the advisor_guidelines page' do
+      get :advisor_guidelines
+      expect(response.status).to be == 200
+      expect(response).to render_template('static/advisor_guidelines')
+    end
+  end
+  describe '#student_instructions' do
+    it 'renders the student_instructions page' do
+      get :student_instructions
+      expect(response.status).to be == 200
+      expect(response).to render_template('static/student_instructions')
+    end
+  end
 end

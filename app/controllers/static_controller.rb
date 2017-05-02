@@ -28,4 +28,16 @@ class StaticController < ApplicationController
   def creators_rights
     render "static/creators_rights"
   end
+
+  def student_work_help
+    render "static/student_work_help"
+  end
+
+  def advisor_guidelines
+    render "static/advisor_guidelines"
+  end
+
+  def student_instructions
+    render "static/student_instructions"
+  end
 end
