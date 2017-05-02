@@ -28,6 +28,7 @@ shared_examples 'doi request' do |work_class|
     allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true)
     CurationConcerns::Workflow::WorkflowImporter.load_workflows
     Sufia::AdminSetCreateService.create_default!
+    page.driver.browser.js_errors = false
     allow(CharacterizeJob).to receive(:perform_later)
   end
 

@@ -1,7 +1,9 @@
 <% # data attributes for creator field auto-populate %>
-<user id="current_user" data-name="<%= current_user.name_for_works %>"></user>
-<% current_user.can_make_deposits_for.each do |user| %>
-  <user id="<%= user.email %>" data-name="<%= user.name_for_works %>"></user>
+<% if params[:action] == "new" %>
+  <user id="current_user" data-name="<%= current_user.name_for_works %>"></user>
+  <% current_user.can_make_deposits_for.each do |user| %>
+    <user id="<%= user.email %>" data-name="<%= user.name_for_works %>"></user>
+  <% end %>
 <% end %>
 
 <% # we will yield to content_for for each tab, e.g. :files_tab %>
