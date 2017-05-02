@@ -9,7 +9,7 @@ en:
   simple_form:
     labels:
       etd:
-        geo_subject:      "Location"
+        geo_subject:      "Geographic Subject"
         description:      "Abstract"
         keyword:          "Keyword"
         date_created:     "Degree Date"
@@ -26,7 +26,7 @@ en:
         degree:           "Degree" 
         degree_date:      "Degree Year"
         genre:            "Type" 
-        publisher:        "Publisher (Required for DOI registration)" 
+        etd_publisher:        "Publisher (Required for DOI registration)" 
         college:          "College"
         department:       "Degree Program"
     hints:
@@ -36,13 +36,13 @@ en:
         subject: "<p>Enter terms or keywords that describe the ETD.</p>"
         creator: "<p>Enter the author of the ETD. Please enter the name in <i>LastName, FirstName</i> order.</p>"
         related_url: "A link to a website or other specific content (audio, video, PDF document) related to the work. An example is the URL of a research project from which the work was derived."
-        based_near: "<p>Enter the geographic subjects or keywords for the ETD.</p>"
+        geo_subject: "Enter the geographic subject of the ETD.</br>Examples:</br><ul><li>Cincinnati, Ohio</li><li>Vancouver, British Columbia</li><li>Sahara Desert</li></ul>"
         contributor: "A person or group you want to recognize for playing a role in the creation of the work, but not the primary role."
         date_created: "The year the degree was granted."
         description: "Enter the abstract of the ETD. There is no character limit for this field.</p>"
         identifier: "A unique handle identifying the work. An example would be a DOI for a journal article, or an ISBN or OCLC number for a book."
         language: "Enter the language of your work.</br>Examples:</br><ul><li>English</li><li>Spanish</li><li>Arabic</li></ul>"
-        publisher: "The person or group making the work available. Generally this is the institution."
+        etd_publisher: "Enter the publisher associated with the ETD, typically the University of Cincinnati."
         rights: "Licensing and distribution information governing access to the work. Select from the provided drop-down list."
         alternate_title: "<p>Enter an alternate title for ETD. An alternate title could include acronyms, abbreviations, or a series title.</p>"
         time_period: "Enter the period or date associated with the subject of your work.</br>Examples:</br><ul><li>19th century</li><li>Middle Ages</li><li>Jurassic Period</li></ul>"
@@ -55,4 +55,4 @@ en:
         publisher: "Enter the publisher of your work. If this has not been previously published, University of Cincinnati is an appropriate publisher."
         required_software: "Special software needed to open the work"
         college: "Select the college associated with the ETD."
-        department: "Enter the department associated with the ETD."
+        department: "Enter the degree program associated with the ETD."
