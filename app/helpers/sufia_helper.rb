@@ -71,11 +71,11 @@ module SufiaHelper
   end
 
   def sorted_genre_list_for_works
-    if curation_concern.is_a? Document
+    if (curation_concern.is_a? Document) || (params[:payload_concern] == "Document")
       sorted_genre_list_for_documents
-    elsif curation_concern.is_a? StudentWork
+    elsif (curation_concern.is_a? StudentWork) || (params[:payload_concern] == "StudentWork")
       sorted_genre_list_for_student_works
-    elsif curation_concern.is_a? Image
+    elsif (curation_concern.is_a? Image) || (params[:payload_concern] == "Image")
       sorted_genre_list_for_images
     else
       sorted_genre_list_for_other_works
