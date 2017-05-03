@@ -47,10 +47,12 @@ Metrics/ModuleLength:
 Metrics/PerceivedComplexity:
   Exclude:
     - 'app/helpers/change_manager/change_manager_helper.rb'
+    - 'app/helpers/sufia_helper.rb'    
 
 Metrics/CyclomaticComplexity:
   Exclude:
   - 'app/forms/sufia/forms/batch_upload_form.rb'
+  - 'app/helpers/sufia_helper.rb'
 
 Style/BlockDelimiters:
   Exclude:

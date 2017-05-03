@@ -52,7 +52,7 @@ module Sufia
           %i(date_created alternate_title subject geo_subject
              time_period language note related_url)
         when "Document"
-          %i(date_created alternate_title subject geo_subject
+          %i(date_created alternate_title genre subject geo_subject
              time_period language required_software note related_url)
         when "Image"
           %i(date_created alternate_title genre subject geo_subject
