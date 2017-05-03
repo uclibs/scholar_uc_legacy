@@ -22,11 +22,13 @@ describe 'collection', type: :feature do
       first('#hydra-collection-add').click
       expect(page).to have_content 'Create New Collection'
 
+      attach_file("collection[avatar]", File.dirname(__FILE__) + "/../../spec/fixtures/world.png", visible: false)
       fill_in('Title', with: title)
       fill_in('Description', with: description)
       fill_in('Creator', with: 'User, New')
 
       click_button("Create Collection")
+      expect(page).to have_css("img[src*='world.png']")
       expect(page).to have_content 'Items in this Collection'
       expect(page).to have_content title
       expect(page).to have_content description
@@ -216,6 +218,7 @@ describe 'collection', type: :feature do
       fill_in('Title', with: new_title)
       fill_in('Description', with: new_description)
       fill_in('Creator', with: creators.first)
+      attach_file("collection[avatar]", File.dirname(__FILE__) + "/../../spec/fixtures/world.png", visible: false)
       within('.primary-actions') do
         click_button('Update Collection')
       end
@@ -226,6 +229,7 @@ describe 'collection', type: :feature do
       expect(header).to have_content(new_title)
       expect(page).to have_content(new_description)
       expect(page).to have_content(creators.first)
+      expect(page).to have_css("img[src*='world.png']")
     end
   end
 
@@ -271,6 +275,37 @@ describe 'collection', type: :feature do
         click_link("Display all details of collection title")
       end
       expect(page).to have_css(".pager")
+    end
+  end
+
+  describe 'validates avatar file type' do
+    let!(:collection) { FactoryGirl.create(:named_collection, user: user) }
+    before { sign_in user }
+
+    context 'creating a collection' do
+      it 'shows a flash notice when failing file type validation' do
+        visit '/dashboard'
+        first('#hydra-collection-add').click
+        expect(page).to have_content 'Create New Collection'
+
+        attach_file("collection[avatar]", File.dirname(__FILE__) + "/../../spec/fixtures/some_pdf.pdf", visible: false)
+        fill_in('Title', with: 'Some title')
+        fill_in('Description', with: 'Some description')
+        fill_in('Creator', with: 'User, New')
+        click_button("Create Collection")
+        expect(page).to have_text("Validation failed: Avatar You are not allowed to upload \"pdf\" files, allowed types: jpg, jpeg, png, gif, bmp, tif, tiff")
+      end
+    end
+
+    context 'editing a collection' do
+      it 'shows a flash notice when failing file type validation' do
+        sign_in user
+        visit edit_collection_path(collection)
+        attach_file("collection[avatar]", File.dirname(__FILE__) + "/../../spec/fixtures/some_pdf.pdf", visible: false)
+        click_button 'Update Collection'
+
+        expect(page).to have_text("Validation failed: Avatar You are not allowed to upload \"pdf\" files, allowed types: jpg, jpeg, png, gif, bmp, tif, tiff")
+      end
     end
   end
 end

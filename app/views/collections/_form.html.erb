@@ -1,6 +1,14 @@
 <%= simple_form_for @form, html: { class: 'editor' } do |f| %>
   <div id="descriptions_display">
     <h2 class="non lower"><%= t('sufia.collection.edit.description') %></h2>
+
+  <div class="well">
+    <p>Add or replace collection avatar</p>
+   <%= f.label :avatar do %>
+      <%= f.file_field :avatar %>
+    <% end %>
+  </div>
+
     <div id="base-terms">
       <% f.object.primary_terms.each do |term| %>
         <%= render_edit_field_partial(term, f: f) %>
