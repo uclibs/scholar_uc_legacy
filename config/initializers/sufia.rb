@@ -24,8 +24,6 @@ Sufia.config do |config|
   # The default is true.
   config.work_requires_files = false
 
-  # Set custom banner image for UC Branding Requirements
-  config.banner_image = 'https://flic.kr/p/3kBWs4'
   # Text prefacing the subject entered in the contact form
   # config.subject_prefix = "Contact form:"
 
