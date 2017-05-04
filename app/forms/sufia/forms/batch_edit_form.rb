@@ -3,11 +3,11 @@ module Sufia
   module Forms
     class BatchEditForm < Sufia::Forms::WorkForm
       # Used for drawing the fields that appear on the page
-      self.terms = [:creator, :contributor, :description,
-                    :keyword, :resource_type, :rights, :publisher, :date_created,
-                    :subject, :language, :identifier, :based_near,
-                    :related_url]
-      self.required_fields = []
+      self.terms = %i(creator college department alt_description rights alt_date_created
+                      alternate_title subject geo_subject time_period language
+                      required_software note related_url)
+      self.required_fields = %i(creator college department alt_description rights)
+
       self.model_class = Sufia.primary_work_type
 
       attr_accessor :names
@@ -43,7 +43,11 @@ module Sufia
             work = ActiveFedora::Base.find(doc_id)
             terms.each do |key|
               combined_attributes[key] ||= []
-              combined_attributes[key] = (combined_attributes[key] + work[key].to_a).uniq
+              combined_attributes[key] = if work[key].class == String
+                                           (combined_attributes[key] + [work[key]]).uniq
+                                         else
+                                           (combined_attributes[key] + work[key].to_a).uniq
+                                         end
             end
             names << work.to_s
             permissions = (permissions + work.permissions).uniq
@@ -51,8 +55,14 @@ module Sufia
 
           terms.each do |key|
             # if value is empty, we create an one element array to loop over for output
-            model[key] = combined_attributes[key].empty? ? [''] : combined_attributes[key]
+            model[key] = if model.class.multiple? key
+                           combined_attributes[key].empty? ? [''] : combined_attributes[key]
+                         else
+                           combined_attributes[key].empty? ? '' : combined_attributes[key].first
+                         end
           end
+
+          # filter combined_attributes for multiple attributes pretending to be single
           model.permissions_attributes = [{ type: 'group', name: 'public', access: 'read' }]
         end
     end

@@ -7,7 +7,7 @@ module Sufia
 
       attr_accessor :payload_concern # a Class name: what is form creating a batch of?
 
-      self.terms = %i(creator description right publisher date_created subject
+      self.terms = %i(creator alt_description right publisher alt_date_created subject
                       language identifier based_near related_url representative_id
                       thumbnail_id files visibility_during_embargo embargo_release_date
                       visibility_after_embargo visibility_during_lease
@@ -20,54 +20,54 @@ module Sufia
       def required_fields
         case @payload_concern
         when "Dataset"
-          %i(title creator college department description required_software rights)
+          %i(title creator college department alt_description rights)
         when "Etd"
-          %i(title creator college department description advisor rights)
+          %i(title creator college department alt_description advisor rights)
         when "StudentWork"
-          %i(title creator college department description advisor rights)
+          %i(title creator college department alt_description advisor rights)
         else
-          %i(title creator college department description rights)
+          %i(title creator college department alt_description rights)
         end
       end
 
       def primary_terms
         case @payload_concern
         when "Dataset"
-          %i(creator college department description required_software rights publisher)
+          %i(creator college department alt_description required_software rights publisher)
         when "StudentWork"
-          %i(creator college department description advisor rights degree publisher)
+          %i(creator college department alt_description advisor rights degree publisher)
         when "Etd"
-          %i(creator college department description advisor rights committee_member degree date_created publisher)
+          %i(creator college department alt_description advisor rights committee_member degree alt_date_created publisher)
         else
-          %i(creator college department description rights publisher)
+          %i(creator college department alt_description rights publisher)
         end
       end
 
       def secondary_terms
         case @payload_concern
         when "Article"
-          %i(date_created alternate_title journal_title issn subject
+          %i(alt_date_created alternate_title journal_title issn subject
              geo_subject time_period language required_software note related_url)
         when "Dataset"
-          %i(date_created alternate_title subject geo_subject
+          %i(alt_date_created alternate_title subject geo_subject
              time_period language note related_url)
         when "Document"
-          %i(date_created alternate_title genre subject geo_subject
+          %i(alt_date_created alternate_title genre subject geo_subject
              time_period language required_software note related_url)
         when "Image"
-          %i(date_created alternate_title genre subject geo_subject
+          %i(alt_date_created alternate_title genre subject geo_subject
              time_period language required_software note related_url)
         when "Video"
-          %i(date_created alternate_title subject geo_subject
+          %i(alt_date_created alternate_title subject geo_subject
              time_period language required_software note related_url)
         when "StudentWork"
-          %i(date_created alternate_title genre subject geo_subject
+          %i(alt_date_created alternate_title genre subject geo_subject
              time_period language required_software note related_url)
         when "Etd"
           %i(alternate_title genre subject geo_subject time_period
              language required_software note related_url)
         else
-          %i(date_created alternate_title subject geo_subject
+          %i(alt_date_created alternate_title subject geo_subject
              time_period language required_software note related_url)
         end
       end

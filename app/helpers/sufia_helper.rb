@@ -4,10 +4,10 @@ module SufiaHelper
   include Sufia::BlacklightOverride
   include Sufia::SufiaHelperBehavior
 
-  def sorted_college_list_for_works
-    if curation_concern.is_a? Etd
+  def sorted_college_list_for_works(object)
+    if object.is_a? Etd
       sorted_college_list_for_etds
-    elsif curation_concern.is_a? StudentWork
+    elsif object.is_a? StudentWork
       sorted_college_list_for_student_works
     else
       sorted_college_list_for_other_works
@@ -40,16 +40,16 @@ module SufiaHelper
     end.sort << "Other"
   end
 
-  def user_college
-    if (curation_concern.is_a? Etd) || (curation_concern.is_a? StudentWork)
+  def user_college(object)
+    if (object.is_a? Etd) || (object.is_a? StudentWork)
       ''
     else
       current_user.college
     end
   end
 
-  def user_department
-    if (curation_concern.is_a? Etd) || (curation_concern.is_a? StudentWork)
+  def user_department(object)
+    if (object.is_a? Etd) || (object.is_a? StudentWork)
       ''
     else
       current_user.department

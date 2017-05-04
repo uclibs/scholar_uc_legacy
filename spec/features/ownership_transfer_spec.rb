@@ -13,7 +13,7 @@ RSpec.describe 'Transferring work ownership:', type: :feature do
     create(:public_work,
            title: ['little_generic_work'],
            creator: ['little_generic_work.creator'],
-           description: ['This is the description.'],
+           alt_description: 'This is the description.',
            publisher: ['This is the publisher.'],
            user: original_owner)
   end

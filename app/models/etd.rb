@@ -61,6 +61,14 @@ class Etd < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
+  property :alt_description, predicate: ::RDF::URI.new('http://purl.org/dc/terms/description'), multiple: false do |index|
+    index.as :stored_searchable
+  end
+
+  property :alt_date_created, predicate: ::RDF::URI.new('http://purl.org/dc/terms/date#created'), multiple: false do |index|
+    index.as :stored_searchable
+  end
+
   def self.to_s_u
     'etd'
   end
