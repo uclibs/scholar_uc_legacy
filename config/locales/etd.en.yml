@@ -11,9 +11,10 @@ en:
       etd:
         geo_subject:      "Geographic Subject"
         description:      "Abstract"
-        alt_description:      "Abstract"
+        alt_description:  "Abstract"
         keyword:          "Keyword"
-        alt_date_created:     "Degree Date"
+        creator:          "Creator"
+        alt_date_created: "Degree Date"
         related_url:      "External Link"
         files:            "Upload a new version of this file from your computer"
         collection_ids:   "Add as member of collection"
@@ -27,7 +28,7 @@ en:
         degree:           "Degree" 
         degree_date:      "Degree Year"
         genre:            "Type" 
-        etd_publisher:        "Publisher (Required for DOI registration)" 
+        etd_publisher:    "Publisher (Required for DOI registration)" 
         college:          "College"
         department:       "Degree Program"
     hints:
