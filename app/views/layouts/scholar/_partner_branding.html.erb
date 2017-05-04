@@ -1,19 +1,27 @@
 <div class="partner-branding row">
   <div class="col-sm-8 col-sm-offset-2">
   <div class="col-sm-3 col-xs-6">
-    <%= image_tag("uclib-logo.png", class: 'img-responsive') %>
+    <%= link_to 'http://libraries.uc.edu', target: '_blank' do %>
+      <%= image_tag("uclib-logo.png", class: 'img-responsive') %>
+  <% end %>
   </div>
 
   <div class="col-sm-3 col-xs-6">
-    <%= image_tag("uc-oor-placeholder.png", class: 'img-responsive') %>
+    <%= link_to 'http://research.uc.edu', target: '_blank' do %>
+      <%= image_tag("uc-oor-placeholder.png", class: 'img-responsive') %>
+    <% end %>
   </div>
 
   <div class="col-sm-3 col-xs-6">
-    <%= image_tag("it-at-uc-placeholder.png", class: 'img-responsive') %>
+    <%= link_to 'http://ucit.uc.edu', target: '_blank' do %>
+      <%= image_tag("it-at-uc-placeholder.png", class: 'img-responsive') %>
+    <% end %>
   </div>
 
   <div class="col-sm-3 col-xs-6">
-    <%= image_tag("hydra-logo.png", class: 'img-responsive') %>
+    <%= link_to 'http://projecthydra.org', target: '_blank' do %>
+      <%= image_tag("hydra-logo.png", class: 'img-responsive') %>
+    <% end %>
   </div>
   </div>
 </div>

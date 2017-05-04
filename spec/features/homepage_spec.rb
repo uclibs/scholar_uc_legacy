@@ -64,4 +64,11 @@ RSpec.describe 'the homepage', type: :feature do
   it 'renders the partner branding' do
     expect(page).to have_css('div', class: 'partner-branding')
   end
+
+  it 'renders the partner links' do
+    expect(page).to have_link(href: 'http://libraries.uc.edu')
+    expect(page).to have_link(href: 'http://research.uc.edu')
+    expect(page).to have_link(href: 'http://ucit.uc.edu')
+    expect(page).to have_link(href: 'http://projecthydra.org')
+  end
 end
