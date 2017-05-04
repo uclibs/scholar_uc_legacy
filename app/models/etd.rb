@@ -25,7 +25,7 @@ class Etd < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  property :degree, predicate: ::RDF::URI.new('http://purl.org/dc/terms/subject#degree') do |index|
+  property :degree, predicate: ::RDF::URI.new('http://purl.org/dc/terms/subject#degree'), multiple: false do |index|
     index.as :stored_searchable
   end
 
