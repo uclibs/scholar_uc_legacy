@@ -8,7 +8,7 @@ describe 'permalinks' do
 
   describe 'concerns' do
     let(:work_type) { "generic_work" }
-    let(:work) { create(:generic_work_with_one_file, title: ["Magnificent splendor"], source: ["The Internet"], based_near: ["USA"], user: user) }
+    let(:work) { create(:generic_work_with_one_file, title: ["Magnificent splendor"], alt_description: "My description", source: ["The Internet"], based_near: ["USA"], user: user) }
     let(:user) { create(:user) }
     let(:work_path) { "/concern/#{work_type}s/#{work.id}" }
     let(:file_path) { "/concern/parent/#{work.id}/file_sets/#{work.file_sets.first.id}" }
