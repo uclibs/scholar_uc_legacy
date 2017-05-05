@@ -5,6 +5,7 @@ shared_examples 'doi request' do |work_class|
   let(:work_without_doi) do
     create("#{work_class.to_s.underscore}_with_one_file".to_sym,
            title: ["Magnificent splendor"],
+           alt_description: "My description",
            source: ["The Internet"],
            based_near: ["USA"],
            visibility: "open",
@@ -14,6 +15,7 @@ shared_examples 'doi request' do |work_class|
   let(:work_with_doi) do
     create("#{work_class.to_s.underscore}_with_one_file".to_sym,
            title: ["Magnificent splendor"],
+           alt_description: "My description",
            source: ["The Internet"],
            based_near: ["USA"],
            doi: "doi:1234foo",

@@ -28,6 +28,14 @@ class SolrDocument
   use_extension(Hydra::ContentNegotiation)
 
   # Added for All Work Types
+  def alt_description
+    self[Solrizer.solr_name('alt_description')]
+  end
+
+  def alt_date_created
+    self[Solrizer.solr_name('alt_date_created')]
+  end
+
   def alternate_title
     self[Solrizer.solr_name('alternate_title')]
   end

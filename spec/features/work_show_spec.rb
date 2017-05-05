@@ -3,7 +3,7 @@ require 'rails_helper'
 
 shared_examples 'submission form with form#fileupload' do |work_class|
   let(:work_type) { work_class.name.underscore }
-  let(:work) { create("#{work_type}_with_one_file".to_sym, title: ["Magnificent splendor"], source: ["The Internet"], based_near: ["USA"], user: user) }
+  let(:work) { create("#{work_type}_with_one_file".to_sym, title: ["Magnificent splendor"], alt_description: "My description", source: ["The Internet"], based_near: ["USA"], user: user) }
   let(:user) { create(:user) }
   let(:work_path) { "/concern/#{work_type}s/#{work.id}" }
 
@@ -25,7 +25,7 @@ shared_examples 'submission form with form#fileupload' do |work_class|
 end
 
 shared_examples 'submission form without form#fileupload' do |work_class|
-  let(:work) { create(:public_generic_work, title: ["Magnificent splendor"], source: ["The Internet"]) }
+  let(:work) { create(:public_generic_work, title: ["Magnificent splendor"], alt_description: "My description", source: ["The Internet"]) }
   let(:work_type) { work_class.name.underscore }
   let(:work_path) { "/concern/#{work_type}s/#{work.id}" }
   before do
