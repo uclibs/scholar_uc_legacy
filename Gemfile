@@ -1,20 +1,18 @@
 source 'https://rubygems.org'
 
-gem 'sufia', '7.3.0'
-gem 'curation_concerns', '1.7.7'
-gem 'active-fedora', '11.1.5'
+gem 'hyrax', github: 'projecthydra-labs/hyrax', ref: '6258bde4ff675e722949c1e48e79f371418dc450'
 
 #repository manager
 gem 'hydra-role-management'
-gem 'orcid', github: 'uclibs/orcid'
+#gem 'orcid', github: 'uclibs/orcid'
 gem 'riiif', '~> 0.2.0'
 gem 'iiif_manifest', '~> 0.1.2'
-gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
+#gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
 gem 'browse-everything', git: 'https://github.com/uclibs/browse-everything.git', ref: 'be25819f14d485768698d27a3a35deaa7f60d5c7'
 gem 'kaltura', '0.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+gem 'rails', '5.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -75,7 +73,7 @@ end
 gem 'rsolr', '~> 1.0'
 gem 'devise'
 gem 'devise-guests', '~> 0.5'
-gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth'
+#gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth'
 group :development, :test do
   gem 'vcr'
   gem 'webmock'
