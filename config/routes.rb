@@ -3,7 +3,7 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   resources :collection_avatars
   resource :featured_collection, only: [:create, :destroy]
-  mount Orcid::Engine => "/orcid"
+  # mount Orcid::Engine => "/orcid"
   mount BrowseEverything::Engine => '/browse'
   Hydra::BatchEdit.add_routes(self)
   mount Qa::Engine => '/authorities'
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     concerns :searchable
   end
 
-  devise_for :users, controllers: { omniauth_callbacks: 'callbacks', registrations: "registrations" }
+  devise_for :users, controllers: { registrations: "registrations" } # { omniauth_callbacks: 'callbacks', registrations: "registrations" }
 
   mount Hydra::RoleManagement::Engine => '/'
 
