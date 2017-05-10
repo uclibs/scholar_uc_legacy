@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # Generated via
 #  `rails generate curation_concerns:work Dataset`
-module CurationConcerns
+module Hyrax
   class DatasetForm < Sufia::Forms::WorkForm
     self.model_class = ::Dataset
 

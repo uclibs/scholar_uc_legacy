@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-require CurationConcerns::Engine.root.join('app/indexers/curation_concerns/file_set_indexer.rb')
-module CurationConcerns
+require Hyrax::Engine.root.join('app/indexers/curation_concerns/file_set_indexer.rb')
+module Hyrax
   class FileSetIndexer < ActiveFedora::IndexingService
     STORED_LONG = Solrizer::Descriptor.new(:long, :stored)
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # Generated via
 #  `rails generate curation_concerns:work Article`
-module CurationConcerns
+module Hyrax
   class ArticleForm < Sufia::Forms::WorkForm
     self.model_class = ::Article
 

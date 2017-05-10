@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-require CurationConcerns::Engine.root.join('app/helpers/curation_concerns/ability_helper.rb')
-module CurationConcerns
+require Hyrax::Engine.root.join('app/helpers/curation_concerns/ability_helper.rb')
+module Hyrax
   module AbilityHelper
     private
 

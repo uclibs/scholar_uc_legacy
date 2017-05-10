@@ -27,7 +27,7 @@
             <li>
               <%= link_to(
                     t("sufia.toolbar.works.new"),
-                    CurationConcerns::Engine.routes.url_helpers.new_classify_concern_path,
+                    Hyrax::Engine.routes.url_helpers.new_classify_concern_path,
                     class: "item-option contextual-quick-classify",
                     role: 'menuitem'
                   ) %>
@@ -35,7 +35,7 @@
             <li>
               <%= link_to(
                     t("sufia.toolbar.works.batch"),
-                    CurationConcerns::Engine.routes.url_helpers.new_classify_concern_path(type: 'batch'),
+                    Hyrax::Engine.routes.url_helpers.new_classify_concern_path(type: 'batch'),
                     class: "item-option contextual-quick-classify",
                     role: 'menuitem'
                   ) %>

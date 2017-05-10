@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Sufia::Forms
-  class CollectionForm < CurationConcerns::Forms::CollectionEditForm
+  class CollectionForm < Hyrax::Forms::CollectionEditForm
     delegate :id, to: :model
 
     # TODO: remove this when https://github.com/projecthydra/hydra-editor/pull/115

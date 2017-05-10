@@ -2,8 +2,8 @@
 # Generated via
 #  `rails generate curation_concerns:work Image`
 class Image < ActiveFedora::Base
-  include ::CurationConcerns::WorkBehavior
-  include ::CurationConcerns::BasicMetadata
+  include ::Hyrax::WorkBehavior
+  include ::Hyrax::BasicMetadata
   include Sufia::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
   include RemoveProxyEditors::RemoveUser

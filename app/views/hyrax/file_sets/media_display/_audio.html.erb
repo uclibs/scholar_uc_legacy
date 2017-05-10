@@ -4,7 +4,7 @@
     Your browser does not support the audio tag.
   </audio>
 
-  <% if CurationConcerns.config.display_media_download_link %>
+  <% if Hyrax.config.display_media_download_link %>
     <% if file_is_too_large_to_download(file_set) %>            
       <%= show_request_file_button(file_set, t('curation_concerns.show.requestable_content.audio_link')) %>
     <% else %>

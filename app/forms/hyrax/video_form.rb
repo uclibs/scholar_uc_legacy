@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # Generated via
 #  `rails generate curation_concerns:work Video`
-module CurationConcerns
+module Hyrax
   class VideoForm < Sufia::Forms::WorkForm
     self.model_class = ::Video
 
