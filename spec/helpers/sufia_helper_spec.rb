@@ -66,6 +66,44 @@ describe SufiaHelper, type: :helper do
     end
   end
 
+  describe "#old_or_new_college" do
+    let(:object_with_college_value) { double('object', college: 'COB') }
+    let(:object_with_no_college_value) { double('object', college: '') }
+
+    before do
+      allow(helper).to receive(:current_user).and_return(
+        double('user', college: 'COM')
+      )
+    end
+
+    it 'uses the preexisting college value if it already exists in the work' do
+      expect(helper.old_or_new_college(object_with_college_value)).to eq('COB')
+    end
+
+    it 'fills in the college value from user profile if it does not already exist in a work.' do
+      expect(helper.old_or_new_college(object_with_no_college_value)).to eq('COM')
+    end
+  end
+
+  describe "#old_or_new_department" do
+    let(:object_with_department_value) { double('object', department: 'Chemistry') }
+    let(:object_with_no_department_value) { double('object', department: '') }
+
+    before do
+      allow(helper).to receive(:current_user).and_return(
+        double('user', department: 'Biology')
+      )
+    end
+
+    it 'uses the preexisting department value if it already exists in the work' do
+      expect(helper.old_or_new_department(object_with_department_value)).to eq('Chemistry')
+    end
+
+    it 'fills in the department value from user profile if it does not already exist in a work.' do
+      expect(helper.old_or_new_department(object_with_no_department_value)).to eq('Biology')
+    end
+  end
+
   describe "#user_college" do
     before do
       allow(helper).to receive(:current_user).and_return(
@@ -73,9 +111,9 @@ describe SufiaHelper, type: :helper do
       )
     end
 
-    let(:etd) { Etd.new }
-    let(:student_work) { StudentWork.new }
-    let(:other_object) { GenericWork.new }
+    let(:etd) { CurationConcerns::EtdForm.new(Etd.new, nil) }
+    let(:student_work) { CurationConcerns::StudentWorkForm.new(StudentWork.new, nil) }
+    let(:other_object) { CurationConcerns::GenericWorkForm.new(GenericWork.new, nil) }
 
     it "is blank if the work is an ETD" do
       expect(helper.user_college(etd)).to eq("")
@@ -97,9 +135,9 @@ describe SufiaHelper, type: :helper do
       )
     end
 
-    let(:etd) { Etd.new }
-    let(:student_work) { StudentWork.new }
-    let(:other_object) { GenericWork.new }
+    let(:etd) { CurationConcerns::EtdForm.new(Etd.new, nil) }
+    let(:student_work) { CurationConcerns::StudentWorkForm.new(StudentWork.new, nil) }
+    let(:other_object) { CurationConcerns::GenericWorkForm.new(GenericWork.new, nil) }
 
     it "is blank if the work is an ETD" do
       expect(helper.user_department(etd)).to eq("")
