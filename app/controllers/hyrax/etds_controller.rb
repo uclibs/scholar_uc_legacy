@@ -2,16 +2,15 @@
 # Generated via
 #  `rails generate curation_concerns:work Etd`
 
-module CurationConcerns
+module Hyrax
   class EtdsController < ApplicationController
-    include CurationConcerns::CurationConcernController
-    # Adds Sufia behaviors to the controller.
-    include Sufia::WorksControllerBehavior
+    # Adds Hyrax behaviors to the controller.
+    include Hyrax::WorksControllerBehavior
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = Etd
 
-    include Sufia::IIIFManifest
+    include Hyrax::IIIFManifest
 
     self.show_presenter = EtdPresenter
   end
