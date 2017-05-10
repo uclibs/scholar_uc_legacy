@@ -2,16 +2,15 @@
 # Generated via
 #  `rails generate curation_concerns:work StudentWork`
 
-module CurationConcerns
+module Hyrax
   class StudentWorksController < ApplicationController
-    include CurationConcerns::CurationConcernController
-    # Adds Sufia behaviors to the controller.
-    include Sufia::WorksControllerBehavior
+    # Adds Hyrax behaviors to the controller.
+    include Hyrax::WorksControllerBehavior
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = StudentWork
 
-    include Sufia::IIIFManifest
+    include Hyrax::IIIFManifest
 
     self.show_presenter = StudentWorkPresenter
   end

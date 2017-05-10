@@ -2,7 +2,6 @@
 class CatalogController < ApplicationController
   include Hydra::Catalog
   include Hydra::Controller::ControllerBehavior
-  include Sufia::Catalog
 
   # These before_filters apply the hydra access controls
   before_action :enforce_show_permissions, only: :show
@@ -36,7 +35,7 @@ class CatalogController < ApplicationController
     config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
     config.show.partials.insert(1, :openseadragon)
 
-    config.search_builder_class = Sufia::SearchBuilder
+    config.search_builder_class = Hyrax::CatalogSearchBuilder
 
     # Show gallery view
     config.view.gallery.partials = [:index_header, :index]

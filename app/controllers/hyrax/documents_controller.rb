@@ -2,16 +2,15 @@
 # Generated via
 #  `rails generate curation_concerns:work Document`
 
-module CurationConcerns
+module Hyrax
   class DocumentsController < ApplicationController
-    include CurationConcerns::CurationConcernController
-    # Adds Sufia behaviors to the controller.
-    include Sufia::WorksControllerBehavior
+    # Adds Hyrax behaviors to the controller.
+    include Hyrax::WorksControllerBehavior
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = Document
 
-    include Sufia::IIIFManifest
+    include Hyrax::IIIFManifest
 
     self.show_presenter = DocumentPresenter
   end
