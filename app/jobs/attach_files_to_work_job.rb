@@ -5,7 +5,7 @@ class AttachFilesToWorkJob < ActiveJob::Base
     uploaded_files.each do |uploaded_file|
       file_set = FileSet.new
       user = User.find_by_user_key(work.depositor)
-      actor = CurationConcerns::Actors::FileSetActor.new(file_set, user)
+      actor = Hyrax::Actors::FileSetActor.new(file_set, user)
       actor.create_metadata(work, visibility: work.visibility) do |file|
         file.permissions_attributes = work.permissions.map(&:to_hash)
       end

@@ -2,8 +2,8 @@
 # Generated via
 #  `rails generate curation_concerns:work StudentWork`
 class StudentWork < ActiveFedora::Base
-  include ::CurationConcerns::WorkBehavior
-  include ::CurationConcerns::BasicMetadata
+  include ::Hyrax::WorkBehavior
+  include ::Hyrax::BasicMetadata
   include Sufia::WorkBehavior
   self.human_readable_type = 'Student Work'
   self.human_readable_short_description = 'Deposit any kind of student work (excluding Theses and Dissertations).'

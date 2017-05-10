@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-require CurationConcerns::Engine.root.join('app/presenters/curation_concerns/presents_attributes.rb')
-module CurationConcerns
+require Hyrax::Engine.root.join('app/presenters/curation_concerns/presents_attributes.rb')
+module Hyrax
   module PresentsAttributes
     def submitter_profile
       user = ::User.find_by_email(depositor)

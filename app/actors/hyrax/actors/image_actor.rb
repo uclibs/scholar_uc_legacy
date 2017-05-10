@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 # Generated via
 #  `rails generate curation_concerns:work Image`
-module CurationConcerns
+module Hyrax
   module Actors
-    class ImageActor < CurationConcerns::Actors::BaseActor
+    class ImageActor < Hyrax::Actors::BaseActor
       private
 
         def save

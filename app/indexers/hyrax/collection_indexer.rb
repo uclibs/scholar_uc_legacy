@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module CurationConcerns
+module Hyrax
   class CollectionIndexer < Hydra::PCDM::CollectionIndexer
     include IndexesThumbnails
     STORED_LONG = Solrizer::Descriptor.new(:long, :stored)

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 # Generated via
 #  `rails generate curation_concerns:work Dataset`
-module CurationConcerns
+module Hyrax
   module Actors
-    class DatasetActor < CurationConcerns::Actors::BaseActor
+    class DatasetActor < Hyrax::Actors::BaseActor
       private
 
         def save

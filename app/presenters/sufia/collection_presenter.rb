@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Sufia
-  class CollectionPresenter < CurationConcerns::CollectionPresenter
+  class CollectionPresenter < Hyrax::CollectionPresenter
     delegate :thumbnail_id, :resource_type, :based_near, :related_url, :identifier, to: :solr_document
 
     # Terms is the list of fields displayed by
