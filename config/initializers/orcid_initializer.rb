@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+=begin
 Orcid.configure do |config|
   # # Configure your Orcid Client Application. See URL below for more
   # # information
@@ -16,3 +17,4 @@ Orcid.configure do |config|
   #   ]
   # )
 end
+=end
