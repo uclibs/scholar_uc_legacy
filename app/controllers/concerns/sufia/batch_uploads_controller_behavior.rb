@@ -3,7 +3,6 @@ module Sufia
   module BatchUploadsControllerBehavior
     extend ActiveSupport::Concern
     include Hydra::Controller::ControllerBehavior
-    include CurationConcerns::CurationConcernController
 
     included do
       self.work_form_service = BatchUploadFormService
@@ -31,7 +30,7 @@ module Sufia
       redirect_after_update
     end
 
-    class BatchUploadFormService < CurationConcerns::WorkFormService
+    class BatchUploadFormService < Hyrax::WorkFormService
       # Gives the class of the form.
       def self.form_class(_curation_concern = nil)
         ::Sufia::Forms::BatchUploadForm

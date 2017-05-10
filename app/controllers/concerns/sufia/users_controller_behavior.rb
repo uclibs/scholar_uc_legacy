@@ -53,7 +53,7 @@ module Sufia::UsersControllerBehavior
     end
 
     def user_work_count(user)
-      CurationConcerns::WorkRelation.new.where(DepositSearchBuilder.depositor_field => user.user_key).count
+      Hyrax::WorkRelation.new.where(DepositSearchBuilder.depositor_field => user.user_key).count
     end
 
     def user_params

@@ -2,11 +2,10 @@
 # Generated via
 #  `rails generate curation_concerns:work Article`
 
-module CurationConcerns
+module Hyrax
   class ArticlesController < ApplicationController
-    include CurationConcerns::CurationConcernController
     # Adds Sufia behaviors to the controller.
-    include Sufia::WorksControllerBehavior
+    include Hyrax::WorksControllerBehavior
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = Article

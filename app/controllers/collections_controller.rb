@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class CollectionsController < ApplicationController
-  include CurationConcerns::CollectionsControllerBehavior
+  include Hyrax::CollectionsControllerBehavior
   include Sufia::CollectionsControllerBehavior
 
   def new

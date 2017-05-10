@@ -2,16 +2,15 @@
 # Generated via
 #  `rails generate curation_concerns:work Dataset`
 
-module CurationConcerns
+module Hyrax
   class DatasetsController < ApplicationController
-    include CurationConcerns::CurationConcernController
-    # Adds Sufia behaviors to the controller.
-    include Sufia::WorksControllerBehavior
+    # Adds Hyrax behaviors to the controller.
+    include Hyrax::WorksControllerBehavior
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = Dataset
 
-    include Sufia::IIIFManifest
+    include Hyrax::IIIFManifest
 
     def new
       super
