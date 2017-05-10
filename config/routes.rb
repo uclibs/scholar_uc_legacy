@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resource :featured_collection, only: [:create, :destroy]
   # mount Orcid::Engine => "/orcid"
   mount BrowseEverything::Engine => '/browse'
-  Hydra::BatchEdit.add_routes(self)
   mount Qa::Engine => '/authorities'
 
   mount Riiif::Engine => '/images'
@@ -26,7 +25,6 @@ Rails.application.routes.draw do
 
   mount Hydra::RoleManagement::Engine => '/'
 
-  mount CurationConcerns::Engine, at: '/'
   resources :welcome, only: 'index'
   resources :welcome_page, only: [:index, :create]
   root 'sufia/homepage#index'
@@ -125,8 +123,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  Hydra::BatchEdit.add_routes(self)
   # This must be the very last route in the file because it has a catch-all route for 404 errors.
   # This behavior seems to show up only in production mode.
-  mount Sufia::Engine => '/'
+  mount Hyrax::Engine => '/'
 end
