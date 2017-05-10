@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Sufia
-  class WorkIndexer < CurationConcerns::WorkIndexer
+  class WorkIndexer < Hyrax::WorkIndexer
     self.thumbnail_path_service = Sufia::WorkThumbnailPathService
     def generate_solr_document
       super.tap do |solr_doc|

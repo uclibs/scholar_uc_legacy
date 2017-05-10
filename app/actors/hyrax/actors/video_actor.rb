@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 # Generated via
 #  `rails generate curation_concerns:work Video`
-module CurationConcerns
+module Hyrax
   module Actors
-    class VideoActor < CurationConcerns::Actors::BaseActor
+    class VideoActor < Hyrax::Actors::BaseActor
       private
 
         def save

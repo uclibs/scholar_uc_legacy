@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 # Generated via
 #  `rails generate curation_concerns:work Article`
-module CurationConcerns
+module Hyrax
   module Actors
-    class ArticleActor < CurationConcerns::Actors::BaseActor
+    class ArticleActor < Hyrax::Actors::BaseActor
       private
 
         def save
