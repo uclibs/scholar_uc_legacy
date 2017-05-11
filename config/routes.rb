@@ -69,6 +69,8 @@ Rails.application.routes.draw do
 
   match 'show/:id' => 'common_objects#show', via: :get, as: 'common_object'
 
+  resources :classify_concerns, only: [:new, :create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
