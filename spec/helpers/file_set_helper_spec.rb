@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require 'rails_helper'
-include Devise::TestHelpers
+# include Devise::TestHelpers
 
 describe FileSetHelper, type: :helper do
   let(:user) { FactoryGirl.create(:user) }

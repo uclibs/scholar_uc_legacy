@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe UsersController, type: :controller do
+describe Hyrax::UsersController, type: :controller do
   describe "#search" do
     let!(:user) { FactoryGirl.create(:user) }
     before do
