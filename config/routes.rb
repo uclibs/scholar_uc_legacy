@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :welcome, only: 'index'
   resources :welcome_page, only: [:index, :create]
   root 'hyrax/homepage#index'
-  curation_concerns_collections
+  # curation_concerns_collections
   curation_concerns_basic_routes do
     member do
       get :manifest

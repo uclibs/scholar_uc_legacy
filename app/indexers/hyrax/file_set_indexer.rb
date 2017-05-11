@@ -2,7 +2,7 @@
 require Hyrax::Engine.root.join('app/indexers/hyrax/file_set_indexer.rb')
 module Hyrax
   class FileSetIndexer < ActiveFedora::IndexingService
-    STORED_LONG = Solrizer::Descriptor.new(:long, :stored)
+#    STORED_LONG = Solrizer::Descriptor.new(:long, :stored)
 
     def generate_solr_document
       super.tap do |solr_doc|
