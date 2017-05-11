@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Hyrax
-  class WorkIndexer < Hyrax::WorkIndexer
+  class WorkIndexer
     self.thumbnail_path_service = Hyrax::WorkThumbnailPathService
     def generate_solr_document
       super.tap do |solr_doc|
