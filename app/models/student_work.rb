@@ -4,7 +4,7 @@
 class StudentWork < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
   include ::Hyrax::BasicMetadata
-  include Sufia::WorkBehavior
+  include Hyrax::WorkBehavior
   self.human_readable_type = 'Student Work'
   self.human_readable_short_description = 'Deposit any kind of student work (excluding Theses and Dissertations).'
   include RemotelyIdentifiedByDoi::Attributes

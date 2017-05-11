@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Sufia
+module Hyrax
   class CollectionPresenter < Hyrax::CollectionPresenter
     delegate :thumbnail_id, :resource_type, :based_near, :related_url, :identifier, to: :solr_document
 

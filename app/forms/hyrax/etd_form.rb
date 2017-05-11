@@ -2,7 +2,7 @@
 # Generated via
 #  `rails generate curation_concerns:work Etd`
 module Hyrax
-  class EtdForm < Sufia::Forms::WorkForm
+  class EtdForm < Hyrax::Forms::WorkForm
     self.model_class = ::Etd
 
     ## Adding custom descriptive metadata terms

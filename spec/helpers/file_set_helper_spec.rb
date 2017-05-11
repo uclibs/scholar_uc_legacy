@@ -11,13 +11,13 @@ describe FileSetHelper, type: :helper do
 
   describe 'show_request_file_button' do
     it 'renders the request file button' do
-      expect(helper.show_request_file_button(file_set, button_text)).to have_link(button_text, href: "#{sufia.contact_path}?#{helper.subject_and_message}#{main_app.root_url}#{main_app.download_path(file_set)}")
+      expect(helper.show_request_file_button(file_set, button_text)).to have_link(button_text, href: "#{hyrax.contact_path}?#{helper.subject_and_message}#{main_app.root_url}#{main_app.download_path(file_set)}")
     end
   end
 
   describe 'show_request_file_action' do
     it 'renders the request file action link' do
-      expect(helper.show_request_file_action(file_set, button_text)).to have_link("Download #{file_set.to_s.inspect}", href: "#{sufia.contact_path}?#{helper.subject_and_message}#{main_app.root_url}#{main_app.download_path(file_set)}")
+      expect(helper.show_request_file_action(file_set, button_text)).to have_link("Download #{file_set.to_s.inspect}", href: "#{hyrax.contact_path}?#{helper.subject_and_message}#{main_app.root_url}#{main_app.download_path(file_set)}")
     end
   end
 

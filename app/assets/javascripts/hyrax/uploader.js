@@ -20,7 +20,7 @@
   'use strict';
 
   $.fn.extend({
-    sufiaUploader: function( options ) {
+    hyraxUploader: function( options ) {
       // Initialize our jQuery File Upload widget.
       // TODO: get these values from configuration.
       this.fileupload($.extend({

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Sufia::Forms
+module Hyrax::Forms
   class CollectionForm < Hyrax::Forms::CollectionEditForm
     delegate :id, to: :model
 

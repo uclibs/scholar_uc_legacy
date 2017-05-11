@@ -26,7 +26,7 @@ en:
         subject: "Enter terms or keywords that describe your work.</br>Examples:</br><ul><li>Biology</li><li>Art History</li><li>Economics</li></ul>"
         time_period: "Enter the period or date associated with the subject of your work.</br>Examples:</br><ul><li>19th century</li><li>Middle Ages</li><li>Jurassic Period</li></ul>"
         title: "Enter the title of your work. If the work doesn't have a title, please enter a brief descriptive label."
-  sufia:
+  hyrax:
     homepage:
       featured_works:
         tab_label:          'Featured Works'

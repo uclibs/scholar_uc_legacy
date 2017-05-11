@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# taken from sufia 7.1
+# taken from hyrax 7.1
 FactoryGirl.define do
   factory :generic_work, aliases: [:work, :private_generic_work], class: 'GenericWork' do
     transient do

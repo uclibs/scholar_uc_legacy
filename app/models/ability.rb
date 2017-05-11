@@ -2,7 +2,7 @@
 class Ability
   include Hydra::Ability
 
-  include Sufia::Ability
+  include Hyrax::Ability
 
   self.ability_logic += [:everyone_can_create_curation_concerns]
 
@@ -34,7 +34,7 @@ class Ability
 
     # remove create ability for Etd's from all users
     def curation_concerns_models
-      default_curation_concerns = Sufia.config.curation_concerns
+      default_curation_concerns = Hyrax.config.curation_concerns
       default_curation_concerns.delete(Etd)
       [::FileSet, ::Collection] + default_curation_concerns
     end

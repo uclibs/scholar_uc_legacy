@@ -1,3 +1,3 @@
 class ContactFormController < ApplicationController
-  include Sufia::ContactFormControllerBehavior
+  include Hyrax::ContactFormControllerBehavior
 end

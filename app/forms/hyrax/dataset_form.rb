@@ -2,7 +2,7 @@
 # Generated via
 #  `rails generate curation_concerns:work Dataset`
 module Hyrax
-  class DatasetForm < Sufia::Forms::WorkForm
+  class DatasetForm < Hyrax::Forms::WorkForm
     self.model_class = ::Dataset
 
     ## Adding custom descriptive metadata terms

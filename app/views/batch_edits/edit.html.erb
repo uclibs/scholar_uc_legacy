@@ -20,7 +20,7 @@
                                 url: batch_edits_path,
                                 method: :put,
                                 remote: true,
-                                builder: Sufia::FormBuilder,
+                                builder: Hyrax::FormBuilder,
                                 html: { id: "form_#{term.to_s}",
                                         class: "ajax-form" },
                                 data: { model: @form.model_name.param_key } do |f| %>

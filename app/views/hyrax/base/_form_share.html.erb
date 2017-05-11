@@ -11,7 +11,7 @@
 <table class="table">
   <tr id="file_permissions">
     <td width="20%">
-      <%= Sufia.config.owner_permission_levels.keys[0] %>
+      <%= Hyrax.config.owner_permission_levels.keys[0] %>
     </td>
     <td width="60%">
       <%= label_tag :owner_access, class: "control-label" do %>
@@ -24,7 +24,7 @@
     <% next if ['public', 'registered', depositor].include? permission_fields.object.agent_name.downcase %>
     <tr>
       <td>
-	<%= permission_fields.select :access, Sufia.config.permission_levels, {}, class: 'form-control select_perm' %>
+	<%= permission_fields.select :access, Hyrax.config.permission_levels, {}, class: 'form-control select_perm' %>
 
       </td>
       <td>
@@ -38,22 +38,22 @@
 </table>
 
 <h2>Share work with other users</h2>
-<p class="sr-only">Use the add button to give access to one <%=t('sufia.account_label') %> at a time (it will be added to the list below).
-  Select the user, by name or <%= t('sufia.account_label') %>. Then select the access level you wish to grant and click on Add this
-  <%= t('sufia.account_label') %> to complete adding the permission.
+<p class="sr-only">Use the add button to give access to one <%=t('hyrax.account_label') %> at a time (it will be added to the list below).
+  Select the user, by name or <%= t('hyrax.account_label') %>. Then select the access level you wish to grant and click on Add this
+  <%= t('hyrax.account_label') %> to complete adding the permission.
 </p>
 <div class="form-group row">
   <div class="col-sm-5">
-    <label for="new_user_name_skel" class="sr-only"><%= t('sufia.account_label') %> (without the <%= t('sufia.directory.suffix') %> part)</label>
+    <label for="new_user_name_skel" class="sr-only"><%= t('hyrax.account_label') %> (without the <%= t('hyrax.directory.suffix') %> part)</label>
     <%= text_field_tag 'new_user_name_skel', nil %>
   </div>
   <div class="col-sm-4">
     <label for="new_user_permission_skel" class="sr-only">Access type to grant</label>
-    <%= select_tag 'new_user_permission_skel', options_for_select(Sufia.config.permission_levels), class: 'form-control' %>
+    <%= select_tag 'new_user_permission_skel', options_for_select(Hyrax.config.permission_levels), class: 'form-control' %>
   </div>
   <div class="col-sm-3">
     <button class="btn btn-default" id="add_new_user_skel">
-      <span class="sr-only">Add this <%= t('sufia.account_label') %></span>
+      <span class="sr-only">Add this <%= t('hyrax.account_label') %></span>
       <span aria-hidden="true"><i class="glyphicon glyphicon-plus"></i></span>
     </button>
     <br /> <span id="directory_user_result"></span>

@@ -5,8 +5,8 @@ class SolrDocument
 
   # Adds Hyrax behaviors to the SolrDocument.
   include Hyrax::SolrDocumentBehavior
-  # Adds Sufia behaviors to the SolrDocument.
-  include Sufia::SolrDocumentBehavior
+  # Adds Hyrax behaviors to the SolrDocument.
+  include Hyrax::SolrDocumentBehavior
 
   # self.unique_key = 'id'
 
