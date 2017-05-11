@@ -57,7 +57,7 @@ describe '/_toolbar.html.erb', type: :view do
       let(:presenter) { instance_double(Hyrax::SelectTypeListPresenter, many?: false, first_model: GenericWork) }
       it "has a link to upload" do
         render
-        expect(rendered).to have_link('New Work', href: new_curation_concerns_generic_work_path)
+        expect(rendered).to have_link('New Work', href: new_hyrax_generic_work_path)
         expect(rendered).to have_link('Batch Create', href: hyrax.new_batch_upload_path(payload_concern: 'GenericWork'))
       end
     end

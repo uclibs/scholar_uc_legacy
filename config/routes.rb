@@ -28,14 +28,14 @@ Rails.application.routes.draw do
   resources :welcome, only: 'index'
   resources :welcome_page, only: [:index, :create]
   root 'hyrax/homepage#index'
-  curation_concerns_collections
-  curation_concerns_basic_routes do
+  hyrax_collections
+  hyrax_basic_routes do
     member do
       get :manifest
     end
   end
-  # curation_concerns_basic_routes
-  curation_concerns_embargo_management
+  # hyrax_basic_routes
+  hyrax_embargo_management
   concern :exportable, Blacklight::Routes::Exportable.new
 
   get 'about' => 'static#about'

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe 'curation_concerns/base/_attributes.html.erb' do
+describe 'hyrax/base/_attributes.html.erb' do
   let(:college) { 'Libraries' }
   let(:department) { 'Digital Repositories' }
   let(:related_url) { 'http://www.uc.edu' }
@@ -26,7 +26,7 @@ describe 'curation_concerns/base/_attributes.html.erb' do
   before do
     allow(view).to receive(:dom_class) { '' }
 
-    render 'curation_concerns/base/attributes', presenter: presenter
+    render 'hyrax/base/attributes', presenter: presenter
   end
 
   it 'has links to search for other objects with the same metadata' do

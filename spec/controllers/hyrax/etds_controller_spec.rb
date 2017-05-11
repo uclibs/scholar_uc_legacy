@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Etd`
+#  `rails generate hyrax:work Etd`
 require 'rails_helper'
 
 describe Hyrax::EtdsController do
@@ -14,7 +14,7 @@ describe Hyrax::EtdsController do
     before { get :new }
     it "is successful" do
       expect(response).to be_successful
-      expect(response).to render_template("layouts/curation_concerns/1_column")
+      expect(response).to render_template("layouts/hyrax/1_column")
       expect(assigns[:curation_concern]).to be_kind_of Etd
     end
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Image`
+#  `rails generate hyrax:work Image`
 require 'rails_helper'
 
 describe Hyrax::ImagesController do
@@ -12,7 +12,7 @@ describe Hyrax::ImagesController do
     before { get :new }
     it "is successful" do
       expect(response).to be_successful
-      expect(response).to render_template("layouts/curation_concerns/1_column")
+      expect(response).to render_template("layouts/hyrax/1_column")
       expect(assigns[:curation_concern]).to be_kind_of Image
     end
 

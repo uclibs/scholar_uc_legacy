@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Document`
+#  `rails generate hyrax:work Document`
 require 'rails_helper'
 
 RSpec.describe Hyrax::DocumentForm do
