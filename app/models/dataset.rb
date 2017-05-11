@@ -6,6 +6,7 @@ class Dataset < ActiveFedora::Base
   include ::CurationConcerns::BasicMetadata
   include Sufia::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
+  include RemoveProxyEditors::RemoveUser
 
   self.human_readable_type = 'Dataset'
   self.human_readable_short_description = 'Files containing collections of data, including: raw data, spreadsheets, logs, etc.'

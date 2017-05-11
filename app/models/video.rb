@@ -6,6 +6,7 @@ class Video < ActiveFedora::Base
   include ::CurationConcerns::BasicMetadata
   include Sufia::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
+  include RemoveProxyEditors::RemoveUser
 
   self.human_readable_type = 'Video'
   self.human_readable_short_description = 'Works that include video, film, slide, or audio are referred to as time-based media.'

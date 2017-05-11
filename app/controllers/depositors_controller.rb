@@ -13,6 +13,7 @@ class DepositorsController < ApplicationController
   def destroy
     grantor = authorize_and_return_grantor
     grantee = ::User.from_url_component(params[:id])
+    ProxyEditRemovalJob.perform_now(grantor, ::User.from_url_component(params[:id]))
     send_removed_proxy_email(grantor, grantee) if grantor.can_receive_deposits_from.delete(grantee)
     head :ok
   end

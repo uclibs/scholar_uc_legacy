@@ -6,6 +6,7 @@ class Document < ActiveFedora::Base
   include ::CurationConcerns::BasicMetadata
   include Sufia::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
+  include RemoveProxyEditors::RemoveUser
 
   self.human_readable_type = 'Document'
   self.human_readable_short_description = 'Text-based works other than articles: books, manuscripts, etc.'
