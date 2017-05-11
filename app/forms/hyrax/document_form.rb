@@ -2,7 +2,7 @@
 # Generated via
 #  `rails generate curation_concerns:work Document`
 module Hyrax
-  class DocumentForm < Sufia::Forms::WorkForm
+  class DocumentForm < Hyrax::Forms::WorkForm
     self.model_class = ::Document
 
     ## Adding custom descriptive metadata terms

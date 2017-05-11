@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-module Sufia
+module Hyrax
   class WorkIndexer < Hyrax::WorkIndexer
-    self.thumbnail_path_service = Sufia::WorkThumbnailPathService
+    self.thumbnail_path_service = Hyrax::WorkThumbnailPathService
     def generate_solr_document
       super.tap do |solr_doc|
         # This enables us to return a Work when we have a FileSet that matches

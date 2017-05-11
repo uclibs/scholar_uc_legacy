@@ -2,7 +2,7 @@
   <div class="col-xs-6 col-sm-3 heading-tile">
     <%= link_to(Hyrax::Engine.routes.url_helpers.new_classify_concern_path) do %>
       <span class="glyphicon glyphicon-upload"></span>
-      <%= t("sufia.dashboard.create_work") %>
+      <%= t("hyrax.dashboard.create_work") %>
     <% end %>
   </div>
 <% else %>
@@ -13,7 +13,7 @@
                             role: 'menuitem'
                     ) do %>
                     <span class="glyphicon glyphicon-upload"></span>
-                    <%= I18n.t("sufia.dashboard.create_work", work_type: concern.human_readable_type) %>
+                    <%= I18n.t("hyrax.dashboard.create_work", work_type: concern.human_readable_type) %>
       <% end %>
     <% end %>
   </div>

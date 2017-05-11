@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-require Sufia::Engine.root.join('app/controllers/sufia/admin/admin_sets_controller.rb')
-module Sufia
+require Hyrax::Engine.root.join('app/controllers/hyrax/admin/admin_sets_controller.rb')
+module Hyrax
   class Admin::AdminSetsController
     private
 

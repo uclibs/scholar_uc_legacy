@@ -4,13 +4,13 @@
 
 module Hyrax
   class ArticlesController < ApplicationController
-    # Adds Sufia behaviors to the controller.
+    # Adds Hyrax behaviors to the controller.
     include Hyrax::WorksControllerBehavior
     include Scholar::WorksControllerBehavior
 
     self.curation_concern_type = Article
 
-    include Sufia::IIIFManifest
+    include Hyrax::IIIFManifest
 
     self.show_presenter = ArticlePresenter
   end

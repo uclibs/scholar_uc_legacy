@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   resources :welcome, only: 'index'
   resources :welcome_page, only: [:index, :create]
-  root 'sufia/homepage#index'
+  root 'hyrax/homepage#index'
   curation_concerns_collections
   curation_concerns_basic_routes do
     member do
@@ -72,7 +72,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'sufia/homepage#index'
+  # root 'hyrax/homepage#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

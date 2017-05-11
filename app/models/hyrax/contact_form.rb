@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Sufia
+module Hyrax
   class ContactForm
     include ActiveModel::Model
 
@@ -18,8 +18,8 @@ module Sufia
     # in ActionMailer accepts.
     def headers
       {
-        subject: "#{Sufia.config.subject_prefix} #{subject}",
-        to: Sufia.config.contact_email,
+        subject: "#{Hyrax.config.subject_prefix} #{subject}",
+        to: Hyrax.config.contact_email,
         from: email
       }
     end

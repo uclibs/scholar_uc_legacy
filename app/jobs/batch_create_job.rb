@@ -12,7 +12,7 @@ class BatchCreateJob < ActiveJob::Base
   # @param [User] user
   # @param [Hash<String => String>] titles
   # @param [Hash<String => String>] resource_types
-  # @param [Array<String>] uploaded_files Sufia::UploadedFile IDs
+  # @param [Array<String>] uploaded_files Hyrax::UploadedFile IDs
   # @param [Hash] attributes attributes to apply to all works, including :model
   # @param [BatchCreateOperation] log
   def perform(user, titles, uploaded_files, attributes, log)

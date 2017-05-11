@@ -2,32 +2,32 @@ require: rubocop-rspec
 
 Metrics/CyclomaticComplexity:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Metrics/ClassLength:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
   - 'app/controllers/catalog_controller.rb'
 
 Metrics/ParameterLists:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Metrics/ModuleLength:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Metrics/MethodLength:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Style/LineEndConcatenation:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Style/PredicateName:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Rails/Output:
   Exclude:
@@ -36,7 +36,7 @@ Rails/Output:
 
 Rails/HasAndBelongsToMany:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 RSpec/NamedSubject:
   Enabled: false
@@ -44,11 +44,11 @@ RSpec/NamedSubject:
 RSpec/ExampleLength:
   Max: 7 
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 RSpec/VerifiedDoubles:
   Enabled: false
 
 RSpec/AnyInstance:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific

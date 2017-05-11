@@ -1,12 +1,12 @@
 # frozen_string_literal: true
-module Sufia
+module Hyrax
   # A controller mixin that provides a manifest action, which returns a
   # IIIF manifest for the presentation API
   module IIIFManifest
     extend ActiveSupport::Concern
 
     included do
-      self.show_presenter = Sufia::WorkShowPresenter
+      self.show_presenter = Hyrax::WorkShowPresenter
 
       skip_load_and_authorize_resource only: :manifest
     end

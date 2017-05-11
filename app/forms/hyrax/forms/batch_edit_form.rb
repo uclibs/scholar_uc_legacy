@@ -1,14 +1,14 @@
 # frozen_string_literal: true
-module Sufia
+module Hyrax
   module Forms
-    class BatchEditForm < Sufia::Forms::WorkForm
+    class BatchEditForm < Hyrax::Forms::WorkForm
       # Used for drawing the fields that appear on the page
       self.terms = %i(creator college department alt_description rights alt_date_created
                       alternate_title subject geo_subject time_period language
                       required_software note related_url)
       self.required_fields = %i(creator college department alt_description rights)
 
-      self.model_class = Sufia.primary_work_type
+      self.model_class = Hyrax.primary_work_type
 
       attr_accessor :names
 

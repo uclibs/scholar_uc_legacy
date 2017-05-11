@@ -27,7 +27,7 @@
 //= require blacklight/blacklight
 
 //= require_tree .
-//= require sufia
+//= require hyrax
 //= require lodash
 //= require license-selector
 //= require select-license

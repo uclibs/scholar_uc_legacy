@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-require Sufia::Engine.root.join('app/controllers/concerns/sufia/controller.rb')
-module Sufia::Controller
+require Hyrax::Engine.root.join('app/controllers/concerns/hyrax/controller.rb')
+module Hyrax::Controller
   # Override Devise method to redirect to dashboard after signing in
   def after_sign_in_path_for(resource)
     if !resource.waived_welcome_page
@@ -11,6 +11,6 @@ module Sufia::Controller
   end
 
   def landing_page
-    Sufia::Engine.routes.url_helpers.dashboard_index_path
+    Hyrax::Engine.routes.url_helpers.dashboard_index_path
   end
 end
