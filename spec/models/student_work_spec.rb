@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work StudentWork`
+#  `rails generate hyrax:work StudentWork`
 require 'rails_helper'
 
 describe StudentWork do

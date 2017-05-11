@@ -9,7 +9,7 @@ describe 'hyrax/batch_uploads/_form.html.erb', type: :view do
 
   before do
     allow(form).to receive(:payload_concern).and_return('GenericWork')
-    stub_template "curation_concerns/base/_guts4form.html.erb" => "Form guts"
+    stub_template "hyrax/base/_guts4form.html.erb" => "Form guts"
     assign(:form, form)
   end
 

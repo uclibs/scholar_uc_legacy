@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require Hyrax::Engine.root.join('app/models/concerns/curation_concerns/collection_behavior.rb')
+require Hyrax::Engine.root.join('app/models/concerns/hyrax/collection_behavior.rb')
 module Hyrax
   module CollectionBehavior
     private

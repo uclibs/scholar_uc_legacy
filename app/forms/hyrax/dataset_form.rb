@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Dataset`
+#  `rails generate hyrax:work Dataset`
 module Hyrax
   class DatasetForm < Hyrax::Forms::WorkForm
     self.model_class = ::Dataset

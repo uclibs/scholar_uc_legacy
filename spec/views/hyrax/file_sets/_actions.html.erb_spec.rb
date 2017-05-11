@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe 'curation_concerns/file_sets/_actions', type: :view do
+describe 'hyrax/file_sets/_actions', type: :view do
   before do
     allow(view).to receive_messages(blacklight_config: CatalogController.blacklight_config,
                                     blacklight_configuration_context: Blacklight::Configuration::Context.new(controller))
@@ -43,7 +43,7 @@ describe 'curation_concerns/file_sets/_actions', type: :view do
 
   context 'when the file is smaller than the max download size' do
     before do
-      render 'curation_concerns/file_sets/actions', file_set: small_file
+      render 'hyrax/file_sets/actions', file_set: small_file
     end
 
     it 'renders the download file link' do
@@ -53,7 +53,7 @@ describe 'curation_concerns/file_sets/_actions', type: :view do
 
   context 'when the image is larger than the max download size' do
     before do
-      render 'curation_concerns/file_sets/actions', file_set: large_file
+      render 'hyrax/file_sets/actions', file_set: large_file
     end
 
     it 'renders the request image link' do

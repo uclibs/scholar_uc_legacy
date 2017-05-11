@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe 'curation_concerns/file_sets/media_display', type: :view do
+describe 'hyrax/file_sets/media_display', type: :view do
   before do
     allow(view).to receive_messages(blacklight_config: CatalogController.blacklight_config,
                                     blacklight_configuration_context: Blacklight::Configuration::Context.new(controller))
@@ -43,21 +43,21 @@ describe 'curation_concerns/file_sets/media_display', type: :view do
   describe 'image' do
     context 'when the image is smaller than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/image', file_set: small_file
+        render 'hyrax/file_sets/media_display/image', file_set: small_file
       end
 
       it 'renders the download image link' do
-        expect(rendered).to have_link t('curation_concerns.show.downloadable_content.image_link')
+        expect(rendered).to have_link t('hyrax.show.downloadable_content.image_link')
       end
     end
 
     context 'when the image is larger than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/image', file_set: large_file
+        render 'hyrax/file_sets/media_display/image', file_set: large_file
       end
 
       it 'renders the request image link' do
-        expect(rendered).to have_link t('curation_concerns.show.requestable_content.image_link')
+        expect(rendered).to have_link t('hyrax.show.requestable_content.image_link')
       end
     end
   end
@@ -65,21 +65,21 @@ describe 'curation_concerns/file_sets/media_display', type: :view do
   describe 'pdf' do
     context 'when the PDF is smaller than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/pdf', file_set: small_file
+        render 'hyrax/file_sets/media_display/pdf', file_set: small_file
       end
 
       it 'renders the download PDF link' do
-        expect(rendered).to have_link t('curation_concerns.show.downloadable_content.pdf_link')
+        expect(rendered).to have_link t('hyrax.show.downloadable_content.pdf_link')
       end
     end
 
     context 'when the PDF is larger than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/pdf', file_set: large_file
+        render 'hyrax/file_sets/media_display/pdf', file_set: large_file
       end
 
       it 'renders the request PDF link' do
-        expect(rendered).to have_link t('curation_concerns.show.requestable_content.pdf_link')
+        expect(rendered).to have_link t('hyrax.show.requestable_content.pdf_link')
       end
     end
   end
@@ -87,21 +87,21 @@ describe 'curation_concerns/file_sets/media_display', type: :view do
   describe 'office_document' do
     context 'when the office document is smaller than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/office_document', file_set: small_file
+        render 'hyrax/file_sets/media_display/office_document', file_set: small_file
       end
 
       it 'renders the download office document link' do
-        expect(rendered).to have_link t('curation_concerns.show.downloadable_content.office_link')
+        expect(rendered).to have_link t('hyrax.show.downloadable_content.office_link')
       end
     end
 
     context 'when the office document is larger than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/office_document', file_set: large_file
+        render 'hyrax/file_sets/media_display/office_document', file_set: large_file
       end
 
       it 'renders the request office document link' do
-        expect(rendered).to have_link t('curation_concerns.show.requestable_content.office_link')
+        expect(rendered).to have_link t('hyrax.show.requestable_content.office_link')
       end
     end
   end
@@ -109,21 +109,21 @@ describe 'curation_concerns/file_sets/media_display', type: :view do
   describe 'video' do
     context 'when the video is smaller than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/video', file_set: small_file
+        render 'hyrax/file_sets/media_display/video', file_set: small_file
       end
 
       it 'renders the download video link' do
-        expect(rendered).to have_link t('curation_concerns.show.downloadable_content.video_link')
+        expect(rendered).to have_link t('hyrax.show.downloadable_content.video_link')
       end
     end
 
     context 'when the video is larger than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/video', file_set: large_file
+        render 'hyrax/file_sets/media_display/video', file_set: large_file
       end
 
       it 'renders the request video link' do
-        expect(rendered).to have_link t('curation_concerns.show.requestable_content.video_link')
+        expect(rendered).to have_link t('hyrax.show.requestable_content.video_link')
       end
     end
   end
@@ -131,21 +131,21 @@ describe 'curation_concerns/file_sets/media_display', type: :view do
   describe 'audio' do
     context 'when the audio is smaller than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/audio', file_set: small_file
+        render 'hyrax/file_sets/media_display/audio', file_set: small_file
       end
 
       it 'renders the download audio link' do
-        expect(rendered).to have_link t('curation_concerns.show.downloadable_content.audio_link')
+        expect(rendered).to have_link t('hyrax.show.downloadable_content.audio_link')
       end
     end
 
     context 'when the audio is larger than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/audio', file_set: large_file
+        render 'hyrax/file_sets/media_display/audio', file_set: large_file
       end
 
       it 'renders the request audio link' do
-        expect(rendered).to have_link t('curation_concerns.show.requestable_content.audio_link')
+        expect(rendered).to have_link t('hyrax.show.requestable_content.audio_link')
       end
     end
   end
@@ -153,21 +153,21 @@ describe 'curation_concerns/file_sets/media_display', type: :view do
   describe 'default' do
     context 'when the file is smaller than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/default', file_set: small_file
+        render 'hyrax/file_sets/media_display/default', file_set: small_file
       end
 
       it 'renders the download file document link' do
-        expect(rendered).to have_link t('curation_concerns.show.downloadable_content.default_link')
+        expect(rendered).to have_link t('hyrax.show.downloadable_content.default_link')
       end
     end
 
     context 'when the file is larger than the max download size' do
       before do
-        render 'curation_concerns/file_sets/media_display/default', file_set: large_file
+        render 'hyrax/file_sets/media_display/default', file_set: large_file
       end
 
       it 'renders the request file link' do
-        expect(rendered).to have_link t('curation_concerns.show.requestable_content.default_link')
+        expect(rendered).to have_link t('hyrax.show.requestable_content.default_link')
       end
     end
   end

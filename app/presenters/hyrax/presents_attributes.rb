@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require Hyrax::Engine.root.join('app/presenters/curation_concerns/presents_attributes.rb')
+require Hyrax::Engine.root.join('app/presenters/hyrax/presents_attributes.rb')
 module Hyrax
   module PresentsAttributes
     def submitter_profile

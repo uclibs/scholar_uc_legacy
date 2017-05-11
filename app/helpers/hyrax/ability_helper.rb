@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require Hyrax::Engine.root.join('app/helpers/curation_concerns/ability_helper.rb')
+require Hyrax::Engine.root.join('app/helpers/hyrax/ability_helper.rb')
 module Hyrax
   module AbilityHelper
     private
@@ -7,7 +7,7 @@ module Hyrax
       # Needed because of bug in CC locales (see Scholar issue #1348)
       def visibility_text(value)
         return t("hyrax.institution_name") if value == 'authenticated'
-        t("curation_concerns.visibility.#{value}.text", default: value)
+        t("hyrax.visibility.#{value}.text", default: value)
       end
   end
 end

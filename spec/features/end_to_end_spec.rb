@@ -13,12 +13,12 @@ shared_examples 'work crud' do |work|
   end
 
   it 'can see the license wizard on the new work form', js: true do
-    visit send("new_curation_concerns_#{work_type}_path")
+    visit send("new_hyrax_#{work_type}_path")
     expect(page).to have_content('License Wizard')
   end
 
   it 'can submit a new work' do
-    visit send("new_curation_concerns_#{work_type}_path")
+    visit send("new_hyrax_#{work_type}_path")
     within '.tab-content' do
       fill_in('Title', with: 'My Test Work', match: :first)
 
@@ -49,7 +49,7 @@ shared_examples 'work crud' do |work|
   end
 
   it 'can submit a new work without files' do
-    visit send("new_curation_concerns_#{work_type}_path")
+    visit send("new_hyrax_#{work_type}_path")
     within '.tab-content' do
       fill_in('Title', with: 'My new work', match: :first)
 
