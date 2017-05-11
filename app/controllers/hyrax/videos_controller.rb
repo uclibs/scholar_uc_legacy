@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Video`
+#  `rails generate hyrax:work Video`
 
 module Hyrax
   class VideosController < ApplicationController

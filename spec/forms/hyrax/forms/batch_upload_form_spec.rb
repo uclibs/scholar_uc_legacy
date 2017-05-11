@@ -34,7 +34,7 @@ shared_examples "batch_form_fields" do |work_class|
 end
 
 RSpec.describe Hyrax::Forms::BatchUploadForm do
-  Hyrax.config.curation_concerns.each do |klass|
+  Hyrax.config.hyrax.each do |klass|
     it_behaves_like 'batch_form_fields', klass
   end
 

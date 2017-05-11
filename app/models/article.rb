@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Article`
+#  `rails generate hyrax:work Article`
 class Article < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
   include ::Hyrax::BasicMetadata

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe 'curation_concerns/classify_concerns/new.html.erb', type: :view do
+describe 'hyrax/classify_concerns/new.html.erb', type: :view do
   let(:classes) { [GenericWork, Article, Dataset, Image, Document, StudentWork, Video, Etd] }
   before do
     classes.each do |klass|

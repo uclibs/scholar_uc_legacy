@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe '/curation_concerns/base/_form_visibility_component.html.erb', type: :view do
+describe '/hyrax/base/_form_visibility_component.html.erb', type: :view do
   let(:work) { stub_model(GenericWork, id: '456', title: ["A nice work"]) }
   let(:ability) { double }
 
