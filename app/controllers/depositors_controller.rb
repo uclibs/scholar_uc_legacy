@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class DepositorsController < ApplicationController
-  include Sufia::DepositorsControllerBehavior
+  include Hyrax::DepositorsControllerBehavior
 
   def send_proxy_depositor_added_messages(grantor, grantee)
     message_to_grantee = "#{grantor.name} has assigned you as a proxy depositor"

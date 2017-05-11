@@ -6,7 +6,7 @@ module Hyrax
 
       # Needed because of bug in CC locales (see Scholar issue #1348)
       def visibility_text(value)
-        return t("sufia.institution_name") if value == 'authenticated'
+        return t("hyrax.institution_name") if value == 'authenticated'
         t("curation_concerns.visibility.#{value}.text", default: value)
       end
   end

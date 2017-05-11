@@ -2,7 +2,7 @@
 # Generated via
 #  `rails generate curation_concerns:work GenericWork`
 module Hyrax
-  class GenericWorkForm < Sufia::Forms::WorkForm
+  class GenericWorkForm < Hyrax::Forms::WorkForm
     self.model_class = ::GenericWork
 
     ## Adding custom descriptive metadata terms

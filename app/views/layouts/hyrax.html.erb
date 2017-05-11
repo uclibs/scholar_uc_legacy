@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= t("sufia.document_language", default: '') %>" prefix="og:http://ogp.me/ns#">
+<html lang="<%= t("hyrax.document_language", default: '') %>" prefix="og:http://ogp.me/ns#">
   <head>
     <%= render partial: 'layouts/head_tag_content' %>
     <%= content_for(:head) %>
@@ -16,7 +16,7 @@
 
       <% if content_for?(:sidebar) %>
         <div class="col-xs-12 col-sm-9 col-sm-push-3 main-content">
-          <%= render_breadcrumbs builder: Sufia::BootstrapBreadcrumbsBuilder %>
+          <%= render_breadcrumbs builder: Hyrax::BootstrapBreadcrumbsBuilder %>
           <% if content_for?(:page_header) %>
             <div class="row">
               <div class="col-xs-12 main-header">
@@ -30,7 +30,7 @@
         <div id="sidebar" class="col-xs-12 col-sm-3 col-sm-pull-9 sidebar"><%= yield :sidebar %></div>
       <% else %>
         <div class="col-xs-12">
-          <%= render_breadcrumbs builder: Sufia::BootstrapBreadcrumbsBuilder %>
+          <%= render_breadcrumbs builder: Hyrax::BootstrapBreadcrumbsBuilder %>
           <% if content_for?(:page_header) %>
             <div class="row">
               <div class="col-xs-12 main-header">

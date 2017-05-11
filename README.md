@@ -2,7 +2,7 @@
 
 Scholar@UC is a digital repository that enables the University of Cincinnati community to share its research and scholarly work with a worldwide audience. Faculty and staff can use Scholar@UC to collect their work in one location and create a durable and citeable record of their papers, presentations, publications, datasets, or other scholarly creations.
 
-Scholar@UC uses Project Hydra's [Sufia gem](https://github.com/projecthydra-labs/sufia). The source for UC's Sufia-based app can be found at https://github.com/uclibs/scholar_uc
+Scholar@UC uses Project Hydra's [Hyrax gem](https://github.com/projecthydra-labs/hyrax). The source for UC's Hyrax-based app can be found at https://github.com/uclibs/scholar_uc
 
 The Univeristy of Cincinnati's implementation of Scholar@UC can be found at https://scholar.uc.edu.
 
@@ -12,7 +12,7 @@ The Univeristy of Cincinnati's implementation of Scholar@UC can be found at http
 
 Install system dependencies
 
-***Our Sufia 7.x based app requires the following software to work:
+***Our Hyrax 7.x based app requires the following software to work:
 
 * Solr version >= 5.x (tested up to 6.2.0)
 * Fedora Commons digital repository version >= 4.5.1 (tested up to 4.6.0)

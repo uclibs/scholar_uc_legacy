@@ -14,7 +14,7 @@ class WelcomePageController < ApplicationController
   end
 
   def user_just_waived_welcome_page?
-    params[:commit] == t('sufia.welcome.waive_page')
+    params[:commit] == t('hyrax.welcome.waive_page')
   end
 
   def user_waived_welcome_page?

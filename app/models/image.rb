@@ -4,7 +4,7 @@
 class Image < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
   include ::Hyrax::BasicMetadata
-  include Sufia::WorkBehavior
+  include Hyrax::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
 
   self.human_readable_type = 'Image'

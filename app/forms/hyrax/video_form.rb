@@ -2,7 +2,7 @@
 # Generated via
 #  `rails generate curation_concerns:work Video`
 module Hyrax
-  class VideoForm < Sufia::Forms::WorkForm
+  class VideoForm < Hyrax::Forms::WorkForm
     self.model_class = ::Video
 
     ## Adding custom descriptive metadata terms

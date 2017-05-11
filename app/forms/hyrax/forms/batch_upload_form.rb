@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-module Sufia
+module Hyrax
   module Forms
-    class BatchUploadForm < Sufia::Forms::WorkForm
+    class BatchUploadForm < Hyrax::Forms::WorkForm
       self.model_class = BatchUploadItem
       include HydraEditor::Form::Permissions
 

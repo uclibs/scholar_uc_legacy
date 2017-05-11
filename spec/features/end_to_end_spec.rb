@@ -7,7 +7,7 @@ shared_examples 'work crud' do |work|
   before { allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true) }
 
   it 'can view the new work form' do
-    visit sufia.root_path
+    visit hyrax.root_path
     click_on 'New Work'
     expect(page).to have_content(work.human_readable_type)
   end
@@ -80,7 +80,7 @@ shared_examples 'work crud' do |work|
   end
 
   it 'can delete a work it owns' do
-    visit sufia.dashboard_works_path
+    visit hyrax.dashboard_works_path
     within '#document_' + deleted_work.id.to_s do
       click_on 'Delete Work'
     end
@@ -94,8 +94,8 @@ describe 'end to end behavior:' do
   let!(:deleted_work) { FactoryGirl.create(:work, user: user) }
   let!(:collection) { FactoryGirl.create(:collection, user: user) }
   before do
-    CurationConcerns::Workflow::WorkflowImporter.load_workflows
-    Sufia::AdminSetCreateService.create_default!
+    Hyrax::Workflow::WorkflowImporter.load_workflows
+    Hyrax::AdminSetCreateService.create_default!
     login_as user
   end
   context 'the user' do
@@ -111,12 +111,12 @@ describe 'end to end behavior:' do
     end
 
     it 'can view the dashboard' do
-      visit sufia.dashboard_index_path
+      visit hyrax.dashboard_index_path
       expect(page).to have_content 'My Dashboard'
     end
 
     it 'can view the my collections view' do
-      visit sufia.dashboard_collections_path
+      visit hyrax.dashboard_collections_path
       expect(page).to have_content 'Collections listing'
     end
 
@@ -128,7 +128,7 @@ describe 'end to end behavior:' do
     end
 
     it 'can view the my works view' do
-      visit sufia.dashboard_works_path
+      visit hyrax.dashboard_works_path
       expect(page).to have_content 'Works listing'
     end
 
@@ -141,7 +141,7 @@ describe 'end to end behavior:' do
     it_behaves_like 'work crud', StudentWork
     it_behaves_like 'work crud', Etd
 
-    # TODO: update this spec once we get the fix for scholar_uc#907 from sufia.
+    # TODO: update this spec once we get the fix for scholar_uc#907 from hyrax.
     # needs to verify specific collection is being updated, for now
     it 'can add a work it owns to collection' do
       skip 'need to fix display bug' do

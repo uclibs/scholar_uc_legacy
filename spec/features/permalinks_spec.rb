@@ -53,7 +53,7 @@ describe 'permalinks' do
 
   describe 'user profiles' do
     let(:user) { create(:user) }
-    let(:profile_path) { sufia.profile_path(user.to_param) }
+    let(:profile_path) { hyrax.profile_path(user.to_param) }
 
     before do
       sign_in user

@@ -9,15 +9,15 @@ RSpec.describe 'dashboard/_create_work_action.html.erb', type: :view do
   end
 
   context "when we have more than one model" do
-    let(:presenter) { instance_double(Sufia::SelectTypeListPresenter, many?: true) }
+    let(:presenter) { instance_double(Hyrax::SelectTypeListPresenter, many?: true) }
 
     it "renders the select template" do
-      expect(rendered).to have_link('Create Work', href: CurationConcerns::Engine.routes.url_helpers.new_classify_concern_path)
+      expect(rendered).to have_link('Create Work', href: Hyrax::Engine.routes.url_helpers.new_classify_concern_path)
     end
   end
 
   context "when we have one model" do
-    let(:presenter) { instance_double(Sufia::SelectTypeListPresenter, many?: false) }
+    let(:presenter) { instance_double(Hyrax::SelectTypeListPresenter, many?: false) }
 
     it "doesn't draw the modal" do
       expect(rendered).not_to include "modal"

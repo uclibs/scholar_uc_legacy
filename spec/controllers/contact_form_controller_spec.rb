@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 describe ContactFormController do
-  routes { Sufia::Engine.routes }
+  routes { Hyrax::Engine.routes }
   let(:user) { create(:user) }
   let(:required_params) do
     {
@@ -16,14 +16,14 @@ describe ContactFormController do
   describe 'while user is unauthenticated' do
     it 'successfully allows reCaptcha' do
       described_class.any_instance.stub(:verify_google_recaptcha).and_return(true)
-      Sufia::ContactMailer.any_instance.stub(:mail).and_return(true)
-      post :create, sufia_contact_form: required_params
+      Hyrax::ContactMailer.any_instance.stub(:mail).and_return(true)
+      post :create, hyrax_contact_form: required_params
       expect(flash[:notice]).to match(/Thank you for your message/)
     end
 
     it 'fails on reCaptcha failure' do
       described_class.any_instance.stub(:passes_captcha_or_is_logged_in?).and_return(false)
-      post :create, sufia_contact_form: required_params
+      post :create, hyrax_contact_form: required_params
       expect(flash[:error]).to match(/You must complete the Captcha to confirm the form/)
     end
   end
@@ -39,7 +39,7 @@ describe ContactFormController do
 
     describe "#create" do
       subject { flash }
-      before { post :create, sufia_contact_form: params }
+      before { post :create, hyrax_contact_form: params }
       context "with the required parameters" do
         let(:params) { required_params }
         its(:notice) { is_expected.to eq("Thank you for your message!") }
@@ -75,11 +75,11 @@ describe ContactFormController do
       let(:logger) { double(info?: true) }
       before do
         allow(controller).to receive(:logger).and_return(logger)
-        allow(Sufia::ContactMailer).to receive(:contact).and_raise(RuntimeError)
+        allow(Hyrax::ContactMailer).to receive(:contact).and_raise(RuntimeError)
       end
       it "is logged via Rails" do
         expect(logger).to receive(:error).with("Contact form failed to send: #<RuntimeError: RuntimeError>")
-        post :create, sufia_contact_form: required_params
+        post :create, hyrax_contact_form: required_params
       end
     end
   end

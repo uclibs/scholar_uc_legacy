@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Sufia::Collections
+module Hyrax::Collections
   module Featured
     extend ActiveSupport::Concern
     included do

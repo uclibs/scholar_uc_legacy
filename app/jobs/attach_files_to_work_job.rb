@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require Sufia::Engine.root.join('app/jobs/attach_files_to_work_job.rb')
+require Hyrax::Engine.root.join('app/jobs/attach_files_to_work_job.rb')
 class AttachFilesToWorkJob < ActiveJob::Base
   def perform(work, uploaded_files)
     uploaded_files.each do |uploaded_file|

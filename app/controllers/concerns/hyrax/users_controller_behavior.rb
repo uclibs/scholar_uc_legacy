@@ -1,9 +1,9 @@
 # frozen_string_literal: true
-require Sufia::Engine.root.join('app/controllers/concerns/sufia/users_controller_behavior.rb')
-module Sufia::UsersControllerBehavior
+require Hyrax::Engine.root.join('app/controllers/concerns/hyrax/users_controller_behavior.rb')
+module Hyrax::UsersControllerBehavior
   def show
-    @presenter = Sufia::UserProfilePresenter.new(@user, current_ability)
-    @permalinks_presenter = PermalinksPresenter.new(sufia.profile_path)
+    @presenter = Hyrax::UserProfilePresenter.new(@user, current_ability)
+    @permalinks_presenter = PermalinksPresenter.new(hyrax.profile_path)
   end
 
   def search(query)

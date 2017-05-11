@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Sufia
+module Hyrax
   module BatchUploadsControllerBehavior
     extend ActiveSupport::Concern
     include Hydra::Controller::ControllerBehavior
@@ -22,18 +22,18 @@ module Sufia
       authenticate_user!
       unsafe_pc = params.fetch(:batch_upload_item, {})[:payload_concern]
       # Calling constantize on user params is disfavored (per brakeman), so we sanitize by matching it against an authorized model.
-      safe_pc = Sufia::SelectTypeListPresenter.new(current_user).authorized_models.map(&:to_s).find { |x| x == unsafe_pc }
+      safe_pc = Hyrax::SelectTypeListPresenter.new(current_user).authorized_models.map(&:to_s).find { |x| x == unsafe_pc }
       raise CanCan::AccessDenied, "Cannot create an object of class '#{unsafe_pc}'" unless safe_pc
       # authorize! :create, safe_pc
       create_update_job(safe_pc)
-      flash[:notice] = t('sufia.works.create.after_create_html', application_name: view_context.application_name)
+      flash[:notice] = t('hyrax.works.create.after_create_html', application_name: view_context.application_name)
       redirect_after_update
     end
 
     class BatchUploadFormService < Hyrax::WorkFormService
       # Gives the class of the form.
       def self.form_class(_curation_concern = nil)
-        ::Sufia::Forms::BatchUploadForm
+        ::Hyrax::Forms::BatchUploadForm
       end
     end
 
@@ -46,13 +46,13 @@ module Sufia
 
       def redirect_after_update
         if uploading_on_behalf_of?
-          redirect_to sufia.dashboard_shares_path
+          redirect_to hyrax.dashboard_shares_path
         else
-          redirect_to sufia.dashboard_works_path
+          redirect_to hyrax.dashboard_works_path
         end
       end
 
-      # @param [String] klass the name of the Sufia Work Class being created by the batch
+      # @param [String] klass the name of the Hyrax Work Class being created by the batch
       # @note Cannot use a proper Class here because it won't serialize
       def create_update_job(klass)
         log = BatchCreateOperation.create!(user: current_user,

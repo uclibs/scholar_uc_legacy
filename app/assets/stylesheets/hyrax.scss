@@ -14,7 +14,7 @@
 @import "blacklight_gallery/masonry";
 @import "blacklight_gallery/slideshow";
 @import "blacklight_gallery/osd_viewer";
-@import 'sufia/sufia';
+@import 'hyrax/hyrax';
 @import 'license-selector';
 
 #splash_home_header  {
@@ -96,7 +96,7 @@ hr:after {
   margin-top: 20px;
 }
 
-.nav-sufia-controls {
+.nav-hyrax-controls {
   padding-top: 10px;
   padding-bottom: 10px;
 }

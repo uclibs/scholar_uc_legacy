@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   include Blacklight::Controller
   include Hydra::Controller::ControllerBehavior
 
-  # Adds Sufia behaviors into the application controller
-  include Sufia::Controller
+  # Adds Hyrax behaviors into the application controller
+  include Hyrax::Controller
 
   include Hyrax::ThemedLayoutController
   with_themed_layout '1_column'

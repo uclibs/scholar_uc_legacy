@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-require Sufia::Engine.root.join('app/controllers/concerns/sufia/file_sets_controller_behavior.rb')
-module Sufia
+require Hyrax::Engine.root.join('app/controllers/concerns/hyrax/file_sets_controller_behavior.rb')
+module Hyrax
   module FileSetsControllerBehavior
     def show
       super

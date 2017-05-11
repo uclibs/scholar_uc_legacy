@@ -11,7 +11,7 @@ describe '/static/about.html.erb', type: :view do
   end
 
   it 'has a link to Terms of Use' do
-    expect(rendered).to have_link(href: sufia.terms_path)
+    expect(rendered).to have_link(href: hyrax.terms_path)
   end
 
   it 'has a link to the Collection Policy' do

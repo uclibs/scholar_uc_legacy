@@ -1,5 +1,5 @@
-class RenameSufiaFeaturesTable < ActiveRecord::Migration
+class RenameHyraxFeaturesTable < ActiveRecord::Migration
   def change
-    rename_table :sufia_features, :hyrax_features
+    rename_table :hyrax_features, :hyrax_features
   end
 end

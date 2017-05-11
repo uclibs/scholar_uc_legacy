@@ -2,7 +2,7 @@
 # Generated via
 #  `rails generate curation_concerns:work Image`
 module Hyrax
-  class ImageForm < Sufia::Forms::WorkForm
+  class ImageForm < Hyrax::Forms::WorkForm
     self.model_class = ::Image
 
     ## Adding custom descriptive metadata terms

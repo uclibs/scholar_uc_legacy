@@ -2,7 +2,7 @@
 # Generated via
 #  `rails generate curation_concerns:work StudentWork`
 module Hyrax
-  class StudentWorkForm < Sufia::Forms::WorkForm
+  class StudentWorkForm < Hyrax::Forms::WorkForm
     self.model_class = ::StudentWork
 
     ## Adding custom descriptive metadata terms

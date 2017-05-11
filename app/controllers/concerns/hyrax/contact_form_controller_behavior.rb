@@ -1,4 +1,4 @@
-module Sufia
+module Hyrax
   module ContactFormControllerBehavior
     extend ActiveSupport::Concern
     FAIL_NOTICE = "You must complete the Captcha to confirm the form.".freeze
@@ -37,12 +37,12 @@ module Sufia
     protected
 
       def build_contact_form
-        @contact_form = Sufia::ContactForm.new(contact_form_params)
+        @contact_form = Hyrax::ContactForm.new(contact_form_params)
       end
 
       def contact_form_params
-        return {} unless params.key?(:sufia_contact_form)
-        params.require(:sufia_contact_form).permit(:contact_method, :category, :name, :email, :subject, :message)
+        return {} unless params.key?(:hyrax_contact_form)
+        params.require(:hyrax_contact_form).permit(:contact_method, :category, :name, :email, :subject, :message)
       end
 
       def passes_captcha_or_is_logged_in?

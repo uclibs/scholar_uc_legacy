@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-module SufiaHelper
+module HyraxHelper
   include ::BlacklightHelper
-  include Sufia::BlacklightOverride
-  include Sufia::SufiaHelperBehavior
+  include Hyrax::BlacklightOverride
+  include Hyrax::HyraxHelperBehavior
 
   def sorted_college_list_for_works(object)
     if object.is_a? Etd
