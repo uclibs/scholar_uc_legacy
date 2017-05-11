@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Hyrax
-  class CollectionPresenter < Hyrax::CollectionPresenter
+  class CollectionPresenter
     delegate :thumbnail_id, :resource_type, :based_near, :related_url, :identifier, to: :solr_document
 
     # Terms is the list of fields displayed by
