@@ -3,6 +3,7 @@ module Hyrax
   module BatchUploadsControllerBehavior
     extend ActiveSupport::Concern
     include Hydra::Controller::ControllerBehavior
+    include Hyrax::WorksControllerBehavior
 
     included do
       self.work_form_service = BatchUploadFormService

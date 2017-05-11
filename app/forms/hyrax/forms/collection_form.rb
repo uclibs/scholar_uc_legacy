@@ -1,51 +1,79 @@
 # frozen_string_literal: true
-module Hyrax::Forms
-  class CollectionForm < Hyrax::Forms::CollectionEditForm
-    delegate :id, to: :model
+module Hyrax
+  module Forms
+    class CollectionForm
+      include HydraEditor::Form
 
-    # TODO: remove this when https://github.com/projecthydra/hydra-editor/pull/115
-    # is merged and hydra-editor 3.0.0 is released
-    delegate :model_name, to: :model
+      delegate :id, to: :model
 
-    self.required_fields = %i(title creator description rights)
+      # TODO: remove this when https://github.com/projecthydra/hydra-editor/pull/115
+      # is merged and hydra-editor 3.0.0 is released
+      delegate :model_name, to: :model
 
-    def primary_terms
-      [:title,
-       :creator,
-       :description,
-       :rights]
-    end
+      self.model_class = ::Collection
 
-    def secondary_terms
-      []
-    end
+      delegate :human_readable_type, :member_ids, to: :model
 
-    def self.multiple?(field)
-      if %i(title description rights).include? field.to_sym
-        false
-      else
-        super
+      self.terms = [:resource_type, :title, :creator, :contributor, :description,
+                    :keyword, :rights, :publisher, :date_created, :subject, :language,
+                    :representative_id, :thumbnail_id, :identifier, :based_near,
+                    :related_url, :visibility]
+
+      self.required_fields = %i(title creator description rights)
+
+      # @return [Hash] All FileSets in the collection, file.to_s is the key, file.id is the value
+      def select_files
+        Hash[all_files]
       end
-    end
 
-    def self.model_attributes(_)
-      attrs = super
-      attrs[:title] = Array(attrs[:title]) if attrs[:title]
-      attrs[:description] = Array(attrs[:description]) if attrs[:description]
-      attrs[:rights] = Array(attrs[:rights]) if attrs[:rights]
-      attrs
-    end
+      def primary_terms
+        [:title,
+         :creator,
+         :description,
+         :rights]
+      end
 
-    def title
-      super.first || ""
-    end
+      def secondary_terms
+        []
+      end
 
-    def description
-      super.first || ""
-    end
+      def self.multiple?(field)
+        if %i(title description rights).include? field.to_sym
+          false
+        else
+          super
+        end
+      end
 
-    def rights
-      super.first || ""
+      def self.model_attributes(_)
+        attrs = super
+        attrs[:title] = Array(attrs[:title]) if attrs[:title]
+        attrs[:description] = Array(attrs[:description]) if attrs[:description]
+        attrs[:rights] = Array(attrs[:rights]) if attrs[:rights]
+        attrs
+      end
+
+      def title
+        super.first || ""
+      end
+
+      def description
+        super.first || ""
+      end
+
+      def rights
+        super.first || ""
+      end
+
+      private
+
+        def all_files
+          member_presenters.flat_map(&:file_set_presenters).map { |x| [x.to_s, x.id] }
+        end
+
+        def member_presenters
+          PresenterFactory.build_presenters(model.member_ids, WorkShowPresenter, nil)
+        end
     end
   end
 end
