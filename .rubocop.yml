@@ -45,11 +45,12 @@ Metrics/MethodLength:
 Metrics/ModuleLength:
   Exclude:
     - 'lib/seed_methods.rb'
+    - 'app/helpers/sufia_helper.rb'
 
 Metrics/PerceivedComplexity:
   Exclude:
     - 'app/helpers/change_manager/change_manager_helper.rb'
-    - 'app/helpers/sufia_helper.rb'    
+    - 'app/helpers/sufia_helper.rb'
 
 Metrics/CyclomaticComplexity:
   Exclude:

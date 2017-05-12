@@ -41,7 +41,7 @@ module SufiaHelper
   end
 
   def user_college(object)
-    if (object.is_a? Etd) || (object.is_a? StudentWork)
+    if (object.is_a? CurationConcerns::EtdForm) || (object.is_a? CurationConcerns::StudentWorkForm)
       ''
     else
       current_user.college
@@ -49,10 +49,26 @@ module SufiaHelper
   end
 
   def user_department(object)
-    if (object.is_a? Etd) || (object.is_a? StudentWork)
+    if (object.is_a? CurationConcerns::EtdForm) || (object.is_a? CurationConcerns::StudentWorkForm)
       ''
     else
       current_user.department
+    end
+  end
+
+  def old_or_new_college(object)
+    if object.college.empty?
+      user_college(object)
+    else
+      object.college
+    end
+  end
+
+  def old_or_new_department(object)
+    if object.department.empty?
+      user_department(object)
+    else
+      object.department
     end
   end
 
