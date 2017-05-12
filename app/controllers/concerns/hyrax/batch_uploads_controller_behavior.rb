@@ -3,7 +3,7 @@ module Hyrax
   module BatchUploadsControllerBehavior
     extend ActiveSupport::Concern
     include Hydra::Controller::ControllerBehavior
-    include Hyrax::WorksControllerBehavior
+    include Hyrax::CurationConcernController
 
     included do
       self.work_form_service = BatchUploadFormService
@@ -27,13 +27,14 @@ module Hyrax
       raise CanCan::AccessDenied, "Cannot create an object of class '#{unsafe_pc}'" unless safe_pc
       # authorize! :create, safe_pc
       create_update_job(safe_pc)
+      # Calling `#t` in a controller context does not mark _html keys as html_safe
       flash[:notice] = t('hyrax.works.create.after_create_html', application_name: view_context.application_name)
       redirect_after_update
     end
 
     class BatchUploadFormService < Hyrax::WorkFormService
       # Gives the class of the form.
-      def self.form_class(_curation_concern = nil)
+      def self.form_class(_ = nil)
         ::Hyrax::Forms::BatchUploadForm
       end
     end
@@ -56,8 +57,8 @@ module Hyrax
       # @param [String] klass the name of the Hyrax Work Class being created by the batch
       # @note Cannot use a proper Class here because it won't serialize
       def create_update_job(klass)
-        log = BatchCreateOperation.create!(user: current_user,
-                                           operation_type: "Batch Create")
+        operation = BatchCreateOperation.create!(user: current_user,
+                                                 operation_type: "Batch Create")
         # ActionController::Parameters are not serializable, so cast to a hash
         BatchCreateJob.perform_later(current_user,
                                      params[:title].permit!.to_h,

@@ -5,6 +5,7 @@ module Hyrax
 
     included do
       before_action :build_contact_form
+      layout 'homepage'
     end
 
     def new
@@ -41,8 +42,8 @@ module Hyrax
       end
 
       def contact_form_params
-        return {} unless params.key?(:hyrax_contact_form)
-        params.require(:hyrax_contact_form).permit(:contact_method, :category, :name, :email, :subject, :message)
+        return {} unless params.key?(:contact_form)
+        params.require(:contact_form).permit(:contact_method, :category, :name, :email, :subject, :message)
       end
 
       def passes_captcha_or_is_logged_in?
