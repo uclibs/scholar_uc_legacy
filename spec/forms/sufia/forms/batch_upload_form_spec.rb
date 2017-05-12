@@ -69,7 +69,7 @@ RSpec.describe Sufia::Forms::BatchUploadForm do
          lease_expiration_date visibility_after_lease visibility
          ordered_member_ids in_works_ids collection_ids admin_set_id
          alternate_title journal_title issn time_period required_software
-         note geo_subject doi doi_assignment_strategy existing_identifier
+         committee_member note geo_subject doi doi_assignment_strategy existing_identifier
          college department genre degree advisor)
     end
 

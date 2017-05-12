@@ -14,8 +14,8 @@ module Sufia
                       lease_expiration_date visibility_after_lease visibility
                       ordered_member_ids in_works_ids collection_ids admin_set_id
                       alternate_title journal_title issn time_period required_software
-                      note geo_subject doi doi_assignment_strategy existing_identifier
-                      college department genre degree advisor)
+                      committee_member note geo_subject doi doi_assignment_strategy
+                      existing_identifier college department genre degree advisor)
 
       def required_fields
         case @payload_concern
@@ -37,7 +37,7 @@ module Sufia
         when "StudentWork"
           %i(creator college department alt_description advisor rights degree publisher)
         when "Etd"
-          %i(creator college department alt_description advisor rights committee_member degree alt_date_created publisher)
+          %i(creator college department alt_description advisor rights committee_member degree alt_date_created etd_publisher)
         else
           %i(creator college department alt_description rights publisher)
         end
@@ -64,7 +64,7 @@ module Sufia
           %i(alt_date_created alternate_title genre subject geo_subject
              time_period language required_software note related_url)
         when "Etd"
-          %i(alternate_title genre subject geo_subject time_period
+          %i(alternate_title subject geo_subject time_period
              language required_software note related_url)
         else
           %i(alt_date_created alternate_title subject geo_subject
