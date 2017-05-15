@@ -17,15 +17,6 @@
 @import 'sufia/sufia';
 @import 'license-selector';
 
-#splash_home_header  {
-  background-image: image-url('header/TUC_aerial-980.png');
-  background-position: 50% 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-top: 8px solid #E1E1E1;
-  border-bottom: 8px solid #E1E1E1;
-}
-
 #home_header  {
   background-image: image-url('header/TUC_aerial-980.png');
   background-position: 50% 100%;
@@ -33,15 +24,6 @@
   background-size: cover;
   border-top: 8px solid #E1E1E1;
   border-bottom: 8px solid #E1E1E1;
-}
-
-.splash_home_share_work {
-  background: rgb(224,1,34) transparent;
-  background: rgba(224,1,34,0.75);
-  border-color: white;
-  border-style: solid;
-  margin: 100px auto;
-  width: 60%;
 }
 
 .contribute {
