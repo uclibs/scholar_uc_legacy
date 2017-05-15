@@ -7,7 +7,7 @@ gem 'hydra-role-management'
 #gem 'orcid', github: 'uclibs/orcid'
 gem 'riiif', '~> 0.2.0'
 gem 'iiif_manifest', '~> 0.1.2'
-#gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
+gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
 gem 'browse-everything', git: 'https://github.com/uclibs/browse-everything.git', ref: 'be25819f14d485768698d27a3a35deaa7f60d5c7'
 gem 'kaltura', '0.1.1'
 
