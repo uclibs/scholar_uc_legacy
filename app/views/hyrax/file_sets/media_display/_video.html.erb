@@ -1,6 +1,6 @@
   <video controls="controls" width="320" height="240" class="video-js vjs-default-skin" data-setup="{}" preload="auto">
-    <source src="<%= main_app.download_path(file_set) %>" type="video/webm" />
-    <source src="<%= main_app.download_path(file_set) %>" type="video/mp4" />
+    <source src="<%= hyrax.download_path(file_set) %>" type="video/webm" />
+    <source src="<%= hyrax.download_path(file_set) %>" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
@@ -8,7 +8,7 @@
     <% if file_is_too_large_to_download(file_set) %>            
       <%= show_request_file_button(file_set, t('hyrax.show.requestable_content.video_link')) %>
     <% else %>
-      <%= link_to main_app.download_path(file_set),
+      <%= link_to hyrax.download_path(file_set),
                   target: :_blank,
                   data: { turbolinks: false },
                   class: "btn btn-default" do %>
