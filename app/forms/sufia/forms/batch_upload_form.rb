@@ -81,6 +81,10 @@ module Sufia
         current_ability.current_user
       end
 
+      def self.build_permitted_params
+        super + [:rights]
+      end
+
       # Override of ActiveModel::Model name that allows us to use our custom name class
       def self.model_name
         @_model_name ||= begin
