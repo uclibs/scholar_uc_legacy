@@ -15,7 +15,7 @@
       </ul>
     </li>
 
-    <% if can_ever_create_works? %>
+    <% if current_ability.can_create_any_work? %>
       <li class="dropdown">
         <%= link_to hyrax.dashboard_works_path, role: 'button', data: { toggle: 'dropdown' }, aria: { haspopup: true, expanded: false } do %>
           <span class="fa fa-cube"></span> <%= t("hyrax.toolbar.works.menu") %> <span class="caret"></span>
@@ -27,7 +27,7 @@
             <li>
               <%= link_to(
                     t("hyrax.toolbar.works.new"),
-                    Hyrax::Engine.routes.url_helpers.new_classify_concern_path,
+                    main_app.new_classify_concern_path,
                     class: "item-option contextual-quick-classify",
                     role: 'menuitem'
                   ) %>
@@ -35,7 +35,7 @@
             <li>
               <%= link_to(
                     t("hyrax.toolbar.works.batch"),
-                    Hyrax::Engine.routes.url_helpers.new_classify_concern_path(type: 'batch'),
+                    main_app.new_classify_concern_path(type: 'batch'),
                     class: "item-option contextual-quick-classify",
                     role: 'menuitem'
                   ) %>
@@ -65,7 +65,7 @@
         <% end %>
         <ul class="dropdown-menu">
           <li><%= link_to t("hyrax.toolbar.collections.my"), hyrax.dashboard_collections_path %></li>
-          <li><%= link_to t("hyrax.toolbar.collections.new"), main_app.new_collection_path %></li>
+          <li><%= link_to t("hyrax.toolbar.collections.new"), hyrax.new_collection_path %></li>
         </ul>
       </li>
     <% end %>
