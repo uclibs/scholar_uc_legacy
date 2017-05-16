@@ -48,8 +48,8 @@ describe '/_toolbar.html.erb', type: :view do
       let(:presenter) { instance_double(Hyrax::SelectTypeListPresenter, many?: true) }
       it "has a link to upload" do
         render
-        expect(rendered).to have_link('New Work', href: Hyrax::Engine.routes.url_helpers.new_classify_concern_path)
-        expect(rendered).to have_link('Batch Create', href: Hyrax::Engine.routes.url_helpers.new_classify_concern_path(type: 'batch'))
+        expect(rendered).to have_link('New Work', href: main_app.new_classify_concern_path)
+        expect(rendered).to have_link('Batch Create', href: main_app.new_classify_concern_path(type: 'batch'))
       end
     end
 

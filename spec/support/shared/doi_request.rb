@@ -29,7 +29,7 @@ shared_examples 'doi request' do |work_class|
   before do
     allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true)
     Hyrax::Workflow::WorkflowImporter.load_workflows
-    Hyrax::AdminSetCreateService.create_default!
+    AdminSet.find_or_create_default_admin_set_id
     page.driver.browser.js_errors = false
     allow(CharacterizeJob).to receive(:perform_later)
   end

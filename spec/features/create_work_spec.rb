@@ -135,7 +135,7 @@ feature 'Creating a new work', :js do
 
   before do
     Hyrax::Workflow::WorkflowImporter.load_workflows
-    Hyrax::AdminSetCreateService.create_default!
+    AdminSet.find_or_create_default_admin_set_id
     allow(CharacterizeJob).to receive(:perform_later)
     page.current_window.resize_to(2000, 2000)
   end

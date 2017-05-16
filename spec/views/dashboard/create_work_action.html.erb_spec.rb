@@ -12,7 +12,7 @@ RSpec.describe 'dashboard/_create_work_action.html.erb', type: :view do
     let(:presenter) { instance_double(Hyrax::SelectTypeListPresenter, many?: true) }
 
     it "renders the select template" do
-      expect(rendered).to have_link('Create Work', href: Hyrax::Engine.routes.url_helpers.new_classify_concern_path)
+      expect(rendered).to have_link('Create Work', href: main_app.new_classify_concern_path)
     end
   end
 
