@@ -5,7 +5,7 @@
 <% if file_is_too_large_to_download(file_set) %>
   <%= show_request_file_button(file_set, t('hyrax.show.requestable_content.image_link')) %>
 <% else %>
-  <%= link_to main_app.download_path(file_set),
+  <%= link_to hyrax.download_path(file_set),
        target: :_blank,
        data: { turbolinks: false },
        class: "btn btn-default" do %>

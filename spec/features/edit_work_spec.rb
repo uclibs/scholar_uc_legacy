@@ -11,7 +11,7 @@ shared_examples 'edit work' do |work_class|
   let(:edit_path) { "concern/#{work_type}s/#{work.id}/edit" }
   before do
     Hyrax::Workflow::WorkflowImporter.load_workflows
-    Hyrax::AdminSetCreateService.create_default!
+    AdminSet.find_or_create_default_admin_set_id
     page.driver.browser.js_errors = false
     sign_in user
     work.ordered_members << FactoryGirl.create(:file_set, user: user, title: ['ABC123xyz'])

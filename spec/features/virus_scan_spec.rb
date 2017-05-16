@@ -6,7 +6,7 @@ describe 'Adding an infected file', js: true do
 
   before do
     Hyrax::Workflow::WorkflowImporter.load_workflows
-    Hyrax::AdminSetCreateService.create_default!
+    AdminSet.find_or_create_default_admin_set_id
     allow(CharacterizeJob).to receive(:perform_later)
     allow(Hydra::Works::VirusCheckerService).to receive(:file_has_virus?).and_return(true)
     login_as user
