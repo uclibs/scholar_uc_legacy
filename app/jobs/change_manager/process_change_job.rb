@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'yaml'
 module ChangeManager
-  class ProcessChangeJob < ActiveJob::Base
+  class ProcessChangeJob < ApplicationJob
     queue_as :change
 
     def perform(change_id)

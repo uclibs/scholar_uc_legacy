@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class FeaturedCollection < ActiveRecord::Base
+class FeaturedCollection < ApplicationRecord
   FEATURE_LIMIT = 1
   validate :count_within_limit, on: :create
   validates :order, inclusion: { in: proc { 0..FEATURE_LIMIT } }
