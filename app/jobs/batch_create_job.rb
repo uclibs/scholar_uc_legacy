@@ -1,6 +1,5 @@
 # frozen_string_literal: true
-class BatchCreateJob < ApplicationJob
-  ActiveJob::Base
+class BatchCreateJob < ActiveJob::Base
   queue_as :ingest
 
   before_enqueue do |job|

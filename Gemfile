@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'hyrax', github: 'projecthydra-labs/hyrax', ref: '6258bde4ff675e722949c1e48e79f371418dc450'
+gem 'hyrax', github: 'projecthydra-labs/hyrax', ref: '0b663c43b97ecd30b2c42115b9c0d933559f0ba3'
 
 #repository manager
 gem 'hydra-role-management'
@@ -16,7 +16,7 @@ gem 'rails', '5.0.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+#gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -55,8 +55,8 @@ end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
   gem 'rb-readline'
+  gem 'byebug'
 end
 
 group :development do

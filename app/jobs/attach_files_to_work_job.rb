@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 require Hyrax::Engine.root.join('app/jobs/attach_files_to_work_job.rb')
-class AttachFilesToWorkJob < ApplicationJob
-  ActiveJob::Base
+class AttachFilesToWorkJob < ActiveJob::Base
   def perform(work, uploaded_files)
     uploaded_files.each do |uploaded_file|
       file_set = FileSet.new
