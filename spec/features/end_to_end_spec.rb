@@ -95,7 +95,7 @@ describe 'end to end behavior:' do
   let!(:collection) { FactoryGirl.create(:collection, user: user) }
   before do
     Hyrax::Workflow::WorkflowImporter.load_workflows
-    Hyrax::AdminSetCreateService.create_default!
+    AdminSet.find_or_create_default_admin_set_id
     login_as user
   end
   context 'the user' do

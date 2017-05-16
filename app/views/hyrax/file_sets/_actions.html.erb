@@ -33,7 +33,7 @@
     <% if file_is_too_large_to_download(file_set) %>
       <%= show_request_file_action(file_set, t('hyrax.show.requestable_content.action_link')) %>
     <% else %>
-      <%= link_to 'Download', main_app.download_path(file_set),
+      <%= link_to 'Download', hyrax.download_path(file_set),
         title: "Download #{file_set.to_s.inspect}", target: "_blank" %>
     <% end %>
     </li>
