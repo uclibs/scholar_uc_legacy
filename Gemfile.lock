@@ -50,6 +50,15 @@ GIT
       yaml_db (~> 0.2)
 
 GIT
+  remote: git://github.com/uclibs/hydra-remote_identifier.git
+  revision: 1ec8af742369b054523322e56efe3419b74ad882
+  branch: setting-status
+  specs:
+    hydra-remote_identifier (0.6.8)
+      activesupport (>= 3.2.13)
+      rest-client (~> 1.7.3)
+
+GIT
   remote: https://github.com/lawhorkl/change_manager.git
   revision: 8d151d1123aa35658f061a63bc72435afdf0ec8a
   ref: 8d151d1123aa35658f061a63bc72435afdf0ec8a
@@ -82,25 +91,25 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    actioncable (5.0.2)
-      actionpack (= 5.0.2)
+    actioncable (5.0.3)
+      actionpack (= 5.0.3)
       nio4r (>= 1.2, < 3.0)
       websocket-driver (~> 0.6.1)
-    actionmailer (5.0.2)
-      actionpack (= 5.0.2)
-      actionview (= 5.0.2)
-      activejob (= 5.0.2)
+    actionmailer (5.0.3)
+      actionpack (= 5.0.3)
+      actionview (= 5.0.3)
+      activejob (= 5.0.3)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 2.0)
-    actionpack (5.0.2)
-      actionview (= 5.0.2)
-      activesupport (= 5.0.2)
+    actionpack (5.0.3)
+      actionview (= 5.0.3)
+      activesupport (= 5.0.3)
       rack (~> 2.0)
       rack-test (~> 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionview (5.0.2)
-      activesupport (= 5.0.2)
+    actionview (5.0.3)
+      activesupport (= 5.0.3)
       builder (~> 3.1)
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
@@ -125,18 +134,18 @@ GEM
       active-fedora (>= 9.7, < 12)
       noid (~> 0.9)
       rails (>= 4.2.7.1, < 6)
-    activejob (5.0.2)
-      activesupport (= 5.0.2)
+    activejob (5.0.3)
+      activesupport (= 5.0.3)
       globalid (>= 0.3.6)
-    activemodel (5.0.2)
-      activesupport (= 5.0.2)
-    activerecord (5.0.2)
-      activemodel (= 5.0.2)
-      activesupport (= 5.0.2)
+    activemodel (5.0.3)
+      activesupport (= 5.0.3)
+    activerecord (5.0.3)
+      activemodel (= 5.0.3)
+      activesupport (= 5.0.3)
       arel (~> 7.0)
     activerecord-import (0.18.3)
       activerecord (>= 3.2)
-    activesupport (5.0.2)
+    activesupport (5.0.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
       minitest (~> 5.1)
@@ -147,17 +156,17 @@ GEM
       rails (>= 4.2, < 6)
     arel (7.1.4)
     ast (2.3.0)
-    autoprefixer-rails (7.0.1)
+    autoprefixer-rails (7.1.0)
       execjs
     awesome_nested_set (3.1.3)
       activerecord (>= 4.0.0, < 5.2)
-    aws-sdk (2.9.16)
-      aws-sdk-resources (= 2.9.16)
-    aws-sdk-core (2.9.16)
+    aws-sdk (2.9.18)
+      aws-sdk-resources (= 2.9.18)
+    aws-sdk-core (2.9.18)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.9.16)
-      aws-sdk-core (= 2.9.16)
+    aws-sdk-resources (2.9.18)
+      aws-sdk-core (= 2.9.18)
     aws-sigv4 (1.0.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -208,9 +217,9 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     clipboard-rails (1.6.1)
     cliver (0.3.2)
-    coffee-rails (4.1.1)
+    coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.1.x)
+      railties (>= 4.0.0, < 5.2.x)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -232,10 +241,10 @@ GEM
     declarative-option (0.1.0)
     deprecation (1.0.0)
       activesupport
-    devise (4.2.1)
+    devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.1)
+      railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
     devise-guests (0.6.0)
@@ -270,7 +279,7 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       inflecto (~> 0.0.0, >= 0.0.2)
-    dry-validation (0.10.6)
+    dry-validation (0.10.7)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
       dry-core (~> 0.2, >= 0.2.1)
@@ -300,15 +309,17 @@ GEM
       railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    google-api-client (0.11.2)
-      addressable (>= 2.5.1)
+    google-api-client (0.10.3)
+      addressable (~> 2.3)
       googleauth (~> 0.5)
-      httpclient (>= 2.8.1, < 3.0)
-      mime-types (>= 3.0)
+      httpclient (~> 2.7)
+      hurley (~> 0.1)
+      memoist (~> 0.11)
+      mime-types (>= 1.6)
       representable (~> 3.0)
       retriable (>= 2.0, < 4.0)
-    google_drive (2.1.3)
-      google-api-client (>= 0.11.0, < 1.0.0)
+    google_drive (2.1.2)
+      google-api-client (>= 0.9.0, < 1.0.0)
       googleauth (>= 0.5.0, < 1.0.0)
       nokogiri (>= 1.5.3, < 2.0.0)
     googleauth (0.5.1)
@@ -332,9 +343,10 @@ GEM
       mimemagic
       multipart-post
     http_logger (0.5.1)
-    httparty (0.15.0)
+    httparty (0.15.2)
       multi_xml (>= 0.5.2)
     httpclient (2.8.3)
+    hurley (0.2)
     hydra-access-controls (10.4.0)
       active-fedora (>= 10.0.0, < 12)
       activesupport (>= 4, < 6)
@@ -451,9 +463,7 @@ GEM
       rails (>= 4.2.0)
     memoist (0.15.0)
     method_source (0.8.2)
-    mime-types (3.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
+    mime-types (2.99.3)
     mimemagic (0.3.2)
     mini_magick (4.7.0)
     mini_portile2 (2.1.0)
@@ -463,6 +473,7 @@ GEM
     multipart-post (2.0.0)
     nest (2.1.0)
       redic
+    netrc (0.11.0)
     nio4r (2.0.0)
     noid (0.9.0)
     nokogiri (1.7.2)
@@ -493,6 +504,7 @@ GEM
     power_converter (0.1.2)
     powerpack (0.1.1)
     public_suffix (2.0.5)
+    puma (3.8.2)
     qa (1.1.0)
       activerecord-import
       deprecation
@@ -500,22 +512,22 @@ GEM
       nokogiri (~> 1.6)
       rails (>= 4.2.0, < 6.0)
       rdf
-    rack (2.0.2)
+    rack (2.0.3)
     rack-protection (2.0.0)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails (5.0.2)
-      actioncable (= 5.0.2)
-      actionmailer (= 5.0.2)
-      actionpack (= 5.0.2)
-      actionview (= 5.0.2)
-      activejob (= 5.0.2)
-      activemodel (= 5.0.2)
-      activerecord (= 5.0.2)
-      activesupport (= 5.0.2)
+    rails (5.0.3)
+      actioncable (= 5.0.3)
+      actionmailer (= 5.0.3)
+      actionpack (= 5.0.3)
+      actionview (= 5.0.3)
+      activejob (= 5.0.3)
+      activemodel (= 5.0.3)
+      activerecord (= 5.0.3)
+      activesupport (= 5.0.3)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 5.0.2)
+      railties (= 5.0.3)
       sprockets-rails (>= 2.0.0)
     rails-controller-testing (1.0.1)
       actionpack (~> 5.x)
@@ -528,9 +540,9 @@ GEM
       loofah (~> 2.0)
     rails_autolink (1.1.6)
       rails (> 3.1)
-    railties (5.0.2)
-      actionpack (= 5.0.2)
-      activesupport (= 5.0.2)
+    railties (5.0.3)
+      actionpack (= 5.0.3)
+      activesupport (= 5.0.3)
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
@@ -578,6 +590,9 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rest-client (1.7.3)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     retriable (3.0.2)
     riiif (0.2.4)
       rails (> 3.2.0)
@@ -607,13 +622,13 @@ GEM
       rspec-mocks (~> 3.6.0)
       rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
-    rubocop (0.42.0)
-      parser (>= 2.3.1.1, < 3.0)
+    rubocop (0.48.1)
+      parser (>= 2.3.3.1, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    rubocop-rspec (1.7.0)
+    rubocop-rspec (1.10.0)
       rubocop (>= 0.42.0)
     ruby-box (1.15.0)
       addressable
@@ -697,7 +712,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
-    tins (1.13.2)
+    tins (1.13.3)
     tinymce-rails (4.6.0)
       railties (>= 3.1.1)
     tinymce-rails-imageupload (4.0.17.beta.3)
@@ -748,43 +763,45 @@ DEPENDENCIES
   byebug
   capybara
   change_manager!
-  coffee-rails (~> 4.1.0)
+  coffee-rails (~> 4.2)
   coveralls
   database_cleaner
   devise
   devise-guests (~> 0.5)
   factory_girl_rails
   fcrepo_wrapper
+  hydra-remote_identifier!
   hydra-role-management
   hyrax!
   iiif_manifest (~> 0.1.2)
-  jbuilder (~> 2.0)
+  jbuilder (~> 2.5)
   jquery-rails
   kaltura (= 0.1.1)
   poltergeist
-  rails (= 5.0.2)
+  puma (~> 3.0)
+  rails (= 5.0.3)
   rails-controller-testing
   rb-readline
   riiif (~> 0.2.0)
   rsolr (~> 1.0)
   rspec-activemodel-mocks
-  rspec-its (~> 1.1)
+  rspec-its (~> 1.2)
   rspec-rails
-  rubocop (~> 0.42.0)
-  rubocop-rspec (= 1.7)
+  rubocop (~> 0.48.1)
+  rubocop-rspec (= 1.10.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver
-  shoulda-matchers (~> 3.1)
+  shoulda-matchers (~> 3.1.1)
   sidekiq
   solr_wrapper (>= 0.13)
   spring
   sqlite3
-  turbolinks
+  turbolinks (~> 5)
   uglifier (>= 1.3.0)
   vcr
   web-console (~> 2.0)
   webmock
 
 BUNDLED WITH
-   1.14.5
+   1.14.6
