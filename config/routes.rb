@@ -40,8 +40,6 @@ Rails.application.routes.draw do
   curation_concerns_embargo_management
   concern :exportable, Blacklight::Routes::Exportable.new
 
-  # route for splash page
-  get 'splash' => 'page_requests#splash_page'
   get 'about' => 'static#about'
   get 'coll_policy' => 'static#coll_policy'
   get 'format_advice' => 'static#format_advice'
