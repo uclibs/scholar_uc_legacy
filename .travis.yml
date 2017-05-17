@@ -11,8 +11,8 @@ before_install:
   - gem --version
   - gem install brakeman
   - gem install bundler
-  - gem install rubocop -v '0.42.0'
-  - gem install rubocop-rspec -v '1.7'
+  - gem install rubocop -v '0.48.1'
+  - gem install rubocop-rspec -v '1.10.0'
   - "phantomjs --version"
   - "export PATH=$PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
   - "phantomjs --version"
@@ -21,12 +21,12 @@ before_install:
   - "if [ $(phantomjs --version) != '2.1.1' ]; then tar -xvf $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs; fi"
   - "phantomjs --version"
 rvm:
-  - 2.3.3
+  - 2.4.1
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
   matrix:
-    - "RAILS_VERSION=4.2.7.1"
+    - RAILS_VERSION="5.0.3"
 notifications:
   email:
     recipients:
