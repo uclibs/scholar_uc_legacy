@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509155842) do
+ActiveRecord::Schema.define(version: 20170518142744) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -150,9 +150,9 @@ ActiveRecord::Schema.define(version: 20170509155842) do
   end
 
   create_table "follows", force: :cascade do |t|
-    t.string   "followable_type",                 null: false
+    t.string   "followable_type"
     t.integer  "followable_id",                   null: false
-    t.string   "follower_type",                   null: false
+    t.string   "follower_type"
     t.integer  "follower_id",                     null: false
     t.boolean  "blocked",         default: false, null: false
     t.datetime "created_at",                      null: false
@@ -230,6 +230,17 @@ ActiveRecord::Schema.define(version: 20170509155842) do
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
   end
 
+  create_table "minter_states", force: :cascade do |t|
+    t.string   "namespace",            default: "default", null: false
+    t.string   "template",                                 null: false
+    t.text     "counters"
+    t.integer  "seq",        limit: 8, default: 0
+    t.binary   "rand"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.index ["namespace"], name: "index_minter_states_on_namespace", unique: true
+  end
+
   create_table "orcid_profile_requests", force: :cascade do |t|
     t.integer  "user_id",          null: false
     t.string   "given_names",      null: false
@@ -256,7 +267,6 @@ ActiveRecord::Schema.define(version: 20170509155842) do
   create_table "permission_templates", force: :cascade do |t|
     t.string   "admin_set_id"
     t.string   "visibility"
-    t.string   "workflow_name",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "release_date"
