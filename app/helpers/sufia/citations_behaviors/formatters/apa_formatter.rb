@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Sufia
   module CitationsBehaviors
     module Formatters
@@ -26,6 +27,7 @@ module Sufia
           pub_info = clean_end_punctuation(setup_pub_info(work))
           text << pub_info unless pub_info.nil?
           text << "." unless text.blank? || text =~ /\.$/
+          text.gsub!(/(\.\s*<\/?\w+>\s*)\./, "\\1")
           text.html_safe
         end
 

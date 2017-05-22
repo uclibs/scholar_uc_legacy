@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Sufia
   module CitationsBehaviors
     module Formatters
@@ -20,6 +21,7 @@ module Sufia
 
           text << pub_info unless pub_info.blank?
           text << "." unless text.blank? || text =~ /\.$/
+          text.gsub!(/(\.\s*<\/?\w+>\s*)\./, "\\1")
           text.html_safe
         end
 

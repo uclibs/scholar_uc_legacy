@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Sufia
   module CitationsBehaviors
     module Formatters
@@ -22,6 +23,7 @@ module Sufia
           text << format_title(work.to_s)
           pub_info = setup_pub_info(work, false)
           text << " #{pub_info}." unless pub_info.blank?
+          text.gsub!(/(\.\s*<\/?\w+>\s*)\./, "\\1")
           text.html_safe
         end
 

@@ -137,7 +137,10 @@ Rails:
 
 Rails/OutputSafety:
   Exclude:
-    - app/values/universal_viewer.rb
+    - 'app/values/universal_viewer.rb'
+    - 'app/helpers/sufia/citations_behaviors/formatters/apa_formatter.rb'
+    - 'app/helpers/sufia/citations_behaviors/formatters/chicago_formatter.rb'
+    - 'app/helpers/sufia/citations_behaviors/formatters/mla_formatter.rb'
 
 RSpec/AnyInstance:
   Exclude:
