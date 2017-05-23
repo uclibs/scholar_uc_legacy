@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe '/contact_form/new.html.erb', type: :view do
+describe '/hyrax/contact_form/new.html.erb', type: :view do
   before do
     view.stub(:user_signed_in?) { false }
     allow(view).to receive(:current_user).and_return('')
