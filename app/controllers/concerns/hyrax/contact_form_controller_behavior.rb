@@ -1,11 +1,11 @@
+# frozen_string_literal: true
 module Hyrax
   module ContactFormControllerBehavior
     extend ActiveSupport::Concern
-    FAIL_NOTICE = "You must complete the Captcha to confirm the form.".freeze
+    FAIL_NOTICE = "You must complete the Captcha to confirm the form."
 
     included do
       before_action :build_contact_form
-      layout 'homepage'
     end
 
     def new; end
@@ -13,13 +13,11 @@ module Hyrax
     def create
       # not spam and a valid form
       if @contact_form.valid? && passes_captcha_or_is_logged_in?
-        ContactMailer.contact(@contact_form).deliver_now
+        Hyrax::ContactMailer.contact(@contact_form).deliver_now
         flash.now[:notice] = 'Thank you for your message!'
         @contact_form = ContactForm.new
       else
-        flash.now[:error] = 'Sorry, this message was not sent successfully. '
-        flash.now[:error] << FAIL_NOTICE unless passes_captcha_or_is_logged_in?
-        flash.now[:error] << @contact_form.errors.full_messages.map(&:to_s).join(", ")
+        flash.now[:error] = FAIL_NOTICE
       end
       render :new
     rescue RuntimeError => e
