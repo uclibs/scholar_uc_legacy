@@ -71,7 +71,6 @@ en:
     terms_of_use_html: "<a class=\"a\" href=\"/terms\">Scholar@UC Terms of Use</a>"
     non_discrimination_notice_html: "<a href=\"http://uc.edu/about/policies/non-discrimination.html\">Notice of Non-Discrimination</a>"
     share_button: "Contribute"
-
   simple_form:
     labels:
       collection:
@@ -88,13 +87,11 @@ en:
         description: "Free-text notes about the collection. Examples include abstracts of a paper or citation information for a journal article."
         rights: "Licensing and distribution information governing access to the collection. Select from the provided drop-down list."
 
-  hyrax:
     base:
       metadata:
         header: Attributes
     upload:
       cloud_timeout_message_html: "If you have files on cloud storage sites such as Box, Dropbox, Google Drive, or Kaltura, you can click the \"Browse cloud files\" button to select and upload those files directly to Scholar@UC.<br /><br />Please note that if you upload a large number of files within a short period of time, the cloud provider may not be able to accommodate your request. If you experience any errors uploading from the cloud, let us know via the %{contact_href}."
-  hyrax:
     base:
       form_files:
         external_upload: "Add Files from Cloud Providers"

@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   concern :exportable, Blacklight::Routes::Exportable.new
 
   get 'about' => 'static#about'
+  get 'help' => 'static#help'
   get 'coll_policy' => 'static#coll_policy'
   get 'format_advice' => 'static#format_advice'
   get 'faq' => 'static#faq'
