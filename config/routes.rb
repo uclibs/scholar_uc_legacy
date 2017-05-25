@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   # route for splash page
   get 'splash' => 'page_requests#splash_page'
   get 'about' => 'static#about'
+  get 'help' => 'static#help'
   get 'coll_policy' => 'static#coll_policy'
   get 'format_advice' => 'static#format_advice'
   get 'faq' => 'static#faq'
