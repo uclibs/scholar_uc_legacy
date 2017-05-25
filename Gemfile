@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'hyrax', github: 'projecthydra-labs/hyrax', ref: '0b663c43b97ecd30b2c42115b9c0d933559f0ba3'
+gem 'hyrax', '1.0.1'
 
 #repository manager
 gem 'hydra-role-management'
