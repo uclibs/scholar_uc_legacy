@@ -8,7 +8,6 @@ class User < ApplicationRecord
   # Connects this user object to Curation Concerns behaviors.
   include Hyrax::User
   # Connects this user object to Hyrax behaviors.
-  include Hyrax::User
   include Hyrax::UserUsageStats
 
   if Blacklight::Utils.needs_attr_accessible?
