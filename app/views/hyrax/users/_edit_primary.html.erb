@@ -121,17 +121,20 @@
   <div id="user-edit-proxy" class='pull-left panel panel-default'>
     <div class="panel-heading">Manage Proxies</div>
     <div class="panel-body">
-    <%= render 'dashboard/_index_partials/proxy_rights', user: @user %>
+    <%= render 'hyrax/dashboard/_index_partials/proxy_rights', user: @user %>
     </div>
   </div>
 </div>
 <div class="row orcid-section">
   <div class="col-md-5 well">
-    <% defined?(status_processor) || status_processor = Orcid::ProfileStatus.method(:for) %>
-      <% status_processor.call(current_user) do |on| %>
-        <% on.authenticated_connection do |profile| %>
-        <% end %>
-      <% end %>
-    <%= render partial: 'orcid/profile_connections/orcid_connector', locals: {default_search_text: current_user.name } %>
+    # ORCID partial
+    <!--   
+      <%# defined?(status_processor) || status_processor = Orcid::ProfileStatus.method(:for) %>
+        <%# status_processor.call(current_user) do |on| %>
+          <%# on.authenticated_connection do |profile| %>
+          <%# end %>
+        <%# end %>
+      <%#= render partial: 'orcid/profile_connections/orcid_connector', locals: {default_search_text: current_user.name } %>
+    -->
   </div>
 </div>
