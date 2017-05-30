@@ -2,7 +2,6 @@
 require Hyrax::Engine.root.join('app/indexers/hyrax/file_set_indexer.rb')
 module Hyrax
   class FileSetIndexer < ActiveFedora::IndexingService
-
     def generate_solr_document
       super.tap do |solr_doc|
         solr_doc[Solrizer.solr_name('hasRelatedMediaFragment', :symbol)] = object.representative_id

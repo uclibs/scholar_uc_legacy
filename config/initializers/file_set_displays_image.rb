@@ -1,2 +1,2 @@
 # frozen_string_literal: true
-#Hyrax::FileSetPresenter.include DisplaysImage
+# Hyrax::FileSetPresenter.include DisplaysImage

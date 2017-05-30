@@ -4,8 +4,7 @@ class CollectionAvatarsController < ApplicationController
 
   # GET /collection_avatars/1
   # GET /collection_avatars/1.json
-  def show
-  end
+  def show; end
 
   # GET /collection_avatars/new
   def new
@@ -13,8 +12,7 @@ class CollectionAvatarsController < ApplicationController
   end
 
   # GET /collection_avatars/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /collection_avatars
   # POST /collection_avatars.json

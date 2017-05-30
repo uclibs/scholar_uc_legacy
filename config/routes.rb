@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
 
-  authenticate :user, ->(u) { u.admin? } do
+  authenticate :user, (->(u) { u.admin? }) do
     mount Sidekiq::Web => '/sidekiq'
   end
 

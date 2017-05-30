@@ -8,8 +8,7 @@ module Hyrax
       layout 'homepage'
     end
 
-    def new
-    end
+    def new; end
 
     def create
       # not spam and a valid form
