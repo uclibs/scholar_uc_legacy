@@ -5,6 +5,7 @@
 module Hyrax
   class ImagesController < ApplicationController
     # Adds Hyrax behaviors to the controller.
+
     include Hyrax::WorksControllerBehavior
     include Scholar::WorksControllerBehavior
 
