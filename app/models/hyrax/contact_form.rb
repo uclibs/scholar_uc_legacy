@@ -23,5 +23,15 @@ module Hyrax
         from: email
       }
     end
+
+    def self.issue_types_for_locale
+      [
+        I18n.t('hyrax.contact_form.issue_types.depositing'),
+        I18n.t('hyrax.contact_form.issue_types.changing'),
+        I18n.t('hyrax.contact_form.issue_types.browsing'),
+        I18n.t('hyrax.contact_form.issue_types.reporting'),
+        I18n.t('hyrax.contact_form.issue_types.general')
+      ]
+    end
   end
 end
