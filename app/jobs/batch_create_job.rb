@@ -31,8 +31,8 @@ class BatchCreateJob < ActiveJob::Base
         attributes = attributes.merge(uploaded_files: [upload_id],
                                       title: title)
         child_log = Hyrax::Operation.create!(user: user,
-                                                        operation_type: "Create Work",
-                                                        parent: log)
+                                             operation_type: "Create Work",
+                                             parent: log)
         CreateWorkJob.perform_later(user, model, attributes, child_log)
       end
     end

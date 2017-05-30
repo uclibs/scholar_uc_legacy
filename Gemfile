@@ -1,10 +1,11 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 
 gem 'hyrax', github: 'projecthydra-labs/hyrax', ref: '0b663c43b97ecd30b2c42115b9c0d933559f0ba3'
 
-#repository manager
+# repository manager
 gem 'hydra-role-management'
-#gem 'orcid', github: 'uclibs/orcid'
+# gem 'orcid', github: 'uclibs/orcid'
 gem 'riiif', '~> 0.2.0'
 gem 'iiif_manifest', '~> 0.1.2'
 gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
@@ -16,7 +17,7 @@ gem 'rails', '5.0.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
-#gem 'puma', '~> 3.0'
+# gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,10 +48,10 @@ gem 'change_manager', git: "https://github.com/lawhorkl/change_manager.git", ref
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#gem 'clamav'
+# gem 'clamav'
 
 group :development, :test do
-  gem 'brakeman', :require => false
+  gem 'brakeman', require: false
 end
 
 group :development, :test do
@@ -67,7 +68,6 @@ group :development do
   gem 'spring'
 end
 
-
 group :development, :test do
   gem 'solr_wrapper', '>= 0.13'
 end
@@ -75,7 +75,7 @@ end
 gem 'rsolr', '~> 1.0'
 gem 'devise'
 gem 'devise-guests', '~> 0.5'
-#gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth'
+# gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth'
 group :development, :test do
   gem 'vcr'
   gem 'webmock'
