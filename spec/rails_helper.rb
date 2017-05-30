@@ -149,3 +149,9 @@ VCR.configure do |c|
   c.configure_rspec_metadata!
   c.allow_http_connections_when_no_cassette = true
 end
+
+def main_app
+  Rails.application.class.routes.url_helpers
+end
+
+main_app.root_path
