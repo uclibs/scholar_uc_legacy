@@ -34,13 +34,6 @@ module Hyrax
     end
 
     ## Gymnastics to allow repeatble fields to behave as non-repeatable
-    def self.multiple?(field)
-      if %i(title alt_description rights alt_date_created).include? field.to_sym
-        false
-      else
-        super
-      end
-    end
 
     def self.model_attributes(_)
       attrs = super
