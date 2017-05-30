@@ -42,6 +42,7 @@ Metrics/MethodLength:
     - 'app/helpers/change_manager/change_manager_helper.rb'
     - 'app/forms/hyrax/forms/batch_upload_form.rb'
     - 'app/forms/hyrax/forms/batch_edit_form.rb'
+    - 'app/controllers/classify_concerns_controller.rb'
 
 Metrics/ModuleLength:
   Exclude:
