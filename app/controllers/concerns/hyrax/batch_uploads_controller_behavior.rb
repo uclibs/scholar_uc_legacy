@@ -64,7 +64,7 @@ module Hyrax
                                      params[:title].permit!.to_h,
                                      params[:uploaded_files],
                                      attributes_for_actor.to_h.merge!(model: klass),
-                                     log)
+                                     operation)
       end
 
       def uploading_on_behalf_of?
