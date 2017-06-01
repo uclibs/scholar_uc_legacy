@@ -6,11 +6,10 @@ class AttachFilesToWorkJob < ActiveJob::Base
       file_set = FileSet.new
       user = User.find_by_user_key(work.depositor)
       actor = Hyrax::Actors::FileSetActor.new(file_set, user)
-      actor.create_metadata(work, visibility: work.visibility) do |file|
-        file.permissions_attributes = work.permissions.map(&:to_hash)
-      end
-
+      actor.create_metadata(visibility: work.visibility)
       attach_content(actor, uploaded_file.file)
+      actor.attach_file_to_work(work)
+      actor.file_set.permissions_attributes = work.permissions.map(&:to_hash)
       uploaded_file.update(file_set_uri: file_set.uri)
     end
     work.save! # Temp fix to https://github.com/uclibs/scholar_uc/issues/1023

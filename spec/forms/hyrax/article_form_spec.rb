@@ -5,7 +5,7 @@ require 'rails_helper'
 
 RSpec.describe Hyrax::ArticleForm do
   let(:work) { Article.new }
-  let(:form) { described_class.new(work, nil) }
+  let(:form) { described_class.new(work, nil, nil) }
 
   describe "#required_fields" do
     subject { form.required_fields }
