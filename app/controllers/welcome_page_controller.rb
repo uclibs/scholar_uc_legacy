@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 class WelcomePageController < ApplicationController
-  def index
-  end
+  def index; end
 
   def create
     if user_just_waived_welcome_page?
