@@ -13,7 +13,7 @@
           <p class="short-description"><%= klass.human_readable_short_description %></p>
           <% if params[:type] == 'batch' %>
             <%= link_to 'Add Batch',
-              hyrax.new_batch_upload_path(payload_concern: klass),
+              sufia.new_batch_upload_path(payload_concern: klass),
               class: "add-button btn btn-primary #{dom_class(klass, 'add_new')}"
             %>
           <% else %>
