@@ -10,7 +10,7 @@ module Hyrax
 
     def search(query)
       clause = query.blank? ? nil : "%" + query.downcase + "%"
-      base = User.where(*base_query)
+      base = ::User.where(*base_query)
       unless clause.blank?
         base = base.where("#{Devise.authentication_keys.first} like lower(?)
                              OR display_name like lower(?)
@@ -18,7 +18,7 @@ module Hyrax
                              OR last_name like lower(?)", clause, clause, clause, clause)
       end
       base.where("#{Devise.authentication_keys.first} not in (?)",
-                 [User.batch_user_key, User.audit_user_key])
+                 [::User.batch_user_key, ::User.audit_user_key])
           .where(guest: false)
           .references(:trophies)
           .order(sort_value)
@@ -44,7 +44,7 @@ module Hyrax
       def exclude_admin_users_and_non_owners
         query = ''
         appending = false
-        base = User.all
+        base = ::User.all
         base.each do |user|
           next unless user.admin? || user_work_count(user) < 1
           query += " and " if appending
