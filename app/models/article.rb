@@ -61,4 +61,16 @@ class Article < ActiveFedora::Base
   def self.to_s_u
     'article'
   end
+
+  def multiple?(field)
+    ArticleForm.multiple? field
+  end
+
+  def self.multiple?(field)
+    if %i(title rights).include? field.to_sym
+      false
+    else
+      super
+    end
+  end
 end

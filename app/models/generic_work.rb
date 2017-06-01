@@ -60,4 +60,16 @@ class GenericWork < ActiveFedora::Base
   def self.to_s_u
     'generic_work'
   end
+
+  def multiple?(field)
+    GenericWorkForm.multiple? field
+  end
+
+  def self.multiple?(field)
+    if %i(title rights).include? field.to_sym
+      false
+    else
+      super
+    end
+  end
 end

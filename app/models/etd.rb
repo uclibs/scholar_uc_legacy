@@ -76,4 +76,16 @@ class Etd < ActiveFedora::Base
   def publisher
     etd_publisher
   end
+
+  def multiple?(field)
+    EtdForm.multiple? field
+  end
+
+  def self.multiple?(field)
+    if %i(title rights).include? field.to_sym
+      false
+    else
+      super
+    end
+  end
 end
