@@ -1,12 +1,12 @@
 <dl id="user_info">
 
-  <%# defined?(status_processor) || status_processor = Orcid::ProfileStatus.method(:for)
+  <% defined?(status_processor) || status_processor = Orcid::ProfileStatus.method(:for)
                                    status_processor.call(@user) do |on|
                                    on.authenticated_connection do |profile| %>
-                                   <dt><%#= orcid_label('profile') %></dt>
-                                   <dd><%#= link_to profile.orcid_profile_id, Orcid.url_for_orcid_id(profile.orcid_profile_id), { target: '_blank' } %></dd>
-    <%# end %>
-    <%# end %>
+                                   <dt><%= orcid_label('profile') %></dt>
+                                   <dd><%= link_to profile.orcid_profile_id, Orcid.url_for_orcid_id(profile.orcid_profile_id), { target: '_blank' } %></dd>
+    <% end %>
+    <% end %>
 <% if Hyrax.config.arkivo_api && user.zotero_userid.present? %>
   <dt><%= zotero_label(html_class: 'profile') %></dt>
   <dd><%= link_to zotero_profile_url(user.zotero_userid), zotero_profile_url(user.zotero_userid), { target: '_blank' } %></dd>
