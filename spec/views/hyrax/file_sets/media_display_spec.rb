@@ -47,7 +47,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the download image link' do
-        expect(rendered).to have_link t('hyrax.show.downloadable_content.image_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.downloadable_content.image_link')
       end
     end
 
@@ -57,7 +57,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the request image link' do
-        expect(rendered).to have_link t('hyrax.show.requestable_content.image_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.requestable_content.image_link')
       end
     end
   end
@@ -69,7 +69,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the download PDF link' do
-        expect(rendered).to have_link t('hyrax.show.downloadable_content.pdf_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.downloadable_content.pdf_link')
       end
     end
 
@@ -79,7 +79,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the request PDF link' do
-        expect(rendered).to have_link t('hyrax.show.requestable_content.pdf_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.requestable_content.pdf_link')
       end
     end
   end
@@ -91,7 +91,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the download office document link' do
-        expect(rendered).to have_link t('hyrax.show.downloadable_content.office_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.downloadable_content.office_link')
       end
     end
 
@@ -101,7 +101,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the request office document link' do
-        expect(rendered).to have_link t('hyrax.show.requestable_content.office_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.requestable_content.office_link')
       end
     end
   end
@@ -113,7 +113,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the download video link' do
-        expect(rendered).to have_link t('hyrax.show.downloadable_content.video_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.downloadable_content.video_link')
       end
     end
 
@@ -123,7 +123,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the request video link' do
-        expect(rendered).to have_link t('hyrax.show.requestable_content.video_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.requestable_content.video_link')
       end
     end
   end
@@ -135,7 +135,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the download audio link' do
-        expect(rendered).to have_link t('hyrax.show.downloadable_content.audio_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.downloadable_content.audio_link')
       end
     end
 
@@ -145,7 +145,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the request audio link' do
-        expect(rendered).to have_link t('hyrax.show.requestable_content.audio_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.requestable_content.audio_link')
       end
     end
   end
@@ -157,7 +157,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the download file document link' do
-        expect(rendered).to have_link t('hyrax.show.downloadable_content.default_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.downloadable_content.default_link')
       end
     end
 
@@ -167,7 +167,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
       end
 
       it 'renders the request file link' do
-        expect(rendered).to have_link t('hyrax.show.requestable_content.default_link')
+        expect(rendered).to have_link t('hyrax.file_set.show.requestable_content.default_link')
       end
     end
   end

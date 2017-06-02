@@ -31,7 +31,7 @@
   <% if can?(:read, file_set.id) %>
     <li role="menuitem" tabindex="-1">
     <% if file_is_too_large_to_download(file_set) %>
-      <%= show_request_file_action(file_set, t('hyrax.show.requestable_content.action_link')) %>
+      <%= show_request_file_action(file_set, t('hyrax.file_set.show.requestable_content.action_link')) %>
     <% else %>
       <%= link_to 'Download', hyrax.download_path(file_set),
         title: "Download #{file_set.to_s.inspect}", target: "_blank" %>
