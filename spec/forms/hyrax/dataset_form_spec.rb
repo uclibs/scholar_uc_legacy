@@ -26,8 +26,8 @@ RSpec.describe Hyrax::DatasetForm do
   end
 
   describe '.model_attributes' do
-    before { create(:permission_template, admin_set_id: admin_set_id, workflow_name: workflow.name) }
-    let(:workflow) { create(:workflow) }
+    let(:permission_template) { create(:permission_template, admin_set_id: admin_set_id) }
+    let!(:workflow) { create(:workflow, active: true, permission_template_id: permission_template.id) }
     let(:admin_set_id) { '123' }
     let(:params) do
       ActionController::Parameters.new(
@@ -38,7 +38,7 @@ RSpec.describe Hyrax::DatasetForm do
         representative_id: '456',
         thumbnail_id: '789',
         rights: 'http://creativecommons.org/licenses/by/3.0/us/',
-        collection_ids: ['123456', 'abcdef']
+        member_of_collection_ids: ['123456', 'abcdef']
       )
     end
 
@@ -49,7 +49,7 @@ RSpec.describe Hyrax::DatasetForm do
       expect(subject['alt_description']).to eq ''
       expect(subject['visibility']).to eq 'open'
       expect(subject['rights']).to eq 'http://creativecommons.org/licenses/by/3.0/us/'
-      expect(subject['collection_ids']).to eq ['123456', 'abcdef']
+      expect(subject['member_of_collection_ids']).to eq ['123456', 'abcdef']
     end
 
     context '.model_attributes' do
@@ -58,7 +58,7 @@ RSpec.describe Hyrax::DatasetForm do
           title: '',
           alt_description: '',
           rights: '',
-          collection_ids: [''],
+          member_of_collection_ids: [''],
           on_behalf_of: 'Melissa'
         )
       end
@@ -67,7 +67,7 @@ RSpec.describe Hyrax::DatasetForm do
         expect(subject['title']).to eq ['']
         expect(subject['alt_description']).to eq ''
         expect(subject['rights']).to be_empty
-        expect(subject['collection_ids']).to be_empty
+        expect(subject['member_of_collection_ids']).to be_empty
         expect(subject['on_behalf_of']).to eq 'Melissa'
       end
     end
