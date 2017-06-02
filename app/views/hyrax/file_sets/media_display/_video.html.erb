@@ -6,13 +6,13 @@
 
   <% if Hyrax.config.display_media_download_link %>
     <% if file_is_too_large_to_download(file_set) %>            
-      <%= show_request_file_button(file_set, t('hyrax.show.requestable_content.video_link')) %>
+      <%= show_request_file_button(file_set, t('hyrax.file_set.show.requestable_content.video_link')) %>
     <% else %>
       <%= link_to hyrax.download_path(file_set),
                   target: :_blank,
                   data: { turbolinks: false },
                   class: "btn btn-default" do %>
-          <%= t('hyrax.show.downloadable_content.video_link') %>
+          <%= t('hyrax.file_set.show.downloadable_content.video_link') %>
       <% end %>
     <% end %>
   <% end %>
