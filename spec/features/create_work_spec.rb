@@ -125,7 +125,7 @@ shared_examples 'proxy work creation' do |work_class|
   end
 end
 
-feature 'Creating a new work', :js do
+feature 'Creating a new work', :js, :workflow do
   let(:user) { create(:user) }
   let(:file1) { File.open(fixture_path + '/world.png') }
   let(:file2) { File.open(fixture_path + '/image.jp2') }
@@ -134,8 +134,11 @@ feature 'Creating a new work', :js do
   # let!(:uploaded_file2) { UploadedFile.create(file: file2, user: user) }
 
   before do
-    Hyrax::Workflow::WorkflowImporter.load_workflows
-    AdminSet.find_or_create_default_admin_set_id
+    create(:permission_template_access,
+           :deposit,
+           permission_template: create(:permission_template, with_admin_set: true),
+           agent_type: 'user',
+           agent_id: user.user_key)
     allow(CharacterizeJob).to receive(:perform_later)
     page.current_window.resize_to(2000, 2000)
   end

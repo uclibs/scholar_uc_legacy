@@ -88,14 +88,17 @@ shared_examples 'work crud' do |work|
   end
 end
 
-describe 'end to end behavior:' do
+describe 'end to end behavior:', :workflow do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:persisted_work) { FactoryGirl.create(:work, user: user) }
   let!(:deleted_work) { FactoryGirl.create(:work, user: user) }
   let!(:collection) { FactoryGirl.create(:collection, user: user) }
   before do
-    Hyrax::Workflow::WorkflowImporter.load_workflows
-    AdminSet.find_or_create_default_admin_set_id
+    create(:permission_template_access,
+           :deposit,
+           permission_template: create(:permission_template, with_admin_set: true),
+           agent_type: 'user',
+           agent_id: user.user_key)
     login_as user
   end
   context 'the user' do
