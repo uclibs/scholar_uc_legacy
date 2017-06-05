@@ -37,14 +37,6 @@ module Hyrax
         []
       end
 
-      def self.multiple?(field)
-        if %i(title description rights).include? field.to_sym
-          false
-        else
-          super
-        end
-      end
-
       def self.model_attributes(_)
         attrs = super
         attrs[:title] = Array(attrs[:title]) if attrs[:title]
@@ -54,15 +46,15 @@ module Hyrax
       end
 
       def title
-        super.first || ""
+        @attributes['title'].first || ''
       end
 
       def description
-        super.first || ""
+        @attributes['description'].first || ''
       end
 
       def rights
-        super.first || ""
+        @attributes['rights'].first || ''
       end
 
       private

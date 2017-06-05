@@ -5,4 +5,17 @@ class Collection < ActiveFedora::Base
   include Hyrax::Collections::Featured
   # You can replace these metadata if they're not suitable
   include Hyrax::BasicMetadata
+  # self.indexer Hyrax::CollectionWithBasicMetadataIndexer
+
+  def self.multiple?(field)
+    if %i(title description rights).include? field.to_sym
+      false
+    else
+      super
+    end
+  end
+
+  def multiple?(field)
+    CollectionForm.multiple? field
+  end
 end
