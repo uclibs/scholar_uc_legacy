@@ -1,15 +1,39 @@
 # frozen_string_literal: true
-require 'spec_helper'
+require 'rails_helper'
 
 describe 'hyrax/base/relationships', type: :view do
+  before do
+    allow(view).to receive(:search_state).and_return(search_state)
+  end
+  let(:search_state) { double('SearchState', url_for_document: 'blah') }
   let(:ability) { double }
-  let(:solr_doc) { double(id: '123', human_readable_type: 'Work', admin_set: nil) }
+  let(:solr_doc) { instance_double(SolrDocument, id: '123', human_readable_type: 'Work', admin_set: nil) }
   let(:presenter) { Hyrax::WorkShowPresenter.new(solr_doc, ability) }
-  let(:generic_work) { GenericWork.new(id: '456', title: ['Containing work']) }
-  let(:collection) { Collection.new(id: '345', title: ['Containing collection']) }
+  let(:generic_work) do
+    Hyrax::WorkShowPresenter.new(
+      SolrDocument.new(
+        id: '456',
+        has_model_ssim: ['GenericWork'],
+        title_tesim: ['Containing work']
+      ),
+      ability
+    )
+  end
+
+  let(:collection) do
+    Hyrax::CollectionPresenter.new(
+      SolrDocument.new(
+        id: '345',
+        has_model_ssim: ['Collection'],
+        title_tesim: ['Containing collection']
+      ),
+      ability
+    )
+  end
 
   context "when collections are not present" do
     before do
+      allow(solr_doc).to receive(:member_of_collection_ids).and_return([])
       render 'hyrax/base/relationships', presenter: presenter
     end
     it "shows the message" do
@@ -19,6 +43,7 @@ describe 'hyrax/base/relationships', type: :view do
 
   context "when parents are not present" do
     before do
+      allow(solr_doc).to receive(:member_of_collection_ids).and_return([])
       render 'hyrax/base/relationships', presenter: presenter
     end
     it "shows the message" do
@@ -27,11 +52,11 @@ describe 'hyrax/base/relationships', type: :view do
   end
 
   context "when collections are present and no parents are present" do
-    let(:collection_presenters) { [collection] }
+    let(:member_of_collection_presenters) { [collection] }
     let(:page) { Capybara::Node::Simple.new(rendered) }
     before do
       allow(view).to receive(:contextual_path).and_return("/collections/456")
-      allow(presenter).to receive(:collection_presenters).and_return(collection_presenters)
+      allow(presenter).to receive(:member_of_collection_presenters).and_return(member_of_collection_presenters)
       render 'hyrax/base/relationships', presenter: presenter
     end
     it "links to collections" do
@@ -47,11 +72,11 @@ describe 'hyrax/base/relationships', type: :view do
   end
 
   context "when parents are present and no collections are present" do
-    let(:collection_presenters) { [generic_work] }
+    let(:member_of_collection_presenters) { [generic_work] }
     let(:page) { Capybara::Node::Simple.new(rendered) }
     before do
       allow(view).to receive(:contextual_path).and_return("/concern/generic_works/456")
-      allow(presenter).to receive(:collection_presenters).and_return(collection_presenters)
+      allow(presenter).to receive(:member_of_collection_presenters).and_return(member_of_collection_presenters)
       render 'hyrax/base/relationships', presenter: presenter
     end
     it "links to work" do
@@ -67,11 +92,11 @@ describe 'hyrax/base/relationships', type: :view do
   end
 
   context "when parents are present and collections are present" do
-    let(:collection_presenters) { [generic_work, collection] }
+    let(:member_of_collection_presenters) { [generic_work, collection] }
     let(:page) { Capybara::Node::Simple.new(rendered) }
     before do
       allow(view).to receive(:contextual_path).and_return("/concern/generic_works/456")
-      allow(presenter).to receive(:collection_presenters).and_return(collection_presenters)
+      allow(presenter).to receive(:member_of_collection_presenters).and_return(member_of_collection_presenters)
       render 'hyrax/base/relationships', presenter: presenter
     end
     it "links to work and collection" do
