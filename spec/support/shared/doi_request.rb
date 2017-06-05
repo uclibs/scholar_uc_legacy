@@ -28,8 +28,11 @@ shared_examples 'doi request' do |work_class|
 
   before do
     allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true)
-    Hyrax::Workflow::WorkflowImporter.load_workflows
-    AdminSet.find_or_create_default_admin_set_id
+    create(:permission_template_access,
+           :deposit,
+           permission_template: create(:permission_template, with_admin_set: true),
+           agent_type: 'user',
+           agent_id: user.user_key)
     page.driver.browser.js_errors = false
     allow(CharacterizeJob).to receive(:perform_later)
   end

@@ -5,8 +5,11 @@ describe 'Adding an infected file', js: true do
   let(:user) { FactoryGirl.create(:user) }
 
   before do
-    Hyrax::Workflow::WorkflowImporter.load_workflows
-    AdminSet.find_or_create_default_admin_set_id
+    create(:permission_template_access,
+           :deposit,
+           permission_template: create(:permission_template, with_admin_set: true),
+           agent_type: 'user',
+           agent_id: user.user_key)
     allow(CharacterizeJob).to receive(:perform_later)
     allow(Hydra::Works::VirusCheckerService).to receive(:file_has_virus?).and_return(true)
     login_as user
