@@ -133,6 +133,7 @@ RSpec.configure do |config|
   end
 
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :helper
 
   # Resize the browser window large enough that Capybara can see all elements
   config.before(:each, js: true) do
