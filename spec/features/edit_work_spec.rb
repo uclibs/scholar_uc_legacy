@@ -10,8 +10,11 @@ shared_examples 'edit work' do |work_class|
   let(:work_type) { work_class.name.underscore }
   let(:edit_path) { "concern/#{work_type}s/#{work.id}/edit" }
   before do
-    Hyrax::Workflow::WorkflowImporter.load_workflows
-    AdminSet.find_or_create_default_admin_set_id
+    create(:permission_template_access,
+           :deposit,
+           permission_template: create(:permission_template, with_admin_set: true),
+           agent_type: 'user',
+           agent_id: user.user_key)
     page.driver.browser.js_errors = false
     sign_in user
     work.ordered_members << FactoryGirl.create(:file_set, user: user, title: ['ABC123xyz'])
