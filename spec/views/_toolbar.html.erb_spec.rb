@@ -64,7 +64,7 @@ describe '/_toolbar.html.erb', type: :view do
 
     context "when the user can't create any work types" do
       before do
-        allow(view).to receive(:can_ever_create_works?).and_return(false)
+        allow(view.current_ability).to receive(:can_create_any_work?).and_return(false)
       end
       it "does not have a link to upload" do
         render
@@ -78,7 +78,7 @@ describe '/_toolbar.html.erb', type: :view do
       it "has a link to upload" do
         allow(view).to receive(:can?).with(:create, Collection).and_return(true)
         render
-        expect(rendered).to have_link('New Collection', href: new_collection_path)
+        expect(rendered).to have_link('New Collection', href: hyrax.new_collection_path)
       end
     end
 
