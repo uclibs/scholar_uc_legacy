@@ -6,7 +6,7 @@ describe '/hyrax/base/_form_visibility_component.html.erb', type: :view do
   let(:ability) { double }
 
   let(:form) do
-    Hyrax::GenericWorkForm.new(work, ability)
+    Hyrax::GenericWorkForm.new(work, ability, controller)
   end
 
   let(:f) do
