@@ -7,7 +7,7 @@ module ChangeManager
       editors.each do |editor_wrapper|
         editor = editor_wrapper[1]
         if new_editor? editor
-          EmailManager.queue_change(curation_concern.depositor, 'added_as_editor', curation_concern.id, editor[:name])
+          EmailManager.queue_change(curation_concern.depositor, 'added_as_editor', curation_concern.id, editor['name'])
         end
         # uncomment this once the `Ldp::Gone` error is resolved
         # elsif removed_editor? editor
