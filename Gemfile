@@ -5,7 +5,8 @@ gem 'hyrax', '1.0.1'
 
 # repository manager
 gem 'hydra-role-management'
-# gem 'orcid', github: 'uclibs/orcid'
+gem 'orcid', github: 'uclibs/orcid', branch: 'rails-5'
+gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth', branch: 'rails-5'
 gem 'riiif', '~> 0.2.0'
 gem 'iiif_manifest', '~> 0.1.2'
 gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
@@ -75,7 +76,6 @@ end
 gem 'rsolr', '~> 1.0'
 gem 'devise'
 gem 'devise-guests', '~> 0.5'
-# gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth'
 group :development, :test do
   gem 'vcr'
   gem 'webmock'

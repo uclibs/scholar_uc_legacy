@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-# Orcid.configure do |config|
-  # Configure your Orcid Client Application. See URL below for more
-  # information
-  # http://support.orcid.org/knowledgebase/articles/116739-register-a-client-application
+Orcid.configure do |config|
+  # # Configure your Orcid Client Application. See URL below for more
+  # # information
+  # # http://support.orcid.org/knowledgebase/articles/116739-register-a-client-application
   # config.provider.id = "Your app's Orcid Client ID"
   # config.provider.secret = "Your app's Orcid Client Secret"
 
@@ -15,4 +15,4 @@
   #     [lambda{|article| article.publishers.join("; ")}, :publishers]
   #   ]
   # )
-# end
+end
