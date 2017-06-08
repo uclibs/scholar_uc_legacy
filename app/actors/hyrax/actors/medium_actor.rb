@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate hyrax:work Video`
+#  `rails generate hyrax:work Medium`
 module Hyrax
   module Actors
-    class VideoActor < Hyrax::Actors::BaseActor
+    class MediumActor < Hyrax::Actors::BaseActor
       private
 
         def save
