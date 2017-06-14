@@ -6,6 +6,22 @@ RSpec.describe 'the homepage', type: :feature do
     visit root_path
   end
 
+  context 'when a user who is not logged in clicks the contribute button' do
+    let(:user) { FactoryGirl.create :user }
+    before do
+      visit root_path
+    end
+    it 'redirects the user to the new work landing page after sign in' do
+      click_on 'contribute'
+      within '.new_user' do
+        fill_in('Email', with: user.email)
+        fill_in('Password', with: user.password)
+        click_on('Log in')
+      end
+      expect(page).to have_current_path classify_concern_path_with_locale
+    end
+  end
+
   it 'renders the site title' do
     expect(page).to have_css('img[alt="scholar@uc"]')
   end
@@ -70,5 +86,9 @@ RSpec.describe 'the homepage', type: :feature do
     expect(page).to have_link(href: 'http://research.uc.edu')
     expect(page).to have_link(href: 'http://ucit.uc.edu')
     expect(page).to have_link(href: 'http://projecthydra.org')
+  end
+
+  def classify_concern_path_with_locale
+    new_classify_concern_path + '?locale=en'
   end
 end
