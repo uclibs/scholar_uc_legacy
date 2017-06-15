@@ -18,7 +18,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   # Needed for IIIF Manifest
-  config.action_mailer.default_url_options = { host: "localhost:3001" }
+  config.action_mailer.default_url_options = { host: 'bamboo_production_mailer_url' }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

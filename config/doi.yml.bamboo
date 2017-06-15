@@ -1,0 +1,10 @@
+development: &development
+  username: apitest
+  password: bamboo_doi_password
+  shoulder: bamboo_doi_shoulder
+  url: https://ezid.cdlib.org
+test: &TEST
+  username: apitest
+  password: bamboo_doi_password
+  shoulder: bamboo_doi_shoulder
+  url: https://ezid.cdlib.org

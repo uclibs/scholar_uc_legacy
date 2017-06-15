@@ -28,6 +28,7 @@ Install system dependencies
     * **Note:** Solr will not run properly if there are spaces in any of the directory names above it <br />(e.g. /user/my apps/scholar_uc/) 
 1. Change to the application's directory: e.g. `cd ./path/to/local`  
 1. Make sure you are on the develop branch: `git checkout develop`
+1. Copy the sample files: `script/copy_config_local.sh`
 1. Install bundler (if needed): `gem install bundler`
 1. Run bundler: `bundle install`
 1. Start fedora: ```fcrepo_wrapper -p 8984```
