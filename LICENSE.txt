@@ -1,5 +1,5 @@
 ##########################################################################
-# Copyright 2016 University of Cincinnati
+# Copyright 2017 University of Cincinnati
 # Additional copyright may be held by others, as reflected in the commit history.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
