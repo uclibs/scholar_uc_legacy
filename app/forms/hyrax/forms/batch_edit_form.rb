@@ -16,7 +16,7 @@ module Hyrax
       # @param [Ability] current_ability the user authorization model
       # @param [Array<String>] batch_document_ids a list of document ids in the batch
       def initialize(model, current_ability, batch_document_ids)
-        super(model, current_ability)
+        super(model, current_ability, nil)
         @names = []
         @batch_document_ids = batch_document_ids
         initialize_combined_fields
@@ -55,7 +55,9 @@ module Hyrax
 
           terms.each do |key|
             # if value is empty, we create an one element array to loop over for output
-            model[key] = if model.class.multiple? key
+            model[key] = if key == :rights
+                           combined_attributes[key].empty? ? [''] : combined_attributes[key]
+                         elsif model.class.multiple? key
                            combined_attributes[key].empty? ? [''] : combined_attributes[key]
                          else
                            combined_attributes[key].empty? ? '' : combined_attributes[key].first
