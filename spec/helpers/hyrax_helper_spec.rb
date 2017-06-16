@@ -111,9 +111,9 @@ describe HyraxHelper, type: :helper do
       )
     end
 
-    let(:etd) { CurationConcerns::EtdForm.new(Etd.new, nil) }
-    let(:student_work) { CurationConcerns::StudentWorkForm.new(StudentWork.new, nil) }
-    let(:other_object) { CurationConcerns::GenericWorkForm.new(GenericWork.new, nil) }
+    let(:etd) { Hyrax::EtdForm.new(Etd.new, nil, controller) }
+    let(:student_work) { Hyrax::StudentWorkForm.new(StudentWork.new, nil, controller) }
+    let(:other_object) { Hyrax::GenericWorkForm.new(GenericWork.new, nil, controller) }
 
     it "is blank if the work is an ETD" do
       expect(helper.user_college(etd)).to eq("")
@@ -135,9 +135,9 @@ describe HyraxHelper, type: :helper do
       )
     end
 
-    let(:etd) { CurationConcerns::EtdForm.new(Etd.new, nil) }
-    let(:student_work) { CurationConcerns::StudentWorkForm.new(StudentWork.new, nil) }
-    let(:other_object) { CurationConcerns::GenericWorkForm.new(GenericWork.new, nil) }
+    let(:etd) { Hyrax::EtdForm.new(Etd.new, nil, controller) }
+    let(:student_work) { Hyrax::StudentWorkForm.new(StudentWork.new, nil, controller) }
+    let(:other_object) { Hyrax::GenericWorkForm.new(GenericWork.new, nil, controller) }
 
     it "is blank if the work is an ETD" do
       expect(helper.user_department(etd)).to eq("")
