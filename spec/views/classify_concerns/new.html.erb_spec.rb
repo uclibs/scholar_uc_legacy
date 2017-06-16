@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 describe 'classify_concerns/new.html.erb', type: :view do
-  let(:classes) { [GenericWork, Article, Dataset, Image, Document, StudentWork, Video, Etd] }
+  let(:classes) { [GenericWork, Article, Dataset, Image, Document, StudentWork, Medium, Etd] }
   before do
     classes.each do |klass|
       allow(view).to receive(:can?).with(:create, klass) { true }

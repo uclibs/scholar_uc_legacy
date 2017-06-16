@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate hyrax:work Video`
+#  `rails generate hyrax:work Medium`
 module Hyrax
-  class VideoForm < Hyrax::Forms::WorkForm
-    self.model_class = ::Video
+  class MediumForm < Hyrax::Forms::WorkForm
+    self.model_class = ::Medium
 
     ## Adding custom descriptive metadata terms
     self.terms += %i(resource_type alternate_title time_period

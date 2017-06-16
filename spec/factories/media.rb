@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 FactoryGirl.define do
-  factory :video, aliases: [:private_video], class: 'Video' do
+  factory :medium, aliases: [:private_medium], class: 'Medium' do
     transient do
       user { FactoryGirl.create(:user) }
     end
@@ -12,15 +12,15 @@ FactoryGirl.define do
       work.apply_depositor_metadata(evaluator.user.user_key)
     end
 
-    factory :public_video do
+    factory :public_medium do
       visibility Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
     end
 
-    factory :registered_video do
+    factory :registered_medium do
       read_groups ["registered"]
     end
 
-    factory :video_with_one_file do
+    factory :medium_with_one_file do
       before(:create) do |work, evaluator|
         work.ordered_members << FactoryGirl.create(:file_set, user: evaluator.user, title: ['A Contained FileSet'], label: 'filename.pdf')
       end
