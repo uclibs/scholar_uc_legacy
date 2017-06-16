@@ -4,29 +4,26 @@ require 'rails_helper'
 shared_examples "batch_form_fields" do |work_class|
   let(:work_form_class) { ("Hyrax::" + work_class.name + "Form").constantize }
   let(:work_name) { work_class.name }
-  let(:subject) { Hyrax::Forms::BatchUploadForm.new(BatchUploadItem.new, nil) }
+  let(:subject) { Hyrax::Forms::BatchUploadForm.new(BatchUploadItem.new, nil, nil) }
 
   context "batch form" do
-    let(:target) { work_form_class.new(work_class.new, nil) }
+    let(:target) { work_form_class.new(work_class.new, nil, nil) }
     before { subject.payload_concern = work_name }
 
     describe "#required_fields" do
       it "equals the terms for the payload" do
-        skip # Fix this later
         expect(subject.required_fields).to eq(target.required_fields)
       end
     end
 
     describe "#primary_terms" do
       it "equals the terms for the payload" do
-        skip # Fix this later
         expect(subject.primary_terms).to eq(target.primary_terms - [:title])
       end
     end
 
     describe "#secondary_terms" do
       it "equals the terms for the payload" do
-        skip # Fix this later
         expect(subject.secondary_terms).to eq(target.secondary_terms)
       end
     end
@@ -39,7 +36,7 @@ RSpec.describe Hyrax::Forms::BatchUploadForm do
   end
 
   let(:model) { GenericWork.new }
-  let(:form) { described_class.new(model, ability) }
+  let(:form) { described_class.new(model, ability, nil) }
   let(:ability) { Ability.new(user) }
   let(:user) { build(:user, display_name: 'Jill Z. User') }
 

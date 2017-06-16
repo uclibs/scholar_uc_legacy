@@ -37,7 +37,7 @@ module Hyrax
         when "StudentWork"
           %i(creator college department alt_description advisor rights degree publisher)
         when "Etd"
-          %i(creator college department alt_description advisor rights committee_member degree alt_date_created publisher)
+          %i(creator college department alt_description advisor rights committee_member degree alt_date_created etd_publisher)
         else
           %i(creator college department alt_description rights publisher)
         end

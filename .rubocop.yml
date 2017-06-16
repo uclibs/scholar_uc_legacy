@@ -51,11 +51,13 @@ Metrics/ModuleLength:
 Metrics/PerceivedComplexity:
   Exclude:
     - 'app/helpers/change_manager/change_manager_helper.rb'
+    - 'app/forms/hyrax/forms/batch_edit_form.rb'
     - 'app/helpers/hyrax_helper.rb'    
 
 Metrics/CyclomaticComplexity:
   Exclude:
   - 'app/forms/hyrax/forms/batch_upload_form.rb'
+  - 'app/forms/hyrax/forms/batch_edit_form.rb'
   - 'app/helpers/hyrax_helper.rb'
 
 Style/BlockDelimiters:
@@ -212,6 +214,7 @@ RSpec/ExampleLength:
     - 'spec/features/*'
     - 'spec/support/shared/*'
     - 'spec/forms/hyrax/forms/batch_edit_form_spec.rb'
+    - 'spec/jobs/batch_create_job_spec.rb'
 
 RSpec/SubjectStub:
   Enabled: false
