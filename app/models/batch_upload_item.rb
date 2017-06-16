@@ -3,9 +3,9 @@
 # It should never actually be persisted in the repository.
 # The properties on this form should be copied to a real work type.
 class BatchUploadItem < ActiveFedora::Base
-  include ::CurationConcerns::WorkBehavior
-  include ::CurationConcerns::BasicMetadata
-  include Sufia::WorkBehavior
+  include ::Hyrax::WorkBehavior
+  include ::Hyrax::BasicMetadata
+  include Hyrax::WorkBehavior
 
   attr_accessor :payload_concern # a Class name: what is this a batch of?
 

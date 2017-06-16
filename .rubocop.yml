@@ -47,7 +47,7 @@ Metrics/MethodLength:
 Metrics/ModuleLength:
   Exclude:
     - 'lib/seed_methods.rb'
-    - 'app/helpers/sufia_helper.rb'
+    - 'app/helpers/hyrax_helper.rb'
 
 Metrics/PerceivedComplexity:
   Exclude:
