@@ -32,7 +32,6 @@ notifications:
     recipients:
       - crowesn@ucmail.uc.edu
       - scherztc@ucmail.uc.edu
-      - haitzlm@ucmail.uc.edu
 script:
   - bundle exec rake ci
 services:
@@ -41,5 +40,13 @@ before_script:
   - jdk_switcher use oraclejdk8
   - brakeman
   - rubocop
+  - "cp config/blacklight.yml.sample config/blacklight.yml"
+  - "cp config/database.yml.sample config/database.yml"
+  - "cp config/doi.yml.sample config/doi.yml"
+  - "cp config/fedora.yml.sample config/fedora.yml"
+  - "cp config/solr.yml.sample config/solr.yml"
+  - "cp config/initializers/sufia.rb.sample config/initializers/sufia.rb"
+  - "cp config/initializers/devise.rb.sample config/initializers/devise.rb"
+
 notifications:
   slack: uc-libraries-digital:7gc9gvfCKedkWXORxCo5Hndx

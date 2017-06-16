@@ -18,3 +18,13 @@
 
 # Ignore avatars
 /public/system/avatars/
+
+config/doi.yml
+config/database.yml
+config/fedora.yml
+config/solr.yml
+config/authentication.yml
+config/blacklight.yml
+config/initializers/devise.rb
+config/initializers/scholar_uc.rb
+config/initializers/sufia.rb

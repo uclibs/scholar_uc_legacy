@@ -1,0 +1,10 @@
+development:
+  adapter: solr
+  url: bamboo_solr_url
+test: &test
+  adapter: solr
+  url: http://localhost:<%= ENV['SOLR_TEST_PORT'] || 8985 %>/solr/hydra-test
+production:
+  adapter: solr
+  url: bamboo_solr_url
+
