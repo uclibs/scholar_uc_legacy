@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate hyrax:work Video`
+#  `rails generate hyrax:work Medium`
 
 module Hyrax
-  class VideosController < ApplicationController
+  class MediaController < ApplicationController
     # Adds Hyrax behaviors to the controller.
     include Hyrax::WorksControllerBehavior
     include Scholar::WorksControllerBehavior
 
-    self.curation_concern_type = Video
+    self.curation_concern_type = Medium
 
     include Hyrax::IIIFManifest
 
-    self.show_presenter = VideoPresenter
+    self.show_presenter = MediumPresenter
   end
 end

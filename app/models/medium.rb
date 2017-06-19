@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate hyrax:work Video`
-class Video < ActiveFedora::Base
+#  `rails generate hyrax:work Medium`
+class Medium < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
   include ::Hyrax::BasicMetadata
   include Hyrax::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
   include RemoveProxyEditors::RemoveUser
 
-  self.human_readable_type = 'Video'
+  self.human_readable_type = 'Media'
   self.human_readable_short_description = 'Works that include video, film, slide, or audio are referred to as time-based media.'
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
@@ -55,11 +55,11 @@ class Video < ActiveFedora::Base
   end
 
   def self.to_s_u
-    'video'
+    'medium'
   end
 
   def multiple?(field)
-    VideoForm.multiple? field
+    MediumForm.multiple? field
   end
 
   def self.multiple?(field)
