@@ -104,8 +104,8 @@ module SeedMethods
     a.save
   end
 
-  def self.new_video(email, name)
-    a = Video.create(
+  def self.new_medium(email, name)
+    a = Medium.create(
       title: ['This is the title'],
       description: ['This is the description'],
       depositor: email,

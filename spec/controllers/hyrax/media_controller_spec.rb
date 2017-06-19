@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate hyrax:work Video`
+#  `rails generate hyrax:work Medium`
 require 'rails_helper'
 
-describe Hyrax::VideosController do
+describe Hyrax::MediaController do
   let(:user) { create(:user) }
 
   before { sign_in user }
@@ -13,7 +13,7 @@ describe Hyrax::VideosController do
     it "is successful" do
       expect(response).to be_successful
       expect(response).to render_template("layouts/hyrax/1_column")
-      expect(assigns[:curation_concern]).to be_kind_of Video
+      expect(assigns[:curation_concern]).to be_kind_of Medium
     end
 
     it "defaults to public visibility" do
