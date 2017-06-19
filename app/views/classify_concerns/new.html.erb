@@ -5,7 +5,7 @@
 
 <div class="row">
   <ul class="classify-work">
-    <% order = [Etd, Article, Document, Dataset, Image, Video, StudentWork, GenericWork] %>
+    <% order = [Etd, Article, Document, Dataset, Image, Medium, StudentWork, GenericWork] %>
     <% (order + classify_concern.all_curation_concern_classes).uniq.each do |klass| %>
       <% if can? :create, klass %>
         <li class="work-type">

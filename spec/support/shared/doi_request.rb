@@ -45,7 +45,11 @@ shared_examples 'doi request' do |work_class|
 
     it 'displays the request option in the work edit form' do
       click_link "DOI" # switch tab
-      expect(page).to have_content "Yes, I would like to create a DOI for this #{work_text}."
+      if work_text == 'Medium'
+        expect(page).to have_content "Yes, I would like to create a DOI for this Media."
+      else
+        expect(page).to have_content "Yes, I would like to create a DOI for this #{work_text}."
+      end
       expect(page).to have_content "Not now…but maybe later."
     end
 
@@ -105,7 +109,11 @@ shared_examples 'doi request' do |work_class|
 
       it 'displays the request option in the work edit form' do
         click_link "DOI" # switch tab
-        expect(page).to have_content("Yes, I would like to create a DOI for this #{work_text}")
+        if work_text == 'Medium'
+          expect(page).to have_content("Yes, I would like to create a DOI for this Media")
+        else
+          expect(page).to have_content("Yes, I would like to create a DOI for this #{work_text}")
+        end
       end
     end
 

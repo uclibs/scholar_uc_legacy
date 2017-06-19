@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate hyrax:work Video`
+#  `rails generate hyrax:work Medium`
 require 'rails_helper'
 
-describe Video do
+describe Medium do
   describe ".human_readable_short_description" do
     let(:work) { described_class.new(title: ['demoname']) { |gw| gw.apply_depositor_metadata("user") } }
     it "has a human_readable_short_description" do

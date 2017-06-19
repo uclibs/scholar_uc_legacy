@@ -20,7 +20,7 @@ class AddInitialObjects < ActiveRecord::Migration
     10.times { |i| SeedMethods.new_article(email, name) }
     10.times { |i| SeedMethods.new_dataset(email, name) }
     10.times { |i| SeedMethods.new_genericwork(email, name) }
-    10.times { |i| SeedMethods.new_video(email, name) }
+    10.times { |i| SeedMethods.new_medium(email, name) }
   end
 
   def self.create_admin_role(id)
