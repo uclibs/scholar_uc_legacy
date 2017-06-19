@@ -22,7 +22,7 @@ shared_examples 'work creation' do |work_class| # apply underscore for snake cas
     college_element = find_by_id("#{work_type}_college")
     college_element.select("Business")
 
-    if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Video
+    if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Medium
       expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
       fill_in('Description', with: 'This is a description.')
       fill_in('Creator', with: 'Test User')
@@ -79,7 +79,7 @@ shared_examples 'proxy work creation' do |work_class|
     college_element = find_by_id("#{work_type}_college")
     college_element.select("Business")
 
-    if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Video
+    if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Medium
       expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
       fill_in('Description', with: 'This is a description.')
       fill_in('Creator', with: 'Test User')
@@ -154,7 +154,7 @@ feature 'Creating a new work', :js, :workflow do
     it_behaves_like "work creation", Document
     it_behaves_like "work creation", Image
     #    it_behaves_like "work creation", Dataset
-    it_behaves_like "work creation", Video
+    it_behaves_like "work creation", Medium
     it_behaves_like "work creation", Etd
     it_behaves_like "work creation", StudentWork
   end
@@ -170,7 +170,7 @@ feature 'Creating a new work', :js, :workflow do
       click_link "Create Work"
     end
     it_behaves_like "proxy work creation", GenericWork
-    it_behaves_like "proxy work creation", Video
+    it_behaves_like "proxy work creation", Medium
     it_behaves_like "proxy work creation", Image
     it_behaves_like "proxy work creation", Document
     it_behaves_like "proxy work creation", Article

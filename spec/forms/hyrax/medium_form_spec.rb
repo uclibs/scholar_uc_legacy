@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate hyrax:work Video`
+#  `rails generate hyrax:work Medium`
 require 'rails_helper'
 
-RSpec.describe Hyrax::VideoForm do
-  let(:work) { Video.new }
+RSpec.describe Hyrax::MediumForm do
+  let(:work) { Medium.new }
   let(:form) { described_class.new(work, nil, nil) }
 
   describe "#required_fields" do

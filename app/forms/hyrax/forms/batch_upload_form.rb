@@ -57,7 +57,7 @@ module Hyrax
         when "Image"
           %i(alt_date_created alternate_title genre subject geo_subject
              time_period language required_software note related_url)
-        when "Video"
+        when "Medium"
           %i(alt_date_created alternate_title subject geo_subject
              time_period language required_software note related_url)
         when "StudentWork"
