@@ -28,8 +28,8 @@ module Hyrax
 
     ## Overriding secondary terms to establish custom field order
     def secondary_terms
-      %i(alt_date_created alternate_title subject
-         geo_subject time_period language
+      %i(alt_date_created alternate_title genre
+         subject geo_subject time_period language
          required_software note related_url)
     end
 

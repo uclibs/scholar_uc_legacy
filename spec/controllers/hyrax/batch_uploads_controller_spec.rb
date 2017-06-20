@@ -13,7 +13,7 @@ describe Hyrax::BatchUploadsController do
       '2' => 'bar' }
   end
   let(:expected_shared_params) do
-    { 'keyword' => [], 'visibility' => 'open', :model => 'GenericWork' }
+    { 'visibility' => 'open', :model => 'GenericWork' }
   end
   let(:batch_upload_item) do
     { keyword: [""], visibility: 'open', payload_concern: 'GenericWork' }
@@ -52,7 +52,6 @@ describe Hyrax::BatchUploadsController do
         expect(BatchCreateJob).to receive(:perform_later)
           .with(user,
                 expected_individual_params,
-                expected_types,
                 ['1', '2'],
                 expected_shared_params,
                 a_kind_of(Hyrax::BatchCreateOperation))

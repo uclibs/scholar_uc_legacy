@@ -21,7 +21,7 @@ RSpec.describe Hyrax::DocumentForm do
     subject { form.secondary_terms }
     it do
       is_expected.to include(:alt_date_created, :alternate_title,
-                             :subject, :geo_subject,
+                             :genre, :subject, :geo_subject,
                              :time_period, :language,
                              :required_software, :note)
     end
