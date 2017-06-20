@@ -24,6 +24,7 @@ shared_examples 'edit work' do |work_class|
       visit edit_path
       expect(page).to have_field("generic_work[creator][]", id: "generic_work_creator", with: "User, Different")
       choose("#{work_type}_visibility_open")
+      select 'All rights reserved', from: 'generic_work_rights'
       check('agreement')
       click_on('Save')
       expect(page).to have_content 'Apply changes to contents?'
