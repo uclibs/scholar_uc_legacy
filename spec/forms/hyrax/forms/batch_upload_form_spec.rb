@@ -21,12 +21,6 @@ shared_examples "batch_form_fields" do |work_class|
         expect(subject.primary_terms).to eq(target.primary_terms - [:title])
       end
     end
-
-    describe "#secondary_terms" do
-      it "equals the terms for the payload" do
-        expect(subject.secondary_terms).to eq(target.secondary_terms)
-      end
-    end
   end
 end
 
