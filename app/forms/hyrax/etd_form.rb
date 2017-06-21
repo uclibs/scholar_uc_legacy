@@ -24,15 +24,10 @@ module Hyrax
 
     ## Adding above the fold on the form without making this required
     def primary_terms
-      required_fields + %i(committee_member degree alt_date_created etd_publisher)
-    end
-
-    ## Overriding secondary terms to establish custom field order
-    def secondary_terms
-      %i(alternate_title
-         genre subject geo_subject time_period
-         language required_software
-         note related_url)
+      required_fields + %i(committee_member degree alt_date_created
+                           etd_publisher alternate_title genre subject
+                           geo_subject time_period language
+                           required_software note related_url)
     end
 
     ## Gymnastics to allow repeatble fields to behave as non-repeatable

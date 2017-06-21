@@ -7,7 +7,8 @@ module Hyrax
 
     ## Adding custom descriptive metadata terms
     self.terms += %i(resource_type alternate_title time_period
-                     required_software note geo_subject alt_description alt_date_created)
+                     required_software note geo_subject
+                     alt_description alt_date_created)
 
     ## Adding terms needed for the special DOI form tab
     self.terms += %i(doi doi_assignment_strategy existing_identifier)
@@ -23,13 +24,9 @@ module Hyrax
 
     ## Adding above the fold on the form without making this required
     def primary_terms
-      %i(title creator college department alt_description required_software rights publisher)
-    end
-
-    ## Overriding secondary terms to establish custom field order
-    def secondary_terms
-      %i(alt_date_created alternate_title subject
-         geo_subject time_period language
+      %i(title creator college department alt_description
+         required_software rights publisher alt_date_created
+         alternate_title subject geo_subject time_period language
          note related_url)
     end
 
