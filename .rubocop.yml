@@ -21,6 +21,11 @@ Lint/Debugger:
   Exclude:
     - 'spec/**/*'
 
+# unrelated javascript error interferes with spec execution
+Lint/HandleExceptions:
+  Exclude:
+    - 'spec/features/doi_validation_spec.rb'
+
 Metrics/LineLength:
   Max: 400
 

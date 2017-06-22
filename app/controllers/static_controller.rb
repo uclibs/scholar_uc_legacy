@@ -44,4 +44,8 @@ class StaticController < ApplicationController
   def help
     render "static/help"
   end
+
+  def doi_help
+    render "static/doi_help"
+  end
 end
