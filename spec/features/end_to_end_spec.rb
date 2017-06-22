@@ -22,7 +22,7 @@ shared_examples 'work crud' do |work|
     within '.tab-content' do
       fill_in('Title', with: 'My Test Work', match: :first)
 
-      if work == Document || work == GenericWork || work == Image || work == Video
+      if work == Document || work == GenericWork || work == Image || work == Medium
         fill_in('Description', with: 'This is a description.')
         fill_in('Creator', with: 'Test User')
       elsif work == Etd
@@ -53,7 +53,7 @@ shared_examples 'work crud' do |work|
     within '.tab-content' do
       fill_in('Title', with: 'My new work', match: :first)
 
-      if work == Document || work == GenericWork || work == Image || work == Video
+      if work == Document || work == GenericWork || work == Image || work == Medium
         fill_in('Description', with: 'This is a description.')
         fill_in('Creator', with: 'Test User')
       elsif work == Etd
@@ -140,7 +140,7 @@ describe 'end to end behavior:', :workflow do
     it_behaves_like 'work crud', Document
     it_behaves_like 'work crud', Dataset
     it_behaves_like 'work crud', Image
-    it_behaves_like 'work crud', Video
+    it_behaves_like 'work crud', Medium
     it_behaves_like 'work crud', StudentWork
     it_behaves_like 'work crud', Etd
 

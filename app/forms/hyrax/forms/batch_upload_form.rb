@@ -57,10 +57,9 @@ module Hyrax
           %i(creator college department alt_description rights publisher
              alt_date_created alternate_title genre subject geo_subject
              time_period language required_software note related_url)
-        when "Video"
+        when "Medium"
           %i(creator college department alt_description rights publisher
-             alt_date_created alternate_title subject geo_subject
-             time_period language required_software note related_url)
+             alt_date_created alternate_title subject geo_subject)
         else
           %i(creator college department alt_description rights publisher
              alt_date_created alternate_title subject geo_subject

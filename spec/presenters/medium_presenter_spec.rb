@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require "rails_helper"
 
-RSpec.describe VideoPresenter do
+RSpec.describe MediumPresenter do
   let(:solr_document) { SolrDocument.new(work.to_solr) }
   let(:presenter) { described_class.new(solr_document, ability) }
 
