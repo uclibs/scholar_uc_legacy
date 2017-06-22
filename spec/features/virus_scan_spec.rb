@@ -25,7 +25,7 @@ describe 'Adding an infected file', js: true do
       department_element = find_by_id("generic_work_department")
       department_element.set("Marketing")
       fill_in('Description', with: 'This is the Description.')
-      select 'Attribution-ShareAlike 4.0 International', from: 'generic_work_rights'
+      select 'All rights reserved', from: 'generic_work_rights'
       choose('generic_work_visibility_open')
       check('agreement')
       check('agreement') # need to check the box again sometimes (Capybara flakiness)
