@@ -33,41 +33,37 @@ module Hyrax
       def primary_terms
         case @payload_concern
         when "Dataset"
-          %i(creator college department alt_description required_software rights publisher)
-        when "StudentWork"
-          %i(creator college department alt_description advisor rights degree publisher)
-        when "Etd"
-          %i(creator college department alt_description advisor rights committee_member degree alt_date_created etd_publisher)
-        else
-          %i(creator college department alt_description rights publisher)
-        end
-      end
-
-      def secondary_terms
-        case @payload_concern
-        when "Article"
-          %i(alt_date_created alternate_title journal_title issn subject
-             geo_subject time_period language required_software note related_url)
-        when "Dataset"
-          %i(alt_date_created alternate_title subject geo_subject
+          %i(creator college department alt_description required_software rights publisher
+             alt_date_created alternate_title subject geo_subject
              time_period language note related_url)
+        when "StudentWork"
+          %i(creator college department alt_description advisor rights degree publisher
+             alt_date_created alternate_title genre subject geo_subject
+             time_period language required_software note related_url)
+        when "Etd"
+          %i(creator college department alt_description advisor
+             rights committee_member degree alt_date_created etd_publisher
+             alternate_title genre subject geo_subject time_period
+             language required_software note related_url)
+        when "Article"
+          %i(creator college department alt_description rights publisher
+             alt_date_created alternate_title journal_title issn subject
+             geo_subject time_period language required_software note related_url)
         when "Document"
-          %i(alt_date_created alternate_title genre subject geo_subject
+          %i(creator college department alt_description rights publisher
+             alt_date_created alternate_title genre subject geo_subject
              time_period language required_software note related_url)
         when "Image"
-          %i(alt_date_created alternate_title genre subject geo_subject
+          %i(creator college department alt_description rights publisher
+             alt_date_created alternate_title genre subject geo_subject
              time_period language required_software note related_url)
         when "Video"
-          %i(alt_date_created alternate_title subject geo_subject
+          %i(creator college department alt_description rights publisher
+             alt_date_created alternate_title subject geo_subject
              time_period language required_software note related_url)
-        when "StudentWork"
-          %i(alt_date_created alternate_title genre subject geo_subject
-             time_period language required_software note related_url)
-        when "Etd"
-          %i(alternate_title subject geo_subject time_period
-             language required_software note related_url)
         else
-          %i(alt_date_created alternate_title subject geo_subject
+          %i(creator college department alt_description rights publisher
+             alt_date_created alternate_title subject geo_subject
              time_period language required_software note related_url)
         end
       end

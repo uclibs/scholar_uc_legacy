@@ -14,17 +14,10 @@ RSpec.describe Hyrax::StudentWorkForm do
 
   describe "#primary_terms" do
     subject { form.primary_terms }
-    it { is_expected.to eq [:title, :creator, :college, :department, :alt_description, :advisor, :rights, :degree, :publisher] }
-  end
-
-  describe "#secondary_terms" do
-    subject { form.secondary_terms }
-    it do
-      is_expected.to include(:alt_date_created, :alternate_title,
-                             :genre, :subject, :geo_subject,
-                             :time_period, :language,
-                             :required_software, :note)
-    end
+    it { is_expected.to eq [:title, :creator, :college, :department, :alt_description,
+                            :advisor, :rights, :degree, :publisher, :alt_date_created,
+                            :alternate_title, :genre, :subject, :geo_subject,
+                            :time_period, :language, :required_software, :note, :related_url] }
   end
 
   describe '.model_attributes' do
