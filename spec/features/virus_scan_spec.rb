@@ -21,7 +21,8 @@ describe 'Adding an infected file', js: true do
       expect(page).to have_content "Add files"
       attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
       click_link "Metadata" # switch tab
-      fill_in('Title', with: 'My Infected Work')
+      title_element = find_by_id("#{work_type}_title")
+      title_element.set("My Test Work")
       fill_in('Creator', with: 'Test User')
       college_element = find_by_id("generic_work_college")
       college_element.select("Business")
