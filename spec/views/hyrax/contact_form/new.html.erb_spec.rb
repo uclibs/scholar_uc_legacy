@@ -12,7 +12,7 @@ describe '/hyrax/contact_form/new.html.erb', type: :view do
   end
 
   it 'includes the passed subject text to the form' do
-    expect(rendered).to have_selector('input[name="hyrax_contact_form[subject]"][value="This is the subject"]')
+    expect(rendered).to have_selector('input[name="contact_form[subject]"][value="This is the subject"]')
   end
 
   it 'includes the passed message text to the form' do

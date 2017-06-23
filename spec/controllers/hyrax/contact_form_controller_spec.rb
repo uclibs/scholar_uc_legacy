@@ -15,15 +15,15 @@ describe Hyrax::ContactFormController do
 
   describe 'while user is unauthenticated' do
     it 'successfully allows reCaptcha' do
-      described_class.stub(:verify_google_recaptcha).and_return(true)
-      Hyrax::ContactMailer.stub(:contact).and_return(true)
-      post :create, hyrax_contact_form: required_params
+      described_class.any_instance.stub(:verify_google_recaptcha).and_return(true)
+      Hyrax::ContactMailer.any_instance.stub(:mail).and_return(true)
+      post :create, contact_form: required_params
       expect(flash[:notice]).to match("Thank you for your message!")
     end
 
     it 'fails on reCaptcha failure' do
       described_class.stub(:passes_captcha_or_is_logged_in?).and_return(false)
-      post :create, hyrax_contact_form: required_params
+      post :create, contact_form: required_params
       expect(flash[:error]).to match("You must complete the Captcha to confirm the form.")
     end
   end
@@ -39,7 +39,7 @@ describe Hyrax::ContactFormController do
 
     describe "#create" do
       subject { flash }
-      before { post :create, hyrax_contact_form: required_params }
+      before { post :create, contact_form: required_params }
       context "with the required parameters" do
         let(:params) { required_params }
         its(:notice) { is_expected.to eq("Thank you for your message!") }
@@ -54,7 +54,7 @@ describe Hyrax::ContactFormController do
       end
       it "is logged via Rails" do
         expect(logger).to receive(:error).with("Contact form failed to send: #<RuntimeError: RuntimeError>")
-        post :create, hyrax_contact_form: required_params
+        post :create, contact_form: required_params
       end
     end
   end
