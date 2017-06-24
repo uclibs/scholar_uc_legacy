@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'rails_helper'
 
 describe CollectionAvatarsController, type: :controller do
   let(:user) { FactoryGirl.create(:user) }
@@ -25,7 +26,7 @@ describe CollectionAvatarsController, type: :controller do
   describe "#create" do
     it "sets an avatar" do
       post :create, format: :html
-      expect(response).to redirect_to('http://test.host/collection_avatars/1')
+      expect(response).to redirect_to('http://test.host/collection_avatars/1?locale=en')
       expect(flash[:notice]).to include("Collection avatar was successfully created.")
     end
 
@@ -33,7 +34,6 @@ describe CollectionAvatarsController, type: :controller do
       before do
         allow_any_instance_of(CollectionAvatar).to receive(:save).and_return(false)
       end
-
       it "does not set an avatar" do
         post :create, format: :html
         expect(response).to render_template('collections/new')
@@ -49,7 +49,7 @@ describe CollectionAvatarsController, type: :controller do
     it "sets an avatar with save" do
       collection_demo.save!
       put :update, id: collection_demo.id
-      expect(response).to redirect_to('http://test.host/collection_avatars/2')
+      expect(response).to redirect_to('http://test.host/collection_avatars/2?locale=en')
       expect(flash[:notice]).to include("Collection avatar was successfully updated.")
     end
 

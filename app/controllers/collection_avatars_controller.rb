@@ -24,7 +24,7 @@ class CollectionAvatarsController < ApplicationController
         format.html { redirect_to @collection_avatar, notice: 'Collection avatar was successfully created.' }
         format.json { render :show, status: :created, location: @collection_avatar }
       else
-        format.html { render template: 'collections/new' }
+        format.html { render template: 'hyrax/collections/new' }
         format.json { render json: @collection_avatar.errors, status: :unprocessable_entity }
       end
     end
@@ -38,7 +38,7 @@ class CollectionAvatarsController < ApplicationController
         format.html { redirect_to @collection_avatar, notice: 'Collection avatar was successfully updated.' }
         format.json { render :show, status: :ok, location: @collection_avatar }
       else
-        format.html { render template: 'collections/edit' }
+        format.html { render template: 'hyrax/collections/edit' }
         format.json { render json: @collection_avatar.errors, status: :unprocessable_entity }
       end
     end
