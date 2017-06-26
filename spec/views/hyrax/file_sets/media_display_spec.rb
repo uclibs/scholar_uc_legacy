@@ -6,6 +6,7 @@ describe 'hyrax/file_sets/media_display', type: :view do
     allow(view).to receive_messages(blacklight_config: CatalogController.blacklight_config,
                                     blacklight_configuration_context: Blacklight::Configuration::Context.new(controller))
     allow(Hyrax.config).to receive(:display_media_download_link) { true }
+    allow(view).to receive(:can?).and_return(true)
   end
 
   let(:depositor) do
