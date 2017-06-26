@@ -79,7 +79,7 @@ describe "User Profile", type: :feature do
       it 'includes the user in the display' do
         visit profile_path
         click_link 'View People'
-        expect(page).to have_xpath("//td/a[@href='#{profile_path}']")
+        expect(page).to have_xpath("//td/a[@href='#{profile_path}?locale=en']")
       end
     end
 
@@ -92,7 +92,7 @@ describe "User Profile", type: :feature do
       it 'includes the user without works in the display' do
         visit profile_path
         click_link 'View People'
-        expect(page).to have_xpath("//td/a[@href='#{profile_path}']")
+        expect(page).to have_xpath("//td/a[@href='#{profile_path}?locale=en']")
       end
     end
   end
@@ -117,12 +117,12 @@ describe "User Profile", type: :feature do
     it 'is searchable' do
       visit profile_path
       click_link 'View People'
-      expect(page).to have_xpath("//td/a[@href='#{profile_path}']")
-      expect(page).to have_xpath("//td/a[@href='#{dewey_path}']")
+      expect(page).to have_xpath("//td/a[@href='#{profile_path}?locale=en']")
+      expect(page).to have_xpath("//td/a[@href='#{dewey_path}?locale=en']")
       fill_in 'user_search', with: 'Dewey'
       click_button "user_submit"
-      expect(page).not_to have_xpath("//td/a[@href='#{profile_path}']")
-      expect(page).to have_xpath("//td/a[@href='#{dewey_path}']")
+      expect(page).not_to have_xpath("//td/a[@href='#{profile_path}?locale=en']")
+      expect(page).to have_xpath("//td/a[@href='#{dewey_path}?locale=en']")
     end
   end
 end
