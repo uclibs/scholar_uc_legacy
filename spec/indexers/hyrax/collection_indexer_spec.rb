@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'spec_helper'
+require 'rails_helper'
 
 describe Hyrax::CollectionIndexer do
   let(:indexer) { described_class.new(collection) }
@@ -8,8 +8,8 @@ describe Hyrax::CollectionIndexer do
   let(:col2id) { 'col2' }
   let(:col1title) { 'col1 title' }
   let(:col2title) { 'col2 title' }
-  let(:col1) { double('collection') }
-  let(:col2) { double('collection') }
+  let(:col1) { instance_double(Collection, id: col1id, to_s: col1title) }
+  let(:col2) { instance_double(Collection, id: col1id, to_s: col2title) }
 
   describe "#generate_solr_document" do
     before do
