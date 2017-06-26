@@ -1,2 +1,2 @@
 # frozen_string_literal: true
-Sufia::WorkShowPresenter.include ManifestPresenter
+Hyrax::WorkShowPresenter.include ManifestPresenter

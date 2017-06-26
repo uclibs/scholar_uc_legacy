@@ -135,7 +135,7 @@ div[class*="_admin_set_id"] {
    color: inherit;
    text-decoration: none;
 }
- 
+
 .beta-tag {
   color: #e00122;
   font-size: 12px;
@@ -146,7 +146,7 @@ div[class*="_admin_set_id"] {
 }
 
 /* add padding between login form fields */
-label[for=user_password] { 
+label[for=user_password] {
   padding-top: 20px;
 }
 
@@ -270,12 +270,14 @@ label[for=user_password] {
 
   .clear-button-wrapper {
     margin-top: 20px;
+    position: relative;
+    right:30px;
   }
 
   .clear-button {
     display: inline-block;
     width: 175px !important;
-    padding: 5px 30px; 
+    padding: 5px 30px;
     box-shadow: inset 0px 0px 10px rgba(0,0,0,1.5);
   }
 
@@ -286,7 +288,7 @@ label[for=user_password] {
 
 /* media devices: tablets, ipads, high res phones, etc */
 @media (max-width: 767px) {
-  
+
   .jumbotron {
     background-position: center;
     background-size: 150%
@@ -358,3 +360,4 @@ label[for=user_password] {
     margin-bottom: 20px;
   }
 }
+

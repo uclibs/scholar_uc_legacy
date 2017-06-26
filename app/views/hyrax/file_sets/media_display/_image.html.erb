@@ -1,0 +1,18 @@
+<% if Hyrax.config.display_media_download_link %>
+  <div>
+    <h2 class="sr-only"><%= t('hyrax.file_set.show.downloadable_content.heading') %></h2>
+      <% if @presenter.nil? %>
+        <%= render 'hyrax/file_sets/media_display/thumbnail', file_set: file_set  %>
+      <% elsif this_is_a_file?(@presenter) %>
+        <%= render 'hyrax/file_sets/media_display/thumbnail', file_set: file_set  %>
+      <% else %>
+        <%= render 'hyrax/file_sets/media_display/universal_viewer', file_set: file_set %>
+      <% end %>
+  </div>
+<% else %>
+  <div>
+     <% if this_is_a_file?(@presenter) %>
+       <%= render 'hyrax/file_sets/media_display/universal_viewer', file_set: file_set %>
+     <% end %>
+  </div>
+<% end %>

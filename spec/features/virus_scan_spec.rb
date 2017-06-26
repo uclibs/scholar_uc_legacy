@@ -5,8 +5,11 @@ describe 'Adding an infected file', js: true do
   let(:user) { FactoryGirl.create(:user) }
 
   before do
-    CurationConcerns::Workflow::WorkflowImporter.load_workflows
-    Sufia::AdminSetCreateService.create_default!
+    create(:permission_template_access,
+           :deposit,
+           permission_template: create(:permission_template, with_admin_set: true),
+           agent_type: 'user',
+           agent_id: user.user_key)
     allow(CharacterizeJob).to receive(:perform_later)
     allow(Hydra::Works::VirusCheckerService).to receive(:file_has_virus?).and_return(true)
     login_as user
@@ -44,14 +47,14 @@ describe 'Adding an infected file', js: true do
       work.ordered_members << file_set
       work.read_groups = []
       work.save!
-      visit edit_curation_concerns_generic_work_path(work)
+      visit edit_hyrax_generic_work_path(work)
     end
     it_behaves_like 'infected submission'
   end
 
   context 'to a new work', js: true do
     before do
-      visit new_curation_concerns_generic_work_path
+      visit new_hyrax_generic_work_path
     end
     it_behaves_like 'infected submission'
   end

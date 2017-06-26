@@ -29,7 +29,7 @@ var togglePublisherRequirement = function() {
     function add_and_remove_field(target) {
       // add and remove a publisher field to trigger the save work requirements tracking
       // if we want to stop doing this, we need to override the following:
-      // sufia/app/assets/javascripts/sufia/save_work/save_work_control.es6
+      // hyrax/app/assets/javascripts/hyrax/save_work/save_work_control.es6
       // so that this.formChanged() gets called when the DOI form is updated
 
       var field = $('input[class*=publisher]').last()

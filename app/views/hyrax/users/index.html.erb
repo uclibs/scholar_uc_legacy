@@ -1,0 +1,33 @@
+<div id="search">
+  <%= render partial: 'search_form' %>
+  <h1><%= application_name %> People</h1>
+</div>
+<p>Users that have contributed content to <%= application_name %> are listed below.</p>
+<table class="table table-striped people">
+    <thead>
+        <tr>
+            <th>Avatar</th>
+            <th class="sorts"><i id="name" class="<%=params[:sort].blank? ? 'caret up' : params[:sort]== "name desc" ? 'caret' : params[:sort]== "name" ? 'caret up' : ''%>"></i> User Name</th>
+            <th class="sorts"><i id="login" class="<%=params[:sort]== "login desc" ? 'caret' : params[:sort]== "login" ? 'caret up' : ''%>"></i> User Id</th>
+            <th class="sorts"><i id="department" class="<%=params[:sort]== "department desc" ? 'caret' : params[:sort]== "department" ? 'caret up' : ''%>"></i> Department</th>
+            <th>Works Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+              <td><%= link_to hyrax.profile_path(user) do %>
+                    <%= image_tag(user.avatar.url(:thumb), width: 30) if user.avatar.file %>
+                  <% end %>
+              </td>
+               <td><%= link_to user.name, hyrax.profile_path(user) %></td>
+               <td><%= link_to user.user_key, hyrax.profile_path(user) %></td>
+               <td><%= user.department %></td>
+               <td><%= number_of_works(user) %></td>
+            </tr>
+         <% end %>
+    </tbody>
+</table>
+<div class="pager">
+  <%= paginate @users, theme: 'blacklight', route_set: hyrax %>
+</div>

@@ -10,7 +10,7 @@ describe 'Batch creation of works', type: :feature do
   end
 
   it "renders the batch create form" do
-    visit "#{sufia.new_batch_upload_path}/?payload_concern=GenericWork"
+    visit "#{hyrax.new_batch_upload_path}/?payload_concern=GenericWork"
     within("li.active") do
       expect(page).to have_content("Files")
     end

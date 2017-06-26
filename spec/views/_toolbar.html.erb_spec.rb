@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 describe '/_toolbar.html.erb', type: :view do
-  let(:presenter) { instance_double(Sufia::SelectTypeListPresenter, many?: false, first_model: GenericWork) }
+  let(:presenter) { instance_double(Hyrax::SelectTypeListPresenter, many?: false, first_model: GenericWork) }
   before do
     allow(view).to receive(:create_work_presenter).and_return(presenter)
     allow(view).to receive(:user_signed_in?).and_return(true)
@@ -31,40 +31,40 @@ describe '/_toolbar.html.erb', type: :view do
 
     it 'shows the admin menu' do
       render
-      expect(rendered).to have_link 'Admin', href: sufia.admin_path
+      expect(rendered).to have_link 'Admin', href: hyrax.admin_path
     end
   end
 
   it 'has dashboard links' do
     render
-    expect(rendered).to have_link 'My Dashboard', href: sufia.dashboard_index_path
-    expect(rendered).to have_link 'Transfers', href: sufia.transfers_path
-    expect(rendered).to have_link 'Highlights', href: sufia.dashboard_highlights_path
-    expect(rendered).to have_link 'Shares', href: sufia.dashboard_shares_path
+    expect(rendered).to have_link 'My Dashboard', href: hyrax.dashboard_index_path
+    expect(rendered).to have_link 'Transfers', href: hyrax.transfers_path
+    expect(rendered).to have_link 'Highlights', href: hyrax.dashboard_highlights_path
+    expect(rendered).to have_link 'Shares', href: hyrax.dashboard_shares_path
   end
 
   describe "New Work link" do
     context "when the user can create multiple work types" do
-      let(:presenter) { instance_double(Sufia::SelectTypeListPresenter, many?: true) }
+      let(:presenter) { instance_double(Hyrax::SelectTypeListPresenter, many?: true) }
       it "has a link to upload" do
         render
-        expect(rendered).to have_link('New Work', href: CurationConcerns::Engine.routes.url_helpers.new_classify_concern_path)
-        expect(rendered).to have_link('Batch Create', href: CurationConcerns::Engine.routes.url_helpers.new_classify_concern_path(type: 'batch'))
+        expect(rendered).to have_link('New Work', href: main_app.new_classify_concern_path)
+        expect(rendered).to have_link('Batch Create', href: main_app.new_classify_concern_path(type: 'batch'))
       end
     end
 
     context "when the user can create a single work type" do
-      let(:presenter) { instance_double(Sufia::SelectTypeListPresenter, many?: false, first_model: GenericWork) }
+      let(:presenter) { instance_double(Hyrax::SelectTypeListPresenter, many?: false, first_model: GenericWork) }
       it "has a link to upload" do
         render
-        expect(rendered).to have_link('New Work', href: new_curation_concerns_generic_work_path)
-        expect(rendered).to have_link('Batch Create', href: sufia.new_batch_upload_path(payload_concern: 'GenericWork'))
+        expect(rendered).to have_link('New Work', href: new_hyrax_generic_work_path)
+        expect(rendered).to have_link('Batch Create', href: hyrax.new_batch_upload_path(payload_concern: 'GenericWork'))
       end
     end
 
     context "when the user can't create any work types" do
       before do
-        allow(view).to receive(:can_ever_create_works?).and_return(false)
+        allow(view.current_ability).to receive(:can_create_any_work?).and_return(false)
       end
       it "does not have a link to upload" do
         render
@@ -78,7 +78,7 @@ describe '/_toolbar.html.erb', type: :view do
       it "has a link to upload" do
         allow(view).to receive(:can?).with(:create, Collection).and_return(true)
         render
-        expect(rendered).to have_link('New Collection', href: new_collection_path)
+        expect(rendered).to have_link('New Collection', href: hyrax.new_collection_path)
       end
     end
 

@@ -28,8 +28,11 @@ shared_examples 'doi request' do |work_class|
 
   before do
     allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true)
-    CurationConcerns::Workflow::WorkflowImporter.load_workflows
-    Sufia::AdminSetCreateService.create_default!
+    create(:permission_template_access,
+           :deposit,
+           permission_template: create(:permission_template, with_admin_set: true),
+           agent_type: 'user',
+           agent_id: user.user_key)
     page.driver.browser.js_errors = false
     allow(CharacterizeJob).to receive(:perform_later)
   end
@@ -42,7 +45,11 @@ shared_examples 'doi request' do |work_class|
 
     it 'displays the request option in the work edit form' do
       click_link "DOI" # switch tab
-      expect(page).to have_content "Yes, I would like to create a DOI for this #{work_text}."
+      if work_text == 'Medium'
+        expect(page).to have_content "Yes, I would like to create a DOI for this Media."
+      else
+        expect(page).to have_content "Yes, I would like to create a DOI for this #{work_text}."
+      end
       expect(page).to have_content "Not now…but maybe later."
     end
 
@@ -102,7 +109,11 @@ shared_examples 'doi request' do |work_class|
 
       it 'displays the request option in the work edit form' do
         click_link "DOI" # switch tab
-        expect(page).to have_content("Yes, I would like to create a DOI for this #{work_text}")
+        if work_text == 'Medium'
+          expect(page).to have_content("Yes, I would like to create a DOI for this Media")
+        else
+          expect(page).to have_content("Yes, I would like to create a DOI for this #{work_text}")
+        end
       end
     end
 

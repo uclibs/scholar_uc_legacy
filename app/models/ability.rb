@@ -2,8 +2,7 @@
 class Ability
   include Hydra::Ability
 
-  include CurationConcerns::Ability
-  include Sufia::Ability
+  include Hyrax::Ability
 
   self.ability_logic += [:everyone_can_create_curation_concerns]
 
@@ -24,6 +23,8 @@ class Ability
     cannot [:edit, :update, :delete], Etd
     can [:manage], Etd if user_is_etd_manager || user_is_proxy_of_etd_manager
 
+    can [:create], ClassifyConcern unless current_user.new_record?
+
     if current_user.admin?
       can [:create, :show, :add_user, :remove_user, :index, :edit, :update, :destroy], Role
       can [:manage], Etd
@@ -34,10 +35,10 @@ class Ability
   private
 
     # remove create ability for Etd's from all users
-    def curation_concerns_models
-      default_curation_concerns = Sufia.config.curation_concerns
-      default_curation_concerns.delete(Etd)
-      [::FileSet, ::Collection] + default_curation_concerns
+    def hyrax_models
+      default_hyrax = Hyrax.config.hyrax
+      default_hyrax.delete(Etd)
+      [::FileSet, ::Collection] + default_hyrax
     end
 
     def user_is_etd_manager

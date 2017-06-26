@@ -5,14 +5,13 @@ Rails.application.routes.draw do
   resource :featured_collection, only: [:create, :destroy]
   mount Orcid::Engine => "/orcid"
   mount BrowseEverything::Engine => '/browse'
-  Hydra::BatchEdit.add_routes(self)
   mount Qa::Engine => '/authorities'
 
   mount Riiif::Engine => '/images'
 
   mount Blacklight::Engine => '/'
 
-  authenticate :user, ->(u) { u.admin? } do
+  authenticate :user, (->(u) { u.admin? }) do
     mount Sidekiq::Web => '/sidekiq'
   end
 
@@ -26,21 +25,19 @@ Rails.application.routes.draw do
 
   mount Hydra::RoleManagement::Engine => '/'
 
-  mount CurationConcerns::Engine, at: '/'
   resources :welcome, only: 'index'
   resources :welcome_page, only: [:index, :create]
-  root 'sufia/homepage#index'
-  curation_concerns_collections
+  root 'hyrax/homepage#index'
   curation_concerns_basic_routes do
     member do
       get :manifest
     end
   end
-  # curation_concerns_basic_routes
   curation_concerns_embargo_management
   concern :exportable, Blacklight::Routes::Exportable.new
 
   get 'about' => 'static#about'
+  get 'help' => 'static#help'
   get 'coll_policy' => 'static#coll_policy'
   get 'format_advice' => 'static#format_advice'
   get 'faq' => 'static#faq'
@@ -70,11 +67,13 @@ Rails.application.routes.draw do
 
   match 'show/:id' => 'common_objects#show', via: :get, as: 'common_object'
 
+  resources :classify_concerns, only: [:new, :create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'sufia/homepage#index'
+  # root 'hyrax/homepage#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -125,8 +124,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  Hydra::BatchEdit.add_routes(self)
   # This must be the very last route in the file because it has a catch-all route for 404 errors.
   # This behavior seems to show up only in production mode.
-  mount Sufia::Engine => '/'
+  mount Hyrax::Engine => '/'
 end

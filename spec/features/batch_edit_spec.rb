@@ -13,7 +13,7 @@ describe 'Batch management of works', type: :feature do
   end
 
   describe 'editing and viewing multiple works' do
-    skip "waiting on upstream fixes from Sufia" do
+    skip "waiting on upstream fixes from Hyrax" do
       before do
         check 'check_all'
         click_on 'batch-edit'

@@ -1,33 +1,62 @@
 require: rubocop-rspec
 
+Bundler/OrderedGems:
+  Exclude:
+    - 'Gemfile'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'app/controllers/catalog_controller.rb'
+    - 'app/models/concerns/remotely_identified_by_doi.rb'
+    - 'config/initializers/simple_form_bootstrap.rb'
+    - 'config/routes.rb'
+
 Metrics/CyclomaticComplexity:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Metrics/ClassLength:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
   - 'app/controllers/catalog_controller.rb'
 
 Metrics/ParameterLists:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Metrics/ModuleLength:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Metrics/MethodLength:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Style/LineEndConcatenation:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Style/PredicateName:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
+
+Style/SafeNavigation:
+  Exclude:
+    - 'app/controllers/concerns/hyrax/collections_controller_behavior.rb'
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Rails/Present:
+  Exclude:
+    - 'app/controllers/hyrax/users_controller.rb'
+    - 'app/indexers/hyrax/collection_indexer.rb'
+    - 'app/indexers/hyrax/work_indexer.rb'
+    - 'app/models/concerns/remotely_identified_by_doi.rb'
 
 Rails/Output:
   Exclude:
@@ -36,7 +65,11 @@ Rails/Output:
 
 Rails/HasAndBelongsToMany:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
+
+Rails/HttpPositionalArguments:
+  Exclude:
+    - 'spec/**/*'
 
 RSpec/NamedSubject:
   Enabled: false
@@ -44,11 +77,22 @@ RSpec/NamedSubject:
 RSpec/ExampleLength:
   Max: 7 
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
+
+Rails/FilePath:
+  Exclude:
+    - 'config/**/*'
+    - 'app/jobs/change_manager/process_change_job.rb'
+    - 'app/mailers/change_manager/scholar_notification_mailer.rb'
+    - 'spec/rails_helper.rb'
 
 RSpec/VerifiedDoubles:
   Enabled: false
 
 RSpec/AnyInstance:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
+
+RSpec/ImplicitExpect:
+  Exclude:
+    - 'spec/**/*'

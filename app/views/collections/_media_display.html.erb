@@ -1,5 +1,0 @@
-<% if @collection_avatar.nil? %>
-  <span class="<%= Sufia::ModelIcon.css_class_for(Collection) %> collection-icon-search"></span>
-<% else %>
-  <%= image_tag @collection_avatar.avatar.url(:medium), class: 'collection-avatar' %>
-<% end %>

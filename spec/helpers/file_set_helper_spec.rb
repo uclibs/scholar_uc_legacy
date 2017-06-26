@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require 'rails_helper'
-include Devise::TestHelpers
+# include Devise::TestHelpers
 
 describe FileSetHelper, type: :helper do
   let(:user) { FactoryGirl.create(:user) }
@@ -8,16 +8,19 @@ describe FileSetHelper, type: :helper do
   let(:button_text) { 'Request this file' }
   let(:small_solr_document) { SolrDocument.new(id: '123456', file_size_is: '3221225472') }
   let(:large_solr_document) { SolrDocument.new(id: '123456', file_size_is: '3221225473') }
+  before do
+    Rails.application.routes.default_url_options[:host] = "test.host"
+  end
 
   describe 'show_request_file_button' do
     it 'renders the request file button' do
-      expect(helper.show_request_file_button(file_set, button_text)).to have_link(button_text, href: "#{sufia.contact_path}?#{helper.subject_and_message}#{main_app.root_url}#{main_app.download_path(file_set)}")
+      expect(helper.show_request_file_button(file_set, button_text)).to have_link(button_text, href: "#{hyrax.contact_path}?#{helper.subject_and_message}#{main_app.root_url}#{hyrax.download_path(file_set)}")
     end
   end
 
   describe 'show_request_file_action' do
     it 'renders the request file action link' do
-      expect(helper.show_request_file_action(file_set, button_text)).to have_link("Download #{file_set.to_s.inspect}", href: "#{sufia.contact_path}?#{helper.subject_and_message}#{main_app.root_url}#{main_app.download_path(file_set)}")
+      expect(helper.show_request_file_action(file_set, button_text)).to have_link("Download #{file_set.to_s.inspect}", href: "#{hyrax.contact_path}?#{helper.subject_and_message}#{main_app.root_url}#{hyrax.download_path(file_set)}")
     end
   end
 

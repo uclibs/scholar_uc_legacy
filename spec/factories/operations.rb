@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 FactoryGirl.define do
-  factory :operation, class: CurationConcerns::Operation do
+  factory :operation, class: Hyrax::Operation do
     operation_type "Test operation"
 
     trait :failing do
-      status CurationConcerns::Operation::FAILURE
+      status Hyrax::Operation::FAILURE
     end
 
     trait :pending do
-      status CurationConcerns::Operation::PENDING
+      status Hyrax::Operation::PENDING
     end
 
     trait :successful do
-      status CurationConcerns::Operation::SUCCESS
+      status Hyrax::Operation::SUCCESS
     end
 
-    factory :batch_create_operation, class: Sufia::BatchCreateOperation do
+    factory :batch_create_operation, class: Hyrax::BatchCreateOperation do
       operation_type "Batch Create"
     end
   end

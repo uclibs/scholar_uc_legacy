@@ -2,11 +2,11 @@
 module FileSetHelper
   def present_terms(presenter, terms = :all, &block)
     terms = presenter.terms if terms == :all
-    Sufia::PresenterRenderer.new(presenter, self).fields(terms, &block)
+    Hyrax::PresenterRenderer.new(presenter, self).fields(terms, &block)
   end
 
   def show_request_file_button(file, text)
-    link_to "#{sufia.contact_path}?#{subject_and_message}#{main_app.root_url}#{main_app.download_path(file)}",
+    link_to "#{hyrax.contact_path}?#{subject_and_message}#{main_app.root_url}#{hyrax.download_path(file)}",
             target: :_blank,
             data: { turbolinks: false },
             class: "btn btn-default" do
@@ -16,7 +16,7 @@ module FileSetHelper
 
   def show_request_file_action(file, text)
     link_to text,
-            "#{sufia.contact_path}?#{subject_and_message}#{main_app.root_url}#{main_app.download_path(file)}",
+            "#{hyrax.contact_path}?#{subject_and_message}#{main_app.root_url}#{hyrax.download_path(file)}",
             title: "Download #{file.to_s.inspect}"
   end
 

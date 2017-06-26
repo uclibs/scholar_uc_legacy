@@ -7,22 +7,22 @@ shared_examples 'work crud' do |work|
   before { allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true) }
 
   it 'can view the new work form' do
-    visit sufia.root_path
+    visit hyrax.root_path
     click_on 'New Work'
     expect(page).to have_content(work.human_readable_type)
   end
 
   it 'can see the license wizard on the new work form', js: true do
-    visit send("new_curation_concerns_#{work_type}_path")
+    visit send("new_hyrax_#{work_type}_path")
     expect(page).to have_content('License Wizard')
   end
 
   it 'can submit a new work' do
-    visit send("new_curation_concerns_#{work_type}_path")
+    visit send("new_hyrax_#{work_type}_path")
     within '.tab-content' do
       fill_in('Title', with: 'My Test Work', match: :first)
 
-      if work == Document || work == GenericWork || work == Image || work == Video
+      if work == Document || work == GenericWork || work == Image || work == Medium
         fill_in('Description', with: 'This is a description.')
         fill_in('Creator', with: 'Test User')
       elsif work == Etd
@@ -49,11 +49,11 @@ shared_examples 'work crud' do |work|
   end
 
   it 'can submit a new work without files' do
-    visit send("new_curation_concerns_#{work_type}_path")
+    visit send("new_hyrax_#{work_type}_path")
     within '.tab-content' do
       fill_in('Title', with: 'My new work', match: :first)
 
-      if work == Document || work == GenericWork || work == Image || work == Video
+      if work == Document || work == GenericWork || work == Image || work == Medium
         fill_in('Description', with: 'This is a description.')
         fill_in('Creator', with: 'Test User')
       elsif work == Etd
@@ -80,7 +80,7 @@ shared_examples 'work crud' do |work|
   end
 
   it 'can delete a work it owns' do
-    visit sufia.dashboard_works_path
+    visit hyrax.dashboard_works_path
     within '#document_' + deleted_work.id.to_s do
       click_on 'Delete Work'
     end
@@ -88,14 +88,17 @@ shared_examples 'work crud' do |work|
   end
 end
 
-describe 'end to end behavior:' do
+describe 'end to end behavior:', :workflow do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:persisted_work) { FactoryGirl.create(:work, user: user) }
   let!(:deleted_work) { FactoryGirl.create(:work, user: user) }
   let!(:collection) { FactoryGirl.create(:collection, user: user) }
   before do
-    CurationConcerns::Workflow::WorkflowImporter.load_workflows
-    Sufia::AdminSetCreateService.create_default!
+    create(:permission_template_access,
+           :deposit,
+           permission_template: create(:permission_template, with_admin_set: true),
+           agent_type: 'user',
+           agent_id: user.user_key)
     login_as user
   end
   context 'the user' do
@@ -111,12 +114,12 @@ describe 'end to end behavior:' do
     end
 
     it 'can view the dashboard' do
-      visit sufia.dashboard_index_path
+      visit hyrax.dashboard_index_path
       expect(page).to have_content 'My Dashboard'
     end
 
     it 'can view the my collections view' do
-      visit sufia.dashboard_collections_path
+      visit hyrax.dashboard_collections_path
       expect(page).to have_content 'Collections listing'
     end
 
@@ -128,7 +131,7 @@ describe 'end to end behavior:' do
     end
 
     it 'can view the my works view' do
-      visit sufia.dashboard_works_path
+      visit hyrax.dashboard_works_path
       expect(page).to have_content 'Works listing'
     end
 
@@ -137,11 +140,11 @@ describe 'end to end behavior:' do
     it_behaves_like 'work crud', Document
     it_behaves_like 'work crud', Dataset
     it_behaves_like 'work crud', Image
-    it_behaves_like 'work crud', Video
+    it_behaves_like 'work crud', Medium
     it_behaves_like 'work crud', StudentWork
     it_behaves_like 'work crud', Etd
 
-    # TODO: update this spec once we get the fix for scholar_uc#907 from sufia.
+    # TODO: update this spec once we get the fix for scholar_uc#907 from hyrax.
     # needs to verify specific collection is being updated, for now
     it 'can add a work it owns to collection' do
       skip 'need to fix display bug' do
