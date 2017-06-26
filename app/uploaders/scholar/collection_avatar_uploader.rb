@@ -11,7 +11,7 @@ class Scholar::CollectionAvatarUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [270, 270]
   end
 
-  def extension_white_list
+  def extension_whitelist
     %w(jpg jpeg png gif bmp tif tiff)
   end
 end
