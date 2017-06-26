@@ -60,7 +60,8 @@ shared_examples 'doi request' do |work_class|
       click_link "Files" # switch tab
       attach_file("files[]", Rails.root + "spec/fixtures/world.png", visible: false)
       click_link "Metadata" # switch tab
-      fill_in('Title', with: 'My Test Work')
+      title_element = find_by_id("#{work_type}_title")
+      title_element.set("My Test Work")
       creator_element = find(:css, "input.#{work_label}_creator")
       creator_element.set("Test User")
       description_element = find_by_id("#{work_label}_alt_description")

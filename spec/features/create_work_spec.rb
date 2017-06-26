@@ -17,7 +17,8 @@ shared_examples 'work creation' do |work_class| # apply underscore for snake cas
     click_link "Metadata" # switch tab
     # checking for work creator auto-fill and also filling it in
 
-    fill_in('Title', with: 'My Test Work')
+    title_element = find_by_id("#{work_type}_title")
+    title_element.set("My Test Work")
 
     college_element = find_by_id("#{work_type}_college")
     college_element.select("Business")
@@ -55,7 +56,7 @@ shared_examples 'work creation' do |work_class| # apply underscore for snake cas
 
     select 'Attribution-ShareAlike 4.0 International', from: "#{work_type}_rights"
     choose("#{work_type}_visibility_open")
-    expect(page).to have_content('Please note, making something visible to the world (i.e. marking this as Public) may be viewed as publishing which could impact your ability to')
+    expect(page).to have_content('Please note, making something visible to the world')
     check('agreement')
     click_on('Save')
     expect(page).to have_content('My Test Work')
@@ -74,7 +75,9 @@ shared_examples 'proxy work creation' do |work_class|
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
     click_link "Metadata" # switch tab
-    fill_in('Title', with: 'My Test Work')
+
+    title_element = find_by_id("#{work_type}_title")
+    title_element.set("My Test Work")
 
     college_element = find_by_id("#{work_type}_college")
     college_element.select("Business")
@@ -112,7 +115,7 @@ shared_examples 'proxy work creation' do |work_class|
 
     select 'Attribution-ShareAlike 4.0 International', from: "#{work_type}_rights"
     choose("#{work_type}_visibility_open")
-    expect(page).to have_content('Please note, making something visible to the world (i.e. marking this as Public) may be viewed as publishing which could impact your ability to')
+    expect(page).to have_content('Please note, making something visible to the world')
     select(second_user.user_key, from: 'On behalf of')
     check('agreement')
     click_on('Save')
