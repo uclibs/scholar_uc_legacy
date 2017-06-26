@@ -26,6 +26,7 @@ FactoryGirl.define do
     factory :named_collection do
       title ['collection title']
       description ['collection description']
+      creator ['collection creator']
     end
   end
 end

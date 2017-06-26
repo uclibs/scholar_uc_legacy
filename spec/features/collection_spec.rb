@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe 'collection', type: :feature do
+describe 'collection', type: :feature, js: true do
   let(:user) { FactoryGirl.create(:user) }
 
   let(:work1) { FactoryGirl.create(:work, title: ["King Louie"], user: user) }
@@ -173,12 +173,15 @@ describe 'collection', type: :feature do
     before do
       collection1 # create collections by referencing them
       collection2
+      work1
+      work2
       sign_in user
     end
 
     it "preselects the collection we are adding works to" do
       visit "/collections/#{collection1.id}"
       click_link 'Add works'
+      sleep(2)
       first('input#check_all').click
       click_button "Add to Collection"
       expect(page).to have_css("input#id_#{collection1.id}[checked='checked']")
@@ -186,6 +189,7 @@ describe 'collection', type: :feature do
 
       visit "/collections/#{collection2.id}"
       click_link 'Add works'
+      sleep(2)
       first('input#check_all').click
       click_button "Add to Collection"
       expect(page).not_to have_css("input#id_#{collection1.id}[checked='checked']")
@@ -312,7 +316,6 @@ describe 'collection', type: :feature do
         visit hyrax.edit_collection_path(collection)
         attach_file("collection[avatar]", File.dirname(__FILE__) + "/../../spec/fixtures/some_pdf.pdf", visible: false)
         click_button 'Update Collection'
-
         expect(page).to have_text("Validation failed: Avatar You are not allowed to upload \"pdf\" files, allowed types: jpg, jpeg, png, gif, bmp, tif, tiff")
       end
     end
