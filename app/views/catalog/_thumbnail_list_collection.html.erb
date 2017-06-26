@@ -1,5 +1,5 @@
     <div class="col-sm-3">
-      <%= link_to document, class: 'catalog-collection-avatar' do %>
+      <%= link_to hyrax.collection_path(document), class: 'catalog-collection-avatar' do %>
         <% if CollectionAvatar.find_by(collection_id: document.id) != nil %>
           <%= image_tag CollectionAvatar.find_by(collection_id: document.id).avatar.url(:medium) %>
         <% else %>

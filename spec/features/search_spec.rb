@@ -63,7 +63,7 @@ describe 'searching' do
 
     it "displays browse button" do
       visit about_path
-      expect(page).to have_link("Browse", href: main_app.search_catalog_path)
+      expect(page).to have_link("Browse", href: "#{main_app.search_catalog_path}?locale=en")
     end
   end
 end
