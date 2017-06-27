@@ -35,8 +35,8 @@ class Ability
   private
 
     # remove create ability for Etd's from all users
-    def hyrax_models
-      default_hyrax = Hyrax.config.hyrax
+    def curation_concerns_models
+      default_hyrax = Hyrax.config.curation_concerns
       default_hyrax.delete(Etd)
       [::FileSet, ::Collection] + default_hyrax
     end
