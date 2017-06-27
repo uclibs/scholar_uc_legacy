@@ -2,6 +2,7 @@
 
 shared_examples 'doi request' do |work_class|
   let(:user) { create(:user) }
+  let!(:role1) { Sipity::Role.create(name: 'depositing') }
   let(:work_without_doi) do
     create("#{work_class.to_s.underscore}_with_one_file".to_sym,
            title: ["Magnificent splendor"],
@@ -28,11 +29,6 @@ shared_examples 'doi request' do |work_class|
 
   before do
     allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true)
-    create(:permission_template_access,
-           :deposit,
-           permission_template: create(:permission_template, with_admin_set: true),
-           agent_type: 'user',
-           agent_id: user.user_key)
     page.driver.browser.js_errors = false
     allow(CharacterizeJob).to receive(:perform_later)
   end
