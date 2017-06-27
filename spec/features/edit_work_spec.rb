@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-shared_examples 'edit work' do |work_class|
+shared_examples 'edit work', :workflow do |work_class|
   let(:user) { FactoryGirl.create(:user, first_name: 'John', last_name: 'Doe') }
+  let!(:role1) { Sipity::Role.create(name: 'depositing') }
   let(:work) { FactoryGirl.build(
     :work, user: user, creator: ['User, Different'],
            alt_description: 'test', college: "Business", department: "Marketing"
@@ -10,11 +11,6 @@ shared_examples 'edit work' do |work_class|
   let(:work_type) { work_class.name.underscore }
   let(:edit_path) { "concern/#{work_type}s/#{work.id}/edit" }
   before do
-    create(:permission_template_access,
-           :deposit,
-           permission_template: create(:permission_template, with_admin_set: true),
-           agent_type: 'user',
-           agent_id: user.user_key)
     page.driver.browser.js_errors = false
     sign_in user
     work.ordered_members << FactoryGirl.create(:file_set, user: user, title: ['ABC123xyz'])

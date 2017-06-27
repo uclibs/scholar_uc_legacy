@@ -1,15 +1,12 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe 'Adding an infected file', js: true do
+describe 'Adding an infected file', :workflow, js: true do
   let(:user) { FactoryGirl.create(:user) }
+  let!(:role1) { Sipity::Role.create(name: 'depositing') }
 
   before do
-    create(:permission_template_access,
-           :deposit,
-           permission_template: create(:permission_template, with_admin_set: true),
-           agent_type: 'user',
-           agent_id: user.user_key)
+    page.driver.browser.js_errors = false
     allow(CharacterizeJob).to receive(:perform_later)
     allow(Hydra::Works::VirusCheckerService).to receive(:file_has_virus?).and_return(true)
     login_as user
