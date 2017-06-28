@@ -11,11 +11,11 @@
                   class: 'btn btn-default' %>
     <%end %>
   <% if presenter.display_feature_link? %>
-      <%= link_to "Feature", featured_collection_path(presenter, id: presenter.id, format: :json),
+      <%= link_to "Feature", main_app.featured_collection_path(presenter, id: presenter.id, format: :json),
           data: {behavior: 'feature'}, id: 'featureLink', name: 'featureLink', class: 'btn btn-default' %>
   <% end %>
   <% if presenter.display_unfeature_link? %>
-      <%= link_to "Unfeature", featured_collection_path(presenter, id: presenter.id, format: :json),
+      <%= link_to "Unfeature", main_app.featured_collection_path(presenter, id: presenter.id, format: :json),
           data: {behavior: 'unfeature'}, id: 'unfeatureLink', name: 'unfeatureLink', class: 'btn btn-default' %>
   <% end %>
 
