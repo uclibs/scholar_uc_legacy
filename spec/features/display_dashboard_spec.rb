@@ -13,8 +13,8 @@ describe "The Dashboard", type: :feature do
       expect(page).to have_content "My Dashboard"
       expect(page).to have_content "User Activity"
       expect(page).to have_content "User Notifications"
-      expect(page).to have_content "Collections created"
-      expect(page).to have_content "Works created"
+      expect(page).to have_content "My Collections"
+      expect(page).to have_content "My Works"
     end
 
     it "lets the user create collections" do
