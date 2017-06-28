@@ -19,7 +19,7 @@ describe 'Adding an infected file', :workflow, js: true do
       attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
       click_link "Metadata" # switch tab
       title_element = find_by_id("generic_work_title")
-      title_element.set("My Test Work")
+      title_element.set("My Infected Work")
       fill_in('Creator', with: 'Test User')
       college_element = find_by_id("generic_work_college")
       college_element.select("Business")
