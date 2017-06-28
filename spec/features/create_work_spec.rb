@@ -13,6 +13,7 @@ shared_examples 'work creation' do |work_class| # apply underscore for snake cas
     expect(page).to have_content "Browse cloud files" # with browse-everything enabled
     # expect(page).to have_content "Add folder"  -- only works in Chrome
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
+    sleep(5)
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
     click_link "Metadata" # switch tab
     # checking for work creator auto-fill and also filling it in
@@ -130,6 +131,7 @@ end
 
 feature 'Creating a new work', :js, :workflow do
   let(:user) { create(:user) }
+  let!(:role1) { Sipity::Role.create(name: 'depositing') }
   let(:file1) { File.open(fixture_path + '/world.png') }
   let(:file2) { File.open(fixture_path + '/image.jp2') }
   # Don't bother making these, until we unskip tests
@@ -137,17 +139,13 @@ feature 'Creating a new work', :js, :workflow do
   # let!(:uploaded_file2) { UploadedFile.create(file: file2, user: user) }
 
   before do
-    create(:permission_template_access,
-           :deposit,
-           permission_template: create(:permission_template, with_admin_set: true),
-           agent_type: 'user',
-           agent_id: user.user_key)
     allow(CharacterizeJob).to receive(:perform_later)
     page.current_window.resize_to(2000, 2000)
   end
 
   context "when the user is not a proxy", :js do
     before do
+      page.driver.browser.js_errors = false
       allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true)
       sign_in user
     end

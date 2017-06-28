@@ -3,6 +3,7 @@ require 'rails_helper'
 
 shared_examples 'work crud' do |work|
   let(:work_type) { work.name.underscore }
+  let!(:role1) { Sipity::Role.create(name: 'depositing') }
 
   before { allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true) }
 
@@ -88,17 +89,13 @@ shared_examples 'work crud' do |work|
   end
 end
 
-describe 'end to end behavior:', :workflow do
+describe 'end to end behavior:', :workflow, :js do
   let!(:user) { FactoryGirl.create(:user) }
+  let!(:role1) { Sipity::Role.create(name: 'depositing') }
   let!(:persisted_work) { FactoryGirl.create(:work, user: user) }
   let!(:deleted_work) { FactoryGirl.create(:work, user: user) }
   let!(:collection) { FactoryGirl.create(:collection, user: user) }
   before do
-    create(:permission_template_access,
-           :deposit,
-           permission_template: create(:permission_template, with_admin_set: true),
-           agent_type: 'user',
-           agent_id: user.user_key)
     login_as user
   end
   context 'the user' do
