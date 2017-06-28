@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-shared_examples 'edit work', :workflow do |work_class|
+shared_examples 'edit work' do |work_class|
   let(:user) { FactoryGirl.create(:user, first_name: 'John', last_name: 'Doe') }
   let!(:role1) { Sipity::Role.create(name: 'depositing') }
   let(:work) { FactoryGirl.build(
@@ -10,6 +10,7 @@ shared_examples 'edit work', :workflow do |work_class|
   ) }
   let(:work_type) { work_class.name.underscore }
   let(:edit_path) { "concern/#{work_type}s/#{work.id}/edit" }
+
   before do
     page.driver.browser.js_errors = false
     sign_in user
