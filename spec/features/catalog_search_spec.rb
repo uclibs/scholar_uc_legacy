@@ -10,18 +10,18 @@ describe 'catalog searching', type: :feature do
 
   context 'with works and collections' do
     let!(:jills_work) do
-      FactoryGirl.create(:public_work, title: ["Jill's Research"], alt_description: "Jill's abstract", keyword: ['jills_keyword', 'shared_keyword'])
+      FactoryGirl.create(:public_work, title: ["Jill's Research"], alt_description: "Jill's abstract", subject: ['jills_subject', 'shared_subject'])
     end
 
     let!(:jacks_work) do
-      FactoryGirl.create(:public_work, title: ["Jack's Research"], alt_description: "Jack's abstract", keyword: ['jacks_keyword', 'shared_keyword'])
+      FactoryGirl.create(:public_work, title: ["Jack's Research"], alt_description: "Jack's abstract", subject: ['jacks_subject', 'shared_subject'])
     end
 
-    let!(:collection) { FactoryGirl.create(:public_collection, title: ["Jack and Jill's collection"], description: ["This is a collection"], keyword: ['collection_keyword', 'shared_keyword']) }
+    let!(:collection) { FactoryGirl.create(:public_collection, title: ["Jack and Jill's collection"], description: ["This is a collection"], subject: ['collection_subject', 'shared_subject']) }
 
     it 'performing a search' do
       within('#search-form-header') do
-        fill_in('search-field-header', with: 'shared_keyword')
+        fill_in('search-field-header', with: 'shared_subject')
         click_button('Go')
       end
       expect(page).to have_content(jills_work.class)
