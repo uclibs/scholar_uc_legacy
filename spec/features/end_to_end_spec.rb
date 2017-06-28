@@ -110,6 +110,7 @@ describe 'end to end behavior:', :workflow, :js do
   let!(:deleted_work) { FactoryGirl.create(:work, user: user) }
   let!(:collection) { FactoryGirl.create(:collection, user: user) }
   before do
+    allow(CharacterizeJob).to receive(:perform_later)
     page.driver.browser.js_errors = false
     login_as user
   end
