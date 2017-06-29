@@ -74,6 +74,7 @@ shared_examples 'proxy work creation' do |work_class|
     expect(page).to have_content "Add files"
     # Capybara/poltergeist don't dependably upload files, so we'll stub out the results of the uploader:
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
+    sleep(5)
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
     click_link "Metadata" # switch tab
 
@@ -140,12 +141,12 @@ feature 'Creating a new work', :js, :workflow do
 
   before do
     allow(CharacterizeJob).to receive(:perform_later)
+    page.driver.browser.js_errors = false
     page.current_window.resize_to(2000, 2000)
   end
 
   context "when the user is not a proxy", :js do
     before do
-      page.driver.browser.js_errors = false
       allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true)
       sign_in user
     end

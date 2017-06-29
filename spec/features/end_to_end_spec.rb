@@ -22,7 +22,7 @@ shared_examples 'work crud' do |work|
     visit send("new_hyrax_#{work_type}_path")
     within '.tab-content' do
       fill_in('Title', with: 'My Test Work', match: :first)
-
+      select 'All rights reserved', from: "#{work_type}_rights"
       if work == Document || work == GenericWork || work == Image || work == Medium
         fill_in('Description', with: 'This is a description.')
         fill_in('Creator', with: 'Test User')
