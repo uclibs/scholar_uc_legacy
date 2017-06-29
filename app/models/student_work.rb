@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work StudentWork`
+#  `rails generate hyrax:work StudentWork`
 class StudentWork < ActiveFedora::Base
-  include ::CurationConcerns::WorkBehavior
-  include ::CurationConcerns::BasicMetadata
-  include Sufia::WorkBehavior
+  include ::Hyrax::WorkBehavior
+  include ::Hyrax::BasicMetadata
+  include Hyrax::WorkBehavior
   self.human_readable_type = 'Student Work'
   self.human_readable_short_description = 'Deposit any kind of student work (excluding Theses and Dissertations).'
   include RemotelyIdentifiedByDoi::Attributes
@@ -64,5 +64,17 @@ class StudentWork < ActiveFedora::Base
 
   def self.to_s_u
     'student_work'
+  end
+
+  def multiple?(field)
+    StudentWorkForm.multiple? field
+  end
+
+  def self.multiple?(field)
+    if %i(title rights).include? field.to_sym
+      false
+    else
+      super
+    end
   end
 end

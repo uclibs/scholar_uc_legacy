@@ -1,0 +1,26 @@
+<% if Hyrax.config.display_media_download_link %>
+    <div>
+      <h2 class="sr-only"><%= t('hyrax.file_set.show.downloadable_content.heading') %></h2>
+      <%= image_tag hyrax.download_path(file_set, file: 'thumbnail'),
+                    class: "representative-media",
+                    alt: "",
+                    role: "presentation" %>
+      <% if file_is_too_large_to_download(file_set) %>            
+        <%= show_request_file_button(file_set, t('hyrax.file_set.show.requestable_content.pdf_link')) %>
+      <% else %>
+        <%= link_to hyrax.download_path(file_set),
+                    target: :_blank,
+                    data: { turbolinks: false },
+                    class: "btn btn-default" do %>
+            <%= t('hyrax.file_set.show.downloadable_content.pdf_link') %>
+        <% end %>
+      <% end %>
+    </div>
+<% else %>
+    <div>
+      <%= image_tag thumbnail_url(file_set),
+                    class: "representative-media",
+                    alt: "",
+                    role: "presentation" %>
+    </div>
+<% end %>

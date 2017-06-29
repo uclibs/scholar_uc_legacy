@@ -1,15 +1,14 @@
 # frozen_string_literal: true
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   # Connects this user object to Hydra behaviors.
   include Hydra::User
   # Connects this user object to Role-management behaviors.
   include Hydra::RoleManagement::UserRoles
 
   # Connects this user object to Curation Concerns behaviors.
-  include CurationConcerns::User
-  # Connects this user object to Sufia behaviors.
-  include Sufia::User
-  include Sufia::UserUsageStats
+  include Hyrax::User
+  # Connects this user object to Hyrax behaviors.
+  include Hyrax::UserUsageStats
 
   if Blacklight::Utils.needs_attr_accessible?
     attr_accessible :email, :password, :password_confirmation

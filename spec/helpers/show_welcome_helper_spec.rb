@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require 'rails_helper'
-include Devise::TestHelpers
+# include Devise::TestHelpers
 
 describe ShowWelcomeHelper, type: :helper do
   let(:current_user) { FactoryGirl.create(:user) }

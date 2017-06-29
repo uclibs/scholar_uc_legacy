@@ -1,0 +1,18 @@
+  <audio controls="controls" class="audiojs" preload="auto">
+    <source src="<%= hyrax.download_path(file_set, file: 'ogg') %>" type="audio/ogg" />
+    <source src="<%= hyrax.download_path(file_set, file: 'mp3') %>" type="audio/mpeg" />
+    Your browser does not support the audio tag.
+  </audio>
+
+  <% if Hyrax.config.display_media_download_link %>
+    <% if file_is_too_large_to_download(file_set) %>            
+      <%= show_request_file_button(file_set, t('hyrax.file_set.show.requestable_content.audio_link')) %>
+    <% else %>
+      <%= link_to hyrax.download_path(file_set),
+                  target: :_blank,
+                  data: { turbolinks: false },
+                  class: "btn btn-default" do %>
+          <%= t('hyrax.file_set.show.downloadable_content.audio_link') %>
+      <% end %>
+    <% end %>
+  <% end %>

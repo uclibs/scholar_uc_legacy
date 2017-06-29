@@ -1,0 +1,15 @@
+<div class="no-preview">
+  <%= t('hyrax.works.show.no_preview') %>
+  <% if Hyrax.config.display_media_download_link? %>
+    <% if file_is_too_large_to_download(file_set) %>            
+      <%= show_request_file_button(file_set, t('hyrax.file_set.show.requestable_content.default_link')) %>
+    <% else %>
+      <%= link_to hyrax.download_path(file_set),
+                  target: :_blank,
+                  data: { turbolinks: false },
+                  class: "btn btn-default" do %>
+          <%= t('hyrax.file_set.show.downloadable_content.default_link') %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -40,4 +40,8 @@ class StaticController < ApplicationController
   def student_instructions
     render "static/student_instructions"
   end
+
+  def help
+    render "static/help"
+  end
 end

@@ -13,16 +13,18 @@ shared_examples 'work creation' do |work_class| # apply underscore for snake cas
     expect(page).to have_content "Browse cloud files" # with browse-everything enabled
     # expect(page).to have_content "Add folder"  -- only works in Chrome
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
+    sleep(5)
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
     click_link "Metadata" # switch tab
     # checking for work creator auto-fill and also filling it in
 
-    fill_in('Title', with: 'My Test Work')
+    title_element = find_by_id("#{work_type}_title")
+    title_element.set("My Test Work")
 
     college_element = find_by_id("#{work_type}_college")
     college_element.select("Business")
 
-    if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Video
+    if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Medium
       expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
       fill_in('Description', with: 'This is a description.')
       fill_in('Creator', with: 'Test User')
@@ -55,7 +57,7 @@ shared_examples 'work creation' do |work_class| # apply underscore for snake cas
 
     select 'Attribution-ShareAlike 4.0 International', from: "#{work_type}_rights"
     choose("#{work_type}_visibility_open")
-    expect(page).to have_content('Please note, making something visible to the world (i.e. marking this as Public) may be viewed as publishing which could impact your ability to')
+    expect(page).to have_content('Please note, making something visible to the world')
     check('agreement')
     click_on('Save')
     expect(page).to have_content('My Test Work')
@@ -72,14 +74,17 @@ shared_examples 'proxy work creation' do |work_class|
     expect(page).to have_content "Add files"
     # Capybara/poltergeist don't dependably upload files, so we'll stub out the results of the uploader:
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/image.jp2", visible: false)
+    sleep(5)
     attach_file("files[]", File.dirname(__FILE__) + "/../../spec/fixtures/jp2_fits.xml", visible: false)
     click_link "Metadata" # switch tab
-    fill_in('Title', with: 'My Test Work')
+
+    title_element = find_by_id("#{work_type}_title")
+    title_element.set("My Test Work")
 
     college_element = find_by_id("#{work_type}_college")
     college_element.select("Business")
 
-    if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Video
+    if work_class == Document || work_class == GenericWork || work_class == Image || work_class == Medium
       expect(page).to have_field("#{work_type}_creator", with: user.name_for_works)
       fill_in('Description', with: 'This is a description.')
       fill_in('Creator', with: 'Test User')
@@ -112,7 +117,7 @@ shared_examples 'proxy work creation' do |work_class|
 
     select 'Attribution-ShareAlike 4.0 International', from: "#{work_type}_rights"
     choose("#{work_type}_visibility_open")
-    expect(page).to have_content('Please note, making something visible to the world (i.e. marking this as Public) may be viewed as publishing which could impact your ability to')
+    expect(page).to have_content('Please note, making something visible to the world')
     select(second_user.user_key, from: 'On behalf of')
     check('agreement')
     click_on('Save')
@@ -125,8 +130,9 @@ shared_examples 'proxy work creation' do |work_class|
   end
 end
 
-feature 'Creating a new work', :js do
+feature 'Creating a new work', :js, :workflow do
   let(:user) { create(:user) }
+  let!(:role1) { Sipity::Role.create(name: 'depositing') }
   let(:file1) { File.open(fixture_path + '/world.png') }
   let(:file2) { File.open(fixture_path + '/image.jp2') }
   # Don't bother making these, until we unskip tests
@@ -134,9 +140,8 @@ feature 'Creating a new work', :js do
   # let!(:uploaded_file2) { UploadedFile.create(file: file2, user: user) }
 
   before do
-    CurationConcerns::Workflow::WorkflowImporter.load_workflows
-    Sufia::AdminSetCreateService.create_default!
     allow(CharacterizeJob).to receive(:perform_later)
+    page.driver.browser.js_errors = false
     page.current_window.resize_to(2000, 2000)
   end
 
@@ -151,7 +156,7 @@ feature 'Creating a new work', :js do
     it_behaves_like "work creation", Document
     it_behaves_like "work creation", Image
     #    it_behaves_like "work creation", Dataset
-    it_behaves_like "work creation", Video
+    it_behaves_like "work creation", Medium
     it_behaves_like "work creation", Etd
     it_behaves_like "work creation", StudentWork
   end
@@ -167,7 +172,7 @@ feature 'Creating a new work', :js do
       click_link "Create Work"
     end
     it_behaves_like "proxy work creation", GenericWork
-    it_behaves_like "proxy work creation", Video
+    it_behaves_like "proxy work creation", Medium
     it_behaves_like "proxy work creation", Image
     it_behaves_like "proxy work creation", Document
     it_behaves_like "proxy work creation", Article

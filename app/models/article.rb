@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Article`
+#  `rails generate hyrax:work Article`
 class Article < ActiveFedora::Base
-  include ::CurationConcerns::WorkBehavior
-  include ::CurationConcerns::BasicMetadata
-  include Sufia::WorkBehavior
+  include ::Hyrax::WorkBehavior
+  include ::Hyrax::BasicMetadata
+  include Hyrax::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
   include RemoveProxyEditors::RemoveUser
 
@@ -61,5 +61,17 @@ class Article < ActiveFedora::Base
 
   def self.to_s_u
     'article'
+  end
+
+  def multiple?(field)
+    ArticleForm.multiple? field
+  end
+
+  def self.multiple?(field)
+    if %i(title rights).include? field.to_sym
+      false
+    else
+      super
+    end
   end
 end

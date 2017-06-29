@@ -1,3 +1,3 @@
 # frozen_string_literal: true
-# Override CC's AdminSet to load Sufia's updated AdminSetBehavior
-AdminSet.include(Sufia::AdminSetBehavior)
+# Override CC's AdminSet to load Hyrax's updated AdminSetBehavior
+AdminSet.include(Hyrax::AdminSetBehavior)

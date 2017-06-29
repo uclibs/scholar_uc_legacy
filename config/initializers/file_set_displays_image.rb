@@ -1,2 +1,3 @@
 # frozen_string_literal: true
-CurationConcerns::FileSetPresenter.include DisplaysImage
+# frozen_string_literal: true
+Hyrax::FileSetPresenter.include DisplaysImage

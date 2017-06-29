@@ -2,6 +2,7 @@
 
 shared_examples 'doi request' do |work_class|
   let(:user) { create(:user) }
+  let!(:role1) { Sipity::Role.create(name: 'depositing') }
   let(:work_without_doi) do
     create("#{work_class.to_s.underscore}_with_one_file".to_sym,
            title: ["Magnificent splendor"],
@@ -28,8 +29,6 @@ shared_examples 'doi request' do |work_class|
 
   before do
     allow_any_instance_of(Ability).to receive(:user_is_etd_manager).and_return(true)
-    CurationConcerns::Workflow::WorkflowImporter.load_workflows
-    Sufia::AdminSetCreateService.create_default!
     page.driver.browser.js_errors = false
     allow(CharacterizeJob).to receive(:perform_later)
   end
@@ -42,7 +41,11 @@ shared_examples 'doi request' do |work_class|
 
     it 'displays the request option in the work edit form' do
       click_link "DOI" # switch tab
-      expect(page).to have_content "Yes, I would like to create a DOI for this #{work_text}."
+      if work_text == 'Medium'
+        expect(page).to have_content "Yes, I would like to create a DOI for this Media."
+      else
+        expect(page).to have_content "Yes, I would like to create a DOI for this #{work_text}."
+      end
       expect(page).to have_content "Not now…but maybe later."
     end
 
@@ -53,7 +56,8 @@ shared_examples 'doi request' do |work_class|
       click_link "Files" # switch tab
       attach_file("files[]", Rails.root + "spec/fixtures/world.png", visible: false)
       click_link "Metadata" # switch tab
-      fill_in('Title', with: 'My Test Work')
+      title_element = find_by_id("#{work_label}_title")
+      title_element.set("My Test Work")
       creator_element = find(:css, "input.#{work_label}_creator")
       creator_element.set("Test User")
       description_element = find_by_id("#{work_label}_alt_description")
@@ -102,7 +106,11 @@ shared_examples 'doi request' do |work_class|
 
       it 'displays the request option in the work edit form' do
         click_link "DOI" # switch tab
-        expect(page).to have_content("Yes, I would like to create a DOI for this #{work_text}")
+        if work_text == 'Medium'
+          expect(page).to have_content("Yes, I would like to create a DOI for this Media")
+        else
+          expect(page).to have_content("Yes, I would like to create a DOI for this #{work_text}")
+        end
       end
     end
 

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Dataset`
+#  `rails generate hyrax:work Dataset`
 class Dataset < ActiveFedora::Base
-  include ::CurationConcerns::WorkBehavior
-  include ::CurationConcerns::BasicMetadata
-  include Sufia::WorkBehavior
+  include ::Hyrax::WorkBehavior
+  include ::Hyrax::BasicMetadata
+  include Hyrax::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
   include RemoveProxyEditors::RemoveUser
 
@@ -56,5 +56,17 @@ class Dataset < ActiveFedora::Base
 
   def self.to_s_u
     'dataset'
+  end
+
+  def multiple?(field)
+    DatasetForm.multiple? field
+  end
+
+  def self.multiple?(field)
+    if %i(title rights).include? field.to_sym
+      false
+    else
+      super
+    end
   end
 end

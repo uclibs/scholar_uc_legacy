@@ -6,8 +6,8 @@ Orcid.configure do |config|
   # config.provider.id = "Your app's Orcid Client ID"
   # config.provider.secret = "Your app's Orcid Client Secret"
 
-  # # Configure how your applications models will be mapped to an Orcid Work so
-  # # that your application can append the work to an Orcid Profile.
+  # Configure how your applications models will be mapped to an Orcid Work so
+  # that your application can append the work to an Orcid Profile.
   # config.register_mapping_to_orcid_work(
   #   :article,
   #   [

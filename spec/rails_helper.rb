@@ -132,7 +132,8 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
-  config.include Devise::TestHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :helper
 
   # Resize the browser window large enough that Capybara can see all elements
   config.before(:each, js: true) do
@@ -149,3 +150,9 @@ VCR.configure do |c|
   c.configure_rspec_metadata!
   c.allow_http_connections_when_no_cassette = true
 end
+
+def main_app
+  Rails.application.class.routes.url_helpers
+end
+
+main_app.root_path

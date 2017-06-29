@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Article`
+#  `rails generate hyrax:work Article`
 require 'rails_helper'
 
 describe Article do

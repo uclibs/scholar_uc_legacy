@@ -7,7 +7,7 @@ feature 'DOIs', type: :feature, js: true do
   it_behaves_like 'doi request', Image
   it_behaves_like 'doi request', Document
   it_behaves_like 'doi request', Dataset
-  it_behaves_like 'doi request', Video
+  it_behaves_like 'doi request', Medium
   it_behaves_like 'doi request', Etd
   it_behaves_like 'doi request', StudentWork
 end

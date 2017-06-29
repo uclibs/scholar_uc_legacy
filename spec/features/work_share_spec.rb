@@ -17,7 +17,7 @@ end
 
 describe "work share partial" do
   it_behaves_like "hide share feature", GenericWork
-  it_behaves_like "hide share feature", Video
+  it_behaves_like "hide share feature", Medium
   it_behaves_like "hide share feature", Image
   it_behaves_like "hide share feature", Document
   it_behaves_like "hide share feature", Article

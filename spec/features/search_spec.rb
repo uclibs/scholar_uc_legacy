@@ -42,7 +42,7 @@ describe 'searching' do
       expect(page).not_to have_css("a[data-search-label*='My Shares']", visible: false)
 
       click_button("All")
-      expect(page).to have_content("All of Sufia")
+      expect(page).to have_content("All of Hyrax")
       fill_in "search-field-header", with: subject_value
       click_button("Go")
 
@@ -63,7 +63,7 @@ describe 'searching' do
 
     it "displays browse button" do
       visit about_path
-      expect(page).to have_link("Browse", href: main_app.search_catalog_path)
+      expect(page).to have_link("Browse", href: "#{main_app.search_catalog_path}?locale=en")
     end
   end
 end

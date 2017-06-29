@@ -1,0 +1,14 @@
+<%= image_tag hyrax.download_path(file_set, file: 'thumbnail'),
+         class: "representative-media",
+         alt: "",
+         role: "presentation" %>
+<% if file_is_too_large_to_download(file_set) %>
+  <%= show_request_file_button(file_set, t('hyrax.file_set.show.requestable_content.image_link')) %>
+<% else %>
+  <%= link_to hyrax.download_path(file_set),
+       target: :_blank,
+       data: { turbolinks: false },
+       class: "btn btn-default" do %>
+          <%= t('hyrax.file_set.show.downloadable_content.image_link') %>
+          <% end %>
+  <% end %>

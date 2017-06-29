@@ -36,13 +36,13 @@ module RemotelyIdentifiedByDoi
 
       protected
 
-      def doi_remote_service
-        @doi_remote_service ||= Hydra::RemoteIdentifier.remote_service(:doi)
-      end
+        def doi_remote_service
+          @doi_remote_service ||= Hydra::RemoteIdentifier.remote_service(:doi)
+        end
 
-      def remote_doi_assignment_strategy?
-        doi_assignment_strategy.to_s == doi_remote_service.accessor_name.to_s
-      end
+        def remote_doi_assignment_strategy?
+          doi_assignment_strategy.to_s == doi_remote_service.accessor_name.to_s
+        end
     end
   end
 

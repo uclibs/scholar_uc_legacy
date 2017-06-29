@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe 'collection', type: :feature do
+describe 'collection', type: :feature, js: true do
   let(:user) { FactoryGirl.create(:user) }
 
   let(:work1) { FactoryGirl.create(:work, title: ["King Louie"], user: user) }
@@ -77,9 +77,11 @@ describe 'collection', type: :feature do
   end
 
   describe 'collection show page' do
-    let!(:collection) do
-      FactoryGirl.create(:public_collection, description: ["Collection description"], members: [work1, work2], user: user)
+    let(:collection) do
+      create(:public_collection, user: user, description: ['collection description'])
     end
+    let!(:work1) { create(:work, title: ["King Louie"], member_of_collections: [collection], user: user) }
+    let!(:work2) { create(:work, title: ["King Kong"], member_of_collections: [collection], user: user) }
     before do
       sign_in user
       visit '/dashboard/collections'
@@ -171,12 +173,15 @@ describe 'collection', type: :feature do
     before do
       collection1 # create collections by referencing them
       collection2
+      work1
+      work2
       sign_in user
     end
 
     it "preselects the collection we are adding works to" do
       visit "/collections/#{collection1.id}"
       click_link 'Add works'
+      sleep(2)
       first('input#check_all').click
       click_button "Add to Collection"
       expect(page).to have_css("input#id_#{collection1.id}[checked='checked']")
@@ -184,6 +189,7 @@ describe 'collection', type: :feature do
 
       visit "/collections/#{collection2.id}"
       click_link 'Add works'
+      sleep(2)
       first('input#check_all').click
       click_button "Add to Collection"
       expect(page).not_to have_css("input#id_#{collection1.id}[checked='checked']")
@@ -192,7 +198,9 @@ describe 'collection', type: :feature do
   end
 
   describe 'edit collection' do
-    let!(:collection) { FactoryGirl.create(:named_collection, members: [work1, work2], user: user) }
+    let(:collection) { create(:named_collection, user: user) }
+    let!(:work1) { create(:work, title: ["King Louie"], member_of_collections: [collection], user: user) }
+    let!(:work2) { create(:work, title: ["King Kong"], member_of_collections: [collection], user: user) }
 
     before do
       sign_in user
@@ -234,7 +242,9 @@ describe 'collection', type: :feature do
   end
 
   describe "Removing a files from a collection" do
-    let!(:collection) { FactoryGirl.create(:named_collection, members: [work1, work2], user: user) }
+    let(:collection) { create(:named_collection, user: user) }
+    let!(:work1) { create(:work, title: ["King Louie"], member_of_collections: [collection], user: user) }
+    let!(:work2) { create(:work, title: ["King Kong"], member_of_collections: [collection], user: user) }
 
     before do
       sign_in user
@@ -263,8 +273,8 @@ describe 'collection', type: :feature do
   end
 
   describe 'show pages of a collection' do
-    let(:works)       { (0..12).map { FactoryGirl.create(:work, user: user) } }
-    let!(:collection) { FactoryGirl.create(:named_collection, members: works, user: user) }
+    let(:works)       { (0..12).map { FactoryGirl.create(:work, member_of_collections: [collection], user: user) } }
+    let!(:collection) { FactoryGirl.create(:named_collection, user: user) }
 
     before { sign_in user }
 
@@ -274,7 +284,10 @@ describe 'collection', type: :feature do
       within('#document_' + collection.id) do
         click_link("Display all details of collection title")
       end
-      expect(page).to have_css(".pager")
+      expect(page).to have_content collection.title.first
+      expect(page).to have_css ".collection_description"
+      expect(page).to have_content  "Total Items"
+      expect(page).to have_content  "Size"
     end
   end
 
@@ -300,10 +313,9 @@ describe 'collection', type: :feature do
     context 'editing a collection' do
       it 'shows a flash notice when failing file type validation' do
         sign_in user
-        visit edit_collection_path(collection)
+        visit hyrax.edit_collection_path(collection)
         attach_file("collection[avatar]", File.dirname(__FILE__) + "/../../spec/fixtures/some_pdf.pdf", visible: false)
         click_button 'Update Collection'
-
         expect(page).to have_text("Validation failed: Avatar You are not allowed to upload \"pdf\" files, allowed types: jpg, jpeg, png, gif, bmp, tif, tiff")
       end
     end

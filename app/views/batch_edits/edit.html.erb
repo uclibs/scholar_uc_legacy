@@ -20,7 +20,7 @@
                                 url: batch_edits_path,
                                 method: :put,
                                 remote: true,
-                                builder: Sufia::FormBuilder,
+                                builder: Hyrax::FormBuilder,
                                 html: { id: "form_#{term.to_s}",
                                         class: "ajax-form" },
                                 data: { model: @form.model_name.param_key } do |f| %>
@@ -57,8 +57,8 @@
                           data: { 'param-key' => @form.model_name.param_key } do |f| %>
         <%= hidden_field_tag('update_type', 'update') %>
         <%= hidden_field_tag('key', 'permissions') %>
-        <%= render "curation_concerns/base/form_permission", f: f %>
-        <%= render "curation_concerns/base/form_share", f: f %>
+        <%= render "hyrax/base/form_permission", f: f %>
+        <%= render "hyrax/base/form_share", f: f %>
         <% @form.batch_document_ids.each do |batch_id| %>
           <%= hidden_field_tag "batch_document_ids[]", batch_id %>
         <% end %>

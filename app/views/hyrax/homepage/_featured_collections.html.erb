@@ -1,0 +1,8 @@
+<% if FeaturedCollection.count == 0 %>
+  <p><%= t('hyrax.homepage.featured_collections.no_collections') %></p>
+<% else %>
+  <p>  <%= link_to collection_path(FeaturedCollection.first.collection_id) do %>
+  <%= image_tag CollectionAvatar.find_by(collection_id: FeaturedCollection.first.collection_id).avatar.url(:featured) unless FeaturedCollection.count == 0 %></p>
+  <% end %>
+<% end %>
+<p><%= t('hyrax.homepage.featured_collections.title') %></p>

@@ -13,7 +13,7 @@ describe DepositorsController, type: :controller do
     end
 
     it "is successful" do
-      expect { delete :destroy, user_id: user.user_key, id: grantee.user_key, use_route: :sufia }.to change { ProxyDepositRights.count }.by(-1)
+      expect { delete :destroy, params: { user_id: user.user_key, id: grantee.user_key, use_route: :hyrax } }.to change { ProxyDepositRights.count }.by(-1)
     end
   end
 end

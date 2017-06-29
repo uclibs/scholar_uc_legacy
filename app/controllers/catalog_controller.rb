@@ -2,11 +2,9 @@
 class CatalogController < ApplicationController
   include Hydra::Catalog
   include Hydra::Controller::ControllerBehavior
-  include Sufia::Catalog
 
   # These before_filters apply the hydra access controls
   before_action :enforce_show_permissions, only: :show
-  skip_before_action :default_html_head
 
   def self.uploaded_field
     solr_name('system_create', :stored_sortable, type: :date)
@@ -36,7 +34,7 @@ class CatalogController < ApplicationController
     config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
     config.show.partials.insert(1, :openseadragon)
 
-    config.search_builder_class = Sufia::SearchBuilder
+    config.search_builder_class = Hyrax::CatalogSearchBuilder
 
     # Show gallery view
     config.view.gallery.partials = [:index_header, :index]
@@ -85,7 +83,7 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("date_uploaded", :stored_sortable, type: :date), label: "Date Uploaded", itemprop: 'datePublished'
     config.add_index_field solr_name("date_modified", :stored_sortable, type: :date), label: "Date Modified", itemprop: 'dateModified'
     config.add_index_field solr_name("date_created", :stored_searchable), label: "Date Created", itemprop: 'dateCreated'
-    config.add_index_field solr_name("rights", :stored_searchable), label: "Rights", helper_method: :rights_statement_links
+    config.add_index_field solr_name("rights", :stored_searchable), label: "Rights", helper_method: :license_links
     config.add_index_field solr_name("resource_type", :stored_searchable), label: "Resource Type", link_to_search: solr_name("resource_type", :facetable)
     config.add_index_field solr_name("file_format", :stored_searchable), label: "File Format", link_to_search: solr_name("file_format", :facetable)
     config.add_index_field solr_name("identifier", :stored_searchable), label: "Identifier", helper_method: :index_field_link, field_name: 'identifier'
@@ -300,7 +298,7 @@ class CatalogController < ApplicationController
   end
 
   # disable the bookmark control from displaying in gallery view
-  # Sufia doesn't show any of the default controls on the list view, so
+  # Hyrax doesn't show any of the default controls on the list view, so
   # this method is not called in that context.
   def render_bookmarks_control?
     false

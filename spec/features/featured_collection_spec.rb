@@ -39,7 +39,6 @@ describe 'collection', type: :feature, js: true do
       expect(page).to have_content description
 
       click_link("Feature")
-      expect(page).to have_content "Featured"
       visit '/'
       expect(page).to have_css("img[src*='world.png']")
     end

@@ -1,4 +1,4 @@
-<%= render '/shared/select_work_type_modal' if create_work_presenter.many? %>
+<%= render '/shared/select_work_type_modal' %>
 <nav id="masthead" class="<%= 'home-nav' if controller_name == 'homepage' %>navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -16,7 +16,7 @@
     </div>
 
     <div class="collapse navbar-collapse" id="top-navbar-collapse">
-      <div class="nav navbar-nav navbar-right nav-sufia-controls">
+      <div class="nav navbar-nav navbar-right nav-hyrax-controls">
         <%= render '/toolbar' %>
 
         <%= render '/user_util_links' %>

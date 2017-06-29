@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'rails_helper'
 
 describe CollectionAvatarsController, type: :controller do
   let(:user) { FactoryGirl.create(:user) }
@@ -18,14 +19,14 @@ describe CollectionAvatarsController, type: :controller do
     end
 
     it "returns a CollectionAvatar object" do
-      collection_demo.should be_an_instance_of CollectionAvatar
+      expect(collection_demo).to be_an_instance_of CollectionAvatar
     end
   end
 
   describe "#create" do
     it "sets an avatar" do
       post :create, format: :html
-      expect(response).to redirect_to('http://test.host/collection_avatars/1')
+      expect(response).to redirect_to('http://test.host/collection_avatars/1?locale=en')
       expect(flash[:notice]).to include("Collection avatar was successfully created.")
     end
 
@@ -33,7 +34,6 @@ describe CollectionAvatarsController, type: :controller do
       before do
         allow_any_instance_of(CollectionAvatar).to receive(:save).and_return(false)
       end
-
       it "does not set an avatar" do
         post :create, format: :html
         expect(response).to render_template('collections/new')
@@ -48,8 +48,8 @@ describe CollectionAvatarsController, type: :controller do
 
     it "sets an avatar with save" do
       collection_demo.save!
-      put :update, id: collection_demo.id
-      expect(response).to redirect_to('http://test.host/collection_avatars/2')
+      put :update, params: { id: collection_demo.id }
+      expect(response).to redirect_to('http://test.host/collection_avatars/2?locale=en')
       expect(flash[:notice]).to include("Collection avatar was successfully updated.")
     end
 
@@ -60,7 +60,7 @@ describe CollectionAvatarsController, type: :controller do
 
       it "does not set an avatar" do
         collection_demo.save!
-        put :update, id: collection_demo.id
+        put :update, params: { id: collection_demo.id }
         expect(response).to render_template('collections/edit')
       end
     end
@@ -72,7 +72,7 @@ describe CollectionAvatarsController, type: :controller do
     end
     it "destroys an avatar" do
       collection_demo.save!
-      delete :destroy, id: collection_demo.id
+      delete :destroy, params: { id: collection_demo.id }
       expect(response).to redirect_to(collection_avatars_url)
       expect(flash[:notice]).to include("Collection avatar was successfully destroyed.")
     end

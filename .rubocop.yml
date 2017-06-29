@@ -14,7 +14,7 @@ AllCops:
 
 Lint/ImplicitStringConcatenation:
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 #debugger calls are expected within specs in normal operation
 Lint/Debugger:
@@ -27,35 +27,39 @@ Metrics/LineLength:
 Metrics/AbcSize:
   Max: 30
   Exclude:
-  #everything here was sufia-specific
-    - 'app/indexers/curation_concerns/file_set_indexer.rb'
+  #everything here was hyrax-specific
+    - 'app/indexers/hyrax/file_set_indexer.rb'
     - 'app/helpers/change_manager/change_manager_helper.rb'
-    - 'app/forms/sufia/forms/batch_edit_form.rb'
+    - 'app/forms/hyrax/forms/batch_edit_form.rb'
+    - 'app/indexers/hyrax/work_indexer.rb'
 
 Metrics/MethodLength:
   Max: 15
   Exclude:
     - 'lib/seed_methods.rb'
-    - 'app/indexers/curation_concerns/file_set_indexer.rb'
-    - 'spec/support/curation_concerns/factory_helpers.rb'
+    - 'app/indexers/hyrax/file_set_indexer.rb'
+    - 'spec/support/hyrax/factory_helpers.rb'
     - 'app/helpers/change_manager/change_manager_helper.rb'
-    - 'app/forms/sufia/forms/batch_upload_form.rb'
-    - 'app/forms/sufia/forms/batch_edit_form.rb'
+    - 'app/forms/hyrax/forms/batch_upload_form.rb'
+    - 'app/forms/hyrax/forms/batch_edit_form.rb'
+    - 'app/controllers/classify_concerns_controller.rb'
 
 Metrics/ModuleLength:
   Exclude:
     - 'lib/seed_methods.rb'
-    - 'app/helpers/sufia_helper.rb'
+    - 'app/helpers/hyrax_helper.rb'
 
 Metrics/PerceivedComplexity:
   Exclude:
     - 'app/helpers/change_manager/change_manager_helper.rb'
-    - 'app/helpers/sufia_helper.rb'
+    - 'app/forms/hyrax/forms/batch_edit_form.rb'
+    - 'app/helpers/hyrax_helper.rb'    
 
 Metrics/CyclomaticComplexity:
   Exclude:
-  - 'app/forms/sufia/forms/batch_upload_form.rb'
-  - 'app/helpers/sufia_helper.rb'
+  - 'app/forms/hyrax/forms/batch_upload_form.rb'
+  - 'app/forms/hyrax/forms/batch_edit_form.rb'
+  - 'app/helpers/hyrax_helper.rb'
 
 Style/BlockDelimiters:
   Exclude:
@@ -65,18 +69,26 @@ Style/BlockEndNewline:
   Exclude:
     - 'spec/**/*'
 
+Style/FileName:
+  Exclude:
+    - 'Gemfile'
+
 Style/FrozenStringLiteralComment:
   Exclude:
     - 'app/controllers/contact_form_controller.rb'
-    - 'app/controllers/concerns/sufia/contact_form_controller_behavior.rb'
+    - 'app/controllers/concerns/hyrax/contact_form_controller_behavior.rb'
+    - 'bin/*'
 
 Style/GuardClause:
   Exclude:
     - 'app/models/ability.rb'
+    - 'app/indexers/hyrax/collection_indexer.rb'
+    - 'app/indexers/hyrax/work_indexer.rb'
+    - 'app/services/change_manager/email_manager.rb'
 
 Style/SymbolProc: # https://github.com/bbatsov/rubocop/issues/3071
   Exclude:
-  #everything here was sufia-specific
+  #everything here was hyrax-specific
 
 Style/MultilineBlockLayout:
   Exclude:
@@ -119,6 +131,10 @@ Style/BracesAroundHashParameters:
     - 'spec/views/workgroups/new.html.erb_spec.rb'
     - 'spec/views/workgroups/show.html.erb_spec.rb'
 
+Style/CommentIndentation:
+  Exclude:
+    - 'config/initializers/orcid_initializer.rb'
+
 Style/BlockComments:
   Exclude:
     - 'spec/spec_helper.rb'
@@ -132,8 +148,16 @@ Style/DoubleNegation:
   Exclude:
     - 'config/environments/development.rb'
 
+Style/EmptyLineAfterMagicComment:
+  Enabled: false
+
 Rails:
   Enabled: true
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'app/models/user.rb'
+    - 'app/jobs/user_edit_profile_event_job.rb'
 
 Rails/OutputSafety:
   Exclude:
@@ -141,25 +165,28 @@ Rails/OutputSafety:
 
 RSpec/AnyInstance:
   Exclude:
-    - 'spec/controllers/contact_form_controller_spec.rb'
+    - 'spec/controllers/hyrax/contact_form_controller_spec.rb'
     - 'spec/features/admin_admin_set_spec.rb'
-    - 'spec/controllers/curation_concerns/etds_controller_spec.rb'
+    - 'spec/controllers/hyrax/etds_controller_spec.rb'
     - 'spec/features/create_work_spec.rb'
     - 'spec/features/end_to_end_spec.rb'
     - 'spec/support/shared/doi_request.rb'
-    - 'spec/models/sufia/ability_spec.rb'
+    - 'spec/models/hyrax/ability_spec.rb'
     - 'spec/controllers/collection_avatars_controller_spec.rb'
 
 RSpec/DescribeClass:
   Exclude:
     - 'spec/views/**/*'
     - 'spec/features/*'
-    - 'spec/controllers/curation_concerns/generic_works_controller_spec.rb'
-    - 'spec/routing/curation_concerns_spec.rb'
+    - 'spec/controllers/hyrax/generic_works_controller_spec.rb'
+    - 'spec/routing/hyrax_spec.rb'
 
 RSpec/DescribedClass:
   Exclude:
-    - 'spec/presenters/sufia/work_show_presenter_spec.rb'
+    - 'spec/presenters/hyrax/work_show_presenter_spec.rb'
+
+Rails/DynamicFindBy:
+  Enabled: false
 
 RSpec/ExpectActual:
   Enabled: false
@@ -169,6 +196,10 @@ RSpec/LetSetup:
 
 RSpec/MessageExpectation:
   Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: true
+  EnforcedStyle: receive
 
 RSpec/MultipleExpectations:
   Enabled: false
@@ -183,7 +214,8 @@ RSpec/ExampleLength:
   Exclude:
     - 'spec/features/*'
     - 'spec/support/shared/*'
-    - 'spec/forms/sufia/forms/batch_edit_form_spec.rb'
+    - 'spec/forms/hyrax/forms/batch_edit_form_spec.rb'
+    - 'spec/jobs/batch_create_job_spec.rb'
 
 RSpec/SubjectStub:
   Enabled: false

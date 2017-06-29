@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 # Generated via
-#  `rails generate curation_concerns:work Etd`
+#  `rails generate hyrax:work Etd`
 class Etd < ActiveFedora::Base
-  include ::CurationConcerns::WorkBehavior
-  include ::CurationConcerns::BasicMetadata
-  include Sufia::WorkBehavior
+  include ::Hyrax::WorkBehavior
+  include ::Hyrax::BasicMetadata
+  include Hyrax::WorkBehavior
   include RemotelyIdentifiedByDoi::Attributes
   include RemoveProxyEditors::RemoveUser
 
@@ -76,5 +76,17 @@ class Etd < ActiveFedora::Base
 
   def publisher
     etd_publisher
+  end
+
+  def multiple?(field)
+    EtdForm.multiple? field
+  end
+
+  def self.multiple?(field)
+    if %i(title rights).include? field.to_sym
+      false
+    else
+      super
+    end
   end
 end
