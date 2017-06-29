@@ -19,7 +19,7 @@ describe CollectionAvatarsController, type: :controller do
     end
 
     it "returns a CollectionAvatar object" do
-      collection_demo.should be_an_instance_of CollectionAvatar
+      expect(collection_demo).to be_an_instance_of CollectionAvatar
     end
   end
 
@@ -48,7 +48,7 @@ describe CollectionAvatarsController, type: :controller do
 
     it "sets an avatar with save" do
       collection_demo.save!
-      put :update, id: collection_demo.id
+      put :update, params: { id: collection_demo.id }
       expect(response).to redirect_to('http://test.host/collection_avatars/2?locale=en')
       expect(flash[:notice]).to include("Collection avatar was successfully updated.")
     end
@@ -60,7 +60,7 @@ describe CollectionAvatarsController, type: :controller do
 
       it "does not set an avatar" do
         collection_demo.save!
-        put :update, id: collection_demo.id
+        put :update, params: { id: collection_demo.id }
         expect(response).to render_template('collections/edit')
       end
     end
@@ -72,7 +72,7 @@ describe CollectionAvatarsController, type: :controller do
     end
     it "destroys an avatar" do
       collection_demo.save!
-      delete :destroy, id: collection_demo.id
+      delete :destroy, params: { id: collection_demo.id }
       expect(response).to redirect_to(collection_avatars_url)
       expect(flash[:notice]).to include("Collection avatar was successfully destroyed.")
     end

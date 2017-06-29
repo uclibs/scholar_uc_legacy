@@ -7,15 +7,15 @@ describe CommonObjectsController do
   describe '#show' do
     context 'with valid work' do
       it 'redirects to the work path' do
-        get :show, id: curation_concern.to_param
-        response.status.should == 302
+        get :show, params: { id: curation_concern.to_param }
+        expect(response.status).to eq(302)
       end
     end
 
     context 'with invalid pid' do
       it 'returns an error' do
-        get :show, id: 'foo'
-        response.status.should == 404
+        get :show, params: { id: 'foo' }
+        expect(response.status).to eq(404)
       end
     end
   end

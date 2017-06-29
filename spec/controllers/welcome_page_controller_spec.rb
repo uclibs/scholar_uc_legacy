@@ -6,7 +6,7 @@ describe WelcomePageController, type: :controller do
     describe 'index' do
       it 'renders the page' do
         get :index
-        response.status.should eq(200)
+        expect(response.status).to eq(200)
         expect(response).to render_template('index')
       end
     end
@@ -29,7 +29,7 @@ describe WelcomePageController, type: :controller do
       describe '#index' do
         it 'renders the page' do
           get :index
-          response.status.should eq(200)
+          expect(response.status).to eq(200)
           expect(response).to render_template('index')
         end
       end
@@ -39,7 +39,7 @@ describe WelcomePageController, type: :controller do
           let(:params) { { waive_welcome_page: '1', commit: I18n.t('hyrax.welcome.waive_page') } }
 
           before do
-            post :create, params
+            post :create, params: params
           end
           it 'redirects to landing page' do
             expect(response).to redirect_to(Hyrax::Engine.routes.url_helpers.dashboard_index_path)
@@ -73,7 +73,7 @@ describe WelcomePageController, type: :controller do
       describe '#index' do
         it 'renders the page' do
           get :index
-          response.status.should eq(200)
+          expect(response.status).to eq(200)
           expect(response).to render_template('index')
         end
       end
