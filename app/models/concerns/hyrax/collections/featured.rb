@@ -8,7 +8,7 @@ module Hyrax::Collections
     end
 
     def cleanup_featured_collections
-      FeaturedCollection.destroy_all(collection_id: id)
+      FeaturedCollection.where(collection_id: id).destroy_all
     end
 
     def check_featureability
