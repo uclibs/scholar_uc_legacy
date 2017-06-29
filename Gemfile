@@ -2,6 +2,8 @@
 source 'https://rubygems.org'
 
 gem 'hyrax', '1.0.1'
+gem 'active-fedora', '11.2.0'
+gem 'hydra-head', '10.4.0'
 
 # repository manager
 gem 'hydra-role-management'
