@@ -55,7 +55,7 @@ class CatalogController < ApplicationController
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
     config.add_facet_field solr_name("human_readable_type", :facetable), label: "Type of Work", limit: 5
-    config.add_facet_field solr_name("creator", :facetable), label: "Creator", limit: 5
+    config.add_facet_field solr_name("creator", :facetable), label: "Creator/Author", limit: 5
     config.add_facet_field solr_name("subject", :facetable), label: "Subject", limit: 5
     config.add_facet_field solr_name("college", :facetable), label: "College", limit: 5
     config.add_facet_field solr_name("department", :facetable), label: "Department", limit: 5
@@ -72,8 +72,8 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_index_field solr_name("has_model", :symbol), label: "Type"
     config.add_index_field solr_name("title", :stored_searchable), label: "Title", itemprop: 'name', if: false
-    config.add_index_field solr_name("description", :stored_searchable), label: "Description", itemprop: 'description', helper_method: :iconify_auto_link
-    config.add_index_field solr_name("creator", :stored_searchable), label: "Creator", itemprop: 'creator', link_to_search: solr_name("creator", :facetable)
+    config.add_index_field solr_name("description", :stored_searchable), label: "Description/Abstract", itemprop: 'description', helper_method: :iconify_auto_link
+    config.add_index_field solr_name("creator", :stored_searchable), label: "Creator/Author", itemprop: 'creator', link_to_search: solr_name("creator", :facetable)
     config.add_index_field solr_name("contributor", :stored_searchable), label: "Contributor", itemprop: 'contributor', link_to_search: solr_name("contributor", :facetable)
     config.add_index_field solr_name("proxy_depositor", :symbol), label: "Depositor", helper_method: :link_to_profile
     config.add_index_field solr_name("depositor"), label: "Submitter", helper_method: :link_to_profile
@@ -100,9 +100,9 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     config.add_show_field solr_name("title", :stored_searchable), label: "Title"
-    config.add_show_field solr_name("description", :stored_searchable), label: "Description"
+    config.add_show_field solr_name("description", :stored_searchable), label: "Description/Abstract"
     config.add_show_field solr_name("subject", :stored_searchable), label: "Subject"
-    config.add_show_field solr_name("creator", :stored_searchable), label: "Creator"
+    config.add_show_field solr_name("creator", :stored_searchable), label: "Creator/Author"
     config.add_show_field solr_name("college", :stored_searchable), label: "College"
     config.add_show_field solr_name("department", :stored_searchable), label: "Program or Department"
     config.add_show_field solr_name("contributor", :stored_searchable), label: "Contributor"
