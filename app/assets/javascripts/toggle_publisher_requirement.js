@@ -14,7 +14,7 @@ var togglePublisherRequirement = function() {
         var field = $('input[class*=publisher]').first();
 
         // if the notice isn't there, and the publisher is blank, we need to add it
-        if ( ($('#publisher-warning').length == 0) && (field.val() == "") ) {
+        if ( ($('#publisher-label').length == 0) && (field.val() == "") ) {
           return true;
         } else {
           return false;
