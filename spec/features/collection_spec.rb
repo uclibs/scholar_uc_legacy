@@ -180,7 +180,7 @@ describe 'collection', type: :feature, js: true do
 
     it "preselects the collection we are adding works to" do
       visit "/collections/#{collection1.id}"
-      click_link 'Add works'
+      click_link 'Add existing works'
       sleep(2)
       first('input#check_all').click
       click_button "Add to Collection"
@@ -188,7 +188,7 @@ describe 'collection', type: :feature, js: true do
       expect(page).not_to have_css("input#id_#{collection2.id}[checked='checked']")
 
       visit "/collections/#{collection2.id}"
-      click_link 'Add works'
+      click_link 'Add existing works'
       sleep(2)
       first('input#check_all').click
       click_button "Add to Collection"
