@@ -71,6 +71,12 @@ en:
         tab:
           doi: "DOI"
 
+    collection:
+      actions:
+        add_works:
+          desc: "Add existing works to this collection."
+          label: "Add existing works"
+
   simple_form:
     hints:
       collection:
