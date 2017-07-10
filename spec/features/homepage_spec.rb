@@ -85,7 +85,7 @@ RSpec.describe 'the homepage', type: :feature do
     expect(page).to have_link(href: 'http://libraries.uc.edu')
     expect(page).to have_link(href: 'http://research.uc.edu')
     expect(page).to have_link(href: 'http://ucit.uc.edu')
-    expect(page).to have_link(href: 'http://projecthydra.org')
+    expect(page).to have_link(href: 'https://samvera.org')
   end
 
   def classify_concern_path_with_locale
