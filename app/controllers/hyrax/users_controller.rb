@@ -5,7 +5,7 @@ module Hyrax
 
     def show
       @presenter = Hyrax::UserProfilePresenter.new(@user, current_ability)
-      @permalinks_presenter = PermalinksPresenter.new(hyrax.profile_path)
+      @permalinks_presenter = PermalinksPresenter.new(hyrax.profile_path(locale: nil))
     end
 
     def search(query)

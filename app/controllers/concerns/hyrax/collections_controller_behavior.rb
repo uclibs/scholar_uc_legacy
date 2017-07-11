@@ -17,7 +17,7 @@ module Hyrax
       presenter
       query_collection_members
       @collection_avatar = fetch_collection_avatar
-      @permalinks_presenter = PermalinksPresenter.new(collection_path)
+      @permalinks_presenter = PermalinksPresenter.new(collection_path(locale: nil))
     end
 
     def edit
