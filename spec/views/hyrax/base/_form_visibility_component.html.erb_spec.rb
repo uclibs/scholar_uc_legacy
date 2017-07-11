@@ -25,4 +25,20 @@ describe '/hyrax/base/_form_visibility_component.html.erb', type: :view do
   it 'does not have a Lease option for visibility' do
     expect(rendered).not_to have_selector('div#collapseLease')
   end
+
+  it 'has text for open visibility' do
+    expect(rendered).to have_text(t('hyrax.visibility.open.text'))
+  end
+
+  it 'has text for authenticated visibility' do
+    expect(rendered).to have_text(t('hyrax.visibility.authenticated.text'))
+  end
+
+  it 'has text for embargo visibility' do
+    expect(rendered).to have_text(t('hyrax.visibility.embargo.text'))
+  end
+
+  it 'has text for private visibility' do
+    expect(rendered).to have_text(t('hyrax.visibility.private.text'))
+  end
 end
