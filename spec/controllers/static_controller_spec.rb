@@ -72,4 +72,20 @@ describe StaticController do
       expect(response).to render_template('static/student_instructions')
     end
   end
+
+  describe '#help' do
+    it 'renders the help page' do
+      get :help
+      expect(response.status).to be == 200
+      expect(response).to render_template('static/help')
+    end
+  end
+
+  describe '#doi_help' do
+    it 'renders the doi_help page' do
+      get :doi_help
+      expect(response.status).to be == 200
+      expect(response).to render_template('static/doi_help')
+    end
+  end
 end
