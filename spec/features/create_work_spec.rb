@@ -57,7 +57,6 @@ shared_examples 'work creation' do |work_class| # apply underscore for snake cas
 
     select 'Attribution-ShareAlike 4.0 International', from: "#{work_type}_rights"
     choose("#{work_type}_visibility_open")
-    expect(page).to have_content('Please note, making something visible to the world')
     check('agreement')
     click_on('Save')
     expect(page).to have_content('My Test Work')
@@ -117,7 +116,6 @@ shared_examples 'proxy work creation' do |work_class|
 
     select 'Attribution-ShareAlike 4.0 International', from: "#{work_type}_rights"
     choose("#{work_type}_visibility_open")
-    expect(page).to have_content('Please note, making something visible to the world')
     select(second_user.user_key, from: 'On behalf of')
     check('agreement')
     click_on('Save')

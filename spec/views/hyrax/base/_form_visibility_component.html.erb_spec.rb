@@ -26,19 +26,39 @@ describe '/hyrax/base/_form_visibility_component.html.erb', type: :view do
     expect(rendered).not_to have_selector('div#collapseLease')
   end
 
-  it 'has text for open visibility' do
-    expect(rendered).to have_text(t('hyrax.visibility.open.text'))
+  it 'has open visibility text' do
+    expect(rendered).to have_text 'Open Access'
   end
 
-  it 'has text for authenticated visibility' do
-    expect(rendered).to have_text(t('hyrax.visibility.authenticated.text'))
+  it 'has open visibility note' do
+    expect(rendered).to have_text 'Make available to all'
   end
 
-  it 'has text for embargo visibility' do
-    expect(rendered).to have_text(t('hyrax.visibility.embargo.text'))
+  it 'has open visibility link to Creators Rights' do
+    expect(rendered).to have_link('Creator\'s Rights', href: '/creators_rights')
   end
 
-  it 'has text for private visibility' do
-    expect(rendered).to have_text(t('hyrax.visibility.private.text'))
+  it 'has authenticated visibility text' do
+    expect(rendered).to have_text 'University of Cincinnati'
+  end
+
+  it 'has authenticated visibility note' do
+    expect(rendered).to have_text 'Restrict access to logged-in users'
+  end
+
+  it 'has embargo visibility text' do
+    expect(rendered).to have_text 'Embargo'
+  end
+
+  it 'has embargo visibility note' do
+    expect(rendered).to have_text 'Set a date for future release'
+  end
+
+  it 'has private visibility text' do
+    expect(rendered).to have_text 'Private'
+  end
+
+  it 'has private visibility note' do
+    expect(rendered).to have_text 'Keep to myself with option to share'
   end
 end
