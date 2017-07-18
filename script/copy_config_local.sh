@@ -12,3 +12,4 @@ cp config/initializers/hyrax.rb.sample config/initializers/hyrax.rb
 cp config/initializers/devise.rb.sample config/initializers/devise.rb
 cp config/environments/development.rb.sample config/environments/development.rb
 cp config/environments/production.rb.sample config/environments/production.rb
+cp config/authentication.yml.sample config/authentication.yml

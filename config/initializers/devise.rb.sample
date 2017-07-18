@@ -12,6 +12,35 @@ Devise.setup do |config|
                     token_url: Orcid.provider.token_url
                   })
 
+  config.omniauth :shibboleth, {
+      :shib_session_id_field => "Shib-Session-ID",
+      :shib_application_id_field => "Shib-Application-ID",
+      :uid_field => "eppn",
+      :name_field=> "displayName",
+      :debug => false,
+      :extra_fields => [
+        :cn,
+        :eppn,
+        :givenName,
+        :ou,
+        :'persistent-id',
+        :sn,
+        :street,
+        :title,
+        :uceduAffiliation,
+        :uceduPrimaryAffiliation,
+        :uceduUCID,
+        :mail,
+        :affiliation,
+        :remoteuser,
+        :telephoneNumber,
+        :uceduAcademicProgram,
+        :uceduFERPACode,
+        :uceduPrimaryCollege,
+        :uceduSISPersonID,
+      ]
+    }
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.

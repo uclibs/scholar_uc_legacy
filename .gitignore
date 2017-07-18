@@ -28,3 +28,4 @@ config/blacklight.yml
 config/initializers/devise.rb
 config/initializers/scholar_uc.rb
 config/initializers/hyrax.rb
+config/authentication.yml
