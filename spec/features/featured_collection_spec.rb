@@ -30,7 +30,7 @@ describe 'collection', type: :feature, js: true do
       fill_in('Title', with: title)
       fill_in('Description', with: description)
       fill_in('Creator', with: 'User name')
-      choose 'Public'
+      choose 'Open Access'
 
       click_button("Create Collection")
       expect(page).to have_css("img[src*='world.png']")

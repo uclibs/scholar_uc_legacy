@@ -58,10 +58,16 @@ en:
     upload:
       cloud_timeout_message_html: "If you have files on cloud storage sites such as Box, Dropbox, Google Drive, or Kaltura, you can click the \"Browse cloud files\" button to select and upload those files directly to Scholar@UC.<br /><br />Please note that if you upload a large number of files within a short period of time, the cloud provider may not be able to accommodate your request. If you experience any errors uploading from the cloud, let us know via the %{contact_href}."
     visibility:
-      open:
-        text: "Public"
       authenticated:
         text: 'University of Cincinnati'
+        note_html: Restrict access to logged-in users
+      embargo:
+        note_html: Set a date for future release
+      open:
+        note_html: Make available to all<br />(see <a href="/creators_rights" target=\"_blank\">Creator's Rights</a> for more information) 
+        warning_html: ""
+      private:
+        note_html: Keep to myself with option to share
     welcome:
       waive_page: "Click here to hide this welcome page from displaying when you log in"
     works:
