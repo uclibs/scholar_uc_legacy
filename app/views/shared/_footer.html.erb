@@ -1,19 +1,23 @@
 <footer class="scholar-footer">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-4 desktop-left">
+      <div class="col-sm-4">
         <p><%= t('hyrax.terms_of_use_html') %></p>
         <p>Deployed on <%= "#{Hyrax::BUILD_IDENTIFIER}" %></p>
-        <p><%= t('hyrax.footer.copyright_html') %></p>
+        <p><%= t('hyrax.footer.copyright_info_html') %> 
+        <%= t('hyrax.footer.copyright_html') %></p>
       </div>
-      <div class="col-sm-4 desktop-center">
+
+      <div class="col-sm-4 text-center">
+        <p><%= t('hyrax.footer.eaccessibility_concern_html') %></p>
         <p><%= t('hyrax.footer.clery_heoa_notice_html') %></p>
         <p><%= t('hyrax.non_discrimination_notice_html') %></p>
-        <p><%= t('hyrax.footer.copyright_info_html') %></p>
       </div>
+      
       <div class="col-sm-4 desktop-right">
-        <p><%= image_tag("powered_by_hydra.png", class: "powered_by") %></p>
+        <p><%= t('hyrax.footer.based_on_html') %></p> 
         <p><%= t('hyrax.made_possible_by_html') %></p>
+        <p><%= t('hyrax.footer.uc_alerts_html') %></p>
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 
 Scholar@UC is a digital repository that enables the University of Cincinnati community to share its research and scholarly work with a worldwide audience. Faculty and staff can use Scholar@UC to collect their work in one location and create a durable and citeable record of their papers, presentations, publications, datasets, or other scholarly creations.
 
-Scholar@UC uses Project Hydra's [Hyrax gem](https://github.com/projecthydra-labs/hyrax). The source for UC's Hyrax-based app can be found at https://github.com/uclibs/scholar_uc
+Scholar@UC uses Samvera's [Hyrax gem](https://github.com/samvera/hyrax). The source for UC's Hyrax-based app can be found at https://github.com/uclibs/scholar_uc
 
 The Univeristy of Cincinnati's implementation of Scholar@UC can be found at https://scholar.uc.edu.
 
@@ -49,8 +49,8 @@ Have a question or comment about Scholar@UC? Contact scholar@uc.edu.
 
 [![Build Status](https://travis-ci.org/uclibs/scholar_uc.svg?branch=sandbox)](https://travis-ci.org/uclibs/scholar_uc)
 
-# Project Hydra
-This software has been developed by and is brought to you by the Hydra community. Learn more at the
-[Project Hydra website](http://projecthydra.org)
+# Project Samvera
+This software has been developed by and is brought to you by the Samvera community. Learn more at the
+[Samvera website](http://projecthydra.org)
 
-![Project Hydra Logo](https://upload.wikimedia.org/wikipedia/en/8/82/Hydra_logo.png)
+![Samvera Logo](https://wiki.duraspace.org/download/thumbnails/87459292/samvera-fall-font2-200w.png?version=1&modificationDate=1498550535816&api=v2)

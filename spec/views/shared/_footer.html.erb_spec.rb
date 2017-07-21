@@ -27,7 +27,7 @@ RSpec.describe 'shared/_footer.html.erb', type: :view do
     expect(rendered).to have_content 'Copyright Information'
   end
 
-  it 'displays the hydra logo' do
-    expect(rendered).to have_css('img', class: 'powered_by')
+  it 'displays the based on hyrax text' do
+    expect(rendered).to have_content 'Based on Hyrax'
   end
 end
