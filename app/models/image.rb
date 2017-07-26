@@ -54,6 +54,10 @@ class Image < ActiveFedora::Base
     index.as :stored_searchable
   end
 
+  def date_created
+    alt_date_created
+  end
+
   def self.to_s_u
     'image'
   end
