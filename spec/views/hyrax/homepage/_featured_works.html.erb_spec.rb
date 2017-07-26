@@ -24,7 +24,7 @@ describe "hyrax/homepage/_featured_works.html.erb", type: :view do
     let(:featured_work) { FeaturedWork.new }
     before do
       allow(view).to receive(:can?).with(:update, FeaturedWork).and_return(false)
-      allow(view).to receive(:render_thumbnail_tag).with(presenter)
+      allow(view).to receive(:render_thumbnail_tag).with(presenter, alt: "Featured work thumbnail: Doc title")
       allow(list).to receive(:empty?).and_return(false)
       allow(list).to receive(:featured_works).and_return([featured_work])
       allow(featured_work).to receive(:presenter).and_return(presenter)
