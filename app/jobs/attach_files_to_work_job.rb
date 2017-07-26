@@ -15,6 +15,7 @@ class AttachFilesToWorkJob < ActiveJob::Base
       attach_content(actor, uploaded_file.file)
       actor.attach_file_to_work(work)
       actor.file_set.permissions_attributes = work_permissions
+      actor.file_set.save!
       uploaded_file.update(file_set_uri: file_set.uri)
     end
     work.save! # Temp fix to https://github.com/uclibs/scholar_uc/issues/1023
