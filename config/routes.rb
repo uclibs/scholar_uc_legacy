@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get 'advisor_guidelines' => 'static#advisor_guidelines'
   get 'student_instructions' => 'static#student_instructions'
   get 'doi_help' => 'static#doi_help'
+  get 'login' => 'static#login'
 
   # route for custom error pages issue #1056
   match '/404', to: 'errors#not_found', via: :all

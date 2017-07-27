@@ -142,6 +142,9 @@ RSpec.configure do |config|
       page.driver.resize_window_to(handle, 2000, 2000)
     end
   end
+
+  # Allow cookies to be set in feature tests (for UC Shibboleth testing)
+  config.include ShowMeTheCookies, type: :feature
 end
 
 VCR.configure do |c|

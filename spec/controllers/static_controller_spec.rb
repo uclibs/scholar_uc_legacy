@@ -88,4 +88,15 @@ describe StaticController do
       expect(response).to render_template('static/doi_help')
     end
   end
+
+  describe '#login' do
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      controller.stub(:current_user).and_return(user)
+    end
+    it 'redirects to dashboard when already logged in' do
+      get :login
+      response.should redirect_to(Hyrax::Engine.routes.url_helpers.dashboard_index_path)
+    end
+  end
 end

@@ -1,11 +1,12 @@
 # frozen_string_literal: true
-require 'spec_helper'
+require 'rails_helper'
 
 describe WelcomeMailer do
   let(:user_email) { 'example@test.com' }
   let(:user_password) { 'really_good_password' }
   let(:email) { ActionMailer::Base.deliveries.last }
   before do
+    AUTH_CONFIG['signups_enabled'] = true
     visit new_user_registration_path
 
     fill_in 'user_email', with: user_email

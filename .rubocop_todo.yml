@@ -96,3 +96,7 @@ RSpec/AnyInstance:
 RSpec/ImplicitExpect:
   Exclude:
     - 'spec/**/*'
+
+RSpec/InstanceVariable:
+  Exclude:
+    - 'spec/controllers/callbacks_controller_spec.rb'
