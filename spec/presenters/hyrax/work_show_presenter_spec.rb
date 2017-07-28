@@ -98,5 +98,24 @@ describe Hyrax::WorkShowPresenter do
         expect(subject).to be_kind_of Hyrax::FileSetPresenter
       end
     end
+
+    describe "#download_url" do
+      subject { presenter.download_url }
+
+      let(:solr_document) { SolrDocument.new(work.to_solr) }
+      let(:request) { double(host: 'example.org') }
+
+      context "with a representative" do
+        let(:work) { create(:work_with_representative_file) }
+
+        it { is_expected.to eq "http://#{request.host}/downloads/#{work.representative_id}" }
+      end
+
+      context "without a representative" do
+        let(:work) { create(:work) }
+
+        it { is_expected.to eq '' }
+      end
+    end
   end
 end
