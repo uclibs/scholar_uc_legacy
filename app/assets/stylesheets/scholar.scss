@@ -197,6 +197,10 @@ label[for=user_password] {
   }
 }
 
+.panel-user>.panel-heading>h3 {
+  font-size: 1.2em;
+}
+
 /* Medium devices */
 @media (min-width: 768px) and (max-width: 991px) {
 
