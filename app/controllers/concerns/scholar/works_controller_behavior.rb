@@ -14,7 +14,7 @@ module Scholar
     def create
       super
       # the to_s_u method must be implemented for every model
-      editors = params[curation_concern.class.to_s_u][:permissions_attributes]
+      editors = params.to_unsafe_hash[curation_concern.class.to_s_u][:permissions_attributes]
       queue_notifications_for_editors(editors) if editors
     rescue ActiveFedora::RecordInvalid # virus detected
       remove_infected_file_sets
@@ -25,7 +25,7 @@ module Scholar
     def update
       super
       # the to_s_u method must be implemented for every model
-      editors = params[curation_concern.class.to_s_u][:permissions_attributes]
+      editors = params.to_unsafe_hash[curation_concern.class.to_s_u][:permissions_attributes]
       queue_notifications_for_editors(editors) if editors
     rescue ActiveFedora::RecordInvalid # virus detected
       remove_infected_file_sets
