@@ -31,3 +31,4 @@
 //= require lodash
 //= require license-selector
 //= require select-license
+//= require file_plug
