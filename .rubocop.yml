@@ -11,6 +11,8 @@ AllCops:
     - 'db/**/*'
     - 'script/**/*'
     - 'vendor/**/*'
+    - 'app/services/work_loader.rb'
+    - 'lib/tasks/batch.rake'
 
 Lint/ImplicitStringConcatenation:
   Exclude:
