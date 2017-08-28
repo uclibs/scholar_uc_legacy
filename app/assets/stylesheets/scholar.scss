@@ -1,3 +1,31 @@
+.label-default {
+  background-color: #757575;
+}
+
+.label-info {
+  background-color: #20809d;
+}
+
+.label-success {
+  background-color: #388038;
+}
+
+.label-danger {
+  background-color: #d33b36;
+}
+
+.badge {
+  background-color: #757575;
+}
+
+legend small {
+  color: #757575;
+}
+
+.select2-default {
+  color: #444 !important;
+}
+
 .doi-strike {
   background-color: #f2dede;
 }
@@ -31,6 +59,14 @@ div[class*="_admin_set_id"] {
 
 #masthead a {
   color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #6b6b6b;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #252525;
 }
 
 #top-navbar-collapse > div > ul > li.dropdown.open > ul > li > a {
@@ -368,4 +404,3 @@ label[for=user_password] {
     margin-bottom: 20px;
   }
 }
-
