@@ -1,8 +1,10 @@
 <% license_service = Hyrax::LicenseService.new %>
-<label class="control-label select required" for="work_rights">
-  Rights  
+
+<%= f.label :rights, class: 'control-label select required' do %>
+  Rights
   <span class="label label-info required-tag">required</span>
-</label>
+<% end %>
+
 <div class="license-wrapper">
   <div class="row">
       <div class="col-sm-9">

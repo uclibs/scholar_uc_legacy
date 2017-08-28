@@ -10,6 +10,10 @@ div[class*="_admin_set_id"] {
   display: none;
 }
 
+.collection-avatar-label {
+  font-weight: normal;
+}
+
 .site-title h1 {
   color: #fff !important;
 }
@@ -372,4 +376,3 @@ label[for=user_password] {
     margin-bottom: 20px;
   }
 }
-
