@@ -26,7 +26,7 @@ RSpec.describe 'Transferring work ownership:', type: :feature do
     context 'To myself' do
       before { transfer_ownership_of_work work, original_owner }
       it 'Displays an appropriate error message' do
-        expect(page).to have_content 'Sending user must specify another user to receive the work'
+        expect(page).to have_content 'specify a different user to receive the work'
       end
     end
 
