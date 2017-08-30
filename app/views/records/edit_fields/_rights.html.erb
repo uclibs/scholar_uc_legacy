@@ -1,6 +1,6 @@
 <% license_service = Hyrax::LicenseService.new %>
 <label class="control-label select required" for="work_rights">
-  Rights  
+  Rights
   <span class="label label-info required-tag">required</span>
 </label>
 <div class="license-wrapper">
@@ -11,7 +11,8 @@
           include_blank: 'Use License Wizard or choose directly from the dropdown.',
           item_helper: license_service.method(:include_current_value),
           input_html: { class: 'rights rights-selector', multiple: false },
-          label: false
+          label: false,
+          required: true
         %>
     </div>
   </div>
