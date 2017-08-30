@@ -26,4 +26,5 @@ end
 
 # Riiif::Image.authorization_service = IIIFAuthorizationService
 
-Riiif::Engine.config.cache_duration_in_days = 365
+Riiif::Engine.config.cache_duration_in_days = 90
+Riiif::Image.file_resolver.cache_path = 'bamboo_riiif_cache'

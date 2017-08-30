@@ -13,3 +13,4 @@ cp /srv/apps/curate/curate_uc-STAGE/config/initializers/devise.rb.bamboo /srv/ap
 cp /srv/apps/curate/curate_uc-STAGE/config/environments/development.rb.bamboo /srv/apps/curate/curate_uc-STAGE/config/environments/development.rb
 cp /srv/apps/curate/curate_uc-STAGE/config/environments/production.rb.bamboo /srv/apps/curate/curate_uc-STAGE/config/environments/production.rb
 cp /srv/apps/curate/curate_uc-STAGE/config/authentication.yml.bamboo /srv/apps/curate/curate_uc-STAGE/config/authentication.yml
+cp /srv/apps/curate/curate_uc-STAGE/config/initializers/riiif.rb.bamboo /srv/apps/curate/curate_uc-STAGE/config/initializers/riiif.rb
