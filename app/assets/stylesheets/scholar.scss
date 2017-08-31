@@ -2,16 +2,24 @@
   background-color: #757575;
 }
 
-.label-info {
+.label-info,
+.btn-info {
   background-color: #20809d;
 }
 
-.label-success {
+.label-success,
+.btn-success {
   background-color: #388038;
 }
 
-.label-danger {
+.label-danger,
+.btn-danger {
   background-color: #d33b36;
+}
+
+.label-warning,
+.btn-warning {
+  background-color: #a4660e;
 }
 
 .badge {
