@@ -1,16 +1,14 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
 
-gem 'hyrax', '1.0.1'
-gem 'active-fedora', '11.2.0'
-gem 'hydra-head', '10.4.0'
+gem 'hyrax', '1.0.4'
 
 # repository manager
 gem 'hydra-role-management'
 gem 'orcid', github: 'uclibs/orcid', branch: 'rails-5'
 gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth', branch: 'rails-5'
 gem 'riiif', '~> 0.2.0'
-gem 'iiif_manifest', '~> 0.1.2'
+gem 'iiif_manifest'
 gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
 gem 'browse-everything', git: 'https://github.com/uclibs/browse-everything.git', ref: 'be25819f14d485768698d27a3a35deaa7f60d5c7'
 gem 'kaltura', '0.1.1'

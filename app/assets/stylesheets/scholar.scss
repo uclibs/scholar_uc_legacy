@@ -1,3 +1,39 @@
+.label-default {
+  background-color: #757575;
+}
+
+.label-info,
+.btn-info {
+  background-color: #20809d;
+}
+
+.label-success,
+.btn-success {
+  background-color: #388038;
+}
+
+.label-danger,
+.btn-danger {
+  background-color: #d33b36;
+}
+
+.label-warning,
+.btn-warning {
+  background-color: #a4660e;
+}
+
+.badge {
+  background-color: #757575;
+}
+
+legend small {
+  color: #757575;
+}
+
+.select2-default {
+  color: #444 !important;
+}
+
 .doi-strike {
   background-color: #f2dede;
 }
@@ -35,6 +71,14 @@ div[class*="_admin_set_id"] {
 
 #masthead a {
   color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #6b6b6b;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #252525;
 }
 
 #top-navbar-collapse > div > ul > li.dropdown.open > ul > li > a {
@@ -341,10 +385,6 @@ label[for=user_password] {
     color: #fff;
     font-size: 20px;
     text-shadow: 2px 2px 2px #000;
-  }
-
-  .mobile-controls li:first-child {
-    background-color: rgba(255, 255, 255, 0.4)
   }
 
   .scholar-footer {

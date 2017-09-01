@@ -8,3 +8,8 @@ test: &TEST
   password: bamboo_doi_password
   shoulder: bamboo_doi_shoulder
   url: https://ezid.cdlib.org
+production:
+  username: ucinlibs
+  password: bamboo_doi_password
+  shoulder: bamboo_doi_shoulder
+  url: https://ezid.cdlib.org
