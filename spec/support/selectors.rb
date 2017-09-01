@@ -26,7 +26,7 @@ module Selectors
     end
 
     def submit_button
-      within '#new_transfer' do
+      within '.form-actions' do
         find 'input[type=submit]'
       end
     end
