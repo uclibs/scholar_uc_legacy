@@ -3,10 +3,8 @@
     <h2 class="non lower"><%= t('hyrax.collection.edit.description') %></h2>
 
   <div class="well">
-    <p>Add or replace collection avatar</p>
-   <%= f.label :avatar do %>
-      <%= f.file_field :avatar %>
-    <% end %>
+    <%= f.label :avatar, label: 'Add or replace collection avatar', class: 'collection-avatar-label' %>
+    <%= f.file_field :avatar %>
   </div>
 
     <div id="base-terms">
