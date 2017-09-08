@@ -11,6 +11,7 @@ Metrics/BlockLength:
     - 'app/models/concerns/remotely_identified_by_doi.rb'
     - 'config/initializers/simple_form_bootstrap.rb'
     - 'config/routes.rb'
+    - 'app/views/sitemaps/index.xml.builder'
 
 Metrics/CyclomaticComplexity:
   Exclude:

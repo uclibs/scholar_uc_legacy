@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get 'doi_help' => 'static#doi_help'
   get 'login' => 'static#login'
 
+  get 'sitemap.xml' => 'sitemaps#index', format: 'xml', as: :sitemap
   # route for custom error pages issue #1056
   match '/404', to: 'errors#not_found', via: :all
   match '/422', to: 'errors#unprocessable', via: :all
