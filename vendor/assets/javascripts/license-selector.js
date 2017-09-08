@@ -54,15 +54,15 @@
 
 	var $, EVENT_NS, Explanations, ExplanationsTerms, History, LabelsDefinitions, LicenseCompatibility, LicenseDefinitions, LicenseList, LicenseSelector, Modal, Question, QuestionDefinitions, Search, Tooltip, _, addExplanations, explanationTooltips, ref,
 	  slice = [].slice;
-	
+
 	EVENT_NS = 'license-selector';
-	
+
 	$ = __webpack_require__(2);
-	
+
 	_ = __webpack_require__(3);
-	
+
 	ref = __webpack_require__(4), LicenseDefinitions = ref.LicenseDefinitions, LicenseCompatibility = ref.LicenseCompatibility, QuestionDefinitions = ref.QuestionDefinitions, LabelsDefinitions = ref.LabelsDefinitions;
-	
+
 	Explanations = {
 	  'the scope of copyright and related rights': "<p>\nCopyright protects original works. Originality is defined as the author’s own\nintellectual creation. Therefore, mere statements of historical facts, results\nof measurements etc. are not protected by copyright, because they exist\nobjectively and therefore cannot be <em>created</em>. The same applies to ideas,\nmathematical formulas, elements of folklore etc. While quantitative data are\nusually not protected by copyright, qualitative data (as their creation\ninvolve some intellectual judgment) or language data are usually\ncopyrightable.\n</p>\n<p>",
 	  'copyright and similar rights': "<p>\n<strong>copyright</strong> &ndash; protects original works or original compilations of works\n</p>\n<p>\n<strong>sui generis database rights</strong> &ndash; protects substantial investment into the making of a database\n</p>",
@@ -73,9 +73,9 @@
 	  'commercial use': "<p>\nCommercial use is a use that is primarily intended for or directed towards\ncommercial advantage or monetary compensation.\n</p>\n<p>\nPlease note that the meaning of this term is not entirely clear (although it\nseems to be generally agreed upon that academic research, even carried out by\nprofessional researchers, is not commercial use) and if you choose this\nrestriction, it may have a chilling effect on the re-use of your resource by\nsome projects (public-private partnerships).\n</p>",
 	  'attribute': "<p>\nIt is your moral right to have your work attributed to you (i.e. your name\nmentioned every time someone uses your work). However, be aware of the fact\nthat the attribution requirement in Creative Commons licenses is more extended\nthan just mentioning your name.\n</p>\n<p>\nIn fact, the attribution clause in Creative Commons licenses obliges the user\nto mention a whole set of information (identity of the creator, a copyright\nnotice, a reference to the chosen CC license and a hyperlink to its text, a\ndisclaimer of warranties, an indication of any modifications made to the\noriginal work and even a hyperlink to the work itself). This may lead to a\nphenomenon known as <em>attribution stacking</em>, which will make your work\ndifficult to compile with other works.\n</p>"
 	};
-	
+
 	ExplanationsTerms = _.keys(Explanations);
-	
+
 	addExplanations = function(text) {
 	  var i, index, len, term;
 	  for (i = 0, len = ExplanationsTerms.length; i < len; i++) {
@@ -87,7 +87,7 @@
 	  }
 	  return text;
 	};
-	
+
 	explanationTooltips = function(scope, container) {
 	  $('.ls-term', scope).each(function() {
 	    var $el, term;
@@ -102,7 +102,7 @@
 	    });
 	  });
 	};
-	
+
 	Tooltip = (function() {
 	  function Tooltip(el, anchor, options) {
 	    this.position = 'top';
@@ -119,17 +119,17 @@
 	    _.bindAll(this, ['onEvenIn', 'onEventOut']);
 	    this.buildContainer().setElement(el).setAnchor(anchor);
 	  }
-	
+
 	  Tooltip.prototype.buildContainer = function() {
 	    this.$wrapper = $('<div/>').addClass('ls-tooltip-wrapper').addClass("ls-tooltip-" + this.position);
 	    return this;
 	  };
-	
+
 	  Tooltip.prototype.setElement = function(el) {
 	    this.$wrapper.empty().append(this.$el = el instanceof $ ? el : $(el));
 	    return this;
 	  };
-	
+
 	  Tooltip.prototype.setAnchor = function(anchor) {
 	    if (this.$anchor) {
 	      this.$anchor.css('position', null);
@@ -143,7 +143,7 @@
 	    }).css('position', 'relative');
 	    return this;
 	  };
-	
+
 	  Tooltip.prototype.show = function() {
 	    if (!this.beforeShow || this.beforeShow(this, this.$anchor, this.$el)) {
 	      if (this.container) {
@@ -155,13 +155,13 @@
 	    }
 	    return this;
 	  };
-	
+
 	  Tooltip.prototype.hide = function() {
 	    this.$wrapper[this.preserve ? 'detach' : 'remove']();
 	    this.hovered = false;
 	    return this;
 	  };
-	
+
 	  Tooltip.prototype.move = function() {
 	    var $anchor, $wrapper, aHeight, aPosition, aWidth, position, wHeight, wWidth;
 	    $wrapper = this.$wrapper;
@@ -198,7 +198,7 @@
 	    }
 	    return this;
 	  };
-	
+
 	  Tooltip.prototype.destroy = function() {
 	    this.hide();
 	    this.$anchor.off({
@@ -209,7 +209,7 @@
 	    });
 	    return this;
 	  };
-	
+
 	  Tooltip.prototype.onEvenIn = function() {
 	    if (this.hovered) {
 	      return;
@@ -217,7 +217,7 @@
 	    this.hovered = true;
 	    return this.show();
 	  };
-	
+
 	  Tooltip.prototype.onEventOut = function() {
 	    if (!this.hovered) {
 	      return;
@@ -225,11 +225,11 @@
 	    this.hovered = false;
 	    return this.hide();
 	  };
-	
+
 	  return Tooltip;
-	
+
 	})();
-	
+
 	History = (function() {
 	  function History(parent, licenseSelector) {
 	    var history;
@@ -237,12 +237,12 @@
 	    this.licenseSelector = licenseSelector;
 	    this.current = -1;
 	    this.historyStack = [];
-	    this.prevButton = $('<button/>').addClass('ls-history-prev').attr('title', 'Previous question').append($('<span/>').addClass('icon-left')).click((function(_this) {
+	    this.prevButton = $('<button/>').addClass('ls-history-prev').attr('title', 'Previous question').append($('<span/>').addClass('icon-left')).append('Previous').click((function(_this) {
 	      return function() {
 	        return _this.go(_this.current - 1);
 	      };
 	    })(this));
-	    this.nextButton = $('<button/>').addClass('ls-history-next').attr('title', 'Next question').append($('<span/>').addClass('icon-right')).click((function(_this) {
+	    this.nextButton = $('<button/>').addClass('ls-history-next').attr('title', 'Next question').append('Next').append($('<span/>').addClass('icon-right')).click((function(_this) {
 	      return function() {
 	        return _this.go(_this.current + 1);
 	      };
@@ -257,7 +257,7 @@
 	    this.setupTooltips(history);
 	    this.update();
 	  }
-	
+
 	  History.prototype.go = function(point) {
 	    var state;
 	    this.current = point;
@@ -265,14 +265,14 @@
 	    this.licenseSelector.setState(state);
 	    this.update();
 	  };
-	
+
 	  History.prototype.reset = function() {
 	    this.current = -1;
 	    this.historyStack = [];
 	    this.progress.empty();
 	    this.update();
 	  };
-	
+
 	  History.prototype.setupTooltips = function(root) {
 	    var self;
 	    self = this;
@@ -286,7 +286,7 @@
 	      });
 	    });
 	  };
-	
+
 	  History.prototype.setAnswer = function(text) {
 	    var state;
 	    if (this.current === -1) {
@@ -295,7 +295,7 @@
 	    state = this.historyStack[this.current];
 	    state.answer = text;
 	  };
-	
+
 	  History.prototype.setOptionSelected = function(option, value) {
 	    var state;
 	    if (this.current === -1) {
@@ -304,7 +304,7 @@
 	    state = this.historyStack[this.current];
 	    state.options[option].selected = value;
 	  };
-	
+
 	  History.prototype.update = function() {
 	    var activeBlock, progressBarBlocks;
 	    progressBarBlocks = this.progress.children();
@@ -317,11 +317,11 @@
 	    this.nextButton.attr('disabled', this.historyStack.length === 0 || this.historyStack.length === this.current + 1);
 	    this.prevButton.attr('disabled', this.current <= 0);
 	  };
-	
+
 	  History.prototype.createProgressBlock = function() {
 	    var block, self;
 	    self = this;
-	    block = $('<button/>').html('&nbsp;').click(function() {
+	    block = $('<button/>').html((this.current+1).toString()).click(function() {
 	      return self.go(self.progress.children().index(this));
 	    });
 	    new Tooltip($('<div/>').addClass('ls-tooltip'), block, {
@@ -364,7 +364,7 @@
 	    });
 	    return block;
 	  };
-	
+
 	  History.prototype.pushState = function(state) {
 	    var index, progressBarBlocks;
 	    state = _.cloneDeep(state);
@@ -384,11 +384,11 @@
 	    }
 	    this.update();
 	  };
-	
+
 	  return History;
-	
+
 	})();
-	
+
 	Question = (function() {
 	  function Question(parent, licenseSelector) {
 	    this.parent = parent;
@@ -402,15 +402,15 @@
 	    this.answers = $('<div/>').addClass('ls-question-answers').appendTo(this.element);
 	    this.element.appendTo(this.parent);
 	  }
-	
+
 	  Question.prototype.show = function() {
 	    return this.element.show();
 	  };
-	
+
 	  Question.prototype.hide = function() {
 	    return this.element.hide();
 	  };
-	
+
 	  Question.prototype.reset = function() {
 	    this.errorContainer.hide();
 	    this.answers.empty();
@@ -419,18 +419,18 @@
 	    this.licenseSelector.licensesList.show();
 	    return this.element.off('update-answers');
 	  };
-	
+
 	  Question.prototype.finished = function() {
 	    this.hide();
 	    return this.licenseSelector.licensesList.show();
 	  };
-	
+
 	  Question.prototype.setQuestion = function(text) {
 	    this.reset();
 	    this.text.empty().append(addExplanations(text));
 	    explanationTooltips(this.text, this.licenseSelector.container);
 	  };
-	
+
 	  Question.prototype.addAnswer = function(answer) {
 	    var button;
 	    button = $('<button />').text(answer.text).click(function() {
@@ -441,7 +441,7 @@
 	    });
 	    this.answers.append(button);
 	  };
-	
+
 	  Question.prototype.addOption = function(option) {
 	    var checkbox, element, i, label, len, license, ref1, self, span;
 	    this.options.show();
@@ -464,27 +464,27 @@
 	    }
 	    label.append(span).appendTo($('<li/>').appendTo(this.options));
 	  };
-	
+
 	  Question.prototype.setError = function(html) {
 	    this.errorContainer.show();
 	    this.error.html(addExplanations(html));
 	    explanationTooltips(this.error, this.licenseSelector.container);
 	    this.licenseSelector.licensesList.hide();
 	  };
-	
+
 	  return Question;
-	
+
 	})();
-	
+
 	Modal = (function() {
 	  var MODAL_MAX_WIDTH, MODAL_SMALL_BREAKPOINT, scale, stylesheet;
-	
+
 	  MODAL_SMALL_BREAKPOINT = 480;
-	
+
 	  MODAL_MAX_WIDTH = 800;
-	
+
 	  stylesheet = null;
-	
+
 	  scale = function() {
 	    var closeButtonMarginRight, currentMaxWidth, leftMargin, margin, width;
 	    if (!stylesheet) {
@@ -503,9 +503,9 @@
 	      return stylesheet.html(".license-selector .ls-modal { max-width: " + currentMaxWidth + "px; margin-left: -" + leftMargin + "px;}\n.license-selector .ls-modal-close:after { margin-right: -" + leftMargin + "px !important; }");
 	    }
 	  };
-	
+
 	  $(window).on('resize', scale);
-	
+
 	  function Modal(parent) {
 	    var closeButton, inner;
 	    this.parent = parent;
@@ -528,24 +528,25 @@
 	    })(this));
 	    this.element.append(inner).append(closeButton).appendTo(this.parent);
 	  }
-	
+
 	  Modal.prototype.hide = function() {
 	    return this.element.removeClass('is-active').trigger('hide.lsmodal').attr('aria-hidden', 'true');
 	  };
-	
+
 	  Modal.prototype.show = function() {
 	    return this.element.addClass('is-active').trigger('show.lsmodal').attr('aria-hidden', 'false');
 	  };
-	
+
 	  return Modal;
-	
+
 	})();
-	
+
 	Search = (function() {
 	  function Search(parent, licenseList) {
 	    this.parent = parent;
 	    this.licenseList = licenseList;
 	    this.textbox = $('<input/>').attr({
+				title: 'search-box',
 	      type: 'text',
 	      placeholder: 'Search for a license...'
 	    }).on('input', (function(_this) {
@@ -555,27 +556,27 @@
 	    })(this));
 	    this.container = $('<div/>').addClass('ls-search').append(this.textbox).appendTo(this.parent);
 	  }
-	
+
 	  Search.prototype.hide = function() {
 	    return this.container.hide();
 	  };
-	
+
 	  Search.prototype.show = function() {
 	    return this.container.show();
 	  };
-	
+
 	  return Search;
-	
+
 	})();
-	
+
 	LicenseList = (function() {
 	  var comperator;
-	
+
 	  comperator = function(obj, text) {
 	    text = ('' + text).toLowerCase();
 	    return ('' + obj).toLowerCase().indexOf(text) > -1;
 	  };
-	
+
 	  function LicenseList(parent, licenseSelector) {
 	    this.parent = parent;
 	    this.licenseSelector = licenseSelector;
@@ -588,7 +589,7 @@
 	    this.container = $('<div class="ls-license-list" />').append(this.error).append(this.list).appendTo(this.parent);
 	    this.update();
 	  }
-	
+
 	  LicenseList.prototype.createElement = function(license) {
 	    var customTemplate, d, el, h, i, item, l, label, len, ref1, select;
 	    customTemplate = false;
@@ -668,28 +669,28 @@
 	    el.data('license', license);
 	    return el;
 	  };
-	
+
 	  LicenseList.prototype.hide = function() {
 	    this.parent.hide();
 	    return this.licenseSelector.searchModule.hide();
 	  };
-	
+
 	  LicenseList.prototype.show = function() {
 	    this.parent.show();
 	    return this.licenseSelector.searchModule.show();
 	  };
-	
+
 	  LicenseList.prototype.filter = function(newterm) {
 	    if (newterm !== this.term) {
 	      this.term = newterm;
 	      this.update();
 	    }
 	  };
-	
+
 	  LicenseList.prototype.sortLicenses = function(licenses) {
 	    return _.sortBy(licenses, ['priority', 'name']);
 	  };
-	
+
 	  LicenseList.prototype.selectLicense = function(license, element) {
 	    var selectedLicense;
 	    selectedLicense = this.deselectLicense();
@@ -702,7 +703,7 @@
 	      element: element
 	    };
 	  };
-	
+
 	  LicenseList.prototype.deselectLicense = function() {
 	    var element, license, ref1;
 	    if (this.selectedLicense == null) {
@@ -715,7 +716,7 @@
 	    this.selectedLicense = {};
 	    return license;
 	  };
-	
+
 	  LicenseList.prototype.matchFilter = function(license) {
 	    if (!license.available) {
 	      return false;
@@ -725,7 +726,7 @@
 	    }
 	    return comperator(license.name, this.term) || comperator(license.description, this.term);
 	  };
-	
+
 	  LicenseList.prototype.update = function(licenses) {
 	    var el, elements, i, j, len, len1, license, previous, ref1, ref2;
 	    if (licenses == null) {
@@ -772,43 +773,43 @@
 	      this.error.hide();
 	    }
 	  };
-	
+
 	  LicenseList.prototype.has = function(category) {
 	    return _.any(this.availableLicenses, function(license) {
 	      return _.contains(license.categories, category);
 	    });
 	  };
-	
+
 	  LicenseList.prototype.only = function(category) {
 	    return _.all(this.availableLicenses, function(license) {
 	      return _.contains(license.categories, category);
 	    });
 	  };
-	
+
 	  LicenseList.prototype.hasnt = function(category) {
 	    return _.all(this.availableLicenses, function(license) {
 	      return !_.contains(license.categories, category);
 	    });
 	  };
-	
+
 	  LicenseList.prototype.include = function(category) {
 	    this.availableLicenses = _.filter(this.availableLicenses, function(license) {
 	      return _.contains(license.categories, category);
 	    });
 	    return this.update();
 	  };
-	
+
 	  LicenseList.prototype.exclude = function(category) {
 	    this.availableLicenses = _.filter(this.availableLicenses, function(license) {
 	      return !_.contains(license.categories, category);
 	    });
 	    return this.update();
 	  };
-	
+
 	  return LicenseList;
-	
+
 	})();
-	
+
 	LicenseSelector = (function() {
 	  LicenseSelector.defaultOptions = {
 	    showLabels: true,
@@ -817,7 +818,7 @@
 	    appendTo: 'body',
 	    start: 'KindOfContent'
 	  };
-	
+
 	  function LicenseSelector(licenses1, questions1, options1) {
 	    var key, license, ref1;
 	    this.licenses = licenses1;
@@ -841,14 +842,14 @@
 	    this.searchModule = new Search(this.modal.header, this.licensesList);
 	    this.goto(this.options.start);
 	  }
-	
+
 	  LicenseSelector.prototype.restart = function() {
 	    this.licensesList.update(this.licenses);
 	    this.historyModule.reset();
 	    this.state = {};
 	    this.goto(this.options.start);
 	  };
-	
+
 	  LicenseSelector.prototype.setState = function(state) {
 	    var answer, i, j, len, len1, option, ref1, ref2;
 	    this.state = state;
@@ -873,7 +874,7 @@
 	    }
 	    this.licensesList.update(state.licenses);
 	  };
-	
+
 	  LicenseSelector.prototype.selectLicense = function(license, force) {
 	    if (force == null) {
 	      force = false;
@@ -885,7 +886,7 @@
 	      return this.selectedLicense = license;
 	    }
 	  };
-	
+
 	  LicenseSelector.prototype.license = function() {
 	    var choice, choices, i, len, license, licenses, ref1;
 	    choices = 1 <= arguments.length ? slice.call(arguments, 0) : [];
@@ -906,11 +907,11 @@
 	    this.historyModule.pushState(this.state);
 	    this.questionModule.finished();
 	  };
-	
+
 	  LicenseSelector.prototype.cantlicense = function(reason) {
 	    this.questionModule.setError(reason);
 	  };
-	
+
 	  LicenseSelector.prototype.goto = function(where, safeState) {
 	    var base, func;
 	    if (safeState == null) {
@@ -935,7 +936,7 @@
 	      this.historyModule.pushState(this.state);
 	    }
 	  };
-	
+
 	  LicenseSelector.prototype.question = function(text) {
 	    this.questionModule.setQuestion(text);
 	    delete this.state.options;
@@ -944,7 +945,7 @@
 	    this.state.finished = false;
 	    this.state.questionText = text;
 	  };
-	
+
 	  LicenseSelector.prototype.answer = function(text, action, disabled) {
 	    var answer, base;
 	    if (disabled == null) {
@@ -971,7 +972,7 @@
 	    this.state.answers.push(answer);
 	    this.questionModule.addAnswer(answer);
 	  };
-	
+
 	  LicenseSelector.prototype.option = function(list, action) {
 	    var base, license, option;
 	    if (action == null) {
@@ -999,41 +1000,41 @@
 	    this.state.options.push(option);
 	    this.questionModule.addOption(option);
 	  };
-	
+
 	  LicenseSelector.prototype.yes = function(action) {
 	    return this.answer('Yes', action);
 	  };
-	
+
 	  LicenseSelector.prototype.no = function(action) {
 	    return this.answer('No', action);
 	  };
-	
+
 	  LicenseSelector.prototype.has = function(category) {
 	    return this.licensesList.has(category);
 	  };
-	
+
 	  LicenseSelector.prototype.only = function(category) {
 	    return this.licensesList.only(category);
 	  };
-	
+
 	  LicenseSelector.prototype.hasnt = function(category) {
 	    return this.licensesList.hasnt(category);
 	  };
-	
+
 	  LicenseSelector.prototype.include = function(category) {
 	    this.licensesList.include(category);
 	    return this.state.licenses = _.clone(this.licensesList.availableLicenses);
 	  };
-	
+
 	  LicenseSelector.prototype.exclude = function(category) {
 	    this.licensesList.exclude(category);
 	    return this.state.licenses = _.clone(this.licensesList.availableLicenses);
 	  };
-	
+
 	  return LicenseSelector;
-	
+
 	})();
-	
+
 	$.fn.licenseSelector = function() {
 	  var args, options;
 	  options = arguments[0], args = 2 <= arguments.length ? slice.call(arguments, 1) : [];
@@ -1081,11 +1082,11 @@
 /***/ function(module, exports) {
 
 	var LabelsDefinitions, LicenseCompatibility, LicenseDefinitions, N, QuestionDefinitions, Y;
-	
+
 	Y = true;
-	
+
 	N = false;
-	
+
 	LicenseDefinitions = {
 	  'cc-public-domain': {
 	    name: 'Public Domain Mark (PD)',
@@ -1340,7 +1341,7 @@
 	    labels: ['public', 'apache', 'osi']
 	  }
 	};
-	
+
 	LicenseCompatibility = {
 	  columns: ['cc-public-domain', 'mit', 'bsd-2c', 'bsd-3c', 'apache-2', 'lgpl-2.1', 'lgpl-2.1+', 'lgpl-3', 'mpl-2', 'epl-1', 'cddl-1', 'gpl-2', 'gpl-2+', 'gpl-3', 'agpl-1', 'agpl-3'],
 	  table: {
@@ -1362,7 +1363,7 @@
 	    'agpl-3': [N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, Y]
 	  }
 	};
-	
+
 	QuestionDefinitions = {
 	  KindOfContent: function() {
 	    this.question('What do you want to deposit?');
@@ -1648,7 +1649,7 @@
 	    });
 	  }
 	};
-	
+
 	LabelsDefinitions = {
 	  "public": {
 	    text: 'Publicly Available',
@@ -1750,7 +1751,7 @@
 	    itemClass: 'ls-icon-opendata'
 	  }
 	};
-	
+
 	module.exports = {
 	  LicenseDefinitions: LicenseDefinitions,
 	  LicenseCompatibility: LicenseCompatibility,
