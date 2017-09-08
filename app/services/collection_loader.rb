@@ -26,10 +26,11 @@ class CollectionLoader
   def create
     collection.apply_depositor_metadata(user.user_key)
     collection.save
-    unless self.avatar.nil?
-      collection_thumbnail = CollectionAvatar.new(avatar: self.avatar, collection_id: self.collection.id)
+    unless avatar.nil?
+      collection_thumbnail = CollectionAvatar.new(avatar: avatar, collection_id: collection.id)
       collection_thumbnail.save!
-    end    
+    end
+    true
   end
 
   private
