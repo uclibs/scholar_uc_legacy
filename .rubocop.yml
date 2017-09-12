@@ -25,6 +25,7 @@ Lint/Debugger:
 Lint/HandleExceptions:
   Exclude:
     - 'spec/features/doi_validation_spec.rb'
+    - 'app/controllers/concerns/scholar/works_controller_behavior.rb'
 
 Metrics/LineLength:
   Max: 400
