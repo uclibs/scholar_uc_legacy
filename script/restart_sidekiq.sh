@@ -25,4 +25,4 @@ $APP_DIRECTORY/script/kill_sidekiq.sh
 banner "starting Sidekiq"
 export PATH=$PATH:/srv/apps/.gem/ruby/2.4.0/bin
 cd $APP_DIRECTORY
-bundle exec sidekiq -d -q ingest -q default -q event -L log/sidekiq.log -C config/sidekiq.yml -e $ENVIRONMENT
+bundle exec sidekiq -d -c 8 -q ingest -q default -q event -L log/sidekiq.log -C config/sidekiq.yml -e $ENVIRONMENT
