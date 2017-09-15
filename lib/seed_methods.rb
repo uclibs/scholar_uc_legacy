@@ -3,7 +3,7 @@ module SeedMethods
   def self.new_article(email, name)
     a = Article.create(
       title: ['This is the title'],
-      description: ['This is the abstract'],
+      alt_description: 'This is the abstract',
       depositor: email,
       owner: email,
       creator: [name],
@@ -25,7 +25,7 @@ module SeedMethods
   def self.new_image(email, name)
     a = Image.create(
       title: ['This is the title'],
-      description: ['This is the description'],
+      alt_description: 'This is the description',
       depositor: email,
       owner: email,
       creator: [name],
@@ -45,7 +45,7 @@ module SeedMethods
   def self.new_document(email, name)
     a = Document.create(
       title: ['This is the title'],
-      description: ['This is the description'],
+      alt_description: 'This is the description',
       depositor: email,
       owner: email,
       creator: [name],
@@ -63,7 +63,7 @@ module SeedMethods
   def self.new_dataset(email, name)
     a = Dataset.create(
       title: ['This is the title'],
-      description: ['This is the description'],
+      alt_description: 'This is the description',
       depositor: email,
       owner: email,
       creator: [name],
@@ -85,7 +85,7 @@ module SeedMethods
   def self.new_genericwork(email, name)
     a = GenericWork.create(
       title: ['This is the title'],
-      description: ['This is the description'],
+      alt_description: 'This is the description',
       depositor: email,
       owner: email,
       creator: [name],
@@ -107,7 +107,7 @@ module SeedMethods
   def self.new_medium(email, name)
     a = Medium.create(
       title: ['This is the title'],
-      description: ['This is the description'],
+      alt_description: 'This is the description',
       depositor: email,
       owner: email,
       creator: [name],
