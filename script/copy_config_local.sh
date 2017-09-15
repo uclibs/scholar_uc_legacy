@@ -13,3 +13,4 @@ cp config/initializers/devise.rb.sample config/initializers/devise.rb
 cp config/environments/development.rb.sample config/environments/development.rb
 cp config/environments/production.rb.sample config/environments/production.rb
 cp config/authentication.yml.sample config/authentication.yml
+cp config/initializers/riiif.rb.sample config/initializers/riiif.rb
