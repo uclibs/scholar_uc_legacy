@@ -41,6 +41,18 @@ module Scholar
 
     private
 
+      def after_update_response
+        temp_argument_error_fix
+        super
+      end
+
+      # We added this method to fix ArgumentError (uclibs/scholar_uc#1611) bug when adding relationships to a work.
+      # Delete this method after Hyrax upgrade to 2.0.0
+      def temp_argument_error_fix
+        curation_concern.file_sets.present?
+      rescue ArgumentError
+      end
+
       def remove_infected_file_sets
         curation_concern.reload
         curation_concern.file_sets.each do |file_set|
