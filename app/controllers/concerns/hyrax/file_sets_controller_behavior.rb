@@ -9,7 +9,7 @@ module Hyrax
         additional_response_formats(wants)
       end
       permalink_message = "Permanent link to this page"
-      @permalinks_presenter = PermalinksPresenter.new(main_app.common_object_path, permalink_message)
+      @permalinks_presenter = PermalinksPresenter.new(main_app.common_object_path(locale: nil), permalink_message)
     end
   end
 end
