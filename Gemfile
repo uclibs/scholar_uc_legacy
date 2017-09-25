@@ -47,6 +47,9 @@ gem 'change_manager', git: "https://github.com/lawhorkl/change_manager.git", ref
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Pinning Rack commit that resolves the large file upload issue
+gem 'rack', git: 'https://github.com/rack/rack.git', ref: 'ee01748'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
