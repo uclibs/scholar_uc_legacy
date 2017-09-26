@@ -9,7 +9,6 @@ cache:
 before_install:
   - gem update --system 2.6.10
   - gem --version
-  - gem install brakeman
   - gem install bundler
   - gem install rubocop -v '0.48.1'
   - gem install rubocop-rspec -v '1.10.0'
@@ -38,7 +37,6 @@ services:
   - redis-server
 before_script:
   - jdk_switcher use oraclejdk8
-  - brakeman
   - rubocop
   - "cp config/blacklight.yml.sample config/blacklight.yml"
   - "cp config/database.yml.sample config/database.yml"
