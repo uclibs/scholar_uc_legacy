@@ -33,6 +33,7 @@ describe 'collection', type: :feature, js: true do
       expect(page).to have_content title
       expect(page).to have_content description
       expect(page).to have_content 'User, New'
+      expect(page).to have_content "Depositor: #{User.email}"
     end
   end
 
