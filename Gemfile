@@ -110,3 +110,5 @@ gem 'omniauth-shibboleth', '1.2.1'
 gem 'feedjira', '2.1.0'
 
 gem 'rake', '11.2.2'
+
+gem 'rails-observers', '0.1.2'
