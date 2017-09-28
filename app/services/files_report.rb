@@ -3,15 +3,15 @@ class FilesReport < Report
   private
 
   def self.report_objects
-    GenericFile.all
+    FileSet.all
   end
 
-  def self.fields(file = GenericFile.new)
+  def self.fields(file = FileSet.new)
     [ 
-      { pid: file.pid },
-      { title: file.label },
-      { filename: file.filename },
-      { owner: file.owner },
+      { id: file.id },
+      { title: file.title[0] },
+      { filename: file.label },
+      { owner: file.creator },
       { depositor: file.depositor },
       { edit_users: file.edit_users.join(" ") },
     ]

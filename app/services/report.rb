@@ -21,12 +21,19 @@ class Report
   end
 
   def self.report_header
-    fields.collect { |field| field.keys[0] }   
+    fields.collect do |field|
+      field.keys[0] 
+    end   
   end
 
   def self.report_row(object)
-    res = fields(object).collect { |field| field.values.join("|").gsub(/\n/, " ") }   
-    byebug
+    fields(object).collect do |field|
+      if field.values[0].is_a? ActiveTriples::Relation
+        field.values[0].join("|").gsub(/\n/, " ")
+      else
+        field.values.join("|").gsub(/\n/, " ")
+      end
+    end
   end
 end
 

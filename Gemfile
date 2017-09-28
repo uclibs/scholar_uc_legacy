@@ -58,7 +58,6 @@ gem 'rack', git: 'https://github.com/rack/rack.git', ref: 'ee01748'
 
 # gem 'clamav'
 
-gem 'mysql2'
 
 group :development, :test do
   gem 'brakeman', require: false

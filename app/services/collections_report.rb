@@ -8,12 +8,21 @@ class CollectionsReport < Report
 
   def self.fields(collection = Collection.new)
     [
-      { pid: collection.pid },
+      { id: collection.id },
       { title: collection.title },
       { depositor: collection.depositor },
       { edit_users: collection.edit_users.join(" ") },
-      { works: collection.member_ids.join(" ") }
+      { works: collection_members(collection).join(" ") }
     ]
+  end
+
+  def self.collection_members(collection)
+    return [] if collection.id.nil?
+    query_solr(collection).map { |member| member.id }
+  end
+
+  def self.query_solr(object)
+    ActiveFedora::SolrService.query("member_of_collection_ids_ssim:#{object.id}", rows: 1_000_000)
   end
 end
 

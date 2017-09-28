@@ -12,11 +12,11 @@ class WorksReport < Report
 
   def self.fields(work = GenericWork.new) 
     [
-      { pid: work.id },
+      { id: work.id },
       { owner: work.owner },
       { depositor: work.depositor },
       { editors: work.edit_users.join(" ") },
-    ] << attributes(work)
+    ] + attributes(work)
   end
 
   def self.attributes(work)
@@ -38,14 +38,17 @@ class WorksReport < Report
       college
       contributor
       committee_member
-      coverage_spatial
-      coverage_temporal
+      geo_subject
+      time_period
       degree
       department
       date_created
+      alt_date_created
+      date_digitized
       creator
       cultural_context
       description
+      alt_description
       genre
       identifier
       inscription
@@ -57,7 +60,7 @@ class WorksReport < Report
       measurement
       note
       publisher
-      requires
+      required_software
       source
       subject
       title
