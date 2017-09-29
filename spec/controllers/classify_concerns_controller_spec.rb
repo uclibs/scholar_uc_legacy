@@ -9,7 +9,7 @@ describe ClassifyConcernsController, type: :controller do
   describe '#new' do
     it 'requires authentication' do
       get :new
-      expect(response).to redirect_to(main_app.user_session_path)
+      expect(response).to redirect_to(login_path)
     end
     it 'renders when signed in' do
       sign_in(user)
@@ -22,7 +22,7 @@ describe ClassifyConcernsController, type: :controller do
     context 'without logging in' do
       it 'redirect to login page if user is not logged in' do
         post :create, params: { classify: { curation_concern_type: 'GenericWork' } }
-        expect(response).to redirect_to(main_app.user_session_path)
+        expect(response).to redirect_to(login_path)
       end
     end
 

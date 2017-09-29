@@ -13,6 +13,7 @@ RSpec.describe 'the homepage', type: :feature do
     end
     it 'redirects the user to the new work landing page after sign in' do
       click_on 'contribute'
+      click_on 'log in using a local account'
       within '.new_user' do
         fill_in('Email', with: user.email)
         fill_in('Password', with: user.password)
