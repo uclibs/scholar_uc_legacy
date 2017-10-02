@@ -86,6 +86,8 @@ Rails/FilePath:
     - 'app/jobs/change_manager/process_change_job.rb'
     - 'app/mailers/change_manager/scholar_notification_mailer.rb'
     - 'spec/rails_helper.rb'
+    - 'lib/tasks/account.rake'
+    - 'spec/lib/task_helpers/account_helper_spec.rb'
 
 RSpec/VerifiedDoubles:
   Enabled: false

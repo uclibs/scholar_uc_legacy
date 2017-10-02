@@ -38,6 +38,7 @@ Metrics/AbcSize:
     - 'app/helpers/change_manager/change_manager_helper.rb'
     - 'app/forms/hyrax/forms/batch_edit_form.rb'
     - 'app/indexers/hyrax/work_indexer.rb'
+    - 'lib/task_helpers/account_helper.rb'
 
 Metrics/MethodLength:
   Max: 15
@@ -49,6 +50,7 @@ Metrics/MethodLength:
     - 'app/forms/hyrax/forms/batch_upload_form.rb'
     - 'app/forms/hyrax/forms/batch_edit_form.rb'
     - 'app/controllers/classify_concerns_controller.rb'
+    - 'lib/task_helpers/account_helper.rb'
 
 Metrics/ModuleLength:
   Exclude:
@@ -91,6 +93,7 @@ Style/GuardClause:
     - 'app/indexers/hyrax/collection_indexer.rb'
     - 'app/indexers/hyrax/work_indexer.rb'
     - 'app/services/change_manager/email_manager.rb'
+    - 'lib/task_helpers/account_helper.rb'
 
 Style/SymbolProc: # https://github.com/bbatsov/rubocop/issues/3071
   Exclude:
