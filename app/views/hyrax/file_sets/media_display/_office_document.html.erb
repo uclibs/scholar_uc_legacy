@@ -9,7 +9,8 @@
         <%= show_request_file_button(file_set, t('hyrax.file_set.show.requestable_content.office_link')) %>
       <% else %>
         <%= link_to hyrax.download_path(file_set),
-                    data: { turbolinks: false },
+                    id: "file_download",
+                    data: { turbolinks: false, label: file_set.id },
                     target: :_blank,
                     class: "btn btn-default" do %>
             <%= t('hyrax.file_set.show.downloadable_content.office_link') %>
