@@ -101,16 +101,14 @@ RSpec.describe Hyrax::CollectionPresenter do
     end
 
     context "collection with work" do
-      skip ":total_count is not ticking up see https://github.com/uclibs/scholar_uc/issues/1671" do
-        let(:work) { create(:work, title: ['unimaginitive title']) }
+      let(:work) { create(:work, title: ['unimaginitive title']) }
 
-        before do
-          work.member_of_collections << collection
-          work.save!
-        end
-
-        it { is_expected.to eq 1 }
+      before do
+        work.member_of_collections << collection
+        work.save!
       end
+
+      it { is_expected.to eq 1 }
     end
 
     context "null members" do
