@@ -2,7 +2,7 @@
 class ClassifyConcernsController < ApplicationController
   include Hyrax::ThemedLayoutController
   with_themed_layout '1_column'
-  before_action :authenticate_user!
+  before_action :auth_shib_user!
   load_and_authorize_resource
 
   add_breadcrumb 'Submit a work', (->(controller) { controller.request.path })
