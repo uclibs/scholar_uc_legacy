@@ -27,6 +27,10 @@ describe 'hyrax/base/_form_progress.html.erb', type: :view do
       allow(view).to receive(:batch_uploads_path).and_return("/batch_uploads")
     end
 
+    it "doesn't allow cloud uploads" do
+      expect(page).not_to have_content 'Add Files from Cloud Providers'
+    end
+
     it "requires files to be attached" do
       expect(page).to have_content 'Add files'
     end
