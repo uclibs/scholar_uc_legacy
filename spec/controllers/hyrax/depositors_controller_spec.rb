@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe DepositorsController, type: :controller do
+describe Hyrax::DepositorsController, type: :controller do
   routes { Rails.application.class.routes }
   let(:user) { create(:user) }
   let(:grantee) { create(:user) }
