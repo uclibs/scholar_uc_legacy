@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Report
   require 'csv'
 
@@ -16,24 +17,23 @@ class Report
 
   private
 
-  def self.report_title
-    self.name.underscore + '.csv'
-  end
+    def self.report_title
+      name.underscore + '.csv'
+    end
 
-  def self.report_header
-    fields.collect do |field|
-      field.keys[0] 
-    end   
-  end
-
-  def self.report_row(object)
-    fields(object).collect do |field|
-      if field.values[0].is_a? ActiveTriples::Relation
-        field.values[0].join("|").gsub(/\n/, " ")
-      else
-        field.values.join("|").gsub(/\n/, " ")
+    def self.report_header
+      fields.collect do |field|
+        field.keys[0]
       end
     end
-  end
-end
 
+    def self.report_row(object)
+      fields(object).collect do |field|
+        if field.values[0].is_a? ActiveTriples::Relation
+          field.values[0].join("|").tr("\n", " ")
+        else
+          field.values.join("|").tr("\n", " ")
+        end
+      end
+    end
+end

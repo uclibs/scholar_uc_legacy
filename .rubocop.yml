@@ -11,6 +11,9 @@ AllCops:
     - 'db/**/*'
     - 'script/**/*'
     - 'vendor/**/*'
+    - 'spec/services/*_report_spec.rb'
+    - 'app/services/*_report.rb'
+    - 'app/services/report.rb'
 
 Lint/ImplicitStringConcatenation:
   Exclude:
