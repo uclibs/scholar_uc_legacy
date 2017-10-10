@@ -8,12 +8,15 @@ AllCops:
     - '**/Rakefile'
     - '**/config.ru'
   Exclude:
-    - 'db/**/*'
-    - 'script/**/*'
-    - 'vendor/**/*'
-    - 'spec/services/*_report_spec.rb'
     - 'app/services/*_report.rb'
+    - 'app/services/collection_loader.rb'
     - 'app/services/report.rb'
+    - 'app/services/work_loader.rb'
+    - 'db/**/*'
+    - 'lib/tasks/batch.rake'
+    - 'script/**/*'
+    - 'spec/services/*_report_spec.rb'
+    - 'vendor/**/*'
 
 Lint/ImplicitStringConcatenation:
   Exclude:
