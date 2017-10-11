@@ -3,7 +3,8 @@
         <% if CollectionAvatar.find_by(collection_id: document.id) != nil %>
           <%= image_tag CollectionAvatar.find_by(collection_id: document.id).avatar.url(:medium) %>
         <% else %>
-          <span class="<%= Hyrax::ModelIcon.css_class_for(Collection) %> collection-icon-search"></span>
+          <span class="<%= Hyrax::ModelIcon.css_class_for(Collection) %> collection-icon-search" aria-hidden="true" title="collection"></span>
+          <span class="sr-only">Collection</span>
         <% end %>
       <% end %>
     </div>
