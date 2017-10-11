@@ -59,6 +59,7 @@ shared_examples 'proxy edit work' do
     expect(current_path).to include('edit')
     fill_in('Description', with: 'An edited proxy deposited work')
     fill_in('Creator', with: 'Edited grantor')
+    page.save_screenshot('screenshot.png')
 
     click_on('Save')
     expect(current_path).to include('/concern/generic_works/')
