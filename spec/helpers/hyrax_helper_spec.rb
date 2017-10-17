@@ -151,4 +151,44 @@ describe HyraxHelper, type: :helper do
       expect(helper.user_department(other_object)).to eq("Marketing")
     end
   end
+
+  describe "#iconify_auto_link" do
+    let(:text)              { 'Foo < http://www.example.com. & More text' }
+    let(:linked_text)       { "Foo &lt; <a href=\"http://www.example.com\"><span class=\"glyphicon glyphicon-new-window\"></span> http://www.example.com</a>. &amp; More text" }
+    let(:document)          { SolrDocument.new(has_model_ssim: ['GenericWork'], id: 512, title_tesim: text, description_tesim: text) }
+    let(:blacklight_config) { CatalogController.blacklight_config }
+    before do
+      allow(controller).to receive(:action_name).and_return('index')
+      allow(helper).to receive(:blacklight_config).and_return(blacklight_config)
+    end
+    it "boring String argument" do
+      expect(helper.iconify_auto_link('no escapes or links necessary')).to eq 'no escapes or links necessary'
+      expect(helper.iconify_auto_link('no escapes or links necessary', false)).to eq 'no escapes or links necessary'
+    end
+    context "interesting String argument" do
+      subject { helper.iconify_auto_link(text) }
+      it "escapes input" do
+        expect(subject).to start_with('Foo &lt;').and end_with('. &amp; More text')
+      end
+      it "adds links" do
+        expect(subject).to include('<a href="http://www.example.com">')
+      end
+      it "adds icons" do
+        expect(subject).to include('class="glyphicon glyphicon-new-window"')
+      end
+    end
+
+    context "when using a hash argument" do
+      subject { helper.iconify_auto_link(arg) }
+      describe "auto-linking in the title" do
+        let(:arg) { { document: document, value: [text], config: blacklight_config.index_fields['title_tesim'], field: 'title_tesim' } }
+        it { is_expected.to eq(linked_text) }
+      end
+
+      describe "auto-linking in the description" do
+        let(:arg) { { document: document, value: [text], config: blacklight_config.index_fields['description_tesim'], field: 'description_tesim' } }
+        it { is_expected.to eq(linked_text) }
+      end
+    end
+  end
 end
