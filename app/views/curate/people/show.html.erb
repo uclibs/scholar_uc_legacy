@@ -74,7 +74,7 @@
         <% if current_user.manager? %>
           <%= link_to "Update #{@person.name}'s Information", edit_user_path(User.where(repository_id: @person.id).first.id), class: 'btn btn-primary' %>
         <% else %>
-          <%= link_to "Update Personal Information", edit_user_registration_path, class: 'btn btn-primary' %>
+		<!-- <%= link_to "Update Personal Information", edit_user_registration_path, class: 'btn btn-primary' %> -->
         <% end %>
       </div>
     <% end %>
