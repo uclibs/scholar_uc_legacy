@@ -1,5 +1,5 @@
 <h2 class="sr-only"><%= t('hyrax.homepage.featured_works.title') %></h2>
-<% if @featured_work_list.empty? %>
+<% if @featured_work_list.nil? or @featured_work_list.empty? %>
   <p><%= t('hyrax.homepage.featured_works.no_works') %></p>
 <% elsif can? :update, FeaturedWork %>
   <%= form_for [hyrax, @featured_work_list] do |f| %>

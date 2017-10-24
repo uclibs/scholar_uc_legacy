@@ -1,7 +1,7 @@
 # frozen_string_literal: true
+require Hyrax::Engine.root.join('app/controllers/hyrax/users_controller.rb')
 module Hyrax
   class UsersController < ApplicationController
-    include Hyrax::UsersControllerBehavior
 
     def show
       @presenter = Hyrax::UserProfilePresenter.new(@user, current_ability)

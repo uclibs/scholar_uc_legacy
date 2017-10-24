@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
 
-gem 'hyrax', '1.0.4'
+gem 'hyrax', github: 'uclibs/hyrax', branch: 'master'
 
 # repository manager
 gem 'hydra-role-management'
@@ -12,6 +12,8 @@ gem 'iiif_manifest'
 gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
 gem 'browse-everything', github: 'uclibs/browse-everything', branch: 'master'
 gem 'kaltura', '0.1.1'
+
+gem "active_attr"
 
 # Shibboleth
 gem 'omniauth-openid'
