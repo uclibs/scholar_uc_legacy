@@ -13,4 +13,10 @@ module Hyrax::Controller
   def landing_page
     Hyrax::Engine.routes.url_helpers.dashboard_index_path
   end
+
+  private
+
+    def render_404
+      render('errors/not_found', status: 404)
+    end
 end
