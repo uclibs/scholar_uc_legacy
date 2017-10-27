@@ -70,7 +70,7 @@ class SolrDocument
 
   # Added for Article Work Type
   def journal_title
-    self[Solrizer.solr_name('alternate_title')]
+    self[Solrizer.solr_name('journal_title')]
   end
 
   def issn

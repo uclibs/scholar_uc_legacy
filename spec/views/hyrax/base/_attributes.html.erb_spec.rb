@@ -6,6 +6,7 @@ describe 'hyrax/base/_attributes.html.erb' do
   let(:department) { 'Digital Repositories' }
   let(:related_url) { 'http://www.uc.edu' }
   let(:submitter) { FactoryGirl.create(:user) }
+  let(:journal_title) { 'UC Journal' }
 
   let(:solr_document) { SolrDocument.new(attributes) }
   let(:attributes) do
@@ -14,7 +15,8 @@ describe 'hyrax/base/_attributes.html.erb' do
       college_tesim: college,
       department_tesim: department,
       related_url_tesim: related_url,
-      depositor_tesim: submitter.email
+      depositor_tesim: submitter.email,
+      journal_title_tesim: journal_title
     }
   end
   let(:ability) { nil }
