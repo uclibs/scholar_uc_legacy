@@ -56,7 +56,7 @@ function enableSubmitButton() {
 };
 
 function appendErrorMessages(attaching_field) {
-  var helpLink ='<a href="/doi-help/" class="alert-link target="_blank"">this page</a>';
+  var helpLink ='<a href="/doi_help/" class="alert-link target="_blank"">this page</a>';
   var errorMessage = 'Invalid DOI detected. Please see ' + helpLink + ' for tips on submitting an existing DOI.';
   var errorMessageHTML = '<div id="doi-error" class="alert alert-danger">' + errorMessage + '</div>'; 
   if ($('#doi-error').length < 1) {
