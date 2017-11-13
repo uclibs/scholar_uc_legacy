@@ -17,7 +17,7 @@
 <%= presenter.attribute_to_html(:required_software) %>
 <%= presenter.attribute_to_html(:note) %>
 <%= presenter.attribute_to_html(:genre) %>
-<%= presenter.attribute_to_html(:geo_subject) %>
+<%= presenter.attribute_to_html(:geo_subject, render_as: :faceted, label: "Geographic Subject") %>
 <%= presenter.attribute_to_html(:degree) %>
 <%= presenter.attribute_to_html(:advisor) %>
 <%= presenter.attribute_to_html(:committee_member) %>

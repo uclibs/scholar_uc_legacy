@@ -10,7 +10,6 @@ en:
     labels:
       generic_work:
         geo_subject:      "Geographic Subject"
-        geo_subject:       "Geographic Location"
         alt_description:      "Description"
         alt_date_created:     "Date Created"
         related_url:      "External Link"
