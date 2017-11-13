@@ -14,8 +14,6 @@ shared_examples 'submission form with form#fileupload' do |work_class|
 
   it "has metadata" do
     expect(page).to have_selector 'h1', text: 'Magnificent splendor'
-    expect(page).to have_selector 'li', text: 'The Internet'
-    expect(page).to have_selector 'th', text: 'Source'
 
     # Displays FileSets already attached to this work
     within '.related-files' do
@@ -34,8 +32,6 @@ shared_examples 'submission form without form#fileupload' do |work_class|
 
   it "has metadata" do
     expect(page).to have_selector 'h1', text: 'Magnificent splendor'
-    expect(page).to have_selector 'li', text: 'The Internet'
-    expect(page).to have_selector 'th', text: 'Source'
 
     # Doesn't have the upload form for uploading more files
     expect(page).not_to have_selector "form#fileupload"
