@@ -3,8 +3,8 @@ require 'rails_helper'
 
 shared_examples 'sitemap' do |work_class|
   let!(:work_type) { work_class.name.underscore }
-  let!(:private_work) { FactoryGirl.create(work_type.to_sym) }
-  let!(:public_work) { FactoryGirl.create("public_#{work_type}".to_sym) }
+  let!(:private_work) { FactoryBot.create(work_type.to_sym) }
+  let!(:public_work) { FactoryBot.create("public_#{work_type}".to_sym) }
   let(:xml) { Capybara.string(page.body) }
 
   before { visit sitemap_path }

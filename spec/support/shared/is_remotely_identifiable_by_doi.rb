@@ -2,7 +2,7 @@
 
 shared_examples 'is remotely identifiable by doi' do
   describe '#locally_managed_remote_identifier?' do
-    let(:work) { FactoryGirl.build(described_class.to_s.underscore.to_sym) }
+    let(:work) { FactoryBot.build(described_class.to_s.underscore.to_sym) }
 
     context 'when #identifier_url is set' do
       before { work.stub(:identifier_url).and_return("http://example.org") }
@@ -20,7 +20,7 @@ shared_examples 'is remotely identifiable by doi' do
   end
 
   describe '#doi_status' do
-    let(:work) { FactoryGirl.build(described_class.to_s.underscore.to_sym) }
+    let(:work) { FactoryBot.build(described_class.to_s.underscore.to_sym) }
 
     context 'when the work is public' do
       before { work.stub(:visibility).and_return(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC) }

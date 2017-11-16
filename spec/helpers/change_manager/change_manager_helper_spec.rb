@@ -6,11 +6,11 @@ describe ChangeManager::ChangeManagerHelper do
   let!(:old_editor) { { 'id' => 'someid' } }
   let!(:new_editor) { { 'type' => 'person', 'name' => 'new_editor@example.com', 'access' => 'edit' } }
   let!(:removed_editor) { { 'id' => 'someid', 'access' => 'destroy' } }
-  let!(:curation_concern) { FactoryGirl.create(:generic_work) }
+  let!(:curation_concern) { FactoryBot.create(:generic_work) }
 
   describe '#queue_notifications_for_editors should' do
     let(:change_email) { ActionMailer::Base.deliveries.last }
-    let!(:user) { FactoryGirl.create(:user, email: 'new_editor@example.com') }
+    let!(:user) { FactoryBot.create(:user, email: 'new_editor@example.com') }
     before do
       ActionMailer::Base.deliveries = []
     end

@@ -2,9 +2,9 @@
 require 'rails_helper'
 
 shared_examples 'edit work' do |work_class|
-  let(:user) { FactoryGirl.create(:user, first_name: 'John', last_name: 'Doe') }
+  let(:user) { FactoryBot.create(:user, first_name: 'John', last_name: 'Doe') }
   let!(:role1) { Sipity::Role.create(name: 'depositing') }
-  let(:work) { FactoryGirl.build(
+  let(:work) { FactoryBot.build(
     :work, user: user, creator: ['User, Different'],
            alt_description: 'test', college: "Business", department: "Marketing"
   ) }
@@ -14,7 +14,7 @@ shared_examples 'edit work' do |work_class|
   before do
     page.driver.browser.js_errors = false
     sign_in user
-    work.ordered_members << FactoryGirl.create(:file_set, user: user, title: ['ABC123xyz'])
+    work.ordered_members << FactoryBot.create(:file_set, user: user, title: ['ABC123xyz'])
     work.read_groups = []
     work.save!
   end
@@ -34,8 +34,8 @@ shared_examples 'edit work' do |work_class|
 end
 
 shared_examples 'proxy edit work' do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:proxy) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:proxy) { FactoryBot.create(:user) }
   let!(:role1) { Sipity::Role.create(name: 'depositing') }
 
   let(:work_id) { GenericWork.where(title: 'My Proxy Submitted Work') }

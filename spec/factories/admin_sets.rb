@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-FactoryGirl.define do
+FactoryBot.define do
   factory :admin_set do
     sequence(:title) { |n| ["Title #{n}"] }
 

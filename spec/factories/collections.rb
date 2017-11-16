@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-FactoryGirl.define do
+FactoryBot.define do
   factory :collection do
     transient do
-      user { FactoryGirl.create(:user) }
+      user { FactoryBot.create(:user) }
     end
     sequence(:title) { |n| ["Title #{n}"] }
     before(:create) do |work, evaluator|

@@ -75,7 +75,7 @@ describe "User Profile", type: :feature do
     end
 
     context "when the user owns works" do
-      let!(:work) { FactoryGirl.create(:work, user: user) }
+      let!(:work) { FactoryBot.create(:work, user: user) }
       it 'includes the user in the display' do
         visit profile_path
         click_link 'View People'
@@ -111,8 +111,8 @@ describe "User Profile", type: :feature do
   context 'user profile' do
     let!(:dewey) { create(:user, display_name: 'Melvil Dewey') }
     let(:dewey_path) { Hyrax::Engine.routes.url_helpers.profile_path(dewey) }
-    let!(:work) { FactoryGirl.create(:work, user: user) }
-    let!(:work2) { FactoryGirl.create(:work, user: dewey) }
+    let!(:work) { FactoryBot.create(:work, user: user) }
+    let!(:work2) { FactoryBot.create(:work, user: dewey) }
 
     it 'is searchable' do
       visit profile_path

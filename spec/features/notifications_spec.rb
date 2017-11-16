@@ -4,7 +4,7 @@ require 'rails_helper'
 describe "Notifications page", type: :feature do
   skip 'User null validation issue needs research' do
     before do
-      sign_in FactoryGirl.create(:user_with_mail)
+      sign_in FactoryBot.create(:user_with_mail)
       visit "/notifications"
     end
 

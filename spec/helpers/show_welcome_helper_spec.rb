@@ -3,7 +3,7 @@ require 'rails_helper'
 # include Devise::TestHelpers
 
 describe ShowWelcomeHelper, type: :helper do
-  let(:current_user) { FactoryGirl.create(:user) }
+  let(:current_user) { FactoryBot.create(:user) }
   before { sign_in current_user }
 
   context 'when the user is not a student' do

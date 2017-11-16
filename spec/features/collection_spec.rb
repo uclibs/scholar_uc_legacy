@@ -2,12 +2,12 @@
 require 'rails_helper'
 
 describe 'collection', type: :feature, js: true do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
 
-  let(:work1) { FactoryGirl.create(:work, title: ["King Louie"], user: user) }
-  let(:work2) { FactoryGirl.create(:work, title: ["King Kong"], user: user) }
-  let(:collection1) { FactoryGirl.create(:public_collection, user: user) }
-  let(:collection2) { FactoryGirl.create(:public_collection, user: user) }
+  let(:work1) { FactoryBot.create(:work, title: ["King Louie"], user: user) }
+  let(:work2) { FactoryBot.create(:work, title: ["King Kong"], user: user) }
+  let(:collection1) { FactoryBot.create(:public_collection, user: user) }
+  let(:collection2) { FactoryBot.create(:public_collection, user: user) }
 
   describe 'create collection' do
     before do
@@ -37,7 +37,7 @@ describe 'collection', type: :feature, js: true do
   end
 
   describe "adding works to a collection", skip: "we need to define a dashboard/works path" do
-    let!(:collection) { FactoryGirl.create!(:collection, title: ["Barrel of monkeys"], user: user) }
+    let!(:collection) { FactoryBot.create!(:collection, title: ["Barrel of monkeys"], user: user) }
 
     before do
       work1
@@ -60,7 +60,7 @@ describe 'collection', type: :feature, js: true do
   end
 
   describe 'delete collection' do
-    let!(:collection) { FactoryGirl.create(:public_collection, user: user) }
+    let!(:collection) { FactoryBot.create(:public_collection, user: user) }
     before do
       sign_in user
       visit '/dashboard/collections'
@@ -273,8 +273,8 @@ describe 'collection', type: :feature, js: true do
   end
 
   describe 'show pages of a collection' do
-    let(:works)       { (0..12).map { FactoryGirl.create(:work, member_of_collections: [collection], user: user) } }
-    let!(:collection) { FactoryGirl.create(:named_collection, user: user) }
+    let(:works)       { (0..12).map { FactoryBot.create(:work, member_of_collections: [collection], user: user) } }
+    let!(:collection) { FactoryBot.create(:named_collection, user: user) }
 
     before { sign_in user }
 
@@ -292,7 +292,7 @@ describe 'collection', type: :feature, js: true do
   end
 
   describe 'validates avatar file type' do
-    let!(:collection) { FactoryGirl.create(:named_collection, user: user) }
+    let!(:collection) { FactoryBot.create(:named_collection, user: user) }
     before { sign_in user }
 
     context 'creating a collection' do

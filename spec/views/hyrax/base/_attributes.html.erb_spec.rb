@@ -5,7 +5,7 @@ describe 'hyrax/base/_attributes.html.erb' do
   let(:college) { 'Libraries' }
   let(:department) { 'Digital Repositories' }
   let(:related_url) { 'http://www.uc.edu' }
-  let(:submitter) { FactoryGirl.create(:user) }
+  let(:submitter) { FactoryBot.create(:user) }
   let(:journal_title) { 'UC Journal' }
 
   let(:solr_document) { SolrDocument.new(attributes) }

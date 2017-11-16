@@ -2,8 +2,8 @@
 require 'rails_helper'
 
 describe 'proxy', type: :feature do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:second_user) { FactoryGirl.create(:user, first_name: 'Proxy') }
+  let(:user) { FactoryBot.create(:user) }
+  let(:second_user) { FactoryBot.create(:user, first_name: 'Proxy') }
   let(:profile_path) { Hyrax::Engine.routes.url_helpers.profile_path(user) }
   let!(:role1) { Sipity::Role.create(name: 'depositing') }
   let(:work_id) { GenericWork.where(title: 'My Proxy Submitted Work') }
