@@ -17,10 +17,6 @@ class StaticController < ApplicationController
     render "static/faq"
   end
 
-  def distribution_license
-    render "static/distribution_license"
-  end
-
   def documenting_data
     render "static/documenting_data_help"
   end
