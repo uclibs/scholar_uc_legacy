@@ -7,7 +7,7 @@ RSpec.describe 'the homepage', type: :feature do
   end
 
   context 'when a user who is not logged in clicks the contribute button' do
-    let(:user) { FactoryGirl.create :user }
+    let(:user) { FactoryBot.create :user }
     before do
       visit root_path
     end

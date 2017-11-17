@@ -4,8 +4,8 @@ require 'rails_helper'
 describe ProxyEditRemovalJob do
   let!(:current_user) { create(:user) }
   let!(:proxy) { create(:user) }
-  let!(:work) { FactoryGirl.create(:generic_work, user: proxy, depositor: current_user.email, edit_users: [current_user, proxy], proxy_depositor: proxy.email, on_behalf_of: current_user.email) }
-  let!(:file_set) { FactoryGirl.create(:file_set, user: proxy, depositor: current_user.email, edit_users: [current_user, proxy], title: ['ABC123xyz']) }
+  let!(:work) { FactoryBot.create(:generic_work, user: proxy, depositor: current_user.email, edit_users: [current_user, proxy], proxy_depositor: proxy.email, on_behalf_of: current_user.email) }
+  let!(:file_set) { FactoryBot.create(:file_set, user: proxy, depositor: current_user.email, edit_users: [current_user, proxy], title: ['ABC123xyz']) }
 
   before do
     work.ordered_members << file_set

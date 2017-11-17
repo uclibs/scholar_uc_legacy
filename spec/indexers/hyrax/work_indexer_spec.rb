@@ -7,7 +7,7 @@ describe Hyrax::WorkIndexer do
   let(:work2title) { 'work2 title' }
 
   describe "#generate_solr_document" do
-    let(:work) { FactoryGirl.build(:generic_work) }
+    let(:work) { FactoryBot.build(:generic_work) }
     subject(:document) { indexer.generate_solr_document }
 
     it "makes date_created facetable" do

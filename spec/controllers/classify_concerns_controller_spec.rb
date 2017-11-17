@@ -4,7 +4,7 @@ require 'rails_helper'
 describe ClassifyConcernsController, type: :controller do
   #  routes { Hyrax::Engine.routes }
   routes { Rails.application.class.routes }
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
 
   describe '#new' do
     it 'requires authentication' do

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-FactoryGirl.define do
+FactoryBot.define do
   factory :file_set do
     transient do
-      user { FactoryGirl.create(:user) }
+      user { FactoryBot.create(:user) }
     end
     after(:build) do |fs, evaluator|
       fs.apply_depositor_metadata evaluator.user.user_key

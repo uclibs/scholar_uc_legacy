@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 describe 'Batch management of works', type: :feature do
-  let(:current_user) { FactoryGirl.create(:user) }
-  let!(:work1)       { FactoryGirl.create(:public_work, user: current_user) }
-  let!(:work2)       { FactoryGirl.create(:public_work, user: current_user) }
+  let(:current_user) { FactoryBot.create(:user) }
+  let!(:work1)       { FactoryBot.create(:public_work, user: current_user) }
+  let!(:work2)       { FactoryBot.create(:public_work, user: current_user) }
 
   before do
     login_as current_user

@@ -2,8 +2,8 @@
 require 'rails_helper'
 
 describe 'UC account workflow', type: :feature do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:password) { FactoryGirl.attributes_for(:user).fetch(:password) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:password) { FactoryBot.attributes_for(:user).fetch(:password) }
 
   filepath = "config/authentication.yml"
   yaml = YAML.load_file(filepath)

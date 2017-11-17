@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 describe CollectionAvatarsController, type: :controller do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
   let(:collection) do
     create(:public_collection, title: ["My collection"],
                                description: ["My incredibly detailed description of the collection"],

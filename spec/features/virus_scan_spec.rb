@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 describe 'Adding an infected file', :workflow, js: true do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
   let!(:role1) { Sipity::Role.create(name: 'depositing') }
 
   before do
@@ -38,8 +38,8 @@ describe 'Adding an infected file', :workflow, js: true do
   end
 
   context 'to an existing work', js: true do
-    let(:work) { FactoryGirl.build(:work, user: user, title: ['My Infected Work']) }
-    let(:file_set) { FactoryGirl.create(:file_set, user: user, title: ['ABC123xyz']) }
+    let(:work) { FactoryBot.build(:work, user: user, title: ['My Infected Work']) }
+    let(:file_set) { FactoryBot.create(:file_set, user: user, title: ['ABC123xyz']) }
 
     before do
       work.ordered_members << file_set

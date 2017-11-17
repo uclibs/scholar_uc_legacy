@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-FactoryGirl.define do
+FactoryBot.define do
   factory :medium, aliases: [:private_medium], class: 'Medium' do
     transient do
-      user { FactoryGirl.create(:user) }
+      user { FactoryBot.create(:user) }
     end
 
     title ["Test title"]
@@ -22,7 +22,7 @@ FactoryGirl.define do
 
     factory :medium_with_one_file do
       before(:create) do |work, evaluator|
-        work.ordered_members << FactoryGirl.create(:file_set, user: evaluator.user, title: ['A Contained FileSet'], label: 'filename.pdf')
+        work.ordered_members << FactoryBot.create(:file_set, user: evaluator.user, title: ['A Contained FileSet'], label: 'filename.pdf')
       end
     end
   end

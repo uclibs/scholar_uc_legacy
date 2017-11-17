@@ -2,8 +2,8 @@
 require 'rails_helper'
 
 describe ChangeManager::ComparisonConcern do
-  let!(:editor_change) { FactoryGirl.create(:change, change_type: 'added_as_editor') }
-  let!(:proxy_change) { FactoryGirl.create(:change, change_type: 'added_as_proxy') }
+  let!(:editor_change) { FactoryBot.create(:change, change_type: 'added_as_editor') }
+  let!(:proxy_change) { FactoryBot.create(:change, change_type: 'added_as_proxy') }
   describe '#proxy_change? should' do
     it 'return true when the change deals with a proxy' do
       expect(proxy_change.proxy_change?).to be true

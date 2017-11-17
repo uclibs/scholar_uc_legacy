@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 describe 'DOI Validation', type: :feature, js: true do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
   let(:invalid_doi) { 'http://dx.doi.org/doi:10.5072/FK29P3386P' }
   let(:valid_doi) { 'doi:10.5072/FK29P3386P' }
   let(:empty_value) { '' }
