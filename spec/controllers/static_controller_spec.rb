@@ -30,13 +30,6 @@ describe StaticController do
       expect(response).to render_template('static/faq')
     end
   end
-  describe '#distribution_license' do
-    it 'renders the distribution_license page' do
-      get :distribution_license
-      expect(response.status).to be == 200
-      expect(response).to render_template('static/distribution_license')
-    end
-  end
   describe '#documenting_data' do
     it 'renders the documenting_data page' do
       get :documenting_data

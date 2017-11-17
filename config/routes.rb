@@ -41,7 +41,6 @@ Rails.application.routes.draw do
   get 'coll_policy' => 'static#coll_policy'
   get 'format_advice' => 'static#format_advice'
   get 'faq' => 'static#faq'
-  get 'distribution_license' => 'static#distribution_license'
   get 'documenting_data' => 'static#documenting_data'
   get 'creators_rights' => 'static#creators_rights'
   get 'student_work_help' => 'static#student_work_help'
