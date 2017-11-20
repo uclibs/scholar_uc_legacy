@@ -1,0 +1,15 @@
+<% @presenter.characterization_metadata.keys.each do |term| %>
+	<div>
+    <% additional_values = @presenter.secondary_characterization_values(term) %>
+    <% if @presenter.label_for_term(term) == "Page Count" %>
+	    <%= @presenter.label_for_term(term) %>: <%= @presenter.primary_characterization_values(term).last.split.join("<br />").html_safe %>
+    <% elsif @presenter.label_for_term(term) == "Original Checksum" %>
+	    Checksum: <%= @presenter.primary_characterization_values(term).last.split.join("<br />").html_safe %>
+    <% else  %>
+	    <%= @presenter.label_for_term(term) %>: <%= @presenter.primary_characterization_values(term).join("<br />").html_safe %>
+    <% end %>
+    <% unless additional_values.empty? %>
+      <%= render partial: "extra_fields_modal", locals: { name: term, values: additional_values } %>
+    <% end %>
+  </div>
+<% end %>
