@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Hyrax
   class ActorFactory
     def self.stack_actors(curation_concern)
@@ -15,6 +16,7 @@ module Hyrax
        DefaultAdminSetActor,
        ApplyPermissionTemplateActor,
        model_actor(curation_concern),
+       Hyrax::Actors::MintDoiActor,
        # Initialize workflow after model is saved
        Hyrax::Actors::InitializeWorkflowActor]
     end

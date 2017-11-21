@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+require "rails_helper"
+
 describe Hyrax::ActorFactory, :no_clean do
   let(:work) { GenericWork.new }
   let(:user) { double(current_user: double) }
@@ -19,6 +22,7 @@ describe Hyrax::ActorFactory, :no_clean do
                          Hyrax::DefaultAdminSetActor,
                          Hyrax::ApplyPermissionTemplateActor,
                          Hyrax::Actors::GenericWorkActor,
+                         Hyrax::Actors::MintDoiActor,
                          Hyrax::Actors::InitializeWorkflowActor]
     end
   end
@@ -40,6 +44,7 @@ describe Hyrax::ActorFactory, :no_clean do
         Hyrax::DefaultAdminSetActor,
         Hyrax::ApplyPermissionTemplateActor,
         Hyrax::Actors::GenericWorkActor,
+        Hyrax::Actors::MintDoiActor,
         Hyrax::Actors::InitializeWorkflowActor
       ]
       expect(subject.first_actor_class).to eq Hyrax::Actors::TransactionalRequest
