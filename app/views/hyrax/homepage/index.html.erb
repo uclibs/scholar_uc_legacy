@@ -7,7 +7,7 @@
 <div class="row home-content">
   <%= render 'layouts/scholar/home_content' %>
 </div>
-<%= tinymce_assets if can? :update, ContentBlock%>
+<%= tinymce if can? :update, ContentBlock %>
 
 <%= render 'layouts/scholar/links' %>
 
