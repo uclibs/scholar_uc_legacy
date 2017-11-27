@@ -3,6 +3,7 @@ require Hyrax::Engine.root.join('app/controllers/concerns/hyrax/collections_cont
 module Hyrax
   module CollectionsControllerBehavior
     def create
+      remove_trailing_whitespace
       @collection.apply_depositor_metadata(current_user.user_key)
       add_members_to_collection unless batch.empty?
       if @collection.save
@@ -36,6 +37,7 @@ module Hyrax
     end
 
     def update
+      remove_trailing_whitespace
       process_member_changes
       if @collection.update(collection_params.except(:members))
         after_update
@@ -59,6 +61,18 @@ module Hyrax
     end
 
     private
+
+      def remove_trailing_whitespace
+        params[:collection].each do |key, value|
+          if value.class == Array
+            value.each_index do |idx|
+              value[idx] = value[idx].rstrip if value[idx].respond_to? :rstrip
+            end
+          elsif value.respond_to? :rstrip
+            params[:collection][key] = value.rstrip
+          end
+        end
+      end
 
       def fetch_collection_avatar
         CollectionAvatar.find_by(collection_id: collection.id)
