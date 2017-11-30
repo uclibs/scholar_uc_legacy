@@ -28,11 +28,7 @@ module Hyrax
     protected
 
       def base_query
-        # filter_users_page(filter_unless_user_is_admin(exclude_admin_users_and_non_owners))
-
-        # Temporary change to fix performance issue with users search
-        # *ALL* users will be displayed
-        [nil]
+        filter_users_page(filter_unless_user_is_admin(exclude_admin_users))
       end
 
       def filter_users_page(query)
@@ -45,12 +41,12 @@ module Hyrax
         query
       end
 
-      def exclude_admin_users_and_non_owners
+      def exclude_admin_users
         query = ''
         appending = false
         base = ::User.all
         base.each do |user|
-          next unless user.admin? || user_work_count(user) < 1
+          next unless user.admin?
           query += " and " if appending
           query += "id <> #{user.id}"
           appending = true
