@@ -68,9 +68,10 @@ describe "User Profile", type: :feature do
 
     context "when the user doesn't own works" do
       it 'does not include the user in the display' do
+        skip # Feature is temporarily disabled
         visit profile_path
         click_link 'View People'
-        expect(page).not_to have_xpath("//td/a[@href='#{profile_path}']")
+        expect(page).not_to have_xpath("//td/a[@href='#{profile_path}?locale=en']")
       end
     end
 
