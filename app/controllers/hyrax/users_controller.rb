@@ -28,7 +28,11 @@ module Hyrax
     protected
 
       def base_query
-        filter_users_page(filter_unless_user_is_admin(exclude_admin_users_and_non_owners))
+        # filter_users_page(filter_unless_user_is_admin(exclude_admin_users_and_non_owners))
+
+        # Temporary change to fix performance issue with users search
+        # *ALL* users will be displayed
+        [nil]
       end
 
       def filter_users_page(query)
