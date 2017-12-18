@@ -47,6 +47,7 @@ shared_examples 'proxy edit work' do
     visit profile_path
     click_link('Edit Profile', match: :first)
     create_proxy_using_partial(proxy)
+    sleep(1)
     logout
 
     sign_in proxy
@@ -71,6 +72,6 @@ feature 'Editing a work', type: :feature, js: true do
   it_behaves_like 'edit work', GenericWork
 end
 
-feature 'Editing a work ss a proxy', type: :feature, js: true do
+feature 'Editing a work as a proxy', type: :feature, js: true do
   it_behaves_like 'proxy edit work', GenericWork
 end
