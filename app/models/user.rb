@@ -68,6 +68,11 @@ class User < ApplicationRecord
     ucdepartment
   end
 
+  def full_department
+    return college if department == "Unknown"
+    "#{college}: #{department}"
+  end
+
   private
 
     def user_colleges
