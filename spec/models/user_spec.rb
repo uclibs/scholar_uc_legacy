@@ -166,4 +166,29 @@ describe User do
       end
     end
   end
+
+  describe "college and department" do
+    subject { described_class.new }
+
+    context "when the user doesn't have a department" do
+      it "returns Other" do
+        subject.ucdepartment = nil
+        expect(subject.full_department).to eq "Other"
+      end
+    end
+
+    context "when the user has a department that starts with a college abbreviation" do
+      it "returns College: Departmant" do
+        subject.ucdepartment = "UCL Test Department"
+        expect(subject.full_department).to eq "Libraries: Test Department"
+      end
+    end
+
+    context "when the user has a department that doesn't start with a college abbreviation" do
+      it "returns Other: Department" do
+        subject.ucdepartment = "Test Department"
+        expect(subject.full_department).to eq "Other: Test Department"
+      end
+    end
+  end
 end
