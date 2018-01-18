@@ -1,3 +1,22 @@
+### 3.0.2 1/16/2018
+* Added Office of Research lockup on homepage.
+* Set titles for static pages.
+* Added script to delete old temp files.
+* Added help text when adding and removing items from collections.
+* Adjusted "What is Scholar@UC" text on homepage.
+* Added script to check Sidekiq status.
+* Updated gems.
+* Added college to the Scholar@UC People listing.
+* Removed the User "Joined On" date from user profile displays.
+* Bug fixes
+    * Refactored DOI minting actor so that proxies maintain edit access to works with DOIs.
+    * Corrected homepage display problem so that Featured Researcher can link to a description.
+    * Removed trailing white spaces from user input.
+    * Adjusted rotate log script for new paths.
+    * Added FITS path to Sidekiq process.
+    * Resolved performance problem during user search and lookup.
+    * With performance issue resolved, re-enabled filters on user display, to only list contributors with content.
+ 
 ### 3.0.1 11/21/2017
 * Created Bamboo variables for SQL database.
 * Created Riiif cache cleaning script.
