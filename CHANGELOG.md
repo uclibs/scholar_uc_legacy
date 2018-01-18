@@ -1,17 +1,18 @@
 ### 3.0.2 1/16/2018
-* Added Office of Research lockup.
+* Added Office of Research lockup on homepage.
 * Set titles for static pages.
 * Actor factory over-ride.
-* Refactored DOI minting actor.
 * Added script to delete old temp files.
 * Modified collections membership form.
 * Added help text when adding and removing items from collections.
-* Changed UCIT text on homepage.
+* Adjusted "What is Scholar@UC" text on homepage.
 * Added script to check Sidekiq status.
 * Updated gems.
-* Added college and department to user index.
+* Added college to user index.
+* Removed the User "Joined On" date from the UI
 * Bug fixes
-    * Corrected homepage display problem.
+    * Refactored DOI minting actor so that proxies maintain edit access to works with DOIs.
+    * Corrected homepage display problem so that Featured Researcher can link to a description.
     * Removed trailing white spaces from user input.
     * Adjusted rotate log script for new paths.
     * Added FITS path to Sidekiq process.
