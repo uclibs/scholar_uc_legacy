@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+require 'rails_helper'
+
 describe Hyrax::BatchEditsController, type: :controller do
+  routes { Hyrax::Engine.routes }
   let(:user) { create(:user) }
   before do
     sign_in user
@@ -70,6 +74,12 @@ describe Hyrax::BatchEditsController, type: :controller do
       expect(response).to be_redirect
       expect(GenericWork.find(one.id).visibility).to eq "authenticated"
       expect(GenericWork.find(two.id).visibility).to eq "authenticated"
+    end
+
+    it "wrangles scalar rights params" do
+      put :update, params: { update_type: "update", generic_work: { rights: 'http://creativecommons.org/publicdomain/mark/1.0/' } }
+      expect(GenericWork.find(one.id).rights).to eq ['http://creativecommons.org/publicdomain/mark/1.0/']
+      expect(GenericWork.find(two.id).rights).to eq ['http://creativecommons.org/publicdomain/mark/1.0/']
     end
   end
 end
