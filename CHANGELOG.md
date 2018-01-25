@@ -9,6 +9,8 @@
 * Added college to the Scholar@UC People listing.
 * Removed the User "Joined On" date from user profile displays.
 * Bug fixes
+    * Fixed batch edit on dashboard.
+    * Fixed broken about link on home page.
     * Refactored DOI minting actor so that proxies maintain edit access to works with DOIs.
     * Corrected homepage display problem so that Featured Researcher can link to a description.
     * Removed trailing white spaces from user input.
