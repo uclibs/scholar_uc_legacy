@@ -2,13 +2,13 @@
 require 'rails_helper'
 
 describe 'searching' do
-  let(:user) { FactoryGirl.create :user }
+  let(:user) { FactoryBot.create :user }
   let(:subject_value) { 'mustache' }
   let!(:work) do
-    FactoryGirl.create(:public_work,
-                       description: [subject_value],
-                       title: ["Toothbrush"],
-                       user: user)
+    FactoryBot.create(:public_work,
+                      description: [subject_value],
+                      title: ["Toothbrush"],
+                      user: user)
   end
 
   let!(:collection) do

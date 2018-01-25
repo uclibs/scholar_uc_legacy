@@ -83,7 +83,7 @@ describe StaticController do
   end
 
   describe '#login' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     before do
       controller.stub(:current_user).and_return(user)
     end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 # taken from hyrax 7.1
-FactoryGirl.define do
+FactoryBot.define do
   factory :generic_work, aliases: [:work, :private_generic_work], class: 'GenericWork' do
     transient do
-      user { FactoryGirl.create(:user) }
+      user { FactoryBot.create(:user) }
     end
 
     title ["Test title"]
@@ -23,7 +23,7 @@ FactoryGirl.define do
 
     factory :generic_work_with_one_file do
       before(:create) do |work, evaluator|
-        work.ordered_members << FactoryGirl.create(:file_set, user: evaluator.user, title: ['A Contained FileSet'], label: 'filename.pdf')
+        work.ordered_members << FactoryBot.create(:file_set, user: evaluator.user, title: ['A Contained FileSet'], label: 'filename.pdf')
       end
     end
 
@@ -34,7 +34,7 @@ FactoryGirl.define do
 
     factory :work_with_representative_file do
       before(:create) do |work, evaluator|
-        work.ordered_members << FactoryGirl.create(:file_set, user: evaluator.user, title: ['A Contained FileSet'])
+        work.ordered_members << FactoryBot.create(:file_set, user: evaluator.user, title: ['A Contained FileSet'])
         work.representative_id = work.members[0].id
       end
     end

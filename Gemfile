@@ -93,7 +93,7 @@ group :development, :test do
   gem 'rspec-activemodel-mocks'
   gem 'rspec-its', '~> 1.2'
   gem 'capybara'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'poltergeist'

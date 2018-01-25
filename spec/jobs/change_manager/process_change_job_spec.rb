@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe ChangeManager::ProcessChangeJob do
   describe '#perform' do
-    let!(:change) { FactoryGirl.build(:change) }
+    let!(:change) { FactoryBot.build(:change) }
     it 'calls the process change method in ChangeManager::EmailManager' do
       expect(ChangeManager::EmailManager).to receive(:process_change).with(change.id)
 

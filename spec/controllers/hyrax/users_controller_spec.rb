@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe Hyrax::UsersController, type: :controller do
   describe "#search" do
-    let!(:user) { FactoryGirl.create(:user) }
+    let!(:user) { FactoryBot.create(:user) }
     before do
       user.first_name = 'Lucy'
       user.last_name = 'Bearcat'

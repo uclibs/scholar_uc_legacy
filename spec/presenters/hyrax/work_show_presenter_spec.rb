@@ -88,7 +88,7 @@ describe Hyrax::WorkShowPresenter do
         presenter.representative_presenter
       end
 
-      let(:work) { FactoryGirl.create(:generic_work_with_one_file) }
+      let(:work) { FactoryBot.create(:generic_work_with_one_file) }
       let(:document) { work.to_solr }
 
       before do

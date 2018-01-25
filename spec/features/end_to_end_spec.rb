@@ -104,11 +104,11 @@ shared_examples 'work crud' do |work|
 end
 
 describe 'end to end behavior:', :workflow, :js do
-  let!(:user) { FactoryGirl.create(:user) }
+  let!(:user) { FactoryBot.create(:user) }
   let!(:role1) { Sipity::Role.create(name: 'depositing') }
-  let!(:persisted_work) { FactoryGirl.create(:work, user: user) }
-  let!(:deleted_work) { FactoryGirl.create(:work, user: user) }
-  let!(:collection) { FactoryGirl.create(:collection, user: user) }
+  let!(:persisted_work) { FactoryBot.create(:work, user: user) }
+  let!(:deleted_work) { FactoryBot.create(:work, user: user) }
+  let!(:collection) { FactoryBot.create(:collection, user: user) }
   before do
     allow(CharacterizeJob).to receive(:perform_later)
     page.driver.browser.js_errors = false

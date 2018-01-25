@@ -19,7 +19,7 @@ shared_examples 'work creation' do |work_class| # apply underscore for snake cas
     # checking for work creator auto-fill and also filling it in
 
     title_element = find_by_id("#{work_type}_title")
-    title_element.set("My Test Work")
+    title_element.set("My Test Work  ") # Add whitespace to test it getting removed
 
     college_element = find_by_id("#{work_type}_college")
     college_element.select("Business")

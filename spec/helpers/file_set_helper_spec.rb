@@ -3,8 +3,8 @@ require 'rails_helper'
 # include Devise::TestHelpers
 
 describe FileSetHelper, type: :helper do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:file_set) { FactoryGirl.create(:file_set, user: user, title: ['File Title']) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:file_set) { FactoryBot.create(:file_set, user: user, title: ['File Title']) }
   let(:button_text) { 'Request this file' }
   let(:small_solr_document) { SolrDocument.new(id: '123456', file_size_is: '3221225472') }
   let(:large_solr_document) { SolrDocument.new(id: '123456', file_size_is: '3221225473') }

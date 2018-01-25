@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require 'sidekiq/web'
+require 'sidekiq/api'
 Rails.application.routes.draw do
   resources :collection_avatars
   resource :featured_collection, only: [:create, :destroy]
@@ -54,6 +55,18 @@ Rails.application.routes.draw do
   match '/404', to: 'errors#not_found', via: :all
   match '/422', to: 'errors#unprocessable', via: :all
   match '/500', to: 'errors#server_error', via: :all
+
+  # Routes for sidekiq monitoring
+  match "queue-status" => proc {
+    [200,
+     { "Content-Type" => "text/plain" },
+     [Sidekiq::Queue.new.size.to_s]]
+  }, via: :get
+  match "queue-latency" => proc {
+    [200,
+     { "Content-Type" => "text/plain" },
+     [Sidekiq::Queue.new.latency.to_s]]
+  }, via: :get
 
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
     concerns :exportable

@@ -2,9 +2,9 @@
 require 'rails_helper'
 
 describe 'collection', type: :feature, js: true do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
 
-  let(:collection) { FactoryGirl.create(:public_collection, user: user) }
+  let(:collection) { FactoryBot.create(:public_collection, user: user) }
 
   describe 'create collection' do
     before do

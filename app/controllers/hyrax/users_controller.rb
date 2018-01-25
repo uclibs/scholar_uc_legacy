@@ -27,33 +27,6 @@ module Hyrax
 
     protected
 
-      def base_query
-        filter_users_page(filter_unless_user_is_admin(exclude_admin_users_and_non_owners))
-      end
-
-      def filter_users_page(query)
-        return [nil] unless request.env['PATH_INFO'] == '/users'
-        query
-      end
-
-      def filter_unless_user_is_admin(query)
-        return [nil] if current_user.present? && current_user.admin?
-        query
-      end
-
-      def exclude_admin_users_and_non_owners
-        query = ''
-        appending = false
-        base = ::User.all
-        base.each do |user|
-          next unless user.admin? || user_work_count(user) < 1
-          query += " and " if appending
-          query += "id <> #{user.id}"
-          appending = true
-        end
-        query
-      end
-
       def user_work_count(user)
         Hyrax::WorkRelation.new.where(DepositSearchBuilder.depositor_field => user.user_key).count
       end
