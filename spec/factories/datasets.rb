@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-FactoryGirl.define do
+FactoryBot.define do
   factory :dataset, aliases: [:private_dataset], class: 'Dataset' do
     transient do
-      user { FactoryGirl.create(:user) }
+      user { FactoryBot.create(:user) }
     end
 
     title ["Test title"]
@@ -22,7 +22,7 @@ FactoryGirl.define do
 
     factory :dataset_with_one_file do
       before(:create) do |work, evaluator|
-        work.ordered_members << FactoryGirl.create(:file_set, user: evaluator.user, title: ['A Contained FileSet'], label: 'filename.pdf')
+        work.ordered_members << FactoryBot.create(:file_set, user: evaluator.user, title: ['A Contained FileSet'], label: 'filename.pdf')
       end
     end
   end

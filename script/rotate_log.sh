@@ -1,10 +1,9 @@
 #!/bin/sh
 
-# Move the logs file to a new directory so it isn't lost during deploy
-
-file_name=/srv/apps/curate_uc/log/production.log
+hostname=$1
+file_name=/mnt/common/scholar-logs/${hostname}_production.log
 current_time=$(date "+%Y.%m.%d-%H.%M.%S")
-new_fileName=/srv/apps/curate_uc-logs/production.log.$current_time
+new_fileName=/mnt/common/scholar-logs/${hostname}_archive/${hostname}_production.log.$current_time
 
 if [ -f $file_name ];
 then
@@ -12,10 +11,12 @@ then
   # Move the log file to a new directory and add timestamp
   mv $file_name $new_fileName
 
+  # Restart the app and generate a blank log file
+  touch $file_name
+  touch /srv/apps/curate_uc/tmp/restart.txt
+  
   # Compress the moved log file
   gzip $new_fileName
 
 fi
 
-# Restart the app and generate a blank log file
-touch /srv/apps/curate_uc/tmp/restart.txt

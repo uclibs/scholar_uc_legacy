@@ -24,6 +24,7 @@ $APP_DIRECTORY/script/kill_sidekiq.sh
 
 banner "starting Sidekiq"
 export PATH=$PATH:/srv/apps/.gem/ruby/2.4.0/bin
+export FITS_HOME=/opt/fits/fits
 export PATH=$PATH:/opt/fits/fits
 cd $APP_DIRECTORY
-bundle exec sidekiq -d -c 2 -q ingest -q default -q event -L log/sidekiq.log -C config/sidekiq.yml -e $ENVIRONMENT
+bundle exec sidekiq -d -c 2 -q ingest -q default -q event -q change -L log/sidekiq.log -C config/sidekiq.yml -e $ENVIRONMENT

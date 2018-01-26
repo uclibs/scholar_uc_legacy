@@ -24,14 +24,14 @@ describe WelcomeMailer do
     email.from.should == ["scholar@uc.edu"]
   end
   context 'when user is a student' do
-    let(:student_user) { FactoryGirl.create(:user, uc_affiliation: 'student') }
+    let(:student_user) { FactoryBot.create(:user, uc_affiliation: 'student') }
     let(:student_email) { described_class.welcome_email(student_user) }
     it 'sends a student specific welcome email' do
       student_email.subject.should == "Welcome to Scholar@UC, UC students!"
     end
   end
   context 'when user is NOT a student' do
-    let(:faculty_user) { FactoryGirl.create(:user, uc_affiliation: 'AnythingElse') }
+    let(:faculty_user) { FactoryBot.create(:user, uc_affiliation: 'AnythingElse') }
     let(:faculty_email) { described_class.welcome_email(faculty_user) }
     it 'sends the default welcome email to non-student users' do
       faculty_email.subject.should == "Welcome to Scholar@UC!"

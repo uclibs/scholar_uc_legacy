@@ -5,8 +5,8 @@ require 'rake'
 describe EmbargoMailer do
   context "an embargoed work" do
     let(:embargo_date) { Time.zone.today + 30 }
-    let(:user) { FactoryGirl.create(:user) }
-    let(:work) { FactoryGirl.create(:embargoed_generic_work, user: user, embargo_release_date: embargo_date) }
+    let(:user) { FactoryBot.create(:user) }
+    let(:work) { FactoryBot.create(:embargoed_generic_work, user: user, embargo_release_date: embargo_date) }
     before { described_class.deliveries = [] }
 
     it "sends the EmbargoMailer.notify email" do

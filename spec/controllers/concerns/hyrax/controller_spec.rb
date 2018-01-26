@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 describe Hyrax::Controller do
-  let(:resource) { FactoryGirl.create(:user) }
+  let(:resource) { FactoryBot.create(:user) }
   let(:dummy_class) { DummyClass.new }
 
   class DummyClass

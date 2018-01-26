@@ -12,6 +12,7 @@ module Scholar
     end
 
     def create
+      remove_trailing_whitespace
       super
       # the to_s_u method must be implemented for every model
       editors = params.to_unsafe_hash[curation_concern.class.to_s_u][:permissions_attributes]
@@ -23,6 +24,7 @@ module Scholar
     end
 
     def update
+      remove_trailing_whitespace
       super
       # the to_s_u method must be implemented for every model
       editors = params.to_unsafe_hash[curation_concern.class.to_s_u][:permissions_attributes]
@@ -40,6 +42,20 @@ module Scholar
     end
 
     private
+
+      def remove_trailing_whitespace
+        concern_type = curation_concern.class.to_s_u
+
+        params[concern_type].each do |key, value|
+          if value.class == Array
+            value.each_index do |idx|
+              value[idx] = value[idx].rstrip if value[idx].respond_to? :rstrip
+            end
+          elsif value.respond_to? :rstrip
+            params[concern_type][key] = value.rstrip
+          end
+        end
+      end
 
       def after_update_response
         temp_argument_error_fix

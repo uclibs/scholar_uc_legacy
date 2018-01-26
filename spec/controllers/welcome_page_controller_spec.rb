@@ -18,7 +18,7 @@ describe WelcomePageController, type: :controller do
     end
 
     describe 'without already waiving the page' do
-      let(:user) { FactoryGirl.create(:user, waived_welcome_page: false) }
+      let(:user) { FactoryBot.create(:user, waived_welcome_page: false) }
 
       describe '.user_waived_welcome_page?' do
         it 'returns the status of waived_welcome_page' do
@@ -68,7 +68,7 @@ describe WelcomePageController, type: :controller do
     end
 
     describe 'after waiving the page' do
-      let(:user) { FactoryGirl.create(:user, waived_welcome_page: true) }
+      let(:user) { FactoryBot.create(:user, waived_welcome_page: true) }
 
       describe '#index' do
         it 'renders the page' do

@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 describe 'dashboard works sorting', type: :feature do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
 
   let!(:work1) { create(:work, title: ["Alpha Kong"], user: user) }
   let!(:work2) { create(:work, title: ["Zeta Kong"], user: user) }

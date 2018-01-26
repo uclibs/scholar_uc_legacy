@@ -7,10 +7,10 @@
 # CAUTION - This script deletes files. Be careful where you point it!
 #
 
-LOG="log/riiif_cache_clean.log"
+LOG="/srv/apps/curate_uc/log/riiif_cache_clean.log"
 
 # Check that the cache directories...
-IMG_CACHE_DIR="/srv/apps/scholar-riiif-cache"
+IMG_CACHE_DIR="/mnt/common/scholar-riiif-cache"
 
 # ...is below a certain size...
 REDUCE_TO=500000 #500 mb
