@@ -183,6 +183,7 @@ Rails/OutputSafety:
 RSpec/AnyInstance:
   Exclude:
     - 'spec/controllers/hyrax/contact_form_controller_spec.rb'
+    - 'spec/controllers/hyrax/batch_edits_controller_spec.rb'
     - 'spec/features/admin_admin_set_spec.rb'
     - 'spec/controllers/hyrax/etds_controller_spec.rb'
     - 'spec/features/create_work_spec.rb'
