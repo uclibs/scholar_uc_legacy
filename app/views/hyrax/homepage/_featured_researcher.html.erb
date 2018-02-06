@@ -1,5 +1,9 @@
 <div class="img-responsive">
-  <%= editable_content_block @featured_researcher, true %>
+  <% if @featured_researcher.value.present? %>
+    <%= displayable_content_block @featured_researcher %>
+  <% else %>
+    <%= t('hyrax.homepage.featured_researcher.missing') %>
+  <% end %>
 </div>
 <div class="highlights-caption">
   FEATURED RESEARCHER

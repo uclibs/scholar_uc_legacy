@@ -4,7 +4,7 @@
     <li>
       <%= link_to hyrax.notifications_path do %>
         <%= t("hyrax.toolbar.notifications") %>
-        <%= render 'hyrax/users/notify_number' %>
+        <%= render_notifications(user: current_user) %>
       <% end %>
     </li>
     <li class="dropdown">
