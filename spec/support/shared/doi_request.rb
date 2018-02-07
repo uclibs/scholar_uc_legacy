@@ -90,6 +90,53 @@ shared_examples 'doi request' do |work_class|
     end
   end
 
+  context 'creating a work with private visibility' do
+    before do
+      login_as user
+      visit new_polymorphic_path(work_class)
+    end
+
+    it 'displays the request option in the work edit form' do
+      click_link "DOI" # switch tab
+      expect(page).to have_content "Yes, I would like to create a DOI"
+      expect(page).to have_content "Not now…but maybe later."
+    end
+
+    it 'mints a DOI for the work and the work can be edited' do
+      page.current_window.resize_to(5000, 5000)
+      click_link "DOI" # switch tab
+      choose('mint-doi')
+      click_link "Files" # switch tab
+      attach_file("files[]", Rails.root + "spec/fixtures/world.png", visible: false)
+      click_link "Metadata" # switch tab
+      title_element = find_by_id("#{work_label}_title")
+      title_element.set("My Test Work")
+      creator_element = find(:css, "input.#{work_label}_creator")
+      creator_element.set("Test User")
+      description_element = find_by_id("#{work_label}_alt_description")
+      description_element.set("Test description")
+      fill_in('Required Software', with: "database thingy") if work_class == Dataset
+      college_element = find_by_id("#{work_label}_college")
+      college_element.select("Business")
+      department_element = find_by_id("#{work_label}_department")
+      department_element.set("Marketing")
+      fill_in('Advisor', with: "Advisor Name") if [Etd, StudentWork].include?(work_class)
+      select 'Attribution-ShareAlike 4.0 International', from: "#{work_label}_rights"
+      fill_in('Publisher', with: 'tests')
+      choose("#{work_label}_visibility_restricted")
+      check('agreement')
+      click_on('Save')
+      expect(page).to have_content('My Test Work')
+      expect(page).to have_content('doi:10.5072/FK2')
+
+      click_link "Edit"
+      title_element = find_by_id("#{work_label}_title")
+      title_element.set("My Test Work 2")
+      click_on('Save')
+      expect(page).to have_content('My Test Work 2')
+    end
+  end
+
   context 'viewing a work' do
     context 'without setting a doi' do
       before { visit polymorphic_path(work_without_doi) }

@@ -13,6 +13,7 @@ Hydra::RemoteIdentifier.configure do |config|
       map.identifier_url :identifier_url
       # Make sure that this method both sets the identifier and persists the change!
       map.set_identifier do |o, value|
+        o.identifier_status = o.doi_status
         o.doi = value.fetch(:identifier)
         o.identifier_url = value.fetch(:identifier_url)
         o.save
