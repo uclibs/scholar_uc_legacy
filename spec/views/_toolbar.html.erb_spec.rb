@@ -37,7 +37,7 @@ describe '/_toolbar.html.erb', type: :view do
 
   it 'has dashboard links' do
     render
-    expect(rendered).to have_link 'My Dashboard', href: hyrax.dashboard_index_path
+    expect(rendered).to have_link 'My Dashboard', href: hyrax.dashboard_path
     expect(rendered).to have_link 'Transfers', href: hyrax.transfers_path
     expect(rendered).to have_link 'Highlights', href: hyrax.dashboard_highlights_path
     expect(rendered).to have_link 'Shares', href: hyrax.dashboard_shares_path

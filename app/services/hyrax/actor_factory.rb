@@ -8,7 +8,6 @@ module Hyrax
        CreateWithFilesActor,
        Hyrax::Actors::AddAsMemberOfCollectionsActor,
        Hyrax::Actors::AddToWorkActor,
-       Hyrax::Actors::AssignRepresentativeActor,
        Hyrax::Actors::AttachFilesActor,
        Hyrax::Actors::AttachMembersActor,
        Hyrax::Actors::ApplyOrderActor,

@@ -127,7 +127,7 @@ describe 'end to end behavior:', :workflow, :js do
     end
 
     it 'can view the dashboard' do
-      visit hyrax.dashboard_index_path
+      visit hyrax.dashboard_path
       expect(page).to have_content 'My Dashboard'
     end
 

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/uclibs/browse-everything.git
-  revision: 9e2cc163b8cd0087ac960ffa59464e0e0a169360
+  revision: 1e1e2db1522dcbab1233a30d959ce9564a294d23
   branch: master
   specs:
     browse-everything (0.14.2)
@@ -112,6 +112,9 @@ GEM
       activesupport (>= 3.0.0)
       rdf (~> 2.0, >= 2.0.2)
       rdf-vocab (~> 2.0)
+    active_attr (0.10.2)
+      activemodel (>= 3.0.2, < 5.2)
+      activesupport (>= 3.0.2, < 5.2)
     active_encode (0.1.1)
       activesupport
     active_fedora-noid (2.2.0)
@@ -144,8 +147,8 @@ GEM
       execjs
     awesome_nested_set (3.1.4)
       activerecord (>= 4.0.0, < 5.3)
-    aws-partitions (1.58.0)
-    aws-sdk-core (3.14.0)
+    aws-partitions (1.59.0)
+    aws-sdk-core (3.15.0)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
@@ -923,6 +926,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_attr
   brakeman
   browse-everything!
   byebug
