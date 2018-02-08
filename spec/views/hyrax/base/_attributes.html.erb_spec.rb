@@ -35,6 +35,6 @@ describe 'hyrax/base/_attributes.html.erb' do
     expect(rendered).to have_link(college, href: search_catalog_path('f[college_sim][]': college))
     expect(rendered).to have_link(department, href: search_catalog_path('f[department_sim][]': department))
     expect(rendered).to have_link(related_url)
-    expect(rendered).to have_link(href: hyrax.profile_path(submitter))
+    expect(rendered).to have_link(href: hyrax.dashboard_profile_path(submitter))
   end
 end
