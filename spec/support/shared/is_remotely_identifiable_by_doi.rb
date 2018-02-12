@@ -200,10 +200,20 @@ shared_examples 'is remotely identifiable by doi' do
               expect(subject.apply_doi_assignment_strategy(&perform_persistence_block)).to eq(returning_value)
             end
 
-            it 'does not update doi' do
+            it 'sets the doi to nil' do
+              subject.doi = "doi:foo"
+              subject.save
               expect {
                 subject.apply_doi_assignment_strategy(&perform_persistence_block)
-              }.not_to change(subject, :doi).from(nil)
+              }.to change(subject, :doi).to(nil)
+            end
+
+            it 'sets the existing identifier to nil' do
+              subject.existing_identifier = "doi:foo"
+              subject.save
+              expect {
+                subject.apply_doi_assignment_strategy(&perform_persistence_block)
+              }.to change(subject, :existing_identifier).to(nil)
             end
 
             it 'yields the subject' do

@@ -96,6 +96,8 @@ module RemotelyIdentifiedByDoi
 
       def not_now
         return false unless doi_assignment_strategy.to_s == RemotelyIdentifiedByDoi::NOT_NOW
+        self.doi = nil
+        self.existing_identifier = nil
         yield(self)
       end
   end
