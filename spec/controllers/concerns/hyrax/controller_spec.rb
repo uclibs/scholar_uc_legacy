@@ -35,7 +35,7 @@ describe Hyrax::Controller do
 
   describe 'landing_page' do
     it "has a landing_page set to the dashboard" do
-      expect(dummy_class.landing_page).to eq Hyrax::Engine.routes.url_helpers.dashboard_index_path
+      expect(dummy_class.landing_page).to eq Hyrax::Engine.routes.url_helpers.dashboard_path
     end
   end
 end

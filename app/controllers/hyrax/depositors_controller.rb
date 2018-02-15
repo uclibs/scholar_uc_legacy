@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 module Hyrax
   class DepositorsController < ApplicationController
-    include DepositorsControllerBehavior
+    include DenyAccessOverrideBehavior
 
     def send_proxy_depositor_added_messages(grantor, grantee)
       message_to_grantee = "#{grantor.name} has assigned you as a proxy depositor"

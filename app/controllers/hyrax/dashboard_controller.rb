@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 module Hyrax
   class DashboardController < ApplicationController
-    include Hyrax::DashboardControllerBehavior
+    include Blacklight::Base
 
-    layout 'dashboard'
+    with_themed_layout 'dashboard'
   end
 end

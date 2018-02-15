@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 module Hyrax
   class UsersController < ApplicationController
-    include Hyrax::UsersControllerBehavior
+    include Blacklight::SearchContext
 
     def show
       @presenter = Hyrax::UserProfilePresenter.new(@user, current_ability)

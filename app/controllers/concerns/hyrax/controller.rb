@@ -11,7 +11,7 @@ module Hyrax::Controller
   end
 
   def landing_page
-    Hyrax::Engine.routes.url_helpers.dashboard_index_path
+    Hyrax::Engine.routes.url_helpers.dashboard_path
   end
 
   private
