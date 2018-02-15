@@ -32,6 +32,7 @@ en:
           pdf_link: 'Request a copy of this PDF'
           audio_link: 'Request a copy of this audio file'
           video_link: 'Request a copy of this video'
+        adobe_reader_link: 'Download Adobe Acrobat Reader'
     footer:
       copyright_info_html: "<a href=\"https://commercialization.uc.edu/copyright-infringement\">Copyright Information</a>"
       copyright_html: "&copy; 2017 <a href=\"https://www.uc.edu/\"><u>University of Cincinnati</u></a>"
@@ -69,7 +70,7 @@ en:
       embargo:
         note_html: Set a date for future release
       open:
-        note_html: Make available to all<br />(see <a href="/creators_rights" target=\"_blank\">Creator's Rights</a> for more information) 
+        note_html: Make available to all<br />(see <a href="/creators_rights" target=\"_blank\">Creator's Rights</a> for more information)
         warning_html: ""
       private:
         note_html: Keep to myself with option to share
