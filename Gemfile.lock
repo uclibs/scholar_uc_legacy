@@ -942,6 +942,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.5)
   devise-multi_auth!
+  equivalent-xml
   factory_bot_rails
   fcrepo_wrapper
   hydra-remote_identifier!
