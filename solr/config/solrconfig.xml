@@ -107,6 +107,9 @@
           author_tesim
           subject_tesim
         </str>
+        <str name="bq">
+          {!terms f=has_model_ssim}Collection^50
+        </str>
         <str name="pf">
           all_text_timv^10
         </str>
