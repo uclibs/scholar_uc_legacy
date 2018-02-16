@@ -12,6 +12,7 @@ module RemotelyIdentifiedByDoi
       end
 
       property :identifier_url, predicate: ::RDF::URI.new('http://purl.org/dc/terms/identifier#doiManagementURI'), multiple: false
+      property :identifier_status, predicate: ::RDF::URI.new('http://purl.org/dc/terms/identifier#doiStatus'), multiple: false
       property :existing_identifier, predicate: ::RDF::URI.new('http://purl.org/dc/terms/identifier#unmanagedDOI'), multiple: false
 
       validates :publisher, presence: { message: 'is required for remote DOI minting', if: :remote_doi_assignment_strategy? }
@@ -22,7 +23,7 @@ module RemotelyIdentifiedByDoi
       def doi_status
         if visibility == Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC
           "public"
-        elsif locally_managed_remote_identifier?
+        elsif locally_managed_remote_identifier? && identifier_status != "reserved"
           "unavailable"
         else
           "reserved"
