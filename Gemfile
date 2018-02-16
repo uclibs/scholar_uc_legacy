@@ -109,3 +109,5 @@ group :development, :test do
   gem 'rubocop-rspec', '1.10.0'
   gem 'rails-controller-testing'
 end
+
+gem 'parser', '2.4.0.2'

@@ -956,6 +956,7 @@ DEPENDENCIES
   omniauth-openid
   omniauth-shibboleth
   orcid!
+  parser (= 2.4.0.2)
   poltergeist
   rack!
   rails (= 5.0.3)
