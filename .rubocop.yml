@@ -13,6 +13,7 @@ AllCops:
     - 'app/services/report.rb'
     - 'app/services/work_loader.rb'
     - 'app/services/hyrax/actor_factory.rb'
+    - 'app/services/hyrax/user_stat_importer.rb'
     - 'spec/services/hyrax/actor_factory_spec.rb'
     - 'db/**/*'
     - 'lib/tasks/batch.rake'
