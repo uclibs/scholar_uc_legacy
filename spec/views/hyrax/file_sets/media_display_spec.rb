@@ -64,6 +64,16 @@ describe 'hyrax/file_sets/media_display', type: :view do
   end
 
   describe 'pdf' do
+    context 'when the presenter is a pdf' do
+      before do
+        render 'hyrax/file_sets/show_pdf_helper', file_set: small_file
+      end
+
+      it 'renders the Adobe Reader help link' do
+        expect(rendered).to have_link t('hyrax.file_set.show.adobe_reader_link')
+      end
+    end
+
     context 'when the PDF is smaller than the max download size' do
       before do
         render 'hyrax/file_sets/media_display/pdf', file_set: small_file
