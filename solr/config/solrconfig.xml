@@ -100,17 +100,19 @@
             those searches. You may also be interested in:
             http://wiki.apache.org/solr/LocalParams
        -->
-        <str name="qf">
-          id
-          active_fedora_model_ssi
-          title_tesim
-          author_tesim
-          subject_tesim
-        </str>
-        <str name="pf">
-          all_text_timv^10
-        </str>
-
+       <str name="qf">
+         id
+         active_fedora_model_ssi
+         title_tesim
+         author_tesim
+         subject_tesim
+       </str>
+       <str name="pf">
+         all_text_timv^10
+       </str>
+       <str name="bq">
+         {!terms f=has_model_ssim}Collection^20
+       </str>
        <str name="author_qf">
           author_tesim
        </str>
