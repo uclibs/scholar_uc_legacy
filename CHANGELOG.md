@@ -1,3 +1,20 @@
+### 3.0.3 2/21/2018
+* Added scholar@uc.edu to embargo mailer.
+* Updated ORCID gem to latest version.
+* Included manual test script in code base.
+* Removed the proxy depositor from catalog index view.
+* Updated target ruby version for travis.
+* Added Adobe Reader link to pages with pdf.
+* Boosted Collections in catalog display results.
+* Bug fixes
+    * Fixed manually entered DOIs.
+    * Fixed facet display problem in dashboard.
+    * Fixed rights mismatch in batch edit.
+    * Fixed editing with a reserved DOI.
+    * Fixed analytics in the dashboard.
+    * Fixed line breaks in attributes renderers.
+
+
 ### 3.0.2 1/16/2018
 * Added Office of Research lockup on homepage.
 * Set titles for static pages.
