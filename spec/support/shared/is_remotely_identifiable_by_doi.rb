@@ -43,12 +43,22 @@ shared_examples 'is remotely identifiable by doi' do
       before { work.stub(:visibility).and_return(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_EMBARGO) }
       context 'and a DOI has already been minted' do
         before { work.stub(:locally_managed_remote_identifier?).and_return(true) }
-        it 'is "unavailable"' do
-          expect(work.doi_status).to eq("unavailable")
+
+        context 'and the DOI is still reserved' do
+          before { work.stub(:identifier_status).and_return("reserved") }
+          it 'is "unavailable"' do
+            expect(work.doi_status).to eq("reserved")
+          end
+        end
+        context 'and the DOI is not still reserved' do
+          before { work.stub(:identifier_status).and_return("public") }
+          it 'is "unavailable"' do
+            expect(work.doi_status).to eq("unavailable")
+          end
         end
       end
 
-      context 'and a DOI has already been minted' do
+      context 'and a DOI has not already been minted' do
         before { work.stub(:locally_managed_remote_identifier?).and_return(false) }
         it 'is "reserved"' do
           expect(work.doi_status).to eq("reserved")
@@ -60,8 +70,18 @@ shared_examples 'is remotely identifiable by doi' do
       before { work.stub(:visibility).and_return(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_AUTHENTICATED) }
       context 'and a DOI has already been minted' do
         before { work.stub(:locally_managed_remote_identifier?).and_return(true) }
-        it 'is "unavailable"' do
-          expect(work.doi_status).to eq("unavailable")
+
+        context 'and the DOI is still reserved' do
+          before { work.stub(:identifier_status).and_return("reserved") }
+          it 'is "unavailable"' do
+            expect(work.doi_status).to eq("reserved")
+          end
+        end
+        context 'and the DOI is not still reserved' do
+          before { work.stub(:identifier_status).and_return("public") }
+          it 'is "unavailable"' do
+            expect(work.doi_status).to eq("unavailable")
+          end
         end
       end
 
@@ -77,12 +97,22 @@ shared_examples 'is remotely identifiable by doi' do
       before { work.stub(:visibility).and_return(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PRIVATE) }
       context 'and a DOI has already been minted' do
         before { work.stub(:locally_managed_remote_identifier?).and_return(true) }
-        it 'is "unavailable"' do
-          expect(work.doi_status).to eq("unavailable")
+
+        context 'and the DOI is still reserved' do
+          before { work.stub(:identifier_status).and_return("reserved") }
+          it 'is "unavailable"' do
+            expect(work.doi_status).to eq("reserved")
+          end
+        end
+        context 'and the DOI is not still reserved' do
+          before { work.stub(:identifier_status).and_return("public") }
+          it 'is "unavailable"' do
+            expect(work.doi_status).to eq("unavailable")
+          end
         end
       end
 
-      context 'and a DOI has already been minted' do
+      context 'and a DOI has not already been minted' do
         before { work.stub(:locally_managed_remote_identifier?).and_return(false) }
         it 'is "reserved"' do
           expect(work.doi_status).to eq("reserved")
@@ -102,6 +132,8 @@ shared_examples 'is remotely identifiable by doi' do
     it { should respond_to(:doi_assignment_strategy) }
     it { should respond_to(:identifier_url) }
     it { should respond_to(:identifier_url=) }
+    it { should respond_to(:identifier_status) }
+    it { should respond_to(:identifier_status=) }
 
     context 'with valid attributes' do
       let(:attributes) {
@@ -184,10 +216,16 @@ shared_examples 'is remotely identifiable by doi' do
               expect { |b| subject.apply_doi_assignment_strategy(&b) }.to yield_with_args(subject)
             end
 
-            it 'does not set doi attribute' do
+            it 'does not set identifier_url attribute' do
               expect {
                 subject.apply_doi_assignment_strategy(&perform_persistence_block)
               }.not_to change(subject, :identifier_url)
+            end
+
+            it 'does not set doi_status' do
+              expect {
+                subject.apply_doi_assignment_strategy(&perform_persistence_block)
+              }.not_to change(subject, :doi_status)
             end
           end
 
@@ -200,10 +238,20 @@ shared_examples 'is remotely identifiable by doi' do
               expect(subject.apply_doi_assignment_strategy(&perform_persistence_block)).to eq(returning_value)
             end
 
-            it 'does not update doi' do
+            it 'sets the doi to nil' do
+              subject.doi = "doi:foo"
+              subject.save
               expect {
                 subject.apply_doi_assignment_strategy(&perform_persistence_block)
-              }.not_to change(subject, :doi).from(nil)
+              }.to change(subject, :doi).to(nil)
+            end
+
+            it 'sets the existing identifier to nil' do
+              subject.existing_identifier = "doi:foo"
+              subject.save
+              expect {
+                subject.apply_doi_assignment_strategy(&perform_persistence_block)
+              }.to change(subject, :existing_identifier).to(nil)
             end
 
             it 'yields the subject' do
@@ -215,6 +263,12 @@ shared_examples 'is remotely identifiable by doi' do
                 subject.apply_doi_assignment_strategy(&perform_persistence_block)
               }.not_to change(subject, :identifier_url)
             end
+
+            it 'does not set doi_status' do
+              expect {
+                subject.apply_doi_assignment_strategy(&perform_persistence_block)
+              }.not_to change(subject, :doi_status)
+            end
           end
 
           context 'with request for minting' do
@@ -225,16 +279,12 @@ shared_examples 'is remotely identifiable by doi' do
               end
               it_behaves_like 'minting behavior returning value'
               let(:returning_value) { true }
+
+              ## These specs are odd - the real spec is the before block above
               it 'requests a minting' do
                 expect {
                   subject.apply_doi_assignment_strategy(&perform_persistence_block)
                 }.not_to change(subject, :doi).from(nil)
-              end
-              ## These specs are odd - the real spec is the before block above
-              it 'sets identifier_url attribute' do
-                expect {
-                  subject.apply_doi_assignment_strategy(&perform_persistence_block)
-                }.not_to change(subject, :identifier_url)
               end
             end
 

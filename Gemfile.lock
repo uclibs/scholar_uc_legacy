@@ -39,7 +39,7 @@ GIT
 
 GIT
   remote: git://github.com/uclibs/orcid.git
-  revision: 728d7dcdf1ac02de79372c10811a0abe93465668
+  revision: 3cc4c0db2c6ca641d72706a4c671602a08b4a8f8
   branch: rails-5
   specs:
     orcid (0.9.1)
@@ -47,7 +47,7 @@ GIT
       figaro
       hashie (= 3.4.6)
       mappy
-      nokogiri (= 1.7.2)
+      nokogiri
       omniauth-oauth2 (< 1.4)
       omniauth-orcid (= 0.6)
       railties (= 5.0.3)
@@ -445,7 +445,7 @@ GEM
       signet
       tinymce-rails (~> 4.1)
       tinymce-rails-imageupload (~> 4.0.17.beta)
-    i18n (0.9.1)
+    i18n (0.9.4)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     iiif-presentation (0.2.0)
@@ -546,7 +546,7 @@ GEM
     logging (2.2.2)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
-    loofah (2.1.1)
+    loofah (2.2.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.0)
@@ -563,9 +563,9 @@ GEM
     mime-types-data (3.2016.0521)
     mini_magick (4.8.0)
     mini_mime (1.0.0)
-    mini_portile2 (2.1.0)
-    minitest (5.11.1)
-    multi_json (1.13.0)
+    mini_portile2 (2.3.0)
+    minitest (5.11.3)
+    multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     mysql2 (0.4.10)
@@ -576,8 +576,8 @@ GEM
     netrc (0.11.0)
     nio4r (2.2.0)
     noid (0.9.0)
-    nokogiri (1.7.2)
-      mini_portile2 (~> 2.1.0)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
     oauth (0.5.4)
     oauth2 (1.4.0)
       faraday (>= 0.8, < 0.13)
@@ -894,7 +894,7 @@ GEM
       actionpack (>= 3.1)
       jquery-rails
       railties (>= 3.1)
-    tzinfo (1.2.4)
+    tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uber (0.1.0)
     uglifier (4.1.3)
@@ -942,6 +942,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.5)
   devise-multi_auth!
+  equivalent-xml
   factory_bot_rails
   fcrepo_wrapper
   hydra-remote_identifier!
@@ -983,4 +984,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

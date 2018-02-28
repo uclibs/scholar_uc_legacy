@@ -53,6 +53,8 @@ Capybara.javascript_driver = :poltergeist
 ActiveRecord::Migration.maintain_test_schema!
 
 require 'shoulda/matchers'
+require 'equivalent-xml'
+require 'equivalent-xml/rspec_matchers'
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec

@@ -4,7 +4,7 @@ class EmbargoMailer < ActionMailer::Base
     @work_title = doc_name
     @days_left = days_left
     mail(from: "scholar@uc.edu",
-         to: email,
+         to: [email, "scholar@uc.edu"],
          subject: 'Embargoed Work Reminder')
   end
 end

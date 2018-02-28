@@ -2,7 +2,7 @@ require: rubocop-rspec
 inherit_from: .rubocop_todo.yml
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.4
   DisplayCopNames: true
   Include:
     - '**/Rakefile'
@@ -13,6 +13,7 @@ AllCops:
     - 'app/services/report.rb'
     - 'app/services/work_loader.rb'
     - 'app/services/hyrax/actor_factory.rb'
+    - 'app/services/hyrax/user_stat_importer.rb'
     - 'spec/services/hyrax/actor_factory_spec.rb'
     - 'db/**/*'
     - 'lib/tasks/batch.rake'
@@ -183,6 +184,7 @@ Rails/OutputSafety:
 RSpec/AnyInstance:
   Exclude:
     - 'spec/controllers/hyrax/contact_form_controller_spec.rb'
+    - 'spec/controllers/hyrax/batch_edits_controller_spec.rb'
     - 'spec/features/admin_admin_set_spec.rb'
     - 'spec/controllers/hyrax/etds_controller_spec.rb'
     - 'spec/features/create_work_spec.rb'

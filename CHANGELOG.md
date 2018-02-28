@@ -1,3 +1,22 @@
+### 3.0.3 2/21/2018
+* Boosted Collections in catalog display results, when sorting by relevance.
+* Added scholar@uc.edu (Scholar@UC Team) to embargo mailer.
+* Updated ORCID gem to latest version.
+* Included manual test script in code base.
+* Removed the proxy depositor from catalog display results.
+* Updated target ruby version for travis.
+* Restored Adobe Reader link to display pages for works with a pdf.
+* Bug fixes
+    * Restored the ability to update or delete a manually entered DOI.
+    * Restored the ability to edit embargoed or private works with a reserved DOI.
+    * Fixed analytics reporting on the dashboard.
+    * Fixed facet display misalignment when viewing "My Works."
+    * Fixed line breaks in attributes renderers for text fields on displays of works.
+    * Restored the ability to perform batch edits of multiple works from the dashboard, including the ability to make changes to rights of multiple works.
+    * Restored Kaltura as a cloud provider when adding files to works.
+    * Fixed the issue that was resulting in blank thumbnails for some PDFs.  (Thumbnails will be regenerated for these works after fix has been deployed.)
+
+
 ### 3.0.2 1/16/2018
 * Added Office of Research lockup on homepage.
 * Set titles for static pages.
