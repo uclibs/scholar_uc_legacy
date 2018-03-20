@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
 
-gem 'hyrax', '1.0.5'
+gem 'hyrax', git: 'https://github.com/samvera/hyrax.git', tag: 'v2.1.0.beta1'
 
 # repository manager
 gem 'hydra-role-management'
