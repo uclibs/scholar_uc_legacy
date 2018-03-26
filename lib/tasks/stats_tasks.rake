@@ -3,7 +3,7 @@ namespace :hyrax do
   namespace :stats do
     desc "Cache work view, file view & file download stats for all users"
     task user_stats: :environment do
-      importer = Hyrax::UserStatImporter.new(verbose: true, logging: true, delay_secs: 1)
+      importer = Hyrax::UserStatImporter.new(verbose: true, logging: true, delay_secs: 2)
       importer.import
     end
   end
