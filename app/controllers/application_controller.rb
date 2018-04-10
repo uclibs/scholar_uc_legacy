@@ -24,10 +24,14 @@ class ApplicationController < ActionController::Base
     end
 
     # override devise helper and route to CC.new when parameter is set
-    def after_sign_in_path_for(_resource)
+    def after_sign_in_path_for(resource)
       cookies[:login_type] = "local"
       return root_path unless parameter_set?
-      route_to_correct_path
+      if !resource.waived_welcome_page
+        Rails.application.routes.url_helpers.welcome_page_index_path
+      else
+        route_to_correct_path
+      end
     end
 
     def after_sign_out_path_for(_resource_or_scope)
