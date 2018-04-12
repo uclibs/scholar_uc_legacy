@@ -41,6 +41,40 @@ describe 'hyrax/file_sets/media_display', type: :view do
                         solr_document: large_solr_document)
   end
 
+  describe 'universal viewer' do
+    let(:doc) do
+      SolrDocument.new(id: '12345678',
+                       title_tesim: ['Doc title'],
+                       has_model_ssim: ['GenericWork'])
+    end
+    let(:presenter) { ImagePresenter.new(doc, nil) }
+
+    context 'when there are viewable images' do
+      before do
+        allow(presenter).to receive(:members_include_viewable_image?).and_return(true)
+        @presenter = presenter
+        render 'hyrax/file_sets/media_display/universal_viewer', file_set: small_file
+      end
+
+      it 'renders the universal viewer' do
+        expect(rendered).to include 'embed.js'
+      end
+    end
+
+    context 'when there are no viewable images' do
+      before do
+        allow(presenter).to receive(:members_include_viewable_image?).and_return(false)
+        allow(view).to receive(:thumbnail_url).and_return('asdf')
+        @presenter = presenter
+        render 'hyrax/file_sets/media_display/universal_viewer', file_set: small_file
+      end
+
+      it 'does not render the universal viewer' do
+        expect(rendered).not_to include 'embed.js'
+      end
+    end
+  end
+
   describe 'image' do
     context 'when the image is smaller than the max download size' do
       before do

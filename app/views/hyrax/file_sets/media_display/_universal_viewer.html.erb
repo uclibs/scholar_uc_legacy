@@ -1,4 +1,4 @@
-  <% if file_set.mime_type == "image/gif" %>
+<% if file_set.mime_type == "image/gif" || !@presenter.members_include_viewable_image? %>
     <%= image_tag thumbnail_url(file_set),
           class: "representative-media",
           alt: "",
