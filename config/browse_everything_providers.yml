@@ -6,7 +6,3 @@
  box:
    :client_id: bamboo_browse_everything_box_id
    :client_secret: bamboo_browse_everything_box_secret
- kaltura:
-   :partner_id: bamboo_browse_everything_kaltura_id
-   :administrator_secret: bamboo_browse_everything_kaltura_secret
-   :service_url: 'https://www.kaltura.com'

@@ -62,7 +62,7 @@ en:
     share_button: "Contribute"
     terms_of_use_html: "<a class=\"a\" href=\"/terms\">Scholar@UC Terms of Use</a>"
     upload:
-      cloud_timeout_message_html: "If you have files on cloud storage sites such as Box, Dropbox, Google Drive, or Kaltura, you can click the \"Browse cloud files\" button to select and upload those files directly to Scholar@UC.<br /><br />Please note that if you upload a large number of files within a short period of time, the cloud provider may not be able to accommodate your request. If you experience any errors uploading from the cloud, let us know via the %{contact_href}."
+      cloud_timeout_message_html: "If you have files on cloud storage sites such as Box, you can click the \"Browse cloud files\" button to select and upload those files directly to Scholar@UC.<br /><br />Please note that if you upload a large number of files within a short period of time, the cloud provider may not be able to accommodate your request. If you experience any errors uploading from the cloud, let us know via the %{contact_href}."
     visibility:
       authenticated:
         text: 'University of Cincinnati'
