@@ -1,5 +1,6 @@
 en:
   hyrax:
+    deposit_agreement: "Distribution License"
     account_name:       "My Institution Account Id"
     base:
       form_files:

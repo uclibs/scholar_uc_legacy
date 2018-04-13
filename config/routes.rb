@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   get 'student_instructions' => 'static#student_instructions'
   get 'doi_help' => 'static#doi_help'
   get 'login' => 'static#login'
+  get 'distribution_license_request' => 'hyrax/static#agreement'
 
   get 'sitemap.xml' => 'sitemaps#index', format: 'xml', as: :sitemap
   # route for custom error pages issue #1056

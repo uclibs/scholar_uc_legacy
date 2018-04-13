@@ -1,7 +1,7 @@
 <% content_for :page_title, "FAQ // #{application_name}" %>
 
 <h2>Frequently Asked Questions</h2>
-      
+
 <ul>
   <li><a href="#faq_1234">If I have a problem with the system, where do I go for assitance?</a></li>
   <li><a href="#faq_951">How can I allow someone else to submit works on my behalf?</a></li>
@@ -78,7 +78,7 @@
   May I publish, contribute, or otherwise distribute my content elsewhere?
 </p>
 <blockquote>
-  Yes. When you submit content to <%=t('hyrax.product_name') %> you agree to a non-exclusive <a href="/agreement">distribution license</a> that grants UC the right to enhance metadata, to replicate the content for preservation, and to make the content available through computer interfaces. This license in no way prevents you from distributing your content through other channels.
+  Yes. When you submit content to <%=t('hyrax.product_name') %> you agree to a non-exclusive <%= link_to t('hyrax.deposit_agreement'), '/distribution_license_request' %> that grants UC the right to enhance metadata, to replicate the content for preservation, and to make the content available through computer interfaces. This license in no way prevents you from distributing your content through other channels.
 </blockquote>
 
 <p><a name="faq_1379" id="faq_1379"></a>
@@ -125,7 +125,7 @@
   What’s the difference between delegates, editors, and groups?
 </p>
 <blockquote>
-  Delegates are people you authorize who can create, edit, and delete works on your behalf. They can do anything you can do, so please exercise discretion when authorizing another person as a delegate. Your delegates may be managed from the My Delegates page. 
+  Delegates are people you authorize who can create, edit, and delete works on your behalf. They can do anything you can do, so please exercise discretion when authorizing another person as a delegate. Your delegates may be managed from the My Delegates page.
   <br><br>
   Editors are individuals to whom you have granted the ability to view and make changes to a specific work. If you would like to grant a group of individuals these rights, you can create a Group on the My Groups page. For example, if you work with a group of researchers on a single work, you can create a group of those researchers and grant that group viewing and editing privileges.
   <br><br>
