@@ -10,8 +10,7 @@ gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth', branch: 'rails-5'
 gem 'riiif', '~> 0.2.0'
 gem 'iiif_manifest'
 gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
-gem 'browse-everything', github: 'uclibs/browse-everything', branch: 'master'
-gem 'kaltura', '0.1.1'
+gem 'browse-everything', '0.14.2'
 
 # Shibboleth
 gem 'omniauth-openid'
