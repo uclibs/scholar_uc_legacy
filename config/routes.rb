@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   mount Hydra::RoleManagement::Engine => '/'
 
+  resources :users, only: [:index], constraints: { format: :html }, controller: 'display_users'
+
   resources :welcome, only: 'index'
   resources :welcome_page, only: [:index, :create]
   root 'hyrax/homepage#index'
