@@ -38,5 +38,11 @@ FactoryBot.define do
         work.representative_id = work.members[0].id
       end
     end
+
+    trait :with_public_embargo do
+      after(:build) do |work, evaluator|
+        work.embargo = FactoryBot.create(:public_embargo, embargo_release_date: evaluator.embargo_release_date)
+      end
+    end
   end
 end
