@@ -5,7 +5,7 @@ module DisplaysImage
   extend ActiveSupport::Concern
 
   def display_image
-    return nil unless FileSet.exists?(id) && image_modifier == true
+    return nil unless FileSet.exists?(id) && image_modifier == true && current_ability.can?(:read, id)
 
     # TODO: this is slow, find a better way (perhaps index iiif url):
 
