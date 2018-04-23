@@ -98,9 +98,13 @@ describe "Users Spec", type: :feature do
     end
   end
 
-  describe "People Page", type: :feature do
+  describe "People Page", type: :feature, js: true do
     let!(:user) { create(:user) }
+    let!(:user1) { create(:user, display_name: 'Alpha, Alpha', last_name: 'Alpha') }
+    let!(:user2) { create(:user, display_name: 'Zeta, Zeta', last_name: 'Zeta') }
     let(:profile_path) { Hyrax::Engine.routes.url_helpers.profile_path(user) }
+    let(:profile1_path) { Hyrax::Engine.routes.url_helpers.profile_path(user1) }
+    let(:profile2_path) { Hyrax::Engine.routes.url_helpers.profile_path(user2) }
     let(:profiles_path) { Hyrax::Engine.routes.url_helpers.profiles_path }
 
     context "when the user doesn't own works" do
@@ -115,6 +119,8 @@ describe "Users Spec", type: :feature do
 
     context "when the user owns works" do
       let!(:work) { FactoryBot.create(:work, user: user) }
+      let!(:work1) { FactoryBot.create(:work, user: user1) }
+      let!(:work2) { FactoryBot.create(:work, user: user2) }
 
       before do
         visit profiles_path
@@ -122,6 +128,36 @@ describe "Users Spec", type: :feature do
 
       it 'includes the user in the display' do
         expect(page).to have_xpath("//td/a[@href='#{profile_path}?locale=en']")
+        expect(page).to have_xpath("//td/a[@href='#{profile_path}?locale=en']")
+      end
+
+      context "allows user name sorting" do
+        before do
+          user1 # create the collections by referencing them
+          user2
+          sign_in user1
+          visit profiles_path
+        end
+
+        it "has user name for people" do
+          expect(page).to have_content(user1.last_name)
+        end
+
+        it "allows changing sort order" do
+          expect(page).to have_content(user1.last_name)
+          expect(page).to have_content(user2.last_name)
+
+          default_order = User.order(:last_name).sort.map { |user| page.body.index(user.last_name) }
+          expect(default_order).to eq(default_order.sort)
+
+          find(:css, "#name").click
+
+          expect(page).to have_content(user1.last_name)
+          expect(page).to have_content(user2.last_name)
+
+          post_click_order = User.order(:last_name).map { |user| page.body.index(user.last_name) }
+          expect(post_click_order).to eq(post_click_order.sort!)
+        end
       end
     end
 

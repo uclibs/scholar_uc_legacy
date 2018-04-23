@@ -17,6 +17,7 @@ These tasks are usually performed on http://scholar-qa.uc.edu after a deployment
 1. Verify that each user is getting a work tally.
 1. Verify that College and Department are displaying.
 1. Verify that People Search is working.
+1. Verify that Contributor is sortable.
 
 ### Static Pages
 1. Verify that links are working on About page.

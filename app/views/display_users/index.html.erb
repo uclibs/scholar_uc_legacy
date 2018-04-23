@@ -7,9 +7,8 @@
     <thead>
         <tr>
             <th scope="col">Avatar</th>
-            <th class="sorts" scope="col"><i id="name" class="<%=params[:sort].blank? ? 'caret up' : params[:sort]== "name desc" ? 'caret' : params[:sort]== "name" ? 'caret up' : ''%>"></i> User Name</th>
-            <th class="sorts" scope="col"><i id="login" class="<%=params[:sort]== "login desc" ? 'caret' : params[:sort]== "login" ? 'caret up' : ''%>"></i> User Id</th>
-            <th class="sorts" scope="col"><i id="department" class="<%=params[:sort]== "department desc" ? 'caret' : params[:sort]== "department" ? 'caret up' : ''%>"></i> College & Department</th>
+            <th class="sorts" scope="col"><i id="name" class="<%=params[:sort].blank? ? 'caret up' : params[:sort]== "name desc" ? 'caret' : params[:sort]== "name" ? 'caret up' : ''%>"></i> Contributor</th>
+            <th scope="col">College & Department</th>
             <th scope="col">Works Created</th>
         </tr>
     </thead>
@@ -23,8 +22,7 @@
               <% end %>
             <% end %>
           </td>
-          <td><%= link_to user.name, hyrax.profile_path(user) %></td>
-          <td><%= link_to user.user_key, hyrax.profile_path(user) %></td>
+          <td><%= link_to user.name_for_people_page, hyrax.profile_path(user) %></td>
           <td><%= user.full_department %></td>
           <td><%= number_of_works(user) %></td>
 	      </tr>
