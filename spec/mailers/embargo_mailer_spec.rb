@@ -14,7 +14,7 @@ describe EmbargoMailer do
       Rake::Task.define_task(:environment)
       work
 
-      Rake::Task['embargo_manager:release'].invoke
+      Rake::Task['embargo_manager:notify'].invoke
       expect(described_class.deliveries.length).to eq(1)
     end
   end

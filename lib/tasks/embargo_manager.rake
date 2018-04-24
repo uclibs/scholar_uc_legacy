@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-namespace :embargo_manager do
+namespace :embargo_manager do # rubocop:disable Metrics/BlockLength
   desc 'Starts EmbargoWorker to manage expired embargoes'
-  task release: :environment do
+  task notify: :environment do
     # Controls when reminder emails are sent out for expiring embargoed works.
     FOURTEEN_DAYS = 14
     THIRTY_DAYS = 30
@@ -24,5 +24,15 @@ namespace :embargo_manager do
         EmbargoMailer.notify(receiver, mail_contents, THIRTY_DAYS).deliver
       end
     end
+  end
+
+  task :release, [:date] => [:environment] do |_t, args|
+    date = args.fetch(:date, nil)
+    expiration_date = if date
+                        Date.parse(date)
+                      else
+                        Time.zone.today
+                      end
+    ExpirationService.call(expiration_date)
   end
 end
