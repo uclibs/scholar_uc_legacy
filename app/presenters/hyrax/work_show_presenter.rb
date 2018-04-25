@@ -7,5 +7,9 @@ module Hyrax
       return '' if representative_presenter.nil?
       Hyrax::Engine.routes.url_helpers.download_url(representative_presenter, host: request.host)
     end
+
+    def members_include_viewable_image?
+      member_presenters.any? { |presenter| current_ability.can?(:read, presenter.id) }
+    end
   end
 end
