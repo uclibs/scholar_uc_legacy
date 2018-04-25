@@ -11,6 +11,7 @@ gem 'riiif', '~> 0.2.0'
 gem 'iiif_manifest'
 gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
 gem 'browse-everything', '0.14.2'
+gem 'pul_uv_rails', '2.0.1'
 
 # Shibboleth
 gem 'omniauth-openid'

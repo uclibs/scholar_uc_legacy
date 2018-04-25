@@ -1152,6 +1152,7 @@ GEM
     power_converter (0.1.2)
     powerpack (0.1.1)
     public_suffix (3.0.1)
+    pul_uv_rails (2.0.1)
     qa (1.2.0)
       activerecord-import
       deprecation
@@ -1495,6 +1496,7 @@ DEPENDENCIES
   omniauth-shibboleth
   orcid!
   poltergeist
+  pul_uv_rails (= 2.0.1)
   rack!
   rails (= 5.0.3)
   rails-controller-testing

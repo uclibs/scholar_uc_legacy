@@ -2,6 +2,9 @@
 require 'rails_helper'
 
 describe Hyrax::WorkShowPresenter do
+  let(:user)    { create(:user) }
+  let(:ability) { Ability.new(user) }
+  let!(:work)   { build(:public_generic_work) }
   let(:solr_document) { SolrDocument.new(work.to_solr) }
   let(:presenter) { described_class.new(solr_document, ability) }
 
