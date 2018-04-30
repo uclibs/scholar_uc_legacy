@@ -43,14 +43,14 @@ class WorkAndFileIndex < ApplicationRecord
     def remove_deleted_works
       (indexed_work_ids - all_work_ids).each do |id|
         work_index_entry = find_by(object_id: id)
-        work_index_entry&.destroy
+        work_index_entry.destroy
       end
     end
 
     def remove_deleted_files
       (indexed_file_ids - all_file_ids).each do |id|
         file_index_entry = find_by(object_id: id)
-        file_index_entry&.destroy
+        file_index_entry.destroy
       end
     end
 

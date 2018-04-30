@@ -1,4 +1,8 @@
 # frozen_string_literal: true
+require 'legato'
+require 'hyrax/pageview'
+require 'hyrax/download'
+
 module Hyrax
   class CustomStatImporter
     attr_reader :start_date, :object
@@ -20,29 +24,41 @@ module Hyrax
     end
 
     def import
-      stats = {}
       user = ::User.find_by_email(object.user_email)
 
       case object.object_type
       when "work"
-        work = Hyrax::WorkRelation.new.find(object.object_id)
+        begin
+          work = Hyrax::WorkRelation.new.find(object.object_id)
 
-        work_stats = rescue_and_retry("Retried WorkViewStat on #{user} for work #{work.id} too many times.") { WorkViewStat.statistics(work, start_date, user.id) }
-        stats = tally_results(work_stats, :work_views, stats) if work_stats.present?
-        delay
+          rescue_and_retry("Retried WorkViewStat on #{user} for work #{work.id} too many times.") do
+            WorkViewStat.statistics(work, start_date, user.id)
+          end
+
+          delay
+        rescue Exception => ex
+          puts "#{ex.message}"
+          return
+        end
       when "file"
-        file = ::FileSet.find(object.object_id)
+        begin
+          file = ::FileSet.find(object.object_id)
 
-        view_stats = rescue_and_retry("Retried FileViewStat on #{user} for file #{file.id} too many times.") { FileViewStat.statistics(file, start_date, user.id) }
-        stats = tally_results(view_stats, :views, stats) if view_stats.present?
-        delay
+          rescue_and_retry("Retried FileViewStat on #{user} for file #{file.id} too many times.") do
+            FileViewStat.statistics(file, start_date, user.id)
+          end
+          delay
 
-        dl_stats = rescue_and_retry("Retried FileDownloadStat on #{user} for file #{file.id} too many times.") { FileDownloadStat.statistics(file, start_date, user.id) }
-        stats = tally_results(dl_stats, :downloads, stats) if dl_stats.present?
-        delay
+          rescue_and_retry("Retried FileDownloadStat on #{user} for file #{file.id} too many times.") do
+            FileDownloadStat.statistics(file, start_date, user.id)
+          end
+          delay
+        rescue Exception => ex
+          puts "#{ex.message}"
+          return
+        end
       end
 
-      create_or_update_user_stats(stats, user)
       object.update_stats_last_gathered
     end
 
@@ -65,35 +81,6 @@ module Hyrax
             log_message fail_message
             log_message "Last exception #{e}"
           end
-        end
-      end
-
-      def tally_results(current_stats, stat_name, total_stats)
-        current_stats.each do |stats|
-          # Exclude the stats from today since it will only be a partial day's worth of data
-          break if stats.date == Time.zone.today
-
-          date_key = stats.date.to_s
-          old_count = total_stats[date_key] ? total_stats[date_key].fetch(stat_name) { 0 } : 0
-          new_count = old_count + stats.method(stat_name).call
-
-          old_values = total_stats[date_key] || {}
-          total_stats.store(date_key, old_values)
-          total_stats[date_key].store(stat_name, new_count)
-        end
-        total_stats
-      end
-
-      def create_or_update_user_stats(stats, user)
-        stats.each do |date_string, data|
-          date = Time.zone.parse(date_string)
-
-          user_stat = UserStat.where(user_id: user.id, date: date).first_or_initialize(user_id: user.id, date: date)
-
-          user_stat.file_views = data.fetch(:views, 0)
-          user_stat.file_downloads = data.fetch(:downloads, 0)
-          user_stat.work_views = data.fetch(:work_views, 0)
-          user_stat.save!
         end
       end
 

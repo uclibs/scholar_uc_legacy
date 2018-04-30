@@ -100,25 +100,29 @@ RSpec.describe Hyrax::CustomStatImporter do
 
   context "works" do
     it "adds all data" do
-      expect { subject.import }.to change { UserStat.count }.by(5)
+      expect { subject.import }.to change { WorkViewStat.count }.by(4)
     end
 
     it "doesn't add duplicate data" do
       described_class.new(work_index_object, delay_secs: 0, retries: 4).import
-      expect { subject.import }.not_to(change { UserStat.count })
+      expect { subject.import }.not_to(change { WorkViewStat.count })
     end
   end
 
   context "files" do
     subject { described_class.new(file_index_object, delay_secs: 0, retries: 4) }
 
-    it "adds all data" do
-      expect { subject.import }.to change { UserStat.count }.by(5)
+    it "adds all file view data" do
+      expect { subject.import }.to change { FileViewStat.count }.by(4)
+    end
+
+    it "adds all file download data" do
+      expect { subject.import }.to change { FileDownloadStat.count }.by(4)
     end
 
     it "doesn't add duplicate data" do
       described_class.new(file_index_object, delay_secs: 0, retries: 4).import
-      expect { subject.import }.not_to(change { UserStat.count })
+      expect { subject.import }.not_to(change { FileDownloadStat.count })
     end
   end
 

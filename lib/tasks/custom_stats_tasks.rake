@@ -1,11 +1,5 @@
 # frozen_string_literal: true
 namespace :custom_stats do
-  desc "reset user stats count and work/file index"
-  task reset_stats: :environment do
-    WorkAndFileIndex.reset
-    UserStat.destroy_all
-  end
-
   desc "reset work/file index"
   task reset_index: :environment do
     WorkAndFileIndex.reset
@@ -26,5 +20,7 @@ namespace :custom_stats do
       importer = Hyrax::CustomStatImporter.new(object, delay_secs: delay, retries: retries, verbose: true, logging: true)
       importer.import
     end
+
+    Hyrax::UserStatAdder.reset_user_stats
   end
 end
