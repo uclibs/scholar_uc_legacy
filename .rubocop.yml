@@ -14,6 +14,7 @@ AllCops:
     - 'app/services/work_loader.rb'
     - 'app/services/hyrax/actor_factory.rb'
     - 'app/services/hyrax/user_stat_importer.rb'
+    - 'app/services/hyrax/custom_stat_importer.rb'
     - 'spec/services/hyrax/actor_factory_spec.rb'
     - 'db/**/*'
     - 'lib/tasks/batch.rake'
@@ -235,6 +236,7 @@ RSpec/ExampleLength:
     - 'spec/support/shared/*'
     - 'spec/forms/hyrax/forms/batch_edit_form_spec.rb'
     - 'spec/jobs/batch_create_job_spec.rb'
+    - 'spec/models/work_and_file_index_spec.rb'
 
 RSpec/SubjectStub:
   Enabled: false
