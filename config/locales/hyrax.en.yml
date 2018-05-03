@@ -11,6 +11,9 @@ en:
     user_profile:
       tab_highlighted:   "Highlighted Works"
     dashboard:
+      stats:
+        file_views:             "File View"
+        work_views:             "Work View"
       help_statement_html:      "<strong>Please Note:</strong> Your proxies can do anything on your behalf in Scholar@UC. Be selective in who you give proxy access. If you authorize a proxy they can create and upload files on your behalf as well as edit, or delete those corresponding works and files. The proxy relationship can be revoked by the owner at any time. Use work-specific editors for more fine-grained access control."
       view_collections:         "View My Collections"
       create_collection:        "Create Collection"
