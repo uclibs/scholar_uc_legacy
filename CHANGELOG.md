@@ -1,3 +1,24 @@
+### 3.1.0 5/3/2018
+* Removed the "User ID" column from the People page.
+* Added additional tests to the presenter specs for work types.
+* Created a rake task to release expired embargoed works and files.
+* Created a rake task to regenerate derivatives for PDF documents.
+* Updated the manual test script.
+* Updated the loofah gem to resolve a security vulnerability warning.
+* Bug fixes
+  * Fixed bugs that prevented work and file views/download statistics from being compiled correctly. 
+  * Fixed a bug that prevented non-image work types from using the UniveralViewer.
+  * Fixed a bug that displayed private images in the UniversalViewer.
+  * Fixed bugs that prevented the download and embed options on the UniversalViewer from working properly.
+  * Fixed the column sorting options on the People page.
+  * Fixed a bug on search results pages that caused pagination to list an infinite number of pages.
+  * Fixed a bug that displayed less than 10 people per page on the People page.
+  * Fixed a bug that prevented the welcome page from showing for new users.
+  * Fixed two broken images on the Help page.
+  * Fixed a broken link to the Welcome page on the Help page.
+  * Fixed a misspelling and a missing hyperlink on the Guidlelines for Faculty Advisors page.
+  * Restored the URL for the Distribution License page to /distribution_license_request.
+
 ### 3.0.3 2/21/2018
 * Boosted Collections in catalog display results, when sorting by relevance.
 * Added scholar@uc.edu (Scholar@UC Team) to embargo mailer.
@@ -15,7 +36,6 @@
     * Restored the ability to perform batch edits of multiple works from the dashboard, including the ability to make changes to rights of multiple works.
     * Restored Kaltura as a cloud provider when adding files to works.
     * Fixed the issue that was resulting in blank thumbnails for some PDFs.  (Thumbnails will be regenerated for these works after fix has been deployed.)
-
 
 ### 3.0.2 1/16/2018
 * Added Office of Research lockup on homepage.
