@@ -16,6 +16,12 @@ FactoryBot.define do
       read_groups ["registered"]
     end
 
+    trait :with_public_embargo do
+      after(:build) do |file, evaluator|
+        file.embargo = FactoryBot.create(:public_embargo, embargo_release_date: evaluator.embargo_release_date)
+      end
+    end
+
     factory :public_pdf do
       transient do
         id "fixturepdf"

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   mount Hydra::RoleManagement::Engine => '/'
 
+  resources :users, only: [:index], constraints: { format: :html }, controller: 'display_users'
+
   resources :welcome, only: 'index'
   resources :welcome_page, only: [:index, :create]
   root 'hyrax/homepage#index'
@@ -49,6 +51,7 @@ Rails.application.routes.draw do
   get 'student_instructions' => 'static#student_instructions'
   get 'doi_help' => 'static#doi_help'
   get 'login' => 'static#login'
+  get 'distribution_license_request' => 'hyrax/static#agreement'
 
   get 'sitemap.xml' => 'sitemaps#index', format: 'xml', as: :sitemap
   # route for custom error pages issue #1056

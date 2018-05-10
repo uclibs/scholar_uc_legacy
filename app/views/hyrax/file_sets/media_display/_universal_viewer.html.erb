@@ -1,4 +1,4 @@
-  <% if file_set.mime_type == "image/gif" %>
+<% if file_set.mime_type == "image/gif" || !@presenter.members_include_viewable_image? %>
     <%= image_tag thumbnail_url(file_set),
           class: "representative-media",
           alt: "",
@@ -14,7 +14,7 @@
           <% end %>  
    <% end %>
 <% else %>
-    <%= UniversalViewer.script_tag %>
-    <div class="uv viewer" data-uri="<%= main_app.polymorphic_path [main_app, :manifest, @presenter] %>"></div>
+    <%= PulUvRails::UniversalViewer.script_tag %>
+    <div class="uv viewer" data-uri="<%= main_app.polymorphic_path [main_app, :manifest, @presenter], { locale: nil } %>"></div>
     </br>
   <% end %>

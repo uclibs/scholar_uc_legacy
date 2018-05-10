@@ -21,7 +21,7 @@
   <li>
   Click on the <a role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;background-color:black;padding:3px;" href="#"><span class="fa fa-cube"></span> Works <span class="caret"></span></a> menu and select "<b>New Work</b>."
   </li></br>
-  
+
   <li>
   Click on the <a class="add-button btn btn-primary add_new_article" href="#">Add New</a> button for the <b>Student Work</b> type.
   </li></br>
@@ -36,12 +36,12 @@
         Adding an external link. Please use permanent links whenever possible. Permanent links are usually advertised as such – links that will not change as content moves.
       </li>
       <li>
-        Pulling in a cloud file. If your project files are saved in Dropbox, Google Drive, Kaltura, or Box, you can retrieve the files without having to first download them to your local device.
+        Pulling in a cloud file. If your project files are saved in Box, you can retrieve the files without having to first download them to your local device.
       </li>
     </ul>
   </li>
   <p>
-    <img src="assets/scholar_screens/add_file_image.png" alt="Add File" title="Add File">
+    <%= image_tag 'scholar_screens/add_file_image.png', alt: 'Add File', title: 'Add File' %>
   </p></br>
 
   <li>
@@ -82,7 +82,7 @@
     Add your faculty advisor or sponsor as a user with Edit access under the Share tab. Search for them by name or by email address. If your advisor has not yet logged in to Scholar@UC, you will not find them – contact them and ask them to login.
   </li>
   <p>
-    <img src="assets/scholar_screens/content_editors_image.png" alt="Content Editors" title="Content Editors">
+    <%= image_tag 'scholar_screens/content_editors_image.png', alt: 'Content Editors', title: 'Content Editors' %>
   </p></br>
 
   <li>
@@ -102,7 +102,7 @@
   </li></br>
 
   <li>
-    You must agree to the <a href="/agreement">Non-Exclusive Distribution License</a> which grants UC the right to preserve, provide access (under the licensing terms chosen), and enhance the work with additional metadata. The license also states that you have not violated the intellectual property of another and that your work contains no restricted data, as defined by UC. <b>Note: You will retain fully copyright for the work and you can share or submit the work with additional repositories and websites.</b>
+    You must agree to the <%= link_to t('hyrax.deposit_agreement'), '/distribution_license_request' %> which grants UC the right to preserve, provide access (under the licensing terms chosen), and enhance the work with additional metadata. The license also states that you have not violated the intellectual property of another and that your work contains no restricted data, as defined by UC. <b>Note: You will retain fully copyright for the work and you can share or submit the work with additional repositories and websites.</b>
   </li></br>
 
   <li>

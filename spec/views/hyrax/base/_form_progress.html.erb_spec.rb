@@ -81,7 +81,7 @@ describe 'hyrax/base/_form_progress.html.erb', type: :view do
     context "with active deposit agreement" do
       it "shows accept text" do
         expect(page).to have_content 'I have read and agree to the'
-        expect(page).to have_link 'Deposit Agreement', href: '/agreement'
+        expect(page).to have_link 'Distribution License', href: '/distribution_license_request'
         expect(page).not_to have_selector("#agreement[checked]")
       end
     end
@@ -93,7 +93,7 @@ describe 'hyrax/base/_form_progress.html.erb', type: :view do
       end
       it "shows accept text" do
         expect(page).to have_content 'By saving this work I agree to the'
-        expect(page).to have_link 'Deposit Agreement', href: '/agreement'
+        expect(page).to have_link 'Distribution License', href: '/distribution_license_request'
       end
     end
 

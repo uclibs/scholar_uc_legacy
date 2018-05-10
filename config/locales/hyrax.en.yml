@@ -1,5 +1,6 @@
 en:
   hyrax:
+    deposit_agreement: "Distribution License"
     account_name:       "My Institution Account Id"
     base:
       form_files:
@@ -10,6 +11,9 @@ en:
     user_profile:
       tab_highlighted:   "Highlighted Works"
     dashboard:
+      stats:
+        file_views:             "File View"
+        work_views:             "Work View"
       help_statement_html:      "<strong>Please Note:</strong> Your proxies can do anything on your behalf in Scholar@UC. Be selective in who you give proxy access. If you authorize a proxy they can create and upload files on your behalf as well as edit, or delete those corresponding works and files. The proxy relationship can be revoked by the owner at any time. Use work-specific editors for more fine-grained access control."
       view_collections:         "View My Collections"
       create_collection:        "Create Collection"
@@ -62,7 +66,7 @@ en:
     share_button: "Contribute"
     terms_of_use_html: "<a class=\"a\" href=\"/terms\">Scholar@UC Terms of Use</a>"
     upload:
-      cloud_timeout_message_html: "If you have files on cloud storage sites such as Box, Dropbox, Google Drive, or Kaltura, you can click the \"Browse cloud files\" button to select and upload those files directly to Scholar@UC.<br /><br />Please note that if you upload a large number of files within a short period of time, the cloud provider may not be able to accommodate your request. If you experience any errors uploading from the cloud, let us know via the %{contact_href}."
+      cloud_timeout_message_html: "If you have files on cloud storage sites such as Box, you can click the \"Browse cloud files\" button to select and upload those files directly to Scholar@UC.<br /><br />Please note that if you upload a large number of files within a short period of time, the cloud provider may not be able to accommodate your request. If you experience any errors uploading from the cloud, let us know via the %{contact_href}."
     visibility:
       authenticated:
         text: 'University of Cincinnati'
