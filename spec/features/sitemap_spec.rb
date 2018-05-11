@@ -52,5 +52,5 @@ private
   end
 
   def build_test_path(work_type, work_id)
-    "/concern/#{work_type}/#{work_id}"
+    "/concern/#{work_type.pluralize}/#{work_id}"
   end

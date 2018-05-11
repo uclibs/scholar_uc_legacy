@@ -39,7 +39,7 @@ class SitemapsController < ApplicationController
     end
 
     def sans_fedora_poly_url(work_type, work_id)
-      strip_locale_from_url(root_url + "concern/#{work_type.underscore}/#{work_id}")
+      strip_locale_from_url(root_url + "concern/#{work_type.underscore.pluralize}/#{work_id}")
     end
 
     def retrieve_facet_urls(work_type)
