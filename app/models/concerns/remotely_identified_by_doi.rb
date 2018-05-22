@@ -7,6 +7,8 @@ module RemotelyIdentifiedByDoi
   module Attributes
     extend ActiveSupport::Concern
     included do
+      before_destroy :withdraw_identifier
+
       property :doi, predicate: ::RDF::URI.new('http://purl.org/dc/terms/identifier#managedDOI'), multiple: false do |index|
         index.as :stored_searchable
       end
@@ -43,6 +45,12 @@ module RemotelyIdentifiedByDoi
 
         def remote_doi_assignment_strategy?
           doi_assignment_strategy.to_s == doi_remote_service.accessor_name.to_s
+        end
+
+      private
+
+        def withdraw_identifier
+          IdentifierDeleteJob.perform_later(identifier_url) unless identifier_url.blank?
         end
     end
   end
