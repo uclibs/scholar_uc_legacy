@@ -18,4 +18,5 @@
       <%= render 'hyrax/users/activity_log', events: @presenter.events %>
     </div><!-- /columns second -->
   </div> <!-- /.row -->
+  <%= render "cozy_sun_bear" if @presenter.mime_type == "application/epub+zip" %>
 </div><!-- /.container-fluid -->

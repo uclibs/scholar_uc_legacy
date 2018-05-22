@@ -24,6 +24,7 @@
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require turbolinks//
 // Required by Blacklight
+//= require cozy-sun-bear-main
 //= require blacklight/blacklight
 
 //= require_tree .

@@ -41,6 +41,7 @@ gem 'jbuilder', '~> 2.5'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'cozy-sun-bear', git: 'https://github.com/mlibrary/cozy-sun-bear'
 gem 'sidekiq'
 
 gem 'change_manager', git: "https://github.com/lawhorkl/change_manager.git", ref: '8d151d1123aa35658f061a63bc72435afdf0ec8a'
