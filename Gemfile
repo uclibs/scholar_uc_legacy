@@ -9,7 +9,7 @@ gem 'orcid', github: 'uclibs/orcid', branch: 'rails-5'
 gem 'devise-multi_auth', github: 'uclibs/devise-multi_auth', branch: 'rails-5'
 gem 'riiif', '~> 0.2.0'
 gem 'iiif_manifest'
-gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'setting-status'
+gem 'hydra-remote_identifier', github: 'uclibs/hydra-remote_identifier', branch: 'datacite'
 gem 'browse-everything', '0.14.2'
 gem 'pul_uv_rails', '2.0.1'
 

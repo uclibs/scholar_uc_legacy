@@ -8,6 +8,7 @@ Hydra::RemoteIdentifier.configure do |config|
       map.status :doi_status
       map.creator :creator
       map.title :title
+      map.profile { "datacite" }
       map.publisher { |o| Array(o.publisher).join("; ") }
       map.publicationyear { |o| o.date_uploaded.year }
       map.identifier_url :identifier_url
