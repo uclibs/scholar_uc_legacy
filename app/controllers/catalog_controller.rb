@@ -20,7 +20,7 @@ class CatalogController < ApplicationController
 
   def self.search_terms
     "title_tesim description_tesim keyword_tesim creator_tesim rights_tesim " \
-    "publisher_tesim date_created_tesim subject_tesim language_tesim alternate_title_tesim " \
+    "publisher_tesim alt_date_created_tesim subject_tesim language_tesim alternate_title_tesim " \
     "geo_subject_tesim degree_tesim advisor_tesim committee_member_tesim genre_tesim " \
     "time_period_tesim required_software_tesim note_tesim college_tesim department_tesim " \
     "advisor_tesim related_url_tesim source_tesim journal_title_tesim issn_tesim "
@@ -61,7 +61,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name("department", :facetable), label: "Department", limit: 5
     config.add_facet_field solr_name("language", :facetable), label: "Language", limit: 5
     config.add_facet_field solr_name("publisher", :facetable), label: "Publisher", limit: 5
-    config.add_facet_field solr_name("date_created", :facetable), label: "Date Created", limit: 5
+    config.add_facet_field solr_name("alt_date_created", :facetable), label: "Date Created", limit: 5
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -82,7 +82,7 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("language", :stored_searchable), label: "Language", itemprop: 'inLanguage', link_to_search: solr_name("language", :facetable)
     config.add_index_field solr_name("date_uploaded", :stored_sortable, type: :date), label: "Date Uploaded", itemprop: 'datePublished'
     config.add_index_field solr_name("date_modified", :stored_sortable, type: :date), label: "Date Modified", itemprop: 'dateModified'
-    config.add_index_field solr_name("date_created", :stored_searchable), label: "Date Created", itemprop: 'dateCreated'
+    config.add_index_field solr_name("alt_date_created", :stored_searchable), label: "Date Created", itemprop: 'dateCreated'
     config.add_index_field solr_name("rights", :stored_searchable), label: "Rights", helper_method: :license_links
     config.add_index_field solr_name("resource_type", :stored_searchable), label: "Resource Type", link_to_search: solr_name("resource_type", :facetable)
     config.add_index_field solr_name("file_format", :stored_searchable), label: "File Format", link_to_search: solr_name("file_format", :facetable)
@@ -112,7 +112,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("language", :stored_searchable), label: "Language"
     config.add_show_field solr_name("date_uploaded", :stored_searchable), label: "Date Uploaded"
     config.add_show_field solr_name("date_modified", :stored_searchable), label: "Date Modified"
-    config.add_show_field solr_name("date_created", :stored_searchable), label: "Date Created"
+    config.add_show_field solr_name("alt_date_created", :stored_searchable), label: "Date Created"
     config.add_show_field solr_name("rights", :stored_searchable), label: "Rights"
     config.add_show_field solr_name("resource_type", :stored_searchable), label: "Resource Type"
     config.add_show_field solr_name("format", :stored_searchable), label: "File Format"
@@ -214,8 +214,8 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('date_created') do |field|
-      solr_name = solr_name("date_created", :stored_searchable)
+    config.add_search_field('alt_date_created') do |field|
+      solr_name = solr_name("alt_date_created", :stored_searchable)
       field.solr_local_parameters = {
         qf: solr_name,
         pf: solr_name
