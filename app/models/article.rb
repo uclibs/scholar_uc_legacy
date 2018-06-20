@@ -56,7 +56,8 @@ class Article < ActiveFedora::Base
   end
 
   property :alt_date_created, predicate: ::RDF::URI.new('http://purl.org/dc/terms/date#created'), multiple: false do |index|
-    index.as :stored_searchable
+    index.as :stored_searchable, :facetable
+    index.type :text
   end
 
   def date_created
