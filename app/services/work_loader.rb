@@ -53,6 +53,11 @@ class WorkLoader
       file_pid = file.delete(:pid)
       file_set.id = file_pid unless file_pid.nil?
       visibility = file[:visibility] || curation_concern.visibility
+      title = if file[:title].nil?
+                nil
+              else
+                [file[:title]]
+              end
 
       actor = Hyrax::Actors::FileSetActor.new(file_set, user)
       actor.create_metadata(visibility: visibility)
@@ -61,6 +66,7 @@ class WorkLoader
       actor.file_set.permissions_attributes = curation_concern.permissions.map(&:to_hash)
 
       file.update(file_set_uri: file_set.uri)
+      file_set.title = title
       file_set.visibility = visibility
       file_set.save
     end
