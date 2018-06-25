@@ -28,6 +28,9 @@ config/blacklight.yml
 config/initializers/devise.rb
 config/initializers/scholar_uc.rb
 config/initializers/hyrax.rb
+config/initializers/riiif.rb
 config/authentication.yml
 config/environments/development.rb
 config/environments/production.rb
+
+vendor/*.csv

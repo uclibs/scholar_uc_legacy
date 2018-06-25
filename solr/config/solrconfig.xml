@@ -111,7 +111,7 @@
          all_text_timv^10
        </str>
        <str name="bq">
-         {!terms f=has_model_ssim}Collection^20
+         {!terms f=has_model_ssim}Collection^2000
        </str>
        <str name="author_qf">
           author_tesim

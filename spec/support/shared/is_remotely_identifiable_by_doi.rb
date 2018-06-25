@@ -315,4 +315,28 @@ shared_examples 'is remotely identifiable by doi' do
       end
     end
   end
+
+  context "deleting a work" do
+    let(:work) { FactoryBot.create(described_class.to_s.underscore.to_sym) }
+
+    context "when a DOI has been minted" do
+      before do
+        work.stub(:identifier_url).and_return("http://example.org")
+      end
+
+      it "removes the identifier" do
+        expect(IdentifierDeleteJob).to receive(:perform_later)
+        work.destroy
+      end
+    end
+
+    context "when a DOI has not been minted" do
+      before { work.stub(:identifier_url).and_return(nil) }
+
+      it "does not remove the identifier" do
+        expect(IdentifierDeleteJob).not_to receive(:perform_later)
+        work.destroy
+      end
+    end
+  end
 end

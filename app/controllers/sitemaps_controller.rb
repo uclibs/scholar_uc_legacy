@@ -2,8 +2,7 @@
 class SitemapsController < ApplicationController
   def index
     work_types = Hyrax.config.registered_curation_concern_types.append('Collection')
-
-    @root_url = strip_locale_from_url root_url
+    @root_url = Rails.application.config.application_root_url
     @catalog_urls = []
     @resources = []
 
@@ -39,11 +38,16 @@ class SitemapsController < ApplicationController
     end
 
     def sans_fedora_poly_url(work_type, work_id)
-      strip_locale_from_url(root_url + "concern/#{work_type.underscore}/#{work_id}")
+      strip_locale_from_url(@root_url + "/#{url_prefix(work_type)}#{work_type.underscore.pluralize}/#{work_id}")
+    end
+
+    def url_prefix(work_type)
+      return 'concern/' unless work_type == 'Collection'
+      ''
     end
 
     def retrieve_facet_urls(work_type)
-      strip_locale_from_url(root_url + "catalog?f[human_readable_type_sim][]=#{work_type}")
+      strip_locale_from_url(@root_url + "/catalog?f[human_readable_type_sim][]=#{work_type}")
     end
 
     def get_static_url(action)

@@ -73,6 +73,7 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("has_model", :symbol), label: "Type"
     config.add_index_field solr_name("title", :stored_searchable), label: "Title", itemprop: 'name', if: false
     config.add_index_field solr_name("description", :stored_searchable), label: "Description/Abstract", itemprop: 'description', helper_method: :iconify_auto_link
+    config.add_index_field solr_name("alt_description", :stored_searchable), label: "Description/Abstract", itemprop: 'description', helper_method: :iconify_auto_link
     config.add_index_field solr_name("creator", :stored_searchable), label: "Creator/Author", itemprop: 'creator', separator_options: { words_connector: "; " }, link_to_search: solr_name("creator", :facetable)
     config.add_index_field solr_name("contributor", :stored_searchable), label: "Contributor", itemprop: 'contributor', link_to_search: solr_name("contributor", :facetable)
     config.add_index_field solr_name("depositor"), label: "Submitter", helper_method: :link_to_profile
@@ -100,6 +101,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_show_field solr_name("title", :stored_searchable), label: "Title"
     config.add_show_field solr_name("description", :stored_searchable), label: "Description/Abstract"
+    config.add_show_field solr_name("alt_description", :stored_searchable), label: "Description/Abstract"
     config.add_show_field solr_name("subject", :stored_searchable), label: "Subject"
     config.add_show_field solr_name("creator", :stored_searchable), label: "Creator/Author"
     config.add_show_field solr_name("college", :stored_searchable), label: "College"
@@ -189,6 +191,15 @@ class CatalogController < ApplicationController
     config.add_search_field('description') do |field|
       field.label = "Abstract or Summary"
       solr_name = solr_name("description", :stored_searchable)
+      field.solr_local_parameters = {
+        qf: solr_name,
+        pf: solr_name
+      }
+    end
+
+    config.add_search_field('alt_description') do |field|
+      field.label = "Abstract or Summary"
+      solr_name = solr_name("alt_description", :stored_searchable)
       field.solr_local_parameters = {
         qf: solr_name,
         pf: solr_name
