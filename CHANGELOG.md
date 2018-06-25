@@ -1,3 +1,14 @@
+### 3.2.0 6/17/2018
+* Downloaded PDF files now save instead displaying inline
+* Bug fixes
+  * Fixed bug that broke faceted searches containing ampersands
+  * All descriptive metadata fields are now included in searches
+  * Fixed a bug preventing embargo notifications from working
+  * Fixed links to works and collections in the sitemap.xml
+  * Fixed a broken link to the UC Use of IT policy
+  * Deleted works now have their DOI status properly updated
+  * Removed the lease visibility option from file edit page
+
 ### 3.1.0 5/3/2018
 * Removed the "User ID" column from the People page.
 * Added additional tests to the presenter specs for work types.
