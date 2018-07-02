@@ -8,6 +8,7 @@ namespace :embargo_manager do # rubocop:disable Metrics/BlockLength
     ONE_DAY = 1
     ZERO_DAYS = 0
     results_cap = 1_000_000
+    Time.zone = 'EST'
 
     solr_results = ActiveFedora::SolrService.query('embargo_release_date_dtsi:[* TO *]', rows: results_cap)
     solr_results.each do |work|
