@@ -35,20 +35,20 @@ GIT
       virtus
 
 GIT
-  remote: https://github.com/lawhorkl/change_manager.git
+  remote: https://github.com/rack/rack.git
+  revision: ee0174822f9c4e939bd810c3e906554a7137973d
+  ref: ee01748
+  specs:
+    rack (2.0.1)
+
+GIT
+  remote: https://github.com/uclibs/change_manager.git
   revision: 8d151d1123aa35658f061a63bc72435afdf0ec8a
   ref: 8d151d1123aa35658f061a63bc72435afdf0ec8a
   specs:
     change_manager (1.0.0)
       activejob
       rails
-
-GIT
-  remote: https://github.com/rack/rack.git
-  revision: ee0174822f9c4e939bd810c3e906554a7137973d
-  ref: ee01748
-  specs:
-    rack (2.0.1)
 
 GEM
   remote: https://rubygems.org/
