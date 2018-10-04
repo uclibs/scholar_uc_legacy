@@ -3,4 +3,8 @@
 class FileSet < ActiveFedora::Base
   include ::Hyrax::FileSetBehavior
   include Hyrax::FileSetBehavior
+  # override default virus check in favor of scanning in js uploader at time of upload
+  def viruses?
+    false
+  end
 end
