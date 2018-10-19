@@ -1,3 +1,10 @@
+### 3.3.0 10/12/2018
+* Disabled the citations feature until author ordering is fixed
+* Bug fixes
+  * Fixed the date created hyperlink on work show pages
+  * Fixed a bug preventing video derivatives from playing in some browsers
+  * Fixed virus scan reporting
+
 ### 3.2.0 6/17/2018
 * Downloaded PDF files now save instead displaying inline
 * Bug fixes
